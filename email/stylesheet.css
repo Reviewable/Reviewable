@@ -1,0 +1,56 @@
+/* Publicly accessible stylesheet, so that we can refer to it from the email design tool. */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  color: inherit;
+}
+* a:hover {
+  border-bottom-color: #A7D5E5;
+}
+.border {
+	font-family: Droid Sans, sans-serif;
+	background: linear-gradient(to bottom, #5A5076 110px, #59585a 100%);
+	padding: 10px 25px 25px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 20px
+}
+.title img {
+  width: 200px;
+}
+.sheet {
+	background: white;
+	border-radius: 5px;
+  overflow: hidden;
+}
+.content {
+  margin: 20px;
+  line-height: 2em;
+}
+img.bunny {
+	display: block;
+	float: right;
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+.thanks {
+  margin-top: 30px;
+}
+.center {
+  text-align: center;
+}
+.button {
+  display:inline-block;
+  background-color: #5BBD72;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  padding: .8em 1.5em;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+}
