@@ -1,3 +1,13 @@
+### Runtime expectations
+
+Reviewable is packaged as a Docker image, available from `reviewable/enterprise`, a private repo on Docker Hub&mdash;your docker.com account will be granted pull access when you purchase a license.  To run it you'll need to configure a Docker container.  The entrypoint is already specified in the image but you have to define a bunch of additional environment variables (see below).
+
+We recommend running in a VM with around 1.5GB to 2GB of memory&mdash;less than that and you might run out of memory when handling some big pull requests, and more than that cannot be used by a single NodeJS process.  One vCPU (or even a fraction of one) is typically sufficient, and the processes are more I/O than CPU intensive.  On Google Cloud Platform, the `g1-small` instance type is a good fit, on AWS a `t2.small`, and on Azure an `A1`.
+
+You should run at least 2 server instances, front by a load-balancing HTTP proxy.  (You can technically run just one and connect to it directly, but such a configuration won't be reliable and won't be able to handle SSL connections.)  The servers are stateless (with the exception of `REVIEWABLE_USER_CONTENT_PATH`, see below) so you can start/stop as many of them as you want without problems.  As of this writing, we don't typically scale up to more than 8 for reviewable.io.
+
+The servers expect to be restarted automatically if the process exits.  They'll log information to stdout, and exit with a non-zero exit code if something went terribly wrong.  You can safely kill a process at any time but it's always preferable to make a clean exit by setting `GAE_VM` (see below) and using `/_ah/stop`.  Doing so will potentially avoid delays on retrying interrupted tasks.
+
 ### Environment variables
 
 Required:
