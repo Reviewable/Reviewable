@@ -1,3 +1,11 @@
+### Connecting Reviewable to GitHub
+
+To enable Reviewable to integrate with GitHub, you first need to create a new GitHub application.  On https://github.com, find the settings section of your preferred organization&mdash;any one will do.  In the OAuth applications subsection click the Register new application button:
+![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/register_github_app.png)
+Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `https://auth.firebase.com/v2/<REVIEWABLE_FIREBASE>/auth/github/callback`, where `REVIEWABLE_FIREBASE` is the name of your Firebase project, so that GitHub's OAuth service can properly communicate with Firebase's authentication server.
+
+After configuring your GitHub application, head on over to the Login & Auth section in your Firebase App Dashboard. Enable GitHub authentication and then copy your GitHub application credentials (Client ID and Client Secret) into the appropriate inputs. You can find your GitHub application's client ID and secret at the top of the application's GitHub dashboard.  Make sure to whitelist the domain where you'll be hosting Reviewable, and set the session length to at least 3 weeks.
+
 ### Runtime expectations
 
 Reviewable is packaged as a Docker image, available from `reviewable/enterprise`, a private repo on Docker Hub&mdash;your docker.com account will be granted pull access when you purchase a license.  To run it you'll need to configure a Docker container.  The entrypoint is already specified in the image but you have to define a bunch of additional environment variables (see below).
