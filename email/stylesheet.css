@@ -5,7 +5,7 @@ a {
   color: inherit;
 }
 * a:hover {
-  border-bottom-color: #A7D5E5;
+  border-bottom-color: #A7D5E5 !important;
 }
 .border {
 	font-family: Droid Sans, sans-serif;
