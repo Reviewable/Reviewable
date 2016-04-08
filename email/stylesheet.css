@@ -8,9 +8,9 @@ a {
   border-bottom-color: #A7D5E5 !important;
 }
 .border {
-	font-family: Droid Sans, sans-serif;
-	background: linear-gradient(to bottom, #5A5076 110px, #59585a 100%);
-	padding: 10px 25px 25px;
+  font-family: Droid Sans, sans-serif;
+  background: linear-gradient(to bottom, #5A5076 110px, #59585a 100%);
+  padding: 10px 25px 25px;
 }
 .title {
   text-align: center;
