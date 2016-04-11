@@ -10,7 +10,7 @@ Package | Description | License
 agentkeepalive |Keep-alive HTTP connection manager | MIT
 analytics-node | Segment analytics library | MIT
 archiver | Zip file creator | MIT
-aws-sdk | AWS client library | Apache 2.0
+aws-sdk | AWS client library | Apache-2.0
 body-parser | HTTP request body parser | MIT
 clone | Deep object cloning | MIT
 co | Generator-base coroutines | MIT
@@ -20,7 +20,7 @@ fireband | Firebase bandwidth analyzer | MIT
 firebase | Firebase client library | Firebase ToS
 firebase-token-generator | Generates Firebase JWT tokens | MIT
 firelease | Firebase queue manager | MIT
-freeport | Finds a free TCP port | Apache 2.0
+freeport | Finds a free TCP port | Apache-2.0
 hubkit | GitHub client library | MIT
 jsonwebtoken | JWT generator and verifier | MIT
 lodash | Utility functions | MIT
@@ -30,8 +30,8 @@ ms | Duration parser | MIT
 mz | Promisifies Node libraries | MIT
 nodefire | Promisifies Firebase library | MIT
 nodemailer | Email client | MIT
-raven | Sentry client library | BSD
-request | HTTP client library | Apache 2.0
+raven | Sentry client library | BSD-2-Clause
+request | HTTP client library | Apache-2.0
 rus-diff | JSON differ | MIT
 sandcastle | Isolates code execution | MIT
 sleep-promise | Promisifed sleep function | MIT
@@ -57,16 +57,16 @@ angular-sanitize | HTML sanitization | MIT
 angular-scroll | Scroll position directive | MIT
 angular-touch | Angular touch input support | MIT
 codemirror | Code editor widget | MIT
-droidsans | Font | Apache 2.0
-diffmatchpatch | Textual diff algorithm | Apache 2.0
+droidsans | Font | Apache-2.0
+diffmatchpatch | Textual diff algorithm | Apache-2.0
 es6-promise-polyfill | Promise class polyfill | MIT
 firebase | Firebase client library | Firebase ToS
 firebase-on-error | Firebase error handling interceptor | MIT
 github-markdown-css | CSS to replicate GitHub Markdown rendering | MIT
-highlight.js | Source code syntax highlighting | BSD 3 clause
+highlight.js | Source code syntax highlighting | BSD-3-Clause
 hubkit | GitHub client library | MIT
 hyphenation-patterns | Hyphenation patterns for en-us | LGPL
-hypher | Hyphenation engine | BSD 3 clause
+hypher | Hyphenation engine | BSD-3-Clause
 jquery | DOM utilities library | MIT
 jquery.payment | Credit card validation | MIT
 jss | Dynamic stylesheet builder | MIT
