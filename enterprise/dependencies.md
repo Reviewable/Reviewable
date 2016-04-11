@@ -17,7 +17,7 @@ co | Generator-base coroutines | MIT
 escape-html | Escapes HTML | MIT
 express | HTTP server framework | MIT
 fireband | Firebase bandwidth analyzer | MIT
-firebase | Firebase client library | Firebase ToS
+firebase | Firebase client library | [Firebase ToS](https://www.firebase.com/terms/terms-of-service.html)
 firebase-token-generator | Generates Firebase JWT tokens | MIT
 firelease | Firebase queue manager | MIT
 freeport | Finds a free TCP port | Apache-2.0
@@ -60,7 +60,7 @@ codemirror | Code editor widget | MIT
 droidsans | Font | Apache-2.0
 diffmatchpatch | Textual diff algorithm | Apache-2.0
 es6-promise-polyfill | Promise class polyfill | MIT
-firebase | Firebase client library | Firebase ToS
+firebase | Firebase client library | [Firebase ToS](https://www.firebase.com/terms/terms-of-service.html)
 firebase-on-error | Firebase error handling interceptor | MIT
 github-markdown-css | CSS to replicate GitHub Markdown rendering | MIT
 highlight.js | Source code syntax highlighting | BSD-3-Clause
