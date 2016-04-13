@@ -22,7 +22,6 @@ firebase-token-generator | Generates Firebase JWT tokens | MIT
 firelease | Firebase queue manager | MIT
 freeport | Finds a free TCP port | Apache-2.0
 hubkit | GitHub client library | MIT
-jsencrypt | RSA crypto library | MIT
 jsonwebtoken | JWT generator and verifier | MIT
 lodash | Utility functions | MIT
 loggly | Loggly client library | MIT
