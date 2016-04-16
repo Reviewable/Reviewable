@@ -3,7 +3,7 @@
 Lists of all dependencies included in the production build, along with their licenses.  Development dependencies are not listed.
 
 ##### Server dependencies
-NPM, top level only.
+NPM, direct dependencies only.
 
 Package | Description | License
 --------|-------------|--------
@@ -45,7 +45,7 @@ superstatic | Static file server middleware | MIT
 toposort | Topological sort | MIT
 
 ##### Client dependencies
-Mostly Bower, all levels.
+Mostly Bower, recursive dependencies.
 
 Package | Description | License
 --------|-------------|--------
@@ -60,8 +60,8 @@ angular-sanitize | HTML sanitization | MIT
 angular-scroll | Scroll position directive | MIT
 angular-touch | Angular touch input support | MIT
 codemirror | Code editor widget | MIT
-droidsans | Font | Apache-2.0
 diffmatchpatch | Textual diff algorithm | Apache-2.0
+droidsans | Font | Apache-2.0
 es6-promise-polyfill | Promise class polyfill | MIT
 firebase | Firebase client library | [Firebase ToS](https://www.firebase.com/terms/terms-of-service.html)
 firebase-on-error | Firebase error handling interceptor | MIT
