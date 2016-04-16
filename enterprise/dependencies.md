@@ -27,6 +27,7 @@ lodash | Utility functions | MIT
 loggly | Loggly client library | MIT
 lru-cache | LRU cache datatype | ISC
 ms | Duration parser | MIT
+multer | File upload middleware | MIT
 mz | Promisifies Node libraries | MIT
 node-forge | Cryptographic utilities library | BSD-3-Clause
 nodefire | Promisifies Firebase library | MIT
