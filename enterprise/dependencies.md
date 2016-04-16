@@ -26,7 +26,7 @@ jsonwebtoken | JWT generator and verifier | MIT
 lodash | Utility functions | MIT
 loggly | Loggly client library | MIT
 lru-cache | LRU cache datatype | ISC
-mime-type | MIME types database | MIT
+mime-types | MIME types database | MIT
 mkdirp | Create directories recursively | MIT
 ms | Duration parser | MIT
 multer | File upload middleware | MIT
