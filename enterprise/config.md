@@ -8,7 +8,7 @@ After configuring your GitHub application, head on over to the Login & Auth sect
 
 ### Runtime expectations
 
-Reviewable is packaged as a Docker image, available from `reviewable/enterprise`, a private repo on Docker Hub&mdash;your docker.com account will be granted pull access when you purchase a license.  To run it you'll need to configure a Docker container.  The entrypoint is already specified in the image but you have to define a bunch of additional environment variables (see below).
+Reviewable is packaged as a Docker image, available from [`reviewable/enterprise`](https://hub.docker.com/r/reviewable/enterprise/tags/), a private repo on Docker Hub&mdash;your docker.com account will be granted pull access when you purchase a license.  To run it you'll need to configure a Docker container.  The entrypoint is already specified in the image but you have to define a bunch of additional environment variables (see below).
 
 We recommend running in a VM with around 1.5GB to 2GB of memory&mdash;less than that and you might run out of memory when handling some big pull requests, and more than that cannot be used by a single Node.js process.  The server is single-threaded, so one vCPU (or even a fraction of one) is sufficient, and the processes are more network than CPU intensive anyway.  On Google Cloud Platform, the `g1-small` instance type is a good fit, on AWS a `t2.small`, and on Azure an `A1`.
 
