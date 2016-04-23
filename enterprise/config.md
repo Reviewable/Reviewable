@@ -35,6 +35,12 @@ Optional settings that enable extra security mechanisms.
 * `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS`: A comma-separated list of unencrypted RSA private keys in PEM format, optionally with newlines removed.  These keys will be used to encrypt especially sensitive data in the Firebase datastore to provide an extra line of defense in case of a breach.  Currently, this includes all GitHub authorization tokens.  The current key should be first in the list, and any number of additional keys can be listed afterwards to assist with key rotation.
 * `REVIEWABLE_GITHUB_SECRET_TOKEN`: An arbitrary secret string that will be used to sign GitHub webhook requests to ensure their authenticity.  Set to anything random, robust when transmitted as text, and reasonably long (e.g., 64 hex characters).  Once set don't ever change it, or you'll invalidate the hooks on all connected repos.
 
+##### Monitoring
+Connections to external systems to monitor the health of the application.  Because errors and warnings can be hard to notice in the logs, Reviewable also sends everything of note to [Sentry](https://getsentry.com).  It's highly recommended that you configure this integration; you can choose to use the DSNs provided with your license to send everything to us (some private data may be included, but never repo contents), create your own [hosted Sentry account](https://getsentry.com/signup/), or [host an instance](https://github.com/getsentry/sentry) of the open source server yourself.
+* `REVIEWABLE_SERVER_SENTRY_DSN`: The Sentry DSN to send server errors to; must include both public and private keys.
+* `REVIEWABLE_CLIENT_SENTRY_DSN`: The public Sentry DSN to send client errors to; must only include the public key.
+* `REVIEWABLE_PING_URL`: A URL that each server will ping with a GET request at 1 minute intervals as long as (it thinks) it's healthy.  You can connect this to an external health-monitoring system (such as [Healthchecks](https://healthchecks.io/) or [Cronitor](https://cronitor.io/)) that can alert you if all servers are unhealthy.
+
 ##### Email
 Outbound email server configuration, used to send the occasional admin or error notification.  Normal review notifications all go through GitHub.
 * `REVIEWABLE_SMTP_URL`: The URL of an SMTP server to use when sending administrative emails.  (Review notifications are sent via GitHub.)  Use the format `smtp://username:password@smtp.example.com:port/`.  The connection will be automatically secured if the server supports it, but you can append `?requireTLS=true` if you want to force `STARTTLS`, or use `https` for a direct TLS connection on port 465.  If missing, Reviewable will attempt to send emails by connecting directly to the recipient's MX server, but this is not very reliable (no retries, no DKIM/SPF so messages likely to be treated as spam).
@@ -46,11 +52,47 @@ Destination for file attachments in comments.  The file types and sizes will be 
 * `REVIEWABLE_USER_CONTENT_PATH`: An absolute path to a directory on a shared persistent volume with read/write access that will be used to store comment attachments.
 * `REVIEWABLE_S3_BUCKET`: The name of an AWS S3 bucket for storing files.  If set, you also need to specify a user with `s3:PutObject` permissions on the bucket by setting `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.  You can also specify the bucket's region via `AWS_REGION`.
 
-##### Monitoring
-Connections to external systems to monitor the health of the application.  Because errors and warnings can be hard to notice in the logs, Reviewable also sends everything of note to [Sentry](https://getsentry.com).  It's highly recommended that you configure this integration; you can choose to use the DSNs provided with your license to send everything to us (some private data may be included, but never repo contents), create your own [hosted Sentry account](https://getsentry.com/signup/), or [host an instance](https://github.com/getsentry/sentry) of the open source server yourself.
-* `REVIEWABLE_SERVER_SENTRY_DSN`: The Sentry DSN to send server errors to; must include both public and private keys.
-* `REVIEWABLE_CLIENT_SENTRY_DSN`: The public Sentry DSN to send client errors to; must only include the public key.
-* `REVIEWABLE_PING_URL`: A URL that each server will ping with a GET request at 1 minute intervals as long as (it thinks) it's healthy.  You can connect this to an external health-monitoring system (such as [Healthchecks](https://healthchecks.io/) or [Cronitor](https://cronitor.io/)) that can alert you if all servers are unhealthy.
+##### User code execution
+Some features, such as [custom review completion rules](https://github.com/Reviewable/Reviewable/wiki/FAQ#can-i-customize-what-makes-a-review-complete), require Reviewable to execute user-provided code.  You can configure where and how such code should be executed.
+* `REVIEWABLE_CODE_EXECUTOR`: One of the following values, or leave empty to disable features that require code execution.
+  * `sandcastle`: Execute code on the server itself, in a [separate sandboxed process](https://github.com/bcoe/sandcastle).  While this will mostly prevent accidental interference with the server, it's likely that an attacker would be able to break out of the sandbox or at least perform a denial of service attack.  Use this option only if all users with access to Reviewable can be trusted.
+  * `awslambda`: Execute code in [AWS Lambda](https://aws.amazon.com/lambda).  This provides great isolation and scalability at the expense of needing a fair bit of setup.  You'll need to set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`, create a `lambda_basic_execution` role in IAM with permissions `{"Effect": "Allow", "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"], "Resource": "arn:aws:logs:*:*:*"}`, and make sure that the specified user has all of the following permissions:
+```
+ [
+    {
+        "Effect": "Allow",
+        "Action": [
+            "lambda:CreateFunction",
+            "lambda:DeleteFunction",
+            "lambda:InvokeFunction",
+            "lambda:ListFunctions"
+        ],
+        "Resource": [
+            "*"
+        ]
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "iam:PassRole"
+        ],
+        "Resource": [
+            "arn:aws:iam::<ACCOUNT>:role/lambda_basic_execution"
+        ]
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
+            "logs:CreateLogGroup",
+            "logs:PutRetentionPolicy",
+            "logs:DeleteLogGroup"
+        ],
+        "Resource": [
+            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:/aws/lambda/*"
+        ]
+    }
+]
+```
 
 ##### UI customization
 Basic UI customization.
