@@ -20,25 +20,45 @@ The servers will write logs to `stdout` and `stderr`, with no timestamps.  Some 
 
 ### Environment variables
 
-Required:
+##### Core configuration:
+These are required unless stated otherwise.
 * `REVIEWABLE_LICENSE`: You'll receive a license key when you purchase or renew a license.  This is just a JSON Web Token (JWT), signed with a private key, that encodes the constraints of your license.  It expires at the same time as the license.  The server won't run without a valid and current license key.
-* `REVIEWABLE_GITHUB_URL`: The URL for your instance of GitHub Enterprise, used by Reviewable for authentication, API calls, and links to the web interface.  If missing, Reviewable will connect to the public `https://github.com/` site instead, with special allowances for its differences from GHE.
 * `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We recommend that the host URL also be secure (`https://...`) as some requests will contain repository contents, but no credentials or other secrets are ever sent through this address. 
 * `PORT`: The port for the web server to listen on.  Reviewable assumes that a higher layer will provide load balancing and SSL termination, and forward requests to the servers over HTTP on an internal, secure network.  Defaults to port 8080, which is also exposed in the Docker container.
 * `REVIEWABLE_FIREBASE`: The name of the Firebase project you'll be using to store Reviewable data.  If we're managing your Firebase instance then your Google account will be granted access to it when you purchase a license.
 * `REVIEWABLE_FIREBASE_AUTH`: A master secret for the Firebase project above, obtained from the Secrets tab on the Firebase management page.  Can be rotated as necessary (e.g, if compromised).
-
-Optional:
-* `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS`: A comma-separated list of unencrypted RSA private keys in PEM format, optionally with newlines removed.  These keys will be used to encrypt especially sensitive data in the Firebase datastore to provide an extra line of defense in case of a breach.  Currently, this includes all GitHub authorization tokens.  The current key should be first in the list, and any number of additional keys can be listed afterwards to assist with key rotation.
+* `REVIEWABLE_GITHUB_URL`: The URL for your instance of GitHub Enterprise, used by Reviewable for authentication, API calls, and links to the web interface.  If missing, Reviewable will connect to the public `https://github.com/` site instead, with special allowances for its differences from GHE.
 * `REVIEWABLE_GITHUB_VIRGIN_USERNAME`: The username of a "virgin" account on your GitHub instance that can be used for checking public access permissions (and some other non-privileged work).  This account should have no repos, and no membership in any organization.  After creating it, you need to use the account once to sign into your Reviewable instance with an empty auth scope.  If missing, Reviewable will access the API anonymously instead but this is severely rate-limited by GitHub and may cause some operations to fail.
+
+##### Security
+Optional settings that enable extra security mechanisms.
+* `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS`: A comma-separated list of unencrypted RSA private keys in PEM format, optionally with newlines removed.  These keys will be used to encrypt especially sensitive data in the Firebase datastore to provide an extra line of defense in case of a breach.  Currently, this includes all GitHub authorization tokens.  The current key should be first in the list, and any number of additional keys can be listed afterwards to assist with key rotation.
 * `REVIEWABLE_GITHUB_SECRET_TOKEN`: An arbitrary secret string that will be used to sign GitHub webhook requests to ensure their authenticity.  Set to anything random, robust when transmitted as text, and reasonably long (e.g., 64 hex characters).  Once set don't ever change it, or you'll invalidate the hooks on all connected repos.
+
+##### Email
+Outbound email server configuration, used to send the occasional admin or error notification.  Normal review notifications all go through GitHub.
 * `REVIEWABLE_SMTP_URL`: The URL of an SMTP server to use when sending administrative emails.  (Review notifications are sent via GitHub.)  Use the format `smtp://username:password@smtp.example.com:port/`.  The connection will be automatically secured if the server supports it, but you can append `?requireTLS=true` if you want to force `STARTTLS`, or use `https` for a direct TLS connection on port 465.  If missing, Reviewable will attempt to send emails by connecting directly to the recipient's MX server, but this is not very reliable (no retries, no DKIM/SPF so messages likely to be treated as spam).
 * `REVIEWABLE_SMTP_FROM`: The `From` email address to set on outgoing messages.  Can be either a plain email address or the full `"Sender Name" <sender@example.com>` syntax.  If missing, Reviewable will default to `Reviewable <support@reviewable.io>`.
 * `REVIEWABLE_SMTP_BCC`: A `Bcc` email address to copy each message to, useful for keeping an eye on the emails that Reviewable is sending.  If missing, no copies are sent.
-* `REVIEWABLE_USER_CONTENT_PATH`: An absolute path to a directory on a shared persistent volume that will be used to store comment attachments.  The file types and sizes will be checked by Reviewable; as of this writing, only images up to 10MB in size are allowed.  If missing, users won't be able to attach files to comments.
-* `REVIEWABLE_PING_URL`: A URL that each server will ping with a GET request at 1 minute intervals as long as (it thinks) it's healthy.  You can connect this to some external health-monitoring system that can alert you if all servers are unhealthy.
+
+##### File uploads
+Destination for file attachments in comments.  The file types and sizes will be checked by Reviewable; as of this writing, only images up to 10MB in size are allowed.  At most one of the options should be set; if none are, then file uploads will be refused.
+* `REVIEWABLE_USER_CONTENT_PATH`: An absolute path to a directory on a shared persistent volume with read/write access that will be used to store comment attachments.
+* `REVIEWABLE_S3_BUCKET`: The name of an AWS S3 bucket for storing files.  If set, you also need to specify a user with `s3:PutObject` permissions on the bucket by setting `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.  You can also specify the bucket's region via `AWS_REGION`.
+
+##### Monitoring
+Connections to external systems to monitor the health of the application.  Because errors and warnings can be hard to notice in the logs, Reviewable also sends everything of note to [Sentry](https://getsentry.com).  It's highly recommended that you configure this integration; you can choose to use the DSNs provided with your license to send everything to us (some private data may be included, but never repo contents), create your own [hosted Sentry account](https://getsentry.com/signup/), or [host an instance](https://github.com/getsentry/sentry) of the open source server yourself.
+* `REVIEWABLE_SERVER_SENTRY_DSN`: The Sentry DSN to send server errors to; must include both public and private keys.
+* `REVIEWABLE_CLIENT_SENTRY_DSN`: The public Sentry DSN to send client errors to; must only include the public key.
+* `REVIEWABLE_PING_URL`: A URL that each server will ping with a GET request at 1 minute intervals as long as (it thinks) it's healthy.  You can connect this to an external health-monitoring system (such as [Healthchecks](https://healthchecks.io/) or [Cronitor](https://cronitor.io/)) that can alert you if all servers are unhealthy.
+
+##### UI customization
+Basic UI customization.
 * `REVIEWABLE_TERMS_URL`: The URL for the Terms link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_PRIVACY_URL`: The URL for the Privacy link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
+
+##### Container configuration
+Extra configuration for optimizing the server runtime.
 * `GAE_MODULE_INSTANCE`: The zero-based, consecutive instance number of the current process.  If set, some servers will specialize themselves to optimize latency for user-facing operations.
-* `GAE_VM`: If set (to any value), the servers will handle requests to `/_ah/health`, `/_ah/start`, and `/_ah/stop`, per the [standard GAE semantics](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#lifecycle_events).  It's up to you to restrict requests to those endpoints so random people can't shut down your servers.  The servers will also trust the proxy that's immediately in front of them.
+* `GAE_VM`: If set (to any value), the servers will handle requests to `/_ah/health`, `/_ah/start`, and `/_ah/stop`, per the [standard GAE semantics](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#lifecycle_events).  It's up to you to restrict requests to those endpoints so random people can't shut down your servers.  The servers will also trust headers inserted by the last HTTP proxy.
 * `MEMORY_AVAILABLE`: The amount of memory available to the Node process in MiB.  Defaults to the lower of `/proc/meminfo` `MemTotal` and `/sys/fs/cgroup/memory/memory.stat` `hierarchical_memory_limit`.  If not set accurately, the servers are more likely to run out of memory and start swapping.  A server logs how much memory it thinks it has available when it starts up.
