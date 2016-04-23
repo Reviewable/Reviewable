@@ -49,8 +49,9 @@ Outbound email server configuration, used to send the occasional admin or error 
 
 ##### File uploads
 Destination for file attachments in comments.  The file types and sizes will be checked by Reviewable; as of this writing, only images up to 10MB in size are allowed.  At most one of the options should be set; if none are, then file uploads will be refused.
-* `REVIEWABLE_USER_CONTENT_PATH`: An absolute path to a directory on a shared persistent volume with read/write access that will be used to store comment attachments.
-* `REVIEWABLE_S3_BUCKET`: The name of an AWS S3 bucket for storing files.  If set, you also need to specify a user with `s3:PutObject` permissions on the bucket by setting `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.  You can also specify the bucket's region via `AWS_REGION`.
+* `REVIEWABLE_USER_CONTENT_PATH`: An absolute path to a directory on a shared persistent volume with read/write access that will be used to store comment attachments.  The files will be served on `$REVIEWABLE_HOST_URL/usercontent`.
+* `REVIEWABLE_S3_BUCKET`: The name of an AWS S3 bucket for storing files.  If set, you also need to specify a user with `s3:PutObject` and `s3:PutObjectAcl` permissions on bucket resources by setting `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, and the bucket's region via `AWS_REGION`.  Files are stored with `public-read` ACLs and will be served from `https://s3-<REGION>.amazonaws.com/<BUCKET>`, unless `REVIEWABLE_UPLOADED_FILES_URL` is set, in which case they're `private` and served from that URL instead.
+* `REVIEWABLE_UPLOADED_FILES_URL`: An alternative URL that gives access to files uploaded via any of the methods above.  This could be a CDN or a proxy you've set up that's fed from the upload method's "bare" access URL, or directly by the file store.  For example, on AWS you can set up a CloudFront distribution for your S3 bucket.
 
 ##### User code execution
 Some features, such as [custom review completion rules](https://github.com/Reviewable/Reviewable/wiki/FAQ#can-i-customize-what-makes-a-review-complete), require Reviewable to execute user-provided code.  You can configure where and how such code should be executed.
