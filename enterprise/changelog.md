@@ -4,5 +4,5 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Update: revised semantics for "discussing" disposition, and OK/FYI intent support
 - New: welcome message for new org members with one all-in authorization button
 
-#### 1061.1719 (min 1061.1719)
+#### 1063.1721 (min 1063.1721)
 - Initial public release
