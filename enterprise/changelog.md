@@ -1,8 +1,11 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: support GitHub Enterprise
 - Upd: support per-file determination of reviewed status in custom condition.
 - Upd: collapse large quoted code blocks in comments.
+- Upd: read configuration from file instead of env vars
+- Fix: hover bug on lower-right-corner indicators
 
 #### 1077.1739 (min 1063.1721)
 - New: welcome message for new org members with one all-in authorization button.
