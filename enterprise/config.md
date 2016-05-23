@@ -20,6 +20,8 @@ The servers will write logs to `stdout` and `stderr`, with no timestamps.  Some 
 
 ### Environment variables
 
+Reviewable is configured by defining a whole bunch of environment variables.  If you'd rather keep the configuration in a file, you can define the variables below in a JSON file consisting of a single object, where the keys are the environment variable names and the values are all strings, mount it into the Docker image, and pass the full path via the `REVIEWABLE_CONFIG_FILE` environment variable.  (If any variables are defined both in the environment and in the file, the value in the file takes precedence.)
+
 ##### Core configuration:
 These are required unless stated otherwise.
 * `REVIEWABLE_LICENSE`: You'll receive a license key when you purchase or renew a license.  This is just a JSON Web Token (JWT), signed with a private key, that encodes the constraints of your license.  It expires at the same time as the license.  The server won't run without a valid and current license key.
