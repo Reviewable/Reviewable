@@ -6,6 +6,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Upd: collapse large quoted code blocks in comments.
 - Upd: read configuration from file instead of env vars
 - Fix: hover bug on lower-right-corner indicators
+- Fix: not fully treating PR author as reviewer after they've marked a file as reviewed
 
 #### 1077.1739 (min 1063.1721)
 - New: welcome message for new org members with one all-in authorization button.
