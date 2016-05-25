@@ -14,6 +14,8 @@ aws-sdk | AWS client library | Apache-2.0
 body-parser | HTTP request body parser | MIT
 clone | Deep object cloning | MIT
 co | Generator-base coroutines | MIT
+co-request | Coroutine wrapper around request library | MIT
+cookie-parser | HTTP cookie parser | MIT
 escape-html | Escapes HTML | MIT
 express | HTTP server framework | MIT
 fireband | Firebase bandwidth analyzer | MIT
