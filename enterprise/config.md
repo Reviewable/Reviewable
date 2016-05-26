@@ -1,10 +1,15 @@
-### Connecting Reviewable to GitHub
+### Prereqs
 
-To enable Reviewable to integrate with GitHub, you first need to create a new GitHub application.  On https://github.com, find the settings section of your preferred organization&mdash;any one will do.  In the OAuth applications subsection click the Register new application button:
+To get started you first need to obtain an SSL certificate, create a GitHub application, and create a Firebase database.
+
+You'll need to decide the URL at which your Reviewable instance will operate, called `REVIEWABLE_HOST_URL`.  You'll want to obtain an SSL certificate so that connections to this address will be secure, and set up a proxy to terminate and load balance connections to Reviewable's server cluster.
+
+Next, on your GitHub instance, find the settings section of your preferred organization&mdash;any one will do.  In the OAuth applications subsection click the Register new application button:
 ![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/register_github_app.png)
-Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `https://auth.firebase.com/v2/<REVIEWABLE_FIREBASE>/auth/github/callback`, where `REVIEWABLE_FIREBASE` is the name of your Firebase project, so that GitHub's OAuth service can properly communicate with Firebase's authentication server.
+Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
-After configuring your GitHub application, head on over to the Login & Auth section in your Firebase App Dashboard. Enable GitHub authentication and then copy your GitHub application credentials (Client ID and Client Secret) into the appropriate inputs. You can find your GitHub application's client ID and secret at the top of the application's GitHub dashboard.  Make sure to whitelist the domain where you'll be hosting Reviewable, and set the session length to at least 3 weeks.
+Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  In the Database tab, find the datastore name (to set below) as the first part of the database URL: `https://<REVIEWABLE_FIREBASE>.firebaseio.com/`.  Also find a database secret in your project setting's Database tab (different from the left nav Database tab) to set as `REVIEWABLE_FIREBASE_AUTH` below:
+![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/firebase_secret.png)
 
 ### Runtime expectations
 
@@ -25,13 +30,13 @@ Reviewable is configured by defining a whole bunch of environment variables.  If
 ##### Core configuration:
 These are required unless stated otherwise.
 * `REVIEWABLE_LICENSE`: You'll receive a license key when you purchase or renew a license.  This is just a JSON Web Token (JWT), signed with a private key, that encodes the constraints of your license.  It expires at the same time as the license.  The server won't run without a valid and current license key.
-* `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We recommend that the host URL also be secure (`https://...`) as some requests will contain repository contents, but no credentials or other secrets are ever sent through this address. 
+* `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We strongly recommend that the host URL also be secure (`https://...`) since some OAuth credentials will be sent via these URLs. 
 * `PORT`: The port for the web server to listen on.  Reviewable assumes that a higher layer will provide load balancing and SSL termination, and forward requests to the servers over HTTP on an internal, secure network.  Defaults to port 8080, which is also exposed in the Docker container.
-* `REVIEWABLE_FIREBASE`: The name of the Firebase project you'll be using to store Reviewable data.  If we're managing your Firebase instance then your Google account will be granted access to it when you purchase a license.
-* `REVIEWABLE_FIREBASE_AUTH`: A master secret for the Firebase project above, obtained from the Secrets tab on the Firebase management page.  Can be rotated as necessary (e.g, if compromised).
+* `REVIEWABLE_FIREBASE`: The name of the Firebase database you'll be using to store Reviewable data.
+* `REVIEWABLE_FIREBASE_AUTH`: A master secret for the Firebase project above, obtained from the project settings Database tab on the Firebase console page.  Can be rotated as necessary (e.g., if compromised).
 * `REVIEWABLE_GITHUB_URL`: The URL for your instance of GitHub Enterprise, used by Reviewable for authentication, API calls, and links to the web interface.  If missing, Reviewable will connect to the public `https://github.com/` site instead, with special allowances for its differences from GHE.
-* `REVIEWABLE_GITHUB_CLIENT_ID`: The hex client ID assigned to the GitHub application you created above.  If missing, Reviewable will authenticate users with GitHub via Firebase instead (and it's assumed that you set this up correctly).
-* `REVIEWABLE_GITHUB_CLIENT_SECRET`: The hex client secret assigned to the GitHub application you created above.  If missing, Reviewable will authenticate users with GitHub via Firebase instead (and it's assumed that you set this up correctly).
+* `REVIEWABLE_GITHUB_CLIENT_ID`: The hex client ID assigned to the GitHub application you created above.
+* `REVIEWABLE_GITHUB_CLIENT_SECRET`: The hex client secret assigned to the GitHub application you created above.
 * `REVIEWABLE_GITHUB_VIRGIN_USERNAME`: The username of a "virgin" account on your GitHub instance that can be used for checking public access permissions (and some other non-privileged work).  This account should have no repos, and no membership in any organization.  After creating it, you need to use the account once to sign into your Reviewable instance with an empty auth scope.  If missing, Reviewable will access the API anonymously instead but this is severely rate-limited by GitHub and may cause some operations to fail.
 
 ##### Security
