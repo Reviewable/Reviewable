@@ -11,7 +11,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: not fully treating PR author as reviewer after they've marked a file as reviewed.
 - Fix: welcome offered to users who aren't members of any subscribed org.
 
-#### 1077.1739 (min 1063.1721)
+#### 1077.1739 (min 1063.1721) 2016-05-20
 - New: welcome message for new org members with one all-in authorization button.
 - Upd: show who a review is waiting on, and support in custom conditions.
 - Upd: shorten default GitHub status message to fit in 50 chars.
@@ -21,5 +21,5 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: don't add code quote if other quote already included in comment.
 - Fix: other minor fixes for rare client crashes.
 
-#### 1065.1721 (min 1063.1721)
+#### 1065.1721 (min 1063.1721) 2016-05-10
 - Initial public release.
