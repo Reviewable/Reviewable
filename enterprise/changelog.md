@@ -2,11 +2,14 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: support GitHub Enterprise
+- New: use GitHub OAuth directly for authentication instead of delegating to Firebase.
+- Upd: autoquote selected text on reply.
 - Upd: support per-file determination of reviewed status in custom condition.
 - Upd: collapse large quoted code blocks in comments.
-- Upd: read configuration from file instead of env vars
-- Fix: hover bug on lower-right-corner indicators
-- Fix: not fully treating PR author as reviewer after they've marked a file as reviewed
+- Upd: read configuration from file instead of env vars.
+- Fix: hover bug on lower-right-corner indicators.
+- Fix: not fully treating PR author as reviewer after they've marked a file as reviewed.
+- Fix: welcome offered to users who aren't members of any subscribed org.
 
 #### 1077.1739 (min 1063.1721)
 - New: welcome message for new org members with one all-in authorization button.
