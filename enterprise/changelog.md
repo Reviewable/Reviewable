@@ -1,6 +1,9 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- Fix: support GitHub multiple assignees (when the feature shows up in GHE, at least)
+
+#### 1087.1754 (min 1063.1721) 2016-05-30
 - New: support GitHub Enterprise
 - New: use GitHub OAuth directly for authentication instead of delegating to Firebase.
 - Upd: autoquote selected text on reply.
