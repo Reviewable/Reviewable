@@ -1,3 +1,5 @@
+_This is a sample onboarding doc from one of Reviewable's larger users.  Use it as you will, and feel free to suggest improvements._
+
 # Reviewable.io
 
 We use [Reviewable.io] to conduct code reviews on GitHub pull requests.
