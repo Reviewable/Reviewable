@@ -1,7 +1,11 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1104.1771 (min 1063.1721) 2016-06-25
+- Fix: bootstrap when license has a username instead of a user id
 - Fix: support GitHub multiple assignees (when the feature shows up in GHE, at least)
+- Fix: lots of small things on both client and server
 
 #### 1087.1754 (min 1063.1721) 2016-05-30
 - New: support GitHub Enterprise
