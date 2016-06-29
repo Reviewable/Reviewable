@@ -57,6 +57,7 @@ altfire | Firebase library adapter for Angular | MIT
 angular | Angular library | MIT
 angular-animate | Angular animation library | MIT
 angular-digest-hud | Angular digest timing analyzer | MIT
+angular-elastic | Text area autosizing | MIT
 angular-hotkeys | Angular hotkey manager | MIT
 angular-mocks | Angular mocking test helper | MIT
 angular-route | Angular controller router | MIT
