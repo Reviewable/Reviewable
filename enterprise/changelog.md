@@ -1,6 +1,8 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: all repo settings now available in a single panel
+- New: new repos can now inherit settings from a prototype repo
 
 #### 1104.1771 (min 1063.1721) 2016-06-25
 - Fix: bootstrap when license has a username instead of a user id
