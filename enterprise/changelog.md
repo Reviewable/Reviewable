@@ -4,7 +4,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - New: all repo settings now available in a single panel
 - New: new repos can now inherit settings from a prototype repo
 - Upd: [#350](https://github.com/Reviewable/Reviewable/issues/350)
-- Fix: [#340](https://github.com/Reviewable/Reviewable/issues/340), [#352](https://github.com/Reviewable/Reviewable/issues/352)
+- Fix: [#340](https://github.com/Reviewable/Reviewable/issues/340), [#341](https://github.com/Reviewable/Reviewable/issues/341), [#352](https://github.com/Reviewable/Reviewable/issues/352)
 
 #### 1104.1771 (min 1063.1721) 2016-06-25
 - Fix: bootstrap when license has a username instead of a user id
