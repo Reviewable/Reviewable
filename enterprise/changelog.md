@@ -1,10 +1,15 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: squash and fast-forward merges, editing of merge commit message
+- New: update source branch from target
+
+#### 1117.1791 (min 1063.1721) 2016-07-14
 - New: all repo settings now available in a single panel
 - New: new repos can now inherit settings from a prototype repo
 - Upd: [#350](https://github.com/Reviewable/Reviewable/issues/350)
-- Fix: [#340](https://github.com/Reviewable/Reviewable/issues/340), [#341](https://github.com/Reviewable/Reviewable/issues/341), [#352](https://github.com/Reviewable/Reviewable/issues/352)
+- Fix: adapt to non-backwards-compatible change in Firebase authentication server
+- Fix: [#340](https://github.com/Reviewable/Reviewable/issues/340), [#341](https://github.com/Reviewable/Reviewable/issues/341), [#352](https://github.com/Reviewable/Reviewable/issues/352), [#357](https://github.com/Reviewable/Reviewable/issues/357)
 
 #### 1104.1771 (min 1063.1721) 2016-06-25
 - Fix: bootstrap when license has a username instead of a user id
