@@ -3,6 +3,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - New: squash and fast-forward merges, editing of merge commit message
 - New: update source branch from target
+- Upd: [#359](https://github.com/Reviewable/Reviewable/issues/359)
+- Fix: [#308](https://github.com/Reviewable/Reviewable/issues/308), [#358](https://github.com/Reviewable/Reviewable/issues/358)
 
 #### 1117.1791 (min 1063.1721) 2016-07-14
 - New: all repo settings now available in a single panel
