@@ -4,7 +4,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: automated detection and reconnection of renamed repos and organizations
 - New: optional encryption of user-controlled text properties in the datastore
 
-#### 1125.1815 (min 1063.1721) 2016-07-20
+#### 1130.1815 (min 1063.1721) 2016-07-20
 - New: squash and fast-forward merges, editing of merge commit message
 - New: update source branch from target
 - Upd: removed REVIEWABLE_GITHUB_VIRGIN_USERNAME env var as it's no longer needed
