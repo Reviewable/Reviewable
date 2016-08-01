@@ -95,10 +95,11 @@ Some features, such as [custom review completion rules](https://github.com/Revie
         "Action": [
             "logs:CreateLogGroup",
             "logs:PutRetentionPolicy",
-            "logs:DeleteLogGroup"
+            "logs:DeleteLogGroup",
+            "logs:DescribeLogGroups"
         ],
         "Resource": [
-            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:/aws/lambda/*"
+            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*:*:*"
         ]
     }
 ]
