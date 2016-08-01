@@ -1,8 +1,9 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
-- Fix: automated detection and reconnection of renamed repos and organizations
 - New: optional encryption of user-controlled text properties in the datastore
+- Fix: automated detection and reconnection of renamed repos and organizations
+- Fix: [#366](https://github.com/Reviewable/Reviewable/issues/366), [#367](https://github.com/Reviewable/Reviewable/issues/367), [#368](https://github.com/Reviewable/Reviewable/issues/368), [#369](https://github.com/Reviewable/Reviewable/issues/369)
 
 #### 1130.1815 (min 1063.1721) 2016-07-20
 - New: squash and fast-forward merges, editing of merge commit message
