@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - New: optional encryption of user-controlled text properties in the datastore
 - Fix: automated detection and reconnection of renamed repos and organizations
+- Fix: improved scaling in the face of very high GitHub event rates
 - Fix: [#366](https://github.com/Reviewable/Reviewable/issues/366), [#367](https://github.com/Reviewable/Reviewable/issues/367), [#368](https://github.com/Reviewable/Reviewable/issues/368), [#369](https://github.com/Reviewable/Reviewable/issues/369), [#371](https://github.com/Reviewable/Reviewable/issues/371)
 
 #### 1130.1815 (min 1063.1721) 2016-07-20
