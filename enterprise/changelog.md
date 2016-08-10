@@ -2,6 +2,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: optional encryption of user-controlled text properties in the datastore
+- Fix: security issue fix part 2
+- Fix: [#385](https://github.com/Reviewable/Reviewable/issues/385)
 
 #### 1152.1875 (min 1063.1721) 2016-08-08
 - Upd: improve detection of Go declaration headers
