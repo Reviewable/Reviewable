@@ -2,13 +2,15 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: optional encryption of user-controlled text properties in the datastore
-- Upd: improve styling of wrapped lines in diff and fixed some line length computation bugs
-- Upd: turn on gzip compression in the web server
+
+#### 1158.1885 (min 1152.1875) 2016-08-15
+- Upd: improved styling of wrapped lines in diff and fixed some line length computation bugs
+- Upd: turned on gzip compression in the web server
 - Fix: security issue fix part 2
 - Fix: [#385](https://github.com/Reviewable/Reviewable/issues/385)
 
 #### 1152.1875 (min 1063.1721) 2016-08-08
-- Upd: improve detection of Go declaration headers
+- Upd: improved detection of Go declaration headers
 - Fix: split reply emails into separate discussions
 - Fix: security issue fix part 1
 
