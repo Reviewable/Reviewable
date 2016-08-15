@@ -2,6 +2,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: optional encryption of user-controlled text properties in the datastore
+- Upd: improve styling of wrapped lines in diff and fixed some line length computation bugs
+- Upd: turn on gzip compression in the web server
 - Fix: security issue fix part 2
 - Fix: [#385](https://github.com/Reviewable/Reviewable/issues/385)
 
