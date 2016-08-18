@@ -15,6 +15,7 @@ body-parser | HTTP request body parser | MIT
 clone | Deep object cloning | MIT
 co | Generator-base coroutines | MIT
 co-request | Coroutine wrapper around request library | MIT
+compression | Response compression middleware for Express | MIT
 cookie-parser | HTTP cookie parser | MIT
 escape-html | Escapes HTML | MIT
 express | HTTP server framework | MIT
@@ -22,6 +23,7 @@ fireband | Firebase bandwidth analyzer | MIT
 firebase | Firebase client library | [Firebase ToS](https://www.firebase.com/terms/terms-of-service.html)
 firebase-on-error | Firebase error handling interceptor | MIT
 firebase-token-generator | Generates Firebase JWT tokens | MIT
+firecrypt | Firebase encryption interceptor | MIT
 firelease | Firebase queue manager | MIT
 freeport | Finds a free TCP port | Apache-2.0
 hubkit | GitHub client library | MIT
@@ -65,11 +67,15 @@ angular-sanitize | HTML sanitization | MIT
 angular-scroll | Scroll position directive | MIT
 angular-touch | Angular touch input support | MIT
 codemirror | Code editor widget | MIT
+crypto-js | Encryption algorithms and infrastructure | MIT
+cryptojs-extension | Extra encryption algorithms | MIT
 diffmatchpatch | Textual diff algorithm | Apache-2.0
 droidsans | Font | Apache-2.0
 es6-promise-polyfill | Promise class polyfill | MIT
 firebase | Firebase client library | [Firebase ToS](https://www.firebase.com/terms/terms-of-service.html)
 firebase-on-error | Firebase error handling interceptor | MIT
+firecrypt | Firebase encryption interceptor | MIT
+fix-firebase-transaction | Firebase transaction semantics patch | MIT
 github-markdown-css | CSS to replicate GitHub Markdown rendering | MIT
 highlight.js | Source code syntax highlighting | BSD-3-Clause
 hubkit | GitHub client library | MIT
