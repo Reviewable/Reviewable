@@ -3,7 +3,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - New: optional encryption of user-controlled text properties in the datastore
 - New: private mode option
-- Fix: regression in schema validation constraints
+- Upd: mark outdated revisions, simplify rebase arcs visualization, and improve auto-diff bound picks when using "review each commit" style
+- Fix: undo regression in schema validation constraints
 - Fix: make review page somewhat usable on mobile devices
 - Fix: [#388](https://github.com/Reviewable/Reviewable/issues/388)
 
