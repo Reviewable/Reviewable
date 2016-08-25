@@ -7,7 +7,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Upd: mark outdated revisions, simplify rebase arcs visualization, and improve auto-diff bound picks when using "review each commit" style
 - Fix: undo regression in schema validation constraints
 - Fix: make review page somewhat usable on mobile devices
-- Fix: [#388](https://github.com/Reviewable/Reviewable/issues/388)
+- Fix: [#388](https://github.com/Reviewable/Reviewable/issues/388), [#389](https://github.com/Reviewable/Reviewable/issues/389)
 
 #### 1158.1885 (min 1152.1875) 2016-08-15
 - Upd: improved styling of wrapped lines in diff and fixed some line length computation bugs
