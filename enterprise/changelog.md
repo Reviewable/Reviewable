@@ -1,6 +1,8 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1168.1901 (min 1152.1875) 2016-08-25
 - New: optional encryption of user-controlled text properties in the datastore
 - New: private mode option for server
 - New: expose ability to switch a PR's base branch
