@@ -1,7 +1,12 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
-- Fix: improve GitHub API quota management for connected repositories
+
+#### 1186.1905 (min 1152.1875) 2016-08-30
+- Fix: balance GitHub calls among other admins for connected repositories when API quota gets low
+- Fix: guesstimate GitHub burst quota usage and postpone or reassign tasks that might trigger an abuse warning
+- Fix: set GitHub request timeouts based on remaining task lease time
+- Fix: don't query `/rate_limit` on GitHub Enterprise instances
 
 #### 1168.1901 (min 1152.1875) 2016-08-25
 - New: optional encryption of user-controlled text properties in the datastore
