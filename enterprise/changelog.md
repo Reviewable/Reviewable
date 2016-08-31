@@ -2,6 +2,10 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 
+#### 1193.1907 (min 1152.1875) 2016-08-31
+- Fix: stop sending bogus "your authorization is broken" emails
+- Fix: many issues related to all-organizations licenses
+
 #### 1186.1905 (min 1152.1875) 2016-08-30
 - Fix: balance GitHub calls among other admins for connected repositories when API quota gets low
 - Fix: guesstimate GitHub burst quota usage and postpone or reassign tasks that might trigger an abuse warning
