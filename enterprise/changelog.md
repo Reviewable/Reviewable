@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - Fix: clean up more alternative admin selection corner cases
 - Fix: group GitHub timeouts together in Sentry
+- Fix: correctly parse broken up discussion URLs in emails
 
 #### 1193.1907 (min 1152.1875) 2016-08-31
 - Fix: stop sending bogus "your authorization is broken" emails
