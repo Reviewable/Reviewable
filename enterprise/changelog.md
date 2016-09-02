@@ -1,9 +1,13 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1203.1910 (min 1152.1875) 2016-09-02
 - Fix: clean up more alternative admin selection corner cases
 - Fix: group GitHub timeouts together in Sentry
+- Fix: make long-running tasks (e.g., large PR syncs) more reliable by automatically extending lease
 - Fix: correctly parse broken up discussion URLs in emails
+- Fix: adjust some regexes to deal with GHE URLs
 
 #### 1193.1907 (min 1152.1875) 2016-08-31
 - Fix: stop sending bogus "your authorization is broken" emails
