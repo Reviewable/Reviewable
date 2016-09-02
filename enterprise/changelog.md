@@ -4,7 +4,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### 1203.1910 (min 1152.1875) 2016-09-02
 - Fix: clean up more alternative admin selection corner cases
-- Fix: group GitHub timeouts together in Sentry
+- Fix: improve error event grouping in Sentry
 - Fix: make long-running tasks (e.g., large PR syncs) more reliable by automatically extending lease
 - Fix: correctly parse broken up discussion URLs in emails
 - Fix: adjust some regexes to deal with GHE URLs
