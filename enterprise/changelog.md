@@ -1,6 +1,7 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: show license details on Repositories page (for license admin user only)
 - Fix: pasting bug in recent versions of Firefox
 
 #### 1203.1910 (min 1152.1875) 2016-09-02
