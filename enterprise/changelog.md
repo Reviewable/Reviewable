@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - New: show license details on Repositories page (for license admin user only)
 - Fix: pasting bug in recent versions of Firefox
+- Fix: list all PRs on Reviews page when more than 100 in a single API request
 
 #### 1203.1910 (min 1152.1875) 2016-09-02
 - Fix: clean up more alternative admin selection corner cases
