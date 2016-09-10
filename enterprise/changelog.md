@@ -2,6 +2,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: show license details on Repositories page (for license admin user only)
+- New: maintenance mode that locks out the datastore for bulk updates
+- Upd: verify session encryption key on the client and sign out if stale to enable key rotation
 - Fix: pasting bug in recent versions of Firefox
 - Fix: list all PRs on Reviews page when more than 100 in a single API request
 - Fix: make automatic lease extension work in more cases
