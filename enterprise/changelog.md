@@ -2,7 +2,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: show license details on Repositories page (for license admin user only)
-- New: maintenance mode that locks out the datastore for bulk updates
+- New: maintenance mode that locks out the datastore for bulk updates (see new [ops playbook](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md) for instructions)
 - Upd: verify session encryption key on the client and sign out if stale to enable key rotation
 - Upd: shared diff worker process between tabs (improves source code caching)
 - Fix: pasting bug in recent versions of Firefox
