@@ -8,6 +8,8 @@ If you already have a license, you'll want to explore the links below.
 
 ##### [How to set up Reviewable on your premises](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md)
 
+##### [Ops playbook](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md)
+
 ##### [Changelog](https://github.com/Reviewable/Reviewable/blob/master/enterprise/changelog.md)
 
 ##### [Dependencies distributed with the image](https://github.com/Reviewable/Reviewable/blob/master/enterprise/dependencies.md)
