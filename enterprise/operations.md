@@ -1,4 +1,4 @@
-#### Maintenance mode
+### Maintenance mode
 
 You can switch Reviewable into maintenance mode to disable all clients' and servers' access to the Firebase datastore.  This can be useful when you need to atomically update the entire datastore, such as when restoring from backup or rotating encryption keys.
 
