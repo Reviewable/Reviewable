@@ -5,7 +5,8 @@ You can switch Reviewable into maintenance mode to disable all clients' and serv
 To turn on maintenance mode, run the following command:
 
 ```bash
-$ curl https://$REVIEWABLE_FIREBASE.firebaseio.com/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH -X PUT -d '{"message": "An HTML message to your users."}'
+$ curl https://$REVIEWABLE_FIREBASE.firebaseio.com/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH \
+       -X PUT -d '{"message": "An HTML message to your users."}'
 ```
 
 You must specify a message that will be displayed in the browser's modal overlay.  The message is in HTML, so you can embed links to internal status pages and such.  While Reviewable is in maintenance, all clients will be locked out like so:
@@ -15,5 +16,6 @@ You must specify a message that will be displayed in the browser's modal overlay
 To exit maintenance, run the following command:
 
 ```bash
-$ curl https://$REVIEWABLE_FIREBASE.firebaseio.com/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH -X DELETE
+$ curl https://$REVIEWABLE_FIREBASE.firebaseio.com/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH \
+       -X DELETE
 ```
