@@ -1,12 +1,14 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- Fix: list all PRs on Reviews page when more than 100 in a single API request
+
+#### 1225.1935 (min 1152.1875) 2016-09-12
 - New: show license details on Repositories page (for license admin user only)
 - New: maintenance mode that locks out the datastore for bulk updates (see new [ops playbook](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md) for instructions)
 - Upd: verify session encryption key on the client and sign out if stale to enable key rotation
 - Upd: shared diff worker process between tabs (improves source code caching)
 - Fix: pasting bug in recent versions of Firefox
-- Fix: list all PRs on Reviews page when more than 100 in a single API request
 - Fix: make automatic lease extension work in more cases
 - Fix: work around stuck connections that force the user offline due to "stale writes"
 
