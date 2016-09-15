@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - Upd: add REVIEWABLE_DUMP_ENV to dump environment variables as Reviewable sees them, for debugging
 - Upd: add REVIEWABLE_UPLOADS_PROVIDER to explicitly set uploads destination; requires config change if you're using file uploads!
+- Fix: ensure client always shows latest data from datastore; in some edge cases, it got stuck showing local "fake" values
 - Fix: list all PRs on Reviews page when more than 100 in a single API request
 
 #### 1225.1935 (min 1152.1875) 2016-09-12
