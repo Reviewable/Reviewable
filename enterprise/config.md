@@ -25,7 +25,7 @@ The servers will write logs to `stdout` and `stderr`, with no timestamps.  Some 
 
 ### Environment variables
 
-Reviewable is configured via environment variables.  If you'd rather keep the configuration in a file, you can define the variables below in a JSON file consisting of a single object, where the keys are the environment variable names and the values are all strings, mount it into the Docker image, and pass the full path via the `REVIEWABLE_CONFIG_FILE` environment variable.  (If any variables are defined both in the environment and in the file, the value in the file takes precedence.)
+Reviewable is configured via environment variables.  If you'd rather keep the configuration in a file, you can define the variables below in a JSON file consisting of a single object, where the keys are the environment variable names and the values are all strings, mount it into the Docker image, and pass the full path via the `REVIEWABLE_CONFIG_FILE` environment variable.  (If any variables are defined both in the environment and in the file, the value in the file takes precedence.)  For greater certainty, you can set `REVIEWABLE_DUMP_ENV` to any value to dump all the environment variables to the console on server startup, as Reviewable sees them.
 
 ##### Core configuration:
 These are required unless stated otherwise.
