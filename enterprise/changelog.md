@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - Upd: add REVIEWABLE_DUMP_ENV to dump environment variables as Reviewable sees them, for debugging
 - Upd: add REVIEWABLE_UPLOADS_PROVIDER to explicitly set uploads destination; requires config change if you're using file uploads!
+- Upd: elide file path segments with ellipses only if extra space is needed for revision cells
 - Fix: ensure client always shows latest data from datastore; in some edge cases, it got stuck showing local "fake" values
 - Fix: deal correctly with user username changes
 - Fix: compute file path width correctly (it used to grow by 13px with each recomputation!) and don't waste space in single-file mode
