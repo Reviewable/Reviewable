@@ -5,6 +5,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Upd: add REVIEWABLE_UPLOADS_PROVIDER to explicitly set uploads destination; requires config change if you're using file uploads!
 - Fix: ensure client always shows latest data from datastore; in some edge cases, it got stuck showing local "fake" values
 - Fix: deal correctly with user username changes
+- Fix: compute file path width correctly (it used to grow by 13px with each recomputation!) and don't waste space in single-file mode
 - Fix: list all PRs on Reviews page when more than 100 in a single API request
 
 #### 1225.1935 (min 1152.1875) 2016-09-12
