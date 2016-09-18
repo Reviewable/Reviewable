@@ -31,3 +31,19 @@ To exit maintenance, run the following command:
 $ curl https://$REVIEWABLE_FIREBASE.firebaseio.com/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH \
        -X DELETE
 ```
+
+### AES encryption key rotation
+
+You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_ENCRYPTION_AES_KEY`.
+
+1. Install `npm install --global firecrypt-tools`.
+2. Obtain a copy of `rules_firecrypt.json`, either by extracting it from the system's Docker image (it's in `/usr/src/app`) or by requesting the current copy from your support contact.
+3. Locate the current encryption key (if any) and generate a new encryption key if desired (`openssl rand --base64 64`).
+4. Put Reviewable in maintenance mode (instructions above).
+5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE --auth $REVIEWABLE_FIREBASE_AUTH --spec rule_firecrypt.json --oldKey <i>base64key</i> --newKey <i>base64Key</i></code> (using the environment values you configured for your server).
+6. Update your server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY` (if any).
+7. Exit maintenance mode (instructions above).
+
+Rotating keys will take approximately NN minutes per GB of database size, assuming a reasonably fast machine and network connection.  Before you rotate the key on your production database, you might want to clone it into a spare Firebase project with security rules set to `{"rules": {".read": false, ".write": false}}`) and run it there to ensure there will be no errors and get a better estimate of how long it will take.
+
+If the re-encryption runs into any errors it'll abort and leave the database in a partially-transformed state.  You'll need to get help from support to figure out the error and rerun the command until it completes successfully (it's idempotent).
