@@ -1,13 +1,16 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: [encryption key rotation tool](https://www.npmjs.com/package/firecrypt-tools) now available, along with [ops use instructions](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md#aes-encryption-key-rotation)
 - Upd: add REVIEWABLE_DUMP_ENV to dump environment variables as Reviewable sees them, for debugging
 - Upd: add REVIEWABLE_UPLOADS_PROVIDER to explicitly set uploads destination; requires config change if you're using file uploads!
 - Upd: elide file path segments with ellipses only if extra space is needed for revision cells
+- Upd: improve who will see a discussion as "unreplied", when everyone has seen the latest message but discussion is still unresolved
 - Fix: ensure client always shows latest data from datastore; in some edge cases, it got stuck showing local "fake" values
 - Fix: deal correctly with user username changes
 - Fix: compute file path width correctly (it used to grow by 13px with each recomputation!) and don't waste space in single-file mode
 - Fix: list all PRs on Reviews page when more than 100 in a single API request
+- Fix: don't busy loop in extreme error situations when checking permissions
 
 #### 1225.1935 (min 1152.1875) 2016-09-12
 - New: show license details on Repositories page (for license admin user only)
