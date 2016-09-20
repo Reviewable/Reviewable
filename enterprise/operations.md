@@ -4,7 +4,9 @@ You can switch Reviewable into maintenance mode to disable all clients' and serv
 
 #### Limitations
 
-The component that serves the app over HTTP will remain on throughout (except while restarting) so clients can continue to load the page, to be informed of the maintenance.  However, GitHub webhook events that arrive while maintenance mode is on will be rejected and won't be retried.  This will likely cause some reviews to fall out of sync in Reviewable (e.g., GitHub comments not posted, reviews not created for new PRs).  Once you exit maintenance mode, reviews will automatically resync as they're accessed or new webhooks arrive, and users can also force the immediate creation of any missing reviews from Reviewable's Reviews dashboard.
+The component that serves the app over HTTP will remain on throughout (except while restarting) so clients can continue to load the page, to be informed of the maintenance.  However, GitHub webhook events that arrive during maintenance mode will be rejected and won't be retried.  This will likely cause some reviews to fall out of sync in Reviewable (e.g., GitHub comments not posted, reviews not created for new PRs).  Once you exit maintenance mode, reviews will automatically resync as they're accessed or new webhooks arrive, and users can also force the immediate creation of any missing reviews from Reviewable's Reviews dashboard.
+
+Also, if you have `REVIEWABLE_PING_URL` set up, then pings won't be emitted while in maintenance mode and your monitoring system will likely alert.
 
 #### Entering maintenance mode
 
