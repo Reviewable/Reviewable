@@ -49,3 +49,15 @@ You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_E
 Rotating keys will take approximately NN minutes per GB of database size, assuming a reasonably fast machine and network connection.  Before you rotate the key on your production database, you might want to clone it into a spare Firebase project with security rules set to `{"rules": {".read": false, ".write": false}}`) and run it there to ensure there will be no errors and get a better estimate of how long it will take.
 
 If the re-encryption runs into any errors it'll abort and leave the database in a partially-transformed state.  You'll need to get help from support to figure out the error and rerun the command until it completes successfully.  The transformation is idempotent so it's safe to rerun a command repeatedly.
+
+### RSA encryption key rotation
+
+You can rotate the RSA `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` key used for encrypting GitHub tokens, or add a new one.  You can do this online, without entering maintenance mode.
+
+1. Generate a new encryption key (`openssl genrsa -out private.pem 4096`).
+2. Add the new key to the front of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys.
+3. Restart your servers.
+4. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `rotate_rsa_key`.
+5. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_AUTH`, and `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` in your shell just like on your servers.
+6. Run `rotate_rsa_key`.  The command is idempotent and can be rerun as necessary.  It shouldn't take more than a few minutes.
+7. At your convenience, remove any old keys from `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
