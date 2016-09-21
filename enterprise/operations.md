@@ -54,6 +54,8 @@ If the re-encryption runs into any errors it'll abort and leave the database in 
 
 You can rotate the RSA `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` key used for encrypting GitHub tokens, or add a new one.  You can do this online, without entering maintenance mode.
 
+Note that if you choose to rotate your RSA key then you must never downgrade your server below v1243.1957, as older versions may crash in this situation.
+
 1. Generate a new encryption key (`openssl genrsa -out private.pem 4096`).
 2. Add the new key to the front of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys.
 3. Restart your servers.
