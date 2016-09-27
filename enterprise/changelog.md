@@ -2,6 +2,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - Upd: updated Highlight.js and CodeMirror libraries
+- Fix: guard against a rare condition where a closed PR sync fails repeatedly
 
 #### 1243.1957 (min 1152.1875) 2016-09-21
 - New: [AES encryption key rotation tool](https://www.npmjs.com/package/firecrypt-tools) now available, along with [ops use instructions](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md#aes-encryption-key-rotation)
