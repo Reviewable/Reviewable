@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 #### Upcoming changes
 - Upd: updated Highlight.js and CodeMirror libraries
 - Upd: prepare support for rebase & merge
+- Fix: detect stuck transactions (due to Firebase SDK bug) and shut down so server can be restarted
 - Fix: guard against a rare condition where a closed PR sync fails repeatedly
 - Fix: allow uppercase chars in assignee directive usernames
 
