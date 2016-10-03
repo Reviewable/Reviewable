@@ -1,6 +1,8 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1259.1971 (min 1152.1875) 2016-10-03
 - Upd: updated syntax higlighting and code editor libraries
 - Upd: prepare support for rebase & merge
 - Fix: detect stuck transactions (due to Firebase SDK bug) and shut down so server can be restarted
