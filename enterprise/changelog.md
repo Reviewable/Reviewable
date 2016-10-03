@@ -6,6 +6,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: detect stuck transactions (due to Firebase SDK bug) and shut down so server can be restarted
 - Fix: guard against a rare condition where a closed PR sync fails repeatedly
 - Fix: allow uppercase chars in assignee directive usernames
+- Fix: don't send low quota warning emails when there were transient errors looking for alternative admins
 
 #### 1243.1957 (min 1152.1875) 2016-09-21
 - New: [AES encryption key rotation tool](https://www.npmjs.com/package/firecrypt-tools) now available, along with [ops use instructions](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md#aes-encryption-key-rotation)
