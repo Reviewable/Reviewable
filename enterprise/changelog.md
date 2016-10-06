@@ -1,7 +1,10 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: support rebase & merge and delegate merge style allowability to GitHub (if supported in GHE)
 - Fix: ensure controlled shutdown actually exits the process, regardless of secondary failures
+- Fix: use correct condition to determine whether branch can be fast forward merged
+- Fix: resync PR after merge if repo not connected, to avoid merge button being enabled on page reload
 
 #### 1259.1971 (min 1152.1875) 2016-10-03
 - Upd: update syntax higlighting and code editor libraries
