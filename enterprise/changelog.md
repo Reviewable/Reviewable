@@ -1,7 +1,15 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1273.1979 (min 1273.1977) 2016-10-10
+- Upd: support Web Crypto for encrypting GitHub tokens; use new REVIEWABLE_WEB_CRYPTO_REQUIRED config to force
+- Fix: integrate fix for performance regression in AES crypto routines
+
+#### 1273.1977 (min 1259.1971) 2016-10-10
 - New: support rebase & merge and delegate merge style allowability to GitHub (if supported in GHE)
+- Upd: prepare to support Web Crypto for encrypting GitHub tokens
+- Upd: add bindable nextPersonallyUnreviewedFile (etc.) command
 - Fix: ensure controlled shutdown actually exits the process, regardless of secondary failures
 - Fix: use correct condition to determine whether branch can be fast forward merged
 - Fix: resync PR after merge if repo not connected, to avoid merge button being enabled on page reload
