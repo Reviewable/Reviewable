@@ -2,6 +2,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - Fix: unbreak Edge, which also has a non-compliant Web Crypto implementation
+- Fix: better support the rename-then-recreate repo workflow
 
 #### 1273.1981 (min 1273.1977) 2016-10-11
 - Fix: unbreak Safari, which was completely unable to load Reviewable once signed in due to a broken Web Crypto implementation
