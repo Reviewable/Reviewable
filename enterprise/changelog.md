@@ -2,6 +2,9 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 
+#### 1273.1981 (min 1273.1977) 2016-10-11
+- Fix: unbreak Safari, which was completely unable to load Reviewable once signed in due to a broken Web Crypto implementation
+
 #### 1273.1979 (min 1273.1977) 2016-10-10
 - Upd: support Web Crypto for encrypting GitHub tokens; use new REVIEWABLE_WEB_CRYPTO_REQUIRED config to force
 - Fix: integrate fix for performance regression in AES crypto routines
