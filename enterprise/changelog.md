@@ -1,6 +1,7 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- Fix: unbreak Edge, which also has a non-compliant Web Crypto implementation
 
 #### 1273.1981 (min 1273.1977) 2016-10-11
 - Fix: unbreak Safari, which was completely unable to load Reviewable once signed in due to a broken Web Crypto implementation
