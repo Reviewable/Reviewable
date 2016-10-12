@@ -2,6 +2,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - Fix: unbreak Edge, which also has a non-compliant Web Crypto implementation
+- Fix: unbreak Chrome when page served over HTTP
+- Fix: make "My PRs in any public/private repo" connection work again (will retroactively connect past PRs)
 - Fix: better support the rename-then-recreate repo workflow
 
 #### 1273.1981 (min 1273.1977) 2016-10-11
