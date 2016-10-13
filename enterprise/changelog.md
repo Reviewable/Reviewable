@@ -1,10 +1,12 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1275.1985 (min 1273.1977) 2016-10-13
 - New: if the `X-Forwarded-Proto` header is set to `http`, and REVIEWABLE_HOST_URL has an `https` address, then issue a permanent redirect to the secure version of the requested URL
 - Fix: unbreak Edge, which also has a non-compliant Web Crypto implementation
 - Fix: unbreak Chrome when page served over HTTP
-- Fix: make "My PRs in any public/private repo" connection work again (will retroactively connect past PRs)
+- Fix: make "My PRs in any public/private repo" connections work again (will retroactively connect past PRs)
 - Fix: better support the rename-then-recreate repo workflow
 - Fix: only prefetch the most recent 100 issues for autocompletion on page load to reduce latency; fetch all issues only when #-autocomplete triggered
 
