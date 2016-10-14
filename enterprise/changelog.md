@@ -2,6 +2,11 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 
+#### 1277.1987 (min 1273.1977) 2016-10-14
+- Upd: support Safari's incomplete implementation of Web Crypto
+- Fix: correctly grant permissions in an encrypted datastore for repos whose names need escaping
+- Fix: take care of some query handling bugs exposed by the limited issue prefetch
+
 #### 1275.1985 (min 1273.1977) 2016-10-13
 - New: if the `X-Forwarded-Proto` header is set to `http`, and REVIEWABLE_HOST_URL has an `https` address, then issue a permanent redirect to the secure version of the requested URL
 - Fix: unbreak Edge, which also has a non-compliant Web Crypto implementation
