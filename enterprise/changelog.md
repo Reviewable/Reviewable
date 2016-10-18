@@ -1,9 +1,13 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- New: add `?debug=latency` for debugging page loading latency issues
+- Upd: support Safari's incomplete implementation of Web Crypto
+- Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
+- Fix: determine fast-forward merge availability and "out-of-date" PR correctly
+- Fix: fix minor issues with crash overlay
 
 #### 1277.1987 (min 1273.1977) 2016-10-14
-- Upd: support Safari's incomplete implementation of Web Crypto
 - Fix: correctly grant permissions in an encrypted datastore for repos whose names need escaping
 - Fix: take care of some query handling bugs exposed by the limited issue prefetch
 
