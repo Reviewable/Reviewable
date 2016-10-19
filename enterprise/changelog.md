@@ -2,7 +2,6 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: add `?debug=latency` for debugging page loading latency issues
-- Upd: support Safari's incomplete implementation of Web Crypto
 - Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
 - Fix: determine fast-forward merge availability and "out-of-date" PR correctly
 - Fix: fix minor issues with crash overlay
