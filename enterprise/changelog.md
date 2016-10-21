@@ -2,9 +2,11 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: add `?debug=latency` for debugging page loading latency issues
+- Fix: unreplied discussions counter for PR author no longer includes discussions with unsent drafts
 - Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
 - Fix: determine fast-forward merge availability and "out-of-date" PR correctly
 - Fix: fix minor issues with crash overlay
+- Fix: minor layout issue with target branch editor in Firefox
 
 #### 1277.1987 (min 1273.1977) 2016-10-14
 - Fix: correctly grant permissions in an encrypted datastore for repos whose names need escaping
