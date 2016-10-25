@@ -5,6 +5,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: unreplied discussions counter for PR author no longer includes discussions with unsent drafts
 - Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
 - Fix: determine fast-forward merge availability and "out-of-date" PR correctly
+- Fix: dedicate an instance to permission checks again (if GAE_MODULE_INSTANCE set)
 - Fix: fix minor issues with crash overlay
 - Fix: minor layout issue with target branch editor in Firefox
 
