@@ -2,6 +2,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - New: add `?debug=latency` for debugging page loading latency issues
+- Upd: switch to a new promise/coroutine framework on the server for minor performance improvements
 - Fix: unreplied discussions counter for PR author no longer includes discussions with unsent drafts
 - Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
 - Fix: determine fast-forward merge availability and "out-of-date" PR correctly
