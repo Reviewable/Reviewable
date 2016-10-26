@@ -57,8 +57,8 @@ You can rotate the RSA `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` key used for encrypt
 Note that if you choose to rotate your RSA key then you must never downgrade your server below v1243.1957, as older versions may crash in this situation.
 
 1. Generate a new encryption key (`openssl genrsa -out private.pem 4096`).
-2. Add the new key to the front of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys.
-3. Restart your servers.
+2. Add the new key to the end of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys, and restart your servers.  This is necessary to ensure that all servers have the new key before the clients start using it to encrypt data.  If you don't do rolling upgrades on your servers (i.e., all servers are shut down before new ones are deployed) then you can safely skip this step.
+3. Move the new key to the front of `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
 4. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `rotate_rsa_key`.
 5. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_AUTH`, and `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` in your shell just like on your servers.
 6. Run `rotate_rsa_key`.  The command is idempotent and can be rerun as necessary.  It shouldn't take more than a few minutes.
