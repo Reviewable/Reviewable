@@ -10,10 +10,12 @@ Package | Description | License
 agentkeepalive |Keep-alive HTTP connection manager | MIT
 analytics-node | Segment analytics library | MIT
 archiver | Zip file creator | MIT
+async-co | Coroutine collection utilities | ISC
 aws-sdk | AWS client library | Apache-2.0
+bluebird | Promise library | MIT
+bluebird-co | Generator-based coroutine library | MIT
 body-parser | HTTP request body parser | MIT
 clone | Deep object cloning | MIT
-co | Generator-base coroutines | MIT
 co-request | Coroutine wrapper around request library | MIT
 compression | Response compression middleware for Express | MIT
 cookie-parser | HTTP cookie parser | MIT
@@ -58,6 +60,7 @@ Package | Description | License
 altfire | Firebase library adapter for Angular | MIT
 angular | Angular library | MIT
 angular-animate | Angular animation library | MIT
+angular-cookies | Angular cookies library | MIT
 angular-digest-hud | Angular digest timing analyzer | MIT
 angular-elastic | Text area autosizing | MIT
 angular-hotkeys | Angular hotkey manager | MIT
@@ -76,6 +79,7 @@ firebase | Firebase client library | [Firebase ToS](https://www.firebase.com/ter
 firebase-on-error | Firebase error handling interceptor | MIT
 firecrypt | Firebase encryption interceptor | MIT
 fix-firebase-transaction | Firebase transaction semantics patch | MIT
+font-awesome | Icon font | SIL OFL 1.1
 github-markdown-css | CSS to replicate GitHub Markdown rendering | MIT
 highlight.js | Source code syntax highlighting | BSD-3-Clause
 hubkit | GitHub client library | MIT
@@ -83,7 +87,6 @@ hyphenation-patterns | Hyphenation patterns for en-us | LGPL
 hypher | Hyphenation engine | BSD-3-Clause
 jquery | DOM utilities library | MIT
 jquery.payment | Credit card validation | MIT
-jsencrypt | RSA crypto library | MIT
 jss | Dynamic stylesheet builder | MIT
 lodash | Utility functions | MIT
 markdown-mark | Markdown logo | CC0
@@ -94,7 +97,7 @@ normalize-css | CSS style reset | MIT
 paste.js | Image paste support | MIT
 raven-js | Sentry client library | MIT
 re-tree | Regex tree execution | MIT
-semantic | UI library | MIT
+semantic-ui | UI library | MIT
 serialized-lru-cache | LRU cache datatype | MIT
 setimmediate | setImmediate polyfill | MIT
 superagent | HTTP client library | MIT
