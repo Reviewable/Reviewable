@@ -1,6 +1,8 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+- Upd: use internal auth server in all environments, and shift some post-login processing from client to server
+
 - New: add `?debug=latency` for debugging page loading latency issues
 - Upd: switch to a new promise/coroutine framework on the server for minor performance improvements
 - Upd: add prefetch and preconnect directives to the page to improve initial load performance
