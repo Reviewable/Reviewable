@@ -6,6 +6,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - New: add `?debug=latency` for debugging page loading latency issues
 - Upd: switch to a new promise/coroutine framework on the server for minor performance improvements
 - Upd: add prefetch and preconnect directives to the page to improve initial load performance
+- Upd: add syntax highlighting for CMake
 - Fix: unreplied discussions counter for PR author no longer includes discussions with unsent drafts
 - Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
 - Fix: determine fast-forward merge availability and "out-of-date" PR correctly
