@@ -11,6 +11,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: tighten up security to mitigate repo existence info leak by probing for other people's permission tickets
 - Fix: determine fast-forward merge availability and "out-of-date" PR correctly
 - Fix: speed up permission checks in various ways, and recommend using a 2048 bit RSA key for `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS`
+- Fix: tweak queue health alerting thresholds to reduce false positives, especially when running with a single instance
+- Fix: fix various task lease issues that could lead to false positive error reports in Sentry
 - Fix: fix minor issues with crash overlay
 - Fix: fix minor layout issue with target branch editor in Firefox
 
