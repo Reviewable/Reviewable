@@ -2,6 +2,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - Upd: use internal auth server in all environments, and shift some post-login processing from client to server
+- Fix: allow new users to sign in!
 
 #### 1313.2011 (min 1273.1977) 2016-10-29
 - New: add `?debug=latency` for debugging page loading latency issues
