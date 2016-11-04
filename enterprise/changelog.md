@@ -1,6 +1,8 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
 #### Upcoming changes
+
+#### 1340.2023 (min 1313.1977) 2015-11-04
 - Upd: use internal auth server in all environments, and shift some post-login processing from client to server
 - Fix: allow new users to sign in!
 - Fix: reduce memory usage when syncing large PRs
