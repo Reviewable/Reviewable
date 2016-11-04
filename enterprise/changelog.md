@@ -6,6 +6,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 - Fix: reduce memory usage when syncing large PRs
 - Fix: capture more information for some exceptions
 - Fix: get rid of most bogus exceptions (on server, not user-visible) when syncing GitHub status
+- Fix: work around draft watermark rendering bug in Chrome and Safari on recent versions of Mac OS
 
 #### 1313.2011 (min 1273.1977) 2016-10-29
 - New: add `?debug=latency` for debugging page loading latency issues
