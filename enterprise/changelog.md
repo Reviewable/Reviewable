@@ -1,5 +1,7 @@
 This is the release log for Reviewable's Enterprise branch.  Each release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
+New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
+
 #### Upcoming changes
 - Fix: correcty check admin permissions for newly added repos on Repositories page
 - Fix: don't require branch update if strict status checks turned on but no require status checks selected
