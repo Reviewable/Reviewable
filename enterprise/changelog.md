@@ -2,6 +2,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 #### Upcoming changes
 - Fix: correcty check admin permissions for newly added repos on Repositories page
+- Fix: don't require branch update if strict status checks turned on but no require status checks selected
 
 #### 1340.2023 (min 1313.1977) 2015-11-04
 - Upd: use internal auth server in all environments, and shift some post-login processing from client to server
