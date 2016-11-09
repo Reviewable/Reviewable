@@ -5,6 +5,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes
 - Fix: correcty check admin permissions for newly added repos on Repositories page
 - Fix: don't require branch update if strict status checks turned on but no require status checks selected
+- Fix: restore ability to sign in with Edge and Internet Explorer
 
 #### 1340.2023 (min 1313.1977) 2015-11-04
 - Upd: use internal auth server in all environments, and shift some post-login processing from client to server
