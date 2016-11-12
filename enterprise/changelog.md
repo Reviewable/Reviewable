@@ -5,7 +5,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes
 - New: add option to put badge into a comment instead of PR description (control in repo settings panel)
 - Fix: correcty check admin permissions for newly added repos on Repositories page
-- Fix: don't require branch update if strict status checks turned on but no require status checks selected
+- Fix: don't require branch update if strict status checks turned on but no required status checks selected
 - Fix: restore ability to sign in with Edge and Internet Explorer
 - Fix: don't throw bogus fatal exception when user without push permissions visits a review in some conditions
 - Fix: work around a GitHub bug where the API returns inconsistent data about a PR's commits
