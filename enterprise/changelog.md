@@ -3,6 +3,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+
+#### 1360.2047 (min 1313.1977) 2016-11-14
 - New: add option to put badge into a comment instead of PR description (control in repo settings panel)
 - Fix: correcty check admin permissions for newly added repos on Repositories page
 - Fix: don't require branch update if strict status checks turned on but no required status checks selected
@@ -12,7 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: detect hard AWS Lambda timeouts and return a better error message
 - Fix: close malformed code blocks when publishing, so they don't corrupt the rest of the message
 
-#### 1340.2023 (min 1313.1977) 2015-11-04
+#### 1340.2023 (min 1313.1977) 2016-11-04
 - Upd: use internal auth server in all environments, and shift some post-login processing from client to server
 - Fix: allow new users to sign in!
 - Fix: reduce memory usage when syncing large PRs
