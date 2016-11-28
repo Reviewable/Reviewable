@@ -3,6 +3,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- Fix: allow acknowledging discussions when disposition is "withdrawn"
+- Fix: correctly render quoted text in batched comment messages (workaround for change in GitHub's Markdown parser)
 
 #### 1360.2047 (min 1313.1977) 2016-11-14
 - New: add option to put badge into a comment instead of PR description (control in repo settings panel)
