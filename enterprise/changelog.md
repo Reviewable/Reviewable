@@ -3,6 +3,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+
+#### 1362.2058 (min 1313.2023) 2016-11-29
 - Fix: allow acknowledging discussions when disposition is "withdrawn"
 - Fix: correctly render quoted text in batched comment messages (workaround for change in GitHub's Markdown parser)
 
