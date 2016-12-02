@@ -3,6 +3,9 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- New: respect `.gitattributes` `diff` attributes to suppress diffing of, e.g., generated files
+- Upd: allow specifying which user account should be the author of badge comments
+- Upd: auto-fit diff width to window in finer increments
 
 #### 1362.2058 (min 1313.2023) 2016-11-29
 - Fix: allow acknowledging discussions when disposition is "withdrawn"
