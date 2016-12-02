@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- New: share connection to Firebase among tabs (in Chrome and Firefox), improving page load performance if other tabs already open; clients now also perform encryption in a separate worker thread for improved UI responsiveness
 - New: respect `.gitattributes` `diff` attributes to suppress diffing of, e.g., generated files
 - Upd: allow specifying which user account should be the author of badge comments
 - Upd: auto-fit diff width to window in finer increments
