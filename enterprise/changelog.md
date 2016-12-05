@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: allow specifying which user account should be the author of badge comments
 - Upd: auto-fit diff width to window in finer increments
 - Fix: eliminate bogus unhandled rejection errors on the server
+- Fix: eliminate sporadic permission denied errors on the client due to `fillIssues` request contention
 
 #### 1362.2058 (min 1313.2023) 2016-11-29
 - Fix: allow acknowledging discussions when disposition is "withdrawn"
