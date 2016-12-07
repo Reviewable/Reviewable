@@ -13,3 +13,5 @@ If you already have a license, you'll want to explore the links below.
 ##### [Changelog](https://github.com/Reviewable/Reviewable/blob/master/enterprise/changelog.md)
 
 ##### [Dependencies distributed with the image](https://github.com/Reviewable/Reviewable/blob/master/enterprise/dependencies.md)
+
+##### Default [License Agreement](https://github.com/Reviewable/Reviewable/raw/master/enterprise/Reviewable MLA Template.pdf) template
