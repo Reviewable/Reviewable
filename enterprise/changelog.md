@@ -3,7 +3,9 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
-- New: respect `.gitattributes` `diff` attributes to suppress diffing of, e.g., generated files
+
+#### 1390.2098 (min 1313.2023) 2016-12-08
+- New: respect `.gitattributes` `diff` attributes to suppress diffing of, e.g., generated files, or force diffing / pick syntax highlighting language
 - Upd: allow specifying which user account should be the author of badge comments
 - Upd: auto-fit diff width to window in finer increments
 - Fix: eliminate bogus unhandled rejection errors on the server
