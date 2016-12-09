@@ -4,7 +4,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 
-#### 1394.2103 (min 1313.2023) 2016-12-09
+#### 1394.2104 (min 1313.2023) 2016-12-09
 - Fix: switch client's production flag back on; it got accidentally turned off in 1390.2098, but the only effect was a slight performance degradation and a bit of extra monitoring UI in the lower-right corner
 
 #### 1390.2098 (min 1313.2023) 2016-12-08
