@@ -5,6 +5,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes
 - Upd: upgrade server environment to Node v6.
 - Upd: remove support for `GAE_MODULE_INSTANCE`, as the new GAE flex environment no longer provides this value and AFAIK no other container runner provides an ordinal instance number either.
+- Upd: have server log errors with full stack traces to console if Sentry monitoring not set up.
 
 #### 1394.2104 (min 1313.2023) 2016-12-09
 - Fix: switch client's production flag back on; it got accidentally turned off in 1390.2098, but the only effect was a slight performance degradation and a bit of extra monitoring UI in the lower-right corner
