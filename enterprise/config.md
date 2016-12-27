@@ -115,8 +115,5 @@ Basic UI customization.
 
 ##### Container configuration
 Extra configuration for optimizing the server runtime.
-* `GAE_INSTANCE`: The zero-based, consecutive instance number of the current process.  (Legacy uses of `GAE_VM` and `GAE_MODULE_INSTANCE` are also grandfathered in.)  If set:
-  - Some servers will specialize themselves to optimize latency for user-facing operations.
-  - Servers will handle requests to `/_ah/health`, `/_ah/start`, and `/_ah/stop`, per the [standard GAE semantics](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#lifecycle_events).  It's up to you to restrict requests to those endpoints so random people can't shut down your servers.
-  - Servers will trust headers inserted by the last HTTP proxy.
+* `GAE_SERVICE` or `GAE_VM`: If non-empty (any value) servers will handle requests to `/_ah/health`, `/_ah/start`, and `/_ah/stop`, per the [standard GAE semantics](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#lifecycle_events).  It's up to you to restrict requests to those endpoints so random people can't shut down your servers.  Servers will also trust headers inserted by the last HTTP proxy.
 * `MEMORY_AVAILABLE`: The amount of memory available to the Node process in MiB.  Defaults to the lower of `/proc/meminfo` `MemTotal` and `/sys/fs/cgroup/memory/memory.stat` `hierarchical_memory_limit`.  If not set accurately, the servers are more likely to run out of memory and start swapping.  A server logs how much memory it thinks it has available when it starts up.
