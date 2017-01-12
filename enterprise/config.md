@@ -50,6 +50,7 @@ Connections to external systems to monitor the health of the application.  Becau
 * `REVIEWABLE_SERVER_SENTRY_DSN`: The Sentry DSN to send server errors to; must include both public and private keys.
 * `REVIEWABLE_CLIENT_SENTRY_DSN`: The public Sentry DSN to send client errors to; must only include the public key.
 * `REVIEWABLE_PING_URL`: A URL that each server will ping with a GET request at 1 minute intervals as long as (it thinks) it's healthy.  You can connect this to an external health-monitoring system (such as [Healthchecks](https://healthchecks.io/) or [Cronitor](https://cronitor.io/)) that can alert you if all servers are unhealthy.
+* `REVIEWABLE_ANALYTICS_URL`: A URL to send analytics events to that track user actions.  If set, both the client and server will `POST` JSON events to the URL that roughly follow the [Segment tracking spec](https://segment.com/docs/spec/track/).  You will likely need to implement a custom server or pipeline to gather and interpret these events.  At this time, we don't document or guarantee the stability of the event schema -- please get in touch if you'd like this to change.  If posting an event fails, both the client and server will log the error to the console (to aid in debugging) but otherwise ignore it.
 
 ##### Email
 Outbound email server configuration, used to send the occasional admin or error notification.  Normal review notifications all go through GitHub.
