@@ -3,11 +3,12 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- New: support `REVIEWABLE_ANALYTICS_URL` to allow for tracking of major user actions and customized stats.  Please see the [config guide](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring) for details.
 - Upd: upgrade server environment to Node v6.
 - Upd: remove support for `GAE_MODULE_INSTANCE`, as the new GAE flex environment no longer provides this value and AFAIK no other container runner provides an ordinal instance number either.
 - Upd: have server log errors with full stack traces to console if Sentry monitoring not set up.
-- Fix: handle mixed-case emoji tokens correctly
-- Fix: handle a repo renaming corner case correctly (repo renamed then original recreated)
+- Fix: handle mixed-case emoji tokens correctly.
+- Fix: handle a repo renaming corner case correctly (repo renamed then original recreated).
 
 #### 1394.2104 (min 1313.2023) 2016-12-09
 - Fix: switch client's production flag back on; it got accidentally turned off in 1390.2098, but the only effect was a slight performance degradation and a bit of extra monitoring UI in the lower-right corner
