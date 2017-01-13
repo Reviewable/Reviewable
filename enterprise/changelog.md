@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: upgrade server environment to Node v6.
 - Upd: remove support for `GAE_MODULE_INSTANCE`, as the new GAE flex environment no longer provides this value and AFAIK no other container runner provides an ordinal instance number either.
 - Upd: have server log errors with full stack traces to console if Sentry monitoring not set up.
+- Fix: improve workaround for Firebase stuck transaction bug.  The condition will now be detected earlier, reducing thrashing, and can now recover without restarting the instance in many cases.
 - Fix: handle mixed-case emoji tokens correctly.
 - Fix: handle a repo renaming corner case correctly (repo renamed then original recreated).
 
