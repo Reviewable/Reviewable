@@ -4,6 +4,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - New: support `REVIEWABLE_ANALYTICS_URL` to allow for tracking of major user actions and customized stats.  Please see the [config guide](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring) for details.
+- New: enable subscription admin to restrict Reviewable users to members of a set of teams.  (The default is to continue to allow any GHE user to sign in.)
 - Upd: upgrade server environment to Node v6.
 - Upd: remove support for `GAE_MODULE_INSTANCE`, as the new GAE flex environment no longer provides this value and AFAIK no other container runner provides an ordinal instance number either.
 - Upd: have server log errors with full stack traces to console if Sentry monitoring not set up.
