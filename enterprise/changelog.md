@@ -3,6 +3,9 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- Fix: reduce Firebase bandwidth usage again (regression).
+- Fix: prevent occasional permission denied error when revision being snapshotted gets deleted mid-transaction.
+- Fix: deal correctly with repos recreated multiple times with the same name.
 
 #### 1491.2156 (min 1313.2023) 2017-01-23
 - Upd: tighten up security headers when serving static files: `X-Content-Type-Options`, `X-Frame-Options`, and `X-XSS-Protection`.
