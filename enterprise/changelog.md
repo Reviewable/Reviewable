@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- Fix: properly cancel comment file upload when progress placeholder deleted
 
 #### 1517.2159 (min 1313.2023) 2017-02-18
 - Upd: opportunistically fix webhooks when `REVIEWABLE_GITHUB_SECRET_TOKEN` is changed.
