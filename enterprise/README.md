@@ -14,4 +14,4 @@ If you already have a license, you'll want to explore the links below.
 
 ##### [Dependencies distributed with the image](https://github.com/Reviewable/Reviewable/blob/master/enterprise/dependencies.md)
 
-##### Default [License Agreement](https://github.com/Reviewable/Reviewable/raw/master/enterprise/Reviewable+MLA+Template.pdf) template
+##### Default [License Agreement](https://github.com/Reviewable/Reviewable/raw/master/enterprise/Reviewable%20MLA%20Template.pdf) template
