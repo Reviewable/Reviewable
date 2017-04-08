@@ -4,6 +4,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - Fix: properly cancel comment file upload when progress placeholder deleted
+- Fix: render correct style in unchanged diff block due to changes in enclosing comments (two-column diffs only)
 
 #### 1517.2159 (min 1313.2023) 2017-02-18
 - Upd: opportunistically fix webhooks when `REVIEWABLE_GITHUB_SECRET_TOKEN` is changed.
