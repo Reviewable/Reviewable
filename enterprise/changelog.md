@@ -3,7 +3,8 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
-- Fix: if popup auth gets stuck (seems to happen in some mobile browsers?) it'll time out after 2 seconds and switch to using the redirect method instead
+- Fix: if popup auth gets stuck (seems to happen in some mobile browsers?) it'll time out after 2 seconds and switch to using the redirect method instead.
+- Fix: fix a time-of-check vs time-of-use bug when syncing a review with its PR that could result in bogus revisions being created in rare cases.
 
 #### 1531.2183 (min 1313.2023) 2017-04-18
 - New: add `REVIEWABLE_LOGGING_URL` setting to capture all console and exception logs in JSON format (if you don't want to set up Sentry and manually capture the server console); details in [config docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring).
