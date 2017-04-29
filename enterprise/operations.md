@@ -59,7 +59,24 @@ Note that if you choose to rotate your RSA key then you must never downgrade you
 1. Generate a new encryption key (`openssl genrsa -out private.pem 4096`).
 2. Add the new key to the end of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys, and restart your servers.  This is necessary to ensure that all servers have the new key before the clients start using it to encrypt data.  If you don't do rolling upgrades on your servers (i.e., all servers are shut down before new ones are deployed) then you can safely skip this step.
 3. Move the new key to the front of `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
-4. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `rotate_rsa_key`.
+4. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `rotate_rsa_key --help`.
 5. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_AUTH`, and `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` in your shell just like on your servers.
 6. Run `rotate_rsa_key`.  The command is idempotent and can be rerun as necessary.  It shouldn't take more than a few minutes.
 7. At your convenience, remove any old keys from `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
+
+### Data migration from reviewable.io
+
+You can work with us to migrate in-progress reviews and user data from reviewable.io to your new enterprise instance.  The migration proceeds in three phases and is non-destructive, so it's highly recommended to do a dry run or two.
+
+First, you need to request a migration from Reviewable support and provide the following information:
+1. A list of all repos to be migrated, as a JSON array of `"owner/repo"` strings.  If it's not obvious we may ask for proof of ownership of the repos.
+2. A mapping of github.com numeric user IDs to new GHE user IDs, as a JSON object of `"github:MMMM": "github:NNNN"` key-value pairs, where `MMMM` is the old numeric ID and `NNNN` the new one.  Note that only settings and data related to reviews in the repos above will be migrated &mdash; no personal information gets copied.
+3. The numeric GHE user ID of a "ghost" user that will be substituted for any referenced users that don't appear in your mapping.  GitHub maintains the [ghost](https://github.com/ghost) account on github.com and you probably want to create something similar.
+
+Next, we'll extract the required data from the reviewable.io datastore and send you a large JSON file that you'll use as input for the third phase.  It's probably best if there's no activity in your repos during this step and the following one so you get a clean copy.
+
+Finally, you'll load the extracted data into your own Reviewable datastore and sync it with your GHE instance.  Note that existing data will be overwritten so it's best to do this on an installation that hasn't seen actual use yet.
+1. Make sure you've signed in to your instance of Reviewable with your license admin account at least once.
+2. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `load_data --help`.
+3. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_AUTH`, and `REVIEWABLE_ENCRYPTION_AES_KEY` in your shell just like on your servers.
+4. Run `load_data --input data.js --admin github:NNNN` where `data.js` points to the data file we sent you and `NNNN` is the numeric GHE user ID of the license admin account.
