@@ -3,12 +3,14 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- New: show list of users occupying licensed seats when clicking on "M of N seats in use" in license info box on Repositories page.
+- New: support migrating review data from reviewable.io to new enterprise instance, in case of migration from github.com to GHE.
 - Upd: listen to _all_ GitHub webhook events for connected repos. This change will allow Reviewable to more easily support new GitHub features while remaining backwards-compatible with older GHE versions. It does mean that Reviewable instances will have to handle a higher load of incoming requests so you'll want to check your performance metrics after upgrading if you're not auto-scaling. (But unwanted events are dropped very quickly, so I don't expect a big impact.) For now, webhooks are updated to the new format opportunistically; a future release will sweep up any remainders.
 - Upd: always hide the file matrix on load if >200 files to improve performance, overriding the user's preference.  You can still toggle the file matrix open after the page loads if you want.
-- Fix: if popup auth gets stuck (seems to happen in some mobile browsers?) it'll time out after 2 seconds and switch to using the redirect method instead.
+- Fix: if popup auth gets stuck (seems to happen in some mobile browsers?) time out after 2 seconds and switch to using the redirect method instead.
 - Fix: fix a time-of-check vs time-of-use bug when syncing a review with its PR that could result in bogus revisions being created in rare cases.
 - Fix: make bindable `setCurrentDiscussionDisposition()` command work on newly created discussions that only have a draft comment.
-- Fix: allow opening review files that start with a `.` in a new tab.
+- Fix: allow opening review files whose names start with a `.` in a new tab.
 
 #### 1531.2183 (min 1313.2023) 2017-04-18
 - New: add `REVIEWABLE_LOGGING_URL` setting to capture all console and exception logs in JSON format (if you don't want to set up Sentry and manually capture the server console); details in [config docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring).
