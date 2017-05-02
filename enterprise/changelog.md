@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+- Fix: use correct ghost user ID for GHE (substituted when a user account has disappeared for some reason).
 
 #### 1549.2198 (min 1313.2023) 2017-04-30
 - New: show list of users occupying licensed seats when clicking on "M of N seats in use" in license info box on Repositories page.
