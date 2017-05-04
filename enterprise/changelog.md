@@ -4,6 +4,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - Fix: use correct ghost user ID for GHE (substituted when a user account has disappeared for some reason).
+- Fix: prevent spurious @-mentions of organizations or people with no access to repo from adding participants to a discussion.
 
 #### 1549.2198 (min 1313.2023) 2017-04-30
 - New: show list of users occupying licensed seats when clicking on "M of N seats in use" in license info box on Repositories page.
