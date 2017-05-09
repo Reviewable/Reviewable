@@ -3,9 +3,12 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Upcoming changes
+
+#### 1555.2206 (min 1313.2023) 2017-05-09
 - Fix: use correct ghost user ID for GHE (substituted when a user account has disappeared for some reason).
 - Fix: prevent spurious @-mentions of organizations or people with no access to repo from adding participants to a discussion.
 - Fix: if a repo's GitHub status updates are set to "if review visisted", and a status was posted for a review, and a new PR/review was created for the same commit, then keep updating the status even if the new review wasn't visited yet.  The previous logic changed the status to "disabled by admin" which was confusing and incorrect.
+- Fix: prevent a client crash when running in private mode and navigating directly to a review page before signing in (regression).
 
 #### 1549.2198 (min 1313.2023) 2017-04-30
 - New: show list of users occupying licensed seats when clicking on "M of N seats in use" in license info box on Repositories page.
