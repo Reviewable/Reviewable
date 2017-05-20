@@ -3,7 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Known issues
-- Web client crashes on startup in Safari 10.1 due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).
+- Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
