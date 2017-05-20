@@ -2,7 +2,13 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
-#### Upcoming changes (min 1549.2198)
+#### Known issues
+- Web client crashes on startup in Safari 10.1 due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).
+- See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
+
+#### Upcoming changes
+
+#### 1575.2214 (min 1549.2198) 2017-05-20
 - New: allow organization owners to request automatic connection of all newly created repos to Reviewable.  You can find the new toggles on the Repositories page.  You can do it for personal repos as well, but the reaction to a new repo may be delayed by up to 2 minutes (since there's no webhook for personal repo creation).
 - Upd: upgrade all connected repos to listen to _all_ GitHub webhook events.  This process will kick off automatically within minutes of starting up the new version and continue (with checkpoints) until finished, probably within a few minutes and definitely in less than 30 minutes.  (If you're doing a rolling upgrade, it may get delayed or start right away &mdash; either one is fine.)  While running, the upgrade process will keep one instance pretty busy so you might not want to upgrade during peak hours.  If you want to follow along, look for log lines with the token "migrate1549" for (minimal) status updates, and a final summary log line starting with "Migrated NNN legacy repositories" that indicates completion.  It's OK even if there's a few failures, as any repo that isn't completely idle will get updated the next time it sends a webhook anyway.  This upgrade process just hurries things along.
 - Fix: prevent occasional "permission denied" crash when upgrading OAuth scopes on the Reviews or Repositories page.
