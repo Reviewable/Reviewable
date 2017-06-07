@@ -7,9 +7,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+
+#### 1592.2216 (min 1549.2198) 2017-06-07
 - Upd: create a sample Reviewable commit status when connecting a repo so that it's visible when configuring branch protection settings in GitHub before creating a PR.
 - Upd: update syntax highlighting module and add Kotlin source file extension mappings.
-- Fix: correctly enforce minimum build requirements; the previous logic was too strict and would disallow rollbacks that should've been permitted.
+- Fix: correctly enforce minimum version requirements; the previous logic was too strict and would disallow rollbacks that should've been permitted.
 
 #### 1575.2214 (min 1549.2198) 2017-05-20
 - New: allow organization owners to request automatic connection of all newly created repos to Reviewable.  You can find the new toggles on the Repositories page.  You can do it for personal repos as well, but the reaction to a new repo may be delayed by up to 2 minutes (since there's no webhook for personal repo creation).
