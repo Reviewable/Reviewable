@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - Upd: create a sample Reviewable commit status when connecting a repo so that it's visible when configuring branch protection settings in GitHub before creating a PR.
+- Upd: update syntax highlighting module and add Kotlin source file extension mappings.
 - Fix: correctly enforce minimum build requirements; the previous logic was too strict and would disallow rollbacks that should've been permitted.
 
 #### 1575.2214 (min 1549.2198) 2017-05-20
