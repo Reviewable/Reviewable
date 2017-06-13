@@ -1,0 +1,311 @@
+{
+  "summary": {
+    "lastRevision": "r5",
+    "numUnresolvedDiscussions": 7,
+    "numFiles": 4,
+    "numUnreviewedFiles": 4,
+    "numFilesReviewedByAtLeast": [
+      4
+    ]
+  },
+  "pullRequest": {
+    "author": {
+      "username": "pkaminski"
+    },
+    "assignees": [],
+    "number": 1,
+    "numCommits": 9,
+    "target": {
+      "owner": "reviewable",
+      "repo": "demo",
+      "branch": "master"
+    },
+    "source": {
+      "owner": "reviewable",
+      "repo": "demo",
+      "branch": "work"
+    }
+  },
+  "revisions": [
+    {
+      "key": "r1",
+      "commitSha": "3cbc610e65a50b8291f443e6cf2b57fd11034ebb",
+      "baseCommitSha": "957b9b2b1b9e39aa473dc7deec2f3f8f3cbf65b7",
+      "commits": [
+        {
+          "sha": "5e082008104e6c40161f4933181f309b75be89ad",
+          "timestamp": 1407513129000
+        },
+        {
+          "sha": "3cbc610e65a50b8291f443e6cf2b57fd11034ebb",
+          "timestamp": 1407516190000
+        }
+      ],
+      "snapshotTimestamp": 1407516190000
+    },
+    {
+      "key": "r2",
+      "commitSha": "265c408bb1212542cf6c9cedd8e933362aab521f",
+      "baseCommitSha": "957b9b2b1b9e39aa473dc7deec2f3f8f3cbf65b7",
+      "commits": [
+        {
+          "sha": "01a7e4bbd4dd90fe39554265a380a589def0c8ab",
+          "timestamp": 1400553009000
+        },
+        {
+          "sha": "265c408bb1212542cf6c9cedd8e933362aab521f",
+          "timestamp": 1407707007000
+        }
+      ],
+      "snapshotTimestamp": 1407707007000
+    },
+    {
+      "key": "r3",
+      "commitSha": "7d8590d8cbe7c2b30e5f0ca8b0456fdcf45d900c",
+      "baseCommitSha": "957b9b2b1b9e39aa473dc7deec2f3f8f3cbf65b7",
+      "commits": [
+        {
+          "sha": "7d8590d8cbe7c2b30e5f0ca8b0456fdcf45d900c",
+          "timestamp": 1407754819000
+        }
+      ],
+      "snapshotTimestamp": 1407754819000
+    },
+    {
+      "key": "r4",
+      "commitSha": "dd6a88a8d95904fc78d166f063baf648411f4c38",
+      "baseCommitSha": "957b9b2b1b9e39aa473dc7deec2f3f8f3cbf65b7",
+      "commits": [
+        {
+          "sha": "b2fd1877e6e5c5e8282cbea44cda51a22429d3c7",
+          "timestamp": 1407764518000
+        },
+        {
+          "sha": "dd6a88a8d95904fc78d166f063baf648411f4c38",
+          "timestamp": 1407770078000
+        }
+      ],
+      "snapshotTimestamp": 1407770078000
+    },
+    {
+      "key": "r5",
+      "commitSha": "02bff301d0dd3dbca5ca5137391ba6c800480b79",
+      "baseCommitSha": "957b9b2b1b9e39aa473dc7deec2f3f8f3cbf65b7",
+      "commits": [
+        {
+          "sha": "15fcbcd82accad9fd70e61d7cc14ecd73d05e72e",
+          "timestamp": 1407851165000
+        },
+        {
+          "sha": "02bff301d0dd3dbca5ca5137391ba6c800480b79",
+          "timestamp": 1407852415000
+        }
+      ],
+      "snapshotTimestamp": 1407852415000
+    }
+  ],
+  "labels": [
+    "Comments only in Reviewable"
+  ],
+  "sentiments": [],
+  "discussions": [
+    {
+      "numMessages": 1,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "pkaminski",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/angles.py",
+        "revision": "r1",
+        "base": true,
+        "line": 146
+      }
+    },
+    {
+      "numMessages": 3,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "pkaminski",
+          "resolved": true,
+          "disposition": "satisfied"
+        },
+        {
+          "username": "leereilly",
+          "resolved": false,
+          "disposition": "blocking"
+        },
+        {
+          "username": "kevinxyz",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/tests/test_sky_coord.py",
+        "revision": "r5",
+        "base": false,
+        "line": 153
+      }
+    },
+    {
+      "numMessages": 1,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "josephjang",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/angle_utilities.py",
+        "revision": "r5",
+        "base": false,
+        "line": 162
+      }
+    },
+    {
+      "numMessages": 1,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "bstrand",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/angle_utilities.py",
+        "revision": "r5",
+        "base": false,
+        "line": 397
+      }
+    },
+    {
+      "numMessages": 1,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "thockin",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/angle_utilities.py",
+        "revision": "r5",
+        "base": true,
+        "line": 152
+      }
+    },
+    {
+      "numMessages": 1,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "thockin",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/angles.py",
+        "revision": "r5",
+        "base": true,
+        "line": 147
+      }
+    },
+    {
+      "numMessages": 6,
+      "resolved": true,
+      "participants": [
+        {
+          "username": "pkaminski",
+          "resolved": true,
+          "disposition": "following"
+        }
+      ]
+    },
+    {
+      "numMessages": 1,
+      "resolved": false,
+      "participants": [
+        {
+          "username": "davidschreiber",
+          "resolved": true,
+          "disposition": "discussing"
+        }
+      ],
+      "target": {
+        "file": "astropy/coordinates/angle_utilities.py",
+        "revision": "r5",
+        "base": false,
+        "line": 152
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "astropy/coordinates/angle_utilities.py",
+      "revisions": [
+        {
+          "key": "r1",
+          "reviewers": []
+        },
+        {
+          "key": "r4",
+          "reviewers": []
+        },
+        {
+          "key": "r5",
+          "reviewers": []
+        }
+      ]
+    },
+    {
+      "path": "astropy/coordinates/angles.py",
+      "revisions": [
+        {
+          "key": "r1",
+          "reviewers": []
+        }
+      ]
+    },
+    {
+      "path": "astropy/coordinates/sky_coordinate.py",
+      "revisions": [
+        {
+          "key": "r1",
+          "reviewers": []
+        },
+        {
+          "key": "r3",
+          "reviewers": []
+        },
+        {
+          "key": "r4",
+          "reviewers": []
+        }
+      ]
+    },
+    {
+      "path": "astropy/coordinates/tests/test_sky_coord.py",
+      "revisions": [
+        {
+          "key": "r2",
+          "reviewers": []
+        },
+        {
+          "key": "r4",
+          "reviewers": []
+        }
+      ]
+    }
+  ]
+}

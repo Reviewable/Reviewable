@@ -1,0 +1,20 @@
+{
+  "esnext": true,
+  "node": true,
+
+  "bitwise": true,
+  "camelcase": true,
+  "devel": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "globalstrict": true,
+  "latedef": "nofunc",
+  "maxlen": 100,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "strict": false,
+  "trailing": true,
+  "undef": true,
+  "unused": "vars"
+}

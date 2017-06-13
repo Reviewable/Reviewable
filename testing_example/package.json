@@ -1,0 +1,17 @@
+{
+  "name": "testing_example",
+  "version": "1.0.0",
+  "description": "Examples of how to test custom code snippets in Reviewable",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "freeport": "^1.0.5",
+    "lodash": "3.x",
+    "ms": "^2.0.0",
+    "sandcastle": "^1.3.3"
+  },
+  "scripts": {
+    "test": "ava"
+  }
+}
