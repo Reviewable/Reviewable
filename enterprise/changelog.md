@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- Fix: short-circuit mergeability check on closed PRs to avoid waiting for a GitHub flag that never settles.
 
 #### 1592.2216 (min 1549.2198) 2017-06-07
 - Upd: create a sample Reviewable commit status when connecting a repo so that it's visible when configuring branch protection settings in GitHub before creating a PR.
