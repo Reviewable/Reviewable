@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- Fix: improve large diff suppression by estimating a diff's impact on UI performance more accurately, and considering the sum total of all showing diffs rather than each file separately.
 - Fix: short-circuit mergeability check on closed PRs to avoid waiting for a GitHub flag that never settles.
 
 #### 1592.2216 (min 1549.2198) 2017-06-07
