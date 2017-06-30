@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes
 - Fix: improve large diff suppression by estimating a diff's impact on UI performance more accurately, and considering the sum total of all showing diffs rather than each file separately.
 - Fix: short-circuit mergeability check on closed PRs to avoid waiting for a GitHub flag that never settles.
+- Fix: correctly send warning emails about failures to parse user emails with Reviewable directives.
+- Fix: deal gracefully with commits reverted via force push when no new commits are pushed at the same time.
 
 #### 1592.2216 (min 1549.2198) 2017-06-07
 - Upd: create a sample Reviewable commit status when connecting a repo so that it's visible when configuring branch protection settings in GitHub before creating a PR.
