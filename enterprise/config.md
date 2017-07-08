@@ -120,7 +120,7 @@ Extra configuration for optimizing the server runtime.
 * `GAE_SERVICE` or `GAE_VM`: If non-empty (any value) servers will handle requests to `/_ah/health`, `/_ah/start`, and `/_ah/stop`, per the [standard GAE semantics](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#lifecycle_events).  It's up to you to restrict requests to those endpoints so random people can't shut down your servers.  Servers will also trust headers inserted by the last HTTP proxy.
 * `MEMORY_AVAILABLE`: The amount of memory available to the Node process in MiB.  Defaults to the lower of `/proc/meminfo` `MemTotal` and `/sys/fs/cgroup/memory/memory.stat` `hierarchical_memory_limit`.  If not set accurately, the servers are more likely to run out of memory and start swapping.  A server logs how much memory it thinks it has available when it starts up.
 
-#### GitHub configuration
+### GitHub configuration
 
 Reviewable doesn't require any special configuration of your GitHub Enterprise instance; it'll happily work with any organizations and repositories you have set up.  If you have GHE set up in private mode make sure to set `REVIEWABLE_PRIVATE_MODE` also, as documented above.
 
