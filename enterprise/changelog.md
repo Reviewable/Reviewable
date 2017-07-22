@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- Fix: ensure resolved discussions stay collapsed when layout triggered (e.g., due to window resize).
 
 #### 1607.2231 (min 1549.2198) 2017-07-18
 - Fix: improve large diff suppression by estimating a diff's impact on UI performance more accurately, and considering the sum total of all showing diffs rather than each file separately.
