@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- Upd: change AWS Lambda environment for review completion function execution from Node 4.3 to Node 6.10.
 - Fix: ensure resolved discussions stay collapsed when layout triggered (e.g., due to window resize).
 - Fix: ensure expanded diff regions stay expanded when layout triggered (e.g., due to window resize).
 
