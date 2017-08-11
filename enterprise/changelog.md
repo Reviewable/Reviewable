@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - Upd: change AWS Lambda environment for review completion function execution from Node 4.3 to Node 6.10.
+- Fix: detect errors caused by a suspended account and treat as a permanent issue (send email, disable repo connection).
 - Fix: ensure resolved discussions stay collapsed when layout triggered (e.g., due to window resize).
 - Fix: ensure expanded diff regions stay expanded when layout triggered (e.g., due to window resize).
 
