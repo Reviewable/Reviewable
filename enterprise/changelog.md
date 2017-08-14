@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- New: added `REVIEWABLE_CONSOLE_MULTILINE_SEPARATOR` config option for environments that expect one-message-per-line console output.  See [config docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring) for more details.
 - Upd: change AWS Lambda environment for review completion function execution from Node 4.3 to Node 6.10.
 - Fix: detect errors caused by a suspended account and treat as a permanent issue (send email, disable repo connection).
 - Fix: ensure resolved discussions stay collapsed when layout triggered (e.g., due to window resize).
