@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure resolved discussions stay collapsed when layout triggered (e.g., due to window resize).
 - Fix: ensure expanded diff regions stay expanded when layout triggered (e.g., due to window resize).
 - Fix: detect `CRLF` line-ending style and don't highlight `CR`s as trailing whitespace.
+- Fix: correctly discriminate between "no basis for comparison between HEAD and BASE" and "all revisions are obsolete" errors when syncing a PR.
 
 #### 1607.2231 (min 1549.2198) 2017-07-18
 - Fix: improve large diff suppression by estimating a diff's impact on UI performance more accurately, and considering the sum total of all showing diffs rather than each file separately.
