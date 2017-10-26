@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- New: add REVIEWABLE_GITHUB_CERT_FILE config option, for GHE servers with self-signed certs.
 - Fix: bootstrap correctly on first install when there are no reviews yet.
 
 #### 1638.2247 (min 1549.2198) 2017-10-08
