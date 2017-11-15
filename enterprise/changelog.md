@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes
 - New: add REVIEWABLE_GITHUB_CERT_FILE config option, for GHE servers with self-signed certs.
 - Fix: reduce number of GitHub status updates to avoid running into hardcoded limit in API.
+- Fix: omit files whose revisions are all obsolete from proposed diffs, preventing the "each-commit" review workflow from getting "stuck" after marking all files reviewed.
 - Fix: bootstrap correctly on first install when there are no reviews yet.
 - Fix: correctly parse "Last, First" format names when sending emails; this format is sometimes used by user directory sync systems.
 
