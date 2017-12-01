@@ -7,11 +7,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+
+#### 1655.2258 (min 1549.2198) 2017-12-01
 - New: add REVIEWABLE_GITHUB_CERT_FILE config option, for GHE servers with self-signed certs.
 - Fix: reduce number of GitHub status updates to avoid running into hardcoded limit in API.
 - Fix: omit files whose revisions are all obsolete from proposed diffs, preventing the "each-commit" review workflow from getting "stuck" after marking all files reviewed.
 - Fix: bootstrap correctly on first install when there are no reviews yet.
 - Fix: correctly parse "Last, First" format names when sending emails; this format is sometimes used by user directory sync systems.
+- Fix: avoid resetting `maintainer_can_modify` on PRs, due to a GitHub API bug.
 
 #### 1638.2247 (min 1549.2198) 2017-10-08
 - Fix: correctly deal with bot users introduced by the new(ish) GitHub Apps API.
