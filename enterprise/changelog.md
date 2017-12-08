@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- Upd: update server to Node 8.
 
 #### 1655.2258 (min 1549.2198) 2017-12-01
 - New: add REVIEWABLE_GITHUB_CERT_FILE config option, for GHE servers with self-signed TLS certs.
