@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - Upd: update server to Node 8.
+- Fix: don't overwrite disposition changes on discussions with comments imported from GitHub.
 
 #### 1655.2258 (min 1549.2198) 2017-12-01
 - New: add REVIEWABLE_GITHUB_CERT_FILE config option, for GHE servers with self-signed TLS certs.
