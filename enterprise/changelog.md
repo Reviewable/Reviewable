@@ -6,8 +6,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes
+#### Upcoming changes (min 1664.2314)
+- Fix: sweep all reviews to correct broken owner/repo properties from renamed organizations and repositories.
+
+#### 1664.2314 (min 1549.2198) 2017-12-11
 - Upd: update server to Node 8.
+- Fix: correctly adjust reviews' owner/repo properties when processing an organization or repository name change.  Badly adjusted reviews will have some properties still pointing to the old owner/repo, which can cause permission grants to fail and users to be improperly denied access to the reviews.  This fixes the problem going forward, and a later change will fix the properties of reviews previously created in subsequently renamed repositories.
 - Fix: don't overwrite disposition changes on discussions with comments imported from GitHub.
 
 #### 1655.2258 (min 1549.2198) 2017-12-01
