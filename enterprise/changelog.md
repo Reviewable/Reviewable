@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1664.2314)
 - Fix: sweep all reviews to correct broken owner/repo properties from renamed organizations and repositories.
+- Fix: correctly compute review state on the server when faced with complex file rename chains.  This affects both the built-in review completion computation and custom completion conditions.
 
 #### 1664.2314 (min 1549.2198) 2017-12-11
 - Upd: update server to Node 8.
