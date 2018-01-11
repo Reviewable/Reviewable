@@ -6,7 +6,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1664.2314)
+#### Upcoming changes
+
+#### 1678.2324 (min 1664.2314) 2018-01-10
 - Fix: sweep all reviews to correct broken owner/repo properties from renamed organizations and repositories.
 - Fix: correctly compute review state on the server when faced with complex file rename chains.  This affects both the built-in review completion computation and custom completion conditions.
 - Fix: bootstrap correctly on first install (again).
