@@ -19,7 +19,7 @@ We recommend running in a VM with around 1.5GB of memory available to the server
 
 You should run at least 2 server instances, fronted by a load-balancing HTTP proxy.  (You can technically run just one and connect to it directly, but such a configuration won't be reliable and won't be able to handle SSL connections.)  The servers are stateless (with the exception of `REVIEWABLE_USER_CONTENT_PATH`, see below) so you can start/stop as many of them as you want without problems.  As of this writing, the main reviewable.io service doesn't typically need to scale up to more than 8 `g1-small` instances.
 
-The servers expect to be restarted automatically if the process exits.  They'll exit with a non-zero exit code if something went terribly wrong.  You can safely kill a process at any time but it's always preferable to make a clean exit by setting `GAE_VM` (see below) and using `/_ah/stop`.  Doing so will potentially avoid delays on retrying interrupted tasks.
+The servers expect to be restarted automatically if the process exits.  They'll exit with a non-zero exit code if something went terribly wrong.  You can safely kill a process at any time but it's always preferable to make a clean exit by sending it `SIGTERM`.  Doing so will potentially avoid delays on retrying interrupted tasks.
 
 The servers will write logs to `stdout` and `stderr`, with no timestamps.  Some issues will be easier to debug if your environment collects, aggregates, and timestamps those logs.
 
@@ -121,7 +121,7 @@ Basic UI customization.
 
 ##### Container configuration
 Extra configuration for optimizing the server runtime.
-* `GAE_SERVICE` or `GAE_VM`: If non-empty (any value) servers will handle requests to `/_ah/health`, `/_ah/start`, and `/_ah/stop`, per the [standard GAE semantics](https://cloud.google.com/appengine/docs/flexible/custom-runtimes/build#lifecycle_events).  It's up to you to restrict requests to those endpoints so random people can't shut down your servers.  Servers will also trust headers inserted by the last HTTP proxy.
+* `GAE_SERVICE` or `GAE_VM`: If non-empty (any value) servers will handle requests to `/_ah/health` and `/_ah/ready`; the former will respond with `200` whenever possible, the latter will respond with `200` unless the server is shutting down, in which case it'll respond with `503` instead.  Servers will also trust headers inserted by the last HTTP proxy.
 * `MEMORY_AVAILABLE`: The amount of memory available to the Node process in MiB.  Defaults to the lower of `/proc/meminfo` `MemTotal` and `/sys/fs/cgroup/memory/memory.stat` `hierarchical_memory_limit`.  If not set accurately, the servers are more likely to run out of memory and start swapping.  A server logs how much memory it thinks it has available when it starts up.
 
 ### GitHub configuration
