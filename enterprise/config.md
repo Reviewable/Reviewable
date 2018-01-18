@@ -5,11 +5,11 @@ To get started you first need to obtain an SSL certificate, create a GitHub appl
 You'll need to decide the URL at which your Reviewable instance will operate, called `REVIEWABLE_HOST_URL`.  You'll want to obtain an SSL certificate so that connections to this address will be secure, and set up a proxy to terminate and load balance connections to Reviewable's server cluster.
 
 Next, on your GitHub instance, find the settings section of your preferred organization&mdash;any one will do.  In the OAuth applications subsection click the Register new application button:
-![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/register_github_app.png)
+![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/register_github_app.png)
 Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
 Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  In the Database tab, find the datastore name (to set below) as the first part of the database URL: `https://<REVIEWABLE_FIREBASE>.firebaseio.com/`.  Also find a database secret in your project settings' Service Accounts tab to set as `REVIEWABLE_FIREBASE_AUTH` below:
-![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/firebase_secret.png)
+![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_secret.png)
 
 ### Runtime expectations
 
@@ -32,7 +32,7 @@ Once you're up and running, make sure to sign in to Reviewable with the admin ac
 ##### Core configuration:
 These are required unless stated otherwise.
 * `REVIEWABLE_LICENSE`: You'll receive a license key when you purchase or renew a license.  This is just a JSON Web Token (JWT), signed with a private key, that encodes the constraints of your license.  It expires at the same time as the license.  The server won't run without a valid and current license key.
-* `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must not have a path* and *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We strongly recommend that the host URL also be secure (`https://...`) since some OAuth credentials will be sent via these URLs. 
+* `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must not have a path* and *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We strongly recommend that the host URL also be secure (`https://...`) since some OAuth credentials will be sent via these URLs.
 * `PORT`: The port for the web server to listen on.  Reviewable assumes that a higher layer will provide load balancing and SSL termination, and forward requests to the servers over HTTP on an internal, secure network.  Defaults to port 8080, which is also exposed in the Docker container.
 * `REVIEWABLE_FIREBASE`: The name of the Firebase database you'll be using to store Reviewable data.  This is just the plain name, not the full URL.
 * `REVIEWABLE_FIREBASE_AUTH`: A master secret for the Firebase project above, obtained from the project settings Service Accounts tab on the Firebase console page.  Can be rotated as necessary (e.g., if compromised).
