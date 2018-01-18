@@ -16,6 +16,6 @@ If so, or if you're not sure or think you might switch to private mode in the fu
 
 Once you've grabbed a copy of the URL, paste it somewhere and find your user ID:
 
-![account dropdown](https://github.com/Reviewable/Reviewable/blob/master/enterprise/images/ghe)userid_url.png)
+![account dropdown](https://github.com/Reviewable/Reviewable/blob/master/enterprise/images/ghe_userid_url.png)
 
 Sorry for the trouble!
