@@ -6,6 +6,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
+#### Upcoming changes (beta)
+- New: offer option to load all diffs when any were skipped for any reason (e.g., throttling, too many files, etc.).
+- Upd: allow filter negation in reviews list and add more filters.
+
 #### Upcoming changes
 - Upd: respect Go's standard "generated file" marker.
 
