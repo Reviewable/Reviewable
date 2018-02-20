@@ -12,10 +12,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: offer option to load all diffs when any were skipped for any reason (e.g., throttling, too many files, etc.).
 - Upd: allow filter negation in reviews list and add more filters.
 - Upd: reduce reviews list request and bandwidth requirements, show labels and milestones even for unconnected PRs, and show requested and actual reviewers (thanks GraphQL!).
+- Upd: sort C/C++ header files before their corresponding implementation files.
 
 #### Upcoming changes
 - Upd: respect Go's standard "generated file" marker.
 - Fix: add hard timeouts when checking queue health, to ensure that the process can never get stuck even if Firebase is down and its SDK is buggy.  This _should_ prevent Reviewable processes from going zombie in extreme and rare circumstances, where they're still alive but not doing any useful work.
+- Fix: gracefully handle hiccups during comment sending that cause a duplicate write.
 
 #### 1694.2348 (min 1664.2314) 2018-01-17
 - New: sweep database every 30 days to fix things up and delete stale redundant data, reducing long-term storage requirements.  Deleted data will be automatically refetched from GHE if needed later. WARNING: while a sweep is setting up, the instance will be temporarily locked out of doing other work for up to a few minutes. Please make sure you have at least 2 instances running at all times to avoid outages.
