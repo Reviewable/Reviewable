@@ -13,9 +13,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: allow filter negation in reviews list and add more filters.
 - Upd: reduce reviews list request and bandwidth requirements, show labels and milestones even for unconnected PRs, and show requested and actual reviewers (thanks GraphQL!).
 - Upd: sort C/C++ header files before their corresponding implementation files.
+- Fix: don't crash when adding a comment to the base of a file-renaming revision.
 
 #### Upcoming changes
 - Upd: respect Go's standard "generated file" marker.
+- Upd: use GraphQL when handling `push` events on the server instead of search API.
 - Fix: add hard timeouts when checking queue health, to ensure that the process can never get stuck even if Firebase is down and its SDK is buggy.  This _should_ prevent Reviewable processes from going zombie in extreme and rare circumstances, where they're still alive but not doing any useful work.
 - Fix: gracefully handle hiccups during comment sending that cause a duplicate write.
 
