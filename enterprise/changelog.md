@@ -13,7 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: allow filter negation in reviews list and add more filters.
 - Upd: reduce reviews list request and bandwidth requirements, show labels and milestones even for unconnected PRs, and show requested and actual reviewers (thanks GraphQL!).
 - Upd: sort C/C++ header files before their corresponding implementation files.
-- Upd: when configuring Reviewable badge comments, don't check for organization membership of the designated user.  This required the membership to be public and couldn't check for repo access anyway.  There's a fallback email that will be sent to the repo connector if the user lacks permission at comment creation time anyway.
+- Upd: add support for label descriptions, when available.
 - Fix: don't crash when adding a comment to the base of a file-renaming revision.
 
 #### Upcoming changes
