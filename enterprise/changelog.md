@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: respect Go's standard "generated file" marker.
 - Upd: use GraphQL when handling `push` events on the server instead of search API.
 - Fix: add hard timeouts when checking queue health, to ensure that the process can never get stuck even if Firebase is down and its SDK is buggy.  This _should_ prevent Reviewable processes from going zombie in extreme and rare circumstances, where they're still alive but not doing any useful work.
+- Fix: catch and handle some rare top-level exceptions that could cause a server process to go zombie.
 - Fix: gracefully handle hiccups during comment sending that cause a duplicate write.
 
 #### 1694.2348 (min 1664.2314) 2018-01-17
