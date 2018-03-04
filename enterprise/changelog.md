@@ -24,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: gracefully handle hiccups during comment sending that cause a duplicate write.
 - Fix: don't die when a commit has more than 100 different status contexts.
 - Fix: reset repeating cron job counters between runs.
+- Fix: prevent error when connecting an empty repo.
 
 #### 1694.2348 (min 1664.2314) 2018-01-17
 - New: sweep database every 30 days to fix things up and delete stale redundant data, reducing long-term storage requirements.  Deleted data will be automatically refetched from GHE if needed later. WARNING: while a sweep is setting up, the instance will be temporarily locked out of doing other work for up to a few minutes. Please make sure you have at least 2 instances running at all times to avoid outages.
