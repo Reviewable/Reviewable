@@ -6,7 +6,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (beta, min 1678.2324 GHE 2.12)
+#### Upcoming changes (beta, min 1745.2527 GHE 2.12)
 - New: enforce a minimum supported GHE version, starting with the relatively recent GHE 2.12.  This lets Reviewable take advantage of new APIs sooner, in particular new additions to GraphQL data.  The policy is to always support the two most recent GHE versions and the three most recent if possible.
 - New: this release includes a complete rewrite of the client's data / logic layer for improved performance and consistency.  One extra bonus is that communication with Firebase is moved into a worker thread, offloading all the crypto to where it doesn't block the UI.  When using Chrome or Firefox the worker is shared between tabs, improving bootstrap time on subsequent tabs due to the connection already being established, and providing a shared data cache.
 - New: offer option to load all diffs when any were skipped for any reason (e.g., throttling, too many files, etc.).
@@ -19,7 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add support for label descriptions, when available.
 - Fix: don't crash when adding a comment to the base of a file-renaming revision.
 
-#### Upcoming changes
+#### 1745.2527 (min 1664.2314) 2018-03-11
 - Upd: respect Go's standard "generated file" marker.
 - Upd: use GraphQL when handling `push` events on the server instead of search API.
 - Upd: prefer requested reviewers if set instead of assignees when determining who is needed to review a PR in the default review completion condition.  This change is on the server only and sets the stage for matching client-side changes coming in a follow-up release.
