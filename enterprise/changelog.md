@@ -10,14 +10,16 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: enforce a minimum supported GHE version, starting with the relatively recent GHE 2.12.  This lets Reviewable take advantage of new APIs sooner, in particular new additions to GraphQL data.  The policy is to always support the two most recent GHE versions and the three most recent if possible.
 - New: this release includes a complete rewrite of the client's data / logic layer for improved performance and consistency.  One extra bonus is that communication with Firebase is moved into a worker thread, offloading all the crypto to where it doesn't block the UI.  When using Chrome or Firefox the worker is shared between tabs, improving bootstrap time on subsequent tabs due to the connection already being established, and providing a shared data cache.
 - New: offer option to load all diffs when any were skipped for any reason (e.g., throttling, too many files, etc.).
-- Upd: make requested reviewers available to review completion conditions and update the samples to prefer requested reviewers over assignees when set.  If your users have custom review completion conditions for their repos they may want to tweak them as well.
+- New: make requested reviewers available to review completion conditions and update the samples to prefer requested reviewers over assignees when set.  If your users have custom review completion conditions for their repos they may want to tweak them as well.
+- New: make available a new directive (`±reviewer:@username`) to manage requested reviewers, via any comment (in Reviewable, via GitHub, or via email).
+- New: display how long ago each participant in a review last interacted with the review, and whether they have any drafts pending.  (Note that clients prior to this version don't report this information, so people who are hoarding an old Reviewable page will appear to be idle and have no pending drafts.)
 - Upd: allow filter negation in reviews list and add more filters.
 - Upd: reduce reviews list request and bandwidth requirements, and show labels and milestones even for unconnected PRs (thanks GraphQL!).
 - Upd: add "waiting on me" and "reviewing" sections to reviews list, and show blocking users instead of assignees next to the pointing hand.
 - Upd: include reviews requested from your teams in the "involving my teams" section, and consider ancestor teams as well in all team-related queries.
 - Upd: sort C/C++ header files before their corresponding implementation files.
 - Upd: add support for label descriptions, when available.
-- Fix: don't crash when adding a comment to the base of a file-renaming revision.
+- Fix: don't crash when adding a comment to the base of certain revisions of a renamed file.
 
 #### 1745.2527 (min 1664.2314) 2018-03-11
 - Upd: respect Go's standard "generated file" marker.
