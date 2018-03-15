@@ -22,7 +22,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: move "show full diff" button lower in the Changes box and make it available all the time.
 - Fix: don't crash when adding a comment to the base of certain revisions of a renamed file.
 
-#### 1755.2561 (min 1664.2314) 2018-03-14
+#### 1755.2561 (min 1664.2314) 2018-03-15
 - Fix: use correct URL for GHE GraphQL queries.
 
 #### 1745.2527 (min 1664.2314) 2018-03-11
