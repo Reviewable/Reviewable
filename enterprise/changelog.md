@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: include reviews requested from your teams in the "involving my teams" section, and consider ancestor teams as well in all team-related queries.
 - Upd: sort C/C++ header files before their corresponding implementation files.
 - Upd: add support for label descriptions, when available.
+- Upd: move "show full diff" button lower in the Changes box and make it available all the time.
 - Fix: don't crash when adding a comment to the base of certain revisions of a renamed file.
 
 #### 1749.2557 (min 1664.2314) 2018-03-14
