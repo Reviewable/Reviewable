@@ -15,7 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: display how long ago each participant in a review last interacted with the review, and whether they have any drafts pending.  (Note that clients prior to this version don't report this information, so people who are hoarding an old Reviewable page will appear to be idle and have no pending drafts.)
 - Upd: allow filter negation in reviews list and add more filters.
 - Upd: reduce reviews list request and bandwidth requirements, and show labels and milestones even for unconnected PRs (thanks GraphQL!).
-- Upd: add "waiting on me" and "reviewing" sections to reviews list, and show blocking users instead of assignees next to the pointing hand.
+- Upd: add "waiting on me" and "being reviewed by me" sections to reviews list, and show blocking users instead of assignees next to the pointing hand.
 - Upd: include reviews requested from your teams in the "involving my teams" section, and consider ancestor teams as well in all team-related queries.
 - Upd: sort C/C++ header files before their corresponding implementation files.
 - Upd: add support for label descriptions, when available.
