@@ -21,6 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add support for label descriptions, when available.
 - Upd: move "show full diff" button lower in the Changes box and make it available all the time.
 - Fix: don't crash when adding a comment to the base of certain revisions of a renamed file.
+- Fix: take diff regions that are collapsed by default (e.g., whitespace, base changes) into consideration when computing the size of the diff to decide whether it's too big to show.
 
 #### 1757.2561 (min 1664.2314) 2018-03-15
 - Fix: use correct URL for GHE GraphQL queries.
