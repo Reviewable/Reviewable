@@ -23,6 +23,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash when adding a comment to the base of certain revisions of a renamed file.
 - Fix: take diff regions that are collapsed by default (e.g., whitespace, base changes) into consideration when computing the size of the diff to decide whether it's too big to show.
 
+#### 1761.2574 (min 1664.2314) 2018-03-18
+- Fix: deal correctly with rate limiting on GHE (whether turned on or off).
+
 #### 1757.2561 (min 1664.2314) 2018-03-15
 - Fix: use correct URL for GHE GraphQL queries.
 
