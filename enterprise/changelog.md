@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: sort C/C++ header files before their corresponding implementation files.
 - Upd: add support for label descriptions, when available.
 - Upd: move "show full diff" button lower in the Changes box and make it available all the time.
+- Upd: if a GitHub `pull_request` event was missed for a connected repository for some reason, create the review if any auxiliary events come in for it later.  This was already the case for comments, but now works for `push` and `status` events too.
 - Fix: don't crash when adding a comment to the base of certain revisions of a renamed file.
 - Fix: take diff regions that are collapsed by default (e.g., whitespace, base changes) into consideration when computing the size of the diff to decide whether it's too big to show.
 
