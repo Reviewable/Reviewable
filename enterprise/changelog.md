@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: reduce reviews list request and bandwidth requirements, and show labels and milestones even for unconnected PRs (thanks GraphQL!).
 - Upd: add "waiting on me" and "being reviewed by me" sections to reviews list, and show blocking users instead of assignees next to the pointing hand.
 - Upd: include reviews requested from your teams in the "involving my teams" section, and consider ancestor teams as well in all team-related queries.
+- Upd: make review list search field bigger, and combine with pull request URL jump field.
 - Upd: sort C/C++ header files before their corresponding implementation files.
 - Upd: add support for label descriptions, when available.
 - Upd: move "show full diff" button lower in the Changes box and make it available all the time.
