@@ -26,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: take diff regions that are collapsed by default (e.g., whitespace, base changes) into consideration when computing the size of the diff to decide whether it's too big to show.
 - Fix: expand multi-line diff selections to include full first and last lines, and adjust rendering of collapsed quoted code to work with the latest GitHub Markdown renderer.
 - Fix: work around a bug in Firefox where up/down cursor keys wouldn't work in a reply to a discussion until it was blurred and refocused.
+- Fix: work around rare bug where page scrolled to the top and stayed stuck there after clicking Acknowledge (possibly limited to Firefox).
 
 #### 1761.2574 (min 1664.2314) 2018-03-18
 - Fix: deal correctly with rate limiting on GHE (whether turned on or off).
