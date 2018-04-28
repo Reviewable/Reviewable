@@ -6,7 +6,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (beta, min 1755.2561 GHE 2.12)
+#### Upcoming changes
+
+#### 1777.2720 (BETA, min 1755.2561 GHE 2.12+) 2018-04-26
 - New: enforce a minimum supported GHE version, starting with the relatively recent GHE 2.12.  This lets Reviewable take advantage of new APIs sooner, in particular new additions to GraphQL data.  The policy is to always support the two most recent GHE versions and the three most recent if possible.
 - New: this release includes a complete rewrite of the client's data / logic layer for improved performance and consistency.  One extra bonus is that communication with Firebase is moved into a worker thread, offloading all the crypto to where it doesn't block the UI.  When using Chrome or Firefox the worker is shared between tabs, improving bootstrap time on subsequent tabs due to the connection already being established, and providing a shared data cache.
 - New: offer option to load all diffs when any were skipped for any reason (e.g., throttling, too many files, etc.).
@@ -28,6 +30,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: expand multi-line diff selections to include full first and last lines, and adjust rendering of collapsed quoted code to work with the latest GitHub Markdown renderer.
 - Fix: work around a bug in Firefox where up/down cursor keys wouldn't work in a reply to a discussion until it was blurred and refocused.
 - Fix: work around rare bug where page scrolled to the top and stayed stuck there after clicking Acknowledge (possibly limited to Firefox).
+- Fix: prevent disabled dropdowns from getting re-enabled after display help overlay.
 
 #### 1761.2574 (min 1664.2314) 2018-03-18
 - Fix: deal correctly with rate limiting on GHE (whether turned on or off).
