@@ -7,7 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes
+- Upd: remove automatically generated :shipit: emoji from published messages as it could be confusing in multi-reviewer situations.
 - Fix: if user grants new permissions when sending comments, actually use those permissions when sending.
+- Fix: correctly process label directives for labels that have a description.
+- Fix: avoid occasional permission denied error when reconnecting to the network after a long time offline.
 
 #### 1777.2720 (BETA, min 1755.2561 GHE 2.12+) 2018-04-26
 - New: enforce a minimum supported GHE version, starting with the relatively recent GHE 2.12.  This lets Reviewable take advantage of new APIs sooner, in particular new additions to GraphQL data.  The policy is to always support the two most recent GHE versions and the three most recent if possible.
