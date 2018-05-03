@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: if user grants new permissions when sending comments, actually use those permissions when sending.
 - Fix: correctly process label directives for labels that have a description.
 - Fix: avoid occasional permission denied error when reconnecting to the network after a long time offline.
+- Fix: address some race conditions that caused very rare client crashes.
 
 #### 1777.2720 (BETA, min 1755.2561 GHE 2.12+) 2018-04-26
 - New: enforce a minimum supported GHE version, starting with the relatively recent GHE 2.12.  This lets Reviewable take advantage of new APIs sooner, in particular new additions to GraphQL data.  The policy is to always support the two most recent GHE versions and the three most recent if possible.
