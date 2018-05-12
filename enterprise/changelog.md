@@ -8,9 +8,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes
 - Upd: remove automatically generated :shipit: emoji from published messages as it could be confusing in multi-reviewer situations.
+- Upd: add `review.pullRequest.creationTimestamp` to completion condition data; not backfilled but should populate pretty quickly.
 - Fix: if user grants new permissions when sending comments, actually use those permissions when sending.
 - Fix: correctly process label directives for labels that have a description.
 - Fix: restore last-reviewer avatars in the file matrix.
+- Fix: avoid unnecessarily updating the review when syncing a PR.
 - Fix: avoid occasional permission denied error when reconnecting to the network after a long time offline.
 - Fix: address some very rare client crashes caused by race conditions and data edge cases.
 
