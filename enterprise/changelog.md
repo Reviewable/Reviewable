@@ -13,8 +13,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: if user grants new permissions when sending comments, actually use those permissions when sending.
 - Fix: correctly process label directives for labels that have a description.
 - Fix: restore last-reviewer avatars in the file matrix.
+- Fix: correctly configure merge button to delete or retain branch based on user settings and permissions.
 - Fix: avoid unnecessarily updating the review when syncing a PR.
-- Fix: correctly read the "include administrators" branch protection flag.
+- Fix: correctly handle the "include administrators" branch protection flag.
 - Fix: avoid occasional permission denied error when reconnecting to the network after a long time offline.
 - Fix: address some very rare client crashes caused by race conditions and data edge cases.
 
