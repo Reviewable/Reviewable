@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly process label directives for labels that have a description.
 - Fix: restore last-reviewer avatars in the file matrix.
 - Fix: avoid unnecessarily updating the review when syncing a PR.
+- Fix: correctly read the "include administrators" branch protection flag.
 - Fix: avoid occasional permission denied error when reconnecting to the network after a long time offline.
 - Fix: address some very rare client crashes caused by race conditions and data edge cases.
 
