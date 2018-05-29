@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but you can nonetheless expect some minor bumps during the transition.
 - Fix: correctly calculate number of reviewed files in the presence of renames.
 - Fix: re-enable rebase merging, got disabled by accident.
+- Fix: fix crash when client gets disconnected in the middle of a transaction.
 
 #### 1785.2755 (min 1755.2561 GHE 2.12+) 2018-05-26
 - Upd: remove automatically generated :shipit: emoji from published messages as it could be confusing in multi-reviewer situations.
