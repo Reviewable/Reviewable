@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: re-enable rebase merging, got disabled by accident.
 - Fix: fix crash when client gets disconnected in the middle of a transaction.
 - Fix: keep better track of currently focused file (for applying keyboard shortcuts).
+- Fix: greatly improve loading performance for reviews with many files (hundreds or higher), especially if a lot of files were renamed.
 
 #### 1785.2755 (min 1755.2561 GHE 2.12+) 2018-05-26
 - Upd: remove automatically generated :shipit: emoji from published messages as it could be confusing in multi-reviewer situations.
