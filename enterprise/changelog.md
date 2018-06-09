@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1785.2755 GHE 2.12+)
 - New: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
 - Upd: added `±am:author`, `±am:assigned`, and `±am:requested` filters to the reviews list.
-- Fix: correctly calculate number of reviewed files in the presence of renames.
+- Fix: correctly calculate number of marks and reviewed files in the presence of renames.
 - Fix: re-enable rebase merging, got disabled by accident.
 - Fix: fix crash when client gets disconnected in the middle of a transaction.
 - Fix: keep better track of currently focused file (for applying keyboard shortcuts).
