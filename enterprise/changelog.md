@@ -6,12 +6,15 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1785.2755 GHE 2.12+)
-- New: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
+#### Upcoming changes (min 1801.2799 GHE 2.12+)
+- Upd: emit the server-side review status (including a custom review completion condition, if so configured) when publishing a review.
+
+#### 1801.2799 (min 1785.2755 GHE 2.12+)
+- New: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  The most intrusive UX change is that _all_ state changes are created as drafts and must now be published to take effect, including acknowledgements, disposition changes, and dismissals.  Otherwise, I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
 - Upd: added `±am:author`, `±am:assigned`, and `±am:requested` filters to the reviews list.
 - Fix: correctly calculate number of marks and reviewed files in the presence of renames.
 - Fix: re-enable rebase merging, got disabled by accident.
-- Fix: fix crash when client gets disconnected in the middle of a transaction.
+- Fix: don't crash when client gets disconnected in the middle of a transaction.
 - Fix: keep better track of currently focused file (for applying keyboard shortcuts).
 - Fix: greatly improve loading performance for reviews with many files (hundreds or higher), especially if a lot of files were renamed.
 
