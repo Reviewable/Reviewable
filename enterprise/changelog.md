@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1801.2799 GHE 2.12+)
 - Upd: emit the server-side review status (including a custom review completion condition, if so configured) when publishing a review.
 - Fix: avoid permission denied error in the client when loading a review that hasn't yet been created.
+- Fix: on dashboard, correctly fetch requested reviewers for PRs that don't yet have connected reviews.
 
 #### 1801.2799 (min 1785.2755 GHE 2.12+)
 - New: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  The most intrusive UX change is that _all_ state changes are created as drafts and must now be published to take effect, including acknowledgements, disposition changes, and dismissals.  Otherwise, I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
