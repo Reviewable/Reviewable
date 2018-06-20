@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1801.2799 GHE 2.12+)
 - Upd: emit the server-side review status (including a custom review completion condition, if so configured) when publishing a review.
 - Fix: avoid permission denied error in the client when loading a review that hasn't yet been created.
+- Fix: avoid permission denied error if the client gets disconnected at just the wrong moment when publishing comments, then reconnects.
 - Fix: on dashboard, correctly fetch requested reviewers for PRs that don't yet have connected reviews.
 
 #### 1801.2799 (min 1785.2755 GHE 2.12+)
