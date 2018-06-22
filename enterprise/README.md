@@ -1,6 +1,6 @@
 ### Reviewable Enterprise
 
-There's a version of Reviewable that runs on your own premises and can connect to your instance of GitHub Enterprise (GHE).  Note that it still requires an external connection to the Firebase datastore (part of Google Cloud Services) but it can encrypt all sensitive data at rest with a key that never leaves your premises.  Optionally, you can also connect to AWS S3 or Google GCS for storing images attached to comments, and to AWS Lambda to support custom review completion conditions.  All these external services are solely under your control.
+There's a version of Reviewable that runs on your own premises and can connect to your instance of GitHub Enterprise (GHE).  Note that it has a somewhat atypical architecture that requires the use of external cloud services &mdash; please see the [security overview](https://github.com/Reviewable/Reviewable/blob/master/enterprise/security.md) for details.
 
 If you're interested in a free trial, please [get in touch!](mailto:support@reviewable.io?subject=Enterprise%20edition)  To issue a temporary license key we'll need two pieces of information from you first:
 1. A [`hub.docker.com`](https:/hub.docker.com/) username to be granted access to the image.
@@ -9,6 +9,8 @@ If you're interested in a free trial, please [get in touch!](mailto:support@revi
 If you already have a license, you'll want to explore the links below.
 
 ##### [How to set up Reviewable on your premises](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md)
+
+##### [Security overview](https://github.com/Reviewable/Reviewable/blob/master/enterprise/security.md)
 
 ##### [Ops playbook](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md)
 
