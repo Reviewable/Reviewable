@@ -6,7 +6,7 @@ This page offers an overview of Reviewable's security-related features.  Note th
 
 Reviewable is somewhat unusual for on-premises software in that it needs to be connected to cloud services to function.  This architecture diagram summarizes the various pieces and how they communicate:
 
-![Architectural diagram](enterprise/images/architectural_diagram.svg)
+![Architectural diagram](https://github.com/Reviewable/Reviewable/blob/master/enterprise/images/architectural_diagram.svg)
 
 All communication is over channels secured with TLS, and obviously certificate verification is turned on.
 
