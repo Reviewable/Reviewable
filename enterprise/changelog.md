@@ -13,6 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid permission denied error in the client when loading a review that hasn't yet been created.
 - Fix: avoid permission denied error if the client gets disconnected at just the wrong moment when publishing comments, then reconnects.
 - Fix: snapshot revisions when user acknowledges, changes disposition, or dismisses a participant.
+- Fix: prevent disposition dropdown from disappearing under another layer in rare cases.
+- Fix: improve auto-recovery from wrong webhook secret.
 
 #### 1801.2799 (min 1785.2755 GHE 2.12+)
 - New: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  The most intrusive UX change is that _all_ state changes are created as drafts and must now be published to take effect, including acknowledgements, disposition changes, and dismissals.  Otherwise, I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
