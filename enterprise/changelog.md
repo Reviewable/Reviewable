@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: if branch protection is turned on then defer to GitHub's mergeability determination, since we can't accurately duplicate the logic.  Note that this may result in Reviewable offering the option to merge earlier than it used to, if branch protection is set up more loosely than Reviewable's old built-in logic.
 - Fix: update PR mergeability status in Reviewable on all events that could affect it.
 - Fix: correctly use a default emoji if custom LGTM button output text is complex.
+- Fix: make toolbar dropdowns (checks, changes) show up correctly when page is scrolled down.
 
 #### 1831.2835 (min 1801.2799 GHE 2.12+) 2018-07-02
 - New: allow user to tweak the app's visual contrast (e.g., of diff highlighting) through account settings dropdown.
