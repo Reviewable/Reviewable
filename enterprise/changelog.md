@@ -11,7 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add "Trust but verify" user setting.  When turned on, discussions where the user is _Discussing_ and that get resolved with no further comment will be treated as unreplied.  The new setting panel can be accessed from any disposition dropdown via a small gear icon.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/trust-but-verify-65292))
 - Upd: moved time-ago comment dividers ("N days ago", etc.) to be above the corresponding time period, rather than below, in a nod to widespread convention.
 - Upd: if branch protection is turned on then defer to GitHub's mergeability determination, since we can't accurately duplicate the logic.  Note that this may result in Reviewable offering the option to merge earlier than it used to, if branch protection is set up more loosely than Reviewable's old built-in logic.
-- Fix: update PR mergeability status in Reviewable on all events that could affect it.
+- Fix: update PR mergeability status in Reviewable on all events that could affect it, and do so in a timely manner.
 - Fix: correctly use a default emoji if custom LGTM button output text is complex.
 - Fix: make toolbar dropdowns (checks, changes) show up correctly when page is scrolled down.
 
