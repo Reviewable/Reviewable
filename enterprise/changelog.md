@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1831.2835 GHE 2.12+)
+- New: if a user is mentioned in a discussion (other than the main top-level thread), don't treat them as a reviewer unless they've taken review-like actions, e.g., marked a file as reviewed or started a new discussion.  This way, if you come into a review because somebody mentioned you to ask for spot advice, you won't see all files as to be reviewed and many discussions as to reply.
 
 #### 1844.2857 (min 1831.2835 GHE 2.12+) 2018-07-14
 - New: integrate with GitHub's review approval system.  When publishing from Reviewable you can set whether to approve, request changes, or just comment, with Reviewable picking a default state based on your discussion dispositions and file review marks.  This state gets published to GitHub and will be used by the branch protection system's required reviews option.  Reviewers' current effective state is also reflected in Reviewable (in the reviews list and on the review page) and available for use in custom review completion conditions.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/github-reviews-integration-64906))
