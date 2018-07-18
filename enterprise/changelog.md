@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: use commit timestamp instead of authoring timestamp when sorting commits or generating revision descriptions in top-level thread.  While these timestamps are usually the same, in some rebase or merging scenarios they can drift apart, and using the original authoring timestamp can result in new revision descriptions being considered "read".
 - Fix: ensure constrast slider shows up in correct position when settings dropdown is opened.
 - Fix: fix sample review completion condition for counting approvals; the previous code wouldn't actually do so.  Oops.
+- Fix: allow repo admins to merge when GitHub's branch protection would normally block it but admins are exempted.
 
 #### 1844.2857 (min 1831.2835 GHE 2.12+) 2018-07-14
 - New: integrate with GitHub's review approval system.  When publishing from Reviewable you can set whether to approve, request changes, or just comment, with Reviewable picking a default state based on your discussion dispositions and file review marks.  This state gets published to GitHub and will be used by the branch protection system's required reviews option.  Reviewers' current effective state is also reflected in Reviewable (in the reviews list and on the review page) and available for use in custom review completion conditions.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/github-reviews-integration-64906))
