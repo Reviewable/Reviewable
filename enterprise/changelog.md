@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: change the semantics of the "to review" counter in the toolbar to "to review in the current diffs" (as originally planned), and fix the Changes box in the toolbar to turn the revision red when there are more files to review at a different revision.
 - Fix: include commit status context name in the description shown in the Checks dropdown.
 - Fix: make sure disposition dropdowns don't layer under another file's revision cells.
+- Fix: avoid race condition when preparing the Merge Branch button that would sometimes result in user's settings being ignored.
 
 #### 1866.2875 (min 1831.2835 GHE 2.12+) 2018-07-24
 - New: if a user is mentioned in a discussion (other than the main top-level thread), don't treat them as a reviewer unless they've taken review-like actions, e.g., marked a file as reviewed or started a new discussion.  This way, if you come into a review because somebody mentioned you to ask for spot advice, you won't see all files as to be reviewed and many discussions as to reply.
