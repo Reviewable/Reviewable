@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: include commit status context name in the description shown in the Checks dropdown.
 - Fix: make sure disposition dropdowns don't layer under another file's revision cells.
 - Fix: avoid race condition when preparing the Merge Branch button that would sometimes result in user's settings being ignored.
+- Fix: don't collapse a discussion as soon as a draft reply is created, but rather wait until it's sent.
 
 #### 1866.2875 (min 1831.2835 GHE 2.12+) 2018-07-24
 - New: if a user is mentioned in a discussion (other than the main top-level thread), don't treat them as a reviewer unless they've taken review-like actions, e.g., marked a file as reviewed or started a new discussion.  This way, if you come into a review because somebody mentioned you to ask for spot advice, you won't see all files as to be reviewed and many discussions as to reply.
