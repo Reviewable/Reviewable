@@ -7,8 +7,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
+
+#### 1868.2890 (min 1866.2875 GHE 2.12+)
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
 - Upd: change the semantics of the "to review" counter in the toolbar to "to review in the current diffs" (as originally planned), and fix the Changes box in the toolbar to turn the revision red when there are more files to review at a different revision.
+- Fix: correctly enforce min versions.  The last few releases will not automatically enforce the minimum rollback versions listed here, but please make sure to respect them nonetheless if you need to roll back.
 - Fix: include commit status context name in the description shown in the Checks dropdown.
 - Fix: make sure disposition dropdowns don't layer under another file's revision cells.
 - Fix: avoid race condition when preparing the Merge Branch button that would sometimes result in user's settings being ignored.
