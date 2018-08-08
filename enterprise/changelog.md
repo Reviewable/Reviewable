@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
+- Upd: mark stalled reviews with an icon in the reviews list.
 
 #### 1868.2890 (min 1866.2875 GHE 2.12+)
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
