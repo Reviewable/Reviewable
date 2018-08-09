@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
 - Upd: mark stalled reviews with an icon in the reviews list.
+- Upd: raise LOC thresholds for considering a diff "big" and hiding it by default.
 
 #### 1868.2890 (min 1866.2875 GHE 2.12+)
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
