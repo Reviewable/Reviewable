@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: raise LOC thresholds for considering a diff "big" and hiding it by default.
 - Fix: dynamically back off pull request list request size when we run into GitHub's GraphQL bug.  The request size used to be a static value picked to work "most of the time", but could still result in incomplete results sometimes (with a warning shown to the user).  This new approach should be more reliable.
 - Fix: for the Sandbox custom completion condition executor, fix error formatting and add support for `require`ing a hardcoded list of built-in modules.
+- Fix: better tolerate malformed custom line link templates, and show any errors in the settings dropdown.
 
 #### 1868.2890 (min 1866.2875 GHE 2.12+)
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
