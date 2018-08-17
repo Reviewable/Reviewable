@@ -15,8 +15,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: support double-click text selection in diffs, as best as possible.  It still races with discussion creation and, if animated transitions are on, will sometimes immediately deselect the text.
 - Fix: make `setCurrentDiscussionDisposition` work properly when editing a draft reply.
 - Fix: increase reliability of redirect flavor of sign-in flow, and make it work in Edge.
+- Fix: ensure that tooltips (e.g., on the toolbar counts) don't show stale descriptions sometimes.
+- Fix: correctly compute unresolved / unreplied discussions when dismissals are pending.
 
-#### 1868.2890 (min 1866.2875 GHE 2.12+)
+#### 1868.2890 (min 1866.2875 GHE 2.12+) 2018-08-04
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
 - Upd: change the semantics of the "to review" counter in the toolbar to "to review in the current diffs" (as originally planned), and fix the Changes box in the toolbar to turn the revision red when there are more files to review at a different revision.
 - Fix: correctly enforce min versions.  The last few releases will not automatically enforce the minimum rollback versions listed here, but please make sure to respect them nonetheless if you need to roll back.
