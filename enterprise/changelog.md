@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly compute unresolved / unreplied discussions when dismissals are pending.
 - Fix: prevent UI elements (e.g., the Publish button) from occasionally disappearing when transition animations are turned off.
 - Fix: promptly update mergeability and show merge button when branch protection is turned on in a repo.
+- Fix: correctly style implicit code snippets in markdown, instantiated automatically by GitHub in response to a blob line range link.
 
 #### 1868.2890 (min 1866.2875 GHE 2.12+) 2018-08-04
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
