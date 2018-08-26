@@ -7,6 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
+- Upd: don't count participation in resolved dicussions towards inclusion in the "being reviewed by me" section on the dashboard.
+
+#### 1872.2918 (min 1866.2875 GHE 2.12+) 2018-08-25
 - Upd: mark stalled reviews with an icon in the reviews list.
 - Upd: raise LOC thresholds for considering a diff "big" and hiding it by default.
 - Fix: dynamically back off pull request list request size when we run into GitHub's GraphQL bug.  The request size used to be a static value picked to work "most of the time", but could still result in incomplete results sometimes (with a warning shown to the user).  This new approach should be more reliable.
