@@ -13,6 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: set correct font for draft text boxes.  This regression caused draft boxes to be sized incorrectly, which made long messages harder to input.
 - Fix: back off the retry interval when dealing with GitHub's 422 bug for setting refs, and log retries to make this situation easier to debug.
 - Fix: ensure that the "unresolved N" toolbar button (for N > 0) will always navigate to a discussion.  Previously, it was bound to navigate to the next discussion _without a draft_.  Also introduce new commands for the two navigation variants and rebind default keys to the new semantics.
+- Fix: bring back the "draft saved" indicator when editing draft comments.
+- Fix: eliminate rare crash when publishing comments due to rendered value being `undefined`.
 
 #### 1872.2918 (min 1866.2875 GHE 2.12+) 2018-08-25
 - Upd: mark stalled reviews with an icon in the reviews list.
