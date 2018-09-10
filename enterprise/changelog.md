@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
+
+#### 1883.2928 (min 1866.2875 GHE 2.12+) 2018-09-09
 - Upd: don't count participation in resolved dicussions towards inclusion in the "being reviewed by me" section on the dashboard.
 - Upd: restart the server if Firebase liveness check fails for more than about a minute.  This can help reset zombie connections to Firebase in some edge cases.
 - Upd: removed many rarely used languages from the syntax highlighting library pack to significantly reduce code size.
