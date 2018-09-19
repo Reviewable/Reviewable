@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
 - Fix: accept `check_run` and `check_suite` events.
 - Fix: correctly abandon processing of comment events if the comment still can't be found after an hour.
+- Fix: retry syncing rare PRs where we have trouble making sense of the commit list, where previously they would immediately fail and mark the review as broken.
 
 #### 1883.2928 (min 1866.2875 GHE 2.12+) 2018-09-09
 - Upd: don't count participation in resolved dicussions towards inclusion in the "being reviewed by me" section on the dashboard.
