@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: accept `check_run` and `check_suite` events.
 - Fix: correctly abandon processing of comment events if the comment still can't be found after an hour.
 - Fix: correctly handle some edge cases when a branch gets rebased onto one of its own commits, where previously this could result in a permanently broken review.
+- Fix: don't crash when the user requests a preview of the outgoing drafts, then edits one of them at just the wrong moment.
 
 #### 1883.2928 (min 1866.2875 GHE 2.12+) 2018-09-09
 - Upd: don't count participation in resolved dicussions towards inclusion in the "being reviewed by me" section on the dashboard.
