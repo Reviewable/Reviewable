@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1866.2875 GHE 2.12+)
+- Upd: migrate Merge button from AngularJS to VueJS.  There should be no user-visible differences, except perhaps an incidental fix to a rare bug in applying default settings.  This is just the (tentative) first step in the migration of the entire UI to VueJS.
 - Fix: accept `check_run` and `check_suite` events.
 - Fix: correctly abandon processing of comment events if the comment still can't be found after an hour.
 - Fix: correctly handle some edge cases when a branch gets rebased onto one of its own commits, where previously this could result in a permanently broken review.
