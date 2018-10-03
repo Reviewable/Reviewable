@@ -29,7 +29,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: mark stalled reviews with an icon in the reviews list.
 - Upd: raise LOC thresholds for considering a diff "big" and hiding it by default.
 - Fix: dynamically back off pull request list request size when we run into GitHub's GraphQL bug.  The request size used to be a static value picked to work "most of the time", but could still result in incomplete results sometimes (with a warning shown to the user).  This new approach should be more reliable.
-- Fix: for the Sandbox custom completion condition executor, fix error formatting and add support for `require`ing a hardcoded list of built-in modules.
+- Fix: for the `sandcastle` custom completion condition executor, fix error formatting and add support for `require`ing a hardcoded list of built-in modules.
 - Fix: better tolerate malformed custom line link templates, and show any errors in the settings dropdown.
 - Fix: support double-click text selection in diffs, as best as possible.  It still races with discussion creation and, if animated transitions are on, will sometimes immediately deselect the text.
 - Fix: make `setCurrentDiscussionDisposition` work properly when editing a draft reply.
