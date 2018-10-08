@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly handle some edge cases when a branch gets rebased onto one of its own commits, where previously this could result in a permanently broken review.
 - Fix: don't crash when the user requests a preview of the outgoing drafts, then edits one of them at just the wrong moment.
 - Fix: don't get stuck waiting forever for data when the user switches pages at just the right time to trigger a race condition.  This could happen most easily when switching from Reviews to Repositories and back before the Repositories page fully loaded, but could have affected other transitions as well.
+- Fix: remove top discussion draft area from bunny dropdown when user not signed in (otherwise typing in it would cause a crash).
 
 #### 1883.2928 (min 1866.2875 GHE 2.12+) 2018-09-09
 - Upd: don't count participation in resolved dicussions towards inclusion in the "being reviewed by me" section on the dashboard.
