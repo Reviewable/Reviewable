@@ -16,11 +16,11 @@ Next, visit the [Firebase console](https://console.firebase.google.com/) and cre
 
 ![Firebase Web API Key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_web_api_key.png)
 
-1. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, locate your database name as the first part of the database URL (very likely the same as your project name) and generate a new private key:
+2. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, locate your database name as the first part of the database URL (very likely the same as your project name) and generate a new private key:
 
 ![Firebase service account private key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_private_key.png)
 
-1. On the _Service accounts_ tab, in the _Database secrets_ section, locate a database secret  (create one if there are none):
+3. On the _Service accounts_ tab, in the _Database secrets_ section, locate a database secret  (create one if there are none):
 
 ![Firebase secret](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_secret.png)
 
