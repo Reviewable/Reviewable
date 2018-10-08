@@ -9,15 +9,19 @@ Next, on your GitHub instance, find the settings section of your preferred organ
 Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
 Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  Then go to your Project Settings and prepare the following for configuring Reviewable:
+
 ![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_project_settings.png)
 
-1. On the _General_ tab, locate your Web API Key :
+1. On the _General_ tab, locate your Web API Key:
+
 ![Firebase Web API Key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_web_api_key.png)
 
-1. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, locate your database name as the first part of the database URL (very likely the same as your project name) and generate a new private key :
+1. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, locate your database name as the first part of the database URL (very likely the same as your project name) and generate a new private key:
+
 ![Firebase service account private key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_private_key.png)
 
 1. On the _Service accounts_ tab, in the _Database secrets_ section, locate a database secret  (create one if there are none):
+
 ![Firebase secret](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_secret.png)
 
 ### Runtime expectations
