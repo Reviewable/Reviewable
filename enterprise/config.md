@@ -8,8 +8,17 @@ Next, on your GitHub instance, find the settings section of your preferred organ
 ![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/register_github_app.png)
 Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
-Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  In the Database tab, find the datastore name (to set below) as the first part of the database URL: `https://<REVIEWABLE_FIREBASE>.firebaseio.com/`.  Also find a database secret in your project settings' Service Accounts tab to set as `REVIEWABLE_FIREBASE_AUTH` below:
-![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_secret.png)
+Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  Then go to your Project Settings and prepare the following for configuring Reviewable:
+![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_project_settings.png)
+
+1. On the _General_ tab, locate your Web API Key :
+![Firebase Web API Key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_web_api_key.png)
+
+1. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, locate your database name as the first part of the database URL (very likely the same as your project name) and generate a new private key :
+![Firebase service account private key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_private_key.png)
+
+1. On the _Service accounts_ tab, in the _Database secrets_ section, locate a database secret  (create one if there are none):
+![Firebase secret](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_secret.png)
 
 ### Runtime expectations
 
@@ -35,7 +44,9 @@ These are required unless stated otherwise.
 * `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must not have a path* and *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We strongly recommend that the host URL also be secure (`https://...`) since some OAuth credentials will be sent via these URLs.
 * `PORT`: The port for the web server to listen on.  Reviewable assumes that a higher layer will provide load balancing and SSL termination, and forward requests to the servers over HTTP on an internal, secure network.  Defaults to port 8080, which is also exposed in the Docker container.
 * `REVIEWABLE_FIREBASE`: The name of the Firebase database you'll be using to store Reviewable data.  This is just the plain name, not the full URL.
-* `REVIEWABLE_FIREBASE_AUTH`: A master secret for the Firebase project above, obtained from the project settings Service Accounts tab on the Firebase console page.  Can be rotated as necessary (e.g., if compromised).
+* `REVIEWABLE_FIREBASE_WEB_API_KEY`: The web API key for your Firebase project.  This is just an identifier and doesn't need to be kept secret.
+* `REVIEWABLE_FIREBASE_CREDENTIALS_FILE`: The absolute path to the Firebase private key file you generated above.  The file will need to be mapped into the Docker image, either by generating a derived image that includes it or mounting it in when starting the image.  If you're not sure how to do that, you can _instead_ set `REVIEWABLE_FIREBASE_PROJECT_ID`, `REVIEWABLE_FIREBASE_CLIENT_EMAIL`, and `REVIEWABLE_FIREBASE_PRIVATE_KEY` to the corresponding values in the private key file.  You can delete previously issued private keys from the IAM Admin [service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts/) page &mdash; just don't delete the account itself!
+* `REVIEWABLE_FIREBASE_AUTH`: A master secret for the Firebase project above, obtained from the project settings Service Accounts tab on the Firebase console page.  Can be rotated from the console as necessary (e.g., if compromised).
 * `REVIEWABLE_GITHUB_URL`: The URL for your instance of GitHub Enterprise, used by Reviewable for authentication, API calls, and links to the web interface.  If your license allows you to run against `github.com` instead you should set this to `https://github.com`.
 * `REVIEWABLE_GITHUB_CLIENT_ID`: The hex client ID assigned to the GitHub application you created above.
 * `REVIEWABLE_GITHUB_CLIENT_SECRET`: The hex client secret assigned to the GitHub application you created above.
