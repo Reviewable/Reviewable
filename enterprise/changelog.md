@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent permission denied crash when creating a comment on a base revision of a renamed file where the original source file had been recreated in the PR at or before that revision.  The comment will now be created on the nearest possible equivalent base revision instead.
 - Fix: avoid rare crash due to race condition in the contextual help subsystem.
 - Fix: invite user to sign in when landing on a review page they have permission for but where the review hasn't been created yet, instead of getting stuck.
+- Fix: avoid false negative liveness checks that cause an automated server restart when a cron job is starting up.
 
 #### 1911.2952 (min 1866.2875 GHE 2.12+) 2018-10-08
 - New: allow user to set a default query for the Reviews page
