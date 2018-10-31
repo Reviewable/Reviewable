@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: switch the client to the current version of the Firebase SDK.  All users will be signed out the first time they load a Reviewable page with this version, but currently open pages from the previous version will not be interrupted.  No config updates required beyond those from the previous version.
 - Fix: don't list reviews where the user is just a mentionee under the "being reviewed by you" category on the dashboard, but do list self-reviews there.  A side-effect of this fix is that some older reviews will show up in a category lower than "being reviewed by you" until somebody visits them again, but this shouldn't be a problem going forward.
 - Fix: include files that were renamed with no other changes in the review state passed to the custom review completion condition.
+- Fix: supply correct sentiment timstamp to custom review completion condition when executing in a preview or pre-publication context.  Since version 1831.2835, conditions were sometimes given a bogus object instead of a timestamp that could cause the condition to fail or produce inaccurate results.
 - Fix: prevent batch cron jobs from disturbing the Firebase cache.
 - Fix: address even more edge cases when rebasing to avoid ending up with a broken review.
 - Fix: avoid some crashes when user signs in and out very quickly.  This should pretty much never occur in real usage, but did during github.com's recent breakdown where they were handing out auth tokens but immediately refusing to accept them!
