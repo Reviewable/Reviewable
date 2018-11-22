@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly send demo review data if no PR selected when editing custom review completion condition.
 - Fix: reinstate rebased revision matching arcs above the file matrix and file header revision cells.  If the source branch was rebased, these show Reviewable's guess at how the revisions match up.  They disappared a while back and are now back as part of the Vue migration.
 - Fix: make issue (`#`) autocomplete work in comments again.
+- Fix: protect against breakage if a username, organization name, or repository name happens to match a built-in property name.
 
 #### 1994.2998 (min 1992.2986 GHE 2.12+)
 - Upd: prevent rollbacks to version that use the old Firebase SDK.  It's now safe to remove the `REVIEWABLE_FIREBASE_AUTH` environment variable from your configuration, and revoke the legacy secret(s) if you'd like to do so.
