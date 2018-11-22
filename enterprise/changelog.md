@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Upd: exclude merged and closed PRs from the "Waiting on me" section on the dashboard.
 - Fix: correctly send demo review data if no PR selected when editing custom review completion condition.
 - Fix: reinstate rebased revision matching arcs above the file matrix and file header revision cells.  If the source branch was rebased, these show Reviewable's guess at how the revisions match up.  They disappared a while back and are now back as part of the Vue migration.
 - Fix: make issue (`#`) autocomplete work in comments again.
