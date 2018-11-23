@@ -1,0 +1,15 @@
+<!-- docs/_sidebar.md -->
+
+* [Home](/)
+* [Where to find help](introduction.md)
+* [Registration and Authorization](registration.md)
+* [Reviews](reviews.md)
+* [Summary of changes](summary.md)
+* [Top toolbar](toptoolbar.md)
+* [Repositories](repositories.md)
+* [Account Settings](accountsettings.md)
+* [File Matrix](filematrix.md)
+* [Publishing](publishbutton.md)
+* [File Diffs](filediffs.md)
+* [Discussions](discussions.md)
+* [Other Issues](otherissues.md)
