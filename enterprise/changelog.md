@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: protect against breakage if a username, organization name, or repository name happens to match a built-in property name.
 - Fix: render markdown checkboxes in comments as checked when they are.
 - Fix: avoid extremely rare internal error crash when diffing.
+- Fix: gracefully handle situation where a user who turned on an organization's "All current and future repos" toggle loses admin permissions but still has pull permissions.
 
 #### 1994.2998 (min 1992.2986 GHE 2.12+)
 - Upd: prevent rollbacks to version that use the old Firebase SDK.  It's now safe to remove the `REVIEWABLE_FIREBASE_AUTH` environment variable from your configuration, and revoke the legacy secret(s) if you'd like to do so.
