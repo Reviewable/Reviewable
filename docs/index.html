@@ -8,13 +8,16 @@
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">Loading...</div>
+  <script>
+    window.$docsify = {
+      loadSidebar: true,
+      name: 'Reviewable',
+      logo: 'https://reviewable.io/review_button.svg',
+      repo: 'reviewable/reviewable',
+      routerMode: 'history'
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </body>
-<script>
-  window.$docsify = {
-    name: '',
-    repo: ''
-  }
-</script>
-<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </html>
