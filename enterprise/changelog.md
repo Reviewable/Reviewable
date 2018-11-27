@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: render markdown checkboxes in comments as checked when they are.
 - Fix: avoid extremely rare internal error crash when diffing.
 - Fix: gracefully handle situation where a user who turned on an organization's "All current and future repos" toggle loses admin permissions but still has pull permissions.
+- Fix: ensure that the second and later runs of background cron tasks start from the beginning, rather than mistakenly resuming at the last checkpoint of the previous run.
 
 #### 1994.2998 (min 1992.2986 GHE 2.12+) 2018-11-19
 - Upd: prevent rollbacks to version that use the old Firebase SDK.  It's now safe to remove the `REVIEWABLE_FIREBASE_AUTH` environment variable from your configuration, and revoke the legacy secret(s) if you'd like to do so.
