@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: remove "butterfly" onboarding mechanism, to be replaced by a more conventional (and less hate-inspiring) checklist as part of the Vue rework at a later date.
 - Upd: exclude merged and closed PRs from the "Waiting on me" section on the dashboard.
+- Upd: adjust sorting order of blocking avatars on the dashboard to be easier to parse visually.
 - Fix: correctly send demo review data if no PR selected when editing custom review completion condition.
 - Fix: reinstate rebased revision matching arcs above the file matrix and file header revision cells.  If the source branch was rebased, these show Reviewable's guess at how the revisions match up.  They disappared a while back and are now back as part of the Vue migration.
 - Fix: make issue (`#`) autocomplete work in comments again.
