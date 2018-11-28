@@ -2,28 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reviewable Docs</title>
+  <title>Reviewable User Guide</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
   <div id="app">Loading...</div>
   <script src="//unpkg.com/docsify-edit-on-github@1.0.1/index.js"></script>
+  <script src="//unpkg.com/vue/dist/vue.min.js"></script>
   <script>
     window.$docsify = {
+      homepage: 'introduction.md',
       loadSidebar: true,
       name: 'Reviewable',
-      logo: 'https://reviewable.io/review_button.svg',
-      subMaxLevel: 2,
+      logo: 'images/logo.png',
+      subMaxLevel: 3,
       auto2top: true,
       plugins: [
-        EditOnGithubPlugin.create('https://github.com/reviewable/reviewable/blob/master/docs/')
+        EditOnGithubPlugin.create('https://github.com/reviewable/reviewable/blob/master/docs/'),
+        function(hook, vm) {
+          hook.afterEach(function(html, next) {
+            html = html
+              .replace(/Edit on github/, 'Edit')
+              .replace('float: right', 'margin-top: 0.5em')
+              .replace('overflow: auto', 'float: right');
+            next(html);
+          });
+        }
       ]
     };
+    Vue.options.delimiters = ['$[', ']'];
+    Vue.component('more', {
+      template: `<span><a href="" @click.prevent="expand">($[expanded ? 'less' : 'more'])</a><p v-if="expanded" style="margin: 0.5em 0 0"><slot></slot></p></span>`,
+      data: function() {
+        return {
+          expanded: false
+        };
+      },
+      methods: {
+        expand: function() {
+          this.expanded = !this.expanded;
+        }
+      }
+    });
   </script>
   <style>
+    article > p > img:first-child {
+      display: block;
+      margin: 0 auto;
+      transform: scale(0.8);
+    }
+    .app-name {
+      position: absolute;
+      top: 0;
+    }
+    .search {
+      margin-top: 78px;
+    }
     .content {
       padding-top: 0;
+    }
+    .markdown-section {
+      padding-top: 21px;
+    }
+    .markdown-section div:first-child a {
+      text-decoration: none;
+    }
+    .markdown-section div:first-child a:hover {
+      text-decoration: underline;
+    }
+    .markdown-section h1 {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #505d6b;
+    }
+    .markdown-section p.warn {
+      background-color: #f8f8f8;
+      border-bottom-right-radius: 2px;
+      border-left: 4px solid var(--theme-color,#42b983);
+      border-top-right-radius: 2px;
+      margin: 2em 0;
+      padding: 12px 24px 12px 30px;
+      position: relative;
+    }
+    .markdown-section p.warn:before {
+      background-color: var(--theme-color,#42b983);
+      border-radius: 100%;
+      color: #fff;
+      content: '?';
+      font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      left: -12px;
+      line-height: 20px;
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      text-align: center;
+      top: 14px;
+    }
+    .label {
+      padding: 1px 3px;
+      color: white;
+      border-radius: 2px;
+    }
+    .red.label {
+      background-color: #D95C5C;
+    }
+    .green.label {
+      background-color: #5BBD72;
+    }
+    .grey.label {
+      background-color: #c0c0c0;
     }
   </style>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>

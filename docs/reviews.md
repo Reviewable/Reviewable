@@ -1,213 +1,187 @@
-# Reviews
+# Code review
 
 In Reviewable, each review corresponds to a GitHub pull request. To initiate a code review, you’ll first need to create a pull request as usual and then access the corresponding review. This can be done either (a) through the link to Reviewable inserted into the PR, or (b) by clicking on the PR on your Reviewable dashboard.
 
 In general, Reviewable keeps data synchronized between the review and its pull request for all compatible features, such as assignees, comments, and approvals.  However, some features are unique to Reviewable (such as file review marks or discussion dispositions). Other Reviewable features cannot be mapped effectively due to GitHub API limitations, such as line comments that often become top level comments.  Consequently, we don’t recommend mixing use of Reviewable and GitHub reviews on the same pull request as the experience will prove frustrating on both sides.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td><strong>Raw commits</strong>: Reviewable can't operate directly on raw commits, since it doesn't actually clone your repo. Reviewable heavily depends on an array of GitHub APIs that are only available for pull requests.</td>
-</tr>
-</tbody>
-</table>
+?> Reviewable can't operate directly on raw commits, since it doesn't actually clone your repo. It depends heavily on GitHub APIs that are only available for pull requests.
 
-## Reviews List
+This chapter provides an overview of the review page, but the core features of reviewing files and managing review discussions are addressed separately in subsequent chapters.
 
-Click the <strong>Reviews</strong> button at the very top of the page to display the reviews list. Here, you'll find all open PRs in which you are a participant. As a participant, these PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to). Reviewable automatically updates this list at least every minute (and data held in Reviewable is updated in real time), so there is no need to reload the page.
+## Publishing your review
 
+As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td><strong>NOTE:</strong>: If the reviews listing doesn't appear, click the <strong>Include stalled pull requests/reviews</strong> link at the bottom of the panel. If you haven't yet granted those permissions to Reviewable, you may want to click the green <strong>Also show team reviews</strong> or <strong>Also show private reviews</strong> buttons at the bottom as well. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.
+?> If you'd like to suppress posting the combined message to Github, e.g. because you want to separate the Reviewable review from the GitHub review process, you can do so on a PR-by-PR basis. Just add the `Comments only in Reviewable` label (exact spelling!) to the PR and neither batch published nor single-send comments will be posted to GitHub.
 
-</td>
+!> Some Reviewable inline comments won't appear as inline comments in GitHub and vice-versa, because the GitHub model for comment placement is poor and trying to conform to it would invalidate many of the best features in Reviewable. <more> In more detail, it's important to understand that GitHub has two types of inline comments: pull request (PR) comments and commit comments. PR comments are assigned to lines based on the raw git diffs between two commits. Reviewable doesn't use these diffs, making mapping locations hard (see [issue #14](https://github.com/Reviewable/Reviewable/issues/14)), and can place comments on lines that don't appear in the diffs. Also, comments placed on negative delta lines in GitHub don't actually record sufficient information to figure out what line they're really on! Commit comments share most of those limitations, and also disappear from the PR if the branch is rebased. Finally, it's impossible to post commit comments without triggering a notification email for each and every comment, and while PR comments can be batched the API only allows one commit to be targeted per batch and doesn't support threading.</more>
 
-</tr>
-</tbody>
-</table>
+Like for GitHub reviews, there are three approval levels you can choose from when publishing via the dropdown attached to the button:
 
-![reviewable reviews list](images/reviews_4.png "")
-<br>
+*   **Comment** — Submit general feedback without explicit approval.
+*   **Approve** — Submit feedback and approve merging these changes.
+*   **Request changes** — Submit feedback that must be addressed before merging.
 
-Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter "+open" in the search bar to hide the closed PRs.
+![reviewable set the approval level](images/publish_1.png)
 
-PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the <strong>Waiting on me</strong> group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
+Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.
 
-Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.
+?> You may only change the approval level if you have write permissions to the repository and are not the author of the PR.  As a repository admin you can also disable the **Approve** and **Request changes** for everyone via the [custom review completion condition](repositories.md#completion-condition) if they are apt to mess up your team's workflow.
 
-You can modify the view with the various toggles and filters on this page. You can also view all of the PRs in a specific repository by clicking one of the repo links on the [Repository page](repositories.md).
+!> If you choose **Comment**, any previous **Approve** or **Request changes** will remain in effect; you cannot rescind your vote, only change it.
+
+The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
 
-## Review state
+## Merging a pull request
 
-Each review in the listing indicates the state of the review, in real-time:
+When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.
 
-![reviewable review state](images/reviews_5.png "")
-<br>
+![merge victory graphic](images/merge_2.png ':size=311')
 
-If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs but doesn't give access to merge options -- for that, please open the review page.
+A review is considered complete when the first defined condition of the following is true:
 
-Other possible states include <strong>Merged, Closed, Archived</strong> (automatically, for old reviews -- just open to unarchive). No state appears for any PR that not yet connected to a review.
+1. You've defined a [custom review completion condition](repositories.md#completion-condition) and it has returned a verdict with `complete: true` (irrespective of any other per-file or per-discussion flags).
 
+1. You've turned on branch protection for the target branch in this repo in GitHub, and GitHub says that a merge is permitted.
 
-## Visit the PR on GitHub 
+1. Otherwise, a review is considered complete when GitHub reports that merging the branch won't cause any conflicts, all files have been marked reviewed by at least one person at the most recent revision, and all discussions have been resolved.  (In this case, the toolbar will show a green Checks donut, a grey Changes revision, and grey zero counters in the remaining boxes.)
 
-Click the link on the right end of a listing to access the pull request on GitHub.
+To merge the pull request, click and hold the button for a couple seconds until the arming indicator fills with yellow and starts pulsing, then release.  This procedure is in place to reduce the chances of accidentally merging a pull request without requiring a separate confirmation.
 
+You can set merge options and edit the merge commit message via the dropdown attached to the button:
 
-## Filter field 
+![merge options](images/merge_1.png ':size=440')
 
-In the filter field, enter one or more terms to match in the PR summary, repository, number, milestone, labels, author username, or blocking reviewer.  The query is immediately reflected in the URL if you'd like to bookmark it.
+Here you can select between the usual GitHub merge styles (normal/full, squash, and rebase), and whether Reviewable should automatically delete the source branch for you if the merge is successful.  Your selections are automatically persisted for this review, and the selections you made last will be applied to any new reviews.
 
-<strong>Create a new review:</strong> To create or access a review for a PR that you can see on GitHub, simply paste the URL into the filter field.
+?> When using the rebase merge style, Reviewable will indicate if the merge will be a fast-forward by adding a small annotation under the style radio button.
 
-You can also use the special filters in the table below, adding either a + or - prefix to the special term (such as "+open").
-
-Click the small <strong>Set as your default</strong> link to change the default to the filter to what you've entered in the filter field.
-
-![reviewable filter field](images/reviews_6.png "")
-<br>
-
-Add an OR operator to the positive filter by entering a comma. For example, “+needs:review,needs:fix” will filter for all reviews that need work, or have a failing check. For negative filters, the comma functions as an AND operator. More complex boolean expressions are not supported.
-
-<table>
-<tbody>
-<tr>
-<td>
-<p><strong>&plusmn;open</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Currently open PRs</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;red</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">PRs with red counters</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;mine</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">Created, assigned, and requested PRs</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;needs</strong><strong><br /></strong><strong> &nbsp;&nbsp;&nbsp;review</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;fix</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;merge</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;me</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;author</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;reviewer</strong><strong><br /><br /></strong></p>
-</td>
-<td><br />
-<p><span style="font-weight: 400;">Incomplete reviews</span></p>
-<p><span style="font-weight: 400;">Reviews with failing checks</span></p>
-<p><span style="font-weight: 400;">Completed and clean reviews</span></p>
-<p><span style="font-weight: 400;">Reviews waiting on you</span></p>
-<p><span style="font-weight: 400;">Reviews waiting on author</span></p>
-<p><span style="font-weight: 400;">Reviews waiting on a reviewer</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;am:</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;author</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;assigned</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;requested</strong></p>
-<p><strong> &nbsp;&nbsp;&nbsp;</strong></p>
-</td>
-<td><br />
-<p><span style="font-weight: 400;">Created PRs</span></p>
-<p><span style="font-weight: 400;">Assigned PRs</span></p>
-<p><span style="font-weight: 400;">Requested reviewer PRs</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;public</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">PRs from public repos</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;private</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">PRs from private repos</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;starred</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">PRs from repos you starred</span></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><strong>&plusmn;watched</strong></p>
-</td>
-<td>
-<p><span style="font-weight: 400;">PRs from repos you&rsquo;re watching</span></p>
-</td>
-</tr>
-</tbody>
-</table>
+If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well.
 
 
-## Open a review
+## Review toolbar
 
-Click on a listing to open the review for that PR. If a ![reviewable open a review](images/reviews_7.png "") is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If ![reviewable free trial](images/reviews_8.png "") is also shown, this may begin a free trial. The author of the PR is shown to the left of the , and people whose attention the review currently needs to the right. You can see the approval status icon for any reviewer, which will appear with a ![reviewable review waiting](images/reviews_9.png "")  if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels.
+At the top of every review page you’ll find a floating toolbar with some core state indicators and buttons for common actions.
 
-![alt_text](images/reviews_10.png "")
-<br>
+![reviewable top toolbar](images/toptoolbar_1.png ':size=512')
 
-The ![reviewable repository not connected](images/reviews_11.png "") icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [link to Repositories] page.
+Click the bunny shortcut menu icon to drop down a panel in which you can jump to a file or quickly edit the top-level draft.  This menu icon only appears after you've scrolled down the page a bit.
 
-A ![reviewable stalled review](images/reviews_12.png "") icon indicates a stalled review, that has not been updated in over two weeks.
+At the end of the toolbar you'll always find either a **Publish** or **Merge** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.
 
-## Exclude or include stalled PRs
-If shown, you can click the link near the bottom of the panel to exclude or include any stalled PRs.  The current state of this toggle is reflected in the URL, so you can bookmark it.
+### Checks
 
-## Reviews List Toggles
-At the bottom of the Reviews page, you’ll find two toggle buttons, which we explain below.
+This item summarizes the current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.  The donut chart icon indicates the relative proportion of <span class="green label">successful</span>, <span class="grey label">pending</span>, and <span class="red label">error/fail</span> states.
 
-![reviewable reviews list toggles](images/reviews_14.png "")
-<br>
+Click the item to open a panel with more details:
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td><strong>NOTE</strong>: Green <strong>Also show team reviews</strong> and <strong>Also show private reviews</strong> buttons may appear at the bottom if you haven't granted the respective permissions to Reviewable yet.</td>
-</tr>
-</tbody>
-</table>
+![reviewable checks](images/toptoolbar_2.png)
 
-#### Show pull request not yet connected to Reviewable 
-If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with the ![reviewable open a review](images/reviews_7.png "") icon, and clicking that PR will connect that PR to a review and insert a link into the PR description.
+These state icons may appear in the panel:
 
-You may want to turn off this toggle if you only want to see PRs from connected repositories.
+![reviewable check status](images/toptoolbar_3.png ':size=300')
 
-#### Also show pull request you’re not involved with from all repos to which you can push. 
-If this toggle is on, the list includes PRs from all repos where you have commit privileges. 
+If you're a repo admin you can click on the small wrench icon next to the current review state to jump to the [custom review completion condition](repositories.md#completion-condition) editor in the repository's settings.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td><strong>NOTE</strong>: Optionally, you can restrict this set of repos to only those repos connected to Reviewable, or watched or starred on GitHub. This can be useful if you have push permissions to many on a lot of repos—as in the case, for example, that you don’t see random open-source repos while at work.</td>
-</tr>
-</tbody>
-</table>
+Also, if your PR branch is behind the target branch, you can merge the target branch into your PR by clicking the small merge button, next to the mergeability status.
 
+### Changes
+
+This item summarizes the changes you're currently looking at.  The revision label indicates the revision that is the current right diff bound for all files, or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the panel, and then click **Show Unreviewed Diffs**. Or, adjust the diff bounds manually yourself.
+
+Click the item to open a panel with more details:
+
+![reviewable changes](images/toptoolbar_4.png)
+
+This is similar to parts of the [changes summary box](#changes-summary), but also includes a list of commits currently in scope.
+
+### Counters
+
+The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear.
+
+?> The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
+
+The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>.  Click to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often you may want to check the review settings in the [Changes summary box](#changes-summary) or customize your [review completion condition](repositories.md#completion-condition), which also controls the per-file reviewed state.
+
+?> If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
+
+The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
+
+?> The main general discussion is always considered resolved.
+
+The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
+
+
+## Changes summary :id=changes-summary
+
+This panel appears at the very top of the review page. The top line describes the current diff set you're viewing as succinctly as possible to help orient you.  There's also a link to the pull request in the top-right corner..
+
+![reviewable summary of changes](images/summary_1.png)
+
+The panel is divided into three sections, and has some auxiliary [file matrix](files.md#file-matrix) controls at the bottom.
+
+### Files
+
+This shows the number of files currently in the review.
+
+Any extra _obsolete files_ have been modified at some point during the PR, but those are now the same as in the target base branch (so no further review of those files is necessary).  They're usually hidden by default but you can reveal manually by clicking a small link next to the count.  If you are in commit-by-commit review mode then obsolete files will still be selected for review for you, until you reach the commit at which they've become obsolete.
+
+The **Mark as Reviewed** button will mark all files as reviewed—up to the current right-bound of the diffs. This doesn’t necessarily mean that you think the files are ready for merging, but rather only that you reviewed them and added all of your comments. After clicking this button, a small **Undo** link will appear beneath it for a while. (Incidentally, this is the only action in Reviewable that offers an explicit undo method of recovery.)
+
+To mark files as reviewed individually, click the buttons to the left of the file name in the File Matrix, or in the file headers and at the bottom of unreviewed files.
+
+### Revisions
+
+This shows the total number of revisions in the review. Each revision is an automatic, unmodifiable capture of one or more commits. You’ll find the commits assigned to a revision in the Review Discussion box, and also in the Changes drop-down at the very top of the page.
+
+?> The logic for grouping commits into revisions depends on the [review style](#changes-commits), number of commits pushed at the same time, commit authors, etc.  There are also some safety limits for how many revisions Reviewable will create at one time.
+
+A _provisional revision_ is tentative, since it may still change up to the point at which someone begins reviewing it. The intent behind provisional revisions is to permit the PR author to self-review the changes and push fixes without polluting the revision list.  Provisional revisions are italicized in the file matrix.
+
+An _obsolete revision_ is one that is no longer part of the pull request due to a force push that changed the commit history.  It will appear crossed out in the file matrix.
+
+The **Show Unreviewed Diffs** button (exact wording varies) in this section will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. When you first load the review page, this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a **combined commits** style review, this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using **review each commit** style, this will be the range between the last fully reviewed commit and the next one. If you're the PR author, this will be the range between the last snapshotted revision and the latest one, so you can review the diffs that you have just pushed.</more>
+
+?> When applicable, you’ll find a small **Show full diff** link beneath the **Show Unreviewed Diffs** button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.
+
+When appropriate, a checkbox for **Include changes in files previously reviewed only by others** will appears beneath the button. Leave this box unchecked to automatically partition a review among multiple reviewers. For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. <more> So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter. The exact semantics of this feature are a bit tricky, though, so please see [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a full exploration and why some people choose to remap `n/p` onto <code>nextPersonallyUnreviewedFile()</code>.</more>
+
+### Commits :id=changes-commits
+
+This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or hange the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.
+
+The **Review Style** dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.
+
+![reviewable review style](images/summary_2.png)
+
+There are two review styles, and changing the style will require from a few seconds to a minute or so to restructure the provisional revisions in the review.
+
+*   **Combine commits for review** — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.
+*   **Review each commit separately** — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.
+
+If you're a repo admin, you can also set the default review style for the repo via a small link under the dropdown.
+
+!> Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
+
+
+## Labels and participants summary
+
+This summary appears at the bottom of the general discussion (see the screenshot below). It includes the relevant milestone for the PR, any labels that have been applied, and a list of participants in the review.
+
+For each participant:
+
+*   a red or grey dot on the avatar indicates their current approval and "needed" status—identical to the review list.
+*   The comment icon will be dark in color if the participant has any drafts pending.
+*   The comment text indicates the last time they edited the review.
+*   The **assigned** and **review requested** markers indicate the corresponding state.
+*   There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).
+
+![reviewable review labels and participants](images/summary_3.png)
+
+
+## Keyboard shortcuts
+There are a number of keyboard shortcuts available to power your way through a review. Type `?` to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the [Custom key bindings](accountsettings.md#custom-key-bindings) section.
+
+![reviewable keyboard shortcuts](images/toptoolbar_7.png)
 
