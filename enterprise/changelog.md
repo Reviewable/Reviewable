@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Fix: correctly compute height of file matrix when concealing/revealing obsolete files.
+- Fix: when navigating to a file in a review, avoid animating the header multiple times if the user has visited multiple review pages during the session.
 
 #### 2003.3043 (min 1992.2986 GHE 2.12+) 2018-11-28
 - Upd: remove "butterfly" onboarding mechanism, to be replaced by a more conventional (and less hate-inspiring) checklist as part of the Vue rework at a later date.
