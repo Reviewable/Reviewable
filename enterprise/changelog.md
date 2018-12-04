@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Upd: show a yellow warning sign on the merge button if non-required checks are failing, instead of a red one which is now reserved for admin overrides of required checks.
 - Fix: correctly compute height of file matrix when concealing/revealing obsolete files.
 - Fix: when navigating to a file in a review, avoid animating the header multiple times if the user has visited multiple review pages during the session.
 - Fix: in the "mark reviewed and go to next file" button, hitting the small red button will now also advance to the next file instead of only marking it as reviewed.  This was a regression from a version or two ago.
