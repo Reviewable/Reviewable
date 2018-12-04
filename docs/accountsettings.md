@@ -84,7 +84,7 @@ Your bindings will be loaded and applied right away, and the cheatsheet will upd
 Click the toggle to turn animated transitions on and off throughout the UI.
 
 
-## Contrast adjustment
+## Contrast adjustment :id=adjust-contrast
 
 Use the slider to adjust the UI contrast. Currently this only affects the red and green diff highlighting in reviews, but may be used for other UI elements in the future as well.
 

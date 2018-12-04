@@ -5,21 +5,10 @@ Review participants engage in discussions about the changes proposed in the pull
 This chapter covers all types of Reviewable discussions, including:
 
 *   The general discussion
-*   Other top-level discussions (click the **Start a new discussion **button)
+*   Other top-level discussions (click the **Start a new discussion** button)
 *   All the various line-specific discussions that occur among all review participants.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td>**NOTES**:
-
-1.  Participants in the general discussion have no dispositions, and it's always considered resolved.
-2.  Other top-level discussions created by clicking the **Start a new discussion** button behave identically to line-specific discussions.
-
-</td>
-</tr>
-</tbody>
-</table>
+?> Participants in the general discussion have no dispositions, and it's always considered resolved.  Other top-level discussions created by clicking the **Start a new discussion** button behave identically to line-specific discussions.
 
 Each comment indicates its author. Hover over the avatar to view the name and username of the author. You can use the browser Find feature to search throughout all of the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.
 
@@ -70,13 +59,7 @@ To mark all new comments as read without taking any action, hover over this high
 
 At the bottom of each discussion box, you can write a comment to add to the discussion. The draft is saved progressively as you write it, but won’t be visible to others until you click **Publish**.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td>**NOTE**: Until you click **Publish**, other people will be able to see that you have unsent drafts pending and how long ago you last touched the review, for example, by editing a draft.</td>
-</tr>
-</tbody>
-</table>
+?> Until you click **Publish**, other people will be able to see that you have unsent drafts pending and how long ago you last touched the review, for example, by editing a draft.
 
 All comments are formatted as [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
@@ -146,13 +129,7 @@ Starting your draft with one of these words will switch to the corresponding dis
 
 A discussion is resolved if and only if at least one participant is **Satisfied** or **Informing **and none of the participants are **Working** or **Blocking**, or if there are no active participants left.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td>**NOTE**: Participants whose disposition is Discussing are abstaining from the decision.</td>
-</tr>
-</tbody>
-</table>
+?> Participants whose disposition is Discussing are abstaining from the decision.</td>
 
 An unresolved discussion is in **unreplied** status for you (appears as red) if one of the following rules applies—but none of the preceding rules apply to anybody else. If rule #1 is applicable, a resolved discussion is **unreplied** for you.
 
@@ -213,122 +190,15 @@ To do so, click the **Start a new discussion** button below the Review Discussio
 ## Acknowledge button
 The primary action button label will correspond to both your role and the state of the discussion. Clicking it will always mark the discussion as read, but may have other effects according to these rules:
 
-<table>
-	<tbody>
-		<tr>
-			<td>
-				<p>**Role**</p>
-			</td>
-			<td>
-				<p>**Discussion**</p>
-			</td>
-			<td>
-				<p>**Button label**</p>
-			</td>
-			<td>
-				<p>**Effect**</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Informing</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Resolved with no other participants</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Retract</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Satisfied.</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Informing</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Resolved</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Conclude</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Satisfied.</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Active participant, not Satisfied</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Unresolved with no other participants</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Retract</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Satisfied.</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Not Satisfied</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Unresolved and switching to Satisfied would resolve</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Resolve</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Satisfied.</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">PR author not Satisfied, or anyone Working</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Unresolved</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Done</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Satisfied and creates a "Done." message.</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Blocking</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Unresolved and nobody Working</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Accept</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Satisfied.</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Any</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Unread comments</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Acknowledge</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Sets disposition to Following if passive participant or not a participant.</span></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+| Role | Discussion | Button label | Effect |
+|------|------------|:-------------|--------|
+| Informing | Resolved with no other participants | Retract | Sets disposition to Satisfied |
+| Informing | Resolved | Conclude | Sets disposition to Satisfied |
+| Active participant, not Satisfied | Unresolved with no other participants | Retract | Sets disposition to Satisfied |
+| Not Satisfied | Unresolved and switching to Satisfied would resolve | Resolve | Sets disposition to Satisfied |
+| PR author not Satisfied, or anyone Working | Unresolved | Done | Sets disposition to Satisfied and creates a "Done." message |
+| Blocking | Unresolved and nobody Working | Accept | Sets disposition to Satisfied |
+| Any | Unread comments | Acknowledge | Sets disposition to Following if passive participant or not a participant |
 
 Marking comments as read (explicitly or in conjunction with a reply) when you're an active participant is also buffered, and applied only when publishing. This avoids situations where a discussion shows up as unreplied to somebody else before your reply was published.
 
@@ -338,74 +208,12 @@ The default behavior for comments is this: A comment that creates a new discussi
 
 If a comment starts with one of the following keywords, it will set the corresponding disposition (ignoring the defaults and default overrides above)—unless manually changed by the user for that comment:
 
-<table>
-	<tbody>
-		<tr>
-			<td>
-				<p>**Prefix**</p>
-			</td>
-			<td>
-				<p>**Initial comment**</p>
-			</td>
-			<td>
-				<p>**First reply**</p>
-			</td>
-			<td>
-				<p>**Subsequent reply**</p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">FYI, BTW</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Informing</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Discussing</span></p>
-			</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Minor, Nit</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Discussing</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Discussing</span></p>
-			</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">OK, Done, LGTM</span></p>
-			</td>
-			<td>&nbsp;</td>
-			<td>
-				<p><span style="font-weight: 400;">Satisfied</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Satisfied</span></p>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<p><span style="font-weight: 400;">Working, Will do</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Working</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Working</span></p>
-			</td>
-			<td>
-				<p><span style="font-weight: 400;">Working</span></p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+| Prefix | Initial comment | First Reply | Subsequent reply |
+|--------|:---------------:|:-----------:|:----------------:|
+| FYI, BTW | Informing | Discussing | |
+| Minor, Nit | Discussing | Discussing | |
+| OK, Done, LGTM | | Satisfied | Satisfied |
+| Working, Will do | Working | Working | Working |
 
 ## In-comment directives
 
@@ -413,20 +221,10 @@ You can add special directives inline to any comment (not just top-level ones) t
 
 The directives you can use are **±label**, **±milestone**, **±@username** (for assignees) and **±reviewer:@username** (for requested reviewers).  Reviewable will warn you about invalid assignees or reviewers—either directly or via email if necessary—but not about bad labels or milestones since false positives are too common there.
 
-<table border ="1", bgcolor="ADE9FB">
-<tbody>
-<tr>
-<td>**NOTES for email and GitHub comments**:
+!> For email and GitHub comments, if the repo is not connected then directives won't take effect until somebody visits the review in Reviewable.  Editing directives in a previously sent message won't work either.
 
-1. If the repo is not connected, then directives won't take effect until somebody visits the review in Reviewable.
-2. Editing directives in a previously sent message won't work either.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 ## Publishing comments
-All draft comments, pending acknowledgements, disposition changes, dismissals, and review markings will publish along with the review. Learn more in the [Publishing section](publishbutton.md).
+All draft comments, pending acknowledgements, disposition changes, dismissals, and review markings will publish along with the review. Learn more in the [Publishing section](reviews.md#publish).
 
 

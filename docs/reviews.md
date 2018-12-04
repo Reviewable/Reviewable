@@ -8,7 +8,7 @@ In general, Reviewable keeps data synchronized between the review and its pull r
 
 This chapter provides an overview of the review page, but the core features of reviewing files and managing review discussions are addressed separately in subsequent chapters.
 
-## Publishing your review
+## Publishing your review :id=publish
 
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
@@ -33,7 +33,7 @@ Reviewable will select a default approval level for you according to your review
 The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
 
-## Merging a pull request
+## Merging a pull request :id=merge
 
 When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.
 
