@@ -12,7 +12,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: when navigating to a file in a review, avoid animating the header multiple times if the user has visited multiple review pages during the session.
 - Fix: in the "mark reviewed and go to next file" button, hitting the small red button will now also advance to the next file instead of only marking it as reviewed.  This was a regression from a version or two ago.
 - Fix: avoid a "not ready" crash when clicking on a disabled Merge button.
-- Fix: remove race condition that could result in a review mistakenly retaining the wrong merge status (allowed, disallowed, etc.) until the page was reloaded if branch protection was turned on and the Reviewable status check was required.
+- Fix: compute mergeability status correctly and in a timely fashion in all (or at least more) situations when branch protection is turned on.
+- Fix: don't lock up the dashboard when user types a partial URL into the search box.
 
 #### 2003.3043 (min 1992.2986 GHE 2.12+) 2018-11-28
 - Upd: remove "butterfly" onboarding mechanism, to be replaced by a more conventional (and less hate-inspiring) checklist as part of the Vue rework at a later date.
