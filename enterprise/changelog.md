@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid a "not ready" crash when clicking on a disabled Merge button.
 - Fix: compute mergeability status correctly and in a timely fashion in all (or at least more) situations when branch protection is turned on.
 - Fix: don't lock up the dashboard when user types a partial URL into the search box.
+- Fix: in markdown comments, don't treat multiple triple-backticks on the same line as an unclosed code block since GitHub renders them as if though they were inline single-backticks instead.
 
 #### 2003.3043 (min 1992.2986 GHE 2.12+) 2018-11-28
 - Upd: remove "butterfly" onboarding mechanism, to be replaced by a more conventional (and less hate-inspiring) checklist as part of the Vue rework at a later date.
