@@ -74,7 +74,7 @@ You can also drag in the diff header to bulk-select the diff bounds. Doing so in
 
 Below the [top-level discussions](discussions.md) you'll find the file contents.
 
-### File diff header
+### File header
 
 At the top of each file diff panel there's a file path. Hold down `⌘`, `Ctrl`, or `⇧` (as appropriate for your browser) to open it in a new tab.  If the file paths are too long some may be collapsed in places with an &hellip;; hover over the path or swipe to expand and see the full path.  You can also double-click on or near the path to select it — even when collapsed — for easy copying.
 
@@ -96,15 +96,15 @@ In the gutter (either beside or between the diffs) you may see any of the follow
 
 | Marker | Meaning |
 |:------:|---------|
-|   `⊥`    | This line only has changes in the base branch, between the base commits corresponding to the current diff bounds. |
-|   `␣`    | This line only has whitespace changes. |
-|   `☑`   | There are one or more resolved discussions on this line.  Click to reveal. |
+|  `⊥`   | This line only has changes in the base branch, between the base commits corresponding to the current diff bounds. |
+|  `␣`   | This line only has whitespace changes. |
+| <code><i class="fa fa-check-square-o"></i></code> | There are one or more resolved discussions on this line.  Click to reveal. |
 
 ?> Reviewable only supports text file diffs at this time.  For images and other file types you'll need to go view the diff on GitHub — a convenient link will usually be provided.  You will still be able to post comments against such files but they won't be attached to a specific line.
 
 If a file requires your review, you'll see a tab at the bottom of the diff to [mark the file as reviewed](#mark-reviewed) and automatically advanced to the next file to review.
 
-#### Diff layout
+### Diff layout
 
 As you decrease the width of the browser window, the diff will convert from a side-by-side view to a unified view and vice-versa. Also, the code will automatically be wrapped at a reasonable, round number of columns proportional to the window width.  (Lines that are wrapped get a thick vertical bar on the left side.)
 
@@ -116,7 +116,7 @@ Drag the caret to manually set the number of columns at which to wrap code.  If 
 
 ?> All of these settings are personal but global across all files, PRs, and repos.
 
-#### Collapsed sections
+### Collapsed sections
 
 Reviewable will automatically collapse sections of the diff with no meaningful changes and no discussions.  You can selectively expand these collapsed sections in a number of ways:
 
@@ -130,7 +130,7 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
   *   **No changes** — lines with no changes at all between your current diff bounds.
   *   **Whitespace changes** — this is the count of lines in which only the whitespace has changed (marked with a `␣` when expanded).
   *   **Base commit changes** — are lines in which only the base branch has changed, likely not due to work on this pull request (marked with a `⊥` when expanded)
-  *   **Resolved discussion** — are lines with resolved discussions attached (marked with a `☑` when expanded).
+  *   **Resolved discussion** — are lines with resolved discussions attached (marked with a <code><i class="fa fa-check-square-o"></i></code> when expanded).
 
 4. Click the **Collapsed** drop-down to view options for expanding everything — either for **this file** or **all files**.  The toggle button selects whether to **collapse whitespace changes** in all files in this review.  The setting will also be your default for new reviews.
 
@@ -138,9 +138,10 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 
 ?> The only way to collapse expanded diff lines back down is to change the diff bounds.
 
-### Line-specific discussions
 
-Click on any line in a diff — even one far away from any changes — to begin a new discussion.  If you select some code first, it will automatically be quoted and copied into your message.
+## Line-specific discussions :id=line-discussion
+
+Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.  If you select some code first, it will automatically be quoted and copied into your message.
 
 ![reviewable fill diffs begin a new discussion](images/filediffs_12.png)
 
@@ -150,21 +151,25 @@ This new discussion will also appear in the diffs of other revisions, at the nea
 
 ![reviewable fill diffs switch to original revision](images/filediffs_13.png)
 
+Next to the dog-ear you'll find the line number that this discussion is on (relative to the file contents of the current diff), which links to GitHub's view of the file by default.
+
+?> You can [customize the line link](accountsettings.md#line-link-template) to open your favorite editor on the given line instead.
+
 For lots more information on discussions, please see the [next chapter](discussions.md).
 
 
-### Diff customization
+## Diff customization
 
 You can customize which files are diffed and how the diffs are displayed at the repository level.
 
-#### Generated files
+### Generated files
 
 Reviewable will automatically detect many kinds of generated files and hide the diff by default. If you'd like to add a new common pattern (based either on the filename or the contents of the file), don't hesitate to let us know. If your generated files are specific to your project, you have two options:
 
 *   You can tweak your build to insert the exact text `GENERATED FILE DO NOT EDIT` as a comment on a line by itself into the generated file. There can be up to 4 additional characters on the line before and after the marker text. We have this restriction so that Reviewable doesn't accidentally consider your build script itself to be generated!
 *   You can use `.gitattributes` files checked into your repo to control diffing — see below.
 
-#### Diff suppression and syntax highlighting
+### Diff suppression and file type
 
 Reviewable respects the diff settings in your `.gitattributes` files to the best of its ability. For example, to disable diffs for any files in the vendor directory and use PHP highlighting for all .phpt files, you could insert a `.gitattributes` file in the root of your repo, like this:
 
@@ -176,11 +181,11 @@ Reviewable respects the diff settings in your `.gitattributes` files to the best
 For details on the syntax, see the [gitattributes reference doc](https://git-scm.com/docs/gitattributes).
 
 
-### Special states
+## Special states
 
 The way diffs are displayed is suject to some special states, on both file-by-file and whole-review bases.
 
-#### Diff-suppressing states
+### Diff-suppressing states
 
 There are many situations in which a diff won't be produced for a given file — either to ensure good performance, or because it isn't sensible to do so. Some examples include:
 
@@ -191,11 +196,11 @@ There are many situations in which a diff won't be produced for a given file —
 
 In such cases, the file will appear together with a message explaining why the diff is missing. Typically, there will also be a button such as **Try Again** or **View on GitHub** by which you can override or bypass the condition.
 
-!> Be careful if you’re trying to use `ctrl-f` to find something in the diffs when some are not shown.
+!> Be careful if you’re trying to use `⌘-f` or `ctrl-f` to find something in the diffs when some are not shown.
 
 ?> If diffs that make sense to be shown were omitted for some reason, you'll find a special notice above the first file diff that explains what happened and lets you override the decision.  (See screenshot below.)
 
-#### Single file mode
+### Single file mode
 
 Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (25 files as of this writing). In this mode, only one file will appear at a time. You'll also see a summary explanation just above the first (and only) file diff, together with a button which you can click to force all files to appear anyway until you leave the page.
 
@@ -218,7 +223,7 @@ Reviewable gracefully supports rebasing and force-pushing to your branch PR in t
 
 Reviewable also uses heuristics to match rebased commits to their ancestors using commit messages.  When successful, this enables Reviewable to suggest minimum-delta revision pairs for diffing in the “review each commit” style even if you reordered the commits.  Arcs that link blocks of revisions above the file matrix show a high-level overview of this mapping.  (We don’t show matches between individual revisions because that can quickly lead to an unreadable diagram.)
 
-### Forked repos that track upstream changes
+### Forked repos tracking upstream changes
 
 Some advanced workflows require overwriting the target branch of a PR with the head branch when it's ready to merge. This is necessary, for example, if you're maintaining a fork and rebasing from the upstream master. In such cases, both GitHub and Reviewable will choose the wrong base commit to compare files, and display not only all of the upstream changes—but also all the extra changes made in your fork over time.
 

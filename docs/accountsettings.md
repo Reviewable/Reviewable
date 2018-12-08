@@ -17,7 +17,7 @@ Specify the location of the stylesheet that you want to apply to diffed code. No
 
 To use the GitHub style, for example, set the URL to `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css`
 
-Ensure that the stylesheet is served as text/css. It may be necessary for you to use [https://gitcdn.xyz](https://gitcdn.xyz).
+Ensure that the stylesheet is served as text/css. It may be necessary for you to use [https://gitcdn.xyz](https://gitcdn.xyz) or another similar service.
 
 We also have a few extra styles used to highlight tabs, trailing whitespace, and lack of final newline that you can customize:
 
@@ -40,7 +40,7 @@ By default, only deltas appear with highlights. If you'd also like diff lines wi
 If your favorite language is not one of the 120+ that have syntax highlighting, you can open an issue with [highlight.js](https://highlightjs.org/). Or, you can contribute a language-specific module to the project yourself.
 
 
-## Custom line link template
+## Custom line link template :id=line-link-template
 
 Here, enter the specific code line destination for the Line link that appears in the upper-right corner of discussions. Enter the syntax here to open the file in your favorite editor to the specific line that is under review. If nothing is specified here, the destination is Github.
 

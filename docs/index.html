@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
   <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
   <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body>
   <div id="app">Loading...</div>
@@ -29,7 +30,7 @@
           hook.afterEach(function(html, next) {
             html = html
               .replace(/Edit on github/, 'Edit')
-              .replace('float: right', 'margin-top: 0.5em')
+              .replace('float: right', 'margin-top: 1em')
               .replace('overflow: auto', 'float: right');
             next(html);
           });
