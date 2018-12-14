@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### 2017.3170 (min 1992.2986 GHE 2.12+) 2018-12-14
 - Upd: show a yellow warning sign on the merge button if non-required checks are failing, instead of a red one which is now reserved for admin overrides of required checks.
 - Fix: correctly compute height of file matrix when concealing/revealing obsolete files.
 - Fix: when navigating to a file in a review, avoid animating the header multiple times if the user has visited multiple review pages during the session.
@@ -15,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: compute mergeability status correctly and in a timely fashion in all (or at least more) situations when branch protection is turned on.
 - Fix: don't lock up the dashboard when user types a partial URL into the search box.
 - Fix: in markdown comments, don't treat multiple triple-backticks on the same line as an unclosed code block since GitHub renders them as if though they were inline single-backticks instead.
+- Fix: respect no-animation setting in merge options dropdown.
 
 #### 2003.3043 (min 1992.2986 GHE 2.12+) 2018-11-28
 - Upd: remove "butterfly" onboarding mechanism, to be replaced by a more conventional (and less hate-inspiring) checklist as part of the Vue rework at a later date.
