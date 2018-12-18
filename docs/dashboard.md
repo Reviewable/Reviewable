@@ -70,13 +70,13 @@ Add an OR operator to the positive filter by entering a comma. For example, `+ne
 
 ## Open a review
 
-Click on a listing to open the review for that PR. If a ![reviewable open a review](images/reviews_7.png ':size=16') is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If ![reviewable free trial](images/reviews_8.png ':size=16') is also shown, this may begin a free trial. The author of the PR is shown to the left of the , and people whose attention the review currently needs to the right. You can see the approval status icon for any reviewer, which will appear with a ![reviewable review waiting](images/reviews_9.png ':size=16')  if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels.
+Click on a listing to open the review for that PR. If a <i class="fa fa-plus-circle" style="color: #85C88B"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial. The author of the PR is shown to the left of the , and people whose attention the review currently needs to the right. You can see the approval status icon for any reviewer, which will appear with a <i class="fa fa-circle" style="color: #D87D7C"></i> if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels.
 
 ![reviews list](images/reviews_10.png)
 
-The ![reviewable repository not connected](images/reviews_11.png ':size=16') icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [link to Repositories] page.
+The <i class="fa fa-chain-broken" style="color: #7D8084"></i> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [link to Repositories] page.
 
-A ![reviewable stalled review](images/reviews_12.png ':size=16') icon indicates a stalled review, that has not been updated in over two weeks.
+A <i class="fa fa-calendar-times-o" style="color: #7D8084"></i> icon indicates a stalled review, that has not been updated in over two weeks.
 
 ## Exclude or include stalled PRs
 If shown, you can click the link near the bottom of the panel to exclude or include any stalled PRs.  The current state of this toggle is reflected in the URL, so you can bookmark it.
@@ -90,7 +90,7 @@ At the bottom of the Reviews page, you’ll find two toggle buttons, which we ex
 
 
 #### Show pull request not yet connected to Reviewable
-If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with the ![reviewable open a review](images/reviews_7.png ':size=16') icon, and clicking that PR will connect that PR to a review and insert a link into the PR description.
+If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with the <i class="fa fa-plus-circle" style="color: #85C88B"></i>, and clicking that PR will connect that PR to a review and insert a link into the PR description.
 
 You may want to turn off this toggle if you only want to see PRs from connected repositories.
 
