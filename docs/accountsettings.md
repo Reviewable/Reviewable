@@ -47,6 +47,7 @@ Here, enter the specific code line destination for the Line link that appears in
 If your favorite editor supports a custom URL scheme for linking to files, then you can use this feature. The sample templates below assume that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also assume that each repo directory is named the same as its repo. Look for your editor below to see the correct entry that you'll need to insert into the **Custom line link template** field.
 
 *   **GitHub:** `https://github.com/{{owner}}/{{repo}}/blob/{{viewSha}}/{{path}}#L{{viewLine}}` is the built-in default that opens GitHub on the exact version of the file you're looking at with the line highlighted.
+*   **Visual Studio Code:** `vscode://file/directory/with/repos/{{repo}}/{{path}}:{{line}}`.
 *   **TextMate:** `txmt://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}`.
 *   **Sublime Text:** `subl://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}` if you install an appropriate URL handler.
 *   **Emacs:** `emacs://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}` if you install the [Emacs URL Handler](https://github.com/typester/emacs-handler) for OS X. If you know of solutions for Linux or Windows, do [let us know](mailto:support@reviewable.io)!
