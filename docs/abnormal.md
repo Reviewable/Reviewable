@@ -1,7 +1,7 @@
 # Abnormal conditions
 
 ## GitHub status
-Reviewable monitors the [GitHubs status page](https://status.github.com), and will display a yellow or red warning indicator in the lower-right corner of the window if there are reported issues.  You can click on the indicator to read the message posted by GitHub's engineers.  Note that any issues with GitHub are likely to affect Reviewable as well, due to their tight integration.
+Reviewable monitors the [GitHubs status page](https://githubstatus.com), and will display a yellow or red warning indicator in the lower-right corner of the window if there are reported issues.  You can click on the indicator to read the message posted by GitHub's engineers.  Note that any issues with GitHub are likely to affect Reviewable as well, due to their tight integration.
 
 ![reviewable github status](images/otherissues_3.png)
 
