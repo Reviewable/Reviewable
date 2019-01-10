@@ -20,7 +20,7 @@ If the connection remains poor for a long time, a modal overlay will block acces
 ## Forced upgrade
 While we generally support older versions of the client for quite a while, if you’ve kept a page open without reloading it for weeks (or months!) we may lock it out and ask you to upgrade to the latest version immediately.  Just reload the page, or avoid the situation by occasionally reloading open pages yourself.
 
-![reviewable forced upgrade](images/otherissues_5.png)
+![reviewable forced upgrade](images/otherissues_6.png)
 
 
 ## Crash
