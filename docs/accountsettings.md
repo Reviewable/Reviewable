@@ -66,7 +66,7 @@ Typically, you'll want to edit and load the latest version of the file into the 
 
 You can customize the key bindings for common commands, and add new ones for commands that aren't bound by default.  First, get a copy of the [default bindings file](https://reviewable.io/bindings.json) and put it somewhere accessible on the web (such as a [gist](https://gist.github.com/)). Edit this file according to your preferences; all available commands are given in the file, though not all are bound by default. You can use any key combos supported by [Mousetrap](http://craig.is/killing/mice). If your favorite command isn't listed, please [open an issue](https://github.com/reviewable/reviewable/issues) so we can add it.
 
-When you're done, point Reviewable to your custom bindings file by entering its URL in the field. If you're using a gist, make sure to get the "raw" URL, and consider removing the commit SHA from the path to always point to the latest version.
+When you're done, point Reviewable to your custom bindings file by entering its URL in the field. If you're using a gist, make sure to get the “raw” URL, and consider removing the commit SHA from the path to always point to the latest version.
 
 Your bindings will be loaded and applied right away, and the cheatsheet will update accordingly to reflect them. Be sure to check the browser's console if they don't appear to work, since any errors will appear there. To load any updates to your file, either reload the page or make a no-op edit to the URL field.
 

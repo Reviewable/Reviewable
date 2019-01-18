@@ -49,7 +49,7 @@ Reviewable recognizes a number of case-insensitive shorthands in external commen
 
 ## Ending a discussion
 
-If you don't need to reply to a discussion you can click the primary action button at the bottom instead. The button's label will indicate its precise action — corresponding to both your role and the state of the discussion — but the general meaning is "I have nothing further to say about this". Clicking the button will always mark the discussion as read, and usually set your [disposition](#dispositions) to **<i class="fa fa-check-circle"></i> Satisfied** as well:
+If you don't need to reply to a discussion you can click the primary action button at the bottom instead. The button's label will indicate its precise action — corresponding to both your role and the state of the discussion — but the general meaning is “I have nothing further to say about this”. Clicking the button will always mark the discussion as read, and usually set your [disposition](#dispositions) to **<i class="fa fa-check-circle"></i> Satisfied** as well:
 
 | Role | Discussion | Button label | Effect |
 |------|------------|:------------:|--------|
@@ -81,7 +81,7 @@ If you have a draft reply to a discussion, the discussion is considered replied 
 
 ### New and old comments
 
-The yellow **New comments** ribbon demarcates the point where comments that are new to you begin.  Normally they'd lose their "new" status implicitly once you reply or click the primary action button, but if you don't want to do that yet for some reason you can hover over the ribbon to reveal a **mark read** link instead.
+The yellow **New comments** ribbon demarcates the point where comments that are new to you begin.  Normally they'd lose their “new” status implicitly once you reply or click the primary action button, but if you don't want to do that yet for some reason you can hover over the ribbon to reveal a **mark read** link instead.
 
 ?> Marking comments as read (by any means) is also buffered as a draft and revealed to others only when publishing.  This avoids situations where a discussion shows up as unreplied to somebody else before your reply was published.
 

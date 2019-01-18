@@ -45,7 +45,7 @@ You can change or cancel a subscription at any time with immediate effect, but t
 
 ## Subscription ownership
 
-At this time, even though a subscription covers one or more organizations, it is owned by a single user and only that user can manage it.  Other members will be informed that a subscription exists with a "Organizational subscription active" message next to the organization name but will be unable to affect it in any way, even if they're an organization owner.
+At this time, even though a subscription covers one or more organizations, it is owned by a single user and only that user can manage it.  Other members will be informed that a subscription exists with a “Organizational subscription active” message next to the organization name but will be unable to affect it in any way, even if they're an organization owner.
 
 It is also not possible to transfer a subscription between users.  As a workaround, have the new subscriber begin another (duplicate) subscription, then have the original subscriber cancel theirs. This way, there will be no interruption in service.
 

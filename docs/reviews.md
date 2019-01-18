@@ -8,6 +8,16 @@ In general, Reviewable keeps data synchronized between the review and its pull r
 
 This chapter provides an overview of the review page, but the core features of reviewing files and managing review discussions are addressed separately in subsequent chapters.
 
+## User roles
+
+Throughout this guide, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of three roles to every review participant:
+
+*   Author: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
+*   Reviewer: anybody that is not an author or mentionee.
+*   Mentionee: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
+
+It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.
+
 ## Publishing your review :id=publish
 
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
@@ -171,7 +181,7 @@ This summary appears at the bottom of the general discussion (see the screenshot
 
 For each participant:
 
-*   a red or grey dot on the avatar indicates their current approval and "needed" status—identical to the review list.
+*   a red or grey dot on the avatar indicates their current approval and “needed” status—identical to the review list.
 *   The comment icon will be dark in color if the participant has any drafts pending.
 *   The comment text indicates the last time they edited the review.
 *   The **assigned** and **review requested** markers indicate the corresponding state.

@@ -49,13 +49,3 @@ Help is available through many channels:
 ## Staying up to date
 
 Follow us on Twitter at [@reviewableio](https://twitter.com/reviewableio) for service status updates, changelog notifications, and occasional discussions and votes on potential features.  For the truly dedicated, you can watch the [Reviewable/Reviewable](https://github.com/reviewable/reviewable) repo for new issues and updates to these docs, or hang out in the [Gitter channel](https://gitter.im/Reviewable/Reviewable) to help out other users when we're not around.  (Thanks!)
-
-## User roles
-
-Throughout these docs, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of three roles to every review participant:
-
-*   Author: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
-*   Reviewer: anybody that is not an author or mentionee.
-*   Mentionee: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
-
-It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.

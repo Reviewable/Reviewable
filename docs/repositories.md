@@ -136,7 +136,7 @@ Reviewable allows you to write custom code that determines when a review is comp
 
 *   preventing review completion for N hours after a PR was created, so people get a chance to check it out,
 *   requiring reviews from certain people based on the labels attached to the PR, or
-*   preventing merging of PRs that have commits with "WIP" in the title.
+*   preventing merging of PRs that have commits with “WIP” in the title.
 
 ### Development environment
 
@@ -245,5 +245,5 @@ Your code must return an object with some or all of the following properties.  A
 - `pendingReviewers`: an array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.
 - `files`: an array of objects that look like `{path: 'full/path/to/file', revisions: [key: 'r1', reviewed: true]}` and override whether a file has been reviewed at the given revisions.  It's OK to just augment the `review.files` structure with `reviewed` flags and return the whole thing here.  By default, a file revision is considered reviewed if it was marked as so by at least one user.
 - `refreshTimestamp`: a timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.
-- `disableGitHubApprovals`: a boolean that, if true, will disable the "Approve" and "Request changes" options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
+- `disableGitHubApprovals`: a boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
 - `debug`: any data structure you'd like to be able to inspect when debugging your condition.  It'll be displayed in the **Evaluation result** pane but otherwise ignored.
