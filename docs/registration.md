@@ -18,7 +18,7 @@ Learn more in [Subscriptions](#subscriptions).
 
 !> A rare but even more confusing situation is that forked repos retain the access restrictions of their original organization. So, it's possible that your organization allows Reviewable, but a repo might not show up on the Repositories page because its original organization does not allow Reviewable. You will need to either get the original organization to allow Reviewable or make a manual copy of the repo instead of a fork.
 
-## GitHub authorizations
+## GitHub authorizations :id=github-authorizations
 It is necessary for you to grant authorizations to Reviewable in GitHub. Your current GitHub authorization scopes appear at the bottom of the Account Settings drop-down window:
 
 ![reviewable github authorizations](images/registration_3.png)
