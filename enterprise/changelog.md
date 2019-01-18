@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make the warning icon show up correctly in merge button.
 - Fix: update Reviewable's cached mergeability state promptly if Reviewable status check is required in GitHub.  Prior to this fix, actions that changed the review's completion status would not be reflected in the mergeability state until the user reloaded the review page or something else triggered a sync.
 - Fix: if review creation fails on visit, display error correctly in the browser.
+- Fix: ensure that GitHub auth upgrades don't accidentally switch to a different account, if the user signed in with a different username to GitHub but not Reviewable.
 - Fix: prevent spurious server shutdowns when fetching very long lists of items to process during background sweeps.
 
 #### 2017.3170 (min 1992.2986 GHE 2.12+) 2018-12-14
