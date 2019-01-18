@@ -207,7 +207,8 @@ The current state of the review is accessible to your code via the `review` vari
         {
           username: 'pkaminski',
           disposition: 'discussing',  // Participant's current disposition
-          resolved: true  // False if this participant is blocking resolution
+          resolved: true,  // False if this participant is blocking resolution
+          lastActivityTimestamp: 1436828040000  // Last time user sent a message or changed disposition
         }
       ],
       target: {  // Target file location; the top-level discussion doesn't have a target
@@ -223,7 +224,7 @@ The current state of the review is accessible to your code via the `review` vari
           key: 'r1',
           obsolete: false,
           reviewers: [  // List of users who marked file as reviewed at this revision
-            {username: 'somebody'}
+            {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
           ]
         }
       ]
@@ -241,5 +242,6 @@ Your code must return an object with some or all of the following properties.  A
 - `shortDescription`: a string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the `description` instead.
 - `pendingReviewers`: an array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.
 - `files`: an array of objects that look like `{path: 'full/path/to/file', revisions: [key: 'r1', reviewed: true]}` and override whether a file has been reviewed at the given revisions.  It's OK to just augment the `review.files` structure with `reviewed` flags and return the whole thing here.  By default, a file revision is considered reviewed if it was marked as so by at least one user.
+- `refreshTimestamp`: a timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.
 - `disableGitHubApprovals`: a boolean that, if true, will disable the "Approve" and "Request changes" options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
 - `debug`: any data structure you'd like to be able to inspect when debugging your condition.  It'll be displayed in the **Evaluation result** pane but otherwise ignored.
