@@ -10,9 +10,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: missing properties in the result of a custom review completion condition will now be filled in with values from the output of the built-in default condition.  This will make it easier to tweak things without having to take on maintenance of the full condition.
 - Upd: support `refreshTimestamp` in completion condition output structure, to determine when it should be re-evaluated.  Also add `lastActivityTimestamp` to discussion participants and `timestamp` to file reviewer marks (the latter will not be available for marks made in older versions).  See the new user guide for a full explanation of how this works!
 - Upd: add `review.pullRequest.requestedTeams` to the review state data made available to custom review completion conditions.  Old reviews are _not_ eagerly backfilled, but will gain the property when synced for any reason (e.g., being visited in the browser).
+- Upd: regularly delete stale cached info for users who never signed in to Reviewable.  This will help reduce the size of the users collection, which can eventually cause performance problems.
 - Fix: make the warning icon show up correctly in merge button.
 - Fix: update Reviewable's cached mergeability state promptly if Reviewable status check is required in GitHub.  Prior to this fix, actions that changed the review's completion status would not be reflected in the mergeability state until the user reloaded the review page or something else triggered a sync.
 - Fix: if review creation fails on visit, display error correctly in the browser.
+- Fix: prevent spurious server shutdowns when fetching very long lists of items to process during background sweeps.
 
 #### 2017.3170 (min 1992.2986 GHE 2.12+) 2018-12-14
 - Upd: show a yellow warning sign on the merge button if non-required checks are failing, instead of a red one which is now reserved for admin overrides of required checks.
