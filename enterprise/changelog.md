@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2033.3283 (min 1992.2986 GHE 2.12+) 2019-01-21
 - New: publish a complete user guide at https://docs.reviewable.io.  This has all the content from the online help system and more, organized to be both readable and searchable.  It will stay up to date with the current version of the app running on reviewable.io, so it may reference features that are not yet available to Enterprise, or that you have not yet deployed.  If this turns out to be a major issue we'll figure out a solution, but for now think of it as an additional incentive to update often!
 - Upd: fill in missing properties in the result of a custom review completion condition with values from the output of the built-in default condition.  This will make it easier to tweak things without having to take on maintenance of the full condition.
 - Upd: support `refreshTimestamp` in completion condition output structure, to determine when it should be re-evaluated.  Also add `lastActivityTimestamp` to discussion participants and `timestamp` to file reviewer marks (the latter will not be available for marks made in older versions).  See the new user guide for a full explanation of how this works!
