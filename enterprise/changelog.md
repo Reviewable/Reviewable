@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't show merge button if user lacks push permissions, even if PR is mergeable.
 - Fix: substitute ghost user for deleted users during completion condition evaluation if unable to find or fetch their old info.  Previously, the evaluation task would get into an infinite failure loop instead.
 - Fix: correctly render dismissed user status icon on dashboard.
+- Fix: truncate very long GitHub comments when syncing (current cutoff is 100KB) to avoid running afoul of Firebase's hard limits on data size.  (If the limits are exceeded it can get tricky to recover.)
 
 #### Release 2033.3283 (min 1992.2986 GHE 2.12+) 2019-01-21
 - New: publish a complete user guide at https://docs.reviewable.io.  This has all the content from the online help system and more, organized to be both readable and searchable.  It will stay up to date with the current version of the app running on reviewable.io, so it may reference features that are not yet available to Enterprise, or that you have not yet deployed.  If this turns out to be a major issue we'll figure out a solution, but for now think of it as an additional incentive to update often!
