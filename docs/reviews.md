@@ -26,13 +26,17 @@ As you work through a review using the tools at your disposal, Reviewable will a
 
 !> Some Reviewable inline comments won't appear as inline comments in GitHub and vice-versa, because the GitHub model for comment placement is poor and trying to conform to it would invalidate many of the best features in Reviewable. <more> In more detail, it's important to understand that GitHub has two types of inline comments: pull request (PR) comments and commit comments. PR comments are assigned to lines based on the raw git diffs between two commits. Reviewable doesn't use these diffs, making mapping locations hard (see [issue #14](https://github.com/Reviewable/Reviewable/issues/14)), and can place comments on lines that don't appear in the diffs. Also, comments placed on negative delta lines in GitHub don't actually record sufficient information to figure out what line they're really on! Commit comments share most of those limitations, and also disappear from the PR if the branch is rebased. Finally, it's impossible to post commit comments without triggering a notification email for each and every comment, and while PR comments can be batched the API only allows one commit to be targeted per batch and doesn't support threading.</more>
 
+You can open the dropdown menu off the **Publish** button to set a few extra options. The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
+
+![reviewable set the approval level](images/publish_1.png ':size=628')
+
+### Approval levels
+
 Like for GitHub reviews, there are three approval levels you can choose from when publishing via the dropdown attached to the button:
 
 *   **Comment** — Submit general feedback without explicit approval.
 *   **Approve** — Submit feedback and approve merging these changes.
 *   **Request changes** — Submit feedback that must be addressed before merging.
-
-![reviewable set the approval level](images/publish_1.png)
 
 Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.
 
@@ -40,8 +44,15 @@ Reviewable will select a default approval level for you according to your review
 
 !> If you choose **Comment**, any previous **Approve** or **Request changes** will remain in effect; you cannot rescind your vote, only change it.
 
-The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
+### Requested reviewers synchronization :id=sync-requested-reviewers
 
+Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants summary](#labels-and-participants-summary)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box.  Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
+
+!> It's not possible to request a review from the pull request's author in GitHub, even if the author is on Reviewable's list of awaited reviewers.
+
+?> Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools, such as [Pull Reminders](https://pullreminders.com/).
+
+Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](repositories.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
 
 ## Merging a pull request :id=merge
 
