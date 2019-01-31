@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/#/reviews?id=sync-requested-reviewers) for details.
 - Fix: remedy race condition when triggering completion condition evaluation in response to PR review events. Previously, it was possible for the condition to be triggered before the review state correctly reflected the new approvals.
 - Fix: improve forced logout on page load when session is close to expiring to be less likely to cause spurious errors.
 - Fix: if a review's style hasn't been set yet and the user lacks write permissions, temporarily initialize it locally to avoid potential breakage (and a blank dropdown in the UI).
