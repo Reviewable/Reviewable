@@ -7,7 +7,7 @@ Click the **Reviews** button at the very top of the page to display the reviews 
 
 ![reviewable reviews list](images/reviews_4.png)
 
-Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.
+Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  There's no way to show more or older closed PRs, you'll need to use GitHub to search for those.
 
 PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the **Waiting on me** group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
 
