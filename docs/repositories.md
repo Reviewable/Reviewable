@@ -177,6 +177,11 @@ The current state of the review is accessible to your code via the `review` vari
       {username: 'mdevs5531', participating: false}
     ],
     requestedReviewers: [
+      // When executing the condition prior to publishing a review, this list won't include any
+      // reviewers added by the "sync requested reviewers" option if it's checked.  Doing so would
+      // create a dependency cycle.  This only affects the posted message -- the condition will be
+      // re-evaluated after publishing with the full list of requested reviewers to determine the
+      // actual review status.
       {username: 'pkaminski-test', participating: true}
     ],
     number: 44,
