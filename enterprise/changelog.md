@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't offer PR author as a completion for `+reviewer:@` directive.
 - Fix: include pending changes to approval, assignees, reviewers, labels, etc. when evaluating the completion condition before publishing.  This didn't affect status accuracy (since the condition gets evaluated again after everything is published and committed) but could result in a bogus completion description being shown in the preview and posted in the GitHub message.
 - Fix: don't walk revision description message timestamps forward by 1ms every time the review gets synced in certain circumstances.  This could result in requiring users to regularly re-acknowledge those comments.
+- Fix: restore hotkey indicators in certain contextual help blurbs.
 
 #### Release 2033.3283 (min 1992.2986 GHE 2.12+) 2019-01-21
 - New: publish a complete user guide at https://docs.reviewable.io.  This has all the content from the online help system and more, organized to be both readable and searchable.  It will stay up to date with the current version of the app running on reviewable.io, so it may reference features that are not yet available to Enterprise, or that you have not yet deployed.  If this turns out to be a major issue we'll figure out a solution, but for now think of it as an additional incentive to update often!
