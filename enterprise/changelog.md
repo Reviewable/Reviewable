@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 
 #### Release 2056.3350 (min 1992.2986 GHE 2.12+) 2019-02-07
-- New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/#/reviews?id=sync-requested-reviewers) for details.  Great for integration with [Pull Reminders](https://pullreminders.com)!
+- New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/#/reviews?id=sync-requested-reviewers) for details.  Great for integration with [Pull Reminders](https://pullreminders.com) if you use Slack!
 - Fix: allow users to login in multiple browsers / profiles without forcing all but the latest one offline.  This was a regression introduced in 2033.3283.  Note that this is a temporary fix that reintroduces the auth ugprade race condition handled by the broken fix.  A better permanent fix will come in the next release, after a whole lot of testing.
 - Fix: remedy race condition when triggering completion condition evaluation in response to PR review events. Previously, it was possible for the condition to be triggered before the review state correctly reflected the new approvals.
 - Fix: improve forced logout on page load when session is close to expiring to be less likely to cause spurious errors.
