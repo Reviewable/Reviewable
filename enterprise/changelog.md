@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
+- Upd: add support for draft PRs.
 - Fix: ignore @-mentions that can't be resolved.
 - Fix: detect when the authorization has been upgraded in other tabs, and force user to re-authenticate to prevent an authorization skew between the permissions on the server and in the tab.  This was not a security issue but could result in unexpected errors.
 - Fix: lock out sign-in/sign-out during authentication (to avoid racing multiple auth requests) and when publishing (to avoid accidentally signing out and breaking the process halfway).
