@@ -186,6 +186,7 @@ The current state of the review is accessible to your code via the `review` vari
     ],
     number: 44,
     numCommits: 3,
+    draft: false,
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
     target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
     source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'}
