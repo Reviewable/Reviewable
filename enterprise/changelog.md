@@ -6,9 +6,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
+#### Upcoming changes once GHE supports the underlying API
+- Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
+
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
-- Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 - Fix: ignore @-mentions that can't be resolved.
 - Fix: detect when the authorization has been upgraded in other tabs, and force user to re-authenticate to prevent an authorization skew between the permissions on the server and in the tab.  This was not a security issue but could result in unexpected errors.
 - Fix: lock out sign-in/sign-out during authentication (to avoid racing multiple auth requests) and when publishing (to avoid accidentally signing out and breaking the process halfway).
