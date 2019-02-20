@@ -15,6 +15,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: detect when the authorization has been upgraded in other tabs, and force user to re-authenticate to prevent an authorization skew between the permissions on the server and in the tab.  This was not a security issue but could result in unexpected errors.
 - Fix: lock out sign-in/sign-out during authentication (to avoid racing multiple auth requests) and when publishing (to avoid accidentally signing out and breaking the process halfway).
 - Fix: fix minor visual issues with set default query link on dashboard.
+- Fix: prevent crash in rare cases when setting diff bounds by dragging on a touch device.
+- Fix: put pending reviewers list back in the checks dropdown.
+- Fix: don't request reviewer twice if user is self-requesting.  This is a no-op but looks ugly in GitHub's timeline.
 
 #### Release 2056.3350 (min 1992.2986 GHE 2.12+) 2019-02-07
 - New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/#/reviews?id=sync-requested-reviewers) for details.  Great for integration with [Pull Reminders](https://pullreminders.com) if you use Slack!
