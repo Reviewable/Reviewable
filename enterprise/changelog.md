@@ -15,7 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: detect when the authorization has been upgraded in other tabs, and force user to re-authenticate to prevent an authorization skew between the permissions on the server and in the tab.  This was not a security issue but could result in unexpected errors.
 - Fix: lock out sign-in/sign-out during authentication (to avoid racing multiple auth requests) and when publishing (to avoid accidentally signing out and breaking the process halfway).
 - Fix: fix minor visual issues with set default query link on dashboard.
-- Fix: prevent crash in rare cases when setting diff bounds by dragging on a touch device.
+- Fix: prevent crash in rare cases when setting diff bounds in file matrix header.
 - Fix: put pending reviewers list back in the checks dropdown.
 - Fix: don't request reviewer twice if user is self-requesting.  This is a no-op but looks ugly in GitHub's timeline.
 
