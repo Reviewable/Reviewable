@@ -10,6 +10,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Fix: correctly display and expand/contract long paths in file headers.
+- Fix: don't show file matrix until file renames have been mapped.
 
 #### Release 2066.3418 (min 1992.2986 GHE 2.12+) 2019-02-28
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
