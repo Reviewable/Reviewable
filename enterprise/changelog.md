@@ -10,9 +10,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2066.3418 (min 1992.2986 GHE 2.12+) 2019-02-28
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
 - Upd: upgrade to NodeJS 10.
-- Upd: (WARNING) upgrade emailing module.  It now uses `dns.resolve` instead of `dns.lookup` when resolving `REVIEWABLE_SMTP_URL`, which will query the DNS server directly and bypass some local configs such as `/etc/hosts` (i.e., it doesn't use `getaddrinfo(3)`).
+- Upd: upgrade email module.  **WARNING** It now uses `dns.resolve` instead of `dns.lookup` when resolving `REVIEWABLE_SMTP_URL`, which will query the DNS server directly and bypass some local configs such as `/etc/hosts` (i.e., it doesn't use `getaddrinfo(3)`).
 - Upd: lower the diff threshold to consider a file pair as renamed by 5%.
 - Fix: ignore @-mentions that can't be resolved.
 - Fix: detect when the authorization has been upgraded in other tabs, and force user to re-authenticate to prevent an authorization skew between the permissions on the server and in the tab.  This was not a security issue but could result in unexpected errors.
