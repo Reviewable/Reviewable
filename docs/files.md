@@ -39,11 +39,11 @@ Click the toggle to display a history matrix showing all files and revisions. He
 - Jump to a file's diff.
 - See delta stats for a diff and all diffs.
 
-![reviewable file matrix](images/filematrix_1.png)
+![reviewable file matrix](images/filematrix_1.png ':size=1144')
 
 ### File list
 
-The file matrix lists all the files in the pull request.  Obsolete files that once had changes but now have no differences with the target branch are hidden by default, but can be revealed with a switch in the [Changes summary box](reviews.md#changes-summary).
+The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are hidden by default, but can be revealed with a switch in the [Changes summary box](reviews.md#changes-summary).
 
 Click the file path to move directly to the diff for that file. Hold down the `⌘`, `Ctrl` or `⇧` key (as appropriate for your browser) when clicking to open the file diff in a new browser tab.  To open every file in a new tab at once, hold down the modifier key and click the **All** button that appears in the header of the file matrix.
 
@@ -54,6 +54,8 @@ To the left of the file path there's a button to [mark the file as reviewed](#ma
 To the right of the file path is a list of the last published reviewers for the file.  It may be that those people did not review the latest revision, and other people may have reviewed previous revisions.  Hover over an avatar for details about the user.
 
 Off the right side of the matrix are delta stats for the current diffs, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.
+
+Files can also be grouped, like for the **Tests** group in the screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  See the section on [custom review completion conditions](http://localhost:3000/#/repositories?id=condition-output) for instructions on how to group files in your repository.
 
 ### Column headings
 
