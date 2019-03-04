@@ -10,6 +10,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
+- Upd: lay out the file matrix as a directory tree rather than a flat list of files.
 - Fix: correctly display and expand/contract long paths in file headers.
 - Fix: don't show file matrix until file renames have been mapped.
 
