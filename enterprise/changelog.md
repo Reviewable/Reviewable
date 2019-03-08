@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: stop requiring `REVIEWABLE_FIREBASE_AUTH`, which hasn't been needed since v1994.2998.
 - Fix: prevent a crash on loading the reviews list if server hasn't properly set the GHE version in Firebase yet.  The root cause is likely a bad auth for the subscription admin user, which will log `Unable to initialize generic GitHub access` on the server at startup along with a specific error message.
 - Fix: avoid a potential crash when loading Reviewable on an encrypted instance in private mode while already signed in with the error "Encryption not set up".  This regression was introduced in the previous release, v2066.3418.
+- Fix: don't flash a prompt to sign in when loading a review page on an encrypted instance in private mode while already signed in.
 
 #### Release 2066.3418 (min 1992.2986 GHE 2.12+) 2019-02-28
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
