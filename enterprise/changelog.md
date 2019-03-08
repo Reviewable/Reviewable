@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly display and expand/contract long paths in file headers.
 - Fix: don't show file matrix until file renames have been mapped.
 - Fix: improve text copy from diff to correctly extend selection to full lines when dragging backwards with mouse, and to exclude blank line space placeholders from the copied text.
+- Fix: stop requiring `REVIEWABLE_FIREBASE_AUTH`, which hasn't been needed since v1994.2998.
 
 #### Release 2066.3418 (min 1992.2986 GHE 2.12+) 2019-02-28
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
