@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve text copy from diff to correctly extend selection to full lines when dragging backwards with mouse, and to exclude blank line space placeholders from the copied text.
 - Fix: stop requiring `REVIEWABLE_FIREBASE_AUTH`, which hasn't been needed since v1994.2998.
 - Fix: prevent a crash on loading the reviews list if server hasn't properly set the GHE version in Firebase yet.  The root cause is likely a bad auth for the subscription admin user, which will log `Unable to initialize generic GitHub access` on the server at startup along with a specific error message.
+- Fix: avoid a potential crash when loading Reviewable on an encrypted instance in private mode while already signed in with the error "Encryption not set up".  This regression was introduced in the previous release, v2066.3418.
 
 #### Release 2066.3418 (min 1992.2986 GHE 2.12+) 2019-02-28
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
