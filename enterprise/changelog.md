@@ -11,6 +11,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Fix: line up diff stats correctly to the right of the file matrix when a file has no last reviewer.
+- Fix: correctly generate publication preview when user switches approval flag while the preview is being generated.
+- Fix: prevent some very rare crashes in data race condition edge cases.
 
 #### Release 2071.3450 (min 1992.2986 GHE 2.12+) 2019-03-11
 - New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
