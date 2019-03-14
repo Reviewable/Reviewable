@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- New: add a `disableBranchUpdates` flag to review completion condition output.
 - Fix: line up diff stats correctly to the right of the file matrix when a file has no last reviewer.
 - Fix: correctly generate publication preview when user switches approval flag while the preview is being generated.
 - Fix: prevent some very rare crashes in data race condition edge cases.
