@@ -105,7 +105,7 @@ These state icons may appear in the panel:
 
 If you're a repo admin you can click on the small wrench icon next to the current review state to jump to the [custom review completion condition](repositories.md#completion-condition) editor in the repository's settings.
 
-Also, if your PR branch is behind the target branch, you can merge the target branch into your PR by clicking the small merge button, next to the mergeability status.
+Also, if your PR branch is behind the target branch, you can merge the target branch into your PR by clicking the small merge button, next to the mergeability status.  Repo admins can disable this feature in a custom [review completion condition](repositories.md#condition-output).
 
 ### Changes
 
