@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - New: add a `disableBranchUpdates` flag to review completion condition output.
+- Upd: on initial load, keep the review list's spinner up until _all_ the data has been loaded, to prevent having rows move around as more information streams in.  Note that this is a live list so rows may still shift position later as reviews' states change, but this should improve the first-load experience at the expense of a bit more latency before the list shows up.
 - Fix: line up diff stats correctly to the right of the file matrix when a file has no last reviewer.
 - Fix: correctly generate publication preview when user switches approval flag while the preview is being generated.
 - Fix: prevent some very rare crashes in data race condition edge cases.
