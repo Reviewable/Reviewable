@@ -12,9 +12,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - New: add a `disableBranchUpdates` flag to review completion condition output.
 - Upd: on initial load, keep the review list's spinner up until _all_ the data has been loaded, to prevent having rows move around as more information streams in.  Note that this is a live list so rows may still shift position later as reviews' states change, but this should improve the first-load experience at the expense of a bit more latency before the list shows up.
+- Upd: upgrade AWS Lambda custom review completion condition runtime environment to Node 8 (applied lazily as conditions are modified).  This is technically a major version change but it's very unlikely to affect the kind of code written for completion conditions.
+- Upd: raise GitHub API socket timeouts.  This should help reduce spurious errors when the GitHub server is under high load and slow to respond.
+- Fix: don't consider a branch fast-forwardable if GitHub says it can't be rebased, even if analysis of the commit chain indicates that it ought to be.
 - Fix: line up diff stats correctly to the right of the file matrix when a file has no last reviewer.
 - Fix: correctly generate publication preview when user switches approval flag while the preview is being generated.
 - Fix: prevent some very rare crashes in data race condition edge cases.
+- Fix: don't crash if a GitHub app files a status check with an empty-string context.
 
 #### Release 2071.3450 (min 1992.2986 GHE 2.12+) 2019-03-11
 - New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
