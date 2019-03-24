@@ -64,11 +64,9 @@ If you don't need to reply to a discussion you can click the primary action butt
 
 ## Unreplied discussions
 
-A discussion is unreplied for you when there are comments in the discussion that you haven't acknowledged, replied to, or marked as read, or if Reviewable thinks you need to reply to the discussion for another reason per the rules below. Unreplied discussions will increment your red discussions counter for the review.
+A discussion is unreplied for you when there are comments in the discussion that you haven't acknowledged, replied to, or marked as read. Unreplied discussions will increment your red discussions counter for the review. A discussion is also unreplied for you if one of the following rules applies, but _none of the preceding rules apply to anybody else_, even if you're caught up on the comments.
 
-An unresolved discussion is unreplied for you if one of the following rules applies, but _none of the preceding rules apply to anybody else_. Rule #1 also applies to resolved discussions.
-
-1. You are a participant, or you are the PR author, or one of the participants is **<i class="fa fa-info-circle"></i> Informing**, and you have unread comments, or you are **<i class="fa fa-play-circle"></i> Working**.
+1. You are an active participant, or are **<i class="fa fa-at"></i> Mentioned**, or you are the PR author, or one of the participants is **<i class="fa fa-info-circle"></i> Informing**, and you have unread comments, or you are **<i class="fa fa-play-circle"></i> Working**.
 2. You are the PR author and the discussion has only one active participant (which is not you). This applies even if you have no unread comments; that is, you acknowledged the discussion without replying.
 3. You are not the PR author, the discussion has only the PR author as the active participant, and you have unread comments.
 4. You are **<i class="fa fa-minus-circle"></i> Blocking** and the last comment is not yours.
