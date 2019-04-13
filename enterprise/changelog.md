@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - New: add a `disableBranchUpdates` flag to review completion condition output.
+- New: add `defaultMergeCommitMessage` and `defaultSquashCommitMessage` fields to review completion condition output.  Also include `title` and `body` in `review.pullRequest` input state.
 - Upd: on initial load, keep the review list's spinner up until _all_ the data has been loaded, to prevent having rows move around as more information streams in.  Note that this is a live list so rows may still shift position later as reviews' states change, but this should improve the first-load experience at the expense of a bit more latency before the list shows up.
 - Upd: upgrade AWS Lambda custom review completion condition runtime environment to Node 8 (applied lazily as conditions are modified).  This is technically a major version change but it's very unlikely to affect the kind of code written for completion conditions.
 - Upd: raise GitHub API socket timeouts.  This should help reduce spurious errors when the GitHub server is under high load and slow to respond.
@@ -24,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash if a GitHub app files a status check with an empty-string context.
 - Fix: don't crash with permission denied error when collapsing or expanding a file group whose name has periods in it.
 - Fix: prevent crashes when trying to redirect in Edge.
+- Fix: prevent clicks on a merge button in the pull requests list from being treated as a navigation click to the review.
 
 #### Release 2071.3450 (min 1992.2986 GHE 2.12+) 2019-03-11
 - New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
