@@ -25,7 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash if a GitHub app files a status check with an empty-string context.
 - Fix: don't crash with permission denied error when collapsing or expanding a file group whose name has periods in it.
 - Fix: prevent crashes when trying to redirect in Edge.
-- Fix: prevent clicks on a merge button in the pull requests list from being treated as a navigation click to the review.
+- Fix: prevent clicks on a merge button in the pull requests list from navigating to the review.
 
 #### Release 2071.3450 (min 1992.2986 GHE 2.12+) 2019-03-11
 - New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
