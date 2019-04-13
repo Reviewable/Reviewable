@@ -78,7 +78,7 @@ Here you can select between the usual GitHub merge styles (normal/full, squash, 
 
 ?> When using the rebase merge style, Reviewable will indicate if the merge will be a fast-forward by adding a small annotation under the style radio button.
 
-If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well.
+If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](repositories.md#condition-output).
 
 
 ## Review toolbar
