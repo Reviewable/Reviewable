@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Fix: prevent an extremely rare series of occurrences from permanently corrupting a review such that it won't update with any further commits.  This bug has been present in the code since day one and I just observed it for the first time in 5 years...
 
 #### Release 2093.3571 (min 1992.2986 GHE 2.12+) 2019-04-16
 - New: add a `disableBranchUpdates` flag to review completion condition output.
