@@ -10,6 +10,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: indicate draft PRs on dashboard and review pages.  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2093.3571 (min 1992.2986 GHE 2.12+) 2019-04-16
 - New: add a `disableBranchUpdates` flag to review completion condition output.
 - New: add `defaultMergeCommitMessage` and `defaultSquashCommitMessage` fields to review completion condition output.  Also include `title` and `body` in `review.pullRequest` input state.
 - Upd: on initial load, keep the review list's spinner up until _all_ the data has been loaded, to prevent having rows move around as more information streams in.  Note that this is a live list so rows may still shift position later as reviews' states change, but this should improve the first-load experience at the expense of a bit more latency before the list shows up.
