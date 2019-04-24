@@ -8,7 +8,7 @@ A file's evolution over the course of the pull request is summarized in both the
 
 ![reviewable file matrix status](images/filematrix_9.png)
 
-The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, drag between the two revisions you'd like to diff or click on a revision to adjust the nearest bound.
+The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
 
 ![reviewable file matrix diff bounds](images/filematrix_8.png)
 
