@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent an extremely rare series of occurrences from permanently corrupting a review such that it won't update with any further commits.  This bug has been present in the code since day one and I just observed it for the first time in 5 years...
 - Fix: don't offer to "show more concluded reviews" when searching for a single PR by URL in review list.
 - Fix: don't crash when some PR filepaths differ only in case in specific ways.
+- Fix: don't use data derived from a stale review state when racing to create a new review.  This could've resulted in aspects of a review being temporarily out of sync with the PR, but should've fixed itself automatically as the review was visited and resynced.
 
 #### Release 2093.3571 (min 1992.2986 GHE 2.12+) 2019-04-16
 - New: add a `disableBranchUpdates` flag to review completion condition output.
