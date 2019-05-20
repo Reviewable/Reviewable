@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Fix: avoid rare crash when deleting a comment with images in its preview mode.
+- Fix: avoid another rare crash when using the review preview dropdown and editing a comment immediately thereafter.
 
 #### Release 2113.3608 (min 1992.2986 GHE 2.12+) 2019-05-16
 - New: add a `mergeStyle` field to review completion condition output.  You can use this to dynamically force a specific merge style for a review even if the repo is configured to allow others.  Only enforced in Reviewable.
