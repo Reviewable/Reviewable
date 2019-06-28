@@ -48,6 +48,8 @@ You can also use the special filters in the table below, adding either a `+` or 
 
 Add an OR operator to the positive filter by entering a comma. For example, `+needs:review,needs:fix` will filter for all reviews that need work, or have a failing check. For negative filters, the comma functions as an AND operator. More complex boolean expressions are not supported.
 
+For the <code>±label:<i>name</i></code> filter, you must use double quotes around the label name if it contains spaces.
+
 | Filter | Meaning |
 |------|---------|
 | `±open` | Currently open PR |
@@ -64,6 +66,7 @@ Add an OR operator to the positive filter by entering a comma. For example, `+ne
 | &nbsp;&nbsp;&nbsp; `author` | Created PRs |
 | &nbsp;&nbsp;&nbsp; `assigned` | Assigned PRs |
 | &nbsp;&nbsp;&nbsp; `requested` | Requested reviewer PRs |
+| <code>±label:<i>name</i></code> | PRs with given label |
 | `±public` | PRs from public repos |
 | `±private` | PRs from private repos |
 | `±starred` | PRs from repos you starred |
