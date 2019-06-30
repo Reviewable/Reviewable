@@ -11,7 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: indicate draft PRs on dashboard and review pages (GHE 2.17+).  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 - Upd: support `±label:<name>` query terms in review list.
-- Upd: improve selection of base commit for renamed files (favoring the original file when possible).
+- Upd: improve selection of base commit when diffing renamed files (favoring the original file when possible).
 - Fix: avoid rare crash when deleting a comment with images in its preview mode.
 - Fix: avoid another rare crash when using the review preview dropdown and editing a comment immediately thereafter.
 - Fix: don't crash with a bogus permission denied error when trying to access an unarchived review with special characters in the owner or repository name.
