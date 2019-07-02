@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't get stuck waiting for a merge commit message (with a spinner that never goes away) if user clears out the text box.
 - Fix: don't ignore errors when merging, and don't delete the branch if the merge failed.
 - Fix: ignore review comments with no author (not sure how that can happen, but observed one such case!).
+- Fix: clip long directory paths in file matrix.  This is a quick fix to prevent the layout from jumping around when moving the mouse around the matrix, but may result in some long paths getting clipped even when _not_ hovering over them if all filenames are short and there aren't many revisions.
 
 #### Release 2113.3608 (min 1992.2986 GHE 2.12+) 2019-05-16
 - New: add a `mergeStyle` field to review completion condition output.  You can use this to dynamically force a specific merge style for a review even if the repo is configured to allow others.  Only enforced in Reviewable.
