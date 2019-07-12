@@ -9,15 +9,18 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes once GHE supports the underlying API
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2140.3674 (min 1992.2986 GHE 2.12+) 2019-07-11
 - Upd: indicate draft PRs on dashboard and review pages (GHE 2.17+).  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 - Upd: support `±label:<name>` query terms in review list.
 - Upd: improve selection of base commit when diffing renamed files (favoring the original file when possible).
+- Fix: don't ignore errors when merging, and don't delete the branch if the merge failed.
+- Fix: make sure the merge completes before deleting the source branch.
+- Fix: don't get stuck waiting for a merge commit message (with a spinner that never goes away) if user clears out the text box.
 - Fix: avoid rare crash when deleting a comment with images in its preview mode.
 - Fix: avoid another rare crash when using the review preview dropdown and editing a comment immediately thereafter.
 - Fix: don't crash with a bogus permission denied error when trying to access an unarchived review with special characters in the owner or repository name.
 - Fix: track focused draft correctly for targeting keyboard shortcuts.  A bug caused the first draft that had a keyboard shortcut applied to it to become the target of all future shortcuts.
-- Fix: don't get stuck waiting for a merge commit message (with a spinner that never goes away) if user clears out the text box.
-- Fix: don't ignore errors when merging, and don't delete the branch if the merge failed.
 - Fix: ignore review comments with no author (not sure how that can happen, but observed one such case!).
 - Fix: clip long directory paths in file matrix.  This is a quick fix to prevent the layout from jumping around when moving the mouse around the matrix, but may result in some long paths getting clipped even when _not_ hovering over them if all filenames are short and there aren't many revisions.
 
