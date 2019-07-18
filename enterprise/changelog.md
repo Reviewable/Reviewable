@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes once GHE supports the underlying API
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Fix: deal correctly with non-lowercase usernames when inferring list of users for "sync requested reviewers" publishing option.
 
 #### Release 2140.3674 (min 1992.2986 GHE 2.12+) 2019-07-11
 - Upd: indicate draft PRs on dashboard and review pages (GHE 2.17+).  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
