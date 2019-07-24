@@ -10,11 +10,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 
-#### Release 2148.2676 (min 1992.2986 GHE 2.12+) 2019-07-24
+#### Release 2148.3676 (min 1992.2986 GHE 2.12+) 2019-07-24
 - Fix: remain compatible with older GHE versions by removing reference to `Mannequin` from GraphQL queries.
 - Fix: deal correctly with non-lowercase usernames when inferring list of users for "sync requested reviewers" publishing option.
 
 #### Release 2140.3674 (min 1992.2986 GHE 2.12+) 2019-07-11
+This version is broken on some older GHE versions, it's strongly recommended that you skip to the next one (2148.3676).
 - Upd: indicate draft PRs on dashboard and review pages (GHE 2.17+).  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 - Upd: support `±label:<name>` query terms in review list.
 - Upd: improve selection of base commit when diffing renamed files (favoring the original file when possible).
