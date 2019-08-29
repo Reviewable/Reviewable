@@ -170,6 +170,11 @@ The current state of the review is accessible to your code via the `review` vari
       // e.g., numFilesReviewedByAtLeast[2] is the number of file reviewed by at least 2 people
   },
   pullRequest: {
+    number: 44,
+    target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
+    source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'}
+    title: 'Work work work',
+    body: 'There is so much work to be done, and this PR does it all.',
     author: {username: 'pkaminski'},
     assignees: [
       // A user is participating iff they commented or reviewed a file.
@@ -184,12 +189,17 @@ The current state of the review is accessible to your code via the `review` vari
       // actual review status.
       {username: 'pkaminski-test', participating: true}
     ],
-    number: 44,
+    requestedTeams: [
+      {slug: 'developers'}
+    ],
+    approvals: {
+      // Maps usernames to their current PR approval status, if any.  The status is one of
+      // 'approved', 'changes_requested', 'commented', or 'dismissed'.
+      'pkaminski-test': 'changes_requested'
+    },
     numCommits: 3,
     draft: false,
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
-    target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
-    source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'}
   },
   revisions: [  // List of all revisions, in chronological order
     {
