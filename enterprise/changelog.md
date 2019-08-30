@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent a user record with ID `undefined` from being written to the datastore.  This is likely the result of a buggy response from GitHub's API, but once in the datastore it breaks some downstream code.
 - Fix: make a middle mouse click work properly anywhere within a dashboard row, not just on the PR name.
 - Fix: recognize click on mark reviewed button when text is selected on the page in Firefox.
+- Fix: take GitHub review comments made on multiple comments into account correctly when deciding how to group commits into revisions.
 
 #### Release 2148.3676 (min 1992.2986 GHE 2.12+) 2019-07-24
 - Fix: **HOTFIX** remain compatible with older GHE versions by removing reference to `Mannequin` from GraphQL queries.
