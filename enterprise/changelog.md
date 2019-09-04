@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make a middle mouse click work properly anywhere within a dashboard row, not just on the PR name.
 - Fix: recognize click on mark reviewed button when text is selected on the page in Firefox.
 - Fix: take GitHub review comments made on multiple comments into account correctly when deciding how to group commits into revisions.
+- Fix: don't allow repo config button in checks dropdown panel to be clicked when disabled.
 
 #### Release 2148.3676 (min 1992.2986 GHE 2.12+) 2019-07-24
 - Fix: **HOTFIX** remain compatible with older GHE versions by removing reference to `Mannequin` from GraphQL queries.
