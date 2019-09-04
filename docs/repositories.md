@@ -170,12 +170,12 @@ The current state of the review is accessible to your code via the `review` vari
       // e.g., numFilesReviewedByAtLeast[2] is the number of file reviewed by at least 2 people
   },
   pullRequest: {
-    number: 44,
-    target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
-    source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'}
     title: 'Work work work',
+    number: 44,
     body: 'There is so much work to be done, and this PR does it all.',
     author: {username: 'pkaminski'},
+    creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
+    draft: false,
     assignees: [
       // A user is participating iff they commented or reviewed a file.
       {username: 'pkaminski-test', participating: true},
@@ -198,8 +198,17 @@ The current state of the review is accessible to your code via the `review` vari
       'pkaminski-test': 'changes_requested'
     },
     numCommits: 3,
-    draft: false,
-    creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
+    target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
+    source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'},
+    // one of dirty, unknown, blocked, behind, unstable, has_hooks, clean, or draft
+    mergeability: 'clean',
+    checks: {
+      Shippable: {
+        state: 'failure',
+        descriptio: 'Builds failed on Shippable',
+        timestamp: 1432363555000
+      }
+    }
   },
   revisions: [  // List of all revisions, in chronological order
     {
