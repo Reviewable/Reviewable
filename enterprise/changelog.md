@@ -14,12 +14,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: respect disposition-setting keywords (such as "FYI" or "OK") at the beginning of a draft even if they are preceded by quoted lines.
 - Upd: add syntax highlighting for HCL/Terraform files.
 - Upd: show the checks status icon on the dashboard if the summary state is `missing` or `pending` even if the review is in progress and other status counters are non-zero.  Previously, these states used to be elided from the dashboard to avoid information overload but they can be helpful in deciding which reviews to tackle and which to postpone.
+- Upd: include `review.pullRequest.mergeability` and `review.pullRequest.checks` in custom review completion condition input data.
 - Fix: work around a bug in a dependency that manifests itself as GitHub API calls sometimes timing out with an "Aborted" message.  The error was probably introduced in 2140.3674, and was usually innocuous as the call would be automatically retried but in some situations (such as a highly loaded GHE instance) could become fatal and render Reviewable virtually unusable.
 - Fix: prevent a user record with ID `undefined` from being written to the datastore.  This is likely the result of a buggy response from GitHub's API, but once in the datastore it breaks some downstream code.
-- Fix: make a middle mouse click work properly anywhere within a dashboard row, not just on the PR name.
+- Fix: make a middle mouse click work properly most anywhere within a dashboard row, not just on the PR name.
 - Fix: recognize click on mark reviewed button when text is selected on the page in Firefox.
 - Fix: take GitHub review comments made on multiple comments into account correctly when deciding how to group commits into revisions.
 - Fix: don't allow repo config button in checks dropdown panel to be clicked when disabled.
+- Fix: correctly manage text selection within diffs in Firefox.  Previously, the last line of the selection was sometimes dropped.
 
 #### Release 2148.3676 (min 1992.2986 GHE 2.12+) 2019-07-24
 - Fix: **HOTFIX** remain compatible with older GHE versions by removing reference to `Mannequin` from GraphQL queries.
