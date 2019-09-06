@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add syntax highlighting for HCL/Terraform files.
 - Upd: show the checks status icon on the dashboard if the summary state is `missing` or `pending` even if the review is in progress and other status counters are non-zero.  Previously, these states used to be elided from the dashboard to avoid information overload but they can be helpful in deciding which reviews to tackle and which to postpone.
 - Upd: include `review.pullRequest.mergeability` and `review.pullRequest.checks` in custom review completion condition input data.
+- Upd: don't mark synthesized revision comments (that list the commits that make up a revision) as unread if a commit was added to one that didn't affect any of the files in the PR, usually as the result of a merge or rebase operation.  (The commit is still processed and added to the revision as before, just without further notification as there's nothing new to review anyway.)
 - Fix: work around a bug in a dependency that manifests itself as GitHub API calls sometimes timing out with an "Aborted" message.  The error was probably introduced in 2140.3674, and was usually innocuous as the call would be automatically retried but in some situations (such as a highly loaded GHE instance) could become fatal and render Reviewable virtually unusable.
 - Fix: prevent a user record with ID `undefined` from being written to the datastore.  This is likely the result of a buggy response from GitHub's API, but once in the datastore it breaks some downstream code.
 - Fix: make a middle mouse click work properly most anywhere within a dashboard row, not just on the PR name.
@@ -22,6 +23,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: take GitHub review comments made on multiple comments into account correctly when deciding how to group commits into revisions.
 - Fix: don't allow repo config button in checks dropdown panel to be clicked when disabled.
 - Fix: correctly manage text selection within diffs in Firefox.  Previously, the last line of the selection was sometimes dropped.
+- Fix: respect `reviewed: false` flag set by custom review completion condition on file revisions by counting files as unreviewed and styling mark buttons appropriately.  Previously, it was possible for the `false` value to be overridden by reviews of subsequent revisions.
 
 #### Release 2148.3676 (min 1992.2986 GHE 2.12+) 2019-07-24
 - Fix: **HOTFIX** remain compatible with older GHE versions by removing reference to `Mannequin` from GraphQL queries.
