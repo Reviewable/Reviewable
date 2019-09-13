@@ -6,8 +6,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes once GHE supports the underlying API
-
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - New: display old/new file size (and delta) for binary files.
 - Upd: split quoted replies to Reviewable's combined messages that originate from GitHub's web UI into separate threads, just like we always did for email.
@@ -16,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: show the checks status icon on the dashboard if the summary state is `missing` or `pending` even if the review is in progress and other status counters are non-zero.  Previously, these states used to be elided from the dashboard to avoid information overload but they can be helpful in deciding which reviews to tackle and which to postpone.
 - Upd: include `review.pullRequest.mergeability` and `review.pullRequest.checks` in custom review completion condition input data.
 - Upd: don't mark synthesized revision comments (that list the commits that make up a revision) as unread if a commit was added to one that didn't affect any of the files in the PR, usually as the result of a merge or rebase operation.  (The commit is still processed and added to the revision as before, just without further notification as there's nothing new to review anyway.)
+- Upd: when deciding whose action a discussion is awaiting, if the PR author's disposition is Blocking and all participants are up-to-date on all comments, then the PR author will be the only one selected as being waited on (even if others are Blocking too).  This is an unusual scenario since the PR author would typically be Working instead but this logic tweak should accord better with intuition.
 - Fix: work around a bug in a dependency that manifests itself as GitHub API calls sometimes timing out with an "Aborted" message.  The error was probably introduced in 2140.3674, and was usually innocuous as the call would be automatically retried but in some situations (such as a highly loaded GHE instance) could become fatal and render Reviewable virtually unusable.
 - Fix: prevent a user record with ID `undefined` from being written to the datastore.  This is likely the result of a buggy response from GitHub's API, but once in the datastore it breaks some downstream code.
 - Fix: make a middle mouse click work properly most anywhere within a dashboard row, not just on the PR name.
