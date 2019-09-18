@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Fix: treat Unicode line and page separators as newlines when parsing text.
+- Fix: avoid minor layout issues on dashboard page and in review participants summary section.
 
 #### Release 2183.3776 (min 1992.2986 GHE 2.12+) 2019-09-13
 - New: display old/new file size (and delta) for binary files.
