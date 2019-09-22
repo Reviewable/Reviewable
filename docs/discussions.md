@@ -56,7 +56,7 @@ If you don't need to reply to a discussion you can click the primary action butt
 | **<i class="fa fa-info-circle"></i> Informing** | Resolved with no other participants | **Retract** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
 | **<i class="fa fa-info-circle"></i> Informing** | Resolved | **Conclude** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
 | Active participant, not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved with no other participants | **Retract** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
-| Not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved and switching to **<i class="fa fa-check-circle"></i> Satisfied** would resolve | **Resolve** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
+| Active participant or PR author, not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved and switching to **<i class="fa fa-check-circle"></i> Satisfied** would resolve | **Resolve** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
 | PR author not **<i class="fa fa-check-circle"></i> Satisfied**, or anyone **<i class="fa fa-play-circle"></i> Working** | **Unresolved** | **Done** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** and creates a "Done." message |
 | **<i class="fa fa-minus-circle"></i> Blocking** | Unresolved and nobody **<i class="fa fa-play-circle"></i> Working** | **Accept** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
 | Any | Unread comments | **Acknowledge** | Sets disposition to **<i class="fa fa-ellipsis-h"></i> Following** if passive participant or not a participant |
