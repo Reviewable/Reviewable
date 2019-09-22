@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Upd: only offer "Resolve" as the primary action on a discussion if the user is already an active participant or the PR author.  Always offering it made it too easy to accidentally resolve a discussions when there are multiple reviewers.
 - Fix: treat Unicode line and page separators as newlines when parsing text.
 - Fix: avoid minor layout issues on dashboard page and in review participants summary section.
 
