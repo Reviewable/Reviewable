@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: only offer "Resolve" as the primary action on a discussion if the user is already an active participant or the PR author.  Always offering it made it too easy to accidentally resolve a discussions when there are multiple reviewers.
 - Fix: treat Unicode line and page separators as newlines when parsing text.
 - Fix: avoid minor layout issues on dashboard page and in review participants summary section.
+- Fix: don't fetch branch list of current repo until user starts editing the target branch (which happens quite rarely).
 
 #### Release 2183.3776 (min 1992.2986 GHE 2.12+) 2019-09-13
 - New: display old/new file size (and delta) for binary files.
