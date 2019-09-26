@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: treat Unicode line and page separators as newlines when parsing text.
 - Fix: avoid minor layout issues on dashboard page and in review participants summary section.
 - Fix: don't fetch branch list of current repo until user starts editing the target branch (which happens quite rarely).
+- Fix: if a file was renamed, then reintroduced under its original name, ensure the reintroduced one is actually included in the review.
 
 #### Release 2183.3776 (min 1992.2986 GHE 2.12+) 2019-09-13
 - New: display old/new file size (and delta) for binary files.
