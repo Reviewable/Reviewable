@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add a repository setting to constrain who can dismiss participants from a discussion, either anyone with write access (the default) or only repository admins.
 - Upd: only offer "Resolve" as the primary action on a discussion if the user is already an active participant or the PR author.  Always offering it made it too easy to accidentally resolve a discussions when there are multiple reviewers.
 - Upd: capture both diff bounds when a new discussion is created in a file, and restore both if the user clicks on a discussion's revision corner label.  Previously, only the discussion's target revision was stored, not the other side of the diff.
+- Upd: include commit titles (first line of commit message) in custom review completion condition input data.
 - Fix: treat Unicode line and page separators as newlines when parsing text.
 - Fix: avoid minor layout issues on dashboard page and in review participants summary section.
 - Fix: don't fetch branch list of current repo until user starts editing the target branch (which happens quite rarely).
