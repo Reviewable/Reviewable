@@ -223,7 +223,7 @@ The current state of the review is accessible to your code via the `review` vari
       commitSha: '435ae39a89e6992c9ed72fd154bc3c45290d8a97',
       baseCommitSha: '3cd017d236fe9174ab22b4a80fefb323dbefb50f',
       commits: [
-        {sha: '435ae39a89e6992c9ed72fd154bc3c45290d8a97', timestamp: 1436825047000}
+        {sha: '435ae39a89e6992c9ed72fd154bc3c45290d8a97', timestamp: 1436825047000, title: 'Fix foo'}
       ]
     }
   ],
