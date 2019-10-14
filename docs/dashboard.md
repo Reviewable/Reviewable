@@ -55,6 +55,7 @@ For the <code>±label:<i>name</i></code> filter, you must use double quotes arou
 | `±open` | Currently open PR |
 | `±red` | PRs with red counters |
 | `±mine` | Created, assigned, and requested PRs |
+| <code>±label:<i>name</i></code> | PRs with given label |
 | `±needs:` | &nbsp; |
 | &nbsp;&nbsp;&nbsp; `review` | Incomplete reviews |
 | &nbsp;&nbsp;&nbsp; `fix` | Reviews with failing checks |
@@ -66,7 +67,9 @@ For the <code>±label:<i>name</i></code> filter, you must use double quotes arou
 | &nbsp;&nbsp;&nbsp; `author` | Created PRs |
 | &nbsp;&nbsp;&nbsp; `assigned` | Assigned PRs |
 | &nbsp;&nbsp;&nbsp; `requested` | Requested reviewer PRs |
-| <code>±label:<i>name</i></code> | PRs with given label |
+| `±draft` | PR draft, not yet fully open |
+| `±merged` | PR that was successfully merged |
+| `±closed` | PR that was closed without merging |
 | `±public` | PRs from public repos |
 | `±private` | PRs from private repos |
 | `±starred` | PRs from repos you starred |
