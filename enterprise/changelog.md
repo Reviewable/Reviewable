@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Upd: add `draft` state to pull request list query language.
+- Fix: avoid race condition when switching diff bounds that would very rarely cause a crash.
 
 #### Release 2200.3821 (min 1992.2986 GHE 2.12+) 2019-10-10
 - New: add a repository setting to constrain who can dismiss participants from a discussion, either anyone with write access (the default) or only repository admins.
