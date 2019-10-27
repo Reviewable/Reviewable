@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: upgrade Lambda executor to use NodeJS 10 environment for user scripts.
 - Fix: avoid race condition when switching diff bounds that would very rarely cause a crash.
 - Fix: use custom monospace font for code embedded inside comments too.
+- Fix: avoid getting into a situation where (among other things) newly opened reply drafts would fail to get focus and get deleted on the next click.  This seems to have only affected some Firefox installations but could've had much more widespread effects.
 
 #### Release 2200.3821 (min 1992.2986 GHE 2.12+) 2019-10-10
 - New: add a repository setting to constrain who can dismiss participants from a discussion, either anyone with write access (the default) or only repository admins.
