@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: add `draft` state to pull request list query language.
 - Upd: upgrade Lambda executor to use NodeJS 10 environment for user scripts.
-- Fix: avoid race condition when switching diff bounds that would very rarely cause a crash.
+- Fix: work around a regression in the Lambda API that caused all errors to show up as "internal executor error".
 - Fix: use custom monospace font for code embedded inside comments too.
 - Fix: avoid getting into a situation where (among other things) newly opened reply drafts would fail to get focus and get deleted on the next click.  This seems to have only affected some Firefox installations but could've had much more widespread effects.  All browsers should benefit from a performance boost for reviews with many discussions where users often change diff bounds.
 
