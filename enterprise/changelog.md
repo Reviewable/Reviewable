@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid getting into a situation where (among other things) newly opened reply drafts would fail to get focus and get deleted on the next click.  This seems to have only affected some Firefox installations but could've had much more widespread effects.  All browsers should benefit from a performance boost for reviews with many discussions where users often change diff bounds.
 - Fix: when setting automatic diff bounds in commit-by-commit review style, don't set bounds for files if it would result in diffing a revision against itself (resulting in a nil diff).  This was a no-op, but messed up the algorithm that estimated whether the bounds of all the file diffs were consistent.
 - Fix: don't over-extend diff selection on copy if the selection ends exactly at the beginning of a new line.
+- Fix: prevent occasional crash with "unmatched diff release" error message.
 
 #### Release 2200.3821 (min 1992.2986 GHE 2.12+) 2019-10-10
 - New: add a repository setting to constrain who can dismiss participants from a discussion, either anyone with write access (the default) or only repository admins.
