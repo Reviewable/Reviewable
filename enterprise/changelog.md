@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: improve diff algorithm to keep indentation-only deltas clean rather than sometimes pulling in short unchanged line contents.
 - Upd: allow horizontal scrolling of file header when revision cells overflow available space.  Scroll bar is not visible but you can use the middle mouse button (or whatever your OS of choice allows) instead.
+- Upd: embed RSA key rolling feature in the monthly user table cron job if multiple keys are passed to the server.  This is more reliable than using a separate script.
+- Upd: switch RSA encryption to native Node libraries for a boost in performance.
 - Fix: prevent very rare "undefined function closest" crash.
 - Fix: prevent permission denied errors when stale user records are automatically cleaned up when they're still referenced by other data.
 - Fix: prevent servers getting stuck processing a GitHub event forever if the repo it refers to was deleted at just the wrong moment.
