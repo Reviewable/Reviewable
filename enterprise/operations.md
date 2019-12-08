@@ -59,10 +59,8 @@ Note that if you choose to rotate your RSA key then you must never downgrade you
 1. Generate a new encryption key (`openssl genrsa -out private.pem 4096`).
 2. Add the new key to the end of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys, and restart your servers.  This is necessary to ensure that all servers have the new key before the clients start using it to encrypt data.  If you don't do rolling upgrades on your servers (i.e., all servers are shut down before new ones are deployed) then you can safely skip this step.
 3. Move the new key to the front of `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
-4. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `rotate_rsa_key --help`.
-5. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_AUTH`, and `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` in your shell just like on your servers.
-6. Run `rotate_rsa_key`.  The command is idempotent and can be rerun as necessary.  It shouldn't take more than a few minutes.
-7. At your convenience, remove any old keys from `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
+4. Wait for the `sweepUsers` cron job to run.  It normally runs once a month and leaves the messages "`Running background task sweepUsers`" and "`Background task sweepUsers complete`" in the logs.  You can also trigger it to run immediately by deleting the `/queues/cron/sweepUsers/_lease/expiry` entry from the datastore via the Firebase console.
+5. At your convenience, remove any old keys from `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
 
 ### Data migration from reviewable.io
 
