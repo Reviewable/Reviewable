@@ -44,8 +44,4 @@ Help is available through many channels:
 
 *   Click **Support > Chatroom** to ask other questions in a public forum.
 
-*   [Send us an email](mailto:support@reviewable.io) for questions that should stay private, or engage in private chat through [Gitter](https://gitter.im/).
-
-## Staying up to date
-
-Follow us on Twitter at [@reviewableio](https://twitter.com/reviewableio) for service status updates, changelog notifications, and occasional discussions and votes on potential features.  For the truly dedicated, you can watch the [Reviewable/Reviewable](https://github.com/reviewable/reviewable) repo for new issues and updates to these docs, or hang out in the [Gitter channel](https://gitter.im/Reviewable/Reviewable) to help out other users when we're not around.  (Thanks!)
+*   [Send us an email](mailto:support@reviewable.io) for questions that should stay private, or engage in private chat through [Gitter.com/reviewableio) for service status updates, changelog notifications, and occasional discussions and votes on potential features.  For the truly dedicated, you can watch the [Reviewable/Reviewable](https://github.com/reviewable/reviewable) repo for new issues and updates to these docs, or hang out in the [Gitter channel](https://gitter.im/Reviewable/Reviewable) to help out other users when we're not around.  (Thanks!)
