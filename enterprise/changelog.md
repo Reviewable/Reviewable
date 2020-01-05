@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent very rare "undefined function closest" crash.
 - Fix: prevent permission denied errors when stale user records are automatically cleaned up when they're still referenced by other data.
 - Fix: prevent servers getting stuck processing a GitHub event forever if the repo it refers to was deleted at just the wrong moment.
+- Fix: deal gracefully with pull requests that have no commits.  This can happen if the source repo gets deleted.
 
 #### Release 2210.3860 (min 1992.2986 GHE 2.12+) 2019-11-21
 - New: support monitoring via `statsd`.  This is just a first cut at the feature and subject to change as I gather feedback from people who actually use `statsd` and such.  Please see the [config doc](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring) for details on the extra environment variables you need to set this up, but if you already happen to have `DD_AGENT_HOST` defined in your environment then the feature will turn on automatically.
