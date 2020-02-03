@@ -11,7 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: reduce false positive reports of "Repeatedly failed to process event".
 - Fix: when `syncRequestedReviewers` is set in a custom completion condition, update requested reviewers whenever `pendingReviewers` changes, even if no review was published (e.g., when a PR is first created).
 
-#### Release 2227.3878 (min 1992.2986 GHE 2.12+)
+#### Release 2227.3878 (min 1992.2986 GHE 2.12+) 2020-01-06
 - Upd: improve diff algorithm to keep indentation-only deltas clean rather than sometimes pulling in short unchanged line contents.
 - Upd: allow horizontal scrolling of file header when revision cells overflow available space.  Scroll bar is not visible but you can use the middle mouse button (or whatever your OS of choice allows) instead.
 - Upd: embed RSA key rolling feature in the monthly user table cron job if multiple keys are passed to the server.  This is more reliable than using a separate script.
