@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure the Reviews button in the header always goes back to the most recently viewed list of reviews.  It would sometimes go back to a specific review instead!
 - Fix: work around a recent change in GitHub's API that would cause reviews with a commit that touched >100 files to be unable to sync.
 - Fix: prevent some UI issues that would occur when only part of a file's revision history belonged to a renamed file, but the rest remained as part of the original.  This could result in weird diff bounds being picked or marking revisions as reviewed affecting multiple files in the matrix.
+- Fix: allow for ambiguous path to file mappings when interpreting review completion condition results.  This happens in the same "partially assimilated file" conditions as for the fix above.
 
 #### Release 2227.3878 (min 1992.2986 GHE 2.12+) 2020-01-06
 - Upd: improve diff algorithm to keep indentation-only deltas clean rather than sometimes pulling in short unchanged line contents.
