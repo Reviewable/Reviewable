@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: reduce false positive reports of "Repeatedly failed to process event".
 - Upd: stop using the recently deprecated `access_token` authentication method for GitHub requests on the client.  This will impact performance since it requires an additional "preflight" request for most every `GET` sent to GitHub, but GitHub's engineers weren't receptive to this argument against the change.  Oh well.
 - Upd: switch to a new HTTP request library on both client and server.  Should have no noticeable effects, but last time we tried upgrading the old library it broke servers seemingly at random, so noting the change here just in case.
+- Upd: add `author` and `committer` to revision commits info in review completion condition input structure.
 - Fix: when `syncRequestedReviewers` is set in a custom completion condition, update requested reviewers whenever `pendingReviewers` changes, even if no review was published (e.g., when a PR is first created).
 - Fix: ensure the Reviews button in the header always goes back to the most recently viewed list of reviews.  It would sometimes go back to a specific review instead!
 - Fix: work around a recent change in GitHub's API that would cause reviews with a commit that touched >100 files to be unable to sync.
