@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: switch to a new HTTP request library on both client and server.  Should have no noticeable effects, but last time we tried upgrading the old library it broke servers seemingly at random, so noting the change here just in case.
 - Upd: add `author` and `committer` to revision commits info in review completion condition input structure.
 - Upd: add `markFileReviewedAndRetreat` bindable command, for those who like to start their reviews at the bottom.
+- Fix: note when a review is broken on the Reviews dashboard and skip loading detailed data for them.  This doesn't happen often (e.g., if the number of files in a review exceeds 8000) but when it does the data might be in an invalid state and cause the page to get stuck.
 - Fix: when `syncRequestedReviewers` is set in a custom completion condition, update requested reviewers whenever `pendingReviewers` changes, even if no review was published (e.g., when a PR is first created).
 - Fix: ensure the Reviews button in the header always goes back to the most recently viewed list of reviews.  It would sometimes go back to a specific review instead!
 - Fix: work around a recent change in GitHub's API that would cause reviews with a commit that touched >100 files to be unable to sync.
