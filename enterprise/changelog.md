@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent some UI issues that would occur when only part of a file's revision history belonged to a renamed file, but the rest remained as part of the original.  This could result in weird diff bounds being picked or marking revisions as reviewed affecting multiple files in the matrix.
 - Fix: allow for ambiguous path to file mappings when interpreting review completion condition results.  This happens in the same "partially assimilated file" conditions as for the fix above.
 - Fix: when creating a discussion, ensure that the other revision in the diff gets snapshotted too so we can reproduce the exact diff later.  Otherwise, we can end up with a discussion with a dangling revision reference, which can cause crashes in rare circumstances.
+- Fix: guard against a bug in GHE that occasionally doesn't return a state for a third-party status check.
 
 #### Release 2227.3878 (min 1992.2986 GHE 2.12+) 2020-01-06
 - Upd: improve diff algorithm to keep indentation-only deltas clean rather than sometimes pulling in short unchanged line contents.
