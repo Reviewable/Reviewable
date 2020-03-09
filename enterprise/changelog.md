@@ -7,13 +7,15 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2269.3960 (min 1992.2986 GHE 2.12+) 2020-03-08
 - Upd: add warning about draft PR to mergeability status check that shows up in Reviewable.  Before then, if a PR was in draft but otherwise ready to merge, you'd end up in a state where everything looked OK but the merge button just wouldn't show up.
 - Upd: reduce false positive reports of "Repeatedly failed to process event".
 - Upd: stop using the recently deprecated `access_token` authentication method for GitHub requests on the client.  This will impact performance since it requires an additional "preflight" request for most every `GET` sent to GitHub, but GitHub's engineers weren't receptive to this argument against the change.  Oh well.
 - Upd: switch to a new HTTP request library on both client and server.  Should have no noticeable effects, but last time we tried upgrading the old library it broke servers seemingly at random, so noting the change here just in case.
 - Upd: add `author` and `committer` to revision commits info in review completion condition input structure.
 - Upd: add `markFileReviewedAndRetreat` bindable command, for those who like to start their reviews at the bottom.
-- Fix: note when a review is broken on the Reviews dashboard and skip loading detailed data for them.  This doesn't happen often (e.g., if the number of files in a review exceeds 8000) but when it does the data might be in an invalid state and cause the page to get stuck.
+- Fix: note when a review is broken on the Reviews dashboard and skip loading detailed data for it.  This doesn't happen often (e.g., if the number of files in a review exceeds 8000) but when it does the data might be in an invalid state and cause the page to get stuck.
 - Fix: when `syncRequestedReviewers` is set in a custom completion condition, update requested reviewers whenever `pendingReviewers` changes, even if no review was published (e.g., when a PR is first created).
 - Fix: ensure the Reviews button in the header always goes back to the most recently viewed list of reviews.  It would sometimes go back to a specific review instead!
 - Fix: work around a recent change in GitHub's API that would cause reviews with a commit that touched >100 files to be unable to sync.
