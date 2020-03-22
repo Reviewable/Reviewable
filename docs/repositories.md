@@ -108,7 +108,7 @@ If you are an organization owner, you can set a repo as the settings prototype f
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
 
-*   **Description** — at the bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
+*   **Description** — at the top or bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
 *   **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 *   **None** — no badges will be created (private repos only).
 
