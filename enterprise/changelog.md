@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Upd: offer option to insert Reviewable badge at the top of the pull request description, rather than at the bottom.
 - Fix: correctly handle commit authors and committers that are not GHE users.
 - Fix: show correct defaults when opening repository settings a second time after applying some edits.
 - Fix: don't trigger a run of the custom review completion condition when background-syncing a closed pull request.  Doing so could result in spammy notifications when performing batch admin actions on a repo in GHE, and Reviewable generally doesn't automatically update the completion condition for closed PRs anyway.
