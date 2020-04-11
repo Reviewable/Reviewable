@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show correct defaults when opening repository settings a second time after applying some edits.
 - Fix: don't trigger a run of the custom review completion condition when background-syncing a closed pull request.  Doing so could result in spammy notifications when performing batch admin actions on a repo in GHE, and Reviewable generally doesn't automatically update the completion condition for closed PRs anyway.
 - Fix: avoid breaking review list page when user is a member of more than 100 teams.
+- Fix: respect the "automatically delete head branches" setting in GitHub, by forcing the "delete" option in the merge options dropdown and letting GitHub do the deed rather than racing with it.
 
 #### Release 2269.3960 (min 1992.2986 GHE 2.12+) 2020-03-08
 - Upd: add warning about draft PR to mergeability status check that shows up in Reviewable.  Before then, if a PR was in draft but otherwise ready to merge, you'd end up in a state where everything looked OK but the merge button just wouldn't show up.
