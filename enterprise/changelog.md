@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Fix: don't crash when a bogus "ResizeObserver loop limit exceeded" error occurs.
 
 #### Release 2326.4025 (min 1992.2986 GHE 2.12+) 2020-04-16
 - New: treat file mode changes as modifications and display them when diffing.  Also notify when a file is a symbolic link.
