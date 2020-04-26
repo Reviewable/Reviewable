@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Fix: don't crash when a bogus "ResizeObserver loop limit exceeded" error occurs.
+- Fix: remove one more spot that used deprecated GitHub API authentication methods, though it likely wasn't affecting most installations.
 
 #### Release 2326.4025 (min 1992.2986 GHE 2.12+) 2020-04-16
 - New: treat file mode changes as modifications and display them when diffing.  Also notify when a file is a symbolic link.
