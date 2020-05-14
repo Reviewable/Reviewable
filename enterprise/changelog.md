@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Release 2330.4029 (min 1992.2986 GHE 2.12+) 2020-04-29
 - Fix: don't crash when a bogus "ResizeObserver loop limit exceeded" error occurs.  This appears to be caused by the somewhat popular Grammarly extension.
 - Fix: remove one more spot that used deprecated GitHub API authentication methods, though it likely wasn't affecting most installations.
+- Fix: make "unresolved discussion" navigation keyboard shortcuts work again.
 
 #### Release 2326.4025 (min 1992.2986 GHE 2.12+) 2020-04-16
 - New: treat file mode changes as modifications and display them when diffing.  Also notify when a file is a symbolic link.
