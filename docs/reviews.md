@@ -85,11 +85,17 @@ If you've selected the full or squash merge styles, you can edit the automatical
 
 At the top of every review page you’ll find a floating toolbar with some core state indicators and buttons for common actions.
 
-![reviewable top toolbar](images/toptoolbar_1.png ':size=512')
+![reviewable top toolbar right](images/toptoolbar_right.png)
 
-Click the bunny shortcut menu icon to drop down a panel in which you can jump to a file or quickly edit the top-level draft.  This menu icon only appears after you've scrolled down the page a bit.
 
 At the end of the toolbar you'll always find either a **Publish** or **Merge** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.
+
+If you scroll down a bit, a bunny shortcut menu icon appears at the left of the toolbar.
+![reviewable top toolbar left](images/toptoolbar_left_bunny.png)
+
+Click the bunny shortcut menu icon to drop down a panel in which you can jump to a file or quickly edit the top-level draft.  (Again, this menu icon only appears after you've scrolled down the page a bit.)
+
+We'll now look at the functionality of the different features moving along the left side of the toolbar.
 
 ### Checks
 
