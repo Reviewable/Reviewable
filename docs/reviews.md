@@ -95,7 +95,7 @@ If you scroll down a bit, a bunny shortcut menu icon appears at the left of the 
 
 Click the bunny shortcut menu icon to drop down a panel in which you can jump to a file or quickly edit the top-level draft.  (Again, this menu icon only appears after you've scrolled down the page a bit.)
 
-We'll now look at the functionality of the different features moving along the left side of the toolbar.
+We'll now look at the functionality of the different features moving from left to right along the toolbar.
 
 ### Checks
 
