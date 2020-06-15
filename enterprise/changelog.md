@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: autosize draft text area consistently when the comment contains `>` quotes.
 - Fix: resize comment area correctly when expanding/collapsing quoted blocks.
 - Fix: in two column diffs, prevent blank (filler) lines from appearing in text copied from the diff.
+- Fix: ignore another category of bogus errors that appear to mostly come from the Grammarly extension.  Sigh.
 
 #### Release 2330.4029 (min 1992.2986 GHE 2.12+) 2020-04-29
 - Fix: don't crash when a bogus "ResizeObserver loop limit exceeded" error occurs.  This appears to be caused by the somewhat popular Grammarly extension.
