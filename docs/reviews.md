@@ -62,7 +62,7 @@ When a review is complete, a victory graphic appears and you can merge the pull 
 
 A review is considered complete when the first defined condition of the following is true:
 
-1. You've defined a [custom review completion condition](repositories.md#completion-condition) and it has returned a verdict with `complete: true` (irrespective of any other per-file or per-discussion flags).
+1. You've defined a [custom review completion condition](repositories.md#completion-condition) and it has returned a verdict with `completed: true` (irrespective of any other per-file or per-discussion flags).
 
 1. You've turned on branch protection for the target branch in this repo in GitHub, and GitHub says that a merge is permitted.
 
