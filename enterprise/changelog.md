@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2351.4070 (min 1992.2986 GHE 2.12+) 2020-06-22
 - Upd: check more often that the user who originally connected a repository still has admin access to it, and send a warning email if not.
 - Fix: autosize draft text area consistently when the comment contains `>` quotes.
 - Fix: resize comment area correctly when expanding/collapsing quoted blocks.
