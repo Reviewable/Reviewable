@@ -1,0 +1,13 @@
+[book]
+authors = ["Piotr Kaminsky"]
+language = "en"
+multilingual = false
+src = "docs"
+title = "Reviewable User Manual"
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[preprocessor.classy]
+command = "mdbook-classy"
