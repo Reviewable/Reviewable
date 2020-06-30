@@ -155,7 +155,8 @@ Click on any line in a diff — even one that already has a discussion attached 
 
 This new discussion will also appear in the diffs of other revisions, at the nearest corresponding line. It won’t disappear until that discussion is resolved or withdrawn, even if the underlying file changes drastically.  Click the small purple dog-ear button to switch the diff to the exact one on which the comment was made.
 
-!> If the dog-ear is red, this indicates that the current context may be inaccurate because of significant changes that have been made since the time the comment was made in the original revision. Click the red button to see the discussion in its original context.
+{:.important}
+If the dog-ear is red, this indicates that the current context may be inaccurate because of significant changes that have been made since the time the comment was made in the original revision. Click the red button to see the discussion in its original context.
 
 ![reviewable fill diffs switch to original revision](images/filediffs_13.png)
 
@@ -203,7 +204,8 @@ There are many situations in which a diff won't be produced for a given file —
 
 In such cases, the file will appear together with a message explaining why the diff is missing. Typically, there will also be a button such as **Try Again** or **View on GitHub** by which you can override or bypass the condition.
 
-!> Be careful if you’re trying to use `⌘-f` or `ctrl-f` to find something in the diffs when some are not shown.
+{:.important}
+Be careful if you’re trying to use `⌘-f` or `ctrl-f` to find something in the diffs when some are not shown.
 
 {:.tip}
 If diffs that make sense to be shown were omitted for some reason, you'll find a special notice above the first file diff that explains what happened and lets you override the decision.  (See screenshot below.)

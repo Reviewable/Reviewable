@@ -36,7 +36,8 @@ You can add special directives inline to any comment (not just top-level ones) t
 
 The directives you can use are **±label**, **±milestone**, **±@username** (for assignees) and **±reviewer:@username** (for requested reviewers).  Reviewable will warn you about invalid assignees or reviewers — either directly or via email if necessary — but not about bad labels or milestones since false positives are too common there.
 
-!> For email and GitHub comments, if the repo is not connected then directives won't take effect until somebody visits the review in Reviewable.  Editing directives in a previously sent message won't work either.
+{:.important}
+For email and GitHub comments, if the repo is not connected then directives won't take effect until somebody visits the review in Reviewable.  Editing directives in a previously sent message won't work either.
 
 ### Replying via email or on GitHub
 

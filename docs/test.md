@@ -1,9 +1,9 @@
 # Test
 
 - [x] fix all tables
-- [ ] fix all {:.tip}
-class=tip
-- [ ] fix all !> class=importan
+- [x] fix all ?> class=tip
+- [x] fix all !> class=important
+- [ ] fix all custom ids
 
 ## question
 
@@ -12,7 +12,8 @@ If this toggle is on, the list includes all open PRs from repos where you have c
 
 ## exclamation
 
-!> Optionally, you can restrict this set of repos to only those repos connected to Reviewable, or that you watched or starred on GitHub. This can be useful if you have push permissions to a lot of repos and, for example, you don’t want to see random open source repos while at work.
+{:.important}
+Optionally, you can restrict this set of repos to only those repos connected to Reviewable, or that you watched or starred on GitHub. This can be useful if you have push permissions to a lot of repos and, for example, you don’t want to see random open source repos while at work.
 
 {:.tip}
 abc

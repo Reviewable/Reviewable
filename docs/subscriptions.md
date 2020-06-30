@@ -6,7 +6,8 @@ Every subscription gets a 30-day free trial, which requires no credit card up fr
 
 Organizations are shown below your personal repos on the Repositories page, and appear whether you are an owner or a contributor.  You can open the subscription panel by clicking on the **Subscribe** or **Edit subscription** button next to the organization name.  Any organization member can start a subscription, not just organization owners.
 
-!> OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
+{:.important}
+OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
 
 
 ## Selecting a plan

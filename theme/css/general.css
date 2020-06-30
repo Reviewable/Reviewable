@@ -172,3 +172,30 @@ blockquote {
     margin: 5px 0px;
     font-weight: bold;
 }
+
+.tip, .important {
+    background-color: var(--quote-bg);
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    margin: 2em 0;
+    padding: 12px 24px 12px 30px;
+    position: relative;
+}
+
+.important {
+    border-left: 4px solid #f66;
+}
+
+.tip {
+    border-left: 4px solid var(--theme-color,#42b983);
+}
+
+.tip i.fa-question-circle {
+    color: var(--theme-color,#42b983);
+    font-size: 1.3em;
+}
+
+.important i.fa-exclamation-circle {
+    color: #f66;
+    font-size: 1.3em;
+}
