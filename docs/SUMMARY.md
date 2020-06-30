@@ -1,8 +1,6 @@
 # Summary
 
-[Test](test.md)
-
-* [Introduction](introduction.md)
+[Introduction](introduction.md)
 
 * [Registration and authorization](registration.md)
 * [Code review](reviews.md)
