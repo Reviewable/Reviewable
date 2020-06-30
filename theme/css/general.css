@@ -173,6 +173,8 @@ blockquote {
     font-weight: bold;
 }
 
+/* Custom reviewable styles below */
+
 .tip, .important {
     background-color: var(--quote-bg);
     border-bottom-right-radius: 2px;
@@ -198,4 +200,19 @@ blockquote {
 .important i.fa-exclamation-circle {
     color: #f66;
     font-size: 1.3em;
+}
+
+.label {
+    padding: 1px 3px;
+    color: white;
+    border-radius: 2px;
+}
+.red.label {
+    background-color: #D95C5C;
+}
+.green.label {
+    background-color: #5BBD72;
+}
+.grey.label {
+    background-color: #c0c0c0;
 }

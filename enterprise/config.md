@@ -38,8 +38,10 @@ Reviewable is configured via environment variables.  If you'd rather keep the co
 
 Once you're up and running, make sure to sign in to Reviewable with the admin account you assigned to your license.
 
-##### Core configuration:
+##### Core configuration
+
 These are required unless stated otherwise.
+
 * `REVIEWABLE_LICENSE`: You'll receive a license key when you purchase or renew a license.  This is just a JSON Web Token (JWT), signed with a private key, that encodes the constraints of your license.  It expires at the same time as the license.  The server won't run without a valid and current license key.
 * `REVIEWABLE_HOST_URL`: The URL for the Reviewable web server.  HTTP requests sent to this URL must be dispatched to a running Reviewable Docker image at the port below.  The host URL *must not have a path* and *must be stable* since changing it in any way will break GitHub webhooks and review links.  (Please contact us for help if you absolutely need to change it.)  We strongly recommend that the host URL also be secure (`https://...`) since some OAuth credentials will be sent via these URLs.
 * `PORT`: The port for the web server to listen on.  Reviewable assumes that a higher layer will provide load balancing and SSL termination, and forward requests to the servers over HTTP on an internal, secure network.  Defaults to port 8080, which is also exposed in the Docker container.
@@ -51,7 +53,9 @@ These are required unless stated otherwise.
 * `REVIEWABLE_GITHUB_CLIENT_SECRET`: The hex client secret assigned to the GitHub application you created above.
 
 ##### Security
+
 Optional settings that enable extra security mechanisms.
+
 * `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS`: A comma-separated list of unencrypted RSA private keys in PEM format (you can use `openssl genrsa -out private.pem 2048` to generate one), optionally with newlines removed but `BEGIN` / `END` fences retained.  These keys will be used to encrypt especially sensitive data in the Firebase datastore that only needs to be read by the server to provide an extra line of defense in case of a breach.  Currently, this includes all GitHub authorization tokens.  The current key should be first in the list, and any number of additional keys can be listed afterwards to assist with key rotation.
 * `REVIEWABLE_ENCRYPTION_AES_KEY`: A random AES-SIV key of either 256, 384, or 512 bits (32, 48, or 64 bytes), encoded as base64 (you can use `openssl rand -base64 64` to generate such a key, for example).  This key will be used to keep all user-provided strings encrypted in the Firebase database.  Note that this is a symmetric key that will be distributed to all clients, so using this option only makes sense if your installation is isolated behind a firewall.  It's best to specify the key on the first run but you can add / change / remove keys later by following the [AES key rotation](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md#aes-encryption-key-rotation) procedure.
 * `REVIEWABLE_GITHUB_SECRET_TOKEN`: An arbitrary secret string that will be used to sign GitHub webhook requests to ensure their authenticity.  Set to anything random, robust when transmitted as text, and reasonably long (e.g., 64 hex characters).  You shouldn't change it (or set it) once any repos have been connected as this will cause events to be dropped, though Reviewable will update the webhooks' settings as it notices that they're misconfigured.
@@ -59,7 +63,9 @@ Optional settings that enable extra security mechanisms.
 * `NODE_EXTRA_CA_CERTS`: The absolute path to your GitHub server's TLS cert file in PEM format.  Useful if your GitHub installation uses a self-signed (or otherwise non-validating) certificate, as otherwise Reviewable will refuse to connect to the API.  This environment variable **must be set directly**, not via the `REVIEWABLE_CONFIG_FILE` file.
 
 ##### Monitoring
+
 Connections to external systems to monitor the health of the application.  Because errors and warnings can be hard to notice in the logs, Reviewable also sends everything of note to [Sentry](https://getsentry.com) or a custom logging endpoint -- it's highly recommended that you configure at least one of those.
+
 * `REVIEWABLE_LOGGING_URL`: A URL to which all logs and errors will be POSTed in JSON format -- everything that would go to the console or Sentry will end up here too.  The structure of the body varies depending on the nature of the item, but will always include `level` (one of `data`, `debug`, `info`, `warn`, `error`, `fatal`) and `timestamp` properties.  Messages logged to the console will have level `debug` and a `message`.  Performance data will have level `data` and a structured `data` property.  Exceptions will have a non-`data` level, `tags`, a `message`, an `exception` structure (with all the stack frames), and possibly an `extra` property with additional information.  More properties may be added in the future, so ideally you would just store everything and pick out details of interest for your alerts, dashboards, etc.
 * `REVIEWABLE_STATSD_HOST`: The host to send `statsd` reports to via UDP.  You can also set `REVIEWABLE_STATSD_PORT` (default: 8125), `REVIEWABLE_STATSD_PREFIX` (default: `reviewable.`), and `REVIEWABLE_STATSD_TAGS` to customize the reports.  (Reviewable will include some basic tags automatically whether you specify your own or not.)  Reviewable will also fall back automatically on `DD_AGENT_HOST` and `DD_DOGSTATSD_PORT` instead if you happen to be using Datadog and already have these set up.
 * `REVIEWABLE_SERVER_SENTRY_DSN`: The Sentry DSN to send server errors to; must include both public and private keys.
@@ -70,13 +76,17 @@ Connections to external systems to monitor the health of the application.  Becau
 * `REVIEWABLE_LOG_GITHUB_API_LATENCY`: When set to any non-empty value, logs the latency of every request to GitHub's API, whether the request was successful or not.  This can help track down the cause of certain types of task timeouts.
 
 ##### Email
+
 Outbound email server configuration, used to send the occasional admin or error notification.  Normal review notifications all go through GitHub.
+
 * `REVIEWABLE_SMTP_URL`: The URL of an SMTP server to use when sending administrative emails.  (Review notifications are sent via GitHub.)  Use the format `smtp://username:password@smtp.example.com:port/`.  The connection will be automatically secured if the server supports it, but you can append `?requireTLS=true` if you want to force `STARTTLS`, or use `https` for a direct TLS connection on port 465.  If missing, Reviewable will attempt to send emails by connecting directly to the recipient's MX server, but this is not very reliable (no retries, no DKIM/SPF so messages likely to be treated as spam).
 * `REVIEWABLE_SMTP_FROM`: The `From` email address to set on outgoing messages.  Can be either a plain email address or the full `"Sender Name" <sender@example.com>` syntax.  If missing, Reviewable will default to `Reviewable <support@reviewable.io>`.
 * `REVIEWABLE_SMTP_BCC`: A `Bcc` email address to copy each message to, useful for keeping an eye on the emails that Reviewable is sending.  If missing, no copies are sent.
 
 ##### File uploads
+
 Destination for file attachments in comments.  The file types and sizes will be checked by Reviewable; as of this writing, only images up to 10MB in size are allowed.
+
 * `REVIEWABLE_UPLOADS_PROVIDER`: One of the following values, or leave empty to disable file uploads.
   * `local`: Store files on a local volume.  You also need to set `REVIEWABLE_USER_CONTENT_PATH` as an absolute path to a directory on a shared persistent volume with read/write access.  The files will be served from `$REVIEWABLE_HOST_URL/usercontent`.
   * `s3`: Store file in an AWS S3 bucket.  You also need to set `REVIEWABLE_S3_BUCKET`, `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, and optionally the bucket's region via `AWS_REGION`.  The identified user must have `s3:PutObject` and `s3:PutObjectAcl` permissions on bucket resources.  The bucket needs to have a CORS configuration that allows `POST` requests from all your users' clients (likely just `*`).  Files are stored with `public-read` ACLs and will be served from `https://s3-<REGION>.amazonaws.com/<BUCKET>`, unless `REVIEWABLE_UPLOADED_FILES_URL` is set, in which case they're `private` and served from that URL instead.
@@ -84,11 +94,14 @@ Destination for file attachments in comments.  The file types and sizes will be 
 * `REVIEWABLE_UPLOADED_FILES_URL`: An alternative URL that gives access to files uploaded via any of the methods above.  This could be a CDN or a proxy you've set up that's fed from the upload method's "bare" access URL, or directly by the file store.  For example, on AWS you can set up a CloudFront distribution for your S3 bucket.
 
 ##### User code execution
+
 Some features, such as [custom review completion rules](https://docs.reviewable.io/#/repositories?id=completion-condition), require Reviewable to execute user-provided code.  You can configure where and how such code should be executed.
+
 * `REVIEWABLE_CODE_EXECUTOR`: One of the following values, or leave empty to disable features that require code execution.
   * `sandcastle`: Execute code on the server itself, in a [separate sandboxed process](https://github.com/bcoe/sandcastle).  While this will mostly prevent accidental interference with the server, it's likely that an attacker would be able to break out of the sandbox or at least perform a denial of service attack.  Use this option only if all users with access to Reviewable can be trusted.
   * `awslambda`: Execute code in [AWS Lambda](https://aws.amazon.com/lambda).  This provides great isolation and scalability at the expense of needing a fair bit of setup.  You'll need to set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`, and make sure that the specified user has all of the permissions belows.  You'll also need to create a `lambda_basic_execution` role (optionally, set `REVIEWABLE_LAMBDA_EXECUTOR_ROLE` to the desired role name) in IAM with permissions `{"Effect": "Allow", "Action": ["logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutLogEvents"], "Resource": "arn:aws:logs:*:*:*"}`.  Optionally, you can also set `REVIEWABLE_LAMBDA_VPC_CONFIG` if you want to enable [VPC access](http://docs.aws.amazon.com/lambda/latest/dg/vpc.html) in user code; every time you change this value you'll need to delete all functions from Lambda (they'll be recreated automatically with the new config), and you'll also need the `lambda_basic_execution` role to include the `AWSLambdaVPCAccessExecutionRole` policy per the preceding docs.
-```
+
+```json
  [
     {
         "Effect": "Allow",
@@ -127,12 +140,16 @@ Some features, such as [custom review completion rules](https://docs.reviewable.
 ```
 
 ##### UI customization
+
 Basic UI customization.
+
 * `REVIEWABLE_TERMS_URL`: The URL for the Terms link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_PRIVACY_URL`: The URL for the Privacy link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 
 ##### Container configuration
+
 Extra configuration for optimizing the server runtime.
+
 * `GAE_SERVICE` or `GAE_VM`: If non-empty (any value) servers will handle requests to `/_ah/health` and `/_ah/ready`; the former will respond with `200` whenever possible, the latter will respond with `200` unless the server is shutting down, in which case it'll respond with `503` instead.  Servers will also trust headers inserted by the last HTTP proxy.  (If you were previously using `/_ah/stop` for graceful shutdown requests, please now send a `SIGTERM` instead.)
 * `MEMORY_AVAILABLE`: The amount of memory available to the Node process in MiB.  Defaults to the lower of `/proc/meminfo` `MemTotal` and `/sys/fs/cgroup/memory/memory.stat` `hierarchical_memory_limit`.  If not set accurately, the servers are more likely to run out of memory and start swapping.  A server logs how much memory it thinks it has available when it starts up.
 * `REVIEWABLE_GITHUB_CACHE_SIZE`: The cache size to use for GitHub data, in megabytes.  Defaults to 50MB as of this writing.

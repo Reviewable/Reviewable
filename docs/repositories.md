@@ -166,7 +166,7 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 The current state of the review is accessible to your code via the `review` variable.  The sample review state below explains the various properties. All timestamp values indicate milliseconds since the epoch, and all lists are ordered chronologically (when appropriate). If you find that you'd like more data please ask and we'll see what we can do.
 
-```
+```js
 {
   summary: {
     lastRevision: 'r1',             // The key of the last revision
