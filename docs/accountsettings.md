@@ -17,7 +17,7 @@ Ensure that the stylesheet is served as text/css. It may be necessary for you to
 
 We also have a few extra styles used to highlight tabs, trailing whitespace, and lack of final newline that you can customize:
 
-```
+```css
 .tab, .no-newline, .trailing {
   color: #D95C5C;
 }
