@@ -8,13 +8,11 @@ This chapter covers all types of Reviewable discussions, including the general d
 
 Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.
 
-
 ## Starting a new discussion
 
 You can start a new discussion by clicking on a diff line, as explained [here](files.md#line-discussion).  If no diff is available for a file for some reason, you can also start a file-wide discussion by clicking on **Start new discussion** under the file header instead.
 
 For discussions that are not specific to a file, click the **Start a new discussion** button at the bottom of the top-level discussions area (below the general discussion).  Typically, you would begin a top-level discussion if you want to have a distinct file-independent thread in which you can track the disposition of participants and an eventual resolution. You may also want to do it just to separate a thread out, even if you don't care about resolution.
-
 
 ## Replying to a discussion
 
@@ -46,21 +44,19 @@ Reviewable recognizes a number of case-insensitive shorthands in external commen
 
 ?> For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [initial keywords](#change-disposition) further down.
 
-
 ## Ending a discussion
 
 If you don't need to reply to a discussion you can click the primary action button at the bottom instead. The button's label will indicate its precise action — corresponding to both your role and the state of the discussion — but the general meaning is “I have nothing further to say about this”. Clicking the button will always mark the discussion as read, and usually set your [disposition](#dispositions) to **<i class="fa fa-check-circle"></i> Satisfied** as well:
 
-| Role | Discussion | Button label | Effect |
-|------|------------|:------------:|--------|
-| **<i class="fa fa-info-circle"></i> Informing** | Resolved with no other participants | **Retract** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
-| **<i class="fa fa-info-circle"></i> Informing** | Resolved | **Conclude** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
-| Active participant, not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved with no other participants | **Retract** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
-| Active participant or PR author, not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved and switching to **<i class="fa fa-check-circle"></i> Satisfied** would resolve | **Resolve** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
-| PR author not **<i class="fa fa-check-circle"></i> Satisfied**, or anyone **<i class="fa fa-play-circle"></i> Working** | **Unresolved** | **Done** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** and creates a "Done." message |
-| **<i class="fa fa-minus-circle"></i> Blocking** | Unresolved and nobody **<i class="fa fa-play-circle"></i> Working** | **Accept** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** |
-| Any | Unread comments | **Acknowledge** | Sets disposition to **<i class="fa fa-ellipsis-h"></i> Following** if passive participant or not a participant |
-
+ Role | Discussion | Button label | Effect
+------|------------|:------------:|--------
+ **<i class="fa fa-info-circle"></i> Informing** | Resolved with no other participants | **Retract** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied**
+ **<i class="fa fa-info-circle"></i> Informing** | Resolved | **Conclude** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied**
+ Active participant, not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved with no other participants | **Retract** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied**
+ Active participant or PR author, not **<i class="fa fa-check-circle"></i> Satisfied** | Unresolved and switching to **<i class="fa fa-check-circle"></i> Satisfied** would resolve | **Resolve** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied**
+ PR author not **<i class="fa fa-check-circle"></i> Satisfied**, or anyone **<i class="fa fa-play-circle"></i> Working** | **Unresolved** | **Done** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied** and creates a "Done." message
+ **<i class="fa fa-minus-circle"></i> Blocking** | Unresolved and nobody **<i class="fa fa-play-circle"></i> Working** | **Accept** | Sets disposition to **<i class="fa fa-check-circle"></i> Satisfied**
+ Any | Unread comments | **Acknowledge** | Sets disposition to **<i class="fa fa-ellipsis-h"></i> Following** if passive participant or not a participant
 
 ## Unreplied discussions
 
@@ -88,7 +84,6 @@ The yellow **New comments** ribbon demarcates the point where comments that are 
 Some older comments may be hidden, as indicated by the **Show N older comments** link in the discussion header. Click the link to toggle showing older comments for this discussion, or click the drop-down arrow to reveal options for displaying older comments in **this file** or in **all files**.
 
 ![reviewable older comments](images/discussions_5.png)
-
 
 ## Dispositions and resolution
 
@@ -120,9 +115,9 @@ Your avatar in the lower-right corner of every discussion box has a small icon t
 
 You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These are some examples of what you'll find there:
 
-*   FYI or BTW → **<i class="fa fa-info-circle"></i> Informing**
-*   Minor or Nit → **<i class="fa fa-circle-o"></i> Discussing**
-*   Working or Will do → **<i class="fa fa-play-circle"></i> Working**
+* FYI or BTW → **<i class="fa fa-info-circle"></i> Informing**
+* Minor or Nit → **<i class="fa fa-circle-o"></i> Discussing**
+* Working or Will do → **<i class="fa fa-play-circle"></i> Working**
 
 Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.
 
@@ -143,4 +138,3 @@ Similarly, if you're following an informal review process, you may want to set t
 There are 4 default dispositions (the combinations of author/reviewer and new/reply), and you can set each one individually. The disposition dropdown has a **Change default disposition** link at the bottom that, once clicked, will lock in your next selection as the default for situations like that of the current comment.  (For clarity, the link will change to a description that states which default you're setting.)
 
 ?> If you are **<i class="fa fa-circle-o"></i> Discussing** and another participant resolves the discussion without writing a comment, you normally won't be notified about it and the discussion will simply disappear from your view.  If you'd like to double-check such resolutions without having to block the discussion, you can turn on **Trust but verify** mode via the small <i class="fa fa-cog"></i> settings icon in the top-right corner of any of your disposition dropdowns.
-

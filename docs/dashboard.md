@@ -13,7 +13,6 @@ PRs are sorted into groups ordered from most to least relevant. Within each grou
 
 You can modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md).
 
-
 ## Review state
 
 Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first, and people whose attention the review currently needs to the right of the <i class="fa fa-hand-o-right"></i>. You can see the approval status icon for any reviewer, which will appear with a <i class="fa fa-circle" style="color: #D87D7C"></i> if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels (if any).
@@ -32,13 +31,11 @@ If a PR is ready for merging, the status checks are successful, and all the coun
 
 Other possible states include **Merged**, **Closed**, and **Archived** (automatically, for old reviews — just open to unarchive). No state appears for any PR not yet connected to a review.
 
-
 ## Open a review :id=open-review
 
 Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #85C88B"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.
 
 Click the link on the right end of a listing to access the pull request on GitHub.
-
 
 ## Filter reviews
 
@@ -50,37 +47,36 @@ Add an OR operator to the positive filter by entering a comma. For example, `+ne
 
 For the <code>±label:<i>name</i></code> filter, you must use double quotes around the label name if it contains spaces.
 
-| Filter | Meaning |
-|------|---------|
-| `±open` | Currently open PR |
-| `±red` | PRs with red counters |
-| `±mine` | Created, assigned, and requested PRs |
-| <code>±label:<i>name</i></code> | PRs with given label |
-| `±needs:` | &nbsp; |
-| &nbsp;&nbsp;&nbsp; `review` | Incomplete reviews |
-| &nbsp;&nbsp;&nbsp; `fix` | Reviews with failing checks |
-| &nbsp;&nbsp;&nbsp; `merge` | Completed and clean reviews |
-| &nbsp;&nbsp;&nbsp; `me` | Reviews waiting on you |
-| &nbsp;&nbsp;&nbsp; `author` | Reviews waiting on author |
-| &nbsp;&nbsp;&nbsp; `reviewer` | Reviews waiting on a reviewer |
-| `±am:` | &nbsp; |
-| &nbsp;&nbsp;&nbsp; `author` | Created PRs |
-| &nbsp;&nbsp;&nbsp; `assigned` | Assigned PRs |
-| &nbsp;&nbsp;&nbsp; `requested` | Requested reviewer PRs |
-| `±draft` | PR draft, not yet fully open |
-| `±merged` | PR that was successfully merged |
-| `±closed` | PR that was closed without merging |
-| `±public` | PRs from public repos |
-| `±private` | PRs from private repos |
-| `±starred` | PRs from repos you starred |
-| `±watched` | PRs from repos you're watching |
+Filter | Meaning
+-----|---------
+`±open` | Currently open PR
+`±red` | PRs with red counters
+`±mine` | Created, assigned, and requested PRs
+<code>±label:<i>name</i></code> | PRs with given label
+`±needs:` | &nbsp;
+&nbsp;&nbsp;&nbsp; `review` | Incomplete reviews
+&nbsp;&nbsp;&nbsp; `fix` | Reviews with failing checks
+&nbsp;&nbsp;&nbsp; `merge` | Completed and clean reviews
+&nbsp;&nbsp;&nbsp; `me` | Reviews waiting on you
+&nbsp;&nbsp;&nbsp; `author` | Reviews waiting on author
+&nbsp;&nbsp;&nbsp; `reviewer` | Reviews waiting on a reviewer
+`±am:` | &nbsp;
+&nbsp;&nbsp;&nbsp; `author` | Created PRs
+&nbsp;&nbsp;&nbsp; `assigned` | Assigned PRs
+&nbsp;&nbsp;&nbsp; `requested` | Requested reviewer PRs
+`±draft` | PR draft, not yet fully open
+`±merged` | PR that was successfully merged
+`±closed` | PR that was closed without merging
+`±public` | PRs from public repos
+`±private` | PRs from private repos
+`±starred` | PRs from repos you starred
+`±watched` | PRs from repos you're watching
 
 ?> Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
 
 ![reviewable filter field](images/reviews_6.png)
 
 If shown, you can click the **Include stalled pull requests/reviews** link near the bottom of the panel to exclude or include any stalled PRs.  The current state of this toggle is reflected in the URL, so you can bookmark it.
-
 
 ## Other toggles
 

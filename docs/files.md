@@ -20,16 +20,17 @@ One of Reviewable's core features is letting you track the reviewed state of eac
 
 The small button to the left of the file path indicates your current reviewed state for the file at the right diff bound and lets you change it.  Typically, as a reviewer, the button will be red to indicate that you need to review this diff, and will turn green when clicked to indicate that you've marked the file as reviewed.  There are other less common states as well:
 
-| Color | Meaning |
-|:-----:|---------|
-| ![reviewable file matrix current state](images/filematrix_2.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed. |
-| ![reviewable file matrix current state](images/filematrix_3.png ':size=25') | Reviewed by you at the right diff-bound. Click to immediately rescind your review marking. |
-| ![reviewable file matrix current state](images/filematrix_4.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, or you are the author of the PR. |
-| ![reviewable file matrix current state](images/filematrix_5.png ':size=25') | Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant. |
+Color | Meaning
+:----:|---------
+![reviewable file matrix current state](images/filematrix_2.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed.
+![reviewable file matrix current state](images/filematrix_3.png ':size=25') | Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.
+![reviewable file matrix current state](images/filematrix_4.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, or you are the author of the PR.
+![reviewable file matrix current state](images/filematrix_5.png ':size=25') | Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
 ## File matrix :id=file-matrix
+
 Click the toggle to display a history matrix showing all files and revisions. Here, you can:
 
 - View a summary of the PR's change history for each file.
@@ -61,16 +62,15 @@ Files can also be grouped, like for the **Tests** group in the screenshot above.
 
 Each column in the matrix represents a single revision of each of the files in the review. Each revision consists of one or more commits.  The headings vary in style to indicate the different kinds of revisions.
 
-| Label | Meaning |
-|:-----:|---------|
-| r1    | An immutable revision (even if the branch is rebased). |
-| _r1_  | A provisional revision whose commits may still change. |
-| ~r1~  | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it. |
-| <span style="font-size: 1.25em">👁</span> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice. |
-| ⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased. |
+Label | Meaning
+:----:|---------
+r1    | An immutable revision (even if the branch is rebased).
+_r1_  | A provisional revision whose commits may still change.
+~r1~  | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.
+<span style="font-size: 1.25em">👁</span> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.
+⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.
 
 You can also drag in the diff header to bulk-select the diff bounds. Doing so in the header will set the diff bounds for all files as close as possible to the new setting. Many reviewers choose to set diff bounds this way instead of file-by-file to see one coherent set of diffs at a time.
-
 
 ## File contents
 
@@ -98,11 +98,11 @@ Most languages also get automatic syntax highlighting.  If your file isn't getti
 
 In the gutter (either beside or between the diffs) you may see any of the following markers that indicate some otherwise invisible property of the adjoining line(s):
 
-| Marker | Meaning |
-|:------:|---------|
-|  `⊥`   | This line only has changes in the base branch, between the base commits corresponding to the current diff bounds. |
-|  `␣`   | This line only has whitespace changes. |
-| <code><i class="fa fa-check-square-o"></i></code> | There are one or more resolved discussions on this line.  Click to reveal. |
+ Marker | Meaning
+:------:|--------
+  `⊥`   | This line only has changes in the base branch, between the base commits corresponding to the current diff bounds.
+  `␣`   | This line only has whitespace changes.
+ <code><i class="fa fa-check-square-o"></i></code> | There are one or more resolved discussions on this line.  Click to reveal.
 
 ?> Reviewable only supports text file diffs at this time.  For images and other file types you'll need to go view the diff on GitHub — a convenient link will usually be provided.  You will still be able to post comments against such files but they won't be attached to a specific line.
 
@@ -131,17 +131,17 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 2. If you see a small, light-colored declaration immediately below the collapsed section, this indicates the nearest syntactic unit that the code below is a part of — e.g., a function or a class.  You can click this signature to expand the diff to show all of the syntactic unit.
 
 3. In the collapsed section gap, you will see some subset of the following line counts.  Clicking on any of these collapsed line categories will expand only those lines (plus a bit of context around them).
-  *   **No changes** — lines with no changes at all between your current diff bounds.
-  *   **Whitespace changes** — this is the count of lines in which only the whitespace has changed (marked with a `␣` when expanded).
-  *   **Base commit changes** — are lines in which only the base branch has changed, likely not due to work on this pull request (marked with a `⊥` when expanded)
-  *   **Resolved discussion** — are lines with resolved discussions attached (marked with a <code><i class="fa fa-check-square-o"></i></code> when expanded).
+
+* **No changes** — lines with no changes at all between your current diff bounds.
+* **Whitespace changes** — this is the count of lines in which only the whitespace has changed (marked with a `␣` when expanded).
+* **Base commit changes** — are lines in which only the base branch has changed, likely not due to work on this pull request (marked with a `⊥` when expanded)
+* **Resolved discussion** — are lines with resolved discussions attached (marked with a <code><i class="fa fa-check-square-o"></i></code> when expanded).
 
 4. Click the **Collapsed** drop-down to view options for expanding everything — either for **this file** or **all files**.  The toggle button selects whether to **collapse whitespace changes** in all files in this review.  The setting will also be your default for new reviews.
 
 ![reviewable fill diffs collapsed drop down](images/filediffs_17.png)
 
 ?> The only way to collapse expanded diff lines back down is to change the diff bounds.
-
 
 ## Line-specific discussions :id=line-discussion
 
@@ -161,7 +161,6 @@ Next to the dog-ear you'll find the line number that this discussion is on (rela
 
 For lots more information on discussions, please see the [next chapter](discussions.md).
 
-
 ## Diff customization
 
 You can customize which files are diffed and how the diffs are displayed at the repository level.
@@ -170,8 +169,8 @@ You can customize which files are diffed and how the diffs are displayed at the 
 
 Reviewable will automatically detect many kinds of generated files and hide the diff by default. If you'd like to add a new common pattern (based either on the filename or the contents of the file), don't hesitate to let us know. If your generated files are specific to your project, you have two options:
 
-*   You can tweak your build to insert the exact text `GENERATED FILE DO NOT EDIT` as a comment on a line by itself into the generated file. There can be up to 4 additional characters on the line before and after the marker text. We have this restriction so that Reviewable doesn't accidentally consider your build script itself to be generated!
-*   You can use `.gitattributes` files checked into your repo to control diffing — see below.
+* You can tweak your build to insert the exact text `GENERATED FILE DO NOT EDIT` as a comment on a line by itself into the generated file. There can be up to 4 additional characters on the line before and after the marker text. We have this restriction so that Reviewable doesn't accidentally consider your build script itself to be generated!
+* You can use `.gitattributes` files checked into your repo to control diffing — see below.
 
 ### Diff suppression and file type
 
@@ -184,7 +183,6 @@ Reviewable respects the diff settings in your `.gitattributes` files to the best
 
 For details on the syntax, see the [gitattributes reference doc](https://git-scm.com/docs/gitattributes).
 
-
 ## Special states
 
 The way diffs are displayed is suject to some special states, on both file-by-file and whole-review bases.
@@ -193,10 +191,10 @@ The way diffs are displayed is suject to some special states, on both file-by-fi
 
 There are many situations in which a diff won't be produced for a given file — either to ensure good performance, or because it isn't sensible to do so. Some examples include:
 
-*   files that appear to be binary or minified,
-*   diffs that are too big or were taking too long to compute,
-*   files with too many lines,
-*   files with custom diffs specified in `.gitattributes` that Reviewable cannot respect.
+* files that appear to be binary or minified,
+* diffs that are too big or were taking too long to compute,
+* files with too many lines,
+* files with custom diffs specified in `.gitattributes` that Reviewable cannot respect.
 
 In such cases, the file will appear together with a message explaining why the diff is missing. Typically, there will also be a button such as **Try Again** or **View on GitHub** by which you can override or bypass the condition.
 
@@ -213,7 +211,6 @@ Reviewable automatically enters a single file mode to preserve performance when 
 Single-file mode is similar — but not identical — to the mode that you enter when you `⌘`, `Ctrl`, or `⇧` click a file open into a separate tab.
 
 This panel will also appear if any diffs were throttled or big diffs were elided from display. However, in those cases the page will remain in multi-file mode. The text in the panel will also reflect the specific conditions.
-
 
 ## Support for specific workflows
 
@@ -234,5 +231,3 @@ Some advanced workflows require overwriting the target branch of a PR with the h
 To get the diff that you want, add a `Merge manually by overwriting target` label (exact spelling!) to your PR. This will cause Reviewable to compare files against the current head of the target branch. Now, you'll see upstream changes and any conflicts you resolved during the rebase, while leaving out modifications in your fork that survived unscathed.
 
 ?> For best results, add the label to the PR when you first create it.
-
-
