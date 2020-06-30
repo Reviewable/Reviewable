@@ -10,4 +10,4 @@ build-dir = "book"
 create-missing = false
 
 [preprocessor.classy]
-command = "mdbook-classy"
+command = "bin/mdbook-classy"
