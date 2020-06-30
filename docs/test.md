@@ -3,7 +3,7 @@
 - [x] fix all tables
 - [x] fix all ?> class=tip
 - [x] fix all !> class=important
-- [ ] fix all custom ids
+- [x] fix all custom ids
 
 ## question
 

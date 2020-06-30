@@ -32,7 +32,9 @@ If a PR is ready for merging, the status checks are successful, and all the coun
 
 Other possible states include **Merged**, **Closed**, and **Archived** (automatically, for old reviews — just open to unarchive). No state appears for any PR not yet connected to a review.
 
-## Open a review :id=open-review
+<a id="open-review"></a>
+
+## Open a review
 
 Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #85C88B"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.
 

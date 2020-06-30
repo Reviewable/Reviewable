@@ -13,13 +13,15 @@ This chapter provides an overview of the review page, but the core features of r
 
 Throughout this guide, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of three roles to every review participant:
 
-*   Author: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
-*   Reviewer: anybody that is not an author or mentionee.
-*   Mentionee: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
+* Author: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
+* Reviewer: anybody that is not an author or mentionee.
+* Mentionee: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 
 It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.
 
-## Publishing your review :id=publish
+<a id="publish"></a>
+
+## Publishing your review
 
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
@@ -37,9 +39,9 @@ You can open the dropdown menu off the **Publish** button to set a few extra opt
 
 Like for GitHub reviews, there are three approval levels you can choose from when publishing via the dropdown attached to the button:
 
-*   **Comment** — Submit general feedback without explicit approval.
-*   **Approve** — Submit feedback and approve merging these changes.
-*   **Request changes** — Submit feedback that must be addressed before merging.
+* **Comment** — Submit general feedback without explicit approval.
+* **Approve** — Submit feedback and approve merging these changes.
+* **Request changes** — Submit feedback that must be addressed before merging.
 
 Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.
 
@@ -49,7 +51,9 @@ You may only change the approval level if you have write permissions to the repo
 {:.important}
 If you choose **Comment**, any previous **Approve** or **Request changes** will remain in effect; you cannot rescind your vote, only change it.
 
-### Requested reviewers synchronization :id=sync-requested-reviewers
+<a id="sync-requested-reviewers"></a>
+
+### Requested reviewers synchronization
 
 Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants summary](#labels-and-participants-summary)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box.  Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
 
@@ -61,7 +65,9 @@ Keeping requested reviewers up-to-date (rather than just requesting the initial 
 
 Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](repositories.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
 
-## Merging a pull request :id=merge
+<a id="merge"></a>
+
+## Merging a pull request
 
 When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.
 
@@ -88,13 +94,11 @@ When using the rebase merge style, Reviewable will indicate if the merge will be
 
 If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](repositories.md#condition-output).
 
-
 ## Review toolbar
 
 At the top of every review page you’ll find a floating toolbar with some core state indicators and buttons for common actions.
 
 ![reviewable top toolbar right](images/toptoolbar_right.png)
-
 
 At the end of the toolbar you'll always find either a **Publish** or **Merge** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.
 
@@ -150,8 +154,7 @@ The main general discussion is always considered resolved.
 
 The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
 
-
-## Changes summary :id=changes-summary
+## Changes summary
 
 This panel appears at the very top of the review page. The top line describes the current diff set you're viewing as succinctly as possible to help orient you.  There's also a link to the pull request in the top-right corner..
 
@@ -187,7 +190,9 @@ When applicable, you’ll find a small **Show full diff** link beneath the **Sho
 
 When appropriate, a checkbox for **Include changes in files previously reviewed only by others** will appears beneath the button. Leave this box unchecked to automatically partition a review among multiple reviewers. For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. <more> So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter. The exact semantics of this feature are a bit tricky, though, so please see [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a full exploration and why some people choose to remap `n/p` onto <code>nextPersonallyUnreviewedFile()</code>.</more>
 
-### Commits :id=changes-commits
+<a id="changes-commits"></a>
+
+### Commits
 
 This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or hange the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.
 
@@ -197,14 +202,13 @@ The **Review Style** dropdown lets you choose the style of this review, affectin
 
 There are two review styles, and changing the style will require from a few seconds to a minute or so to restructure the provisional revisions in the review.
 
-*   **Combine commits for review** — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.
-*   **Review each commit separately** — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.
+* **Combine commits for review** — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.
+* **Review each commit separately** — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.
 
 If you're a repo admin, you can also set the default review style for the repo via a small link under the dropdown.
 
 {:.important}
 Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
-
 
 ## Labels and participants summary
 
@@ -212,17 +216,16 @@ This summary appears at the bottom of the general discussion (see the screenshot
 
 For each participant:
 
-*   a red or grey dot on the avatar indicates their current approval and “needed” status—identical to the review list.
-*   The comment icon will be dark in color if the participant has any drafts pending.
-*   The comment text indicates the last time they edited the review.
-*   The **assigned** and **review requested** markers indicate the corresponding state.
-*   There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).
+* a red or grey dot on the avatar indicates their current approval and “needed” status—identical to the review list.
+* The comment icon will be dark in color if the participant has any drafts pending.
+* The comment text indicates the last time they edited the review.
+* The **assigned** and **review requested** markers indicate the corresponding state.
+* There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).
 
 ![reviewable review labels and participants](images/summary_3.png)
 
-
 ## Keyboard shortcuts
+
 There are a number of keyboard shortcuts available to power your way through a review. Type `?` to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the [Custom key bindings](accountsettings.md#custom-key-bindings) section.
 
 ![reviewable keyboard shortcuts](images/toptoolbar_7.png)
-

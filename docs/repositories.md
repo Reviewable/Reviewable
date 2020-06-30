@@ -6,19 +6,18 @@ The Repositories page lists all of your repos. From this page, you can connect R
 
 The repositories are grouped by owner and listed alphabetically.  If you don't see an organization of which you're a member, ensure that you click **Show all organizations** if it's there.  If the organization is still missing, check whether you need to [request approval for Reviewable](https://help.github.com/articles/requesting-organization-approval-for-oauth-apps/) from your organization owners.
 
-
 ## Security concerns
 
 First off, Reviewable will never store your source code on its servers. Each session will fetch the code directly from GitHub into the browser over a secure HTTPS connection. For transparency, here’s a non-exhaustive list of the kinds of data stored on Reviewable's servers:
 
-*   Comments, including drafts.
-*   Pull request metadata, such as filenames, and commit and file SHAs.
-*   Basic account data, such as ID, username, and email address.
-*   The OAuth access token that you authorized (encrypted for extra security).
-*   Repo permissions and organization memberships.
-*   Settings for all levels: organization, repository, user, and review.
-*   Subscription data, but only the last 4 of the credit card and expiration date are kept.
-*   Issue titles, commit messages, and GitHub branch protection settings are cached and flushed regularly.
+* Comments, including drafts.
+* Pull request metadata, such as filenames, and commit and file SHAs.
+* Basic account data, such as ID, username, and email address.
+* The OAuth access token that you authorized (encrypted for extra security).
+* Repo permissions and organization memberships.
+* Settings for all levels: organization, repository, user, and review.
+* Subscription data, but only the last 4 of the credit card and expiration date are kept.
+* Issue titles, commit messages, and GitHub branch protection settings are cached and flushed regularly.
 
 Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every half hour. All data is always transmitted across secure connections.
 
@@ -30,7 +29,6 @@ And of course under no circumstances will we disclose any of your private inform
 
 If you need more details about our security architecture or have any other concerns we can address, please contact us at [support@reviewable.io](mailto:support@reviewable.io).
 
-
 ## Connecting repositories
 
 The indicator next to each repository name shows the connection state for this repo. While a repo is connected, Reviewable automatically creates a review for any open PR and inserts a link into all open PRs in the repo.
@@ -39,9 +37,9 @@ The indicator next to each repository name shows the connection state for this r
 
 The toggle's color reflects the state of the connection:
 
-*   **Black** — The repo is disconnected. Reviewable will not automatically create reviews for this repo, but it is possible to initiate a review from the [Reviews dashboard](dashboard.md#open-review).
-*   **Green** — The repo is connected and healthy. Reviewable will automatically create and update reviews for all open PRs and insert a link to the review into the description for each PR.  (You can customize this latter behavior in the [settings](#repo-settings), but must do so _before_ connecting the repo!)
-*   **Red** — The repo was connected, but the connection is now broken. Look for the error message on this page. Though some reviews may be created under this condition, it is necessary to fix the problem to ensure all reviews function properly.
+* **Black** — The repo is disconnected. Reviewable will not automatically create reviews for this repo, but it is possible to initiate a review from the [Reviews dashboard](dashboard.md#open-review).
+* **Green** — The repo is connected and healthy. Reviewable will automatically create and update reviews for all open PRs and insert a link to the review into the description for each PR.  (You can customize this latter behavior in the [settings](#repo-settings), but must do so _before_ connecting the repo!)
+* **Red** — The repo was connected, but the connection is now broken. Look for the error message on this page. Though some reviews may be created under this condition, it is necessary to fix the problem to ensure all reviews function properly.
 
 You must have repo admin permissions to connect or disconnect a repo. Connecting to a private organizational repo may cause you to automatically begin the 30-day free trial.
 
@@ -55,14 +53,14 @@ If a user has connected a repo but later leaves an organization, it will be nece
 
 Each connected repository will have an "N open reviews" link under it that will take you to a repository-specific [reviews dashboard](dashboard.md).
 
+<a id="current-and-future"></a>
 
-### Connect all current and future repos :id=current-and-future
+### Connect all current and future repos
 
 There's also a special **All current and future repos** toggle.  When turned on by an organization owner, Reviewable will connect all current _and future_ repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.
 
 {:.important}
 You may wish to confirm the [settings](#repo-settings) of current repos and designate a [prototype repo](#prototype-repo) for future ones before you turn on this feature.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
-
 
 ### Create reviews for your own PRs
 
@@ -75,26 +73,26 @@ The same applies to private PRs for the **My PRs in any private repo** toggle, w
 {:.important}
 This last is a legacy feature that may get removed in the future, since it was mainly used to constrain the set of contributors to avoid going over quota, and this can now be specified directly in a subscription's configuration.  It will only work if the relevant repo has an active subscription at the time the PR is created and won't backfill if a subscription is created later.
 
-
 ### Reviews in connected vs unconnected repos
 
 When you connect a repo, you get links to the reviews from all PRs in that repo and immediate updates whenever anything changes in GitHub.
 
 By contrast, Reviewable doesn't get write access to the repo if you individually connect all your own PRs or create ad-hoc reviews via the dashboard. There are some disadvantages to this approach:
 
-*   New commits, GitHub comments, labels, and the PR assignee don't immediately sync with the review, but will only synchronize after somebody loads the review. The dashboard will display stale information for such reviews. Comments posted in Reviewable will propagate immediately.
-*   Assignee and label directives in GitHub and emailed comments won't apply until a user loads the review.
-*   Review status checks won't post to the PR, since Reviewable isn't subscribed to repo events and unable to make timely updates.
-*   Reviewable may not be able to reliably detect and apply your branch protection settings in its UI. (The branch protection settings will be enforced by GitHub no matter what, though, so this is safe but potentially confusing.)
-*   It may not be possible for Reviewable to pin revision commits, so if you use `git rebase` and `git push --force`, some of them may get garbage collected and will no longer be accessible in the review. They'll usually get pinned when the reviewer (with push authority) accesses the review.
+* New commits, GitHub comments, labels, and the PR assignee don't immediately sync with the review, but will only synchronize after somebody loads the review. The dashboard will display stale information for such reviews. Comments posted in Reviewable will propagate immediately.
+* Assignee and label directives in GitHub and emailed comments won't apply until a user loads the review.
+* Review status checks won't post to the PR, since Reviewable isn't subscribed to repo events and unable to make timely updates.
+* Reviewable may not be able to reliably detect and apply your branch protection settings in its UI. (The branch protection settings will be enforced by GitHub no matter what, though, so this is safe but potentially confusing.)
+* It may not be possible for Reviewable to pin revision commits, so if you use `git rebase` and `git push --force`, some of them may get garbage collected and will no longer be accessible in the review. They'll usually get pinned when the reviewer (with push authority) accesses the review.
 
 Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.
 
 {:.tip}
 You may find it impracticable to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
 
+<a id="repo-settings"></a>
 
-## Repository settings :id=repo-settings
+## Repository settings
 
 Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.
 
@@ -102,8 +100,9 @@ Click on a repository name to access the repo settings panel.  This works whethe
 
 If you make any changes to the settings, click the **Apply** button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (_all_ the settings, not just your current changes).  Click **Cancel** to discard any change to the settings.
 
+<a id="prototype-repo"></a>
 
-### Prototype settings for new repos :id=prototype-repo
+### Prototype settings for new repos
 
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
@@ -114,13 +113,12 @@ This feature is particularly useful if you chose to connect [all current and fut
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
 
-*   **Description** — at the top or bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
-*   **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
-*   **None** — no badges will be created (private repos only).
+* **Description** — at the top or bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
+* **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
+* **None** — no badges will be created (private repos only).
 
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
-
 
 ### Default review style
 
@@ -128,29 +126,27 @@ Choose the default [review style](reviews.md#changes-commits) for all reviews in
 
 This setting can be overridden on a particular review by any user with push permissions.
 
-
 ### Approve button output
 
 You can customize the function of the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to **Approved**.
-
 
 ### Discussion participant dismissers
 
 This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
-
 ### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a status check on GitHub. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
+<a id="completion-condition"></a>
 
-## Custom review completion condition :id=completion-condition
+## Custom review completion condition
 
 Reviewable allows you to write custom code that determines when a review is complete and controls other details of a review's progress.  Typically, you'll use this to customize the number of reviewers required, or switch from the GitHub approval system to a more flexible one based on explicit LGTMs.  Some people have created more unusual conditions, though, such as:
 
-*   preventing review completion for N hours after a PR was created, so people get a chance to check it out,
-*   requiring reviews from certain people based on the labels attached to the PR, or
-*   preventing merging of PRs that have commits with “WIP” in the title.
+* preventing review completion for N hours after a PR was created, so people get a chance to check it out,
+* requiring reviews from certain people based on the labels attached to the PR, or
+* preventing merging of PRs that have commits with “WIP” in the title.
 
 ### Development environment
 
@@ -166,8 +162,7 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png ':size=1138')
 
-
-### Review state input :id=review-state-input
+### Review state input
 
 The current state of the review is accessible to your code via the `review` variable.  The sample review state below explains the various properties. All timestamp values indicate milliseconds since the epoch, and all lists are ordered chronologically (when appropriate). If you find that you'd like more data please ask and we'll see what we can do.
 
@@ -274,7 +269,7 @@ The current state of the review is accessible to your code via the `review` vari
 }
 ```
 
-### Condition output :id=condition-output
+### Condition output
 
 Your code must return an object with some or all of the following properties.  Any missing properties (at the top level) will be filled in by using the built-in default condition.  This means that you can safely return, e.g., just the `disableGitHubApprovals` flag and the rest will be defaulted for you.
 

@@ -2,7 +2,7 @@
 
 This chapter explains in detail how you manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.
 
-## Revision cells :id=revision-cells
+## Revision cells
 
 A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.
 
@@ -12,7 +12,9 @@ The brackets in a row are the current left and right diff bounds for the file. T
 
 ![reviewable file matrix diff bounds](images/filematrix_8.png)
 
-## Mark as reviewed :id=mark-reviewed
+<a id="mark-reviewed"></a>
+
+## Mark as reviewed
 
 One of Reviewable's core features is letting you track the reviewed state of each file at each revision, for each reviewer.  This enables you to easily remember — and indicate to others — where you left off in the review and easily view only subsequent changes.  Marking a file as reviewed doesn't necessarily mean that you think it's ready for merging, but rather only that you reviewed it at the given revision and added all your comments.
 
@@ -29,7 +31,7 @@ Color | Meaning
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
-## File matrix :id=file-matrix
+## File matrix
 
 Click the toggle to display a history matrix showing all files and revisions. Here, you can:
 
@@ -147,7 +149,9 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 {:.tip}
 The only way to collapse expanded diff lines back down is to change the diff bounds.
 
-## Line-specific discussions :id=line-discussion
+<a id="line-discussion"></a>
+
+## Line-specific discussions
 
 Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.  If you select some code first, it will automatically be quoted and copied into your message.
 

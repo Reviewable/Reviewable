@@ -30,7 +30,7 @@ You can add images to your comment by clicking the upload button, by dragging an
 
 ![reviewable send messages immediately](images/discussions_6.png)
 
-### Inline directives :id=inline-directives
+### Inline directives
 
 You can add special directives inline to any comment (not just top-level ones) to add or remove labels, set the milestone, and add or remove assignees or reviewers.  Reviewable doesn't use a special UI for this so that it's easy to do without lifting your hands from the keyboard, works in all contexts (including when replying by email or on GitHub), and leaves an easily readable record.
 
@@ -115,7 +115,9 @@ If you have draft state on the discussion (as in the case of a reply, for exampl
 {:.tip}
 Participants in the general discussion have no dispositions, and it's always considered resolved.  Other top-level discussions created by clicking the **Start a new discussion** button behave normally.
 
-### Checking and changing dispositions :id=change-disposition
+<a id="change-disposition"></a>
+
+### Checking and changing dispositions
 
 Your avatar in the lower-right corner of every discussion box has a small icon that indicates your current disposition.  Hover over it (or swipe left) to show the avatars and dispositions of all the participants in the discussion.  Click on your avatar to change your disposition, or on another participant's avatar to see a description of their current disposition.
 
