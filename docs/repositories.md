@@ -47,7 +47,8 @@ You must have repo admin permissions to connect or disconnect a repo. Connecting
 
 It is entirely safe to connect or disconnect a repo at any time without risk of data loss. After a review is created, it will not be affected by this toggle.
 
-?> If you previously connected repos, but later revoked the authorization for Reviewable, you will need to re-authorize access to maintain the connection. You will see messages at the top of the repo page that prompt you to take action.
+{:.tip}
+If you previously connected repos, but later revoked the authorization for Reviewable, you will need to re-authorize access to maintain the connection. You will see messages at the top of the repo page that prompt you to take action.
 
 !> If a user has connected a repo but later leaves an organization, it will be necessary for another admin to toggle the repo off and then on to assume control of the connection.  (Reviewable will send a warning email to the original connector if it detects this situation.)
 
@@ -86,7 +87,8 @@ By contrast, Reviewable doesn't get write access to the repo if you individually
 
 Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.
 
-?> You may find it impracticable to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
+{:.tip}
+You may find it impracticable to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
 
 
 ## Repository settings :id=repo-settings
@@ -102,7 +104,8 @@ If you make any changes to the settings, click the **Apply** button at the top o
 
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
-?> This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future).
+{:.tip}
+This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future).
 
 ### Reviewable badge
 
@@ -112,7 +115,8 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 *   **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 *   **None** — no badges will be created (private repos only).
 
-?> Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
+{:.tip}
+Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
 
 
 ### Default review style

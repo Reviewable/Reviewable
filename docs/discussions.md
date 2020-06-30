@@ -4,7 +4,8 @@ Review participants engage in discussions about the changes proposed in the pull
 
 This chapter covers all types of Reviewable discussions, including the general discussion, other top-level discussions, and all the various line-specific discussions that occur among all review participants.
 
-?> All draft comments, pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the [Publishing section](reviews.md#publish).
+{:.tip}
+All draft comments, pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the [Publishing section](reviews.md#publish).
 
 Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.
 
@@ -18,7 +19,8 @@ For discussions that are not specific to a file, click the **Start a new discuss
 
 At the bottom of each discussion box you can write a comment to add to the discussion. The draft is saved continuously as you write, but won’t be visible to others until it's [published](reviews.md#publish) or sent (see below).
 
-?> While no one can read your drafts, other participants will be able to see that you have unsent drafts pending and how long ago you last touched the review (for example, by editing a draft).
+{:.tip}
+While no one can read your drafts, other participants will be able to see that you have unsent drafts pending and how long ago you last touched the review (for example, by editing a draft).
 
 All comments are formatted as [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/) — clicking the small Markdown logo in the draft toolbar will open a reference page.  You can also switch to the **Preview** tab at any time to check how your comment will be rendered.
 
@@ -42,7 +44,8 @@ Reviewable will do its best to parse incoming messages and split them up into th
 
 Reviewable recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a line, by itself, **<i class="fa fa-circle-o"></i> Discussing**, **<i class="fa fa-check-circle"></i> Satisfied**, **<i class="fa fa-info-circle"></i> Informing**, **<i class="fa fa-play-circle"></i> Working**, or **<i class="fa fa-minus-circle"></i> Blocking**.
 
-?> For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [initial keywords](#change-disposition) further down.
+{:.tip}
+For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [initial keywords](#change-disposition) further down.
 
 ## Ending a discussion
 
@@ -77,7 +80,8 @@ If you have a draft reply to a discussion, the discussion is considered replied 
 
 The yellow **New comments** ribbon demarcates the point where comments that are new to you begin.  Normally they'd lose their “new” status implicitly once you reply or click the primary action button, but if you don't want to do that yet for some reason you can hover over the ribbon to reveal a **mark read** link instead.
 
-?> Marking comments as read (by any means) is also buffered as a draft and revealed to others only when publishing.  This avoids situations where a discussion shows up as unreplied to somebody else before your reply was published.
+{:.tip}
+Marking comments as read (by any means) is also buffered as a draft and revealed to others only when publishing.  This avoids situations where a discussion shows up as unreplied to somebody else before your reply was published.
 
 ![reviewable mark read](images/discussions_1.png)
 
@@ -89,7 +93,8 @@ Some older comments may be hidden, as indicated by the **Show N older comments**
 
 When publishing comments in the discussion you’ll want to take note of your disposition, which indicates your attitude towards resolving the discussion. You take on a default disposition when you join a discussion and, to begin with, you’ll simply rely on these defaults and the normal action buttons. As you participate in more discussions, you may eventually decide to explicitly set your disposition or even change the defaults that Reviewable uses in various situations.
 
-?> To commit disposition changes they must be published — even if you make no corresponding comment.  Disposition changes do not mark the discussion as read unless they are part of a reply.
+{:.tip}
+To commit disposition changes they must be published — even if you make no corresponding comment.  Disposition changes do not mark the discussion as read unless they are part of a reply.
 
 These are the dispositions that make one an active participant in a discussion and that you can select explicitly (though not all may be available in every situation):
 
@@ -103,9 +108,11 @@ Passive participants will exhibit other dispositions, such as **<i class="fa fa-
 
 A discussion is _resolved_ if and only if at least one participant is **<i class="fa fa-check-circle"></i> Satisfied** or **<i class="fa fa-info-circle"></i> Informing** and none of the participants are **<i class="fa fa-play-circle"></i> Working** or **<i class="fa fa-minus-circle"></i> Blocking**, or if there are no active participants left. (Participants whose disposition is **<i class="fa fa-circle-o"></i> Discussing** are abstaining from the decision.)
 
-?> If you have draft state on the discussion (as in the case of a reply, for example), the proposed value is used when computing the resolved state in your view.
+{:.tip}
+If you have draft state on the discussion (as in the case of a reply, for example), the proposed value is used when computing the resolved state in your view.
 
-?> Participants in the general discussion have no dispositions, and it's always considered resolved.  Other top-level discussions created by clicking the **Start a new discussion** button behave normally.
+{:.tip}
+Participants in the general discussion have no dispositions, and it's always considered resolved.  Other top-level discussions created by clicking the **Start a new discussion** button behave normally.
 
 ### Checking and changing dispositions :id=change-disposition
 
@@ -125,7 +132,8 @@ Starting your draft with one of these words will switch to the corresponding dis
 
 You can also assign disposition changes to [keyboard shortcuts](accountsettings.md#custom-key-bindings) with the `setCurrentDiscussionDisposition` command.
 
-?> You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either **Dismiss from this discussion** or **Dismiss from all discussions** at the bottom of the drop-down.  (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
+{:.tip}
+You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either **Dismiss from this discussion** or **Dismiss from all discussions** at the bottom of the drop-down.  (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
 
 ### Resolution workflows
 
@@ -137,4 +145,5 @@ Similarly, if you're following an informal review process, you may want to set t
 
 There are 4 default dispositions (the combinations of author/reviewer and new/reply), and you can set each one individually. The disposition dropdown has a **Change default disposition** link at the bottom that, once clicked, will lock in your next selection as the default for situations like that of the current comment.  (For clarity, the link will change to a description that states which default you're setting.)
 
-?> If you are **<i class="fa fa-circle-o"></i> Discussing** and another participant resolves the discussion without writing a comment, you normally won't be notified about it and the discussion will simply disappear from your view.  If you'd like to double-check such resolutions without having to block the discussion, you can turn on **Trust but verify** mode via the small <i class="fa fa-cog"></i> settings icon in the top-right corner of any of your disposition dropdowns.
+{:.tip}
+If you are **<i class="fa fa-circle-o"></i> Discussing** and another participant resolves the discussion without writing a comment, you normally won't be notified about it and the discussion will simply disappear from your view.  If you'd like to double-check such resolutions without having to block the discussion, you can turn on **Trust but verify** mode via the small <i class="fa fa-cog"></i> settings icon in the top-right corner of any of your disposition dropdowns.

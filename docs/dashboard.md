@@ -3,7 +3,8 @@
 
 Click the **Reviews** button at the very top of the page to display the reviews list. Here, you'll find all open pull requests in which you are a participant. As a participant, these PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to).  Reviewable automatically updates this list at least once per minute (and data held in Reviewable is updated in real time), so there's no need to reload the page.
 
-?> If PRs appear to be missing from the list, try clicking the **Include stalled pull requests/reviews** link at the bottom of the panel. You may also want to click the green **Also show team reviews** or **Also show private reviews** buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.
+{:.tip}
+If PRs appear to be missing from the list, try clicking the **Include stalled pull requests/reviews** link at the bottom of the panel. You may also want to click the green **Also show team reviews** or **Also show private reviews** buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.
 
 ![reviewable reviews list](images/reviews_4.png)
 
@@ -72,7 +73,8 @@ Filter | Meaning
 `±starred` | PRs from repos you starred
 `±watched` | PRs from repos you're watching
 
-?> Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
+{:.tip}
+Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
 
 ![reviewable filter field](images/reviews_6.png)
 

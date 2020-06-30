@@ -1,5 +1,7 @@
 # Summary
 
+[Test](test.md)
+
 * [Introduction](introduction.md)
 
 * [Registration and authorization](registration.md)

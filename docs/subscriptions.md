@@ -15,7 +15,8 @@ In the subscription panel you can select a plan for your organization.  Each pla
 
 If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email. If you have chosen a subscription plan that has a flexible overage, Reviewable will permit all additional contributors if you did not exceed your maximum in the previous billing cycle. This flexibility provides you additional time to upgrade your subscription without disruption. If you are confident that the overage will not continue into the next month, you can simply ignore it. If your plan doesn't have the flexible overage feature, or you exceeded the maximum in the prior month, Reviewable won't create the review until you upgrade your subscription — or the contributor count resets on your next billing date.
 
-?> If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
+{:.tip}
+If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 
 If you change your plan in the middle of a billing cycle, the new plan takes effect immediately and fees are not prorated (up or down).  You'll be charged the new price on your next billing date.
 
@@ -27,13 +28,15 @@ To restrict access to your Reviewable subscription, simply designate a contribut
 
 On the other hand, if your company's repos are distributed over multiple GitHub organizations (as is sometimes the case for consulting companies), you can specify extra organizations to be covered if your plan allows it. In this situation, a person who creates reviews in any of the subscription's organizations counts as a single contributor — so this may be a less expensive alternative to maintaining separate subscriptions.
 
-?> Restricting an organization to a team and extending it to other organizations are mutually exclusive.
+{:.tip}
+Restricting an organization to a team and extending it to other organizations are mutually exclusive.
 
 ## Payments
 
 You will need to specify a card to use for payments.  This can be a credit or debit card — most anything with a major payment network logo on it should work. Reviewable uses Stripe to process payments and store your credit card information, so you can have full confidence that your financial information is secure.
 
-?> At this time, each user can only specify one card for all their subscriptions.
+{:.tip}
+At this time, each user can only specify one card for all their subscriptions.
 
 Under the card information, you can reveal extra fields that let you specify a custom memo to include on the monthly receipts (accountants love these!), and a different email address to send the receipts to.
 
