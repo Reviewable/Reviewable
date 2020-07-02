@@ -7,8 +7,30 @@
     font-size: 62.5%;
 }
 
+@font-face {
+    font-family: 'DroidSans';
+    src: url('/fonts/DroidSans-webfont.woff2') format('woff2'),
+         url('/fonts/DroidSans-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DroidSans';
+    src: url('/fonts/DroidSans-Bold-webfont.woff2') format('woff2'),
+         url('/fonts/DroidSans-Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'DroidSansMono';
+  src: url('/fonts/DroidSansMono-webfont.woff2') format('woff2'),
+       url('/fonts/DroidSansMono-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-    font-family: "Open Sans", sans-serif;
+    font-family: "DroidSans", sans-serif;
     color: var(--fg);
     background-color: var(--bg);
     text-size-adjust: none;
