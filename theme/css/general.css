@@ -206,23 +206,39 @@ blockquote {
     position: relative;
 }
 
+.tip:before, .important:before {
+    border-radius: 100%;
+    color: #fff;
+    font-size: 14px;
+    left: -12px;
+    line-height: 20px;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    top: 14px;
+}
+
 .important {
     border-left: 4px solid #f66;
+}
+
+.important:before {
+    background-color: #f66;
+    content: "!";
+    font-weight: 700;
 }
 
 .tip {
     border-left: 4px solid var(--theme-color,#42b983);
 }
 
-.tip i.fa-question-circle {
-    color: var(--theme-color,#42b983);
-    font-size: 1.3em;
+.tip:before {
+    background-color: var(--theme-color,#42b983);
+    content: '?';
+    font-weight: bold;
 }
 
-.important i.fa-exclamation-circle {
-    color: #f66;
-    font-size: 1.3em;
-}
 
 .label {
     padding: 1px 3px;
