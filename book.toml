@@ -1,5 +1,5 @@
 [book]
-authors = ["Piotr Kaminsky"]
+authors = ["Piotr Kaminski", "John Vanderzyden"]
 language = "en"
 multilingual = false
 src = "docs"
