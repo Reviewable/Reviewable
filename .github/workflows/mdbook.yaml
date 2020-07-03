@@ -1,6 +1,8 @@
 name: Generate Book and send to github pages.
 on: 
   push:
+    branches:
+      - master
 jobs:
   ebook:
     name: Build and upload
