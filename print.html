@@ -1,0 +1,1284 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Reviewable User Manual</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
+
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        <script>
+            var hash = window.location.hash;
+            if (hash.startsWith("#/")) { // Old SPA style link.  Identify redirect.
+                var hashMap = {
+                    "#/": "introduction.html",
+                    "#/?id=help-on-using-reviewable": "introduction.html#help-on-using-reviewable",
+                    "#/?id=how-to-use-this-guide": "introduction.html#how-to-use-this-guide",
+                    "#/?id=introduction": "introduction.html#introduction",
+                    "#/?id=staying-up-to-date": "introduction.html#staying-up-to-date",
+                    "#/abnormal": "abnormal.html",
+                    "#/abnormal?id=abnormal-conditions": "abnormal.html#abnormal-conditions",
+                    "#/abnormal?id=crash": "abnormal.html#crash",
+                    "#/abnormal?id=firebase-connection-trouble": "abnormal.html#firebase-connection-trouble",
+                    "#/abnormal?id=forced-upgrade": "abnormal.html#forced-upgrade",
+                    "#/abnormal?id=github-status": "abnormal.html#github-status",
+                    "#/accountsettings": "accountsettings.html",
+                    "#/accountsettings?id=account-settings": "accountsettings.html#account-settings",
+                    "#/accountsettings?id=adjust-contrast": "accountsettings.html#adjust-contrast",
+                    "#/accountsettings?id=custom-diff-font": "accountsettings.html#custom-diff-font",
+                    "#/accountsettings?id=custom-key-bindings": "accountsettings.html#custom-key-bindings",
+                    "#/accountsettings?id=custom-stylesheet": "accountsettings.html#custom-stylesheet",
+                    "#/accountsettings?id=github-authorizations-granted": "accountsettings.html#github-authorizations-granted",
+                    "#/accountsettings?id=line-link-template": "accountsettings.html#line-link-template",
+                    "#/dashboard": "dashboard.html",
+                    "#/dashboard?id=filter-reviews": "dashboard.html#filter-reviews",
+                    "#/dashboard?id=open-review": "dashboard.html#open-review",
+                    "#/dashboard?id=other-toggles": "dashboard.html#other-toggles",
+                    "#/dashboard?id=review-state": "dashboard.html#review-state",
+                    "#/dashboard?id=reviews-dashboard": "dashboard.html#reviews-dashboard",
+                    "#/discussions": "discussions.html",
+                    "#/discussions?id=change-disposition": "discussions.html#change-disposition",
+                    "#/discussions?id=checking-and-changing-dispositions": "discussions.html#checking-and-changing-dispositions",
+                    "#/discussions?id=code-review-discussions": "discussions.html#code-review-discussions",
+                    "#/discussions?id=dispositions": "discussions.html#dispositions",
+                    "#/discussions?id=dispositions-and-resolution": "discussions.html#dispositions-and-resolution",
+                    "#/discussions?id=ending-a-discussion": "discussions.html#ending-a-discussion",
+                    "#/discussions?id=inline-directives": "discussions.html#inline-directives",
+                    "#/discussions?id=new-and-old-comments": "discussions.html#new-and-old-comments",
+                    "#/discussions?id=replying-to-a-discussion": "discussions.html#replying-to-a-discussion",
+                    "#/discussions?id=replying-via-email-or-on-github": "discussions.html#replying-via-email-or-on-github",
+                    "#/discussions?id=resolution-workflows": "discussions.html#resolution-workflows",
+                    "#/discussions?id=starting-a-new-discussion": "discussions.html#starting-a-new-discussion",
+                    "#/discussions?id=unreplied-discussions": "discussions.html#unreplied-discussions",
+                    "#/files": "files.html",
+                    "#/files?id=code-review-files": "files.html#code-review-files",
+                    "#/files?id=collapsed-sections": "files.html#collapsed-sections",
+                    "#/files?id=column-headings": "files.html#column-headings",
+                    "#/files?id=diff-customization": "files.html#diff-customization",
+                    "#/files?id=diff-layout": "files.html#diff-layout",
+                    "#/files?id=diff-suppressing-states": "files.html#diff-suppressing-states",
+                    "#/files?id=diff-suppression-and-file-type": "files.html#diff-suppression-and-file-type",
+                    "#/files?id=file-contents": "files.html#file-contents",
+                    "#/files?id=file-diff": "files.html#file-diff",
+                    "#/files?id=file-header": "files.html#file-header",
+                    "#/files?id=file-list": "files.html#file-list",
+                    "#/files?id=file-matrix": "files.html#file-matrix",
+                    "#/files?id=forked-repos-tracking-upstream-changes": "files.html#forked-repos-tracking-upstream-changes",
+                    "#/files?id=generated-files": "files.html#generated-files",
+                    "#/files?id=line-discussion": "files.html#line-discussion",
+                    "#/files?id=mark-reviewed": "files.html#mark-reviewed",
+                    "#/files?id=rebasing": "files.html#rebasing",
+                    "#/files?id=revision-cells": "files.html#revision-cells",
+                    "#/files?id=single-file-mode": "files.html#single-file-mode",
+                    "#/files?id=special-states": "files.html#special-states",
+                    "#/files?id=support-for-specific-workflows": "files.html#support-for-specific-workflows",
+                    "#/registration": "registration.html",
+                    "#/registration?id=authorization-scopes": "registration.html#authorization-scopes",
+                    "#/registration?id=github-authorizations": "registration.html#github-authorizations",
+                    "#/registration?id=oauth-restrictions": "registration.html#oauth-restrictions",
+                    "#/registration?id=registration-and-github-authorization": "registration.html#registration-and-github-authorization",
+                    "#/registration?id=subscribing-organizations-member-sign-up": "registration.html#subscribing-organizations-member-sign-up",
+                    "#/registration?id=subscriptions": "registration.html#subscriptions",
+                    "#/repositories": "repositories.html",
+                    "#/repositories?id=approve-button-output": "repositories.html#approve-button-output",
+                    "#/repositories?id=completion-condition": "repositories.html#completion-condition",
+                    "#/repositories?id=condition-output": "repositories.html#condition-output",
+                    "#/repositories?id=connecting-repositories": "repositories.html#connecting-repositories",
+                    "#/repositories?id=create-reviews-for-your-own-prs": "repositories.html#create-reviews-for-your-own-prs",
+                    "#/repositories?id=current-and-future": "repositories.html#current-and-future",
+                    "#/repositories?id=default-review-style": "repositories.html#default-review-style",
+                    "#/repositories?id=development-environment": "repositories.html#development-environment",
+                    "#/repositories?id=discussion-participant-dismissers": "repositories.html#discussion-participant-dismissers",
+                    "#/repositories?id=prototype-repo": "repositories.html#prototype-repo",
+                    "#/repositories?id=repo-settings": "repositories.html#repo-settings",
+                    "#/repositories?id=repositories": "repositories.html#repositories",
+                    "#/repositories?id=review-state-input": "repositories.html#review-state-input",
+                    "#/repositories?id=review-status-in-github-pr": "repositories.html#review-status-in-github-pr",
+                    "#/repositories?id=reviewable-badge": "repositories.html#reviewable-badge",
+                    "#/repositories?id=reviews-in-connected-vs-unconnected-repos": "repositories.html#reviews-in-connected-vs-unconnected-repos",
+                    "#/repositories?id=security-concerns": "repositories.html#security-concerns",
+                    "#/reviews": "reviews.html",
+                    "#/reviews?id=approval-levels": "reviews.html#approval-levels",
+                    "#/reviews?id=changes": "reviews.html#changes",
+                    "#/reviews?id=changes-commits": "reviews.html#changes-commits",
+                    "#/reviews?id=changes-summary": "reviews.html#changes-summary",
+                    "#/reviews?id=checks": "reviews.html#checks",
+                    "#/reviews?id=code-review": "reviews.html#code-review",
+                    "#/reviews?id=counters": "reviews.html#counters",
+                    "#/reviews?id=files": "reviews.html#files",
+                    "#/reviews?id=keyboard-shortcuts": "reviews.html#keyboard-shortcuts",
+                    "#/reviews?id=labels-and-participants-summary": "reviews.html#labels-and-participants-summary",
+                    "#/reviews?id=merge": "reviews.html#merge",
+                    "#/reviews?id=publish": "reviews.html#publish",
+                    "#/reviews?id=review-toolbar": "reviews.html#review-toolbar",
+                    "#/reviews?id=revisions": "reviews.html#revisions",
+                    "#/reviews?id=sync-requested-reviewers": "reviews.html#sync-requested-reviewers",
+                    "#/reviews?id=user-roles": "reviews.html#user-roles",
+                    "#/subscriptions": "subscriptions.html",
+                    "#/subscriptions?id=canceling-a-subscription": "subscriptions.html#canceling-a-subscription",
+                    "#/subscriptions?id=managing-the-scope-of-your-subscription": "subscriptions.html#managing-the-scope-of-your-subscription",
+                    "#/subscriptions?id=payments": "subscriptions.html#payments",
+                    "#/subscriptions?id=selecting-a-plan": "subscriptions.html#selecting-a-plan",
+                    "#/subscriptions?id=subscription-ownership": "subscriptions.html#subscription-ownership",
+                    "#/subscriptions?id=subscriptions": "subscriptions.html#subscriptions",
+                }
+                var redirect = hashMap[hash];
+                if (redirect) {
+                    window.location.replace(window.location.pathname + redirect);
+                }
+            }
+        </script>
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Reviewable User Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<p>Reviewable is a comprehensive code review tool that is fully integrated with GitHub (and only GitHub).  It's:</p>
+<ul>
+<li><strong>Thorough</strong> — Tracks where par­tic­i­pants stand on each dis­cus­sion, en­sur­ing it won't dis­ap­pear un­til re­solved. Fully cus­tomiz­able logic de­ter­mines when a re­view is com­plete.</li>
+<li><strong>Efficient</strong> — Clearly shows net deltas since last time you looked, even if com­mits get re­based or amended. Batches com­ments and cor­rectly threads email re­sponses.</li>
+<li><strong>Fo­cused</strong> — Works only with GitHub and GitHub En­ter­prise, mak­ing for a seam­less in­te­gra­tion. Min­i­mal ad­min busy­work, no ex­tra fluff — just awe­some code re­views.</li>
+</ul>
+<p>With Reviewable, you can:</p>
+<ul>
+<li>In­stantly diff any two re­vi­sions of a file, in either a uni­fied or side-by-side view.</li>
+<li>Hide mi­nor changes, including white­space, merge, and re­base deltas.</li>
+<li>Map line com­ments across file re­vi­sions and keep them around un­til re­solved, not just un­til changes are pushed.</li>
+<li>Keep track of who re­viewed which re­vi­sion of each file to ensure that no changes are missed.</li>
+<li>Com­bine com­mits for review, or re­view each commit separately.</li>
+<li>Cus­tomize the line length mar­gin, fonts, col­ors, key­board short­cuts, and more.</li>
+<li>Jump from a com­ment straight to the right spot in your fa­vorite ed­i­tor.</li>
+<li>Enjoy a mod­ern, clean UI with a touch of whimsy.</li>
+<li>Get full con­tex­tual help, and fast sup­port if you have ques­tions.</li>
+<li>Sign in with GitHub ac­count — no sep­a­rate ac­counts to man­age.</li>
+<li>Keep all your code on GitHub, not on our servers.</li>
+</ul>
+<p>This user guide is a helpful resource for learning all of the details about every Reviewable feature. Soon, you'll be more efficient at eliminating buggy code and helping your team improve their delivery pipeline.</p>
+<h2><a class="header" href="#how-to-use-this-guide" id="how-to-use-this-guide">How to use this guide</a></h2>
+<p>Reviewable is a powerful, feature-rich, and highly configurable tool, so it'll probably take you a while to figure out how to use it to its full potential.  The first steps are fairly straightforward, though:</p>
+<ol>
+<li>Everybody should read through the Registration and Authorization section that follows.</li>
+<li>Then, if Reviewable is already set up for your favorite repos, you can just keep reading straight into the Reviews section that follows and dip into the other sections as needed.</li>
+<li>If, on the other hand, you're an admin setting up Reviewable for the first time, you'll want to jump to the Repositories section first for details on how to connect repos and start a subscription (if necessary).</li>
+</ol>
+<p>If at any point you notice a typo or mistake, please don't hesitate to jump in and propose an edit via the link in the top right corner of every page.</p>
+<h2><a class="header" href="#help-on-using-reviewable" id="help-on-using-reviewable">Help on using Reviewable</a></h2>
+<p>Help is available through many channels:</p>
+<ul>
+<li>Press <code>F1</code> or <code>h</code>, or click <strong>Support &gt; Help</strong>, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, or click on the grey background to get back to the app.</li>
+</ul>
+<div class="tip">
+<p>On tablets and other touch devices with no convenient keyboard, tap the question mark icon in the bottom-right corner of the screen instead.</p>
+</div>
+<ul>
+<li>
+<p>Click <strong>Support &gt; Issues</strong> to report a bug, or make a feature request. To potentially get an answer faster and help reduce triaging overhead, please check existing issues for duplicates first.</p>
+</li>
+<li>
+<p>Click <strong>Support &gt; Chatroom</strong> to ask other questions in a public forum.</p>
+</li>
+<li>
+<p><a href="mailto:support@reviewable.io">Send us an email</a> for questions that should stay private, or engage in private chat through <a href="https://gitter.im/">Gitter</a>.</p>
+</li>
+</ul>
+<h2><a class="header" href="#staying-up-to-date" id="staying-up-to-date">Staying up to date</a></h2>
+<p>Follow us on Twitter at <a href="https://twitter.com/reviewableio">@reviewableio</a> for service status updates, changelog notifications, and occasional discussions and votes on potential features.  For the truly dedicated, you can watch the <a href="https://github.com/reviewable/reviewable">Reviewable/Reviewable</a> repo for new issues and updates to these docs, or hang out in the <a href="https://gitter.im/Reviewable/Reviewable">Gitter channel</a> to help out other users when we're not around.  (Thanks!)</p>
+<h1><a class="header" href="#registration-and-github-authorization" id="registration-and-github-authorization">Registration and GitHub Authorization</a></h1>
+<p>It is necessary to have a GitHub account to sign-in to Reviewable. Simply click the <strong>Sign In</strong> button in the upper-right corner of the page, and then enter your GitHub credentials in the popup window. If necessary, you can create a GitHub account from there.</p>
+<p><img src="images/registration_1.png" alt="reviewable registration" /></p>
+<h2><a class="header" href="#subscribing-organizations-member-sign-up" id="subscribing-organizations-member-sign-up">Subscribing organizations member sign-up</a></h2>
+<p>To ease onboarding for members of organizations with a private repo subscription, a popup window will appear that provides a clear call to action (on the first sign-in):</p>
+<p>Learn more in <a href="registration.html#subscriptions">Subscriptions</a>.</p>
+<p><img src="images/registration_2.png" alt="reviewable subscribing organization" /></p>
+<p><a id="oauth-restrictions"></a></p>
+<h2><a class="header" href="#oauth-app-access-restrictions" id="oauth-app-access-restrictions">OAuth app access restrictions</a></h2>
+<p><a href="https://help.github.com/articles/about-oauth-app-access-restrictions/">OAuth app access restrictions</a> can completely block Reviewable from an organization. This often happens inadvertently and is usually undetectable by Reviewable. If some of your PRs/repo/organizations are inexplicably missing, make this one of the the first things that you check.</p>
+<div class="important">
+<p>A rare but even more confusing situation is that forked repos retain the access restrictions of their original organization. So, it's possible that your organization allows Reviewable, but a repo might not show up on the Repositories page because its original organization does not allow Reviewable. You will need to either get the original organization to allow Reviewable or make a manual copy of the repo instead of a fork.</p>
+</div>
+<h2><a class="header" href="#github-authorizations" id="github-authorizations">GitHub authorizations</a></h2>
+<p>It is necessary for you to grant authorizations to Reviewable in GitHub. Your current GitHub authorization scopes appear at the bottom of the Account Settings drop-down window:</p>
+<p><img src="images/registration_3.png" alt="reviewable github authorizations" /></p>
+<p>Here's how we use the <a href="https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/">GitHub authorizations</a> you grant to Reviewable:</p>
+<ul>
+<li><code>public_repo</code> — Reviewable will post pull request comments on your behalf, merge pull requests, delete branches on your request, and pin revision commits in the repo so they don't disappear if you rebase.</li>
+<li><code>repo</code> — Reviewable will list your private repos and organizations, read source code (only in the browser), read pull request metadata and comments, post pull request comments on your behalf, merge pull requests, delete branches on request, and pin revision commits in the repo so they don't disappear if you rebase.</li>
+<li><code>admin:repo_hook</code> — Reviewable will add or remove an event hook when connecting or disconnecting a repo, so that Reviewable is notified of relevant events (e.g., pull request updates).</li>
+<li><code>admin:org_hook</code> — So that Reviewable is notified of relevant events — such as organization membership changes — Reviewable will add or remove an event hook when subscribing to a plan or unsubscribing from a plan.</li>
+<li><code>read:org</code> — Reviewable will get a list of the organizations of which you’re a member—even if your membership is private. Reviewable will also retrieve a list of all the repos which you can access as an organization member, and a list of your team memberships.</li>
+<li><code>user:email</code> — Notifications specific to Reviewable are sent to your email address, such as failed subscription charges, quota overages, or failures to parse an emailed comment.</li>
+</ul>
+<div class="tip">
+<p>Reviewable staff may also contact you directly in exceptional circumstances — such as when something has gone wrong with your account. All day-to-day review email from Reviewable is sent indirectly through GitHub, and is controllable with GitHub notification settings.</p>
+</div>
+<div class="important">
+<p>GitHub lets you connect multiple email accounts and define how to route notifications based on which organization they pertain to. Unfortunately, this routing table isn't available through their API, so Reviewable always sends email messages to the primary email address for your account.</p>
+</div>
+<p>While Reviewable only needs read access to your repositories to function, GitHub permission scopes don't distinguish between read and read/write access.  Write access is also required to post pull request reviews on your behalf, and let you merge PRs from within Reviewable.</p>
+<div class="tip">
+<p>GitHub Apps do support finer-grained permissions scoping, and it's a long term goal of the team at Reviewable to shift over to this platform (currently, it's an “OAuth app”). So far, though, this platform doesn’t support all the APIs that Reviewable requires.</p>
+</div>
+<p>You can revoke any or all of these permissions at any time in your <a href="https://github.com/settings/applications">GitHub authorized applications</a> settings page on GitHub. Remember to disconnect your repos before revoking, otherwise Reviewable will bug you about the lost permissions.</p>
+<h2><a class="header" href="#authorization-scopes" id="authorization-scopes">Authorization scopes</a></h2>
+<p>GitHub authorization scopes cannot be narrowed to a particular organization. For more information, GitHub also has some docs on <a href="https://developer.github.com/v3/oauth/#scopes">authorization scopes</a>. Specifically, we recommend that you take a moment to learn about <a href="https://help.github.com/articles/about-oauth-app-access-restrictions/">OAuth App access restrictions</a>.</p>
+<h1><a class="header" href="#code-review" id="code-review">Code review</a></h1>
+<p>In Reviewable, each review corresponds to a GitHub pull request. To initiate a code review, you’ll first need to create a pull request as usual and then access the corresponding review. This can be done either (a) through the link to Reviewable inserted into the PR, or (b) by clicking on the PR on your Reviewable dashboard.</p>
+<p>In general, Reviewable keeps data synchronized between the review and its pull request for all compatible features, such as assignees, comments, and approvals.  However, some features are unique to Reviewable (such as file review marks or discussion dispositions). Other Reviewable features cannot be mapped effectively due to GitHub API limitations, such as line comments that often become top level comments.  Consequently, we don’t recommend mixing use of Reviewable and GitHub reviews on the same pull request as the experience will prove frustrating on both sides.</p>
+<div class="tip">
+<p>Reviewable can't operate directly on raw commits, since it doesn't actually clone your repo. It depends heavily on GitHub APIs that are only available for pull requests.</p>
+</div>
+<p>This chapter provides an overview of the review page, but the core features of reviewing files and managing review discussions are addressed separately in subsequent chapters.</p>
+<h2><a class="header" href="#user-roles" id="user-roles">User roles</a></h2>
+<p>Throughout this guide, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of three roles to every review participant:</p>
+<ul>
+<li>Author: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.</li>
+<li>Reviewer: anybody that is not an author or mentionee.</li>
+<li>Mentionee: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.</li>
+</ul>
+<p>It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.</p>
+<p><a id="publish"></a></p>
+<h2><a class="header" href="#publishing-your-review" id="publishing-your-review">Publishing your review</a></h2>
+<p>As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the <strong>Publish</strong> button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.</p>
+<div class="tip">
+<p>If you'd like to suppress posting the combined message to Github, e.g. because you want to separate the Reviewable review from the GitHub review process, you can do so on a PR-by-PR basis. Just add the <code>Comments only in Reviewable</code> label (exact spelling!) to the PR and neither batch published nor single-send comments will be posted to GitHub.</p>
+</div>
+<div class="important">
+<p>Some Reviewable inline comments won't appear as inline comments in GitHub and vice-versa, because the GitHub model for comment placement is poor and trying to conform to it would invalidate many of the best features in Reviewable. <more> In more detail, it's important to understand that GitHub has two types of inline comments: pull request (PR) comments and commit comments. PR comments are assigned to lines based on the raw git diffs between two commits. Reviewable doesn't use these diffs, making mapping locations hard (see <a href="https://github.com/Reviewable/Reviewable/issues/14">issue #14</a>), and can place comments on lines that don't appear in the diffs. Also, comments placed on negative delta lines in GitHub don't actually record sufficient information to figure out what line they're really on! Commit comments share most of those limitations, and also disappear from the PR if the branch is rebased. Finally, it's impossible to post commit comments without triggering a notification email for each and every comment, and while PR comments can be batched the API only allows one commit to be targeted per batch and doesn't support threading.</more></p>
+</div>
+<p>You can open the dropdown menu off the <strong>Publish</strong> button to set a few extra options. The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.</p>
+<p><img src="images/publish_1.png" alt="reviewable set the approval level" title=":size=628" /></p>
+<h3><a class="header" href="#approval-levels" id="approval-levels">Approval levels</a></h3>
+<p>Like for GitHub reviews, there are three approval levels you can choose from when publishing via the dropdown attached to the button:</p>
+<ul>
+<li><strong>Comment</strong> — Submit general feedback without explicit approval.</li>
+<li><strong>Approve</strong> — Submit feedback and approve merging these changes.</li>
+<li><strong>Request changes</strong> — Submit feedback that must be addressed before merging.</li>
+</ul>
+<p>Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.</p>
+<div class="tip">
+<p>You may only change the approval level if you have write permissions to the repository and are not the author of the PR.  As a repository admin you can also disable the <strong>Approve</strong> and <strong>Request changes</strong> for everyone via the <a href="repositories.html#completion-condition">custom review completion condition</a> if they are apt to mess up your team's workflow.</p>
+</div>
+<div class="important">
+<p>If you choose <strong>Comment</strong>, any previous <strong>Approve</strong> or <strong>Request changes</strong> will remain in effect; you cannot rescind your vote, only change it.</p>
+</div>
+<p><a id="sync-requested-reviewers"></a></p>
+<h3><a class="header" href="#requested-reviewers-synchronization" id="requested-reviewers-synchronization">Requested reviewers synchronization</a></h3>
+<p>Reviewable maintains its own list of people whose action is needed on a review (as shown on the <a href="dashboard.html#review-state">dashboard</a> and in the <a href="reviews.html#labels-and-participants-summary">participants summary</a>), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the <strong>Sync requested reviewers</strong> box.  Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with <code>±reviewer</code> <a href="discussions.html#inline-directives">inline directives</a>.</p>
+<div class="important">
+<p>It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is on Reviewable's list of awaited reviewers.  Only users with push permissions on the repo can request reviewers.</p>
+</div>
+<div class="tip">
+<p>Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools, such as <a href="https://pullreminders.com/">Pull Reminders</a>.</p>
+</div>
+<p>Repository admins can customize the list of awaited reviewers and, if desired, override the <strong>Sync requested reviewers</strong> checkbox in a <a href="repositories.html#completion-condition">custom review completion condition</a>.  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.</p>
+<p><a id="merge"></a></p>
+<h2><a class="header" href="#merging-a-pull-request" id="merging-a-pull-request">Merging a pull request</a></h2>
+<p>When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.</p>
+<p><img src="images/merge_2.png" alt="merge victory graphic" title=":size=311" /></p>
+<p>A review is considered complete when the first defined condition of the following is true:</p>
+<ol>
+<li>
+<p>You've defined a <a href="repositories.html#completion-condition">custom review completion condition</a> and it has returned a verdict with <code>completed: true</code> (irrespective of any other per-file or per-discussion flags).</p>
+</li>
+<li>
+<p>You've turned on branch protection for the target branch in this repo in GitHub, and GitHub says that a merge is permitted.</p>
+</li>
+<li>
+<p>Otherwise, a review is considered complete when GitHub reports that merging the branch won't cause any conflicts, all files have been marked reviewed by at least one person at the most recent revision, and all discussions have been resolved.  (In this case, the toolbar will show a green Checks donut, a grey Changes revision, and grey zero counters in the remaining boxes.)</p>
+</li>
+</ol>
+<p>To merge the pull request, click and hold the button for a couple seconds until the arming indicator fills with yellow and starts pulsing, then release.  This procedure is in place to reduce the chances of accidentally merging a pull request without requiring a separate confirmation.</p>
+<p>You can set merge options and edit the merge commit message via the dropdown attached to the button:</p>
+<p><img src="images/merge_1.png" alt="merge options" title=":size=440" /></p>
+<p>Here you can select between the usual GitHub merge styles (normal/full, squash, and rebase), and whether Reviewable should automatically delete the source branch for you if the merge is successful.  Your selections are automatically persisted for this review, and the selections you made last will be applied to any new reviews.  A <a href="repositories.html#condition-output">custom review completion condition</a> can force the merge style to use.</p>
+<div class="tip">
+<p>When using the rebase merge style, Reviewable will indicate if the merge will be a fast-forward by adding a small annotation under the style radio button.</p>
+</div>
+<p>If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your <a href="repositories.html#condition-output">custom review completion condition</a>.</p>
+<h2><a class="header" href="#review-toolbar" id="review-toolbar">Review toolbar</a></h2>
+<p>At the top of every review page you’ll find a floating toolbar with some core state indicators and buttons for common actions.</p>
+<p><img src="images/toptoolbar_right.png" alt="reviewable top toolbar right" /></p>
+<p>At the end of the toolbar you'll always find either a <strong>Publish</strong> or <strong>Merge</strong> button, depending on the review's state.  Note that if you have drafts pending, you'll always see the <strong>Publish</strong> button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.</p>
+<p>If you scroll down a bit, a bunny shortcut menu icon appears at the left of the toolbar.
+<img src="images/toptoolbar_left_bunny.png" alt="reviewable top toolbar left" /></p>
+<p>Click the bunny shortcut menu icon to drop down a panel in which you can jump to a file or quickly edit the top-level draft.  (Again, this menu icon only appears after you've scrolled down the page a bit.)</p>
+<p>We'll now look at the functionality of the different features moving from left to right along the toolbar.</p>
+<h3><a class="header" href="#checks" id="checks">Checks</a></h3>
+<p>This item summarizes the current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.  The donut chart icon indicates the relative proportion of <span class="green label">successful</span>, <span class="grey label">pending</span>, and <span class="red label">error/fail</span> states.</p>
+<p>Click the item to open a panel with more details:</p>
+<p><img src="images/toptoolbar_2.png" alt="reviewable checks" /></p>
+<p>These state icons may appear in the panel:</p>
+<p><img src="images/toptoolbar_3.png" alt="reviewable check status" title=":size=300" /></p>
+<p>If you're a repo admin you can click on the small wrench icon next to the current review state to jump to the <a href="repositories.html#completion-condition">custom review completion condition</a> editor in the repository's settings.</p>
+<p>Also, if your PR branch is behind the target branch, you can merge the target branch into your PR by clicking the small merge button, next to the mergeability status.  Repo admins can disable this feature in a custom <a href="repositories.html#condition-output">review completion condition</a>.</p>
+<h3><a class="header" href="#changes" id="changes">Changes</a></h3>
+<p>This item summarizes the changes you're currently looking at.  The revision label indicates the revision that is the current right diff bound for all files, or <code>r??</code> if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the panel, and then click <strong>Show Unreviewed Diffs</strong>. Or, adjust the diff bounds manually yourself.</p>
+<p>Click the item to open a panel with more details:</p>
+<p><img src="images/toptoolbar_4.png" alt="reviewable changes" /></p>
+<p>This is similar to parts of the <a href="reviews.html#changes-summary">changes summary box</a>, but also includes a list of commits currently in scope.</p>
+<h3><a class="header" href="#counters" id="counters">Counters</a></h3>
+<p>The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear.</p>
+<div class="tip">
+<p>The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.</p>
+</div>
+<p>The <strong>files counter</strong> displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>.  Click to cycle between these files (default keyboard shorcut: <code>n</code>).  You're free to disregard these suggestions, of course, but if you find yourself doing so often you may want to check the review settings in the <a href="reviews.html#changes-summary">Changes summary box</a> or customize your <a href="repositories.html#completion-condition">review completion condition</a>, which also controls the per-file reviewed state.</p>
+<div class="tip">
+<p>If you can’t get things to work the way you want, have a look at <a href="https://github.com/Reviewable/Reviewable/issues/404">issue #404</a> for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.</p>
+</div>
+<p>The <strong>discussions counter</strong> display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: <code>j</code> for next unreplied, <code>⇧J</code> for next unresolved).</p>
+<div class="tip">
+<p>The main general discussion is always considered resolved.</p>
+</div>
+<p>The <strong>drafts counter</strong> displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the <strong>Publish</strong> button.</p>
+<h2><a class="header" href="#changes-summary" id="changes-summary">Changes summary</a></h2>
+<p>This panel appears at the very top of the review page. The top line describes the current diff set you're viewing as succinctly as possible to help orient you.  There's also a link to the pull request in the top-right corner..</p>
+<p><img src="images/summary_1.png" alt="reviewable summary of changes" /></p>
+<p>The panel is divided into three sections, and has some auxiliary <a href="files.html#file-matrix">file matrix</a> controls at the bottom.</p>
+<h3><a class="header" href="#files" id="files">Files</a></h3>
+<p>This shows the number of files currently in the review.</p>
+<p>Any extra <em>obsolete files</em> have been modified at some point during the PR, but those are now the same as in the target base branch (so no further review of those files is necessary).  They're usually hidden by default but you can reveal manually by clicking a small link next to the count.  If you are in commit-by-commit review mode then obsolete files will still be selected for review for you, until you reach the commit at which they've become obsolete.</p>
+<p>The <strong>Mark as Reviewed</strong> button will mark all files as reviewed—up to the current right-bound of the diffs. This doesn’t necessarily mean that you think the files are ready for merging, but rather only that you reviewed them and added all of your comments. After clicking this button, a small <strong>Undo</strong> link will appear beneath it for a while. (Incidentally, this is the only action in Reviewable that offers an explicit undo method of recovery.)</p>
+<p>To mark files as reviewed individually, click the buttons to the left of the file name in the File Matrix, or in the file headers and at the bottom of unreviewed files.</p>
+<h3><a class="header" href="#revisions" id="revisions">Revisions</a></h3>
+<p>This shows the total number of revisions in the review. Each revision is an automatic, unmodifiable capture of one or more commits. You’ll find the commits assigned to a revision in the Review Discussion box, and also in the Changes drop-down at the very top of the page.</p>
+<div class="tip">
+<p>The logic for grouping commits into revisions depends on the <a href="reviews.html#changes-commits">review style</a>, number of commits pushed at the same time, commit authors, etc.  There are also some safety limits for how many revisions Reviewable will create at one time.</p>
+</div>
+<p>A <em>provisional revision</em> is tentative, since it may still change up to the point at which someone begins reviewing it. The intent behind provisional revisions is to permit the PR author to self-review the changes and push fixes without polluting the revision list.  Provisional revisions are italicized in the file matrix.</p>
+<p>An <em>obsolete revision</em> is one that is no longer part of the pull request due to a force push that changed the commit history.  It will appear crossed out in the file matrix.</p>
+<p>The <strong>Show Unreviewed Diffs</strong> button (exact wording varies) in this section will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. When you first load the review page, this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a <strong>combined commits</strong> style review, this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using <strong>review each commit</strong> style, this will be the range between the last fully reviewed commit and the next one. If you're the PR author, this will be the range between the last snapshotted revision and the latest one, so you can review the diffs that you have just pushed.</more></p>
+<div class="tip">
+<p>When applicable, you’ll find a small <strong>Show full diff</strong> link beneath the <strong>Show Unreviewed Diffs</strong> button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.</p>
+</div>
+<p>When appropriate, a checkbox for <strong>Include changes in files previously reviewed only by others</strong> will appears beneath the button. Leave this box unchecked to automatically partition a review among multiple reviewers. For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. <more> So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter. The exact semantics of this feature are a bit tricky, though, so please see <a href="https://github.com/Reviewable/Reviewable/issues/404">issue #404</a> for a full exploration and why some people choose to remap <code>n/p</code> onto <code>nextPersonallyUnreviewedFile()</code>.</more></p>
+<p><a id="changes-commits"></a></p>
+<h3><a class="header" href="#commits" id="commits">Commits</a></h3>
+<p>This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or hange the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.</p>
+<p>The <strong>Review Style</strong> dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.</p>
+<p><img src="images/summary_2.png" alt="reviewable review style" /></p>
+<p>There are two review styles, and changing the style will require from a few seconds to a minute or so to restructure the provisional revisions in the review.</p>
+<ul>
+<li><strong>Combine commits for review</strong> — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.</li>
+<li><strong>Review each commit separately</strong> — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.</li>
+</ul>
+<p>If you're a repo admin, you can also set the default review style for the repo via a small link under the dropdown.</p>
+<div class="important">
+<p>Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.</p>
+</div>
+<h2><a class="header" href="#labels-and-participants-summary" id="labels-and-participants-summary">Labels and participants summary</a></h2>
+<p>This summary appears at the bottom of the general discussion (see the screenshot below). It includes the relevant milestone for the PR, any labels that have been applied, and a list of participants in the review.</p>
+<p>For each participant:</p>
+<ul>
+<li>a red or grey dot on the avatar indicates their current approval and “needed” status—identical to the review list.</li>
+<li>The comment icon will be dark in color if the participant has any drafts pending.</li>
+<li>The comment text indicates the last time they edited the review.</li>
+<li>The <strong>assigned</strong> and <strong>review requested</strong> markers indicate the corresponding state.</li>
+<li>There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).</li>
+</ul>
+<p><img src="images/summary_3.png" alt="reviewable review labels and participants" /></p>
+<h2><a class="header" href="#keyboard-shortcuts" id="keyboard-shortcuts">Keyboard shortcuts</a></h2>
+<p>There are a number of keyboard shortcuts available to power your way through a review. Type <code>?</code> to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the <a href="accountsettings.html#custom-key-bindings">Custom key bindings</a> section.</p>
+<p><img src="images/toptoolbar_7.png" alt="reviewable keyboard shortcuts" /></p>
+<h1><a class="header" href="#code-review-files" id="code-review-files">Code review files</a></h1>
+<p>This chapter explains in detail how you manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.</p>
+<h2><a class="header" href="#revision-cells" id="revision-cells">Revision cells</a></h2>
+<p>A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.</p>
+<p><img src="images/filematrix_9.png" alt="reviewable file matrix status" /></p>
+<p>The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.</p>
+<p><img src="images/filematrix_8.png" alt="reviewable file matrix diff bounds" /></p>
+<p><a id="mark-reviewed"></a></p>
+<h2><a class="header" href="#mark-as-reviewed" id="mark-as-reviewed">Mark as reviewed</a></h2>
+<p>One of Reviewable's core features is letting you track the reviewed state of each file at each revision, for each reviewer.  This enables you to easily remember — and indicate to others — where you left off in the review and easily view only subsequent changes.  Marking a file as reviewed doesn't necessarily mean that you think it's ready for merging, but rather only that you reviewed it at the given revision and added all your comments.</p>
+<p><img src="images/filediffs_4.png" alt="reviewable fill diffs mark file as reviewed" /></p>
+<p>The small button to the left of the file path indicates your current reviewed state for the file at the right diff bound and lets you change it.  Typically, as a reviewer, the button will be red to indicate that you need to review this diff, and will turn green when clicked to indicate that you've marked the file as reviewed.  There are other less common states as well:</p>
+<table><thead><tr><th align="center">Color</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center"><img src="images/filematrix_2.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed.</td></tr>
+<tr><td align="center"><img src="images/filematrix_3.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.</td></tr>
+<tr><td align="center"><img src="images/filematrix_4.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, or you are the author of the PR.</td></tr>
+<tr><td align="center"><img src="images/filematrix_5.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.</td></tr>
+</tbody></table>
+<p>Review marks remain in a draft state and are only visible to you until <a href="reviews.html#publish">published</a>.  Recissions are publicized immediately however.</p>
+<h2><a class="header" href="#file-matrix" id="file-matrix">File matrix</a></h2>
+<p>Click the toggle to display a history matrix showing all files and revisions. Here, you can:</p>
+<ul>
+<li>View a summary of the PR's change history for each file.</li>
+<li>Set diff bounds for any and all files.</li>
+<li>Mark files as reviewed.</li>
+<li>View the most recent reviewers of each file.</li>
+<li>Jump to a file's diff.</li>
+<li>See delta stats for a diff and all diffs.</li>
+</ul>
+<p><img src="images/filematrix_1.png" alt="reviewable file matrix" title=":size=1144" /></p>
+<h3><a class="header" href="#file-list" id="file-list">File list</a></h3>
+<p>The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are hidden by default, but can be revealed with a switch in the <a href="reviews.html#changes-summary">Changes summary box</a>.</p>
+<p>Click the file path to move directly to the diff for that file. Hold down the <code>⌘</code>, <code>Ctrl</code> or <code>⇧</code> key (as appropriate for your browser) when clicking to open the file diff in a new browser tab.  To open every file in a new tab at once, hold down the modifier key and click the <strong>All</strong> button that appears in the header of the file matrix.</p>
+<p>File paths in italics indicate that the file is currently elided from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.</p>
+<p>To the left of the file path there's a button to <a href="files.html#mark-reviewed">mark the file as reviewed</a>.</p>
+<p>To the right of the file path is a list of the last published reviewers for the file.  It may be that those people did not review the latest revision, and other people may have reviewed previous revisions.  Hover over an avatar for details about the user.</p>
+<p>Off the right side of the matrix are delta stats for the current diffs, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.</p>
+<p>Files can also be grouped, like for the <strong>Tests</strong> group in the screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  See the section on <a href="repositories.html#condition-output">custom review completion conditions</a> for instructions on how to group files in your repository.</p>
+<h3><a class="header" href="#column-headings" id="column-headings">Column headings</a></h3>
+<p>Each column in the matrix represents a single revision of each of the files in the review. Each revision consists of one or more commits.  The headings vary in style to indicate the different kinds of revisions.</p>
+<table><thead><tr><th align="center">Label</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center">r1</td><td>An immutable revision (even if the branch is rebased).</td></tr>
+<tr><td align="center"><em>r1</em></td><td>A provisional revision whose commits may still change.</td></tr>
+<tr><td align="center">~r1~</td><td>Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.</td></tr>
+<tr><td align="center"><span style="font-size: 1.25em">👁</span></td><td>A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.</td></tr>
+<tr><td align="center">⊥</td><td>This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.</td></tr>
+</tbody></table>
+<p>You can also drag in the diff header to bulk-select the diff bounds. Doing so in the header will set the diff bounds for all files as close as possible to the new setting. Many reviewers choose to set diff bounds this way instead of file-by-file to see one coherent set of diffs at a time.</p>
+<h2><a class="header" href="#file-contents" id="file-contents">File contents</a></h2>
+<p>Below the <a href="discussions.html">top-level discussions</a> you'll find the file contents.</p>
+<h3><a class="header" href="#file-header" id="file-header">File header</a></h3>
+<p>At the top of each file diff panel there's a file path. Hold down <code>⌘</code>, <code>Ctrl</code>, or <code>⇧</code> (as appropriate for your browser) to open it in a new tab.  If the file paths are too long some may be collapsed in places with an …; hover over the path or swipe to expand and see the full path.  You can also double-click on or near the path to select it — even when collapsed — for easy copying.</p>
+<p>The header holds the standard <a href="files.html#mark-reviewed">mark as reviewed</a> button and <a href="files.html#revision-cells">revision cells</a> for adjusting diff bounds.</p>
+<p>To the right of the cells you'll see the delta stats for the current diff, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.</p>
+<p><img src="images/filediffs_1.png" alt="reviewable fill diffs" /></p>
+<div class="tip">
+<p>Any special messages will appear immediately underneath the header.  These include rename sequence details, explanations for why a diff isn't showing, etc.</p>
+</div>
+<h3><a class="header" href="#file-diff" id="file-diff">File diff</a></h3>
+<p>In the File Diff panel, you can see the diff between the two revisions of the file currently set as the diff bounds.  Deletions are indicated with a red highlight and additions with a green one.  You can <a href="accountsettings.html#adjust-contrast">adjust the contrast</a> in the account settings panel.</p>
+<p>Most languages also get automatic syntax highlighting.  If your file isn't getting highlighted, please <a href="https://github.com/reviewable/reviewable/issues">open an issue</a> so that we can add the right file extension mapping.  If the language is not one of the 120+ that have syntax highlighting in <a href="https://highlightjs.org/">highlight.js</a>, you'll need to open an issue with that project or contribute a language definition module yourself.</p>
+<p><img src="images/filediffs_3.png" alt="reviewable fill diffs panel" /></p>
+<p>In the gutter (either beside or between the diffs) you may see any of the following markers that indicate some otherwise invisible property of the adjoining line(s):</p>
+<table><thead><tr><th align="center">Marker</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center"><code>⊥</code></td><td>This line only has changes in the base branch, between the base commits corresponding to the current diff bounds.</td></tr>
+<tr><td align="center"><code>␣</code></td><td>This line only has whitespace changes.</td></tr>
+<tr><td align="center"><code><i class="fa fa-check-square-o"></i></code></td><td>There are one or more resolved discussions on this line.  Click to reveal.</td></tr>
+</tbody></table>
+<div class="tip">
+<p>Reviewable only supports text file diffs at this time.  For images and other file types you'll need to go view the diff on GitHub — a convenient link will usually be provided.  You will still be able to post comments against such files but they won't be attached to a specific line.</p>
+</div>
+<p>If a file requires your review, you'll see a tab at the bottom of the diff to <a href="files.html#mark-reviewed">mark the file as reviewed</a> and automatically advanced to the next file to review.</p>
+<h3><a class="header" href="#diff-layout" id="diff-layout">Diff layout</a></h3>
+<p>As you decrease the width of the browser window, the diff will convert from a side-by-side view to a unified view and vice-versa. Also, the code will automatically be wrapped at a reasonable, round number of columns proportional to the window width.  (Lines that are wrapped get a thick vertical bar on the left side.)</p>
+<p>You can override this behavior using the small caret in the top right corner of every diff:</p>
+<p><img src="images/filediffs_16.png" alt="reviewable fill diffs width control" /></p>
+<p>Drag the caret to manually set the number of columns at which to wrap code.  If you do, Reviewable will <em>always</em> use this margin and show a side-by-side diff only if your window is wide enough.  Click <strong>Auto</strong> to revert line wrapping control back to Reviewable. Finally, in either state, you can toggle on <strong>Single</strong> to force a unified diff view even if the window is wide enough to fit two columns.</p>
+<div class="tip">
+<p>All of these settings are personal but global across all files, PRs, and repos.</p>
+</div>
+<h3><a class="header" href="#collapsed-sections" id="collapsed-sections">Collapsed sections</a></h3>
+<p>Reviewable will automatically collapse sections of the diff with no meaningful changes and no discussions.  You can selectively expand these collapsed sections in a number of ways:</p>
+<p><img src="images/filediffs_10.png" alt="reviewable fill diffs expanding collapsing" /></p>
+<ol>
+<li>
+<p>You can click the small <strong>Expand</strong> tabs on the right to manually reveal more context above or below the collapsed section, a few lines at a time.</p>
+</li>
+<li>
+<p>If you see a small, light-colored declaration immediately below the collapsed section, this indicates the nearest syntactic unit that the code below is a part of — e.g., a function or a class.  You can click this signature to expand the diff to show all of the syntactic unit.</p>
+</li>
+<li>
+<p>In the collapsed section gap, you will see some subset of the following line counts.  Clicking on any of these collapsed line categories will expand only those lines (plus a bit of context around them).</p>
+</li>
+</ol>
+<ul>
+<li><strong>No changes</strong> — lines with no changes at all between your current diff bounds.</li>
+<li><strong>Whitespace changes</strong> — this is the count of lines in which only the whitespace has changed (marked with a <code>␣</code> when expanded).</li>
+<li><strong>Base commit changes</strong> — are lines in which only the base branch has changed, likely not due to work on this pull request (marked with a <code>⊥</code> when expanded)</li>
+<li><strong>Resolved discussion</strong> — are lines with resolved discussions attached (marked with a <code><i class="fa fa-check-square-o"></i></code> when expanded).</li>
+</ul>
+<ol start="4">
+<li>Click the <strong>Collapsed</strong> drop-down to view options for expanding everything — either for <strong>this file</strong> or <strong>all files</strong>.  The toggle button selects whether to <strong>collapse whitespace changes</strong> in all files in this review.  The setting will also be your default for new reviews.</li>
+</ol>
+<p><img src="images/filediffs_17.png" alt="reviewable fill diffs collapsed drop down" /></p>
+<div class="tip">
+<p>The only way to collapse expanded diff lines back down is to change the diff bounds.</p>
+</div>
+<p><a id="line-discussion"></a></p>
+<h2><a class="header" href="#line-specific-discussions" id="line-specific-discussions">Line-specific discussions</a></h2>
+<p>Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.  If you select some code first, it will automatically be quoted and copied into your message.</p>
+<p><img src="images/filediffs_12.png" alt="reviewable fill diffs begin a new discussion" /></p>
+<p>This new discussion will also appear in the diffs of other revisions, at the nearest corresponding line. It won’t disappear until that discussion is resolved or withdrawn, even if the underlying file changes drastically.  Click the small purple dog-ear button to switch the diff to the exact one on which the comment was made.</p>
+<div class="important">
+<p>If the dog-ear is red, this indicates that the current context may be inaccurate because of significant changes that have been made since the time the comment was made in the original revision. Click the red button to see the discussion in its original context.</p>
+</div>
+<p><img src="images/filediffs_13.png" alt="reviewable fill diffs switch to original revision" /></p>
+<p>Next to the dog-ear you'll find the line number that this discussion is on (relative to the file contents of the current diff), which links to GitHub's view of the file by default.</p>
+<div class="tip">
+<p>You can <a href="accountsettings.html#line-link-template">customize the line link</a> to open your favorite editor on the given line instead.</p>
+</div>
+<p>For lots more information on discussions, please see the <a href="discussions.html">next chapter</a>.</p>
+<h2><a class="header" href="#diff-customization" id="diff-customization">Diff customization</a></h2>
+<p>You can customize which files are diffed and how the diffs are displayed at the repository level.</p>
+<h3><a class="header" href="#generated-files" id="generated-files">Generated files</a></h3>
+<p>Reviewable will automatically detect many kinds of generated files and hide the diff by default. If you'd like to add a new common pattern (based either on the filename or the contents of the file), don't hesitate to let us know. If your generated files are specific to your project, you have two options:</p>
+<ul>
+<li>You can tweak your build to insert the exact text <code>GENERATED FILE DO NOT EDIT</code> as a comment on a line by itself into the generated file. There can be up to 4 additional characters on the line before and after the marker text. We have this restriction so that Reviewable doesn't accidentally consider your build script itself to be generated!</li>
+<li>You can use <code>.gitattributes</code> files checked into your repo to control diffing — see below.</li>
+</ul>
+<h3><a class="header" href="#diff-suppression-and-file-type" id="diff-suppression-and-file-type">Diff suppression and file type</a></h3>
+<p>Reviewable respects the diff settings in your <code>.gitattributes</code> files to the best of its ability. For example, to disable diffs for any files in the vendor directory and use PHP highlighting for all .phpt files, you could insert a <code>.gitattributes</code> file in the root of your repo, like this:</p>
+<pre><code>    /vendor/** -diff
+    *.phpt diff=php
+</code></pre>
+<p>For details on the syntax, see the <a href="https://git-scm.com/docs/gitattributes">gitattributes reference doc</a>.</p>
+<h2><a class="header" href="#special-states" id="special-states">Special states</a></h2>
+<p>The way diffs are displayed is suject to some special states, on both file-by-file and whole-review bases.</p>
+<h3><a class="header" href="#diff-suppressing-states" id="diff-suppressing-states">Diff-suppressing states</a></h3>
+<p>There are many situations in which a diff won't be produced for a given file — either to ensure good performance, or because it isn't sensible to do so. Some examples include:</p>
+<ul>
+<li>files that appear to be binary or minified,</li>
+<li>diffs that are too big or were taking too long to compute,</li>
+<li>files with too many lines,</li>
+<li>files with custom diffs specified in <code>.gitattributes</code> that Reviewable cannot respect.</li>
+</ul>
+<p>In such cases, the file will appear together with a message explaining why the diff is missing. Typically, there will also be a button such as <strong>Try Again</strong> or <strong>View on GitHub</strong> by which you can override or bypass the condition.</p>
+<div class="important">
+<p>Be careful if you’re trying to use <code>⌘-f</code> or <code>ctrl-f</code> to find something in the diffs when some are not shown.</p>
+</div>
+<div class="tip">
+<p>If diffs that make sense to be shown were omitted for some reason, you'll find a special notice above the first file diff that explains what happened and lets you override the decision.  (See screenshot below.)</p>
+</div>
+<h3><a class="header" href="#single-file-mode" id="single-file-mode">Single file mode</a></h3>
+<p>Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (25 files as of this writing). In this mode, only one file will appear at a time. You'll also see a summary explanation just above the first (and only) file diff, together with a button which you can click to force all files to appear anyway until you leave the page.</p>
+<p><img src="images/filediffs_11.png" alt="reviewable fill diffs some diffs not shown" /></p>
+<p>Single-file mode is similar — but not identical — to the mode that you enter when you <code>⌘</code>, <code>Ctrl</code>, or <code>⇧</code> click a file open into a separate tab.</p>
+<p>This panel will also appear if any diffs were throttled or big diffs were elided from display. However, in those cases the page will remain in multi-file mode. The text in the panel will also reflect the specific conditions.</p>
+<h2><a class="header" href="#support-for-specific-workflows" id="support-for-specific-workflows">Support for specific workflows</a></h2>
+<p>Reviewable has extra built-in support for some specific development workflows.</p>
+<h3><a class="header" href="#rebasing" id="rebasing">Rebasing</a></h3>
+<p>Reviewable gracefully supports rebasing and force-pushing to your branch PR in the middle of a review.  Previous revisions are preserved and marked as obsolete (with a strikethrough), even if the commits they’re composed of have disappeared during the rebase.  You’ll still be able to diff against those revisions, and changes between the old and new base will automatically collapse in the diff so as to avoid distraction from deltas that don’t relate to this PR.</p>
+<div class="tip">
+<p>To avoid garbage collection, Reviewable pins these commits in your repo using special refs under <code>refs/reviewable</code> — as long as the repository is connected.</p>
+</div>
+<p>Reviewable also uses heuristics to match rebased commits to their ancestors using commit messages.  When successful, this enables Reviewable to suggest minimum-delta revision pairs for diffing in the “review each commit” style even if you reordered the commits.  Arcs that link blocks of revisions above the file matrix show a high-level overview of this mapping.  (We don’t show matches between individual revisions because that can quickly lead to an unreadable diagram.)</p>
+<h3><a class="header" href="#forked-repos-tracking-upstream-changes" id="forked-repos-tracking-upstream-changes">Forked repos tracking upstream changes</a></h3>
+<p>Some advanced workflows require overwriting the target branch of a PR with the head branch when it's ready to merge. This is necessary, for example, if you're maintaining a fork and rebasing from the upstream master. In such cases, both GitHub and Reviewable will choose the wrong base commit to compare files, and display not only all of the upstream changes—but also all the extra changes made in your fork over time.</p>
+<p>To get the diff that you want, add a <code>Merge manually by overwriting target</code> label (exact spelling!) to your PR. This will cause Reviewable to compare files against the current head of the target branch. Now, you'll see upstream changes and any conflicts you resolved during the rebase, while leaving out modifications in your fork that survived unscathed.</p>
+<div class="tip">
+<p>For best results, add the label to the PR when you first create it.</p>
+</div>
+<h1><a class="header" href="#code-review-discussions" id="code-review-discussions">Code review discussions</a></h1>
+<p>Review participants engage in discussions about the changes proposed in the pull request. A discussion is unresolved until it meets resolution criteria that corresponds to the dispositions of the participants. Any discussion will remain in place until it is resolved by the participants — irrespective of whatever changes occur to the files in the PR.  A discussion may also be unreplied for specific users; this state is independent of the discussion being resolved or not.</p>
+<p>This chapter covers all types of Reviewable discussions, including the general discussion, other top-level discussions, and all the various line-specific discussions that occur among all review participants.</p>
+<div class="tip">
+<p>All draft comments, pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the <a href="reviews.html#publish">Publishing section</a>.</p>
+</div>
+<p>Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.</p>
+<h2><a class="header" href="#starting-a-new-discussion" id="starting-a-new-discussion">Starting a new discussion</a></h2>
+<p>You can start a new discussion by clicking on a diff line, as explained <a href="files.html#line-discussion">here</a>.  If no diff is available for a file for some reason, you can also start a file-wide discussion by clicking on <strong>Start new discussion</strong> under the file header instead.</p>
+<p>For discussions that are not specific to a file, click the <strong>Start a new discussion</strong> button at the bottom of the top-level discussions area (below the general discussion).  Typically, you would begin a top-level discussion if you want to have a distinct file-independent thread in which you can track the disposition of participants and an eventual resolution. You may also want to do it just to separate a thread out, even if you don't care about resolution.</p>
+<h2><a class="header" href="#replying-to-a-discussion" id="replying-to-a-discussion">Replying to a discussion</a></h2>
+<p>At the bottom of each discussion box you can write a comment to add to the discussion. The draft is saved continuously as you write, but won’t be visible to others until it's <a href="reviews.html#publish">published</a> or sent (see below).</p>
+<div class="tip">
+<p>While no one can read your drafts, other participants will be able to see that you have unsent drafts pending and how long ago you last touched the review (for example, by editing a draft).</p>
+</div>
+<p>All comments are formatted as <a href="https://guides.github.com/features/mastering-markdown/">GitHub-flavored Markdown</a> — clicking the small Markdown logo in the draft toolbar will open a reference page.  You can also switch to the <strong>Preview</strong> tab at any time to check how your comment will be rendered.</p>
+<p>You can add images to your comment by clicking the upload button, by dragging an image onto the draft, or by pasting an image from your clipboard (in some browsers). If desired, you can delete your draft by clicking the small trash icon. The trashed draft is retrievable by creating another comment in the same spot.</p>
+<p><strong>Sending messages immediately:</strong>  Click the <i class="fa fa-share-square-o"></i> button to immediately post the comment on the pull request. This doesn't affect any other pending comments, which is useful if a big review round is in progress, you have many drafts pending, and you need to send out an intermediate clarification or request. Since each recipient will receive an alert for each message you send this way (as configured by default in GitHub), it would normally be preferable to write all of your comments and then <a href="reviews.html#publish">publish</a> them all together.</p>
+<p><img src="images/discussions_6.png" alt="reviewable send messages immediately" /></p>
+<h3><a class="header" href="#inline-directives" id="inline-directives">Inline directives</a></h3>
+<p>You can add special directives inline to any comment (not just top-level ones) to add or remove labels, set the milestone, and add or remove assignees or reviewers.  Reviewable doesn't use a special UI for this so that it's easy to do without lifting your hands from the keyboard, works in all contexts (including when replying by email or on GitHub), and leaves an easily readable record.</p>
+<p>The directives you can use are <strong>±label</strong>, <strong>±milestone</strong>, <strong>±@username</strong> (for assignees) and <strong>±reviewer:@username</strong> (for requested reviewers).  Reviewable will warn you about invalid assignees or reviewers — either directly or via email if necessary — but not about bad labels or milestones since false positives are too common there.</p>
+<div class="important">
+<p>For email and GitHub comments, if the repo is not connected then directives won't take effect until somebody visits the review in Reviewable.  Editing directives in a previously sent message won't work either.</p>
+</div>
+<h3><a class="header" href="#replying-via-email-or-on-github" id="replying-via-email-or-on-github">Replying via email or on GitHub</a></h3>
+<p>Reviewable will do its best to parse incoming messages and split them up into the appropriate comment threads. This only works well, however, if you leave all the separators and comment links in place so be sure not to mangle a quoted message too much in your reply. Quoted chunks will be shown in Reviewable if they are woven into your reply, but omitted otherwise (whether the message is top- or bottom-quoted). Any parts of the message that can't be conclusively tied to a specific discussion will show up in a top-level comment instead.</p>
+<p>Reviewable recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word <strong>acknowledge</strong> (or <strong>ack</strong>) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a line, by itself, <strong><i class="fa fa-circle-o"></i> Discussing</strong>, <strong><i class="fa fa-check-circle"></i> Satisfied</strong>, <strong><i class="fa fa-info-circle"></i> Informing</strong>, <strong><i class="fa fa-play-circle"></i> Working</strong>, or <strong><i class="fa fa-minus-circle"></i> Blocking</strong>.</p>
+<div class="tip">
+<p>For information on how to use other shorthands that work in email and in-app comments alike, see <a href="discussions.html#inline-directives">inline directives</a> above and <a href="discussions.html#change-disposition">initial keywords</a> further down.</p>
+</div>
+<h2><a class="header" href="#ending-a-discussion" id="ending-a-discussion">Ending a discussion</a></h2>
+<p>If you don't need to reply to a discussion you can click the primary action button at the bottom instead. The button's label will indicate its precise action — corresponding to both your role and the state of the discussion — but the general meaning is “I have nothing further to say about this”. Clicking the button will always mark the discussion as read, and usually set your <a href="discussions.html#dispositions">disposition</a> to <strong><i class="fa fa-check-circle"></i> Satisfied</strong> as well:</p>
+<table><thead><tr><th>Role</th><th>Discussion</th><th align="center">Button label</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong><i class="fa fa-info-circle"></i> Informing</strong></td><td>Resolved with no other participants</td><td align="center"><strong>Retract</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td><strong><i class="fa fa-info-circle"></i> Informing</strong></td><td>Resolved</td><td align="center"><strong>Conclude</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>Active participant, not <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td><td>Unresolved with no other participants</td><td align="center"><strong>Retract</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>Active participant or PR author, not <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td><td>Unresolved and switching to <strong><i class="fa fa-check-circle"></i> Satisfied</strong> would resolve</td><td align="center"><strong>Resolve</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>PR author not <strong><i class="fa fa-check-circle"></i> Satisfied</strong>, or anyone <strong><i class="fa fa-play-circle"></i> Working</strong></td><td><strong>Unresolved</strong></td><td align="center"><strong>Done</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong> and creates a &quot;Done.&quot; message</td></tr>
+<tr><td><strong><i class="fa fa-minus-circle"></i> Blocking</strong></td><td>Unresolved and nobody <strong><i class="fa fa-play-circle"></i> Working</strong></td><td align="center"><strong>Accept</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>Any</td><td>Unread comments</td><td align="center"><strong>Acknowledge</strong></td><td>Sets disposition to <strong><i class="fa fa-ellipsis-h"></i> Following</strong> if passive participant or not a participant</td></tr>
+</tbody></table>
+<h2><a class="header" href="#unreplied-discussions" id="unreplied-discussions">Unreplied discussions</a></h2>
+<p>A discussion is unreplied for you when there are comments in the discussion that you haven't acknowledged, replied to, or marked as read. Unreplied discussions will increment your red discussions counter for the review. A discussion is also unreplied for you if one of the following rules applies, but <em>none of the preceding rules apply to anybody else</em>, even if you're caught up on the comments.</p>
+<ol>
+<li>You are an active participant, or are <strong><i class="fa fa-at"></i> Mentioned</strong>, or you are the PR author, or one of the participants is <strong><i class="fa fa-info-circle"></i> Informing</strong>, and you have unread comments, or you are <strong><i class="fa fa-play-circle"></i> Working</strong>.</li>
+<li>You are the PR author and the discussion has only one active participant (which is not you). This applies even if you have no unread comments; that is, you acknowledged the discussion without replying.</li>
+<li>You are not the PR author, the discussion has only the PR author as the active participant, and you have unread comments.</li>
+<li>You are <strong><i class="fa fa-minus-circle"></i> Blocking</strong> and the last comment is not yours.</li>
+<li>You are <strong><i class="fa fa-circle-o"></i> Discussing</strong> and the last comment is not yours.</li>
+<li>You are <strong><i class="fa fa-minus-circle"></i> Blocking</strong>.</li>
+<li>You started the discussion, and remain an active participant.</li>
+<li>You are an active participant.</li>
+</ol>
+<p>If you have a draft reply to a discussion, the discussion is considered replied unless new comments were made since you last edited your draft. This is the case even if the draft state will cause it to become unreplied for you once published. Your published state is still used in the view of all other participants.</p>
+<h3><a class="header" href="#new-and-old-comments" id="new-and-old-comments">New and old comments</a></h3>
+<p>The yellow <strong>New comments</strong> ribbon demarcates the point where comments that are new to you begin.  Normally they'd lose their “new” status implicitly once you reply or click the primary action button, but if you don't want to do that yet for some reason you can hover over the ribbon to reveal a <strong>mark read</strong> link instead.</p>
+<div class="tip">
+<p>Marking comments as read (by any means) is also buffered as a draft and revealed to others only when publishing.  This avoids situations where a discussion shows up as unreplied to somebody else before your reply was published.</p>
+</div>
+<p><img src="images/discussions_1.png" alt="reviewable mark read" /></p>
+<p>Some older comments may be hidden, as indicated by the <strong>Show N older comments</strong> link in the discussion header. Click the link to toggle showing older comments for this discussion, or click the drop-down arrow to reveal options for displaying older comments in <strong>this file</strong> or in <strong>all files</strong>.</p>
+<p><img src="images/discussions_5.png" alt="reviewable older comments" /></p>
+<h2><a class="header" href="#dispositions-and-resolution" id="dispositions-and-resolution">Dispositions and resolution</a></h2>
+<p>When publishing comments in the discussion you’ll want to take note of your disposition, which indicates your attitude towards resolving the discussion. You take on a default disposition when you join a discussion and, to begin with, you’ll simply rely on these defaults and the normal action buttons. As you participate in more discussions, you may eventually decide to explicitly set your disposition or even change the defaults that Reviewable uses in various situations.</p>
+<div class="tip">
+<p>To commit disposition changes they must be published — even if you make no corresponding comment.  Disposition changes do not mark the discussion as read unless they are part of a reply.</p>
+</div>
+<p>These are the dispositions that make one an active participant in a discussion and that you can select explicitly (though not all may be available in every situation):</p>
+<ul>
+<li><strong><i class="fa fa-circle-o"></i> Discussing</strong> — Neutral on whether the discussion should be resolved; will possibly continue the discussion.</li>
+<li><strong><i class="fa fa-minus-circle"></i> Blocking</strong> — Opposed to resolving the discussion while waiting on another contributor.</li>
+<li><strong><i class="fa fa-play-circle"></i> Working</strong> — Keeping the discussion unresolved while working on a related task This differs from <strong><i class="fa fa-minus-circle"></i> Blocking</strong>, in that you remain the party responsible for moving the discussion forward, and the discussion will not ask for actions from other participants.</li>
+<li><strong><i class="fa fa-check-circle"></i> Satisfied</strong> — In favor of resolving the discussion. If there are no other participants, then the discussion is resolved and will not be brought to the attention of others.</li>
+<li><strong><i class="fa fa-info-circle"></i> Informing</strong> — Discussion is resolved, but left active for others to comment.</li>
+</ul>
+<p>Passive participants will exhibit other dispositions, such as <strong><i class="fa fa-ellipsis-h"></i> Following</strong>, <strong><i class="fa fa-at"></i> Mentioned</strong>, and <strong><i class="fa fa-ban"></i> Dismissed</strong>.</p>
+<p>A discussion is <em>resolved</em> if and only if at least one participant is <strong><i class="fa fa-check-circle"></i> Satisfied</strong> or <strong><i class="fa fa-info-circle"></i> Informing</strong> and none of the participants are <strong><i class="fa fa-play-circle"></i> Working</strong> or <strong><i class="fa fa-minus-circle"></i> Blocking</strong>, or if there are no active participants left. (Participants whose disposition is <strong><i class="fa fa-circle-o"></i> Discussing</strong> are abstaining from the decision.)</p>
+<div class="tip">
+<p>If you have draft state on the discussion (as in the case of a reply, for example), the proposed value is used when computing the resolved state in your view.</p>
+</div>
+<div class="tip">
+<p>Participants in the general discussion have no dispositions, and it's always considered resolved.  Other top-level discussions created by clicking the <strong>Start a new discussion</strong> button behave normally.</p>
+</div>
+<p><a id="change-disposition"></a></p>
+<h3><a class="header" href="#checking-and-changing-dispositions" id="checking-and-changing-dispositions">Checking and changing dispositions</a></h3>
+<p>Your avatar in the lower-right corner of every discussion box has a small icon that indicates your current disposition.  Hover over it (or swipe left) to show the avatars and dispositions of all the participants in the discussion.  Click on your avatar to change your disposition, or on another participant's avatar to see a description of their current disposition.</p>
+<p><img src="images/discussions_3.png" alt="reviewable dispositions" /></p>
+<p>You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These are some examples of what you'll find there:</p>
+<ul>
+<li>FYI or BTW → <strong><i class="fa fa-info-circle"></i> Informing</strong></li>
+<li>Minor or Nit → <strong><i class="fa fa-circle-o"></i> Discussing</strong></li>
+<li>Working or Will do → <strong><i class="fa fa-play-circle"></i> Working</strong></li>
+</ul>
+<p>Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.</p>
+<p><img src="images/discussions_4.png" alt="reviewable override with magic starting word" /></p>
+<p>You can also assign disposition changes to <a href="accountsettings.html#custom-key-bindings">keyboard shortcuts</a> with the <code>setCurrentDiscussionDisposition</code> command.</p>
+<div class="tip">
+<p>You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either <strong>Dismiss from this discussion</strong> or <strong>Dismiss from all discussions</strong> at the bottom of the drop-down.  (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the <a href="repositories.html#discussion-participant-dismissers">repo settings</a>.)</p>
+</div>
+<h3><a class="header" href="#resolution-workflows" id="resolution-workflows">Resolution workflows</a></h3>
+<p>By default, a comment that creates a new discussion will set your disposition to <strong><i class="fa fa-minus-circle"></i> Blocking</strong>. A user's first reply to an existing discussion will set their disposition to <strong><i class="fa fa-circle-o"></i> Discussing</strong> if not already an active participant. You can change the default disposition to fit your workflow preference.</p>
+<p>For example, consider that the default disposition is <strong><i class="fa fa-minus-circle"></i> Blocking</strong> for both PR author-initiated and reviewer-initiated discussions. However, as the PR author, you may want to let the reviewer resolve these by changing the default disposition to <strong><i class="fa fa-circle-o"></i> Discussing</strong>, or choose <strong><i class="fa fa-info-circle"></i> Informing</strong> as the default to encourage purely informational discussions.</p>
+<p>Similarly, if you're following an informal review process, you may want to set the default disposition of your reviewer-initiated discussions to <strong><i class="fa fa-circle-o"></i> Discussing</strong>, which enables the author to resolve a discussion directly.</p>
+<p>There are 4 default dispositions (the combinations of author/reviewer and new/reply), and you can set each one individually. The disposition dropdown has a <strong>Change default disposition</strong> link at the bottom that, once clicked, will lock in your next selection as the default for situations like that of the current comment.  (For clarity, the link will change to a description that states which default you're setting.)</p>
+<div class="tip">
+<p>If you are <strong><i class="fa fa-circle-o"></i> Discussing</strong> and another participant resolves the discussion without writing a comment, you normally won't be notified about it and the discussion will simply disappear from your view.  If you'd like to double-check such resolutions without having to block the discussion, you can turn on <strong>Trust but verify</strong> mode via the small <i class="fa fa-cog"></i> settings icon in the top-right corner of any of your disposition dropdowns.</p>
+</div>
+<h1><a class="header" href="#reviews-dashboard" id="reviews-dashboard">Reviews dashboard</a></h1>
+<p>Click the <strong>Reviews</strong> button at the very top of the page to display the reviews list. Here, you'll find all open pull requests in which you are a participant. As a participant, these PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to).  Reviewable automatically updates this list at least once per minute (and data held in Reviewable is updated in real time), so there's no need to reload the page.</p>
+<div class="tip">
+<p>If PRs appear to be missing from the list, try clicking the <strong>Include stalled pull requests/reviews</strong> link at the bottom of the panel. You may also want to click the green <strong>Also show team reviews</strong> or <strong>Also show private reviews</strong> buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.</p>
+</div>
+<p><img src="images/reviews_4.png" alt="reviewable reviews list" /></p>
+<p>Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter <code>+open</code> in the search bar to hide the closed PRs.  There's no way to show more or older closed PRs, you'll need to use GitHub to search for those.</p>
+<p>PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the <strong>Waiting on me</strong> group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).</p>
+<p>You can modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the <a href="repositories.html">Repository page</a>.</p>
+<h2><a class="header" href="#review-state" id="review-state">Review state</a></h2>
+<p>Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first, and people whose attention the review currently needs to the right of the <i class="fa fa-hand-o-right"></i>. You can see the approval status icon for any reviewer, which will appear with a <i class="fa fa-circle" style="color: #D87D7C"></i> if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels (if any).</p>
+<p><img src="images/reviews_10.png" alt="reviews list" /></p>
+<p>The <i class="fa fa-chain-broken" style="color: #7D8084"></i> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the <a href="repositories.html">Repository page</a>.</p>
+<p>A <i class="fa fa-calendar-times-o" style="color: #7D8084"></i> icon indicates a stalled review that has not been updated in over two weeks.</p>
+<p>Counter reflect the same information as you'll see on the review page:</p>
+<p><img src="images/reviews_5.png" alt="reviewable review state" /></p>
+<p>If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs but doesn't give access to merge options — for that, please open the review page.</p>
+<p>Other possible states include <strong>Merged</strong>, <strong>Closed</strong>, and <strong>Archived</strong> (automatically, for old reviews — just open to unarchive). No state appears for any PR not yet connected to a review.</p>
+<p><a id="open-review"></a></p>
+<h2><a class="header" href="#open-a-review" id="open-a-review">Open a review</a></h2>
+<p>Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #85C88B"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.</p>
+<p>Click the link on the right end of a listing to access the pull request on GitHub.</p>
+<h2><a class="header" href="#filter-reviews" id="filter-reviews">Filter reviews</a></h2>
+<p>In the filter field, enter one or more terms to match in the PR summary, repository, number, milestone, labels, author username, or blocking reviewer.  The query is immediately reflected in the URL if you'd like to bookmark it.</p>
+<p>You can also use the special filters in the table below, adding either a <code>+</code> or <code>-</code> prefix to the special term (such as <code>+open</code>) to require or prohibit the specified condition respectively.</p>
+<p>Add an OR operator to the positive filter by entering a comma. For example, <code>+needs:review,needs:fix</code> will filter for all reviews that need work, or have a failing check. For negative filters, the comma functions as an AND operator. More complex boolean expressions are not supported.</p>
+<p>For the <code>±label:<i>name</i></code> filter, you must use double quotes around the label name if it contains spaces.</p>
+<table><thead><tr><th>Filter</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>±open</code></td><td>Currently open PR</td></tr>
+<tr><td><code>±red</code></td><td>PRs with red counters</td></tr>
+<tr><td><code>±mine</code></td><td>Created, assigned, and requested PRs</td></tr>
+<tr><td><code>±label:<i>name</i></code></td><td>PRs with given label</td></tr>
+<tr><td><code>±needs:</code></td><td> </td></tr>
+<tr><td>    <code>review</code></td><td>Incomplete reviews</td></tr>
+<tr><td>    <code>fix</code></td><td>Reviews with failing checks</td></tr>
+<tr><td>    <code>merge</code></td><td>Completed and clean reviews</td></tr>
+<tr><td>    <code>me</code></td><td>Reviews waiting on you</td></tr>
+<tr><td>    <code>author</code></td><td>Reviews waiting on author</td></tr>
+<tr><td>    <code>reviewer</code></td><td>Reviews waiting on a reviewer</td></tr>
+<tr><td><code>±am:</code></td><td> </td></tr>
+<tr><td>    <code>author</code></td><td>Created PRs</td></tr>
+<tr><td>    <code>assigned</code></td><td>Assigned PRs</td></tr>
+<tr><td>    <code>requested</code></td><td>Requested reviewer PRs</td></tr>
+<tr><td><code>±draft</code></td><td>PR draft, not yet fully open</td></tr>
+<tr><td><code>±merged</code></td><td>PR that was successfully merged</td></tr>
+<tr><td><code>±closed</code></td><td>PR that was closed without merging</td></tr>
+<tr><td><code>±public</code></td><td>PRs from public repos</td></tr>
+<tr><td><code>±private</code></td><td>PRs from private repos</td></tr>
+<tr><td><code>±starred</code></td><td>PRs from repos you starred</td></tr>
+<tr><td><code>±watched</code></td><td>PRs from repos you're watching</td></tr>
+</tbody></table>
+<div class="tip">
+<p>Click the small <strong>Set as your default</strong> link to set the query that will automatically be applied when you load the page.</p>
+</div>
+<p><img src="images/reviews_6.png" alt="reviewable filter field" /></p>
+<p>If shown, you can click the <strong>Include stalled pull requests/reviews</strong> link near the bottom of the panel to exclude or include any stalled PRs.  The current state of this toggle is reflected in the URL, so you can bookmark it.</p>
+<h2><a class="header" href="#other-toggles" id="other-toggles">Other toggles</a></h2>
+<p>At the bottom of the Reviews page, you’ll find two toggle buttons:</p>
+<p><img src="images/reviews_14.png" alt="reviewable reviews list toggles" /></p>
+<p><strong>Show pull request not yet connected to Reviewable</strong></p>
+<p>If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with the <i class="fa fa-plus-circle" style="color: #85C88B"></i>, and clicking that PR will connect that PR to a review and insert a link into the PR description.</p>
+<p>You may want to turn off this toggle if you only want to see PRs from connected repositories.</p>
+<p><strong>Also show pull request you’re not involved with from all repos to which you can push.</strong></p>
+<p>If this toggle is on, the list includes all open PRs from repos where you have commit privileges, even if you're not a participant.  This is useful if you need to monitor repos for incoming PRs, such as if you're a manager, or an admin on an open source project.</p>
+<p>Optionally, you can restrict this set of repos to only those repos connected to Reviewable, or that you watched or starred on GitHub. This can be useful if you have push permissions to a lot of repos and, for example, you don’t want to see random open source repos while at work.</p>
+<h1><a class="header" href="#account-settings" id="account-settings">Account Settings</a></h1>
+<p>When signed in, click your username in the upper-right corner to view the account settings dropdown.  Here, you can manage your global settings, and customize your Reviewable environment.</p>
+<p><img src="images/accountsettings_1.png" alt="reviewable account settings" /></p>
+<h2><a class="header" href="#custom-diff-font" id="custom-diff-font">Custom diff font</a></h2>
+<p>You can customize the font used in all the diffs. The font must be <a href="https://medium.com/@vilcins/top-monospaced-fonts-for-coding-a7d941a143fe">monospace</a>, exactly match the font name, and already exist on your machine. Specify the font size in a CSS format, such as 10pt, 1.2em, or 90%.  If the font can't be loaded Reviewable will fall back on its built-in one.</p>
+<h2><a class="header" href="#custom-stylesheet" id="custom-stylesheet">Custom stylesheet</a></h2>
+<p>You can point to a custom stylesheet that you want to apply to all diffs.  Reviewable uses <a href="https://highlightjs.org/">highlight.js</a>, so you might prefer to use one of those <a href="https://highlightjs.org/static/demo/">predefined styles</a> that can be found in their <a href="https://github.com/isagalaev/highlight.js/tree/master/src/styles">styles directory</a>. To use the GitHub style, for example, set the URL to <code>https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css</code>.  You can also create <a href="http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html">your own styles</a>.</p>
+<div class="important">
+<p>Ensure that the stylesheet is served as text/css. It may be necessary for you to use <a href="https://gitcdn.xyz">https://gitcdn.xyz</a> or another similar service.</p>
+</div>
+<p>We also have a few extra styles used to highlight tabs, trailing whitespace, and lack of final newline that you can customize:</p>
+<pre><code class="language-css">.tab, .no-newline, .trailing {
+  color: #D95C5C;
+}
+
+.tab:before {
+  content: &quot;\00bb\00a0\00a0\00a0&quot;;
+}
+
+.no-newline:before {
+  content: &quot;\00a0\20e0\23ce&quot;;
+}
+</code></pre>
+<p>By default, only the actual deltas have red/green highlights in two-column mode. If you'd like the whole line to be highlighted as well (like on GitHub) you can add the styles from <a href="https://gist.github.com/pkaminski/2922da3d58f76a8ed7bf">this example</a>, or simply set your account custom stylesheet URL to <code>https://gitcdn.xyz/cdn/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css</code>.</p>
+<p><a id="line-link-template"></a></p>
+<h2><a class="header" href="#custom-line-link-template" id="custom-line-link-template">Custom line link template</a></h2>
+<p>You can specify the URL template for the <strong>line</strong> link that appears in the upper-right corner of discussions. You can use this to open the file in your favorite editor on the specific line that is under review. If there's no template, the default destination is the file's page on Github.</p>
+<p>Your editor must support a custom URL scheme for linking to files to use this feature. The sample templates below assume that <code>/directory/with/repos</code> is the absolute path to the directory where your git repos live, and also assume that each repo directory is named the same as its repo. Look for your editor below to see the correct entry that you'll need to insert into the field.</p>
+<ul>
+<li><strong>GitHub:</strong> <code>https://github.com/{{owner}}/{{repo}}/blob/{{viewSha}}/{{path}}#L{{viewLine}}</code> is the built-in default that opens GitHub on the exact version of the file you're looking at with the line highlighted.</li>
+<li><strong>Visual Studio Code:</strong> <code>vscode://file/directory/with/repos/{{repo}}/{{path}}:{{line}}</code>.</li>
+<li><strong>TextMate:</strong> <code>txmt://open?url=file:///directory/with/repos/{{repo}}/{{path}}&amp;line={{line}}</code>.</li>
+<li><strong>Sublime Text:</strong> <code>subl://open?url=file:///directory/with/repos/{{repo}}/{{path}}&amp;line={{line}}</code> if you install an appropriate URL handler.</li>
+<li><strong>Emacs:</strong> <code>emacs://open?url=file:///directory/with/repos/{{repo}}/{{path}}&amp;line={{line}}</code> if you install the <a href="https://github.com/typester/emacs-handler">Emacs URL Handler</a> on OS X.</li>
+<li><strong>Atom:</strong> <code>atm://open?url=file:///directory/with/repos/{{repo}}/{{path}}&amp;line={{line}}</code> if you install the <a href="https://github.com/WizardOfOgz/atom-handler">Atom Handler</a> on OS X.</li>
+<li><strong>Eclipse:</strong> <code>openineclipse://open?url=file:///directory/with/repos/{{repo}}/{{path}}&amp;line={{line}}</code> if you install the <a href="https://gist.github.com/uncreative/1100212">OpenInEclipse</a> script on OS X, or <a href="https://gist.github.com/jGleitz/cf9df461698f4e133cef">follow the instructions for Linux</a>. If you know of solutions for Windows, please <a href="mailto:support@reviewable.io">let us know</a>!</li>
+<li><strong>IntelliJ IDEA, Android Studio, PyCharm, PHPStorm:</strong> <code>idea://open?file=/directory/with/repos/{{repo}}/{{path}}&amp;line={{line}}</code> (or replace <code>idea:</code> with <code>pycharm:</code>, <code>phpstorm:</code>, etc.). This should work on OS X, not sure about other platforms.</li>
+</ul>
+<p>Use these variables in your custom URL template:</p>
+<ul>
+<li><code>{{owner}}</code>: the repo owner (or organization) username.</li>
+<li><code>{{repo}}</code>: the repo name.</li>
+<li><code>{{pr}}</code>: the pull request number.</li>
+<li><code>{{path}}</code>: the full path to the file (does not start with /).</li>
+<li><code>{{sha}}</code>: the commit sha of the latest revision in this review.</li>
+<li><code>{{line}}:</code> the line number in the latest revision of the file that best represents the original context in which the comment was made.</li>
+<li><code>{{viewLine}}</code>: the line number in the revision in which the discussion currently appears. This is the number that appears in the top-right corner of the discussion.</li>
+</ul>
+<p>Typically, you'll want to edit and load the latest version of the file into the editor, so you probably want to use <code>{{line}}</code> rather than <code>{{viewLine}}</code>. If you need any other variables for your template, please let us know.</p>
+<h2><a class="header" href="#custom-key-bindings" id="custom-key-bindings">Custom key bindings</a></h2>
+<p>You can customize the key bindings for common commands, and add new ones for commands that aren't bound by default.  First, get a copy of the <a href="https://reviewable.io/bindings.json">default bindings file</a> and put it somewhere accessible on the web (such as a <a href="https://gist.github.com/">gist</a>). Edit this file according to your preferences; all available commands are given in the file, though not all are bound by default. You can use any key combos supported by <a href="http://craig.is/killing/mice">Mousetrap</a>. If your favorite command isn't listed, please <a href="https://github.com/reviewable/reviewable/issues">open an issue</a> so we can add it.</p>
+<p>When you're done, point Reviewable to your custom bindings file by entering its URL in the field. If you're using a gist, make sure to get the “raw” URL, and consider removing the commit SHA from the path to always point to the latest version.</p>
+<p>Your bindings will be loaded and applied right away, and the cheatsheet will update accordingly to reflect them. Be sure to check the browser's console if they don't appear to work, since any errors will appear there. To load any updates to your file, either reload the page or make a no-op edit to the URL field.</p>
+<h2><a class="header" href="#visual-tweaks" id="visual-tweaks">Visual tweaks</a></h2>
+<p>Click the <strong>Animated transitions</strong> toggle to turn animated transitions on and off throughout the UI.</p>
+<h3><a class="header" href="#adjust-contrast" id="adjust-contrast">Adjust contrast</a></h3>
+<p>Use the <strong>Contrast</strong> slider to adjust the UI contrast. Currently this only affects the red and green diff highlighting in reviews, but may be used for other UI elements in the future as well.</p>
+<h2><a class="header" href="#github-authorizations-granted" id="github-authorizations-granted">GitHub authorizations granted</a></h2>
+<p>This is a read-only list of all the GitHub OAuth scopes you've granted to Reviewable so far.  It can be useful to confirm the extent of permissions granted or when debugging GitHub API issues.</p>
+<h1><a class="header" href="#repositories" id="repositories">Repositories</a></h1>
+<p>The Repositories page lists all of your repos. From this page, you can connect Reviewable to Github repositories, adjust the connections' settings, and manage your Reviewable subscriptions (for which, please see the <a href="subscriptions.html">next chapter</a>).</p>
+<p><img src="images/repositories_5.png" alt="reviewable repositories" /></p>
+<p>The repositories are grouped by owner and listed alphabetically.  If you don't see an organization of which you're a member, ensure that you click <strong>Show all organizations</strong> if it's there.  If the organization is still missing, check whether you need to <a href="https://help.github.com/articles/requesting-organization-approval-for-oauth-apps/">request approval for Reviewable</a> from your organization owners.</p>
+<h2><a class="header" href="#security-concerns" id="security-concerns">Security concerns</a></h2>
+<p>First off, Reviewable will never store your source code on its servers. Each session will fetch the code directly from GitHub into the browser over a secure HTTPS connection. For transparency, here’s a non-exhaustive list of the kinds of data stored on Reviewable's servers:</p>
+<ul>
+<li>Comments, including drafts.</li>
+<li>Pull request metadata, such as filenames, and commit and file SHAs.</li>
+<li>Basic account data, such as ID, username, and email address.</li>
+<li>The OAuth access token that you authorized (encrypted for extra security).</li>
+<li>Repo permissions and organization memberships.</li>
+<li>Settings for all levels: organization, repository, user, and review.</li>
+<li>Subscription data, but only the last 4 of the credit card and expiration date are kept.</li>
+<li>Issue titles, commit messages, and GitHub branch protection settings are cached and flushed regularly.</li>
+</ul>
+<p>Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every half hour. All data is always transmitted across secure connections.</p>
+<p>The access token remains encrypted at rest with a key known only to Reviewable servers, and used only to access GitHub on your behalf. Unless you grant explicit written authorization, Reviewable staff will never use the token to access your repository contents or mutate data.  (We may use it to test innocuous read-only metadata API calls when debugging an issue specific to your account.)</p>
+<p>Reviewable does need write permissions for your repos.  See the <a href="registration.html#github-authorizations">GitHub authorizations</a> section for a full explanation.</p>
+<p>And of course under no circumstances will we disclose any of your private information to other parties beyond what's needed to provide our service — please see our <a href="https://github.com/Reviewable/Reviewable/blob/master/legal/terms.md">terms of service</a> and <a href="https://github.com/Reviewable/Reviewable/blob/master/legal/privacy.md">privacy policy</a> for the legal details.</p>
+<p>If you need more details about our security architecture or have any other concerns we can address, please contact us at <a href="mailto:support@reviewable.io">support@reviewable.io</a>.</p>
+<h2><a class="header" href="#connecting-repositories" id="connecting-repositories">Connecting repositories</a></h2>
+<p>The indicator next to each repository name shows the connection state for this repo. While a repo is connected, Reviewable automatically creates a review for any open PR and inserts a link into all open PRs in the repo.</p>
+<p><img src="images/repositories_4.png" alt="reviewable repository connections" /></p>
+<p>The toggle's color reflects the state of the connection:</p>
+<ul>
+<li><strong>Black</strong> — The repo is disconnected. Reviewable will not automatically create reviews for this repo, but it is possible to initiate a review from the <a href="dashboard.html#open-review">Reviews dashboard</a>.</li>
+<li><strong>Green</strong> — The repo is connected and healthy. Reviewable will automatically create and update reviews for all open PRs and insert a link to the review into the description for each PR.  (You can customize this latter behavior in the <a href="repositories.html#repo-settings">settings</a>, but must do so <em>before</em> connecting the repo!)</li>
+<li><strong>Red</strong> — The repo was connected, but the connection is now broken. Look for the error message on this page. Though some reviews may be created under this condition, it is necessary to fix the problem to ensure all reviews function properly.</li>
+</ul>
+<p>You must have repo admin permissions to connect or disconnect a repo. Connecting to a private organizational repo may cause you to automatically begin the 30-day free trial.</p>
+<p>It is entirely safe to connect or disconnect a repo at any time without risk of data loss. After a review is created, it will not be affected by this toggle.</p>
+<div class="tip">
+<p>If you previously connected repos, but later revoked the authorization for Reviewable, you will need to re-authorize access to maintain the connection. You will see messages at the top of the repo page that prompt you to take action.</p>
+</div>
+<div class="important">
+<p>If a user has connected a repo but later leaves an organization, it will be necessary for another admin to toggle the repo off and then on to assume control of the connection.  (Reviewable will send a warning email to the original connector if it detects this situation.)</p>
+</div>
+<p>Each connected repository will have an &quot;N open reviews&quot; link under it that will take you to a repository-specific <a href="dashboard.html">reviews dashboard</a>.</p>
+<p><a id="current-and-future"></a></p>
+<h3><a class="header" href="#connect-all-current-and-future-repos" id="connect-all-current-and-future-repos">Connect all current and future repos</a></h3>
+<p>There's also a special <strong>All current and future repos</strong> toggle.  When turned on by an organization owner, Reviewable will connect all current <em>and future</em> repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.</p>
+<div class="important">
+<p>You may wish to confirm the <a href="repositories.html#repo-settings">settings</a> of current repos and designate a <a href="repositories.html#prototype-repo">prototype repo</a> for future ones before you turn on this feature.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.</p>
+</div>
+<h3><a class="header" href="#create-reviews-for-your-own-prs" id="create-reviews-for-your-own-prs">Create reviews for your own PRs</a></h3>
+<p>You can also get Reviewable to create reviews for all PRs that you author, across all repos.  If the <strong>My PRs in any public repo</strong> toggle is on, Reviewable will regularly scan your public PRs and create reviews for them (inserting a link into the PR), covering all of your open source contributions.</p>
+<p><img src="images/repositories_3.png" alt="reviewable connecting PRs from repositories" /></p>
+<p>The same applies to private PRs for the <strong>My PRs in any private repo</strong> toggle, which gives you the flexibility to have only a subset of users in a private repo use Reviewable.</p>
+<div class="important">
+<p>This last is a legacy feature that may get removed in the future, since it was mainly used to constrain the set of contributors to avoid going over quota, and this can now be specified directly in a subscription's configuration.  It will only work if the relevant repo has an active subscription at the time the PR is created and won't backfill if a subscription is created later.</p>
+</div>
+<h3><a class="header" href="#reviews-in-connected-vs-unconnected-repos" id="reviews-in-connected-vs-unconnected-repos">Reviews in connected vs unconnected repos</a></h3>
+<p>When you connect a repo, you get links to the reviews from all PRs in that repo and immediate updates whenever anything changes in GitHub.</p>
+<p>By contrast, Reviewable doesn't get write access to the repo if you individually connect all your own PRs or create ad-hoc reviews via the dashboard. There are some disadvantages to this approach:</p>
+<ul>
+<li>New commits, GitHub comments, labels, and the PR assignee don't immediately sync with the review, but will only synchronize after somebody loads the review. The dashboard will display stale information for such reviews. Comments posted in Reviewable will propagate immediately.</li>
+<li>Assignee and label directives in GitHub and emailed comments won't apply until a user loads the review.</li>
+<li>Review status checks won't post to the PR, since Reviewable isn't subscribed to repo events and unable to make timely updates.</li>
+<li>Reviewable may not be able to reliably detect and apply your branch protection settings in its UI. (The branch protection settings will be enforced by GitHub no matter what, though, so this is safe but potentially confusing.)</li>
+<li>It may not be possible for Reviewable to pin revision commits, so if you use <code>git rebase</code> and <code>git push --force</code>, some of them may get garbage collected and will no longer be accessible in the review. They'll usually get pinned when the reviewer (with push authority) accesses the review.</li>
+</ul>
+<p>Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.</p>
+<div class="tip">
+<p>You may find it impracticable to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.</p>
+</div>
+<p><a id="repo-settings"></a></p>
+<h2><a class="header" href="#repository-settings" id="repository-settings">Repository settings</a></h2>
+<p>Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.</p>
+<p><img src="images/repositories_6.png" alt="reviewable repo settings" /></p>
+<p>If you make any changes to the settings, click the <strong>Apply</strong> button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (<em>all</em> the settings, not just your current changes).  Click <strong>Cancel</strong> to discard any change to the settings.</p>
+<p><a id="prototype-repo"></a></p>
+<h3><a class="header" href="#prototype-settings-for-new-repos" id="prototype-settings-for-new-repos">Prototype settings for new repos</a></h3>
+<p>If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the <strong>Set as prototype for new repos</strong> button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.</p>
+<div class="tip">
+<p>This feature is particularly useful if you chose to connect <a href="repositories.html#current-and-future">all current and future repos</a>.</p>
+</div>
+<h3><a class="header" href="#reviewable-badge" id="reviewable-badge">Reviewable badge</a></h3>
+<p>Choose where the Reviewable badge is to be inserted on the GitHub website:</p>
+<ul>
+<li><strong>Description</strong> — at the top or bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.</li>
+<li><strong>Comment</strong> — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.</li>
+<li><strong>None</strong> — no badges will be created (private repos only).</li>
+</ul>
+<div class="tip">
+<p>Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.</p>
+</div>
+<h3><a class="header" href="#default-review-style" id="default-review-style">Default review style</a></h3>
+<p>Choose the default <a href="reviews.html#changes-commits">review style</a> for all reviews in this repo. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  Please follow a link for a full explanation of the two options.</p>
+<p>This setting can be overridden on a particular review by any user with push permissions.</p>
+<h3><a class="header" href="#approve-button-output" id="approve-button-output">Approve button output</a></h3>
+<p>You can customize the function of the <strong>Approve</strong> button (aka <strong>LGTM</strong> button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts <code>:lgtm:</code>, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to <strong>Approved</strong>.</p>
+<h3><a class="header" href="#discussion-participant-dismissers" id="discussion-participant-dismissers">Discussion participant dismissers</a></h3>
+<p>This setting controls what permissions a user needs to have to be able to <a href="discussions.html#checking-and-changing-dispositions">dismiss</a> participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.</p>
+<h3><a class="header" href="#review-status-in-github-pr" id="review-status-in-github-pr">Review status in GitHub PR</a></h3>
+<p>This setting determines whether or not to post the current completion status of the review as a status check on GitHub. Choose <strong>On for visited reviews</strong> to post only after a review has been visited at least once in Reviewable.</p>
+<p><a id="completion-condition"></a></p>
+<h2><a class="header" href="#custom-review-completion-condition" id="custom-review-completion-condition">Custom review completion condition</a></h2>
+<p>Reviewable allows you to write custom code that determines when a review is complete and controls other details of a review's progress.  Typically, you'll use this to customize the number of reviewers required, or switch from the GitHub approval system to a more flexible one based on explicit LGTMs.  Some people have created more unusual conditions, though, such as:</p>
+<ul>
+<li>preventing review completion for N hours after a PR was created, so people get a chance to check it out,</li>
+<li>requiring reviews from certain people based on the labels attached to the PR, or</li>
+<li>preventing merging of PRs that have commits with “WIP” in the title.</li>
+</ul>
+<h3><a class="header" href="#development-environment" id="development-environment">Development environment</a></h3>
+<p>The <strong>Review completion condition</strong> section of the repository settings helps you refine your code in a live evaluation environment.</p>
+<p>In the <strong>Condition Code</strong> panel, you can edit the code that determines when a review is complete.  It starts off with the code that Reviewable uses by default and you can pick other sample conditions to customize or study from the small <strong>Examples</strong> menu above the editor.</p>
+<p>The condition code will run in an isolated NodeJS 6.x environment (as of this writing — this gets updated regularly) that includes the 3.x <code>lodash</code> module available through the customary <code>_</code> binding. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.</p>
+<p>For testing, your code will be continuously evaluated against the <strong>Review state</strong> on the right.  It will start off with the current state of some PR in your repo, but you can fill in the state of any PR via the small box above it, or edit the state manually to your liking.  See the <a href="repositories.html#review-state-input">review state input</a> section below for an explanation of the state's properties.</p>
+<p>The results of your code will appear in the <strong>Evaluation result</strong> pane at the bottom of the settings page.  They must follow a specific structure described in the <a href="repositories.html#condition-output">condition ouput</a> section below.</p>
+<p><img src="images/repositories_8.png" alt="reviewable condition code to determine when a review is complete" title=":size=1138" /></p>
+<h3><a class="header" href="#review-state-input" id="review-state-input">Review state input</a></h3>
+<p>The current state of the review is accessible to your code via the <code>review</code> variable.  The sample review state below explains the various properties. All timestamp values indicate milliseconds since the epoch, and all lists are ordered chronologically (when appropriate). If you find that you'd like more data please ask and we'll see what we can do.</p>
+<pre><code class="language-js">{
+  summary: {
+    lastRevision: 'r1',             // The key of the last revision
+    numUnresolvedDiscussions: 1,    // The number of unresolved discussions
+    numFiles: 1,                    // Total number of active files in the review
+    numUnreviewedFiles: 1,          // Number of files not reviewed by anyone at latest revision
+    numFilesReviewedByAtLeast: [1]  // Number of files reviewed by at least N people (as index)
+      // e.g., numFilesReviewedByAtLeast[2] is the number of file reviewed by at least 2 people
+  },
+  pullRequest: {
+    title: 'Work work work',
+    number: 44,
+    body: 'There is so much work to be done, and this PR does it all.',
+    author: {username: 'pkaminski'},
+    creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
+    draft: false,
+    assignees: [
+      // A user is participating iff they commented or reviewed a file.
+      {username: 'pkaminski-test', participating: true},
+      {username: 'mdevs5531', participating: false}
+    ],
+    requestedReviewers: [
+      // When executing the condition prior to publishing a review, this list won't include any
+      // reviewers added by the &quot;sync requested reviewers&quot; option if it's checked.  Doing so would
+      // create a dependency cycle.  This only affects the posted message -- the condition will be
+      // re-evaluated after publishing with the full list of requested reviewers to determine the
+      // actual review status.
+      {username: 'pkaminski-test', participating: true}
+    ],
+    requestedTeams: [
+      {slug: 'developers'}
+    ],
+    approvals: {
+      // Maps usernames to their current PR approval status, if any.  The status is one of
+      // 'approved', 'changes_requested', 'commented', or 'dismissed'.
+      'pkaminski-test': 'changes_requested'
+    },
+    numCommits: 3,
+    target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
+    source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'},
+    // one of dirty, unknown, blocked, behind, unstable, has_hooks, clean, or draft
+    mergeability: 'clean',
+    checks: {
+      Shippable: {
+        state: 'failure',
+        descriptio: 'Builds failed on Shippable',
+        timestamp: 1432363555000
+      }
+    }
+  },
+  revisions: [  // List of all revisions, in chronological order
+    {
+      key: 'r1',
+      snapshotTimestamp: 1436825047000,  // When this revision was snapshotted (missing if provisional)
+      obsolete: false,
+      commitSha: '435ae39a89e6992c9ed72fd154bc3c45290d8a97',
+      baseCommitSha: '3cd017d236fe9174ab22b4a80fefb323dbefb50f',
+      commits: [
+        {sha: '435ae39a89e6992c9ed72fd154bc3c45290d8a97', timestamp: 1436825047000, title: 'Fix foo'}
+      ]
+    }
+  ],
+  labels: [  // List of all labels applied to the pull request
+    'Comments only in Reviewable'
+  ],
+  sentiments: [  // List of sentiments (currently just emojis) extracted from comments
+    {username: 'pkaminski', emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
+  ],
+  discussions: [  // List of the discussions in the review (metadata only)
+    {
+      numMessages: 1,
+      resolved: false,  // Whether the overall discussion is resolved
+      participants: [
+        {
+          username: 'pkaminski',
+          disposition: 'discussing',  // Participant's current disposition
+          resolved: true,  // False if this participant is blocking resolution
+          lastActivityTimestamp: 1436828040000  // Last time user sent a message or changed disposition
+        }
+      ],
+      target: {  // Target file location; the top-level discussion doesn't have a target
+        file: 'LICENSE', revision: 'r1', base: false, line: 4
+      }
+    }
+  ],
+  files: [  // List of files in the review
+    {
+      path: 'LICENSE',
+      revisions: [  // List of the revisions where this file was changed
+        {
+          key: 'r1',
+          obsolete: false,
+          reviewers: [  // List of users who marked file as reviewed at this revision
+            {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
+          ]
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h3><a class="header" href="#condition-output" id="condition-output">Condition output</a></h3>
+<p>Your code must return an object with some or all of the following properties.  Any missing properties (at the top level) will be filled in by using the built-in default condition.  This means that you can safely return, e.g., just the <code>disableGitHubApprovals</code> flag and the rest will be defaulted for you.</p>
+<ul>
+<li><code>completed</code>: a boolean indicating whether the review is complete or not.</li>
+<li><code>description</code>: a string describing the current status of the review, such as <code>2 of 5 files reviewed, 4 unresolved discussions</code>.</li>
+<li><code>shortDescription</code>: a string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the <code>description</code> instead.</li>
+<li><code>pendingReviewers</code>: an array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.</li>
+<li><code>files</code>: an array of objects that look like <code>{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}</code>.  (It's OK to just augment the <code>review.files</code> structure with additional properties and return the whole thing here.)
+<ul>
+<li>To <a href="files.html#file-list">group files in the file matrix</a>, set an optional <code>group</code> property on each file with any name you'd like; all files with the same <code>group</code> value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.</li>
+<li>To override whether a file has been reviewed at a revision set a <code>reviewed</code> boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.</li>
+</ul>
+</li>
+<li><code>refreshTimestamp</code>: a timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via <code>Date.getTime()</code>.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous <code>refreshTimestamp</code>s.</li>
+<li><code>disableGitHubApprovals</code>: a boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.</li>
+<li><code>syncRequestedReviewers</code>: a boolean that, if true, will force synchronization of GitHub requested reviewers from <code>pendingReviewers</code>.  (You should only set it if the repository is connected to Reviewable.)  This can be useful to standardize the workflow (e.g., to make metrics provided by another tool more reliable), but note that users will still be able to manually request and unrequest reviewers anyway.  When set to <code>true</code>, the server will automatically update requested reviewers whenever <code>pendingReviewers</code> changes (including when the PR is first created) using any repo admin account.  The client will also force enable (<code>true</code>) or disable (<code>false</code>) the <a href="reviews.html#sync-requested-reviewers">&quot;Sync requested reviewers&quot;</a> option when publishing via Reviewable.</li>
+<li><code>disableBranchUpdates</code>: a boolean that, if true, will disable the ability to merge the target (base) branch into the source (head) branch in Reviewable's UI.  This is to avoid misclicks in workflows where developers are expected to rebase rather than merge.  (It's not possible to trigger a rebase through Reviewable's UI unfortunately.)</li>
+<li><code>mergeStyle</code>: one of <code>'merge'</code>, <code>'squash'</code> or <code>'rebase'</code>.  If set, forces the merge style for a PR <em>in Reviewable only</em>.  (Does not affect merging via the GitHub UI or API.)  If this conflicts with GitHub's permitted merge styles it's ignored.</li>
+<li><code>defaultMergeCommitMessage</code>: a string that will be used as the default commit message when merging a pull request from Reviewable in the normal (&quot;Merge&quot;) mode.  The user can edit it before merging as usual.</li>
+<li><code>defaultSquashCommitMessage</code> a string as above, but used when merging in &quot;Squash&quot; mode.</li>
+<li><code>debug</code>: any data structure you'd like to be able to inspect when debugging your condition.  It'll be displayed in the <strong>Evaluation result</strong> pane but otherwise ignored.</li>
+</ul>
+<h1><a class="header" href="#subscriptions" id="subscriptions">Subscriptions</a></h1>
+<p>All public repositories and personal private repositories can use Reviewable free of charge forever.  A subscription is required for private organizational repositories.</p>
+<p>Every subscription gets a 30-day free trial, which requires no credit card up front. If you don't explicitly start a subscription, an automatic trial subscription will begin when you create the first review.</p>
+<p>Organizations are shown below your personal repos on the Repositories page, and appear whether you are an owner or a contributor.  You can open the subscription panel by clicking on the <strong>Subscribe</strong> or <strong>Edit subscription</strong> button next to the organization name.  Any organization member can start a subscription, not just organization owners.</p>
+<div class="important">
+<p>OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the <a href="registration.html#oauth-restrictions">OAuth app access restrictions</a> section in the Registration chapter.</p>
+</div>
+<h2><a class="header" href="#selecting-a-plan" id="selecting-a-plan">Selecting a plan</a></h2>
+<p>In the subscription panel you can select a plan for your organization.  Each plan has a maximum number of monthly contributors. Rather than forcing you to maintain yet another user list, we count each distinct PR author during a billing cycle as a contributor, at the time a review is created and linked to the PR. Once a review has been created, any number of people can view it and participate.  You should select a plan that will cover the expected number of contributors on your team.</p>
+<p>If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email. If you have chosen a subscription plan that has a flexible overage, Reviewable will permit all additional contributors if you did not exceed your maximum in the previous billing cycle. This flexibility provides you additional time to upgrade your subscription without disruption. If you are confident that the overage will not continue into the next month, you can simply ignore it. If your plan doesn't have the flexible overage feature, or you exceeded the maximum in the prior month, Reviewable won't create the review until you upgrade your subscription — or the contributor count resets on your next billing date.</p>
+<div class="tip">
+<p>If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.</p>
+</div>
+<p>If you change your plan in the middle of a billing cycle, the new plan takes effect immediately and fees are not prorated (up or down).  You'll be charged the new price on your next billing date.</p>
+<h2><a class="header" href="#managing-the-scope-of-your-subscription" id="managing-the-scope-of-your-subscription">Managing the scope of your subscription</a></h2>
+<p>By default, a subscription covers all reviews in a single organization. Optionally, you can restrict or expand this scope.</p>
+<p>To restrict access to your Reviewable subscription, simply designate a contributor team. Only PRs from team members can be submitted for review, even if others outside the team create PRs in a connected repository. Establishing a team is one approach to ensure that you won't exceed the contributor maximum for your subscription.</p>
+<p>On the other hand, if your company's repos are distributed over multiple GitHub organizations (as is sometimes the case for consulting companies), you can specify extra organizations to be covered if your plan allows it. In this situation, a person who creates reviews in any of the subscription's organizations counts as a single contributor — so this may be a less expensive alternative to maintaining separate subscriptions.</p>
+<div class="tip">
+<p>Restricting an organization to a team and extending it to other organizations are mutually exclusive.</p>
+</div>
+<h2><a class="header" href="#payments" id="payments">Payments</a></h2>
+<p>You will need to specify a card to use for payments.  This can be a credit or debit card — most anything with a major payment network logo on it should work. Reviewable uses Stripe to process payments and store your credit card information, so you can have full confidence that your financial information is secure.</p>
+<div class="tip">
+<p>At this time, each user can only specify one card for all their subscriptions.</p>
+</div>
+<p>Under the card information, you can reveal extra fields that let you specify a custom memo to include on the monthly receipts (accountants love these!), and a different email address to send the receipts to.</p>
+<h2><a class="header" href="#canceling-a-subscription" id="canceling-a-subscription">Canceling a subscription</a></h2>
+<p>To cancel a subscription, click the <strong>Edit subscription</strong> button and switch to the free plan — don't forget to click <strong>Confirm</strong>!  Only the user who originally created the subscription can do this.  If this is not possible or convenient, please get in touch with <a href="mailto:support@reviewable.io">support</a> and we'll help you out.</p>
+<p>You can change or cancel a subscription at any time with immediate effect, but there will be no refunds or proration of fees. If you cancel, previously created reviews will continue to be accessible and synchronized with GitHub. However, you'll no longer have the ability to create new reviews.</p>
+<h2><a class="header" href="#subscription-ownership" id="subscription-ownership">Subscription ownership</a></h2>
+<p>At this time, even though a subscription covers one or more organizations, it is owned by a single user and only that user can manage it.  Other members will be informed that a subscription exists with a “Organizational subscription active” message next to the organization name but will be unable to affect it in any way, even if they're an organization owner.</p>
+<p>It is also not possible to transfer a subscription between users.  As a workaround, have the new subscriber begin another (duplicate) subscription, then have the original subscriber cancel theirs. This way, there will be no interruption in service.</p>
+<p>We intend to accommodate this better in the future, though it is not yet a top priority.</p>
+<h1><a class="header" href="#abnormal-conditions" id="abnormal-conditions">Abnormal conditions</a></h1>
+<h2><a class="header" href="#github-status" id="github-status">GitHub status</a></h2>
+<p>Reviewable monitors the <a href="https://githubstatus.com">GitHubs status page</a>, and will display a yellow or red warning indicator in the lower-right corner of the window if there are reported issues.  You can click on the indicator to read the message posted by GitHub's engineers.  Note that any issues with GitHub are likely to affect Reviewable as well, due to their tight integration.</p>
+<p><img src="images/otherissues_3.png" alt="reviewable github status" /></p>
+<h2><a class="header" href="#firebase-connection-trouble" id="firebase-connection-trouble">Firebase connection trouble</a></h2>
+<p>Reviewable also continuously monitors the quality of the connection to Firebase, its main datastore.  This includes monitoring the socket itself, the latency of every write, and the latency of obtaining permissions for data access.  If the connection deteriorates, Reviewable will display a yellow or red warning indicator in the lower-right corner of the window.</p>
+<p><img src="images/otherissues_4.png" alt="reviewable firebase connetion trouble" /></p>
+<p>If the connection remains poor for a long time, a modal overlay will block access to the app until things have improved, and warn you if there are unconfirmed writes that indicate your recent work may not have been saved.  You might want to check @reviewableio on Twitter for any outage announcements, or see if there are any Realtime Database issues over on the <a href="https://status.firebase.google.com/">Firebase Status page</a>.</p>
+<p><img src="images/otherissues_5.png" alt="reviewable firebase connection trouble" /></p>
+<h2><a class="header" href="#forced-upgrade" id="forced-upgrade">Forced upgrade</a></h2>
+<p>While we generally support older versions of the client for quite a while, if you’ve kept a page open without reloading it for weeks (or months!) we may lock it out and ask you to upgrade to the latest version immediately.  Just reload the page, or avoid the situation by occasionally reloading open pages yourself.</p>
+<p><img src="images/otherissues_6.png" alt="reviewable forced upgrade" /></p>
+<h2><a class="header" href="#crash" id="crash">Crash</a></h2>
+<p>If Reviewable detects an unexpected error that it has no idea how to deal with, it will immediately put the application in a safe state, try to save your data, report the error to our exception capture database, and show the modal crash overlay.  We investigate all errors captured this way so you don’t need to report them separately, but if it happens regularly (or you know how to reproduce it) then a tip is always appreciated!</p>
+<p>Note that Reviewable is sensitive to all top-level exceptions, unhandled promise rejections, and other situations that can be caused by badly implemented browser extensions, following the philosophy of “better safe than sorry”.  If you’re having trouble with Reviewable crashing all the time please try running it with all extensions disabled to confirm where the root cause lies.</p>
+<p><img src="images/otherissues_7.png" alt="reviewable crash" /></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
+

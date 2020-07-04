@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Reviews dashboard - Reviewable User Manual</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
+
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        <script>
+            var hash = window.location.hash;
+            if (hash.startsWith("#/")) { // Old SPA style link.  Identify redirect.
+                var hashMap = {
+                    "#/": "introduction.html",
+                    "#/?id=help-on-using-reviewable": "introduction.html#help-on-using-reviewable",
+                    "#/?id=how-to-use-this-guide": "introduction.html#how-to-use-this-guide",
+                    "#/?id=introduction": "introduction.html#introduction",
+                    "#/?id=staying-up-to-date": "introduction.html#staying-up-to-date",
+                    "#/abnormal": "abnormal.html",
+                    "#/abnormal?id=abnormal-conditions": "abnormal.html#abnormal-conditions",
+                    "#/abnormal?id=crash": "abnormal.html#crash",
+                    "#/abnormal?id=firebase-connection-trouble": "abnormal.html#firebase-connection-trouble",
+                    "#/abnormal?id=forced-upgrade": "abnormal.html#forced-upgrade",
+                    "#/abnormal?id=github-status": "abnormal.html#github-status",
+                    "#/accountsettings": "accountsettings.html",
+                    "#/accountsettings?id=account-settings": "accountsettings.html#account-settings",
+                    "#/accountsettings?id=adjust-contrast": "accountsettings.html#adjust-contrast",
+                    "#/accountsettings?id=custom-diff-font": "accountsettings.html#custom-diff-font",
+                    "#/accountsettings?id=custom-key-bindings": "accountsettings.html#custom-key-bindings",
+                    "#/accountsettings?id=custom-stylesheet": "accountsettings.html#custom-stylesheet",
+                    "#/accountsettings?id=github-authorizations-granted": "accountsettings.html#github-authorizations-granted",
+                    "#/accountsettings?id=line-link-template": "accountsettings.html#line-link-template",
+                    "#/dashboard": "dashboard.html",
+                    "#/dashboard?id=filter-reviews": "dashboard.html#filter-reviews",
+                    "#/dashboard?id=open-review": "dashboard.html#open-review",
+                    "#/dashboard?id=other-toggles": "dashboard.html#other-toggles",
+                    "#/dashboard?id=review-state": "dashboard.html#review-state",
+                    "#/dashboard?id=reviews-dashboard": "dashboard.html#reviews-dashboard",
+                    "#/discussions": "discussions.html",
+                    "#/discussions?id=change-disposition": "discussions.html#change-disposition",
+                    "#/discussions?id=checking-and-changing-dispositions": "discussions.html#checking-and-changing-dispositions",
+                    "#/discussions?id=code-review-discussions": "discussions.html#code-review-discussions",
+                    "#/discussions?id=dispositions": "discussions.html#dispositions",
+                    "#/discussions?id=dispositions-and-resolution": "discussions.html#dispositions-and-resolution",
+                    "#/discussions?id=ending-a-discussion": "discussions.html#ending-a-discussion",
+                    "#/discussions?id=inline-directives": "discussions.html#inline-directives",
+                    "#/discussions?id=new-and-old-comments": "discussions.html#new-and-old-comments",
+                    "#/discussions?id=replying-to-a-discussion": "discussions.html#replying-to-a-discussion",
+                    "#/discussions?id=replying-via-email-or-on-github": "discussions.html#replying-via-email-or-on-github",
+                    "#/discussions?id=resolution-workflows": "discussions.html#resolution-workflows",
+                    "#/discussions?id=starting-a-new-discussion": "discussions.html#starting-a-new-discussion",
+                    "#/discussions?id=unreplied-discussions": "discussions.html#unreplied-discussions",
+                    "#/files": "files.html",
+                    "#/files?id=code-review-files": "files.html#code-review-files",
+                    "#/files?id=collapsed-sections": "files.html#collapsed-sections",
+                    "#/files?id=column-headings": "files.html#column-headings",
+                    "#/files?id=diff-customization": "files.html#diff-customization",
+                    "#/files?id=diff-layout": "files.html#diff-layout",
+                    "#/files?id=diff-suppressing-states": "files.html#diff-suppressing-states",
+                    "#/files?id=diff-suppression-and-file-type": "files.html#diff-suppression-and-file-type",
+                    "#/files?id=file-contents": "files.html#file-contents",
+                    "#/files?id=file-diff": "files.html#file-diff",
+                    "#/files?id=file-header": "files.html#file-header",
+                    "#/files?id=file-list": "files.html#file-list",
+                    "#/files?id=file-matrix": "files.html#file-matrix",
+                    "#/files?id=forked-repos-tracking-upstream-changes": "files.html#forked-repos-tracking-upstream-changes",
+                    "#/files?id=generated-files": "files.html#generated-files",
+                    "#/files?id=line-discussion": "files.html#line-discussion",
+                    "#/files?id=mark-reviewed": "files.html#mark-reviewed",
+                    "#/files?id=rebasing": "files.html#rebasing",
+                    "#/files?id=revision-cells": "files.html#revision-cells",
+                    "#/files?id=single-file-mode": "files.html#single-file-mode",
+                    "#/files?id=special-states": "files.html#special-states",
+                    "#/files?id=support-for-specific-workflows": "files.html#support-for-specific-workflows",
+                    "#/registration": "registration.html",
+                    "#/registration?id=authorization-scopes": "registration.html#authorization-scopes",
+                    "#/registration?id=github-authorizations": "registration.html#github-authorizations",
+                    "#/registration?id=oauth-restrictions": "registration.html#oauth-restrictions",
+                    "#/registration?id=registration-and-github-authorization": "registration.html#registration-and-github-authorization",
+                    "#/registration?id=subscribing-organizations-member-sign-up": "registration.html#subscribing-organizations-member-sign-up",
+                    "#/registration?id=subscriptions": "registration.html#subscriptions",
+                    "#/repositories": "repositories.html",
+                    "#/repositories?id=approve-button-output": "repositories.html#approve-button-output",
+                    "#/repositories?id=completion-condition": "repositories.html#completion-condition",
+                    "#/repositories?id=condition-output": "repositories.html#condition-output",
+                    "#/repositories?id=connecting-repositories": "repositories.html#connecting-repositories",
+                    "#/repositories?id=create-reviews-for-your-own-prs": "repositories.html#create-reviews-for-your-own-prs",
+                    "#/repositories?id=current-and-future": "repositories.html#current-and-future",
+                    "#/repositories?id=default-review-style": "repositories.html#default-review-style",
+                    "#/repositories?id=development-environment": "repositories.html#development-environment",
+                    "#/repositories?id=discussion-participant-dismissers": "repositories.html#discussion-participant-dismissers",
+                    "#/repositories?id=prototype-repo": "repositories.html#prototype-repo",
+                    "#/repositories?id=repo-settings": "repositories.html#repo-settings",
+                    "#/repositories?id=repositories": "repositories.html#repositories",
+                    "#/repositories?id=review-state-input": "repositories.html#review-state-input",
+                    "#/repositories?id=review-status-in-github-pr": "repositories.html#review-status-in-github-pr",
+                    "#/repositories?id=reviewable-badge": "repositories.html#reviewable-badge",
+                    "#/repositories?id=reviews-in-connected-vs-unconnected-repos": "repositories.html#reviews-in-connected-vs-unconnected-repos",
+                    "#/repositories?id=security-concerns": "repositories.html#security-concerns",
+                    "#/reviews": "reviews.html",
+                    "#/reviews?id=approval-levels": "reviews.html#approval-levels",
+                    "#/reviews?id=changes": "reviews.html#changes",
+                    "#/reviews?id=changes-commits": "reviews.html#changes-commits",
+                    "#/reviews?id=changes-summary": "reviews.html#changes-summary",
+                    "#/reviews?id=checks": "reviews.html#checks",
+                    "#/reviews?id=code-review": "reviews.html#code-review",
+                    "#/reviews?id=counters": "reviews.html#counters",
+                    "#/reviews?id=files": "reviews.html#files",
+                    "#/reviews?id=keyboard-shortcuts": "reviews.html#keyboard-shortcuts",
+                    "#/reviews?id=labels-and-participants-summary": "reviews.html#labels-and-participants-summary",
+                    "#/reviews?id=merge": "reviews.html#merge",
+                    "#/reviews?id=publish": "reviews.html#publish",
+                    "#/reviews?id=review-toolbar": "reviews.html#review-toolbar",
+                    "#/reviews?id=revisions": "reviews.html#revisions",
+                    "#/reviews?id=sync-requested-reviewers": "reviews.html#sync-requested-reviewers",
+                    "#/reviews?id=user-roles": "reviews.html#user-roles",
+                    "#/subscriptions": "subscriptions.html",
+                    "#/subscriptions?id=canceling-a-subscription": "subscriptions.html#canceling-a-subscription",
+                    "#/subscriptions?id=managing-the-scope-of-your-subscription": "subscriptions.html#managing-the-scope-of-your-subscription",
+                    "#/subscriptions?id=payments": "subscriptions.html#payments",
+                    "#/subscriptions?id=selecting-a-plan": "subscriptions.html#selecting-a-plan",
+                    "#/subscriptions?id=subscription-ownership": "subscriptions.html#subscription-ownership",
+                    "#/subscriptions?id=subscriptions": "subscriptions.html#subscriptions",
+                }
+                var redirect = hashMap[hash];
+                if (redirect) {
+                    window.location.replace(window.location.pathname + redirect);
+                }
+            }
+        </script>
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html" class="active"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Reviewable User Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#reviews-dashboard" id="reviews-dashboard">Reviews dashboard</a></h1>
+<p>Click the <strong>Reviews</strong> button at the very top of the page to display the reviews list. Here, you'll find all open pull requests in which you are a participant. As a participant, these PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to).  Reviewable automatically updates this list at least once per minute (and data held in Reviewable is updated in real time), so there's no need to reload the page.</p>
+<div class="tip">
+<p>If PRs appear to be missing from the list, try clicking the <strong>Include stalled pull requests/reviews</strong> link at the bottom of the panel. You may also want to click the green <strong>Also show team reviews</strong> or <strong>Also show private reviews</strong> buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.</p>
+</div>
+<p><img src="images/reviews_4.png" alt="reviewable reviews list" /></p>
+<p>Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter <code>+open</code> in the search bar to hide the closed PRs.  There's no way to show more or older closed PRs, you'll need to use GitHub to search for those.</p>
+<p>PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the <strong>Waiting on me</strong> group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).</p>
+<p>You can modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the <a href="repositories.html">Repository page</a>.</p>
+<h2><a class="header" href="#review-state" id="review-state">Review state</a></h2>
+<p>Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first, and people whose attention the review currently needs to the right of the <i class="fa fa-hand-o-right"></i>. You can see the approval status icon for any reviewer, which will appear with a <i class="fa fa-circle" style="color: #D87D7C"></i> if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels (if any).</p>
+<p><img src="images/reviews_10.png" alt="reviews list" /></p>
+<p>The <i class="fa fa-chain-broken" style="color: #7D8084"></i> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the <a href="repositories.html">Repository page</a>.</p>
+<p>A <i class="fa fa-calendar-times-o" style="color: #7D8084"></i> icon indicates a stalled review that has not been updated in over two weeks.</p>
+<p>Counter reflect the same information as you'll see on the review page:</p>
+<p><img src="images/reviews_5.png" alt="reviewable review state" /></p>
+<p>If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs but doesn't give access to merge options — for that, please open the review page.</p>
+<p>Other possible states include <strong>Merged</strong>, <strong>Closed</strong>, and <strong>Archived</strong> (automatically, for old reviews — just open to unarchive). No state appears for any PR not yet connected to a review.</p>
+<p><a id="open-review"></a></p>
+<h2><a class="header" href="#open-a-review" id="open-a-review">Open a review</a></h2>
+<p>Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #85C88B"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.</p>
+<p>Click the link on the right end of a listing to access the pull request on GitHub.</p>
+<h2><a class="header" href="#filter-reviews" id="filter-reviews">Filter reviews</a></h2>
+<p>In the filter field, enter one or more terms to match in the PR summary, repository, number, milestone, labels, author username, or blocking reviewer.  The query is immediately reflected in the URL if you'd like to bookmark it.</p>
+<p>You can also use the special filters in the table below, adding either a <code>+</code> or <code>-</code> prefix to the special term (such as <code>+open</code>) to require or prohibit the specified condition respectively.</p>
+<p>Add an OR operator to the positive filter by entering a comma. For example, <code>+needs:review,needs:fix</code> will filter for all reviews that need work, or have a failing check. For negative filters, the comma functions as an AND operator. More complex boolean expressions are not supported.</p>
+<p>For the <code>±label:<i>name</i></code> filter, you must use double quotes around the label name if it contains spaces.</p>
+<table><thead><tr><th>Filter</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>±open</code></td><td>Currently open PR</td></tr>
+<tr><td><code>±red</code></td><td>PRs with red counters</td></tr>
+<tr><td><code>±mine</code></td><td>Created, assigned, and requested PRs</td></tr>
+<tr><td><code>±label:<i>name</i></code></td><td>PRs with given label</td></tr>
+<tr><td><code>±needs:</code></td><td> </td></tr>
+<tr><td>    <code>review</code></td><td>Incomplete reviews</td></tr>
+<tr><td>    <code>fix</code></td><td>Reviews with failing checks</td></tr>
+<tr><td>    <code>merge</code></td><td>Completed and clean reviews</td></tr>
+<tr><td>    <code>me</code></td><td>Reviews waiting on you</td></tr>
+<tr><td>    <code>author</code></td><td>Reviews waiting on author</td></tr>
+<tr><td>    <code>reviewer</code></td><td>Reviews waiting on a reviewer</td></tr>
+<tr><td><code>±am:</code></td><td> </td></tr>
+<tr><td>    <code>author</code></td><td>Created PRs</td></tr>
+<tr><td>    <code>assigned</code></td><td>Assigned PRs</td></tr>
+<tr><td>    <code>requested</code></td><td>Requested reviewer PRs</td></tr>
+<tr><td><code>±draft</code></td><td>PR draft, not yet fully open</td></tr>
+<tr><td><code>±merged</code></td><td>PR that was successfully merged</td></tr>
+<tr><td><code>±closed</code></td><td>PR that was closed without merging</td></tr>
+<tr><td><code>±public</code></td><td>PRs from public repos</td></tr>
+<tr><td><code>±private</code></td><td>PRs from private repos</td></tr>
+<tr><td><code>±starred</code></td><td>PRs from repos you starred</td></tr>
+<tr><td><code>±watched</code></td><td>PRs from repos you're watching</td></tr>
+</tbody></table>
+<div class="tip">
+<p>Click the small <strong>Set as your default</strong> link to set the query that will automatically be applied when you load the page.</p>
+</div>
+<p><img src="images/reviews_6.png" alt="reviewable filter field" /></p>
+<p>If shown, you can click the <strong>Include stalled pull requests/reviews</strong> link near the bottom of the panel to exclude or include any stalled PRs.  The current state of this toggle is reflected in the URL, so you can bookmark it.</p>
+<h2><a class="header" href="#other-toggles" id="other-toggles">Other toggles</a></h2>
+<p>At the bottom of the Reviews page, you’ll find two toggle buttons:</p>
+<p><img src="images/reviews_14.png" alt="reviewable reviews list toggles" /></p>
+<p><strong>Show pull request not yet connected to Reviewable</strong></p>
+<p>If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with the <i class="fa fa-plus-circle" style="color: #85C88B"></i>, and clicking that PR will connect that PR to a review and insert a link into the PR description.</p>
+<p>You may want to turn off this toggle if you only want to see PRs from connected repositories.</p>
+<p><strong>Also show pull request you’re not involved with from all repos to which you can push.</strong></p>
+<p>If this toggle is on, the list includes all open PRs from repos where you have commit privileges, even if you're not a participant.  This is useful if you need to monitor repos for incoming PRs, such as if you're a manager, or an admin on an open source project.</p>
+<p>Optionally, you can restrict this set of repos to only those repos connected to Reviewable, or that you watched or starred on GitHub. This can be useful if you have push permissions to a lot of repos and, for example, you don’t want to see random open source repos while at work.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="discussions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="accountsettings.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="discussions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="accountsettings.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
+

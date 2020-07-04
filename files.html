@@ -1,0 +1,525 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Code review files - Reviewable User Manual</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
+
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        <script>
+            var hash = window.location.hash;
+            if (hash.startsWith("#/")) { // Old SPA style link.  Identify redirect.
+                var hashMap = {
+                    "#/": "introduction.html",
+                    "#/?id=help-on-using-reviewable": "introduction.html#help-on-using-reviewable",
+                    "#/?id=how-to-use-this-guide": "introduction.html#how-to-use-this-guide",
+                    "#/?id=introduction": "introduction.html#introduction",
+                    "#/?id=staying-up-to-date": "introduction.html#staying-up-to-date",
+                    "#/abnormal": "abnormal.html",
+                    "#/abnormal?id=abnormal-conditions": "abnormal.html#abnormal-conditions",
+                    "#/abnormal?id=crash": "abnormal.html#crash",
+                    "#/abnormal?id=firebase-connection-trouble": "abnormal.html#firebase-connection-trouble",
+                    "#/abnormal?id=forced-upgrade": "abnormal.html#forced-upgrade",
+                    "#/abnormal?id=github-status": "abnormal.html#github-status",
+                    "#/accountsettings": "accountsettings.html",
+                    "#/accountsettings?id=account-settings": "accountsettings.html#account-settings",
+                    "#/accountsettings?id=adjust-contrast": "accountsettings.html#adjust-contrast",
+                    "#/accountsettings?id=custom-diff-font": "accountsettings.html#custom-diff-font",
+                    "#/accountsettings?id=custom-key-bindings": "accountsettings.html#custom-key-bindings",
+                    "#/accountsettings?id=custom-stylesheet": "accountsettings.html#custom-stylesheet",
+                    "#/accountsettings?id=github-authorizations-granted": "accountsettings.html#github-authorizations-granted",
+                    "#/accountsettings?id=line-link-template": "accountsettings.html#line-link-template",
+                    "#/dashboard": "dashboard.html",
+                    "#/dashboard?id=filter-reviews": "dashboard.html#filter-reviews",
+                    "#/dashboard?id=open-review": "dashboard.html#open-review",
+                    "#/dashboard?id=other-toggles": "dashboard.html#other-toggles",
+                    "#/dashboard?id=review-state": "dashboard.html#review-state",
+                    "#/dashboard?id=reviews-dashboard": "dashboard.html#reviews-dashboard",
+                    "#/discussions": "discussions.html",
+                    "#/discussions?id=change-disposition": "discussions.html#change-disposition",
+                    "#/discussions?id=checking-and-changing-dispositions": "discussions.html#checking-and-changing-dispositions",
+                    "#/discussions?id=code-review-discussions": "discussions.html#code-review-discussions",
+                    "#/discussions?id=dispositions": "discussions.html#dispositions",
+                    "#/discussions?id=dispositions-and-resolution": "discussions.html#dispositions-and-resolution",
+                    "#/discussions?id=ending-a-discussion": "discussions.html#ending-a-discussion",
+                    "#/discussions?id=inline-directives": "discussions.html#inline-directives",
+                    "#/discussions?id=new-and-old-comments": "discussions.html#new-and-old-comments",
+                    "#/discussions?id=replying-to-a-discussion": "discussions.html#replying-to-a-discussion",
+                    "#/discussions?id=replying-via-email-or-on-github": "discussions.html#replying-via-email-or-on-github",
+                    "#/discussions?id=resolution-workflows": "discussions.html#resolution-workflows",
+                    "#/discussions?id=starting-a-new-discussion": "discussions.html#starting-a-new-discussion",
+                    "#/discussions?id=unreplied-discussions": "discussions.html#unreplied-discussions",
+                    "#/files": "files.html",
+                    "#/files?id=code-review-files": "files.html#code-review-files",
+                    "#/files?id=collapsed-sections": "files.html#collapsed-sections",
+                    "#/files?id=column-headings": "files.html#column-headings",
+                    "#/files?id=diff-customization": "files.html#diff-customization",
+                    "#/files?id=diff-layout": "files.html#diff-layout",
+                    "#/files?id=diff-suppressing-states": "files.html#diff-suppressing-states",
+                    "#/files?id=diff-suppression-and-file-type": "files.html#diff-suppression-and-file-type",
+                    "#/files?id=file-contents": "files.html#file-contents",
+                    "#/files?id=file-diff": "files.html#file-diff",
+                    "#/files?id=file-header": "files.html#file-header",
+                    "#/files?id=file-list": "files.html#file-list",
+                    "#/files?id=file-matrix": "files.html#file-matrix",
+                    "#/files?id=forked-repos-tracking-upstream-changes": "files.html#forked-repos-tracking-upstream-changes",
+                    "#/files?id=generated-files": "files.html#generated-files",
+                    "#/files?id=line-discussion": "files.html#line-discussion",
+                    "#/files?id=mark-reviewed": "files.html#mark-reviewed",
+                    "#/files?id=rebasing": "files.html#rebasing",
+                    "#/files?id=revision-cells": "files.html#revision-cells",
+                    "#/files?id=single-file-mode": "files.html#single-file-mode",
+                    "#/files?id=special-states": "files.html#special-states",
+                    "#/files?id=support-for-specific-workflows": "files.html#support-for-specific-workflows",
+                    "#/registration": "registration.html",
+                    "#/registration?id=authorization-scopes": "registration.html#authorization-scopes",
+                    "#/registration?id=github-authorizations": "registration.html#github-authorizations",
+                    "#/registration?id=oauth-restrictions": "registration.html#oauth-restrictions",
+                    "#/registration?id=registration-and-github-authorization": "registration.html#registration-and-github-authorization",
+                    "#/registration?id=subscribing-organizations-member-sign-up": "registration.html#subscribing-organizations-member-sign-up",
+                    "#/registration?id=subscriptions": "registration.html#subscriptions",
+                    "#/repositories": "repositories.html",
+                    "#/repositories?id=approve-button-output": "repositories.html#approve-button-output",
+                    "#/repositories?id=completion-condition": "repositories.html#completion-condition",
+                    "#/repositories?id=condition-output": "repositories.html#condition-output",
+                    "#/repositories?id=connecting-repositories": "repositories.html#connecting-repositories",
+                    "#/repositories?id=create-reviews-for-your-own-prs": "repositories.html#create-reviews-for-your-own-prs",
+                    "#/repositories?id=current-and-future": "repositories.html#current-and-future",
+                    "#/repositories?id=default-review-style": "repositories.html#default-review-style",
+                    "#/repositories?id=development-environment": "repositories.html#development-environment",
+                    "#/repositories?id=discussion-participant-dismissers": "repositories.html#discussion-participant-dismissers",
+                    "#/repositories?id=prototype-repo": "repositories.html#prototype-repo",
+                    "#/repositories?id=repo-settings": "repositories.html#repo-settings",
+                    "#/repositories?id=repositories": "repositories.html#repositories",
+                    "#/repositories?id=review-state-input": "repositories.html#review-state-input",
+                    "#/repositories?id=review-status-in-github-pr": "repositories.html#review-status-in-github-pr",
+                    "#/repositories?id=reviewable-badge": "repositories.html#reviewable-badge",
+                    "#/repositories?id=reviews-in-connected-vs-unconnected-repos": "repositories.html#reviews-in-connected-vs-unconnected-repos",
+                    "#/repositories?id=security-concerns": "repositories.html#security-concerns",
+                    "#/reviews": "reviews.html",
+                    "#/reviews?id=approval-levels": "reviews.html#approval-levels",
+                    "#/reviews?id=changes": "reviews.html#changes",
+                    "#/reviews?id=changes-commits": "reviews.html#changes-commits",
+                    "#/reviews?id=changes-summary": "reviews.html#changes-summary",
+                    "#/reviews?id=checks": "reviews.html#checks",
+                    "#/reviews?id=code-review": "reviews.html#code-review",
+                    "#/reviews?id=counters": "reviews.html#counters",
+                    "#/reviews?id=files": "reviews.html#files",
+                    "#/reviews?id=keyboard-shortcuts": "reviews.html#keyboard-shortcuts",
+                    "#/reviews?id=labels-and-participants-summary": "reviews.html#labels-and-participants-summary",
+                    "#/reviews?id=merge": "reviews.html#merge",
+                    "#/reviews?id=publish": "reviews.html#publish",
+                    "#/reviews?id=review-toolbar": "reviews.html#review-toolbar",
+                    "#/reviews?id=revisions": "reviews.html#revisions",
+                    "#/reviews?id=sync-requested-reviewers": "reviews.html#sync-requested-reviewers",
+                    "#/reviews?id=user-roles": "reviews.html#user-roles",
+                    "#/subscriptions": "subscriptions.html",
+                    "#/subscriptions?id=canceling-a-subscription": "subscriptions.html#canceling-a-subscription",
+                    "#/subscriptions?id=managing-the-scope-of-your-subscription": "subscriptions.html#managing-the-scope-of-your-subscription",
+                    "#/subscriptions?id=payments": "subscriptions.html#payments",
+                    "#/subscriptions?id=selecting-a-plan": "subscriptions.html#selecting-a-plan",
+                    "#/subscriptions?id=subscription-ownership": "subscriptions.html#subscription-ownership",
+                    "#/subscriptions?id=subscriptions": "subscriptions.html#subscriptions",
+                }
+                var redirect = hashMap[hash];
+                if (redirect) {
+                    window.location.replace(window.location.pathname + redirect);
+                }
+            }
+        </script>
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html" class="active"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Reviewable User Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#code-review-files" id="code-review-files">Code review files</a></h1>
+<p>This chapter explains in detail how you manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.</p>
+<h2><a class="header" href="#revision-cells" id="revision-cells">Revision cells</a></h2>
+<p>A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.</p>
+<p><img src="images/filematrix_9.png" alt="reviewable file matrix status" /></p>
+<p>The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.</p>
+<p><img src="images/filematrix_8.png" alt="reviewable file matrix diff bounds" /></p>
+<p><a id="mark-reviewed"></a></p>
+<h2><a class="header" href="#mark-as-reviewed" id="mark-as-reviewed">Mark as reviewed</a></h2>
+<p>One of Reviewable's core features is letting you track the reviewed state of each file at each revision, for each reviewer.  This enables you to easily remember — and indicate to others — where you left off in the review and easily view only subsequent changes.  Marking a file as reviewed doesn't necessarily mean that you think it's ready for merging, but rather only that you reviewed it at the given revision and added all your comments.</p>
+<p><img src="images/filediffs_4.png" alt="reviewable fill diffs mark file as reviewed" /></p>
+<p>The small button to the left of the file path indicates your current reviewed state for the file at the right diff bound and lets you change it.  Typically, as a reviewer, the button will be red to indicate that you need to review this diff, and will turn green when clicked to indicate that you've marked the file as reviewed.  There are other less common states as well:</p>
+<table><thead><tr><th align="center">Color</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center"><img src="images/filematrix_2.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed.</td></tr>
+<tr><td align="center"><img src="images/filematrix_3.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.</td></tr>
+<tr><td align="center"><img src="images/filematrix_4.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, or you are the author of the PR.</td></tr>
+<tr><td align="center"><img src="images/filematrix_5.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.</td></tr>
+</tbody></table>
+<p>Review marks remain in a draft state and are only visible to you until <a href="reviews.html#publish">published</a>.  Recissions are publicized immediately however.</p>
+<h2><a class="header" href="#file-matrix" id="file-matrix">File matrix</a></h2>
+<p>Click the toggle to display a history matrix showing all files and revisions. Here, you can:</p>
+<ul>
+<li>View a summary of the PR's change history for each file.</li>
+<li>Set diff bounds for any and all files.</li>
+<li>Mark files as reviewed.</li>
+<li>View the most recent reviewers of each file.</li>
+<li>Jump to a file's diff.</li>
+<li>See delta stats for a diff and all diffs.</li>
+</ul>
+<p><img src="images/filematrix_1.png" alt="reviewable file matrix" title=":size=1144" /></p>
+<h3><a class="header" href="#file-list" id="file-list">File list</a></h3>
+<p>The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are hidden by default, but can be revealed with a switch in the <a href="reviews.html#changes-summary">Changes summary box</a>.</p>
+<p>Click the file path to move directly to the diff for that file. Hold down the <code>⌘</code>, <code>Ctrl</code> or <code>⇧</code> key (as appropriate for your browser) when clicking to open the file diff in a new browser tab.  To open every file in a new tab at once, hold down the modifier key and click the <strong>All</strong> button that appears in the header of the file matrix.</p>
+<p>File paths in italics indicate that the file is currently elided from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.</p>
+<p>To the left of the file path there's a button to <a href="#mark-reviewed">mark the file as reviewed</a>.</p>
+<p>To the right of the file path is a list of the last published reviewers for the file.  It may be that those people did not review the latest revision, and other people may have reviewed previous revisions.  Hover over an avatar for details about the user.</p>
+<p>Off the right side of the matrix are delta stats for the current diffs, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.</p>
+<p>Files can also be grouped, like for the <strong>Tests</strong> group in the screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  See the section on <a href="repositories.html#condition-output">custom review completion conditions</a> for instructions on how to group files in your repository.</p>
+<h3><a class="header" href="#column-headings" id="column-headings">Column headings</a></h3>
+<p>Each column in the matrix represents a single revision of each of the files in the review. Each revision consists of one or more commits.  The headings vary in style to indicate the different kinds of revisions.</p>
+<table><thead><tr><th align="center">Label</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center">r1</td><td>An immutable revision (even if the branch is rebased).</td></tr>
+<tr><td align="center"><em>r1</em></td><td>A provisional revision whose commits may still change.</td></tr>
+<tr><td align="center">~r1~</td><td>Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.</td></tr>
+<tr><td align="center"><span style="font-size: 1.25em">👁</span></td><td>A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.</td></tr>
+<tr><td align="center">⊥</td><td>This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.</td></tr>
+</tbody></table>
+<p>You can also drag in the diff header to bulk-select the diff bounds. Doing so in the header will set the diff bounds for all files as close as possible to the new setting. Many reviewers choose to set diff bounds this way instead of file-by-file to see one coherent set of diffs at a time.</p>
+<h2><a class="header" href="#file-contents" id="file-contents">File contents</a></h2>
+<p>Below the <a href="discussions.html">top-level discussions</a> you'll find the file contents.</p>
+<h3><a class="header" href="#file-header" id="file-header">File header</a></h3>
+<p>At the top of each file diff panel there's a file path. Hold down <code>⌘</code>, <code>Ctrl</code>, or <code>⇧</code> (as appropriate for your browser) to open it in a new tab.  If the file paths are too long some may be collapsed in places with an …; hover over the path or swipe to expand and see the full path.  You can also double-click on or near the path to select it — even when collapsed — for easy copying.</p>
+<p>The header holds the standard <a href="#mark-reviewed">mark as reviewed</a> button and <a href="#revision-cells">revision cells</a> for adjusting diff bounds.</p>
+<p>To the right of the cells you'll see the delta stats for the current diff, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.</p>
+<p><img src="images/filediffs_1.png" alt="reviewable fill diffs" /></p>
+<div class="tip">
+<p>Any special messages will appear immediately underneath the header.  These include rename sequence details, explanations for why a diff isn't showing, etc.</p>
+</div>
+<h3><a class="header" href="#file-diff" id="file-diff">File diff</a></h3>
+<p>In the File Diff panel, you can see the diff between the two revisions of the file currently set as the diff bounds.  Deletions are indicated with a red highlight and additions with a green one.  You can <a href="accountsettings.html#adjust-contrast">adjust the contrast</a> in the account settings panel.</p>
+<p>Most languages also get automatic syntax highlighting.  If your file isn't getting highlighted, please <a href="https://github.com/reviewable/reviewable/issues">open an issue</a> so that we can add the right file extension mapping.  If the language is not one of the 120+ that have syntax highlighting in <a href="https://highlightjs.org/">highlight.js</a>, you'll need to open an issue with that project or contribute a language definition module yourself.</p>
+<p><img src="images/filediffs_3.png" alt="reviewable fill diffs panel" /></p>
+<p>In the gutter (either beside or between the diffs) you may see any of the following markers that indicate some otherwise invisible property of the adjoining line(s):</p>
+<table><thead><tr><th align="center">Marker</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center"><code>⊥</code></td><td>This line only has changes in the base branch, between the base commits corresponding to the current diff bounds.</td></tr>
+<tr><td align="center"><code>␣</code></td><td>This line only has whitespace changes.</td></tr>
+<tr><td align="center"><code><i class="fa fa-check-square-o"></i></code></td><td>There are one or more resolved discussions on this line.  Click to reveal.</td></tr>
+</tbody></table>
+<div class="tip">
+<p>Reviewable only supports text file diffs at this time.  For images and other file types you'll need to go view the diff on GitHub — a convenient link will usually be provided.  You will still be able to post comments against such files but they won't be attached to a specific line.</p>
+</div>
+<p>If a file requires your review, you'll see a tab at the bottom of the diff to <a href="#mark-reviewed">mark the file as reviewed</a> and automatically advanced to the next file to review.</p>
+<h3><a class="header" href="#diff-layout" id="diff-layout">Diff layout</a></h3>
+<p>As you decrease the width of the browser window, the diff will convert from a side-by-side view to a unified view and vice-versa. Also, the code will automatically be wrapped at a reasonable, round number of columns proportional to the window width.  (Lines that are wrapped get a thick vertical bar on the left side.)</p>
+<p>You can override this behavior using the small caret in the top right corner of every diff:</p>
+<p><img src="images/filediffs_16.png" alt="reviewable fill diffs width control" /></p>
+<p>Drag the caret to manually set the number of columns at which to wrap code.  If you do, Reviewable will <em>always</em> use this margin and show a side-by-side diff only if your window is wide enough.  Click <strong>Auto</strong> to revert line wrapping control back to Reviewable. Finally, in either state, you can toggle on <strong>Single</strong> to force a unified diff view even if the window is wide enough to fit two columns.</p>
+<div class="tip">
+<p>All of these settings are personal but global across all files, PRs, and repos.</p>
+</div>
+<h3><a class="header" href="#collapsed-sections" id="collapsed-sections">Collapsed sections</a></h3>
+<p>Reviewable will automatically collapse sections of the diff with no meaningful changes and no discussions.  You can selectively expand these collapsed sections in a number of ways:</p>
+<p><img src="images/filediffs_10.png" alt="reviewable fill diffs expanding collapsing" /></p>
+<ol>
+<li>
+<p>You can click the small <strong>Expand</strong> tabs on the right to manually reveal more context above or below the collapsed section, a few lines at a time.</p>
+</li>
+<li>
+<p>If you see a small, light-colored declaration immediately below the collapsed section, this indicates the nearest syntactic unit that the code below is a part of — e.g., a function or a class.  You can click this signature to expand the diff to show all of the syntactic unit.</p>
+</li>
+<li>
+<p>In the collapsed section gap, you will see some subset of the following line counts.  Clicking on any of these collapsed line categories will expand only those lines (plus a bit of context around them).</p>
+</li>
+</ol>
+<ul>
+<li><strong>No changes</strong> — lines with no changes at all between your current diff bounds.</li>
+<li><strong>Whitespace changes</strong> — this is the count of lines in which only the whitespace has changed (marked with a <code>␣</code> when expanded).</li>
+<li><strong>Base commit changes</strong> — are lines in which only the base branch has changed, likely not due to work on this pull request (marked with a <code>⊥</code> when expanded)</li>
+<li><strong>Resolved discussion</strong> — are lines with resolved discussions attached (marked with a <code><i class="fa fa-check-square-o"></i></code> when expanded).</li>
+</ul>
+<ol start="4">
+<li>Click the <strong>Collapsed</strong> drop-down to view options for expanding everything — either for <strong>this file</strong> or <strong>all files</strong>.  The toggle button selects whether to <strong>collapse whitespace changes</strong> in all files in this review.  The setting will also be your default for new reviews.</li>
+</ol>
+<p><img src="images/filediffs_17.png" alt="reviewable fill diffs collapsed drop down" /></p>
+<div class="tip">
+<p>The only way to collapse expanded diff lines back down is to change the diff bounds.</p>
+</div>
+<p><a id="line-discussion"></a></p>
+<h2><a class="header" href="#line-specific-discussions" id="line-specific-discussions">Line-specific discussions</a></h2>
+<p>Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.  If you select some code first, it will automatically be quoted and copied into your message.</p>
+<p><img src="images/filediffs_12.png" alt="reviewable fill diffs begin a new discussion" /></p>
+<p>This new discussion will also appear in the diffs of other revisions, at the nearest corresponding line. It won’t disappear until that discussion is resolved or withdrawn, even if the underlying file changes drastically.  Click the small purple dog-ear button to switch the diff to the exact one on which the comment was made.</p>
+<div class="important">
+<p>If the dog-ear is red, this indicates that the current context may be inaccurate because of significant changes that have been made since the time the comment was made in the original revision. Click the red button to see the discussion in its original context.</p>
+</div>
+<p><img src="images/filediffs_13.png" alt="reviewable fill diffs switch to original revision" /></p>
+<p>Next to the dog-ear you'll find the line number that this discussion is on (relative to the file contents of the current diff), which links to GitHub's view of the file by default.</p>
+<div class="tip">
+<p>You can <a href="accountsettings.html#line-link-template">customize the line link</a> to open your favorite editor on the given line instead.</p>
+</div>
+<p>For lots more information on discussions, please see the <a href="discussions.html">next chapter</a>.</p>
+<h2><a class="header" href="#diff-customization" id="diff-customization">Diff customization</a></h2>
+<p>You can customize which files are diffed and how the diffs are displayed at the repository level.</p>
+<h3><a class="header" href="#generated-files" id="generated-files">Generated files</a></h3>
+<p>Reviewable will automatically detect many kinds of generated files and hide the diff by default. If you'd like to add a new common pattern (based either on the filename or the contents of the file), don't hesitate to let us know. If your generated files are specific to your project, you have two options:</p>
+<ul>
+<li>You can tweak your build to insert the exact text <code>GENERATED FILE DO NOT EDIT</code> as a comment on a line by itself into the generated file. There can be up to 4 additional characters on the line before and after the marker text. We have this restriction so that Reviewable doesn't accidentally consider your build script itself to be generated!</li>
+<li>You can use <code>.gitattributes</code> files checked into your repo to control diffing — see below.</li>
+</ul>
+<h3><a class="header" href="#diff-suppression-and-file-type" id="diff-suppression-and-file-type">Diff suppression and file type</a></h3>
+<p>Reviewable respects the diff settings in your <code>.gitattributes</code> files to the best of its ability. For example, to disable diffs for any files in the vendor directory and use PHP highlighting for all .phpt files, you could insert a <code>.gitattributes</code> file in the root of your repo, like this:</p>
+<pre><code>    /vendor/** -diff
+    *.phpt diff=php
+</code></pre>
+<p>For details on the syntax, see the <a href="https://git-scm.com/docs/gitattributes">gitattributes reference doc</a>.</p>
+<h2><a class="header" href="#special-states" id="special-states">Special states</a></h2>
+<p>The way diffs are displayed is suject to some special states, on both file-by-file and whole-review bases.</p>
+<h3><a class="header" href="#diff-suppressing-states" id="diff-suppressing-states">Diff-suppressing states</a></h3>
+<p>There are many situations in which a diff won't be produced for a given file — either to ensure good performance, or because it isn't sensible to do so. Some examples include:</p>
+<ul>
+<li>files that appear to be binary or minified,</li>
+<li>diffs that are too big or were taking too long to compute,</li>
+<li>files with too many lines,</li>
+<li>files with custom diffs specified in <code>.gitattributes</code> that Reviewable cannot respect.</li>
+</ul>
+<p>In such cases, the file will appear together with a message explaining why the diff is missing. Typically, there will also be a button such as <strong>Try Again</strong> or <strong>View on GitHub</strong> by which you can override or bypass the condition.</p>
+<div class="important">
+<p>Be careful if you’re trying to use <code>⌘-f</code> or <code>ctrl-f</code> to find something in the diffs when some are not shown.</p>
+</div>
+<div class="tip">
+<p>If diffs that make sense to be shown were omitted for some reason, you'll find a special notice above the first file diff that explains what happened and lets you override the decision.  (See screenshot below.)</p>
+</div>
+<h3><a class="header" href="#single-file-mode" id="single-file-mode">Single file mode</a></h3>
+<p>Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (25 files as of this writing). In this mode, only one file will appear at a time. You'll also see a summary explanation just above the first (and only) file diff, together with a button which you can click to force all files to appear anyway until you leave the page.</p>
+<p><img src="images/filediffs_11.png" alt="reviewable fill diffs some diffs not shown" /></p>
+<p>Single-file mode is similar — but not identical — to the mode that you enter when you <code>⌘</code>, <code>Ctrl</code>, or <code>⇧</code> click a file open into a separate tab.</p>
+<p>This panel will also appear if any diffs were throttled or big diffs were elided from display. However, in those cases the page will remain in multi-file mode. The text in the panel will also reflect the specific conditions.</p>
+<h2><a class="header" href="#support-for-specific-workflows" id="support-for-specific-workflows">Support for specific workflows</a></h2>
+<p>Reviewable has extra built-in support for some specific development workflows.</p>
+<h3><a class="header" href="#rebasing" id="rebasing">Rebasing</a></h3>
+<p>Reviewable gracefully supports rebasing and force-pushing to your branch PR in the middle of a review.  Previous revisions are preserved and marked as obsolete (with a strikethrough), even if the commits they’re composed of have disappeared during the rebase.  You’ll still be able to diff against those revisions, and changes between the old and new base will automatically collapse in the diff so as to avoid distraction from deltas that don’t relate to this PR.</p>
+<div class="tip">
+<p>To avoid garbage collection, Reviewable pins these commits in your repo using special refs under <code>refs/reviewable</code> — as long as the repository is connected.</p>
+</div>
+<p>Reviewable also uses heuristics to match rebased commits to their ancestors using commit messages.  When successful, this enables Reviewable to suggest minimum-delta revision pairs for diffing in the “review each commit” style even if you reordered the commits.  Arcs that link blocks of revisions above the file matrix show a high-level overview of this mapping.  (We don’t show matches between individual revisions because that can quickly lead to an unreadable diagram.)</p>
+<h3><a class="header" href="#forked-repos-tracking-upstream-changes" id="forked-repos-tracking-upstream-changes">Forked repos tracking upstream changes</a></h3>
+<p>Some advanced workflows require overwriting the target branch of a PR with the head branch when it's ready to merge. This is necessary, for example, if you're maintaining a fork and rebasing from the upstream master. In such cases, both GitHub and Reviewable will choose the wrong base commit to compare files, and display not only all of the upstream changes—but also all the extra changes made in your fork over time.</p>
+<p>To get the diff that you want, add a <code>Merge manually by overwriting target</code> label (exact spelling!) to your PR. This will cause Reviewable to compare files against the current head of the target branch. Now, you'll see upstream changes and any conflicts you resolved during the rebase, while leaving out modifications in your fork that survived unscathed.</p>
+<div class="tip">
+<p>For best results, add the label to the PR when you first create it.</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="reviews.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="discussions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="reviews.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="discussions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
+

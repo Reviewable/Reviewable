@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Code review discussions - Reviewable User Manual</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
+
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        <script>
+            var hash = window.location.hash;
+            if (hash.startsWith("#/")) { // Old SPA style link.  Identify redirect.
+                var hashMap = {
+                    "#/": "introduction.html",
+                    "#/?id=help-on-using-reviewable": "introduction.html#help-on-using-reviewable",
+                    "#/?id=how-to-use-this-guide": "introduction.html#how-to-use-this-guide",
+                    "#/?id=introduction": "introduction.html#introduction",
+                    "#/?id=staying-up-to-date": "introduction.html#staying-up-to-date",
+                    "#/abnormal": "abnormal.html",
+                    "#/abnormal?id=abnormal-conditions": "abnormal.html#abnormal-conditions",
+                    "#/abnormal?id=crash": "abnormal.html#crash",
+                    "#/abnormal?id=firebase-connection-trouble": "abnormal.html#firebase-connection-trouble",
+                    "#/abnormal?id=forced-upgrade": "abnormal.html#forced-upgrade",
+                    "#/abnormal?id=github-status": "abnormal.html#github-status",
+                    "#/accountsettings": "accountsettings.html",
+                    "#/accountsettings?id=account-settings": "accountsettings.html#account-settings",
+                    "#/accountsettings?id=adjust-contrast": "accountsettings.html#adjust-contrast",
+                    "#/accountsettings?id=custom-diff-font": "accountsettings.html#custom-diff-font",
+                    "#/accountsettings?id=custom-key-bindings": "accountsettings.html#custom-key-bindings",
+                    "#/accountsettings?id=custom-stylesheet": "accountsettings.html#custom-stylesheet",
+                    "#/accountsettings?id=github-authorizations-granted": "accountsettings.html#github-authorizations-granted",
+                    "#/accountsettings?id=line-link-template": "accountsettings.html#line-link-template",
+                    "#/dashboard": "dashboard.html",
+                    "#/dashboard?id=filter-reviews": "dashboard.html#filter-reviews",
+                    "#/dashboard?id=open-review": "dashboard.html#open-review",
+                    "#/dashboard?id=other-toggles": "dashboard.html#other-toggles",
+                    "#/dashboard?id=review-state": "dashboard.html#review-state",
+                    "#/dashboard?id=reviews-dashboard": "dashboard.html#reviews-dashboard",
+                    "#/discussions": "discussions.html",
+                    "#/discussions?id=change-disposition": "discussions.html#change-disposition",
+                    "#/discussions?id=checking-and-changing-dispositions": "discussions.html#checking-and-changing-dispositions",
+                    "#/discussions?id=code-review-discussions": "discussions.html#code-review-discussions",
+                    "#/discussions?id=dispositions": "discussions.html#dispositions",
+                    "#/discussions?id=dispositions-and-resolution": "discussions.html#dispositions-and-resolution",
+                    "#/discussions?id=ending-a-discussion": "discussions.html#ending-a-discussion",
+                    "#/discussions?id=inline-directives": "discussions.html#inline-directives",
+                    "#/discussions?id=new-and-old-comments": "discussions.html#new-and-old-comments",
+                    "#/discussions?id=replying-to-a-discussion": "discussions.html#replying-to-a-discussion",
+                    "#/discussions?id=replying-via-email-or-on-github": "discussions.html#replying-via-email-or-on-github",
+                    "#/discussions?id=resolution-workflows": "discussions.html#resolution-workflows",
+                    "#/discussions?id=starting-a-new-discussion": "discussions.html#starting-a-new-discussion",
+                    "#/discussions?id=unreplied-discussions": "discussions.html#unreplied-discussions",
+                    "#/files": "files.html",
+                    "#/files?id=code-review-files": "files.html#code-review-files",
+                    "#/files?id=collapsed-sections": "files.html#collapsed-sections",
+                    "#/files?id=column-headings": "files.html#column-headings",
+                    "#/files?id=diff-customization": "files.html#diff-customization",
+                    "#/files?id=diff-layout": "files.html#diff-layout",
+                    "#/files?id=diff-suppressing-states": "files.html#diff-suppressing-states",
+                    "#/files?id=diff-suppression-and-file-type": "files.html#diff-suppression-and-file-type",
+                    "#/files?id=file-contents": "files.html#file-contents",
+                    "#/files?id=file-diff": "files.html#file-diff",
+                    "#/files?id=file-header": "files.html#file-header",
+                    "#/files?id=file-list": "files.html#file-list",
+                    "#/files?id=file-matrix": "files.html#file-matrix",
+                    "#/files?id=forked-repos-tracking-upstream-changes": "files.html#forked-repos-tracking-upstream-changes",
+                    "#/files?id=generated-files": "files.html#generated-files",
+                    "#/files?id=line-discussion": "files.html#line-discussion",
+                    "#/files?id=mark-reviewed": "files.html#mark-reviewed",
+                    "#/files?id=rebasing": "files.html#rebasing",
+                    "#/files?id=revision-cells": "files.html#revision-cells",
+                    "#/files?id=single-file-mode": "files.html#single-file-mode",
+                    "#/files?id=special-states": "files.html#special-states",
+                    "#/files?id=support-for-specific-workflows": "files.html#support-for-specific-workflows",
+                    "#/registration": "registration.html",
+                    "#/registration?id=authorization-scopes": "registration.html#authorization-scopes",
+                    "#/registration?id=github-authorizations": "registration.html#github-authorizations",
+                    "#/registration?id=oauth-restrictions": "registration.html#oauth-restrictions",
+                    "#/registration?id=registration-and-github-authorization": "registration.html#registration-and-github-authorization",
+                    "#/registration?id=subscribing-organizations-member-sign-up": "registration.html#subscribing-organizations-member-sign-up",
+                    "#/registration?id=subscriptions": "registration.html#subscriptions",
+                    "#/repositories": "repositories.html",
+                    "#/repositories?id=approve-button-output": "repositories.html#approve-button-output",
+                    "#/repositories?id=completion-condition": "repositories.html#completion-condition",
+                    "#/repositories?id=condition-output": "repositories.html#condition-output",
+                    "#/repositories?id=connecting-repositories": "repositories.html#connecting-repositories",
+                    "#/repositories?id=create-reviews-for-your-own-prs": "repositories.html#create-reviews-for-your-own-prs",
+                    "#/repositories?id=current-and-future": "repositories.html#current-and-future",
+                    "#/repositories?id=default-review-style": "repositories.html#default-review-style",
+                    "#/repositories?id=development-environment": "repositories.html#development-environment",
+                    "#/repositories?id=discussion-participant-dismissers": "repositories.html#discussion-participant-dismissers",
+                    "#/repositories?id=prototype-repo": "repositories.html#prototype-repo",
+                    "#/repositories?id=repo-settings": "repositories.html#repo-settings",
+                    "#/repositories?id=repositories": "repositories.html#repositories",
+                    "#/repositories?id=review-state-input": "repositories.html#review-state-input",
+                    "#/repositories?id=review-status-in-github-pr": "repositories.html#review-status-in-github-pr",
+                    "#/repositories?id=reviewable-badge": "repositories.html#reviewable-badge",
+                    "#/repositories?id=reviews-in-connected-vs-unconnected-repos": "repositories.html#reviews-in-connected-vs-unconnected-repos",
+                    "#/repositories?id=security-concerns": "repositories.html#security-concerns",
+                    "#/reviews": "reviews.html",
+                    "#/reviews?id=approval-levels": "reviews.html#approval-levels",
+                    "#/reviews?id=changes": "reviews.html#changes",
+                    "#/reviews?id=changes-commits": "reviews.html#changes-commits",
+                    "#/reviews?id=changes-summary": "reviews.html#changes-summary",
+                    "#/reviews?id=checks": "reviews.html#checks",
+                    "#/reviews?id=code-review": "reviews.html#code-review",
+                    "#/reviews?id=counters": "reviews.html#counters",
+                    "#/reviews?id=files": "reviews.html#files",
+                    "#/reviews?id=keyboard-shortcuts": "reviews.html#keyboard-shortcuts",
+                    "#/reviews?id=labels-and-participants-summary": "reviews.html#labels-and-participants-summary",
+                    "#/reviews?id=merge": "reviews.html#merge",
+                    "#/reviews?id=publish": "reviews.html#publish",
+                    "#/reviews?id=review-toolbar": "reviews.html#review-toolbar",
+                    "#/reviews?id=revisions": "reviews.html#revisions",
+                    "#/reviews?id=sync-requested-reviewers": "reviews.html#sync-requested-reviewers",
+                    "#/reviews?id=user-roles": "reviews.html#user-roles",
+                    "#/subscriptions": "subscriptions.html",
+                    "#/subscriptions?id=canceling-a-subscription": "subscriptions.html#canceling-a-subscription",
+                    "#/subscriptions?id=managing-the-scope-of-your-subscription": "subscriptions.html#managing-the-scope-of-your-subscription",
+                    "#/subscriptions?id=payments": "subscriptions.html#payments",
+                    "#/subscriptions?id=selecting-a-plan": "subscriptions.html#selecting-a-plan",
+                    "#/subscriptions?id=subscription-ownership": "subscriptions.html#subscription-ownership",
+                    "#/subscriptions?id=subscriptions": "subscriptions.html#subscriptions",
+                }
+                var redirect = hashMap[hash];
+                if (redirect) {
+                    window.location.replace(window.location.pathname + redirect);
+                }
+            }
+        </script>
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html" class="active"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Reviewable User Manual</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#code-review-discussions" id="code-review-discussions">Code review discussions</a></h1>
+<p>Review participants engage in discussions about the changes proposed in the pull request. A discussion is unresolved until it meets resolution criteria that corresponds to the dispositions of the participants. Any discussion will remain in place until it is resolved by the participants — irrespective of whatever changes occur to the files in the PR.  A discussion may also be unreplied for specific users; this state is independent of the discussion being resolved or not.</p>
+<p>This chapter covers all types of Reviewable discussions, including the general discussion, other top-level discussions, and all the various line-specific discussions that occur among all review participants.</p>
+<div class="tip">
+<p>All draft comments, pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the <a href="reviews.html#publish">Publishing section</a>.</p>
+</div>
+<p>Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.</p>
+<h2><a class="header" href="#starting-a-new-discussion" id="starting-a-new-discussion">Starting a new discussion</a></h2>
+<p>You can start a new discussion by clicking on a diff line, as explained <a href="files.html#line-discussion">here</a>.  If no diff is available for a file for some reason, you can also start a file-wide discussion by clicking on <strong>Start new discussion</strong> under the file header instead.</p>
+<p>For discussions that are not specific to a file, click the <strong>Start a new discussion</strong> button at the bottom of the top-level discussions area (below the general discussion).  Typically, you would begin a top-level discussion if you want to have a distinct file-independent thread in which you can track the disposition of participants and an eventual resolution. You may also want to do it just to separate a thread out, even if you don't care about resolution.</p>
+<h2><a class="header" href="#replying-to-a-discussion" id="replying-to-a-discussion">Replying to a discussion</a></h2>
+<p>At the bottom of each discussion box you can write a comment to add to the discussion. The draft is saved continuously as you write, but won’t be visible to others until it's <a href="reviews.html#publish">published</a> or sent (see below).</p>
+<div class="tip">
+<p>While no one can read your drafts, other participants will be able to see that you have unsent drafts pending and how long ago you last touched the review (for example, by editing a draft).</p>
+</div>
+<p>All comments are formatted as <a href="https://guides.github.com/features/mastering-markdown/">GitHub-flavored Markdown</a> — clicking the small Markdown logo in the draft toolbar will open a reference page.  You can also switch to the <strong>Preview</strong> tab at any time to check how your comment will be rendered.</p>
+<p>You can add images to your comment by clicking the upload button, by dragging an image onto the draft, or by pasting an image from your clipboard (in some browsers). If desired, you can delete your draft by clicking the small trash icon. The trashed draft is retrievable by creating another comment in the same spot.</p>
+<p><strong>Sending messages immediately:</strong>  Click the <i class="fa fa-share-square-o"></i> button to immediately post the comment on the pull request. This doesn't affect any other pending comments, which is useful if a big review round is in progress, you have many drafts pending, and you need to send out an intermediate clarification or request. Since each recipient will receive an alert for each message you send this way (as configured by default in GitHub), it would normally be preferable to write all of your comments and then <a href="reviews.html#publish">publish</a> them all together.</p>
+<p><img src="images/discussions_6.png" alt="reviewable send messages immediately" /></p>
+<h3><a class="header" href="#inline-directives" id="inline-directives">Inline directives</a></h3>
+<p>You can add special directives inline to any comment (not just top-level ones) to add or remove labels, set the milestone, and add or remove assignees or reviewers.  Reviewable doesn't use a special UI for this so that it's easy to do without lifting your hands from the keyboard, works in all contexts (including when replying by email or on GitHub), and leaves an easily readable record.</p>
+<p>The directives you can use are <strong>±label</strong>, <strong>±milestone</strong>, <strong>±@username</strong> (for assignees) and <strong>±reviewer:@username</strong> (for requested reviewers).  Reviewable will warn you about invalid assignees or reviewers — either directly or via email if necessary — but not about bad labels or milestones since false positives are too common there.</p>
+<div class="important">
+<p>For email and GitHub comments, if the repo is not connected then directives won't take effect until somebody visits the review in Reviewable.  Editing directives in a previously sent message won't work either.</p>
+</div>
+<h3><a class="header" href="#replying-via-email-or-on-github" id="replying-via-email-or-on-github">Replying via email or on GitHub</a></h3>
+<p>Reviewable will do its best to parse incoming messages and split them up into the appropriate comment threads. This only works well, however, if you leave all the separators and comment links in place so be sure not to mangle a quoted message too much in your reply. Quoted chunks will be shown in Reviewable if they are woven into your reply, but omitted otherwise (whether the message is top- or bottom-quoted). Any parts of the message that can't be conclusively tied to a specific discussion will show up in a top-level comment instead.</p>
+<p>Reviewable recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word <strong>acknowledge</strong> (or <strong>ack</strong>) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a line, by itself, <strong><i class="fa fa-circle-o"></i> Discussing</strong>, <strong><i class="fa fa-check-circle"></i> Satisfied</strong>, <strong><i class="fa fa-info-circle"></i> Informing</strong>, <strong><i class="fa fa-play-circle"></i> Working</strong>, or <strong><i class="fa fa-minus-circle"></i> Blocking</strong>.</p>
+<div class="tip">
+<p>For information on how to use other shorthands that work in email and in-app comments alike, see <a href="#inline-directives">inline directives</a> above and <a href="#change-disposition">initial keywords</a> further down.</p>
+</div>
+<h2><a class="header" href="#ending-a-discussion" id="ending-a-discussion">Ending a discussion</a></h2>
+<p>If you don't need to reply to a discussion you can click the primary action button at the bottom instead. The button's label will indicate its precise action — corresponding to both your role and the state of the discussion — but the general meaning is “I have nothing further to say about this”. Clicking the button will always mark the discussion as read, and usually set your <a href="#dispositions">disposition</a> to <strong><i class="fa fa-check-circle"></i> Satisfied</strong> as well:</p>
+<table><thead><tr><th>Role</th><th>Discussion</th><th align="center">Button label</th><th>Effect</th></tr></thead><tbody>
+<tr><td><strong><i class="fa fa-info-circle"></i> Informing</strong></td><td>Resolved with no other participants</td><td align="center"><strong>Retract</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td><strong><i class="fa fa-info-circle"></i> Informing</strong></td><td>Resolved</td><td align="center"><strong>Conclude</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>Active participant, not <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td><td>Unresolved with no other participants</td><td align="center"><strong>Retract</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>Active participant or PR author, not <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td><td>Unresolved and switching to <strong><i class="fa fa-check-circle"></i> Satisfied</strong> would resolve</td><td align="center"><strong>Resolve</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>PR author not <strong><i class="fa fa-check-circle"></i> Satisfied</strong>, or anyone <strong><i class="fa fa-play-circle"></i> Working</strong></td><td><strong>Unresolved</strong></td><td align="center"><strong>Done</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong> and creates a &quot;Done.&quot; message</td></tr>
+<tr><td><strong><i class="fa fa-minus-circle"></i> Blocking</strong></td><td>Unresolved and nobody <strong><i class="fa fa-play-circle"></i> Working</strong></td><td align="center"><strong>Accept</strong></td><td>Sets disposition to <strong><i class="fa fa-check-circle"></i> Satisfied</strong></td></tr>
+<tr><td>Any</td><td>Unread comments</td><td align="center"><strong>Acknowledge</strong></td><td>Sets disposition to <strong><i class="fa fa-ellipsis-h"></i> Following</strong> if passive participant or not a participant</td></tr>
+</tbody></table>
+<h2><a class="header" href="#unreplied-discussions" id="unreplied-discussions">Unreplied discussions</a></h2>
+<p>A discussion is unreplied for you when there are comments in the discussion that you haven't acknowledged, replied to, or marked as read. Unreplied discussions will increment your red discussions counter for the review. A discussion is also unreplied for you if one of the following rules applies, but <em>none of the preceding rules apply to anybody else</em>, even if you're caught up on the comments.</p>
+<ol>
+<li>You are an active participant, or are <strong><i class="fa fa-at"></i> Mentioned</strong>, or you are the PR author, or one of the participants is <strong><i class="fa fa-info-circle"></i> Informing</strong>, and you have unread comments, or you are <strong><i class="fa fa-play-circle"></i> Working</strong>.</li>
+<li>You are the PR author and the discussion has only one active participant (which is not you). This applies even if you have no unread comments; that is, you acknowledged the discussion without replying.</li>
+<li>You are not the PR author, the discussion has only the PR author as the active participant, and you have unread comments.</li>
+<li>You are <strong><i class="fa fa-minus-circle"></i> Blocking</strong> and the last comment is not yours.</li>
+<li>You are <strong><i class="fa fa-circle-o"></i> Discussing</strong> and the last comment is not yours.</li>
+<li>You are <strong><i class="fa fa-minus-circle"></i> Blocking</strong>.</li>
+<li>You started the discussion, and remain an active participant.</li>
+<li>You are an active participant.</li>
+</ol>
+<p>If you have a draft reply to a discussion, the discussion is considered replied unless new comments were made since you last edited your draft. This is the case even if the draft state will cause it to become unreplied for you once published. Your published state is still used in the view of all other participants.</p>
+<h3><a class="header" href="#new-and-old-comments" id="new-and-old-comments">New and old comments</a></h3>
+<p>The yellow <strong>New comments</strong> ribbon demarcates the point where comments that are new to you begin.  Normally they'd lose their “new” status implicitly once you reply or click the primary action button, but if you don't want to do that yet for some reason you can hover over the ribbon to reveal a <strong>mark read</strong> link instead.</p>
+<div class="tip">
+<p>Marking comments as read (by any means) is also buffered as a draft and revealed to others only when publishing.  This avoids situations where a discussion shows up as unreplied to somebody else before your reply was published.</p>
+</div>
+<p><img src="images/discussions_1.png" alt="reviewable mark read" /></p>
+<p>Some older comments may be hidden, as indicated by the <strong>Show N older comments</strong> link in the discussion header. Click the link to toggle showing older comments for this discussion, or click the drop-down arrow to reveal options for displaying older comments in <strong>this file</strong> or in <strong>all files</strong>.</p>
+<p><img src="images/discussions_5.png" alt="reviewable older comments" /></p>
+<h2><a class="header" href="#dispositions-and-resolution" id="dispositions-and-resolution">Dispositions and resolution</a></h2>
+<p>When publishing comments in the discussion you’ll want to take note of your disposition, which indicates your attitude towards resolving the discussion. You take on a default disposition when you join a discussion and, to begin with, you’ll simply rely on these defaults and the normal action buttons. As you participate in more discussions, you may eventually decide to explicitly set your disposition or even change the defaults that Reviewable uses in various situations.</p>
+<div class="tip">
+<p>To commit disposition changes they must be published — even if you make no corresponding comment.  Disposition changes do not mark the discussion as read unless they are part of a reply.</p>
+</div>
+<p>These are the dispositions that make one an active participant in a discussion and that you can select explicitly (though not all may be available in every situation):</p>
+<ul>
+<li><strong><i class="fa fa-circle-o"></i> Discussing</strong> — Neutral on whether the discussion should be resolved; will possibly continue the discussion.</li>
+<li><strong><i class="fa fa-minus-circle"></i> Blocking</strong> — Opposed to resolving the discussion while waiting on another contributor.</li>
+<li><strong><i class="fa fa-play-circle"></i> Working</strong> — Keeping the discussion unresolved while working on a related task This differs from <strong><i class="fa fa-minus-circle"></i> Blocking</strong>, in that you remain the party responsible for moving the discussion forward, and the discussion will not ask for actions from other participants.</li>
+<li><strong><i class="fa fa-check-circle"></i> Satisfied</strong> — In favor of resolving the discussion. If there are no other participants, then the discussion is resolved and will not be brought to the attention of others.</li>
+<li><strong><i class="fa fa-info-circle"></i> Informing</strong> — Discussion is resolved, but left active for others to comment.</li>
+</ul>
+<p>Passive participants will exhibit other dispositions, such as <strong><i class="fa fa-ellipsis-h"></i> Following</strong>, <strong><i class="fa fa-at"></i> Mentioned</strong>, and <strong><i class="fa fa-ban"></i> Dismissed</strong>.</p>
+<p>A discussion is <em>resolved</em> if and only if at least one participant is <strong><i class="fa fa-check-circle"></i> Satisfied</strong> or <strong><i class="fa fa-info-circle"></i> Informing</strong> and none of the participants are <strong><i class="fa fa-play-circle"></i> Working</strong> or <strong><i class="fa fa-minus-circle"></i> Blocking</strong>, or if there are no active participants left. (Participants whose disposition is <strong><i class="fa fa-circle-o"></i> Discussing</strong> are abstaining from the decision.)</p>
+<div class="tip">
+<p>If you have draft state on the discussion (as in the case of a reply, for example), the proposed value is used when computing the resolved state in your view.</p>
+</div>
+<div class="tip">
+<p>Participants in the general discussion have no dispositions, and it's always considered resolved.  Other top-level discussions created by clicking the <strong>Start a new discussion</strong> button behave normally.</p>
+</div>
+<p><a id="change-disposition"></a></p>
+<h3><a class="header" href="#checking-and-changing-dispositions" id="checking-and-changing-dispositions">Checking and changing dispositions</a></h3>
+<p>Your avatar in the lower-right corner of every discussion box has a small icon that indicates your current disposition.  Hover over it (or swipe left) to show the avatars and dispositions of all the participants in the discussion.  Click on your avatar to change your disposition, or on another participant's avatar to see a description of their current disposition.</p>
+<p><img src="images/discussions_3.png" alt="reviewable dispositions" /></p>
+<p>You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These are some examples of what you'll find there:</p>
+<ul>
+<li>FYI or BTW → <strong><i class="fa fa-info-circle"></i> Informing</strong></li>
+<li>Minor or Nit → <strong><i class="fa fa-circle-o"></i> Discussing</strong></li>
+<li>Working or Will do → <strong><i class="fa fa-play-circle"></i> Working</strong></li>
+</ul>
+<p>Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.</p>
+<p><img src="images/discussions_4.png" alt="reviewable override with magic starting word" /></p>
+<p>You can also assign disposition changes to <a href="accountsettings.html#custom-key-bindings">keyboard shortcuts</a> with the <code>setCurrentDiscussionDisposition</code> command.</p>
+<div class="tip">
+<p>You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either <strong>Dismiss from this discussion</strong> or <strong>Dismiss from all discussions</strong> at the bottom of the drop-down.  (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the <a href="repositories.html#discussion-participant-dismissers">repo settings</a>.)</p>
+</div>
+<h3><a class="header" href="#resolution-workflows" id="resolution-workflows">Resolution workflows</a></h3>
+<p>By default, a comment that creates a new discussion will set your disposition to <strong><i class="fa fa-minus-circle"></i> Blocking</strong>. A user's first reply to an existing discussion will set their disposition to <strong><i class="fa fa-circle-o"></i> Discussing</strong> if not already an active participant. You can change the default disposition to fit your workflow preference.</p>
+<p>For example, consider that the default disposition is <strong><i class="fa fa-minus-circle"></i> Blocking</strong> for both PR author-initiated and reviewer-initiated discussions. However, as the PR author, you may want to let the reviewer resolve these by changing the default disposition to <strong><i class="fa fa-circle-o"></i> Discussing</strong>, or choose <strong><i class="fa fa-info-circle"></i> Informing</strong> as the default to encourage purely informational discussions.</p>
+<p>Similarly, if you're following an informal review process, you may want to set the default disposition of your reviewer-initiated discussions to <strong><i class="fa fa-circle-o"></i> Discussing</strong>, which enables the author to resolve a discussion directly.</p>
+<p>There are 4 default dispositions (the combinations of author/reviewer and new/reply), and you can set each one individually. The disposition dropdown has a <strong>Change default disposition</strong> link at the bottom that, once clicked, will lock in your next selection as the default for situations like that of the current comment.  (For clarity, the link will change to a description that states which default you're setting.)</p>
+<div class="tip">
+<p>If you are <strong><i class="fa fa-circle-o"></i> Discussing</strong> and another participant resolves the discussion without writing a comment, you normally won't be notified about it and the discussion will simply disappear from your view.  If you'd like to double-check such resolutions without having to block the discussion, you can turn on <strong>Trust but verify</strong> mode via the small <i class="fa fa-cog"></i> settings icon in the top-right corner of any of your disposition dropdowns.</p>
+</div>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="files.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="dashboard.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="files.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="dashboard.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
+
