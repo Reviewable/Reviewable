@@ -38,7 +38,8 @@ Help is available through many channels:
 
 *   Press `F1` or `h`, or click **Support > Help**, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, or click on the grey background to get back to the app.
 
-?> On tablets and other touch devices with no convenient keyboard, tap the question mark icon in the bottom-right corner of the screen instead.
+{:.tip}
+On tablets and other touch devices with no convenient keyboard, tap the question mark icon in the bottom-right corner of the screen instead.
 
 *   Click **Support > Issues** to report a bug, or make a feature request. To potentially get an answer faster and help reduce triaging overhead, please check existing issues for duplicates first.
 
