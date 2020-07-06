@@ -13,9 +13,9 @@ This chapter provides an overview of the review page, but the core features of r
 
 Throughout this guide, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of three roles to every review participant:
 
-* Author: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
-* Reviewer: anybody that is not an author or mentionee.
-* Mentionee: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
+* **Author**: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
+* **Reviewer**: anybody that is not an author or mentionee.
+* **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 
 It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.
 
