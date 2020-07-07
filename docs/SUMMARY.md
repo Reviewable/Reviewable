@@ -11,3 +11,4 @@
 * [Repositories](repositories.md)
 * [Subscriptions](subscriptions.md)
 * [Abnormal conditions](abnormal.md)
+* [Tips and Tricks](tips.md)
