@@ -218,7 +218,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li><li class="chapter-item expanded "><a href="tips.html"><strong aria-hidden="true">10.</strong> Tips and Tricks</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1220,6 +1220,38 @@
 <p>If Reviewable detects an unexpected error that it has no idea how to deal with, it will immediately put the application in a safe state, try to save your data, report the error to our exception capture database, and show the modal crash overlay.  We investigate all errors captured this way so you don’t need to report them separately, but if it happens regularly (or you know how to reproduce it) then a tip is always appreciated!</p>
 <p>Note that Reviewable is sensitive to all top-level exceptions, unhandled promise rejections, and other situations that can be caused by badly implemented browser extensions, following the philosophy of “better safe than sorry”.  If you’re having trouble with Reviewable crashing all the time please try running it with all extensions disabled to confirm where the root cause lies.</p>
 <p><img src="images/otherissues_7.png" alt="reviewable crash" /></p>
+<h1><a class="header" href="#tips-and-tricks" id="tips-and-tricks">Tips and Tricks</a></h1>
+<h2><a class="header" href="#easy-local-revision-checkout" id="easy-local-revision-checkout">Easy local revision checkout</a></h2>
+<h3><a class="header" href="#tldr" id="tldr">TLDR</a></h3>
+<pre><code class="language-sh">git fetch origin refs/reviewable/pr756/r6
+git checkout FETCH_HEAD
+</code></pre>
+<h3><a class="header" href="#explanation" id="explanation">Explanation</a></h3>
+<p>Reviewable stores references to commits associated with each revision on Github.<br />
+This has a handy side effect of making it easy to checkout a local copy of any revision from any Reviewable pull request.</p>
+<p>This can be done in two steps.</p>
+<ol>
+<li>Get a reference to the pull request or revision of interest.</li>
+<li>Checkout or make use of that reference.</li>
+</ol>
+<h4><a class="header" href="#1-get-the-revision-reference" id="1-get-the-revision-reference">1. Get the revision reference</a></h4>
+<p>If your prId were <code>756</code> and your desired revision were <code>6</code> as in the image above, you would store revision reference in <code>.git/FETCH_HEAD</code> constant using</p>
+<pre><code class="language-sh">git fetch origin refs/reviewable/pr756/r6
+</code></pre>
+<p>Note that the form of the reviewable reference titles as shown above is <code>refs/reviewable/pr${prId}/r${revisionId}</code> .</p>
+<p>The ids <code>prId</code> and <code>revisionId</code> are available by inspection on the reviewable.io. review page:</p>
+<p><img src="images/tips_1_prId.png" alt="crop from review page showing prId of 756 and revisionId of 6" /></p>
+<div class="tip">
+<p>You can also just explore the references using the git client, by typing a reference name partially, as in <code>git fetch origin refs/reviewable/</code>, and then use tab completion to get your options.</p>
+</div>
+<h4><a class="header" href="#2-use-the-revision-reference" id="2-use-the-revision-reference">2. Use the revision reference</a></h4>
+<p>After saving the FETCH_HEAD reference as described above, you can use it as you see fit.</p>
+<p>For example check out the revision code using</p>
+<pre><code class="language-sh">git checkout FETCH_HEAD
+</code></pre>
+<p>or glance at the log using</p>
+<pre><code class="language-sh">git log -n 1 --oneline FETCH_HEAD
+</code></pre>
 
                     </main>
 
