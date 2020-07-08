@@ -9,5 +9,8 @@ title = "Reviewable User Manual"
 build-dir = "book"
 create-missing = false
 
+[output.html]
+git-repository-url = "https://github.com/Reviewable/Reviewable"
+
 [preprocessor.classy]
 command = "bin/mdbook-classy"
