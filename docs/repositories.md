@@ -205,7 +205,10 @@ The current state of the review is accessible to your code via the `review` vari
       'pkaminski-test': 'changes_requested'
     },
     numCommits: 3,
-    target: {owner: 'pkaminski', repo: 'sample', branch: 'work'},
+    target: {
+      owner: 'pkaminski', repo: 'sample', branch: 'work',
+      headCommitSha: '3cd017d236fe9174ab22b4a80fefb323dbefb50f'  // may be missing in old reviews
+    },
     source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'},
     // one of dirty, unknown, blocked, behind, unstable, has_hooks, clean, or draft
     mergeability: 'clean',
