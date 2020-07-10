@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: make [Reviewable docs](https://docs.reviewable.io) indexable by Google Search.
+- Upd: add `review.pullRequest.target.headCommitSha` to the review completion condition input data.
 - Fix: make sure publishing comments works even if an organization has many thousands of potential assignees.
 - Fix: correct a bunch of issues related to autocomplete in drafts, including inconsistent search logic, behavior in the face of user logout, etc.
 - Fix: don't try to automatically connect archived repositories.
