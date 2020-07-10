@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make sure publishing comments works even if an organization has many thousands of potential assignees.
 - Fix: correct a bunch of issues related to autocomplete in drafts, including inconsistent search logic, behavior in the face of user logout, etc.
 - Fix: don't try to automatically connect archived repositories.
+- Fix: ignore self-mentions in comments instead of showing an error or freezing.
 
 #### Release 2351.4070 (min 1992.2986 GHE 2.12+) 2020-06-22
 - Upd: check more often that the user who originally connected a repository still has admin access to it, and send a warning email if not.
