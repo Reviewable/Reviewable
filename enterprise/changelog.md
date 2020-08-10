@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2411.4117 (min 1992.2986 GHE 2.12+) 2020-08-12
 - Upd: make [Reviewable docs](https://docs.reviewable.io) indexable by Google Search.
 - Upd: add `review.pullRequest.target.headCommitSha` to the review completion condition input data.
 - Fix: make sure publishing comments works even if an organization has many thousands of potential assignees.
