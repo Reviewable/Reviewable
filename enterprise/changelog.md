@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Fix: correct a race condition that resulted in comments with images sometimes being cut off on the page.
+- Fix: resize resolved discussion "bar" placeholders when changing the diff's column width.
 
 #### Release 2411.4117 (min 1992.2986 GHE 2.12+) 2020-08-12
 - Upd: make [Reviewable docs](https://docs.reviewable.io) indexable by Google Search.
