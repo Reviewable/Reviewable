@@ -42,7 +42,7 @@ You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_E
 2. Obtain a copy of `rules_firecrypt.json`, either by extracting it from the system's Docker image (it's in `/usr/src/app`) or by requesting the current copy from your support contact.
 3. Locate the current encryption key (if any) and generate a new encryption key if desired (`openssl rand --base64 64`).
 4. Put Reviewable in maintenance mode (instructions above).
-5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE --auth $REVIEWABLE_FIREBASE_AUTH --spec rule_firecrypt.json --oldKey <i>base64key</i> --newKey <i>base64Key</i></code>, using the environment values you configured for your server and specifying one or both keys depending on the operation you want to perform (encrypt, decrypt, or rotate).
+5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE --auth $REVIEWABLE_FIREBASE_CREDENTIALS_FILE --spec rule_firecrypt.json --oldKey <i>base64key</i> --newKey <i>base64Key</i></code>, using the environment values you configured for your server and specifying one or both keys depending on the operation you want to perform (encrypt, decrypt, or rotate).
 6. Update your server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY`.
 7. Exit maintenance mode (instructions above).
 
@@ -76,5 +76,5 @@ Next, we'll extract the required data from the reviewable.io datastore and send 
 Finally, you'll load the extracted data into your own Reviewable datastore and sync it with your GHE instance.  Note that existing data will be overwritten so it's best to do this on an installation that hasn't seen actual use yet.
 1. Make sure you've signed in to your instance of Reviewable with your license admin account at least once.
 2. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `load_data --help`.
-3. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_AUTH`, and `REVIEWABLE_ENCRYPTION_AES_KEY` in your shell just like on your servers.
+3. Define `REVIEWABLE_FIREBASE`, `REVIEWABLE_FIREBASE_CREDENTIALS_FILE`, and `REVIEWABLE_ENCRYPTION_AES_KEY` in your shell just like on your servers.
 4. Run `load_data --input data.js --admin github:NNNN` where `data.js` points to the data file we sent you and `NNNN` is the numeric GHE user ID of the license admin account.
