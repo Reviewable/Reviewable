@@ -9,9 +9,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: point github link button directly to the file of interest rather than just the diff of interest.
 - Upd: add a small icon to the Publish button indicating approval / blocking when the text gets removed due to small page width.
-- Upd: add `action` property to file revisions in custom review completion condition input structure, to indicate whether the file was added, removed, modified, or renamed at that revision.
+- Upd: add `action` property to file revisions in the custom review completion condition input structure, to indicate whether the file was added, removed, modified, or renamed at that revision.
 - Fix: correct a race condition that resulted in comments with images sometimes being cut off on the page.
 - Fix: resize resolved discussion "bar" placeholders when changing the diff's column width.
+- Fix: correctly render PR labels that get cut off on the reviews dashboard.
 
 #### Release 2411.4117 (min 1992.2986 GHE 2.12+) 2020-08-12
 - Upd: make [Reviewable docs](https://docs.reviewable.io) indexable by Google Search.
