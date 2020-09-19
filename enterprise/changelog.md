@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correct a race condition that resulted in comments with images sometimes being cut off on the page.
 - Fix: resize resolved discussion "bar" placeholders when changing the diff's column width.
 - Fix: correctly render PR labels that get cut off on the reviews dashboard.
+- Fix: avoid sometimes locking up on load in reviews with a renamed-then-reintroduced file when using review-each-commit style.
 
 #### Release 2411.4117 (min 1992.2986 GHE 2.12+) 2020-08-12
 - Upd: make [Reviewable docs](https://docs.reviewable.io) indexable by Google Search.
