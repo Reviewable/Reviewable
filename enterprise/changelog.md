@@ -7,7 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
-- Upd: point github link button directly to the file of interest rather than just the diff of interest.
+- Upd: point GitHub link button directly to the file of interest rather than just the diff of interest.
 - Upd: add a small icon to the Publish button indicating approval / blocking when the text gets removed due to small page width.
 - Upd: add `action` property to file revisions in the custom review completion condition input structure, to indicate whether the file was added, removed, modified, or renamed at that revision.
 - Upd: add a `nextDiscussionWithDisposition(disposition)` keyboard binding, along with previous/first/last variants.
@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: resize resolved discussion "bar" placeholders when changing the diff's column width.
 - Fix: correctly render PR labels that get cut off on the reviews dashboard.
 - Fix: avoid sometimes locking up on load in reviews with a renamed-then-reintroduced file when using review-each-commit style.
+- Fix: stop syntax highlighter from getting confused in some cases (e.g., when using `Foo.class` in a Java file).
 
 #### Release 2411.4117 (min 1992.2986 GHE 2.12+) 2020-08-12
 - Upd: make [Reviewable docs](https://docs.reviewable.io) indexable by Google Search.
