@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2487.4249 (min 1992.2986 GHE 2.12+) 2020-09-22
 - Upd: point GitHub link button directly to the file of interest rather than just the diff of interest.
 - Upd: add a small icon to the Publish button indicating approval / blocking when the text gets removed due to small page width.
 - Upd: add `action` property to file revisions in the custom review completion condition input structure, to indicate whether the file was added, removed, modified, or renamed at that revision.
