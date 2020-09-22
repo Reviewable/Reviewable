@@ -7,7 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
-- Fix: show all PRs where the user was mentioned on the reviews dashboard, working around a GitHub bug where @-mentions in reviews aren't indexed properly.  Works best on connected repositories, and backfills mentions made before this fix only lazily.
+- Fix: show all PRs where the user was mentioned on the reviews dashboard, working around a GitHub bug where @-mentions in reviews aren't indexed properly.  See [issue comment](https://github.com/Reviewable/Reviewable/issues/636#issuecomment-696902568) for limitations.
 
 #### Release 2487.4249 (min 1992.2986 GHE 2.12+) 2020-09-22
 - Upd: point GitHub link button directly to the file of interest rather than just the diff of interest.
