@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: work around stricter browser security restrictions in sign-in popup window that would sometimes cause Reviewable to fall back to a less convenient redirect auth flow.  (For anybody stuck in the redirect flow, clearing cookies from Reviewable's site will reset the flag.)
 - Fix: fix a regression in automatically setting requested reviewers on a review.
 - Fix: truncate participant avatars field in review list so it doesn't overflow and leave no space for the PR title.
+- Fix: avoid some very rare crashes when clicking outside review area.
 
 #### Release 2487.4249 (min 1992.2986 GHE 2.12+) 2020-09-22
 - Upd: point GitHub link button directly to the file of interest rather than just the diff of interest.
