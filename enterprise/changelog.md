@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: fix a regression in automatically setting requested reviewers on a review.
 - Fix: truncate participant avatars field in review list so it doesn't overflow and leave no space for the PR title.
 - Fix: avoid some very rare crashes when clicking outside review area.
+- Fix: fix a regression in extending code selection in diff to beginning/end of line.
 
 #### Release 2487.4249 (min 1992.2986 GHE 2.12+) 2020-09-22
 - Upd: point GitHub link button directly to the file of interest rather than just the diff of interest.
