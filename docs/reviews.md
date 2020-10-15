@@ -194,7 +194,7 @@ When appropriate, a checkbox for **Include changes in files previously reviewed 
 
 ### Commits
 
-This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or hange the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.
+This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or change the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.
 
 The **Review Style** dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.
 
