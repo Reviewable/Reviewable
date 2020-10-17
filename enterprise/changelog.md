@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+- Upd: fully support syntax highlighting of `.tsx` files.
 - Fix: show all PRs where the user was mentioned on the reviews dashboard, working around a GitHub bug where @-mentions in reviews aren't indexed properly.  See [issue comment](https://github.com/Reviewable/Reviewable/issues/636#issuecomment-696902568) for limitations.
 - Fix: work around stricter browser security restrictions in sign-in popup window that would sometimes cause Reviewable to fall back to a less convenient redirect auth flow.  (For anybody stuck in the redirect flow, clearing cookies from Reviewable's site will reset the flag.)
 - Fix: fix a regression in automatically setting requested reviewers on a review.
