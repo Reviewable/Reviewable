@@ -3,6 +3,7 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Known issues
+- Avatar images are broken in newer version of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
@@ -74,7 +75,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: when creating a discussion, ensure that the other revision in the diff gets snapshotted too so we can reproduce the exact diff later.  Otherwise, we can end up with a discussion with a dangling revision reference, which can cause crashes in rare circumstances.
 - Fix: guard against a bug in GHE that occasionally returns a supposedly internal completion state for a check run.
 
-#### Release 2227.3878 (min 1992.2986 GHE 2.12+) 2020-01-06
+#### Release 2227.3878 (min 1992.2986 GHE 2.12 - 2.20) 2020-01-06
 - Upd: improve diff algorithm to keep indentation-only deltas clean rather than sometimes pulling in short unchanged line contents.
 - Upd: allow horizontal scrolling of file header when revision cells overflow available space.  Scroll bar is not visible but you can use the middle mouse button (or whatever your OS of choice allows) instead.
 - Upd: embed RSA key rolling feature in the monthly user table cron job if multiple keys are passed to the server.  This is more reliable than using a separate script.
@@ -85,7 +86,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: deal gracefully with pull requests that have no commits.  This can happen if the source repo gets deleted.
 - Fix: support thousands of repos on the Repositories page.
 
-#### Release 2210.3860 (min 1992.2986 GHE 2.12+) 2019-11-21
+#### Release 2210.3860 (min 1992.2986 GHE 2.12 - 2.20) 2019-11-21
 - New: support monitoring via `statsd`.  This is just a first cut at the feature and subject to change as I gather feedback from people who actually use `statsd` and such.  Please see the [config doc](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring) for details on the extra environment variables you need to set this up, but if you already happen to have `DD_AGENT_HOST` defined in your environment then the feature will turn on automatically.
 - Upd: add `draft` state to pull request list query language.
 - Upd: upgrade Lambda executor to use NodeJS 10 environment for user scripts.
@@ -96,7 +97,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't over-extend diff selection on copy if the selection ends exactly at the beginning of a new line.
 - Fix: prevent occasional crash with "unmatched diff release" error message.
 
-#### Release 2200.3821 (min 1992.2986 GHE 2.12+) 2019-10-10
+#### Release 2200.3821 (min 1992.2986 GHE 2.12 - 2.20) 2019-10-10
 - New: add a repository setting to constrain who can dismiss participants from a discussion, either anyone with write access (the default) or only repository admins.
 - Upd: update to Node 12.
 - Upd: no longer run server as `root` to improve security.
@@ -111,7 +112,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: if a file was renamed, then reintroduced under its original name, ensure the reintroduced one is actually included in the review.
 - Fix: don't show an error if trying to delete a branch that's already gone after a merge.
 
-#### Release 2183.3776 (min 1992.2986 GHE 2.12+) 2019-09-13
+#### Release 2183.3776 (min 1992.2986 GHE 2.12 - 2.20) 2019-09-13
 - New: display old/new file size (and delta) for binary files.
 - Upd: split quoted replies to Reviewable's combined messages that originate from GitHub's web UI into separate threads, just like we always did for email.
 - Upd: respect disposition-setting keywords (such as "FYI" or "OK") at the beginning of a draft even if they are preceded by quoted lines.
@@ -130,11 +131,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: respect `reviewed: false` flag set by custom review completion condition on file revisions by counting files as unreviewed and styling mark buttons appropriately.  Previously, it was possible for the `false` value to be overridden by reviews of subsequent revisions.
 - Fix: roll back HTTP request library to work around weird timeout problems on cached fetches.  The issue did not present consistently, appearing without provocation on a given instance and sometimes going away by itself as well.  If you're seeing a lot of "Aborted" or "Timeout" errors you'll want to update to this version.
 
-#### Release 2148.3676 (min 1992.2986 GHE 2.12+) 2019-07-24
+#### Release 2148.3676 (min 1992.2986 GHE 2.12 - 2.20) 2019-07-24
 - Fix: **HOTFIX** remain compatible with older GHE versions by removing reference to `Mannequin` from GraphQL queries.
 - Fix: deal correctly with non-lowercase usernames when inferring list of users for "sync requested reviewers" publishing option.
 
-#### Release 2140.3674 (min 1992.2986 GHE 2.12+) 2019-07-11
+#### Release 2140.3674 (min 1992.2986 GHE 2.12 - 2.20) 2019-07-11
 This version is broken on some older GHE versions, it's strongly recommended that you skip to the next one (2148.3676).
 - Upd: indicate draft PRs on dashboard and review pages (GHE 2.17+).  You need to use GitHub to declare a draft PR "ready for review" for the time being; that functionality will be added later, along with a UI redo.
 - Upd: support `±label:<name>` query terms in review list.
@@ -149,7 +150,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: ignore review comments with no author (not sure how that can happen, but observed one such case!).
 - Fix: clip long directory paths in file matrix.  This is a quick fix to prevent the layout from jumping around when moving the mouse around the matrix, but may result in some long paths getting clipped even when _not_ hovering over them if all filenames are short and there aren't many revisions.
 
-#### Release 2113.3608 (min 1992.2986 GHE 2.12+) 2019-05-16
+#### Release 2113.3608 (min 1992.2986 GHE 2.12 - 2.20) 2019-05-16
 - New: add a `mergeStyle` field to review completion condition output.  You can use this to dynamically force a specific merge style for a review even if the repo is configured to allow others.  Only enforced in Reviewable.
 - Fix: make custom diff font settings actually work again.
 - Fix: prevent an extremely rare series of occurrences from permanently corrupting a review such that it won't update with any further commits.  This bug has been present in the code since day one and I just observed it for the first time in 5 years...
@@ -158,7 +159,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: don't use data derived from a stale review state when racing to create a new review (very rarely).  This could've resulted in aspects of a review being temporarily out of sync with the PR, but should've fixed itself automatically as the review was visited and resynced.
 - Fix: deal gracefully with racing server shutdown requests, instead of crashing out early.
 
-#### Release 2093.3571 (min 1992.2986 GHE 2.12+) 2019-04-16
+#### Release 2093.3571 (min 1992.2986 GHE 2.12 - 2.20) 2019-04-16
 - New: add a `disableBranchUpdates` flag to review completion condition output.
 - New: add `defaultMergeCommitMessage` and `defaultSquashCommitMessage` fields to review completion condition output.  Also include `title` and `body` in `review.pullRequest` input state.
 - Upd: on initial load, keep the review list's spinner up until _all_ the data has been loaded, to prevent having rows move around as more information streams in.  Note that this is a live list so rows may still shift position later as reviews' states change, but this should improve the first-load experience at the expense of a bit more latency before the list shows up.
@@ -176,7 +177,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent crashes when trying to redirect in Edge.
 - Fix: prevent clicks on a merge button in the pull requests list from navigating to the review.
 
-#### Release 2071.3450 (min 1992.2986 GHE 2.12+) 2019-03-11
+#### Release 2071.3450 (min 1992.2986 GHE 2.12 - 2.20) 2019-03-11
 - New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
 - Upd: lay out the file matrix as a directory tree rather than a flat list of files.
 - Fix: **HOTFIX** avoid a crash when loading Reviewable on an encrypted instance in private mode while already signed in with the error "Encryption not set up".  This regression was introduced in the previous release, v2066.3418.
@@ -187,7 +188,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent a crash on loading the reviews list if server hasn't properly set the GHE version in Firebase yet.  The root cause is likely a bad auth for the subscription admin user, which will log `Unable to initialize generic GitHub access` on the server at startup along with a specific error message.
 - Fix: don't flash a prompt to sign in when loading a review page on an encrypted instance in private mode while already signed in.
 
-#### Release 2066.3418 (min 1992.2986 GHE 2.12+) 2019-02-28
+#### Release 2066.3418 (min 1992.2986 GHE 2.12 - 2.20) 2019-02-28
 **KNOWN ISSUE** This version breaks badly in environments running in `REVIEWABLE_PRIVATE_MODE`.  You almost certainly want to skip over it.
 - New: let user temporarily see more concluded (closed or merged) pull requests on the dashboard by clicking a link.
 - Upd: upgrade to NodeJS 10.
@@ -201,7 +202,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: put pending reviewers list back in the checks dropdown.
 - Fix: don't request reviewer twice if user is self-requesting.  This is a no-op but looks ugly in GitHub's timeline.
 
-#### Release 2056.3350 (min 1992.2986 GHE 2.12+) 2019-02-07
+#### Release 2056.3350 (min 1992.2986 GHE 2.12 - 2.20) 2019-02-07
 - New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/#/reviews?id=sync-requested-reviewers) for details.  Great for integration with [Pull Reminders](https://pullreminders.com) if you use Slack!
 - Fix: allow users to login in multiple browsers / profiles without forcing all but the latest one offline.  This was a regression introduced in 2033.3283.  Note that this is a temporary fix that reintroduces the auth ugprade race condition handled by the broken fix.  A better permanent fix will come in the next release, after a whole lot of testing.
 - Fix: remedy race condition when triggering completion condition evaluation in response to PR review events. Previously, it was possible for the condition to be triggered before the review state correctly reflected the new approvals.
@@ -218,7 +219,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: don't walk revision description message timestamps forward by 1ms every time the review gets synced in certain circumstances.  This could result in requiring users to regularly re-acknowledge those comments.
 - Fix: restore hotkey indicators in certain contextual help blurbs.
 
-#### Release 2033.3283 (min 1992.2986 GHE 2.12+) 2019-01-21
+#### Release 2033.3283 (min 1992.2986 GHE 2.12 - 2.20) 2019-01-21
 - New: publish a complete user guide at https://docs.reviewable.io.  This has all the content from the online help system and more, organized to be both readable and searchable.  It will stay up to date with the current version of the app running on reviewable.io, so it may reference features that are not yet available to Enterprise, or that you have not yet deployed.  If this turns out to be a major issue we'll figure out a solution, but for now think of it as an additional incentive to update often!
 - Upd: fill in missing properties in the result of a custom review completion condition with values from the output of the built-in default condition.  This will make it easier to tweak things without having to take on maintenance of the full condition.
 - Upd: support `refreshTimestamp` in completion condition output structure, to determine when it should be re-evaluated.  Also add `lastActivityTimestamp` to discussion participants and `timestamp` to file reviewer marks (the latter will not be available for marks made in older versions).  See the new user guide for a full explanation of how this works!
@@ -234,7 +235,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent spurious server shutdowns when fetching very long lists of items to process during background sweeps.
 - Fix: resize comment area if details element expanded (e.g., "Quoted NN lines of code...").
 
-#### 2017.3170 (min 1992.2986 GHE 2.12+) 2018-12-14
+#### 2017.3170 (min 1992.2986 GHE 2.12 - 2.20) 2018-12-14
 - Upd: show a yellow warning sign on the merge button if non-required checks are failing, instead of a red one which is now reserved for admin overrides of required checks.
 - Fix: correctly compute height of file matrix when concealing/revealing obsolete files.
 - Fix: when navigating to a file in a review, avoid animating the header multiple times if the user has visited multiple review pages during the session.
@@ -245,7 +246,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: in markdown comments, don't treat multiple triple-backticks on the same line as an unclosed code block since GitHub renders them as if though they were inline single-backticks instead.
 - Fix: respect no-animation setting in merge options dropdown.
 
-#### 2003.3043 (min 1992.2986 GHE 2.12+) 2018-11-28
+#### 2003.3043 (min 1992.2986 GHE 2.12 - 2.20) 2018-11-28
 - Upd: remove "butterfly" onboarding mechanism, to be replaced by a more conventional (and less hate-inspiring) checklist as part of the Vue rework at a later date.
 - Upd: exclude merged and closed PRs from the "Awaiting my action" section on the dashboard.
 - Upd: adjust sorting order of blocking avatars on the dashboard to be easier to parse visually.
@@ -258,7 +259,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: gracefully handle situation where a user who turned on an organization's "All current and future repos" toggle loses admin permissions but still has pull permissions.
 - Fix: ensure that the second and later runs of background cron tasks start from the beginning, rather than mistakenly resuming at the last checkpoint of the previous run.
 
-#### 1994.2998 (min 1992.2986 GHE 2.12+) 2018-11-19
+#### 1994.2998 (min 1992.2986 GHE 2.12 - 2.20) 2018-11-19
 - Upd: prevent rollbacks to version that use the old Firebase SDK.  It's now safe to remove the `REVIEWABLE_FIREBASE_AUTH` environment variable from your configuration, and revoke the legacy secret(s) if you'd like to do so.
 - Fix: avoid bogus "offline" state with pending writes that never goes away, caused by an unfixable false positive in the shared web worker client abandonment detection logic.  The trade-off is that now if a Reviewable tab exits abruptly, some resources in the shared worker won't be released.  However, closing _all_ Reviewable tabs will always dispose of the worker, so it's a good thing to try if you find your browser resource usage creeping up inexplicably.
 - Fix: correctly treat the "Show pull requests not yet connected to Reviewable" toggle on the dashboard as being on by default, if the user never toggled it manually.  Previous versions used to show it as on, but behaved as if it was off.
@@ -269,7 +270,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: raise timeout when checking permissions on all of the user's repos, to allow for a large number of repos even if the GitHub API server is pretty busy.
 - Fix: don't crash if a bulk permission check fails and a targeted permission check returns false.
 
-#### 1992.2986 (min 1975.2968 GHE 2.12+) 2018-10-31
+#### 1992.2986 (min 1975.2968 GHE 2.12 - 2.20) 2018-10-31
 - New: automatically archive old reviews to save space and prevent the monthly sweep from overloading Firebase.  Closed reviews are archived aggressively, while seemingly abandoned open reviews will be archived after a longer period of time, based on the time of last access (or review creation if never accessed).  Archived reviews remain in Firebase (and encrypted) and will be transparently restored as needed.  The only place where this feature is visible to users is on the reviews dashboard, where archived reviews will show their status as "Archived" until restored via a visit and may not show up in the correct category.
 - Upd: switch the client to the current version of the Firebase SDK.  All users will be signed out the first time they load a Reviewable page with this version, but currently open pages from the previous version will not be interrupted.  No config updates required beyond those from the previous version.
 - Fix: don't list reviews where the user is just a mentionee under the "being reviewed by you" category on the dashboard, but do list self-reviews there.  A side-effect of this fix is that some older reviews will show up in a category lower than "being reviewed by you" until somebody visits them again, but this shouldn't be a problem going forward.
@@ -280,7 +281,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: avoid some crashes when user signs in and out very quickly.  This should pretty much never occur in real usage, but did during github.com's recent breakdown where they were handing out auth tokens but immediately refusing to accept them!
 - Fix: defuse race condition that could let users try to create a line comment after signing in but before their review state was loaded, resulting in a crash.
 
-#### 1975.2968 (min 1866.2875 GHE 2.12+) 2018-10-19
+#### 1975.2968 (min 1866.2875 GHE 2.12 - 2.20) 2018-10-19
 - Upd: **CONFIG UPDATE REQUIRED** switch the server to the current version of the Firebase SDK.  The new SDK addresses some long-standing Firebase bugs, in particular greatly ameliorating (but not quite fixing) the stuck transactions that cause Reviewable servers to restart themselves frequently under load.  However, this new SDK **requires different credentials** to initialize the connection to Firebase.  Please check the updated [config docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md) for instructions on where to find the bits you'll need in the Firebase console and how to set the `REVIEWABLE_FIREBASE_WEB_API_KEY` and `REVIEWABLE_FIREBASE_CREDENTIALS_FILE` environment variables.  Please keep the old `REVIEWABLE_FIREBASE_AUTH` around for now, until the client gets updated to the new SDK as well in an upcoming release.  In case you have a very twitchy firewall, note that the new Firebase SDK will send requests to various subdomains of `googleapis.com` as part of the updated auth token management mechanism.
 - Upd: update syntax highlighting library, review and update file extension mappings, and subset library to a more commonly used set of languages based on analytics data from reviewable.io.  If you find that some file types are no longer highlighted correctly, please let me know and I'll add them to the next release.
 - Fix: handle even rarer edge cases when rebasing to avoid ending up with a broken review.
@@ -290,7 +291,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: invite user to sign in when landing on a review page they have permission for but where the review hasn't been created yet, instead of getting stuck.
 - Fix: avoid false negative liveness checks that cause an automated server restart when a cron job is starting up.
 
-#### 1911.2952 (min 1866.2875 GHE 2.12+) 2018-10-08
+#### 1911.2952 (min 1866.2875 GHE 2.12 - 2.20) 2018-10-08
 - New: allow user to set a default query for the Reviews page
 - Upd: add `±starred` and `±watched` filters for use in Reviews queries.
 - Upd: migrate Merge button from AngularJS to VueJS.  There should be no user-visible differences, except perhaps an incidental fix to a rare bug in applying default settings.  This is just the first step in the migration of the entire UI to VueJS; unlike the big-bang model migration and attendant beta, this one will proceed piecemeal over the coming months.  I won't call out further VueJS updates in the changelog unless they have user-visible effects.
@@ -301,7 +302,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: don't get stuck waiting forever for data when the user switches pages at just the right time to trigger a race condition.  This could happen most easily when switching from Reviews to Repositories and back before the Repositories page fully loaded, but could have affected other transitions as well.
 - Fix: remove top discussion draft area from bunny dropdown when user not signed in (otherwise typing in it would cause a crash).
 
-#### 1883.2928 (min 1866.2875 GHE 2.12+) 2018-09-09
+#### 1883.2928 (min 1866.2875 GHE 2.12 - 2.20) 2018-09-09
 - Upd: don't count participation in resolved dicussions towards inclusion in the "being reviewed by me" section on the dashboard.
 - Upd: restart the server if Firebase liveness check fails for more than about a minute.  This can help reset zombie connections to Firebase in some edge cases.
 - Upd: removed many rarely used languages from the syntax highlighting library pack to significantly reduce code size.
@@ -313,7 +314,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent some rare crashes when quickly navigating to a review from the dashboard and back.
 - Fix: prevent some permission denied errors that could occur if the connection dropped while publishing.
 
-#### 1872.2918 (min 1866.2875 GHE 2.12+) 2018-08-25
+#### 1872.2918 (min 1866.2875 GHE 2.12 - 2.20) 2018-08-25
 - Upd: mark stalled reviews with an icon in the reviews list.
 - Upd: raise LOC thresholds for considering a diff "big" and hiding it by default.
 - Fix: dynamically back off pull request list request size when we run into GitHub's GraphQL bug.  The request size used to be a static value picked to work "most of the time", but could still result in incomplete results sometimes (with a warning shown to the user).  This new approach should be more reliable.
@@ -328,7 +329,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: promptly update mergeability and show merge button when branch protection is turned on in a repo.
 - Fix: correctly style implicit code snippets in markdown, instantiated automatically by GitHub in response to a blob line range link.
 
-#### 1868.2890 (min 1866.2875 GHE 2.12+) 2018-08-04
+#### 1868.2890 (min 1866.2875 GHE 2.12 - 2.20) 2018-08-04
 - New: add a "Mark reviewed and go to next file / diff next revision" button at the bottom of diffs that need reviewing.  Also add a bindable command for this action (not bound by default).
 - Upd: change the semantics of the "to review" counter in the toolbar to "to review in the current diffs" (as originally planned), and fix the Changes box in the toolbar to turn the revision red when there are more files to review at a different revision.
 - Fix: correctly enforce min versions.  The last few releases will not automatically enforce the minimum rollback versions listed here, but please make sure to respect them nonetheless if you need to roll back.
@@ -341,7 +342,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent crash when repeatedly editing settings of repos in multiple organizations on the Repositories page.
 - Fix: update evaluated value when editing completion condition while an evaluation is already in progress.
 
-#### 1866.2875 (min 1831.2835 GHE 2.12+) 2018-07-24
+#### 1866.2875 (min 1831.2835 GHE 2.12 - 2.20) 2018-07-24
 - New: if a user is mentioned in a discussion (other than the main top-level thread), don't treat them as a reviewer unless they've taken review-like actions, e.g., marked a file as reviewed or started a new discussion.  This way, if you come into a review because somebody mentioned you to ask for spot advice, you won't see all files as to be reviewed and many discussions as to reply.
 - New: disable "Approve" and "Request changes" publication options if custom review completion condition sets `disableGitHubApprovals` to `true` in its return value.  This is useful for teams that have an LGTM-centric workflow and don't want the confusion of GitHub approvals (even if they're ignored).
 - New: added REVIEWABLE_LOG_GITHUB_API_LATENCY and REVIEWABLE_GITHUB_CACHE_SIZE environment variables.  See [configuration docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md) for details.
@@ -354,7 +355,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: guard against various failures when `REVIEWABLE_LOGGING_URL` is specified.
 - Fix: avoid producing temporarily invalid review structures when some events get handled out of order.  This could result in a "permission denied" message on the client while waiting for the review creation to finish.
 
-#### 1844.2857 (min 1831.2835 GHE 2.12+) 2018-07-14
+#### 1844.2857 (min 1831.2835 GHE 2.12 - 2.20) 2018-07-14
 - New: integrate with GitHub's review approval system.  When publishing from Reviewable you can set whether to approve, request changes, or just comment, with Reviewable picking a default state based on your discussion dispositions and file review marks.  This state gets published to GitHub and will be used by the branch protection system's required reviews option.  Reviewers' current effective state is also reflected in Reviewable (in the reviews list and on the review page) and available for use in custom review completion conditions.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/github-reviews-integration-64906))
 - New: add "Trust but verify" user setting.  When turned on, discussions where the user is _Discussing_ and that get resolved with no further comment will be treated as unreplied.  The new setting panel can be accessed from any disposition dropdown via a small gear icon.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/trust-but-verify-65292))
 - Upd: moved time-ago comment dividers ("N days ago", etc.) to be above the corresponding time period, rather than below, in a nod to widespread convention.
@@ -364,7 +365,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: make toolbar dropdowns (checks, changes) show up correctly when page is scrolled down.
 - Fix: correctly list commits within diff bounds for current file in changes dropdown.
 
-#### 1831.2835 (min 1801.2799 GHE 2.12+) 2018-07-02
+#### 1831.2835 (min 1801.2799 GHE 2.12 - 2.20) 2018-07-02
 - New: allow user to tweak the app's visual contrast (e.g., of diff highlighting) through account settings dropdown.
 - Upd: emit the server-side review status (including a custom review completion condition, if so configured) when publishing a review.
 - Fix: work around a GitHub GraphQL bug that causes PRs to be randomly omitted from the review list when the list gets long.
@@ -375,7 +376,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent disposition dropdown from disappearing under another layer in rare cases.
 - Fix: improve auto-recovery from wrong webhook secret.
 
-#### 1801.2799 (min 1785.2755 GHE 2.12+) 2018-06-10
+#### 1801.2799 (min 1785.2755 GHE 2.12 - 2.20) 2018-06-10
 - New: overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  The most intrusive UX change is that _all_ state changes are created as drafts and must now be published to take effect, including acknowledgements, disposition changes, and dismissals.  Otherwise, I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
 - Upd: added `±am:author`, `±am:assigned`, and `±am:requested` filters to the reviews list.
 - Fix: correctly calculate number of marks and reviewed files in the presence of renames.
@@ -384,7 +385,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: keep better track of currently focused file (for applying keyboard shortcuts).
 - Fix: greatly improve loading performance for reviews with many files (hundreds or higher), especially if a lot of files were renamed.
 
-#### 1785.2755 (min 1755.2561 GHE 2.12+) 2018-05-26
+#### 1785.2755 (min 1755.2561 GHE 2.12 - 2.20) 2018-05-26
 - Upd: remove automatically generated :shipit: emoji from published messages as it could be confusing in multi-reviewer situations.
 - Upd: add `review.pullRequest.creationTimestamp` to completion condition data; not backfilled but should populate pretty quickly.
 - Upd: tolerate new discussion semantics (coming in the next release!) in case of rollback.
@@ -398,7 +399,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: address some very rare client crashes caused by race conditions and data edge cases.
 - Fix: actually sort the repository lists on the Repositories page; they were only (mostly) sorted by accident before.
 
-#### 1777.2720 (BETA, min 1755.2561 GHE 2.12+) 2018-04-26
+#### 1777.2720 (BETA, min 1755.2561 GHE 2.12 - 2.20) 2018-04-26
 - New: enforce a minimum supported GHE version, starting with the relatively recent GHE 2.12.  This lets Reviewable take advantage of new APIs sooner, in particular new additions to GraphQL data.  The policy is to always support the two most recent GHE versions and the three most recent if possible.
 - New: this release includes a complete rewrite of the client's data / logic layer for improved performance and consistency.  One extra bonus is that communication with Firebase is moved into a worker thread, offloading all the crypto to where it doesn't block the UI.  When using Chrome or Firefox the worker is shared between tabs, improving bootstrap time on subsequent tabs due to the connection already being established, and providing a shared data cache.
 - New: offer option to load all diffs when any were skipped for any reason (e.g., throttling, too many files, etc.).
