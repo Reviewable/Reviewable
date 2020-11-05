@@ -9,6 +9,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 
+#### Release 2580.4292 (min 1992.2986 GHE 2.12+) 2020-11-04
+- Fix: **HOTFIX** fix handling of paginated GraphQL requests when running against GHE.  This has been broken since day one but mostly worked fine since requests that require paginating are pretty rare.  However, as we've been replacing REST with GraphQL over time the issue has grown worse and we finally tracked it down.  You're most likely to notice it with assignee and reviewer autocomplete not listing the right users, or with mysterious failures when publishing a review with assignee or reviewer changes.
+
 #### Release 2569.4290 (min 1992.2986 GHE 2.12+) 2020-11-01
 - Upd: fully support syntax highlighting of `.tsx` files.
 - Fix: show all PRs where the user was mentioned on the reviews dashboard, working around a GitHub bug where @-mentions in reviews aren't indexed properly.  See [issue comment](https://github.com/Reviewable/Reviewable/issues/636#issuecomment-696902568) for limitations.
