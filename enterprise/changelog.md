@@ -9,6 +9,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
 - Upd: upgrade to Node 14.
+- Upd: if a PR is ready to merge and there are no other blocking users, designate the PR's autor as the blocking user so the PR will show up in the "Awaiting my action" section on their dashboard.
+- Upd: add `review.pullRequest.target.branchProtected` flag to custom review completion condition input data.
+- Fix: don't show disabled merge button on dashboard if PR is ready to merge but the user doesn't have permission to do so.
 
 #### Release 2580.4292 (min 1992.2986 GHE 2.12+) 2020-11-04
 - Fix: **HOTFIX** fix handling of paginated GraphQL requests when running against GHE.  This has been broken since day one but mostly worked fine since requests that require paginating are pretty rare.  However, as we've been replacing REST with GraphQL over time the issue has grown worse and we finally tracked it down.  You're most likely to notice it with assignee and reviewer autocomplete not listing the right users, or with mysterious failures when publishing a review with assignee or reviewer changes.
