@@ -287,13 +287,71 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#tips-and-tricks" id="tips-and-tricks">Tips and Tricks</a></h1>
+<h2><a class="header" href="#visual-tweaks" id="visual-tweaks">Visual tweaks</a></h2>
+<p>Reviewable doesn't have a lot of settings exposed in the UI to customize how things look to keep things simple.  However, you can easily inject a <a href="accountsettings.html#custom-stylesheet">custom stylesheet</a> to override styling on a wide range of elements.  Here are some commonly requested examples.</p>
+<h3><a class="header" href="#line-numbers" id="line-numbers">Line numbers</a></h3>
+<p>Reviewable doesn't show line numbers in the diff for a number of reasons — there's a long discussion in <a href="https://github.com/Reviewable/Reviewable/issues/147">issue #147</a>.  The snippet below overrides this.  It's not perfect but it should work in the vast majority of cases:</p>
+<pre><code class="language-css">div[data-line-number]:not([data-line-number=&quot;0&quot;]):before {
+  content:attr(data-line-number);
+  position:absolute;
+  color: #444;
+  padding: 1px 3px 3px;
+  font-size: x-small;
+  display: block;
+  width: 20px;
+  text-align: right;
+}
+div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
+  margin-left: 26px;
+}
+</code></pre>
+<p>If you don't need to tweak these styles, just paste <code>https://gist.githack.com/pkaminski/4fd7c7b9014856de32bb43f84a396772/raw/line_numbers.css</code> into the custom stylesheet field.</p>
+<h3><a class="header" href="#diff-line-background" id="diff-line-background">Diff line background</a></h3>
+<p>When in side-by-side diff mode, Reviewable doesn't highlight the whole line — just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:</p>
+<pre><code class="language-css">.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
+  background-color: #FBDDDD;  /* rgba(91, 220, 114, 0.20) on white */
+}
+.two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .left.line.content,
+.two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .left.line.content {
+  background-color: #FFF7F7;  /* rgba(91, 220, 114, 0.05) on white */
+}
+
+.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .right.line.content {
+  background-color: #DDF7E2;  /* rgba(91, 220, 114, 0.20) on white */
+}
+.two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .right.line.content,
+.two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .right.line.content {
+  background-color: #EFFCF1;  /* rgba(91, 220, 114, 0.05) on white */
+}
+
+.two.column.diff .diff.line .left.line.content .delta {
+  background-color: rgba(240, 92, 92, 0.30);
+}
+.two.column.diff .diff.line.base .left.line.content .delta,
+.two.column.diff .diff.line.whitespace .left.line.content .delta {
+  background-color: rgba(240, 92, 92, 0.15);
+}
+
+.two.column.diff .diff.line .right.line.content .delta {
+  background-color: rgba(91, 220, 114, 0.30);
+}
+.two.column.diff .diff.line.base .right.line.content .delta,
+.two.column.diff .diff.line.whitespace .right.line.content .delta {
+  background-color: rgba(91, 220, 114, 0.15);
+}
+</code></pre>
+<p>Or just use this link:  <code>https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css</code>.</p>
+<h3><a class="header" href="#victory-bunny" id="victory-bunny">Victory bunny</a></h3>
+<p>Don't like the merge bunny?  Turn it off like this:</p>
+<pre><code class="language-css">.victory.decor {display: none}
+</code></pre>
 <h2><a class="header" href="#easy-local-revision-checkout" id="easy-local-revision-checkout">Easy local revision checkout</a></h2>
 <h3><a class="header" href="#tldr" id="tldr">TLDR</a></h3>
 <pre><code class="language-sh">git fetch origin refs/reviewable/pr756/r6
 git checkout FETCH_HEAD
 </code></pre>
 <h3><a class="header" href="#explanation" id="explanation">Explanation</a></h3>
-<p>Reviewable stores references to commits associated with each revision on Github.<br />
+<p>Reviewable stores references to commits associated with each revision on Github.
 This has a handy side effect of making it easy to checkout a local copy of any revision from any Reviewable pull request.</p>
 <p>This can be done in two steps.</p>
 <ol>
