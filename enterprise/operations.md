@@ -42,7 +42,7 @@ You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_E
 2. Obtain a copy of `rules_firecrypt.json`, either by extracting it from the system's Docker image (it's in `/usr/src/app`) or by requesting the current copy from your support contact.
 3. Locate the current encryption key (if any) and generate a new encryption key if desired (`openssl rand --base64 64`).
 4. Put Reviewable in maintenance mode (instructions above).
-5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE --auth $REVIEWABLE_FIREBASE_CREDENTIALS_FILE --spec rule_firecrypt.json --oldKey <i>base64key</i> --newKey <i>base64Key</i></code>, using the environment values you configured for your server and specifying one or both keys depending on the operation you want to perform (encrypt, decrypt, or rotate).
+5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE --auth $REVIEWABLE_FIREBASE_CREDENTIALS_FILE --spec rule_firecrypt.json --oldKey <i>&lt;base64key&gt;</i> --newKey <i>&lt;base64Key&gt;</i></code>, using the environment values you configured for your server and specifying one or both keys depending on the operation you want to perform (encrypt, decrypt, or rotate).
 6. Update your server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY`.
 7. Exit maintenance mode (instructions above).
 
