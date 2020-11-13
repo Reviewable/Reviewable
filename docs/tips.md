@@ -1,5 +1,13 @@
 # Tips and Tricks
 
+## Screencasts
+
+There's a growing collection of [tips in screencast format](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/), if that's what you prefer, including:
+- [What's the fastest way to check out your review code?](https://www.youtube.com/watch?v=JqFGBZa7YGg)
+- [Keyboard shortcuts for efficient reviews](https://www.youtube.com/watch?v=xuJ2PGFprBE)
+- [Customizing keyboard shortcuts](https://www.youtube.com/watch?v=lg2tvhTTQNE)
+- [Customizing code review completion conditions](https://www.youtube.com/watch?v=mIwg3zRpSQE)
+
 ## Visual tweaks
 
 Reviewable doesn't have a lot of settings exposed in the UI to customize how things look to keep things simple.  However, you can easily inject a [custom stylesheet](accountsettings.md#custom-stylesheet) to override styling on a wide range of elements.  Here are some commonly requested examples.
