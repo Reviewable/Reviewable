@@ -4,3 +4,6 @@
 *.ico binary
 *.woff binary
 *.woff2 binary
+
+mdbook -text
+mdbook-classy -text
