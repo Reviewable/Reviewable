@@ -8,6 +8,11 @@ There's a growing collection of [tips in screencast format](https://www.youtube.
 - [Customizing keyboard shortcuts](https://www.youtube.com/watch?v=lg2tvhTTQNE)
 - [Customizing code review completion conditions](https://www.youtube.com/watch?v=mIwg3zRpSQE)
 
+## Articles
+
+Here are some articles and blog posts on code reviews that we found worth reading:
+- [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/)
+
 ## Visual tweaks
 
 Reviewable doesn't have a lot of settings exposed in the UI to customize how things look to keep things simple.  However, you can easily inject a [custom stylesheet](accountsettings.md#custom-stylesheet) to override styling on a wide range of elements.  Here are some commonly requested examples.
