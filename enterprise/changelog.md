@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: upgrade to Node 14.
 - Upd: if a PR is ready to merge and there are no other blocking users, designate the PR's autor as the blocking user so the PR will show up in the "Awaiting my action" section on their dashboard.
 - Upd: add `review.pullRequest.target.branchProtected` flag to custom review completion condition input data.
+- Upd: render emojis in PR labels.
 - Fix: don't show disabled merge button on dashboard if PR is ready to merge but the user doesn't have permission to do so.
 - Fix: avoid expensive load of file information for a review on the dashboard if it looks like it has a lot of files.  This could result in locking up the dashboard for everyone that had the PR in their list until it was closed and fell outside the query's closed PR horizon.  PRs impacted by this fix will show `???` as their files counter.
 - Fix: match unreview file navigation logic to counter logic, otherwise it was possible to get into a situation where navigating would select files that did not, in fact, need to be reviewed.
