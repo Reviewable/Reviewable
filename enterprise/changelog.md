@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+)
+
+#### Release 2630.4363 (min 1992.2986 GHE 2.12+) 2020-12-09
 - Upd: upgrade to Node 14.
 - Upd: if a PR is ready to merge and there are no other blocking users, designate the PR's autor as the blocking user so the PR will show up in the "Awaiting my action" section on their dashboard.
 - Upd: add `review.pullRequest.target.branchProtected` flag to custom review completion condition input data.
