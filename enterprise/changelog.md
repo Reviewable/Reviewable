@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid requesting review from yourself when using the default completion condition, syncing requested reviewers on publish, and having one or more files that were never marked reviewed in the PR.
 - Fix: fix 'View on github' button to scroll to correct file on recent versions of GHE by switching the hash from MD5 to SHA-256.
 - Fix: open comment images in a new tab to match GitHub's behavior.
+- Fix: don't fail with a "GitHub disregarded the 'raw' media type" error when dealing with binary files on new versions of GHE.
 
 #### Release 2630.4363 (min 1992.2986 GHE 2.12+) 2020-12-09
 - Upd: upgrade to Node 14.
