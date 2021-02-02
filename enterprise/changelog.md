@@ -22,6 +22,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: open comment images in a new tab to match GitHub's behavior.
 - Fix: don't fail with a "GitHub disregarded the 'raw' media type" error when dealing with binary files on new versions of GHE.
 - Fix: raise or remove some queue concurrency constraints.  This should let Reviewable take better advantage of CPU resources instead of artificially throttling itself.  It probably won't affect your deployment but if you have CPU-based scaling triggers set up you may want to capture a new baseline and adjust them.
+- Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 
 #### Release 2630.4363 (min 1992.2986 GHE 2.12+) 2020-12-09
 - Upd: upgrade to Node 14.
