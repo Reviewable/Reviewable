@@ -136,7 +136,7 @@ Starting your draft with one of these words will switch to the corresponding dis
 You can also assign disposition changes to [keyboard shortcuts](accountsettings.md#custom-key-bindings) with the `setCurrentDiscussionDisposition` command.
 
 {:.tip}
-You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either **Dismiss from this discussion** or **Dismiss from all discussions** at the bottom of the drop-down.  (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
+You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either **Dismiss from this discussion** or **Dismiss from all discussions** at the bottom of the drop-down. Or if the discussion's disposition is satisfied, and you have started a draft, you may dismiss all blocking reviewers by clicking a **dismiss dissenter(s)** link on the top right side of the draft, to the left of the grouped avatars (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
 
 ### Resolution workflows
 
