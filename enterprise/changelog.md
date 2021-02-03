@@ -7,7 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1992.2986 GHE 2.12+)
+#### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
+- Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 
 #### Release 2696.4504 (min 1992.2986 GHE 2.12+) 2021-02-01
 - New: offer a quick link to dismiss dissenting participants from a discussion.  This shows up next to the dispositions rollout if the user is satisfied, has a draft open, other participants are blocking or working, and the user is able to dismiss them.
@@ -22,7 +23,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: open comment images in a new tab to match GitHub's behavior.
 - Fix: don't fail with a "GitHub disregarded the 'raw' media type" error when dealing with binary files on new versions of GHE.
 - Fix: raise or remove some queue concurrency constraints.  This should let Reviewable take better advantage of CPU resources instead of artificially throttling itself.  It probably won't affect your deployment but if you have CPU-based scaling triggers set up you may want to capture a new baseline and adjust them.
-- Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 
 #### Release 2630.4363 (min 1992.2986 GHE 2.12+) 2020-12-09
 - Upd: upgrade to Node 14.
