@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
+- Upd: migrated from raven-js SDK to Sentry SDK v6.0.3.
 - Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 - Fix: make sure "Show on GiHub" button in a diff always links to a valid page that will show the file in question, even if the diff bounds don't cover any changes.
 - Fix: avoid fetching image files in a PR on the client (based on filename), since we can't diff them anyway.
