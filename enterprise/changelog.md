@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
 - Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
+- Fix: resolves content-type mismatch error when fetching image files.
+- Fix: prevent uncollapsed bounds of binary file diff from linking to a diff that doesn't involve the file.
 
 #### Release 2696.4504 (min 1992.2986 GHE 2.12+) 2021-02-01
 - New: offer a quick link to dismiss dissenting participants from a discussion.  This shows up next to the dispositions rollout if the user is satisfied, has a draft open, other participants are blocking or working, and the user is able to dismiss them.
