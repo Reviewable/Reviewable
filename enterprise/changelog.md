@@ -8,10 +8,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
-- Upd: migrated from raven-js SDK to Sentry SDK v6.0.3.
+- Upd: migrated from raven-js SDK to Sentry SDK v6.0.3.  This should have no impact on you unless you connected your instance to Sentry.
+- Upd: optimized dashboard PR query structure to reduce first page load latency a bit.
 - Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 - Fix: make sure "Show on GiHub" button in a diff always links to a valid page that will show the file in question, even if the diff bounds don't cover any changes.
 - Fix: avoid fetching image files in a PR on the client (based on filename), since we can't diff them anyway.
+- Fix: reduce the maximum number of most recent issues cached for autocomplete from 10k to 8k, to avoid running into Firebase write size limits.
 
 #### Release 2696.4504 (min 1992.2986 GHE 2.12+) 2021-02-01
 - New: offer a quick link to dismiss dissenting participants from a discussion.  This shows up next to the dispositions rollout if the user is satisfied, has a draft open, other participants are blocking or working, and the user is able to dismiss them.
