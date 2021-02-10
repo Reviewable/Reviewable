@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make sure "Show on GiHub" button in a diff always links to a valid page that will show the file in question, even if the diff bounds don't cover any changes.
 - Fix: avoid fetching image files in a PR on the client (based on filename), since we can't diff them anyway.
 - Fix: reduce the maximum number of most recent issues cached for autocomplete from 10k to 5k, to avoid running into Firebase write size limits.
+- Fix: don't erroneously treat files as deleted if the entire PR is reverted back to base (but remains open).
 
 #### Release 2696.4504 (min 1992.2986 GHE 2.12+) 2021-02-01
 - New: offer a quick link to dismiss dissenting participants from a discussion.  This shows up next to the dispositions rollout if the user is satisfied, has a draft open, other participants are blocking or working, and the user is able to dismiss them.
