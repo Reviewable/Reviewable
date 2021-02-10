@@ -13,7 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 - Fix: make sure "Show on GiHub" button in a diff always links to a valid page that will show the file in question, even if the diff bounds don't cover any changes.
 - Fix: avoid fetching image files in a PR on the client (based on filename), since we can't diff them anyway.
-- Fix: reduce the maximum number of most recent issues cached for autocomplete from 10k to 5k, to avoid running into Firebase write size limits.
+- Fix: successfully continue updating Reviewable's issue autocompletion cache even when it grows very large (avoiding the `write_too_big` error).
 - Fix: don't erroneously treat files as deleted if the entire PR is reverted back to base (but remains open).
 
 #### Release 2696.4504 (min 1992.2986 GHE 2.12+) 2021-02-01
