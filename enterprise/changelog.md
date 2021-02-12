@@ -8,13 +8,15 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
+- Upd: optimize dashboard PR query structure to reduce first page load latency a bit.
+
+#### Release 2765.4558 (min 1992.2986 GHE 2.12+ or 3.0+) 2021-02-13
 - **HOTFIX**: make custom review completion conditions work again.  These got broken back in 2630.4363 for both the Sandcastle executor (completely) and for AWS Lambda (for new repos only).
-- Upd: migrated from raven-js SDK to Sentry SDK v6.0.3.  This should have no impact on you unless you connected your instance to Sentry.
-- Upd: optimized dashboard PR query structure to reduce first page load latency a bit.
+- Upd: migrate from raven-js SDK to Sentry SDK v6.0.3.  This should have no impact on you unless you connected your instance to Sentry.
 - Fix: prevent severe performance degradation on page load when a review used a _lot_ of emojis.
 - Fix: make sure "Show on GiHub" button in a diff always links to a valid page that will show the file in question, even if the diff bounds don't cover any changes.
 - Fix: avoid fetching image files in a PR on the client (based on filename), since we can't diff them anyway.
-- Fix: successfully continue updating Reviewable's issue autocompletion cache even when it grows very large (avoiding the `write_too_big` error).
+- Fix: successfully continue updating Reviewable's issue autocompletion cache even when it grows very large (avoiding a `write_too_big` error).
 - Fix: don't erroneously treat files as deleted if the entire PR is reverted back to base (but remains open).
 - Fix: support `done` and `fail` callbacks for asynchronous custom review completion conditions in the Sandcastle executor.
 
