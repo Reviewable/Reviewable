@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
 - Upd: optimize dashboard PR query structure to reduce first page load latency a bit.
+- Fix: prevent client and server from sending out harmless but annoying requests to `localhost` when the Sentry connection is not configured.
 
 #### Release 2765.4558 (min 1992.2986 GHE 2.12+ or 3.0+) 2021-02-13
 - **HOTFIX**: make custom review completion conditions work again.  These got broken back in 2630.4363 for both the Sandcastle executor (completely) and for AWS Lambda (for new repos only).
