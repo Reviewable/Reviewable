@@ -8,11 +8,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
+- New: allow the user to constrain the dashboard review list to a specific organization, and persist the setting across page reloads.  This is more efficient than a filter query.
 - Upd: optimize dashboard PR query structure to reduce first page load latency a bit.
 - Fix: prevent client and server from sending out harmless but annoying requests to `localhost` when the Sentry connection is not configured.
-- Fix: diff SVG files again, instead of treating them as images
-- Fix: avoid error with image files when user is not signed in
-- Fix: correctly load the repo's labels dictionary even if user is not signed in
+- Fix: diff SVG files again, instead of treating them as images.
+- Fix: avoid error with image files when user is not signed in.
+- Fix: correctly load the repo's labels dictionary even if user is not signed in.
+- Fix: prevent a rare crash with an error related to `borrowElement`.
 
 #### Release 2765.4558 (min 1992.2986 GHE 2.12+ or 3.0+) 2021-02-13
 - **HOTFIX**: make custom review completion conditions work again.  These got broken back in 2630.4363 for both the Sandcastle executor (completely) and for AWS Lambda (for new repos only).
