@@ -8,11 +8,18 @@ If PRs appear to be missing from the list, try clicking the **Include stalled pu
 
 ![reviewable reviews list](images/reviews_4.png)
 
-Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  There's no way to show more or older closed PRs, you'll need to use GitHub to search for those.
-
 PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the **Waiting on me** group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
 
-You can modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md).
+You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md).
+
+{:.tip}
+Loading the list of reviews for a single organization or repository will be much faster than doing so for all your repositories.
+
+You can further modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.
+
+{:.tip}
+Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  To show older closed PRs click **Show more concluded reviews** at the bottom of the panel, repeating as necessary.
+
 
 ## Review state
 
