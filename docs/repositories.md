@@ -179,6 +179,7 @@ The current state of the review is accessible to your code via the `review` vari
   pullRequest: {
     title: 'Work work work',
     number: 44,
+    state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
     author: {username: 'pkaminski'},
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
@@ -221,6 +222,9 @@ The current state of the review is accessible to your code via the `review` vari
       }
     }
   },
+  pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
+    {username: 'pkaminski'}
+  ],
   revisions: [  // List of all revisions, in chronological order
     {
       key: 'r1',
@@ -288,7 +292,7 @@ A string describing the current status of the review, such as `2 of 5 files revi
 A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the `description` instead.
 
 #### `pendingReviewers`
-An array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.
+An array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.
 
 #### `files`
 An array of objects that look like `{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}`.  (It's OK to just augment the `review.files` structure with additional properties and return the whole thing here.)
