@@ -411,6 +411,7 @@
   pullRequest: {
     title: 'Work work work',
     number: 44,
+    state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
     author: {username: 'pkaminski'},
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
@@ -453,6 +454,9 @@
       }
     }
   },
+  pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
+    {username: 'pkaminski'}
+  ],
   revisions: [  // List of all revisions, in chronological order
     {
       key: 'r1',
@@ -507,26 +511,36 @@
 </code></pre>
 <h3><a class="header" href="#condition-output" id="condition-output">Condition output</a></h3>
 <p>Your code must return an object with some or all of the following properties.  Any missing properties (at the top level) will be filled in by using the built-in default condition.  This means that you can safely return, e.g., just the <code>disableGitHubApprovals</code> flag and the rest will be defaulted for you.</p>
-<ul>
-<li><code>completed</code>: a boolean indicating whether the review is complete or not.</li>
-<li><code>description</code>: a string describing the current status of the review, such as <code>2 of 5 files reviewed, 4 unresolved discussions</code>.</li>
-<li><code>shortDescription</code>: a string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the <code>description</code> instead.</li>
-<li><code>pendingReviewers</code>: an array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.</li>
-<li><code>files</code>: an array of objects that look like <code>{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}</code>.  (It's OK to just augment the <code>review.files</code> structure with additional properties and return the whole thing here.)
+<h4><a class="header" href="#completed" id="completed"><code>completed</code></a></h4>
+<p>A boolean indicating whether the review is complete or not.</p>
+<h4><a class="header" href="#description" id="description"><code>description</code></a></h4>
+<p>A string describing the current status of the review, such as <code>2 of 5 files reviewed, 4 unresolved discussions</code>.</p>
+<h4><a class="header" href="#shortdescription" id="shortdescription"><code>shortDescription</code></a></h4>
+<p>A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the <code>description</code> instead.</p>
+<h4><a class="header" href="#pendingreviewers" id="pendingreviewers"><code>pendingReviewers</code></a></h4>
+<p>An array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.  You can either compute this value from scratch, or crib from the <code>review.pendingReviewers</code> input value, which contains Reviewable's guess as to who the pending reviewers should be.</p>
+<h4><a class="header" href="#files" id="files"><code>files</code></a></h4>
+<p>An array of objects that look like <code>{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}</code>.  (It's OK to just augment the <code>review.files</code> structure with additional properties and return the whole thing here.)</p>
 <ul>
 <li>To <a href="files.html#file-list">group files in the file matrix</a>, set an optional <code>group</code> property on each file with any name you'd like; all files with the same <code>group</code> value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.</li>
 <li>To override whether a file has been reviewed at a revision set a <code>reviewed</code> boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.</li>
 </ul>
-</li>
-<li><code>refreshTimestamp</code>: a timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via <code>Date.getTime()</code>.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous <code>refreshTimestamp</code>s.</li>
-<li><code>disableGitHubApprovals</code>: a boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.</li>
-<li><code>syncRequestedReviewers</code>: a boolean that, if true, will force synchronization of GitHub requested reviewers from <code>pendingReviewers</code>.  (You should only set it if the repository is connected to Reviewable.)  This can be useful to standardize the workflow (e.g., to make metrics provided by another tool more reliable), but note that users will still be able to manually request and unrequest reviewers anyway.  When set to <code>true</code>, the server will automatically update requested reviewers whenever <code>pendingReviewers</code> changes (including when the PR is first created) using any repo admin account.  The client will also force enable (<code>true</code>) or disable (<code>false</code>) the <a href="reviews.html#sync-requested-reviewers">&quot;Sync requested reviewers&quot;</a> option when publishing via Reviewable.</li>
-<li><code>disableBranchUpdates</code>: a boolean that, if true, will disable the ability to merge the target (base) branch into the source (head) branch in Reviewable's UI.  This is to avoid misclicks in workflows where developers are expected to rebase rather than merge.  (It's not possible to trigger a rebase through Reviewable's UI unfortunately.)</li>
-<li><code>mergeStyle</code>: one of <code>'merge'</code>, <code>'squash'</code> or <code>'rebase'</code>.  If set, forces the merge style for a PR <em>in Reviewable only</em>.  (Does not affect merging via the GitHub UI or API.)  If this conflicts with GitHub's permitted merge styles it's ignored.</li>
-<li><code>defaultMergeCommitMessage</code>: a string that will be used as the default commit message when merging a pull request from Reviewable in the normal (&quot;Merge&quot;) mode.  The user can edit it before merging as usual.</li>
-<li><code>defaultSquashCommitMessage</code> a string as above, but used when merging in &quot;Squash&quot; mode.</li>
-<li><code>debug</code>: any data structure you'd like to be able to inspect when debugging your condition.  It'll be displayed in the <strong>Evaluation result</strong> pane but otherwise ignored.</li>
-</ul>
+<h4><a class="header" href="#refreshtimestamp" id="refreshtimestamp"><code>refreshTimestamp</code></a></h4>
+<p>A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via <code>Date.getTime()</code>.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous <code>refreshTimestamp</code>s.</p>
+<h4><a class="header" href="#disablegithubapprovals" id="disablegithubapprovals"><code>disableGitHubApprovals</code></a></h4>
+<p>A boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.</p>
+<h4><a class="header" href="#syncrequestedreviewers" id="syncrequestedreviewers"><code>syncRequestedReviewers</code></a></h4>
+<p>A boolean that, if true, will force synchronization of GitHub requested reviewers from <code>pendingReviewers</code>.  (You should only set it if the repository is connected to Reviewable.)  This can be useful to standardize the workflow (e.g., to make metrics provided by another tool more reliable), but note that users will still be able to manually request and unrequest reviewers anyway.  When set to <code>true</code>, the server will automatically update requested reviewers whenever <code>pendingReviewers</code> changes (including when the PR is first created) using any repo admin account.  The client will also force enable (<code>true</code>) or disable (<code>false</code>) the <a href="reviews.html#sync-requested-reviewers">&quot;Sync requested reviewers&quot;</a> option when publishing via Reviewable.</p>
+<h4><a class="header" href="#disablebranchupdates" id="disablebranchupdates"><code>disableBranchUpdates</code></a></h4>
+<p>A boolean that, if true, will disable the ability to merge the target (base) branch into the source (head) branch in Reviewable's UI.  This is to avoid misclicks in workflows where developers are expected to rebase rather than merge.  (It's not possible to trigger a rebase through Reviewable's UI unfortunately.)</p>
+<h4><a class="header" href="#mergestyle" id="mergestyle"><code>mergeStyle</code></a></h4>
+<p>One of <code>'merge'</code>, <code>'squash'</code> or <code>'rebase'</code>.  If set, forces the merge style for a PR <em>in Reviewable only</em>.  (Does not affect merging via the GitHub UI or API.)  If this conflicts with GitHub's permitted merge styles it's ignored.</p>
+<h4><a class="header" href="#defaultmergecommitmessage" id="defaultmergecommitmessage"><code>defaultMergeCommitMessage</code></a></h4>
+<p>A string that will be used as the default commit message when merging a pull request from Reviewable in the normal (Merge) mode.  The user can edit it before merging as usual.</p>
+<h4><a class="header" href="#defaultsquashcommitmessage" id="defaultsquashcommitmessage"><code>defaultSquashCommitMessage</code></a></h4>
+<p>A string that will be used as the default commit message when merging a pull request from Reviewable in Squash mode.  The user can edit it before merging as usual.</p>
+<h4><a class="header" href="#debug" id="debug"><code>debug</code></a></h4>
+<p>Any data structure you'd like to be able to inspect when debugging your condition.  It'll be displayed in the <strong>Evaluation result</strong> pane but otherwise ignored.</p>
 
                     </main>
 
