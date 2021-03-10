@@ -8,6 +8,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
+
+#### Release 2899.4660 (min 1992.2986 GHE 2.12+ or 3.0+)
+- **HOTFIX** for GHE 3.0: sync large PRs. GHE 3.0 made a subtle change to one of their APIs that made Reviewable fail when syncing PRs with very large diffs.
 - New: allow the user to constrain the dashboard review list to a specific organization, and persist the setting across page reloads.  This is more efficient than a filter query.
 - Upd: optimize dashboard PR query structure to reduce first page load latency a bit.
 - Upd: track more granular statsd counters of requests made to GHE, segmenting by queue and GitHub event type.
@@ -18,6 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent a rare crash with an error related to `borrowElement`.
 - Fix: trigger re-evaluation of the review completion condition when a PR's statuses are updated, in case the condition relies on this data (introduced in v2183.3776).
 - Fix: render tables in comments posted from GitHub.
+- Fix: fix a regression that prevented the crash dialog from showing in some cases, making it look like the page just froze.
 
 #### Release 2765.4558 (min 1992.2986 GHE 2.12+ or 3.0+) 2021-02-13
 - **HOTFIX**: make custom review completion conditions work again.  These got broken back in 2630.4363 for both the Sandcastle executor (completely) and for AWS Lambda (for new repos only).
