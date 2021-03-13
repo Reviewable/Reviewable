@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: group concluded PRs in their own section near the bottom of the list on the dashboard.
 - Upd: optimize GitHub API requests issued when processing a status or check update.
 - Fix: prompt the user to grant organizations read scope from the dashboard organization dropdown if missing.  Also stop trying to fetch the user's organizations if we know the request is bound to fail.
+- Fix: make sure that sequences of proposed new revisions are compared against existing revisions to prevent manual approval of empty file diffs. 
 
 #### Release 2899.4660 (min 1992.2986 GHE 2.12+ or 3.0+)
 - **HOTFIX** for GHE 3.0: sync large PRs. GHE 3.0 made a subtle change to one of their APIs that made Reviewable fail when syncing PRs with very large diffs.
