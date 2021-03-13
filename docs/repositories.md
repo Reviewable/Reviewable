@@ -302,6 +302,21 @@ An array of objects that look like `{path: 'full/path/to/file', group: 'Some Gro
 #### `refreshTimestamp`
 A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.
 
+#### `webhook`
+A URL string that Reviewable will send review status update notifications to.  You can hook this up directly to a Slack webhook or, through something like Zapier or Integromat, to most any other communication tool.  Specifically, whenever the `completed`, `description`,  `pendingReviewers`, or merge state of a review changes, after a short debouncing delay Reviewable will `POST` a JSON structure like the following to the webhook URL:
+```js
+{
+  // for Slack
+  "text": "<https://reviewable.io/reviews/reviewable/demo/1|*Demo code review (shared)*>  [Reviewable/demo #1]\nReview in progress: 1 of 4 files reviewed, 2 unresolved discussions\nWaiting on: *pkaminski*",
+  // for HTML-based chat apps
+  "html": "<b><a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Demo code review (shared)</a></b> &emsp; [Reviewable/demo #1]<br>Review in progress: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
+  // for email gateways
+  "subject": "Demo code review (shared) [Reviewable/demo #1]",
+  "htmlBody": "<a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Review in progress</a>: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
+  "key": "Reviewable/demo/1"  // you can use this identifier for threading
+}
+```
+
 #### `disableGitHubApprovals`
 A boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
 
