@@ -316,7 +316,7 @@ A URL string that Reviewable will send review status update notifications to.  Y
   "key": "Reviewable/demo/1"  // you can use this identifier for threading
 }
 ```
-If a webhook request fails the error will be displayed to everyone on the corresponding review page.  The webhook URL will never be disclosed, though.
+If a webhook request fails the error will be displayed to repository admins on the corresponding review page.  (The error message returned by your server will technically be accessible to anyone with pull permissions on the repo; however, the webhook URL itself will never be disclosed.)
 
 #### `disableGitHubApprovals`
 A boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
