@@ -7,9 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1992.2986 GHE 2.12+ or 3.0+)
+#### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - Upd: show all active reviewers in avatar lists on dashboard, but visually separate blocking from non-blocking ones.  Also improve avatar elision logic when running in a small window.
 - Upd: group concluded PRs in their own section near the bottom of the list on the dashboard.
+- Upd: optimize GitHub API requests issued when processing a status or check update.
 - Fix: prompt the user to grant organizations read scope from the dashboard organization dropdown if missing.  Also stop trying to fetch the user's organizations if we know the request is bound to fail.
 
 #### Release 2899.4660 (min 1992.2986 GHE 2.12+ or 3.0+)
