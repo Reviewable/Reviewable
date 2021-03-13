@@ -358,6 +358,13 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 <p>Don't like the merge bunny?  Turn it off like this:</p>
 <pre><code class="language-css">.victory.decor {display: none}
 </code></pre>
+<h2><a class="header" href="#skipping-reviews-of-vendored-dependencies" id="skipping-reviews-of-vendored-dependencies">Skipping reviews of vendored dependencies</a></h2>
+<p>Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable offers a few helpful features for this situation, from least to most invasive:</p>
+<ol>
+<li><a href="files.html#diff-suppression-and-file-type">Suppress diffs</a> for vendored files via <code>.gitattributes</code>.</li>
+<li>Use a custom review completion condition to <a href="repositories.html#files">group vendored files</a> in the file matrix, which will allow you to mark them all as reviewed with one click.</li>
+<li>Use a custom review completion condition to preemptively <a href="repositories.html#files">treat all such files as reviewed</a>.  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.</li>
+</ol>
 <h2><a class="header" href="#easy-local-revision-checkout" id="easy-local-revision-checkout">Easy local revision checkout</a></h2>
 <h3><a class="header" href="#tldr" id="tldr">TLDR</a></h3>
 <pre><code class="language-sh">git fetch origin refs/reviewable/pr756/r6
