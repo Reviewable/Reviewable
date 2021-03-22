@@ -324,6 +324,10 @@
 <p>You can revoke any or all of these permissions at any time in your <a href="https://github.com/settings/applications">GitHub authorized applications</a> settings page on GitHub. Remember to disconnect your repos before revoking, otherwise Reviewable will bug you about the lost permissions.</p>
 <h2><a class="header" href="#authorization-scopes" id="authorization-scopes">Authorization scopes</a></h2>
 <p>GitHub authorization scopes cannot be narrowed to a particular organization. For more information, GitHub also has some docs on <a href="https://developer.github.com/v3/oauth/#scopes">authorization scopes</a>. Specifically, we recommend that you take a moment to learn about <a href="https://help.github.com/articles/about-oauth-app-access-restrictions/">OAuth App access restrictions</a>.</p>
+<p><a id="saml-authorization"></a></p>
+<h2><a class="header" href="#saml-authorization" id="saml-authorization">SAML Authorization</a></h2>
+<p>Github allows organizations to protect resources with a SAML SSO server.  If your organization has enabled SAML you'll need to explicitly authorize Reviewable to access your organization; your previous generic authorization will not be enough. If Reviewable can safely notify you of this change, we'll prompt you to re-authorize your current session.  Otherwise, we'll have to terminate your current authorization and prompt you to sign back in.</p>
+<p><img src="images/saml_authorization.png" alt="SAML Authentication Flow Example" /></p>
 
                     </main>
 
