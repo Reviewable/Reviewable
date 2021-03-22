@@ -53,8 +53,10 @@ You can revoke any or all of these permissions at any time in your [GitHub autho
 
 GitHub authorization scopes cannot be narrowed to a particular organization. For more information, GitHub also has some docs on [authorization scopes](https://developer.github.com/v3/oauth/#scopes). Specifically, we recommend that you take a moment to learn about [OAuth App access restrictions](https://help.github.com/articles/about-oauth-app-access-restrictions/).
 
-## SAML Authentication
+<a id="saml-authorization"></a>
 
-Github allows Enterprise accounts to protect resources with a SAML SSO Server.  If your Organization has enabled SAML, you'll need to enable it for use with your GitHub OAuth Access Token. If Reviewable can safely notify you of this change, we'll prompt for re-authentication.  Otherwise, we'll have to terminate your current authorization and prompt you to log back in.
+## SAML Authorization
 
-![SAML Authentication Flow Example](enterprise/images/saml_authentication.png)  
+Github allows organizations to protect resources with a SAML SSO server.  If your organization has enabled SAML you'll need to explicitly authorize Reviewable to access your organization; your previous generic authorization will not be enough. If Reviewable can safely notify you of this change, we'll prompt you to re-authorize your current session.  Otherwise, we'll have to terminate your current authorization and prompt you to sign back in.
+
+![SAML Authentication Flow Example](images/saml_authorization.png)
