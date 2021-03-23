@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prompt the user to grant organizations read scope from the dashboard organization dropdown if missing.  Also stop trying to fetch the user's organizations if we know the request is bound to fail.
 - Fix: collapse sequences of matching revisions when the files in the PR haven't been changed.  This is specially useful when rebasing in commit-by-commit review mode as it will avoid forcing a review of lots of empty diffs.
 - Fix: in the crash dialog, correctly identify whether a fatal crash was caused by Reviewable or by a browser extension.
+- Fix: when diffing two revisions with different bases, do a better job of deciding which lines are base changes and which are not.  Previously, if a line was added/removed in a revision, it could get marked as being a base change even though it clearly wasn't.
 
 #### Release 2899.4660 (min 1992.2986 GHE 2.12+ or 3.0+)
 - **HOTFIX** for GHE 3.0: sync large PRs. GHE 3.0 made a subtle change to one of their APIs that made Reviewable fail when syncing PRs with very large diffs.
