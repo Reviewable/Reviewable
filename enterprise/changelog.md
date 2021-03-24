@@ -7,7 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+#### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+) 
 - New: add a `webhook` output property for custom review completion conditions, where Reviewable will send notifications of the review status changing (e.g., to Slack).  See the [public post](https://headwayapp.co/reviewable-changes/review-status-notifications-webhook-188778) for details.
 - Upd: show all active reviewers in avatar lists on dashboard, but visually separate blocking from non-blocking ones.  Also improve avatar elision logic when running in a small window.
 - Upd: group concluded PRs in their own section near the bottom of the list on the dashboard.
@@ -19,7 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: when diffing two revisions with different bases, do a better job of deciding which lines are base changes and which are not.  Previously, if a line was added/removed in a revision, it could get marked as being a base change even though it clearly wasn't.
 - Fix: drop bogus `check_run` and `check_suite` events from forked repos that GitHub insists on sending to us.  This should further decrease the load both on Reviewable and GHE if you use forked repos in your organization.  Note that I don't know when the field we use to detect if the event is bogus was introduced; it definitely exists in GHE 2.21 and I suspect it goes back much earlier, but GitHub's docs don't say.
 
-#### Release 2899.4660 (min 1992.2986 GHE 2.12+ or 3.0+)
+#### Release 2899.4660 (min 1992.2986 GHE 2.12+ or 3.0+) 2021-03-10
 - **HOTFIX** for GHE 3.0: sync large PRs. GHE 3.0 made a subtle change to one of their APIs that made Reviewable fail when syncing PRs with very large diffs.
 - New: allow the user to constrain the dashboard review list to a specific organization, and persist the setting across page reloads.  This is more efficient than a filter query.
 - Upd: optimize dashboard PR query structure to reduce first page load latency a bit.
