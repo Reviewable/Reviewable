@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: group concluded PRs in their own section near the bottom of the list on the dashboard.
 - Upd: optimize GitHub API requests issued when processing a status or check update.
 - Upd: add support for Google Cloud Storage uniform permissions and private ACLs.
+- Upd: show the Done button for the PR author as long as the discussion is unresolved (and as long as nobody else is Working), even if they're already satisfied.  This should help smooth out the workflow where the author responds Done but the reviewer isn't satisfied and requests further changes.
 - Fix: prompt the user to grant organizations read scope from the dashboard organization dropdown if missing.  Also stop trying to fetch the user's organizations if we know the request is bound to fail.
 - Fix: collapse sequences of matching revisions when the files in the PR haven't been changed.  This is specially useful when rebasing in commit-by-commit review mode as it will avoid forcing a review of lots of empty diffs.
 - Fix: in the crash dialog, correctly identify whether a fatal crash was caused by Reviewable or by a browser extension.
