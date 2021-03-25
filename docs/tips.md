@@ -1,6 +1,9 @@
 # Tips and Tricks
 
-## Screencasts
+## Videos
+
+We're trying out a new video format where an engineer goes through a real code review while we kibbitz and give them tips on using Reviewable:
+- [Adam Storm from CockroachDB reviews some code](https://www.youtube.com/watch?v=w3cgXBD7ErQ)
 
 There's a growing collection of [tips in screencast format](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/), if that's what you prefer, including:
 - [What's the fastest way to check out your review code?](https://www.youtube.com/watch?v=JqFGBZa7YGg)
