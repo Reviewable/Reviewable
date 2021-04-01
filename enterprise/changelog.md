@@ -7,7 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+) 
+#### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+- Fix: adapt to new GitHub OAuth token format.  This fixes "Unable to decrypt token with any key" errors.  You do _not_ need to change or fix your token encryption private key.
 
 #### Release 2963.4700 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-01
 - New: add a `webhook` output property for custom review completion conditions, where Reviewable will send notifications of the review status changing (e.g., to Slack).  See the [public post](https://headwayapp.co/reviewable-changes/review-status-notifications-webhook-188778) for details.
