@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+) 
+
+#### Release 2963.4700 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-01
 - New: add a `webhook` output property for custom review completion conditions, where Reviewable will send notifications of the review status changing (e.g., to Slack).  See the [public post](https://headwayapp.co/reviewable-changes/review-status-notifications-webhook-188778) for details.
 - Upd: show all active reviewers in avatar lists on dashboard, but visually separate blocking from non-blocking ones.  Also improve avatar elision logic when running in a small window.
 - Upd: group concluded PRs in their own section near the bottom of the list on the dashboard.
