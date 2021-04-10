@@ -247,6 +247,13 @@ Symbol | Meaning
 ![reviewable prior action](images/filematrix_11.png) | <strong>Inner Disc Color</strong>: File action against matched prior rebased revision. <br/> <strong>Outer Background Color</strong>: File action against immediately preceding revision. <br/> In this example, <i>r6</i> is not modified compared to <i>r4</i>, but is modified compared to <i>r5</i>.
 <br/>
 
+By design, Reviewable doesn't track files that haven't deviated from their base form &mdash; including files that have been modified back to their original state.  However, when using heuristics, Reviewable will sometimes "force" a revision when it otherwise wouldn't to prevent you from missing a critical diff.  When applicable, revision cells in both the [file matrix](#file-matrix) and [file header](#file-header) will also have a unique styling.
+
+Symbol | Meaning
+:----: |---------
+![reviewable prior action](images/filematrix_11.png) | <strong>Inner Disc Color</strong>: File action against matched prior rebased revision. <br/> <strong>Outer Background Color</strong>: File action against immediately preceding revision. <br/> In this example, <i>r6</i> is not modified compared to <i>r4</i>, but is modified compared to <i>r5</i>.
+<br/>
+
 ### Forked repos tracking upstream changes
 
 Some advanced workflows require overwriting the target branch of a PR with the head branch when it's ready to merge. This is necessary, for example, if you're maintaining a fork and rebasing from the upstream master. In such cases, both GitHub and Reviewable will choose the wrong base commit to compare files, and display not only all of the upstream changes—but also all the extra changes made in your fork over time.
