@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - New: add support for `vm2` sandboxed environment to safely run user code by setting `REVIEWABLE_CODE_EXECUTOR` environment variable to `vm2`.  **The `sandcastle` executor is DEPRECATED** and will be removed in a future release.
+- New: markdown list syntax for bullets, numbers, and tasks will be autocompleted in discussion drafts after pressing `enter` or `return`.
 - Upd: include new comments notifications in webhook contents even if the review isn't waiting on the users who have new comments to read.
 - Fix: adapt to new GitHub OAuth token format.  This fixes "Unable to decrypt token with any key" errors.  You do _not_ need to change or fix your token encryption private key.
 - Fix: reduce Docker image size back to <90MB.  The previous release accidentally bloated it a bit.
