@@ -2,15 +2,24 @@
 
 This chapter explains in detail how you manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.
 
+<a id="revision-cells"></a>
 ## Revision cells
 
 A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.
 
-![reviewable file matrix status](images/filematrix_9.png)
+![reviewable file matrix status](images/filematrix_10.png)
 
 The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
 
 ![reviewable file matrix diff bounds](images/filematrix_8.png)
+
+By design, Reviewable doesn't track files that haven't deviated from their base form -- including files that have been modified back to their original state.  However, under certain circumstances (e.g., [rebasing](#rebasing)), Reviewable will "force" a final revision when it otherwise wouldn't.  This is indicated by a reverted icon in a kept cell and is designed to prevent you from missing a critical diff.  Reviewable will also add special styling to cells when [rebased heuristics](#heuristics) are in play.
+
+Symbol | Meaning
+:----: |---------
+![reviewable forced revision](images/filematrix_12.png) | File revision forced.
+![reviewable prior action](images/filematrix_11.png) | <strong>Inner Disc Color</strong>: File action against matched prior rebased revision. <br></br> <strong>Outer Background Color</strong>: File action against immediately preceding revision. <br></br> In this example, <i>r6</i> is not modified compared to <i>r4</i>, but is modified compared to <i>r5</i>.
+
 
 <a id="mark-reviewed"></a>
 
@@ -31,6 +40,7 @@ Color | Meaning
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
+<a id="file-matrix"></a>
 ## File matrix
 
 Click the toggle to display a history matrix showing all files and revisions. Here, you can:
@@ -78,6 +88,7 @@ You can also drag in the diff header to bulk-select the diff bounds. Doing so in
 
 Below the [top-level discussions](discussions.md) you'll find the file contents.
 
+<a id="file-header"></a>
 ### File header
 
 At the top of each file diff panel there's a file path. Hold down `⌘`, `Ctrl`, or `⇧` (as appropriate for your browser) to open it in a new tab.  If the file paths are too long some may be collapsed in places with an &hellip;; hover over the path or swipe to expand and see the full path.  You can also double-click on or near the path to select it — even when collapsed — for easy copying.
@@ -230,12 +241,15 @@ Reviewable has extra built-in support for some specific development workflows.
 
 ### Rebasing
 
+<a id='rebasing'></a>
+
 Reviewable gracefully supports rebasing and force-pushing to your branch PR in the middle of a review.  Previous revisions are preserved and marked as obsolete (with a strikethrough), even if the commits they’re composed of have disappeared during the rebase.  You’ll still be able to diff against those revisions, and changes between the old and new base will automatically collapse in the diff so as to avoid distraction from deltas that don’t relate to this PR.
 
 {:.tip}
 To avoid garbage collection, Reviewable pins these commits in your repo using special refs under `refs/reviewable` — as long as the repository is connected.
 
-Reviewable also uses heuristics to match rebased commits to their ancestors using commit messages.  When successful, this enables Reviewable to suggest minimum-delta revision pairs for diffing in the “review each commit” style even if you reordered the commits.  Arcs that link blocks of revisions above the file matrix show a high-level overview of this mapping.  (We don’t show matches between individual revisions because that can quickly lead to an unreadable diagram.)
+<a id="heuristics"></a>
+Reviewable also uses heuristics to match rebased commits to their ancestors using commit messages.  When successful, this enables Reviewable to suggest minimum-delta revision pairs for diffing in the “review each commit” style even if you reordered the commits.  Arcs that link blocks of revisions above the file matrix show a high-level overview of this mapping.  (We don’t show matches between individual revisions because that can quickly lead to an unreadable diagram.) When applicable, revision cells in both the [file matrix](#file-matrix) and [file header](#file-header) will also have a unique styling.  The center disc indicates the files status against the matched prior revision and the outer background color indicates the status against the immediately preceding revision. (see [revision cells](#revision-cells) for more details.)
 
 ### Forked repos tracking upstream changes
 
