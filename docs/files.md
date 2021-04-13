@@ -32,7 +32,6 @@ Color | Meaning
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
-<a id="file-matrix"></a>
 ## File matrix
 
 Click the toggle to display a history matrix showing all files and revisions. Here, you can:
