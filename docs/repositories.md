@@ -268,6 +268,7 @@ The current state of the review is accessible to your code via the `review` vari
           key: 'r1',
           action: 'modified',  // one of 'added', 'modified', 'removed', or 'renamed' (without changes)
           obsolete: false,
+          reverted: false,  // true if this revision of the file is the same as base
           reviewers: [  // List of users who marked file as reviewed at this revision
             {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
           ]
