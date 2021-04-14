@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: reduce Docker image size back to <90MB.  The previous release accidentally bloated it a bit.
 - Fix: ensure that critical file diffs are proposed, even if the prior revision was modified to base. [See issue #342](https://github.com/Reviewable/Reviewable/issues/342).
 - Fix: removed a bad race condition when updating the review status that could cause updates to be skipped, or errors to be ignored.
+- Fix: correctly list PRs when the dashboard is constrained to an organization with spaces in its name.  (Apparently, GHE will sometimes insert spaces into an organization slug to make it look nicer!)
 
 #### Release 2963.4700 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-01
 - New: add a `webhook` output property for custom review completion conditions, where Reviewable will send notifications of the review status changing (e.g., to Slack).  See the [public post](https://headwayapp.co/reviewable-changes/review-status-notifications-webhook-188778) for details.
