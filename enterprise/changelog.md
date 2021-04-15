@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+
+#### Release 2997.4729 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-15
 - New: add support for `vm2` sandboxed environment to safely run user code by setting `REVIEWABLE_CODE_EXECUTOR` environment variable to `vm2`.  **The `sandcastle` executor is DEPRECATED** and will be removed in a future release.
 - Upd: don't hide reverted files in the client until they've been reviewed.  See [this post](https://headwayapp.co/reviewable-changes/improvements-to-reverted-and-rebased-files-191026) for some details.
 - Upd: feed all files into the custom review completion condition, no longer leaving out reverted ones, to align with the new client logic above.  See [this post](https://headwayapp.co/reviewable-changes/reverted-files-in-custom-review-completion-conditions-191987), which also explains how to fix some broken code you might have inherited from old examples, and take advantage of more recent changes to completion condition semantics.
