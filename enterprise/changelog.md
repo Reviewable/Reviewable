@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+- Fix: prevent a rare condition that could put a review into a temporary error state ("unable to capture head commit") until the review was refreshed.
 
 #### Release 2997.4729 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-15
 - New: add support for `vm2` sandboxed environment to safely run user code by setting `REVIEWABLE_CODE_EXECUTOR` environment variable to `vm2`.  **The `sandcastle` executor is DEPRECATED** and will be removed in a future release.
