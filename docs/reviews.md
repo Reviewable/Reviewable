@@ -190,13 +190,13 @@ When applicable, you’ll find a small **Show full diff** link beneath the **Sho
 
 
 
-When appropriate, a dropdown with three **review overlap strategy** options will appear beneath the button. This setting changes how the reviews are suggested for the user to review and implicitly sets the default for any future reviews.
+When appropriate, a dropdown with three **review overlap strategy** options will appear beneath the button. This setting changes which file diffs are suggested for the user to review and implicitly sets the default for any future reviews.
 
-![reviewable summary of images](images/overlap_dropdown_1.png)
-
-- **Skip files claimed by others** suggests files that have not been reviewed by others in current and previous revisions.
-- **Review any unreviewed files** suggests files to review if they have not been reviewed by others within the current revision.
+- **Skip files claimed by others** suggests files that have not been reviewed by others at current and previous revisions.
+- **Review any unreviewed files** suggests files to review if they have not been reviewed by anyone at the current revision.
 - **Review all files personally** suggests files you have not personally reviewed.
+
+For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter. The exact semantics of this feature are a bit tricky, though, so please see issue #404 for a full exploration and why some people choose to remap n/p onto nextPersonallyUnreviewedFile().
 
 <a id="changes-commits"></a>
 
