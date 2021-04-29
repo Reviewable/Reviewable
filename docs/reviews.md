@@ -188,7 +188,15 @@ The **Show Unreviewed Diffs** button (exact wording varies) in this section will
 {:.tip}
 When applicable, you’ll find a small **Show full diff** link beneath the **Show Unreviewed Diffs** button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.
 
-When appropriate, a checkbox for **Include changes in files previously reviewed only by others** will appears beneath the button. Leave this box unchecked to automatically partition a review among multiple reviewers. For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. <more> So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter. The exact semantics of this feature are a bit tricky, though, so please see [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a full exploration and why some people choose to remap `n/p` onto <code>nextPersonallyUnreviewedFile()</code>.</more>
+
+
+When appropriate, a dropdown with three **review overlap strategy** options will appear beneath the button. This setting changes how the reviews are suggested for the user to review and implicitly sets the default for any future reviews.
+
+![reviewable summary of images](images/overlap_dropdown_1.png)
+
+- **Skip files claimed by others** suggests files that have not been reviewed by others in current and previous revisions.
+- **Review any unreviewed files** suggests files to review if they have not been reviewed by others within the current revision.
+- **Review all files personally** suggests files you have not personally reviewed.
 
 <a id="changes-commits"></a>
 
