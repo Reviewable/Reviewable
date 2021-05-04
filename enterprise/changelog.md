@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - Fix: reinstate compatibility with GHE 2.x; this was accidentally broken in v2963.4700.
+- Fix: try even hard to not randomly delete drafts.  There was an even more rare race condition that could cause this when navigating between files in single-file mode.
 
 #### Release 2997.4729 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-15
 - New: replace "**Include changes in files previously reviewed only by others**" checkbox with dropdown, updated verbiage, and add a third option to suggest `file diffs` that are personally unreviewed, ignoring other reviewers.
