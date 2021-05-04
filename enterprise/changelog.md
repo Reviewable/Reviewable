@@ -11,7 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: reinstate compatibility with GHE 2.x; this was accidentally broken in v2963.4700.
 
 #### Release 2997.4729 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-15
-- New: replace "**Include changes in files previously reviewed only by others**" checkbox with dropdown, updated verbiage, and added a third option to suggest `file diffs` that are personally unreviewed, ignoring other reviewers.
+- New: replace "**Include changes in files previously reviewed only by others**" checkbox with dropdown, updated verbiage, and add a third option to suggest `file diffs` that are personally unreviewed, ignoring other reviewers.
 - New: add support for `vm2` sandboxed environment to safely run user code by setting `REVIEWABLE_CODE_EXECUTOR` environment variable to `vm2`.  **The `sandcastle` executor is DEPRECATED** and will be removed in a future release.
 - Upd: don't hide reverted files in the client until they've been reviewed.  See [this post](https://headwayapp.co/reviewable-changes/improvements-to-reverted-and-rebased-files-191026) for some details.
 - Upd: feed all files into the custom review completion condition, no longer leaving out reverted ones, to align with the new client logic above.  See [this post](https://headwayapp.co/reviewable-changes/reverted-files-in-custom-review-completion-conditions-191987), which also explains how to fix some broken code you might have inherited from old examples, and take advantage of more recent changes to completion condition semantics.
