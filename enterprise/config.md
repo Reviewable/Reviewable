@@ -2,13 +2,25 @@
 
 To get started you first need to obtain an SSL certificate, create a GitHub application, and create a Firebase database.
 
+##### SSL certificate
+
 You'll need to decide the URL at which your Reviewable instance will operate, called `REVIEWABLE_HOST_URL`.  You'll want to obtain an SSL certificate so that connections to this address will be secure, and set up a proxy to terminate and load balance connections to Reviewable's server cluster.
+
+##### GitHub application
 
 Next, on your GitHub instance, find the settings section of your preferred organization&mdash;any one will do.  In the OAuth applications subsection click the Register new application button:
 ![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/register_github_app.png)
 Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
-Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  Then go to your Project Settings and prepare the following for configuring Reviewable:
+##### Firebase database
+
+Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  You don't need to enable Google Analytics.
+
+When your project is ready, select the _Realtime Database_ section and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.
+
+When that's done, visit the _Authentication_ section and click _Get Started_.  Reviewable doesn't actually use Firebase Authentication so there's nothing more to do here (leave all the providers disabled), but this is the easiest way to have Firebase create a generic Web API Key for you.
+
+Finally go to your Project Settings and prepare the following for configuring Reviewable:
 
 ![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_project_settings.png)
 
@@ -16,7 +28,7 @@ Next, visit the [Firebase console](https://console.firebase.google.com/) and cre
 
 ![Firebase Web API Key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_web_api_key.png)
 
-2. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, locate your database name as the first part of the database URL (very likely the same as your project name) and generate a new private key:
+2. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, create a service account, then locate your database name as the first part of the database URL and generate a new private key:
 
 ![Firebase service account private key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_private_key.png)
 
