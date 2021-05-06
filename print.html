@@ -510,7 +510,15 @@
 <div class="tip">
 <p>When applicable, you’ll find a small <strong>Show full diff</strong> link beneath the <strong>Show Unreviewed Diffs</strong> button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.</p>
 </div>
-<p>When appropriate, a checkbox for <strong>Include changes in files previously reviewed only by others</strong> will appears beneath the button. Leave this box unchecked to automatically partition a review among multiple reviewers. For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. <more> So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter. The exact semantics of this feature are a bit tricky, though, so please see <a href="https://github.com/Reviewable/Reviewable/issues/404">issue #404</a> for a full exploration and why some people choose to remap <code>n/p</code> onto <code>nextPersonallyUnreviewedFile()</code>.</more></p>
+<p>When appropriate, a dropdown with three <strong>review overlap strategy</strong> options will appear beneath the button. This setting changes which file diffs are suggested for the user to review and implicitly sets the default for any future reviews.</p>
+<ul>
+<li><strong>Skip files claimed by others</strong> suggests files that have not been reviewed by others at current and previous revisions. Select this if you want to divide work by skipping files already reviewed by someone at an earlier version. For each file, Reviewable finds the last reviewed revision, then considers everyone who reviewed it to be a reviewer of that file. So if Peter reviews a file at r1, and then John force-reviews it at r2, then John becomes a reviewer of that file and — by default — it won't get diffed for Peter.</li>
+<li><strong>Review any unreviewed files</strong> suggests files to review if they have not been reviewed by anyone at the current revision. Select this if you want to combine efforts and review any file that needs reviewing.</li>
+<li><strong>Review all files personally</strong> suggests files you have not personally reviewed. Select this if you want to ensure that you review every file yourself, ignoring other reviewers.</li>
+</ul>
+<div class="tip">
+<p>Re­gard­less of which op­tion you se­lect you will still be able to man­u­ally diff and re­view any file you want.</p>
+</div>
 <p><a id="changes-commits"></a></p>
 <h3><a class="header" href="#commits" id="commits">Commits</a></h3>
 <p>This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or change the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.</p>
