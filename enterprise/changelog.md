@@ -9,9 +9,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - New: add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://headwayapp.co/reviewable-changes/new-overlap-strategy-193348) for details.
+- Upd: open up the option of limiting review creation to PRs with authors on a given team to Enterprise installations.  This gets encoded into the license key (for legacy reasons) so please get in touch with us if you'd like to take advantage of this feature.  It's probably only useful when doing a phased rollout of Reviewable, though.
 - Fix: reinstate compatibility with GHE 2.x; this was accidentally broken in v2963.4700.
 - Fix: try even hard to not randomly delete drafts.  There was an even more rare race condition that could cause this when navigating between files in single-file mode.
 - Fix: work around a recently introduced GitHub bug that renders a clipboard button in comments next to quoted code.
+- Fix: allow 0.1% of a file to be control characters before deeming it to be a binary file and turning off diffs.
 
 #### Release 2997.4729 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-04-15
 - New: add support for `vm2` sandboxed environment to safely run user code by setting `REVIEWABLE_CODE_EXECUTOR` environment variable to `vm2`.  **The `sandcastle` executor is DEPRECATED** and will be removed in a future release.
