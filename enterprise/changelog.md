@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - New: add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://headwayapp.co/reviewable-changes/new-overlap-strategy-193348) for details.
+- Upd: add a placeholder graphic to make it clear when the "Awaiting my action" section of the dashboard is empty, rather than leaving out the section altogether.
 - Upd: open up the option of limiting review creation to PRs with authors on a given team to Enterprise installations.  This gets encoded into the license key (for legacy reasons) so please get in touch with us if you'd like to take advantage of this feature.  It's probably only useful when doing a phased rollout of Reviewable, though.
 - Fix: reinstate compatibility with GHE 2.x; this was accidentally broken in v2963.4700.
 - Fix: try even harder to not randomly delete drafts.  There was an even more rare race condition that could cause this when navigating between files in single-file mode.
