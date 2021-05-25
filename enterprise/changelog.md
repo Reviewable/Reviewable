@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - Fix: invoke webhook in a timely fashion for merged PRs, and ensure it doesn't have bogus "waiting on" information.  This should also fix some cases where the review completion function is called either too often or too early.
+- Fix: ensure review overlap strategy dropdown shows up even if there's currently only one reviewer, but the current user could potentially be a reviewer too.
+- Fix: attach new discussion to the correct revision when changing diff bounds between revisions that have the same file SHAs.  The bug was usually innocuous but strange things started to happen if revisions with the same file SHAs were separated by a revision with different ones!
 
 #### Release 3024.4796 (min 1992.2986 GHE 2.17+ or 3.0+)
 - New: add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://headwayapp.co/reviewable-changes/new-overlap-strategy-193348) for details.
