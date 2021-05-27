@@ -26,22 +26,67 @@ interface Event {
 }
 ```
 
-The following sections document the events that can be emitted from clients and servers.  The heading is the `event` type name, followed by a short explanation of when the event is emitted and the schema for its `properties`.
+The following sections document the events that can be emitted from clients and servers.  The heading is the `event` type name, followed by a short explanation of when the event is emitted and the schema for its `properties`.  Common properties include:
+* `owner`, which is an owner (user or organization) name,
+* `repo`, which is the name of a repo, always qualified with an `owner`,
+* `prNumber`, which is a PR number, and
+* `from`, which indicates from which area of the product the user initiated a common action.
 
-##### Opened user guide
-The user clicked a link to the user guide (docs.reviewable.io).
+If there are extra properties you'd like to see, or you'd like Reviewable to track other actions, please get in touch and we'll likely be able to accommodate your request!
+
+##### Signed up
+The user signed in to Reviewable for the first time.  No extra properties.
+
+##### Signed in
+The user signed in.  No extra properties.
+
+##### Created Review
+A review was created due to an action by the indicated user.
 ```
 {
-  from: 'connections' | 'subscription'  // are of the product where they found the link
+  owner: string,
+  repo: string,
+  prNumber: number,
+  private: boolean  // whether this PR is in a private repository
+  origin: 'request' | 'event' | 'poll'  // caused by direct navigation, a connected repo, or an enrollment
 }
 ```
 
-##### Looked at Guide
-The user opened the contextual help overlay.
+##### Authored Review
+A review was created for a PR authored by the indicated user.  This will always be emitted together with the `Created Review` event above but potentially connected to a different user.  This odd reporting structure is due to some legacy decisions &mdash; typically you'll only use one or the other event.
 ```
 {
-  onboardingKey: string,  // the internal id of the help snippet they opened
-  from: 'app' | 'map'     // app = direct from page, map = picked from summary overlay
+  owner: string,
+  repo: string,
+  prNumber: number,
+  private: boolean  // whether this PR is in a private repository
+  origin: 'request' | 'event' | 'poll'  // caused by direct navigation, a connected repo, or an enrollment
+}
+```
+
+##### Published Comments
+The user published comments by clicking the Publish button on a review page.
+```
+{
+  numDrafts: number,            // number of drafts published
+  numMarks: number,             // number of review marks published
+  numRoleChanges: number,       // number of disposition changes with no comment published
+  numAcknowledgements: number,  // number of acknowledgements with no comment published
+  numDismissals: number,        // number of dismissals from discussion published
+  owner?: string,
+  repo?: string,
+  pullRequest?: number,
+  latency: number               // how long the publishing action took in milliseconds
+}
+```
+
+##### Sent Comment
+The user sent an individual comment by clicking the ad-hoc send button.
+```
+{
+  owner?: string,
+  repo?: string,
+  pullRequest?: number
 }
 ```
 
@@ -49,24 +94,12 @@ The user opened the contextual help overlay.
 The user successfully merged the PR's branch from within Reviewable.  This will not track merges done in GHE, from the command line, etc.
 ```
 {
-  owner: string,     // owner name of repository
-  repo: string,      // repo name of the repository
+  owner: string,
+  repo: string,
   deleted: boolean,  // whether the head branch was deleted after the merge, by Reviewable or GHE
   flavor: 'merge' | 'squash' | 'rebase' | 'fastForward'  // which flavor of merge was used
 }
 ```
-
-##### Failed to map language
-The syntax highlighter failed to map a filename extension to a known language parser.  This event is sampled at 10% of actual occurrences.
-```
-{
-  lang?: string,  // the language Reviewable guessed from file contents, if any
-  ext: string     // the filename extension
-}
-```
-
-##### Signed up
-The user signed in to Reviewable for the first time.  No extra properties.
 
 ##### Listed Open Reviews
 The user listed reviews on the dashboard.  This event reports some size stats regarding the list and can be emitted repeatedly as the dashboard updates the list.  It's sampled at 25% of actual occurrences.
@@ -83,16 +116,6 @@ The user listed reviews on the dashboard.  This event reports some size stats re
 }
 ```
 
-##### Customized review completion
-The user saved a custom review completion condition.
-```
-{
-  owner: string,            // owner of the repo whose settings were edited
-  repo: string,             // name of the repo whose setting were edited
-  numReposModified: number  // total number of repos affected in case of multi-target save
-}
-```
-
 ##### Listed Repositories
 The user loaded the Repositories page.
 ```
@@ -103,18 +126,225 @@ The user loaded the Repositories page.
 }
 ```
 
-##### Published Comments
-The user published comments by clicking the Publish button on a review page.
+##### Customized review completion
+The user saved a custom review completion condition.
 ```
 {
-  numDrafts: number,            // number of drafts published
-  numMarks: number,             // number of review marks published
-  numRoleChanges: number,       // number of disposition changes with no comment published
-  numAcknowledgements: number,  // number of acknowledgements with no comment published
-  numDismissals: number,        // number of dismissals from discussion published
-  owner?: string,               // the owner of the PR
-  repo?: string,                // the repo name of the PR
-  pullRequest?: number,         // the PR number
-  latency: number               // how long the publishing took in milliseconds
+  owner: string,
+  repo: string,
+  numReposModified: number  // total number of repos affected in case of multi-target save
 }
 ```
+
+##### Failed to map language
+The syntax highlighter failed to map a filename extension to a known language parser.  This event is sampled at 10% of actual occurrences and used to prioritize adding more language definitions to the highlighter.
+```
+{
+  lang?: string,  // the language Reviewable guessed from file contents, if any
+  ext: string     // the filename extension
+}
+```
+
+##### Connected Repo
+The user connected a repository to Reviewable.
+```
+{
+  owner: string,
+  repo: string
+}
+```
+
+##### Disconnected Repo
+The user disconnected a repository from Reviewable.
+```
+{
+  owner: string,
+  repo: string
+}
+```
+
+##### Disassociated Repo
+The user disassociated a repository from Reviewable via the `/goodbye` page.  This disconnects the repo and attempts to remove all Reviewable badges from the PRs.
+```
+{
+  owner: string,
+  repo: string
+}
+```
+
+##### Enrolled
+The user turned on one of the auto-connect toggles for their account on the Repositories page.  In this context, 'public' corresponds to "my PRs in any public repo", 'private' to "my PRs in any private repo", and 'personal' to "all current and future repos".
+```
+{
+  type: 'public' | 'private' | 'personal'
+}
+```
+
+##### Unenrolled
+The user turned off one of the auto-connect toggles for their account on the Repositories page.
+```
+{
+  type: 'public' | 'private' | 'personal'
+}
+```
+
+##### Opened all file in new tabs
+The user clicked the button in the file matrix header that opens all files in new tabs.  (Yes, there's a typo in the event type.)
+```
+{
+  numFiles: number  // the total number of files opened this way
+}
+```
+
+##### Looked at Guide
+The user opened the contextual help overlay.
+```
+{
+  onboardingKey: string,  // the internal id of the help snippet they opened
+  from: 'app' | 'map'     // app = direct from page, map = picked from summary overlay
+}
+```
+
+##### Edited auxiliary draft instance
+The user edited a reply to the main review discussion from the toolbar's bunny dropdown panel.  No extra properties &mdash; this was used to track internally whether the feature was actually being used.
+
+##### Reconnected Repos
+Some repositories with broken connections were automatically reconnected after the user fixed some issue with their account.
+```
+{
+  errorCode: string,  // the internal error code that was fixed
+  count: number       // number of repos reconnected
+}
+```
+
+##### Backfilled
+Some reviews were updated in response to the user setting a repository-wide review style (aggregated commits or commit-by-commit).
+```
+{
+  owner: string,
+  repo: string,
+  filter: 'noRevisionSplitStrategy',
+  numBackfilled: number  // number of reviews where an update was attempted
+}
+```
+
+##### Reconciled
+Some review statuses were updated in response to the user changing the review completion condition.
+```
+{
+  owner: string,
+  repo: string,
+  numReconciled: number  // the number of review statuses where an update was attempted
+}
+```
+
+##### Opened user guide
+The user clicked a link to the user guide (docs.reviewable.io).
+```
+{
+  from: 'connections' | 'subscription' | 'support'
+}
+```
+
+##### Opened Blog
+The user clicked the link to the blog.
+```
+{
+  from: 'footer'
+}
+```
+
+##### Opened Twitter
+The user clicked the link to Twitter.
+```
+{
+  from: 'footer' | 'support'
+}
+```
+
+##### Opened Email Us
+The user clicked the email us link.
+```
+{
+  from: 'footer' | 'support'
+}
+```
+
+##### Opened Issues
+The user clicked the link to the GitHub issues page.
+```
+{
+  from: 'support'
+}
+```
+
+##### Opened Chatroom
+The user clicked the link to the Gitter chat room.
+```
+{
+  from: 'support'
+}
+```
+
+##### Read Blog
+The user clicked a link to a third party blog post from the home page.
+```
+{
+  author: 'Justin Abrahms' | 'Jaime Buelta'
+}
+```
+
+##### Opened Demo
+The user opened the demo review.  Not applicable to Enterprise installs.
+```
+{
+  from: 'dashboard' | 'onboarding' | 'screenshot' | 'link'
+}
+```
+
+##### Opened Subscription
+The user opened the subscription panel.  Not applicable to Enterprise installs.
+```
+{
+  from: 'review'
+}
+```
+
+##### Trialed
+The user started an automatic free trial.  Not applicable to Enterprise installs.
+```
+{
+  organization: string
+}
+```
+
+##### Subscribed
+The user updated their SaaS subscription.  Not applicable to Enterprise installs.
+```
+{
+  organization: string,
+  oldPlanId?: string,
+  newPlanId?: string,
+  coverage: 'all' | 'team' | 'solo'
+  updatedCard: boolean
+}
+```
+
+##### Paid
+The user paid for their SaaS subscription.  Not applicable to Enterprise installs.
+```
+{
+  organization: string,
+  revenue?: number       // in dollars
+}
+```
+
+##### Unpaid
+The user failed to pay for their SaaS subscription.  Not applicable to Enterprise installs.
+```
+{
+  organization: string,
+  revenue?: number       // in dollars
+}
+```
+
