@@ -61,6 +61,7 @@ Filter | Meaning
 -----|---------
 `±open` | Currently open PR
 `±red` | PRs with red counters
+`±deferred` | PRs with deferred counters
 `±mine` | Created, assigned, and requested PRs
 <code>±label:<i>name</i></code> | PRs with given label
 `±needs:` | &nbsp;
