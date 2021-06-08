@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+- New: automatically group in the file matrix files that are reverted (at the latest revision) and files that are just renamed.  This takes priority over custom grouping imposed by the completion condition but the user can dissolve the automatic groups from the file matrix, putting files back in their original spots.
 - Upd: update Lambda completion condition executor to use NodeJS 14.
 - Fix: invoke webhook in a timely fashion for merged PRs, and ensure it doesn't have bogus "waiting on" information.  This should also fix some cases where the review completion function is called either too often or too early.
 - Fix: ensure review overlap strategy dropdown shows up even if there's currently only one reviewer, but the current user could potentially be a reviewer too.
