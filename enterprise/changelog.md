@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: trim issue autocompletion caches to the most recent 30k entries during monthly database sweeps.  This will prevent clients from trying to load too many entries in very large repos.
 - Fix: don't show disposition prefix shortcut instructions in main discussion drafts, since you can't set a disposition in the main discussion.
 - Fix: emit correct values in the dashboard PR list analytics event.
+- Fix: tweak the max width of top level comments to better match GitHub's, so fancy Markdown layouts (with images) are more likely to display as intended.
 
 #### Release 3024.4796 (min 1992.2986 GHE 2.17+ or 3.0+)
 - New: add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://headwayapp.co/reviewable-changes/new-overlap-strategy-193348) for details.
