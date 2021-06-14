@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+
+#### Release 3049.4825 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-14
 - New: automatically group in the file matrix files that are reverted (at the latest revision) and files that are just renamed.  This takes priority over custom grouping imposed by the completion condition but the user can dissolve the automatic groups from the file matrix, putting files back in their original spots.
 - Upd: update Lambda completion condition executor to use NodeJS 14.
 - Upd: show more clearly if a user approved or requested changes in the participants area below the main discussion, and add icons to make information readable at a glance.
@@ -22,7 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: emit correct values in the dashboard PR list analytics event.
 - Fix: tweak the max width of top level comments to better match GitHub's, so fancy Markdown layouts (with images) are more likely to display as intended.
 
-#### Release 3024.4796 (min 1992.2986 GHE 2.17+ or 3.0+)
+#### Release 3024.4796 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-05-19
 - New: add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://headwayapp.co/reviewable-changes/new-overlap-strategy-193348) for details.
 - Upd: add a placeholder graphic to make it clear when the "Awaiting my action" section of the dashboard is empty, rather than leaving out the section altogether.
 - Upd: open up the option of limiting review creation to PRs with authors on a given team to Enterprise installations.  This gets encoded into the license key (for legacy reasons) so please get in touch with us if you'd like to take advantage of this feature.  It's probably only useful when doing a phased rollout of Reviewable, though.
