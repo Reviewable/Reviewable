@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: automatically group in the file matrix files that are reverted (at the latest revision) and files that are just renamed.  This takes priority over custom grouping imposed by the completion condition but the user can dissolve the automatic groups from the file matrix, putting files back in their original spots.
 - Upd: update Lambda completion condition executor to use NodeJS 14.
 - Upd: show more clearly if a user approved or requested changes in the participants area below the main discussion, and add icons to make information readable at a glance.
+- Upd: log latency metrics for PR sync tasks, to help isolate performance issues.
 - Fix: invoke webhook in a timely fashion for merged PRs, and ensure it doesn't have bogus "waiting on" information.  This should also fix some cases where the review completion function is called either too often or too early.
 - Fix: ensure review overlap strategy dropdown shows up even if there's currently only one reviewer, but the current user could potentially be a reviewer too.
 - Fix: attach new discussion to the correct revision when changing diff bounds between revisions that have the same file SHAs.  The bug was usually innocuous but strange things started to happen if revisions with the same file SHAs were separated by a revision with different ones!
