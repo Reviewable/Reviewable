@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+
+#### Release 3063.4836 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-20
 - Upd: log more information about GraphQL requests when using `REVIEWABLE_LOG_GITHUB_API_LATENCY`, since `POST /graphql` really doesn't tell you much about what it was actually doing.
 - Upd: if rate limiting is turned off in GHE stop checking for it after the first probe request.  This means that if you decide to turn rate limiting on you'll have to restart Reviewable's servers to make them rate limiting aware again.
 - Fix: stop fetching collaborators where possible, or move the fetch into the background.  When there are a lot of collaborators in a repo fetching them can be quite slow.  We'll now use more targeted fetches where possible (more individual requests, but each is much cheaper), or when not possible take collaborator fetches out of the critical path.
