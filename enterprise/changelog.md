@@ -8,6 +8,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+- Fix: don't retry webhook requests that fail with a 4xx status, so the error will be reported immediately to admins for faster debugging.
+- Fix: in a two column diff, fairly consider both sides when deciding on which side to place a discussion.  This should improve placement accuracy in some situations.
+- Fix: correct layout of discussion corner labels for double-digit revision numbers with a base suffix.
 
 #### Release 3063.4836 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-20
 - Upd: log more information about GraphQL requests when using `REVIEWABLE_LOG_GITHUB_API_LATENCY`, since `POST /graphql` really doesn't tell you much about what it was actually doing.
