@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: in a two column diff, fairly consider both sides when deciding on which side to place a discussion.  This should improve placement accuracy in some situations.
 - Fix: correct layout of discussion corner labels for double-digit revision numbers with a base suffix.
 - Fix: don't hold back on a diff (e.g., because it's really big) when a user explicitly requested it, by dragging out the bounds for a specific file or by clicking on a discussion's corner label.
+- Fix: don't turn (soft) snapshotted revisions back into provisional ones in connected repos.  This bug didn't appear to actually affect how the revisions were formed, just reset their state back to provisional.
 
 #### Release 3063.4836 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-20
 - Upd: log more information about GraphQL requests when using `REVIEWABLE_LOG_GITHUB_API_LATENCY`, since `POST /graphql` really doesn't tell you much about what it was actually doing.
