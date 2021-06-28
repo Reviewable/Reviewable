@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow files that were renamed then reintroduced at least two revisions later to be diffed and marked as reviewed.
 - Fix: mitigate occasional notification webhooks that report the pull request as merged but still show people being waited on.
 - Fix: update line links immediately when the line link template is changed in the profile dropdown.
+- Fix: respect last selected organization when clicking on Reviews in the page header.
 
 #### Release 3063.4836 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-20
 - Upd: log more information about GraphQL requests when using `REVIEWABLE_LOG_GITHUB_API_LATENCY`, since `POST /graphql` really doesn't tell you much about what it was actually doing.
