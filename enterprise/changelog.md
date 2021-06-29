@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+- Fix: don't copy UI text when the user's selection extends past the end of a discussion.
+- Fix: consistently insert selected text when replying to a discussion.
 
 #### Release 3086.4857 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-29
 - Upd: show diff selection extension as soon as mouse button is released, rather than only doing so when copying to the clipboard.
