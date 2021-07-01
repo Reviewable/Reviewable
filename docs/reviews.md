@@ -137,7 +137,7 @@ This is similar to parts of the [changes summary box](#changes-summary), but als
 
 ### Counters
 
-The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear.
+The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. <span class='grey label outlined'>Outlined red</span> counters indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.
 
 {:.tip}
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
@@ -160,7 +160,7 @@ This panel appears at the very top of the review page. The top line describes th
 
 ![reviewable summary of changes](images/summary_1.png)
 
-The panel is divided into three sections, and has some auxiliary [file matrix](files.md#file-matrix) controls at the bottom.
+The panel is divided into three sections, and has some auxiliary [file matrix](files.md#file-matrix) controls at the bottom and may also have some unique styling if a review has been [deferred](#deferring-a-review).
 
 ### Files
 
@@ -189,6 +189,8 @@ The **Show Unreviewed Diffs** button (exact wording varies) in this section will
 When applicable, you’ll find a small **Show full diff** link beneath the **Show Unreviewed Diffs** button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.
 
 When appropriate, a dropdown with three **review overlap strategy** options will appear beneath the button. This setting changes which file diffs are suggested for the user to review and implicitly sets the default for any future reviews.
+
+<a id="file-review-type"></a>
 
 - **Skip files claimed by others** suggests files that have been previously reviewed by you, or that nobody has reviewed yet. Select this if you want to divide work by skipping files already reviewed by someone at an earlier version.
 - **Review any unreviewed files** suggests files to review if they have not been reviewed by anyone at the current revision. Select this if you want to combine efforts and review any file that needs reviewing.
@@ -230,6 +232,22 @@ For each participant:
 * There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).
 
 ![reviewable review labels and participants](images/summary_3.png)
+
+## Deferring a review
+
+When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a red outline and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.
+
+![reviewable deferral dashboard](images/deferring_dashboard.png)
+
+A review will remain deferred until either a new revision of a file becomes available for you to review or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
+
+Note that you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can also reactivate a deferred review manually by clicking the continue review now button on the review page.
+
+![reviewable deferral changes](images/deferring_changes.png)
+
+{:tip}
+Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.
+
 
 ## Keyboard shortcuts
 
