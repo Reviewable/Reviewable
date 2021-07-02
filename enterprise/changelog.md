@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+- Upd: tweak user activity status icons in the main review discussion footer.
 - Fix: don't copy UI text when the user's selection extends past the end of a discussion.
 - Fix: consistently insert selected text when replying to a discussion.
 
