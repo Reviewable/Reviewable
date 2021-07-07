@@ -225,6 +225,10 @@ The current state of the review is accessible to your code via the `review` vari
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
     {username: 'pkaminski'}
   ],
+  deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
+  // by default unless your completion condition accesses pendingReviewers or deferringReviewers
+    {username: 'cgiroux'}
+  ],
   revisions: [  // List of all revisions, in chronological order
     {
       key: 'r1',
@@ -293,7 +297,7 @@ A string describing the current status of the review, such as `2 of 5 files revi
 A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the `description` instead.
 
 #### `pendingReviewers`
-An array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.
+An array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own `pendingReviewers` from scratch, Reviewable will remove any users who are [deferring](reviews.md#deferring-a-review) from the list of `pendingReviewers`, unless your code accesses `review.deferringReviewers`.
 
 #### `files`
 An array of objects that look like `{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}`.  (It's OK to just augment the `review.files` structure with additional properties and return the whole thing here.)

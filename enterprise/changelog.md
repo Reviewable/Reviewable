@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: tweak user activity status icons in the main review discussion footer.
 - Fix: don't copy UI text when the user's selection extends past the end of a discussion.
 - Fix: consistently insert selected text when replying to a discussion.
+- New: allow reviewers to `defer` a review when they want to default to others to act before continuing.
 
 #### Release 3086.4857 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-06-29
 - Upd: show diff selection extension as soon as mouse button is released, rather than only doing so when copying to the clipboard.
