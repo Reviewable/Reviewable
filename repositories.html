@@ -457,6 +457,10 @@
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
     {username: 'pkaminski'}
   ],
+  deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
+  // by default unless your completion condition accesses pendingReviewers or deferringReviewers
+    {username: 'cgiroux'}
+  ],
   revisions: [  // List of all revisions, in chronological order
     {
       key: 'r1',
@@ -519,7 +523,7 @@
 <h4><a class="header" href="#shortdescription" id="shortdescription"><code>shortDescription</code></a></h4>
 <p>A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the <code>description</code> instead.</p>
 <h4><a class="header" href="#pendingreviewers" id="pendingreviewers"><code>pendingReviewers</code></a></h4>
-<p>An array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.  You can either compute this value from scratch, or crib from the <code>review.pendingReviewers</code> input value, which contains Reviewable's guess as to who the pending reviewers should be.</p>
+<p>An array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.  You can either compute this value from scratch, or crib from the <code>review.pendingReviewers</code> input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own <code>pendingReviewers</code> from scratch, Reviewable will remove any users who are <a href="reviews.html#deferring-a-review">deferring</a> from the list of <code>pendingReviewers</code>, unless your code accesses <code>review.deferringReviewers</code>.</p>
 <h4><a class="header" href="#files" id="files"><code>files</code></a></h4>
 <p>An array of objects that look like <code>{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}</code>.  (It's OK to just augment the <code>review.files</code> structure with additional properties and return the whole thing here.)</p>
 <ul>
