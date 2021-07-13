@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - New: allow reviewers to `defer` a review when they want to default to others to act before continuing.
-- Upd: improve heuristics for matching rebased revisions to their priors.
+- Upd: improve heuristics for matching rebased revisions to their priors and make use of Gerrit-style `Change-Id` headers in commit messages.
 - Upd: tweak user activity status icons in the main review discussion footer.
 - Fix: don't copy UI text when the user's selection extends past the end of a discussion.
 - Fix: consistently insert selected text when replying to a discussion.
