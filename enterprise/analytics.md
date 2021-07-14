@@ -101,6 +101,22 @@ The user successfully merged the PR's branch from within Reviewable.  This will 
 }
 ```
 
+##### Updated Review Status
+The status of a review was updated for some reason.  This event is not user-specific and will be triggered every time any of the properties below changes for a review.  Note that this event is debounced (with a 10 second timeout as of this writing) so events will be slightly delayed and you may not receive events at all for short-lived intermediate states.
+```
+{
+  owner: string,
+  repo: string,
+  prNumber: number,
+  prState: 'open' | 'merged' | 'closed',  // the state of the PR
+  completed: boolean,                     // whether the review has been completed or not
+  description: string,                    // a human-readable description of the review status
+  pendingUsernames: string[],             // list of GitHub usernames that we are waiting for
+  unreadUsernames: string[]               // list of GitHub usernames that have new comments to read
+                                          // but that we're not waiting for
+}
+```
+
 ##### Listed Open Reviews
 The user listed reviews on the dashboard.  This event reports some size stats regarding the list and can be emitted repeatedly as the dashboard updates the list.  It's sampled at 25% of actual occurrences.
 
