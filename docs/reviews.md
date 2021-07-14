@@ -245,7 +245,7 @@ Note that you can continue manipulating a review as usual while it's deferred, e
 
 ![reviewable deferral changes](images/deferring_changes.png)
 
-{:tip}
+{:.tip}
 Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.
 
 
