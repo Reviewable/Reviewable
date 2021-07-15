@@ -382,7 +382,7 @@
 <p><img src="images/toptoolbar_4.png" alt="reviewable changes" /></p>
 <p>This is similar to parts of the <a href="#changes-summary">changes summary box</a>, but also includes a list of commits currently in scope.</p>
 <h3><a class="header" href="#counters" id="counters">Counters</a></h3>
-<p>The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. <span class='grey label outlined'>Outlined red</span> counters indicate that you've <a href="#deferring-a-review">deferred</a> reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.</p>
+<p>The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've <a href="#deferring-a-review">deferred</a> reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.</p>
 <div class="tip">
 <p>The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.</p>
 </div>
@@ -451,7 +451,7 @@
 </ul>
 <p><img src="images/summary_3.png" alt="reviewable review labels and participants" /></p>
 <h2><a class="header" href="#deferring-a-review" id="deferring-a-review">Deferring a review</a></h2>
-<p>When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a red outline and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.</p>
+<p>When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a red stripe and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.</p>
 <p><img src="images/deferring_dashboard.png" alt="reviewable deferral dashboard" /></p>
 <p>A review will remain deferred until either a new revision of a file becomes available for you to review or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.</p>
 <p>Note that you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can also reactivate a deferred review manually by clicking the continue review now button on the review page.</p>

@@ -255,6 +255,12 @@ blockquote {
     background-color: #c0c0c0;
 }
 
-.grey.label.outlined {
-    border: 1.5px solid #D95C5C
+.grey.label.deferred {
+    background: repeating-linear-gradient(
+    -45deg,
+    #B0B0B0,
+    #B0B0B0 33.3%,
+    #D95C5C 33.3%,
+    #D95C5C 66.6%
+    );
 }
