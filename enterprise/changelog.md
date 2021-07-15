@@ -8,7 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
-- New: allow reviewers to `defer` a review when they want to default to others to act before continuing.
+- New: automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
 - Upd: improve heuristics for matching rebased revisions to their priors and make use of Gerrit-style `Change-Id` headers in commit messages.
 - Upd: tweak user activity status icons in the main review discussion footer.
 - Upd: track an `Updated Review Status` event in analytics.  You can use this to analyze a review's state changes over time, including who was being waited on.
