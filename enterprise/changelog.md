@@ -12,7 +12,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: improve heuristics for matching rebased revisions to their priors and make use of Gerrit-style `Change-Id` headers in commit messages.
 - Upd: tweak user activity status icons in the main review discussion footer.
 - Upd: track an `Updated Review Status` event in analytics.  You can use this to analyze a review's state changes over time, including who was being waited on.
-- Upd: enable user database sweeps in Enterprise.  This will delete cached personal data for users who haven't been accessed in a long time, or who rescinded Reviewable's authorization in GHE.
 - Fix: don't copy UI text when the user's selection extends past the end of a discussion.
 - Fix: consistently insert selected text when replying to a discussion.
 - Fix: when changing license manager ID, don't break the Repositories page for the previous manager.
