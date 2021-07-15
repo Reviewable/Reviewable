@@ -252,15 +252,15 @@ blockquote {
     background-color: #5BBD72;
 }
 .grey.label {
-    background-color: #c0c0c0;
+    background-color: #B0B0B0;
 }
 
 .grey.label.deferred {
     background: repeating-linear-gradient(
-    -45deg,
-    #B0B0B0,
-    #B0B0B0 33.3%,
-    #D95C5C 33.3%,
-    #D95C5C 66.6%
+        -45deg,
+        #B0B0B0,
+        #B0B0B0 33.3%,
+        #D95C5C 33.3%,
+        #D95C5C 66.6%
     );
 }
