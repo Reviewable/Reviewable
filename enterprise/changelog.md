@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
 - Upd: render code blocks in PR titles.
+- Fix: report internal errors to client when ad-hoc review creation fails.
+- Fix: let users with only read permissions sync a review to a PR by caching other users' permissions for a repo to correctly filter GitHub review approvals.  This was accidentally removed in v3063.4836 but likely isn't relevant to most Enterprise deployments as only people with write permissions will be using a repo.
 
 #### Release 3107.4890 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-07-15
 - New: automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
