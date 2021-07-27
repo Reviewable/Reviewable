@@ -279,6 +279,21 @@ The current state of the review is accessible to your code via the `review` vari
         }
       ]
     }
+  ],
+  systemFiles: [ // System files used by Reviewable, including commit file
+    {
+      path: '-- commits',
+      revisions: [  // List of the revisions where this file was changed
+        {
+          key: 'r1',
+          action: 'added',  // one of 'added', 'modified'
+          obsolete: false,
+          reverted: false,
+          reviewers: [  // List of users who marked file as reviewed at this revision
+            {username: 'somebody', timestamp: 1436828040000}
+          ]
+        }
+    }
   ]
 }
 ```
