@@ -248,6 +248,16 @@ Note that you can continue manipulating a review as usual while it's deferred, e
 {:.tip}
 Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.
 
+## Reviewing commit messages
+
+Reviewable composes a system file used for reviewing commit messages.  The **commit file** is denoted with a special commit icon prepended to its name and will always be listed first in the files list (matrix and review).  This file will contain a list of all *non obsolete* commit messages that precede it, regardless of whether you're reviewing with the **combined commits** or **commit-by-commit** review style.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it *will not* impact your repo or PR in anyway -- it's solely used by Reviewable for reviewing commit messages.
+
+![reviewable commit matrix](images/commit_matrix.png)
+
+![reviewable commit review](images/commit_review.png)
+
+{:.tip}
+While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
 
 ## Keyboard shortcuts
 
