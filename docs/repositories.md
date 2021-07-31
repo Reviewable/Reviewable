@@ -256,6 +256,7 @@ The current state of the review is accessible to your code via the `review` vari
           username: 'pkaminski',
           disposition: 'discussing',  // Participant's current disposition
           resolved: true,  // False if this participant is blocking resolution
+          read: true,  // False if this participant has unread messages in this discussion
           lastActivityTimestamp: 1436828040000  // Last time user sent a message or changed disposition
         }
       ],
