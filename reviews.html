@@ -459,6 +459,13 @@
 <div class="tip">
 <p>Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.</p>
 </div>
+<h2><a class="header" href="#reviewing-commit-messages" id="reviewing-commit-messages">Reviewing commit messages</a></h2>
+<p>Reviewable composes a system file used for reviewing commit messages.  The <strong>commit file</strong> is denoted with a special commit icon prepended to its name and will always be listed first in the files list (matrix and review).  This file will contain a list of all <em>non obsolete</em> commit messages that precede it, regardless of whether you're reviewing with the <strong>combined commits</strong> or <strong>commit-by-commit</strong> review style.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it <em>will not</em> impact your repo or PR in anyway -- it's solely used by Reviewable for reviewing commit messages.</p>
+<p><img src="images/commit_matrix.png" alt="reviewable commit matrix" /></p>
+<p><img src="images/commit_review.png" alt="reviewable commit review" /></p>
+<div class="tip">
+<p>While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file <a href="#counters">counters</a>, but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see <a href="repositories.html#custom-review-completion-condition">custom completion condition</a> for details.</p>
+</div>
 <h2><a class="header" href="#keyboard-shortcuts" id="keyboard-shortcuts">Keyboard shortcuts</a></h2>
 <p>There are a number of keyboard shortcuts available to power your way through a review. Type <code>?</code> to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the <a href="accountsettings.html#custom-key-bindings">Custom key bindings</a> section.</p>
 <p><img src="images/toptoolbar_7.png" alt="reviewable keyboard shortcuts" /></p>
