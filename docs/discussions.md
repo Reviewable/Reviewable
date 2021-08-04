@@ -24,7 +24,7 @@ While no one can read your drafts, other participants will be able to see that y
 
 All comments are formatted as [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/) — clicking the small Markdown logo in the draft toolbar will open a reference page.  You can also switch to the **Preview** tab at any time to check how your comment will be rendered.
 
-You can add images to your comment by clicking the upload button, by dragging an image onto the draft, or by pasting an image from your clipboard (in some browsers). If desired, you can delete your draft by clicking the small trash icon. The trashed draft is retrievable by creating another comment in the same spot.
+You can add images to your comment by clicking the upload button, by dragging an image onto the draft, or by pasting an image from your clipboard (in some browsers). **MP4** and **MOV** video uploads are also supported, with a maximum upload size of 100MB for Enterprise users and 10MB for SaaS users.  If desired, you can delete your draft by clicking the small trash icon. The trashed draft is retrievable by creating another comment in the same spot.
 
 **Sending messages immediately:**  Click the <i class="fa fa-share-square-o"></i> button to immediately post the comment on the pull request. This doesn't affect any other pending comments, which is useful if a big review round is in progress, you have many drafts pending, and you need to send out an intermediate clarification or request. Since each recipient will receive an alert for each message you send this way (as configured by default in GitHub), it would normally be preferable to write all of your comments and then [publish](reviews.md#publish) them all together.
 
