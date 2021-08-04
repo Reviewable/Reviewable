@@ -7,7 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 1992.2986 GHE 2.17+ or 3.0+)
+#### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+- New: support commit message reviewing.  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
 - Upd: render code blocks in PR titles.
 - Upd: support **MP4** and **MOV** video uploads in comments, with a maximum upload size of 100MB.
 - Fix: report internal errors to client when ad-hoc review creation fails.
@@ -16,7 +17,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: fix layout of dismissal confirmation message.
 - Fix: expose `participant.read` flag for discussions in custom review completion condition input.
 - Fix: make navigation between files work properly while a review is deferred.
-- New: support commit message reviewing.  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
 
 #### Release 3107.4890 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-07-15
 - New: automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
