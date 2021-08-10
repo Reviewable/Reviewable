@@ -3,20 +3,20 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Known issues
-- Avatar images are broken in newer version of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
-- Web client crashes on startup in Safari 10.1 if the database is encrypted, due to a regression in their JS engine.  It works fine in Safari 10.0 and 10.2 (technology preview).  No fix planned for Reviewable.
+- Avatar images are broken in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - New: support commit message reviewing.  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
 - Upd: render code blocks in PR titles.
-- Upd: support **MP4** and **MOV** video uploads in comments, with a maximum upload size of 100MB.
+- Upd: support `mp4` and `mov` video uploads in comments, with a maximum upload size of 100MB.
+- Upd: expose `participant.read` flag for discussions in custom review completion condition input.
 - Fix: report internal errors to client when ad-hoc review creation fails.
 - Fix: let users with only read permissions sync a review to a PR by caching other users' permissions for a repo to correctly filter GitHub review approvals.  This was accidentally removed in v3063.4836 but likely isn't relevant to most Enterprise deployments as only people with write permissions will be using a repo.
 - Fix: don't consider commits as equivalent if their messages differ, unless the more recent is a merge commit (in which case ignore its message).  We normally glom new commits that don't change any of the files in the review onto the last revision, even if it's already been snapshotted, to avoid creating (pointless) empty revisions.  However, this logic was too aggressive and would also skip over commits where only the message was changed.
 - Fix: fix layout of dismissal confirmation message.
-- Fix: expose `participant.read` flag for discussions in custom review completion condition input.
 - Fix: make navigation between files work properly while a review is deferred.
+- Fix: create a placeholder status check on the main branch when connecting a repo so that Reviewable can be selected in branch protection settings.  This was a regression from pretty long ago!
 
 #### Release 3107.4890 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-07-15
 - New: automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
