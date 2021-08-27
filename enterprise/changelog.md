@@ -11,12 +11,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: render code blocks in PR titles.
 - Upd: support `mp4` and `mov` video uploads in comments, with a maximum upload size of 100MB.
 - Upd: expose `participant.read` flag for discussions in custom review completion condition input.
+- Upd: remove `sandcastle` executor.  If you still have it set, we'll default to the (pretty much equivalent) `vm2` executor instead.
 - Fix: report internal errors to client when ad-hoc review creation fails.
 - Fix: let users with only read permissions sync a review to a PR by caching other users' permissions for a repo to correctly filter GitHub review approvals.  This was accidentally removed in v3063.4836 but likely isn't relevant to most Enterprise deployments as only people with write permissions will be using a repo.
 - Fix: don't consider commits as equivalent if their messages differ, unless the more recent is a merge commit (in which case ignore its message).  We normally glom new commits that don't change any of the files in the review onto the last revision, even if it's already been snapshotted, to avoid creating (pointless) empty revisions.  However, this logic was too aggressive and would also skip over commits where only the message was changed.
 - Fix: fix layout of dismissal confirmation message.
 - Fix: make navigation between files work properly while a review is deferred.
 - Fix: create a placeholder status check on the main branch when connecting a repo so that Reviewable can be selected in branch protection settings.  This was a regression from pretty long ago!
+- Fix: make sure we don't cut off comments when posting to a discussion with media in it.  This was a regression introduced in v3049.4825.
 
 #### Release 3107.4890 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-07-15
 - New: automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
