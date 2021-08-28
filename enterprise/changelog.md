@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make navigation between files work properly while a review is deferred.
 - Fix: create a placeholder status check on the main branch when connecting a repo so that Reviewable can be selected in branch protection settings.  This was a regression from pretty long ago!
 - Fix: make sure we don't cut off comments when posting to a discussion with media in it.  This was a regression introduced in v3049.4825.
+- Fix: ensure that errors during on-demand review creation are reported back to the browser.
 
 #### Release 3107.4890 (min 1992.2986 GHE 2.17+ or 3.0+) 2021-07-15
 - New: automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
