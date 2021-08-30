@@ -7,7 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
-- New: support commit message reviewing.  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
+
+#### Release 3179.4975 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-08-29
+- New: support commit message reviewing (only in reviews created after this release is installed).  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
 - Upd: render code blocks in PR titles.
 - Upd: support `mp4` and `mov` video uploads in comments, with a maximum upload size of 100MB.
 - Upd: expose `participant.read` flag for discussions in custom review completion condition input.
