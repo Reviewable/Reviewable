@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
 - Fix: improve rebased revision matching heuristics to de-prioritize distance in favor of other signals.
 - Fix: don't mistake reviewed files for unreviewed in situations where the current user isn't meant to review them.
+- Fix: don't show the Done button if the pull request author is caught up on a discussion.  This was unnecessary and could lead to mistaken repeated "Done" replies.
 
 #### Release 3179.4975 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-08-29
 - New: support commit message reviewing (only in reviews created after this release is installed).  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
