@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't show the Done button if the pull request author is caught up on a discussion.  This was unnecessary and could lead to mistaken repeated "Done" replies.
 - Fix: don't send out "short of GitHub quota" notifications too often.  This only applies if you have API quotas turned on in GHE.
 - Fix: correctly restore commit lists when unarchiving a review.  This bug could cause some reviews to fail to unarchive due to follow-on errors.
+- Fix: avoid crashing when review creation failed in some cases.
 
 #### Release 3179.4975 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-08-29
 - New: support commit message reviewing (only in reviews created after this release is installed).  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
