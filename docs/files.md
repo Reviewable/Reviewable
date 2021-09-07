@@ -27,7 +27,7 @@ Color | Meaning
 :----:|---------
 ![reviewable file matrix current state](images/filematrix_2.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed.
 ![reviewable file matrix current state](images/filematrix_3.png ':size=25') | Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.
-![reviewable file matrix current state](images/filematrix_4.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, or you are the author of the PR.
+![reviewable file matrix current state](images/filematrix_4.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, the review is <a href="reviews.md#deferring-a-review">deferred</a>, or you are the author of the PR.
 ![reviewable file matrix current state](images/filematrix_5.png ':size=25') | Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
