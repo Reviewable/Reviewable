@@ -154,7 +154,9 @@ The **Review completion condition** section of the repository settings helps you
 
 In the **Condition Code** panel, you can edit the code that determines when a review is complete.  It starts off with the code that Reviewable uses by default and you can pick other sample conditions to customize or study from the small **Examples** menu above the editor.
 
-The condition code will run in an isolated NodeJS 6.x environment (as of this writing — this gets updated regularly) that includes the 3.x `lodash` module available through the customary `_` binding. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
+The condition code will run in an isolated NodeJS 14.x environment (as of this writing — this gets updated regularly) that includes the 3.x `lodash` module available through the customary `_` binding. If you'd like to use the newer `lodash` version (4.x at the time of writing), you can do so by setting a **dependencies** flag _anywhere_ in your condition code (see screenshot below for the format to use when flagging the version).  Note Reviewable will default to using Lodash 3.x for existing conditions or if no flag is set.  If you're running Reviewable Enterprise, please don't advertise 4.x support until you're confident you won't need to roll back to avoid your conditions running against the older 3.x version. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
+
+![reviewable dependencies flag](images/dependencies.png)
 
 For testing, your code will be continuously evaluated against the **Review state** on the right.  It will start off with the current state of some PR in your repo, but you can fill in the state of any PR via the small box above it, or edit the state manually to your liking.  See the [review state input](#review-state-input) section below for an explanation of the state's properties.
 
