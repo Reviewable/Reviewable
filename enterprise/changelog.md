@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
 - Upd: support Lodash 4.x in custom completion conditions.  See [the docs](https://docs.reviewable.io/repositories#custom-review-completion-condition) for more details.
+- Fix: glom merge commit onto the last revision if it doesn't affect any files in the PR, even if the last revision has been snapshotted.  Note that this means a reviewed revision of the virtual commit messages file might get a new merge commit appended without further review.  This seems like a reasonable trade-off to forcing another round of review just for merging from the target branch prior to merging to it.  (This likely got broken back in v2997.4729.)
 - Fix: improve rebased revision matching heuristics to de-prioritize distance in favor of other signals.
 - Fix: don't mistake reviewed files for unreviewed in situations where the current user isn't meant to review them.
 - Fix: don't show the Done button if the pull request author is caught up on a discussion.  This was unnecessary and could lead to mistaken repeated "Done" replies.
