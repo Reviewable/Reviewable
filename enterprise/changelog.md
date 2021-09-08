@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
+- Upd: support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module.
 - Fix: improve rebased revision matching heuristics to de-prioritize distance in favor of other signals.
 - Fix: don't mistake reviewed files for unreviewed in situations where the current user isn't meant to review them.
 - Fix: don't show the Done button if the pull request author is caught up on a discussion.  This was unnecessary and could lead to mistaken repeated "Done" replies.
