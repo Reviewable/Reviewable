@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+
+#### Release 3200.4991 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-09-16
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
 - Fix: glom merge commit onto the last revision if it doesn't affect any files in the PR, even if the last revision has been snapshotted.  Note that this means a reviewed revision of the virtual commit messages file might get a new merge commit appended without further review.  This seems like a reasonable trade-off to forcing another round of review just for merging from the target branch prior to merging to it.  (This likely got broken back in v2997.4729.)
 - Fix: improve rebased revision matching heuristics to de-prioritize distance in favor of other signals.
