@@ -154,7 +154,10 @@ The **Review completion condition** section of the repository settings helps you
 
 In the **Condition Code** panel, you can edit the code that determines when a review is complete.  It starts off with the code that Reviewable uses by default and you can pick other sample conditions to customize or study from the small **Examples** menu above the editor.
 
-The condition code will run in an isolated NodeJS 6.x environment (as of this writing — this gets updated regularly) that includes the 3.x `lodash` module available through the customary `_` binding. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
+The condition code will run in an isolated NodeJS 14.x environment (as of this writing — this gets updated regularly) that includes the 4.x `lodash` module available through the customary `_`.  Note the `lodash` version was updated to `4.x` on _9/9/2021_, so if you have a condition written before the update it will still use the `lodash` 3.x module.  You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
+
+{:.tip}
+You can update existing conditions to use `lodash` 4.x  by inserting a commmented **dependencies** flag anywhere in your condition code using the following format: ```// dependencies: lodash4```
 
 For testing, your code will be continuously evaluated against the **Review state** on the right.  It will start off with the current state of some PR in your repo, but you can fill in the state of any PR via the small box above it, or edit the state manually to your liking.  See the [review state input](#review-state-input) section below for an explanation of the state's properties.
 
