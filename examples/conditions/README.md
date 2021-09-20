@@ -1,0 +1,1 @@
+This directory holds some sample custom review completion conditions (see [docs](https://docs.reviewable.io/repositories.html#custom-review-completion-condition)).  You can copy-paste them verbatim, or use them as inspiration for your own workflow's needs.
