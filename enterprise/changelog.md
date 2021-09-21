@@ -7,8 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
-- Upd: support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module.
+- Upd: support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module. See [announcement post](https://headwayapp.co/reviewable-changes/lodash-4-x-support-206733) for details.
+- Upd: move completion condition examples out of the app and into a repository, replacing the examples dropdown with a link.  This will make them easier to reference and maintain.
 - Fix: improve how the default pending reviewers logic deals with author-initiated discussion with no other participants, and with completely unreviewed files.  Also ensure that all of GitHub's requested reviewers will be added to the pending reviewers list.  If you have completion conditions that customize `pendingReviewers` you might want to look at the updated example and consider backporting the changes.
+- Fix: close unterminated code blocks and render LGTM emojis when quoting parent comment for the batched post to GitHub.
 
 #### Release 3200.4991 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-09-16
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
