@@ -56,7 +56,7 @@ You can rotate the RSA `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` key used for encrypt
 
 Note that if you choose to rotate your RSA key then you must never downgrade your server below v1243.1957, as older versions may crash in this situation.
 
-1. Generate a new encryption key (`openssl genrsa -out private.pem 4096`).
+1. Generate a new encryption key (`openssl genrsa -out private.pem 2048`).
 2. Add the new key to the end of the `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` environment variable, comma-separated from any old keys, and restart your servers.  This is necessary to ensure that all servers have the new key before the clients start using it to encrypt data.  If you don't do rolling upgrades on your servers (i.e., all servers are shut down before new ones are deployed) then you can safely skip this step.
 3. Move the new key to the front of `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS` and restart your servers.
 4. Wait for the `sweepUsers` cron job to run.  It normally runs once a month and leaves the messages "`Running background task sweepUsers`" and "`Background task sweepUsers complete`" in the logs.  You can also trigger it to run immediately by deleting the `/queues/cron/sweepUsers/_lease/expiry` entry from the datastore via the Firebase console.
