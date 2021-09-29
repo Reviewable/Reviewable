@@ -97,7 +97,7 @@ Outbound email server configuration, used to send the occasional admin or error 
 
 ##### File uploads
 
-Destination for file attachments in comments.  The file types and sizes will be checked by Reviewable; as of this writing, only images up to 10MB in size are allowed.
+Destination for file attachments in comments.  The file types and sizes will be checked by Reviewable; as of this writing, only images up to 10MB in size and videos up to 100MB in size are allowed.
 
 * `REVIEWABLE_UPLOADS_PROVIDER`: One of the following values, or leave empty to disable file uploads.
   * `local`: Store files on a local volume.  You also need to set `REVIEWABLE_USER_CONTENT_PATH` as an absolute path to a directory on a shared persistent volume with read/write access.  The files will be served from `$REVIEWABLE_HOST_URL/usercontent`.
