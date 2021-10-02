@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: close unterminated code blocks and render LGTM emojis when quoting parent comment for the batched post to GitHub.
 - Fix: avoid spiking Firebase load (sometimes to the point of a DoS) when unarchiving a review.  This may only be an issue once you hit a very large number of reviews / archived reviews like on reviewable.io but it tends to creep up on you.
 - Fix: include all discussions / drafts when navigating through them while in single file mode.  Before this fix, it was possible for the navigation cycle to skip some items depending on the order they were created in and their locations.
+- Fix: don't crash if we failed to load the emoji table from GitHub.
 
 #### Release 3200.4991 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-09-16
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
