@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: Upgrade to Node 16.
 - Upd: support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module. See [announcement post](https://headwayapp.co/reviewable-changes/lodash-4-x-support-206733) for details.
 - Upd: move completion condition examples out of the app and into a repository, replacing the examples dropdown with a link.  This will make them easier to reference and maintain.
+- Upd: allow multiple Reviewable instances (e.g., production and staging) to use the same AWS Lambda instance for condition execution without stepping on each other's toes.
 - Upd: increase timeout and improve stagger logic for permission-checking requests to GHE.  This should help avoid spurious permission check failures if when your instance is overloaded an unable to reliably respond within 3 seconds.
 - Upd: improve error message when Reviewable refuses to create a review because it found an existing review link in the PR, and tweak a bunch of code around there to make it easy for a user to recover from this state.
 - Upd: when following a link to a discussion, diff all the files instead of just the discussion's host file. Skipping file diffs can make the page load faster but it's confusing, and not really necessary on modern machines.
