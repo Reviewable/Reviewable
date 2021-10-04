@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 
 #### Release 3256.5037 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-02
-- Upd: Upgrade to Node 16.
+- Upd: upgrade to Node 16.
 - Upd: support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module. See [announcement post](https://headwayapp.co/reviewable-changes/lodash-4-x-support-206733) for details.
 - Upd: move completion condition examples out of the app and into a repository, replacing the examples dropdown with a link.  This will make them easier to reference and maintain.
 - Upd: allow multiple Reviewable instances (e.g., production and staging) to use the same AWS Lambda instance for condition execution without stepping on each other's toes.
@@ -18,11 +18,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: when following a link to a discussion, diff all the files instead of just the discussion's host file. Skipping file diffs can make the page load faster but it's confusing, and not really necessary on modern machines.
 - Upd: parse language identifiers out of shell script shebang lines to select correct syntax highlighting.
 - Upd: switch from using just the Firebase identifier (`REVIEWABLE_FIREBASE`) to using the whole URL (`REVIEWABLE_FIREBASE_URL`) to support regions outside the US.  Configurations with `REVIEWABLE_FIREBASE` will also continue to work indefinitely, however.
+- Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
 - Fix: improve how the default pending reviewers logic deals with author-initiated discussion with no other participants, and with completely unreviewed files.  Also ensure that all of GitHub's requested reviewers will be added to the pending reviewers list.  If you have completion conditions that customize `pendingReviewers` you might want to look at the updated example and consider backporting the changes.
 - Fix: close unterminated code blocks and render LGTM emojis when quoting parent comment for the batched post to GitHub.
 - Fix: avoid spiking Firebase load (sometimes to the point of a DoS) when unarchiving a review.  This may only be an issue once you hit a very large number of archived reviews like on reviewable.io but it tends to creep up on you.
 - Fix: include all discussions / drafts when navigating through them while in single file mode.  Before this fix, it was possible for the navigation cycle to skip some items depending on the order they were created in and their locations.
 - Fix: don't crash if we failed to load the emoji table from GitHub.
+- Fix: don't escape Markdown characters between code blocks or backticks in pull request title.
+
 
 #### Release 3200.4991 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-09-16
 - Upd: show revision timestamps in the local timezone in the Commits virtual file.
