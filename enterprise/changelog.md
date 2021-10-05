@@ -7,9 +7,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+- Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
+- Fix: don't escape Markdown characters between code blocks or backticks in pull request title.
 
 #### Release 3256.5037 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-02
-- Upd: Upgrade to Node 16.
+- Upd: upgrade to Node 16.
 - Upd: support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module. See [announcement post](https://headwayapp.co/reviewable-changes/lodash-4-x-support-206733) for details.
 - Upd: move completion condition examples out of the app and into a repository, replacing the examples dropdown with a link.  This will make them easier to reference and maintain.
 - Upd: allow multiple Reviewable instances (e.g., production and staging) to use the same AWS Lambda instance for condition execution without stepping on each other's toes.
