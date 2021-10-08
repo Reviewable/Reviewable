@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
 - Fix: don't escape Markdown characters between code blocks or backticks in pull request title.
+- Fix: improve performance when a review has lots of drafts open.
 
 #### Release 3256.5037 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-02
 - Upd: upgrade to Node 16.
