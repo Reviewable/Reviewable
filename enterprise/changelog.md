@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't escape Markdown characters between code blocks or backticks in pull request title.
 - Fix: improve performance when a review has lots of drafts open.
 - Fix: preserve branch name when the branch has been deleted.
+- Fix: escape spaces and other reserved characters in a filepath when forming line links to GitHub or an external editor.
 
 #### Release 3256.5037 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-02
 - Upd: upgrade to Node 16.
