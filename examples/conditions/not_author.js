@@ -15,9 +15,11 @@ const required = _(review.pullRequest.assignees)
   .without(review.pullRequest.author.username)
   .value();
 
+const lastRevisionIndex = _.parseInt(review.summary.lastRevision.slice(1));
 let numUnreviewedFiles = 0;
-_.forEach(review.files, function(file) {
-  const lastRev = _(file.revisions).reject('obsolete').last();
+_.forEach(review.files, file => {
+  const lastRev =
+    _.findLast(file.revisions, rev => _.parseInt(rev.key.slice(1)) <= lastRevisionIndex);
   const reviewers = _(lastRev.reviewers)
     .map('username')
     .without(review.pullRequest.author.username)
