@@ -7,7 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+
+#### Release 3268.5067 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-19
 - Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
+- Upd: display warning indicator when avatar images aren't loading and suggest signing in to GitHub again.
 - Fix: don't escape Markdown characters between code blocks or backticks in pull request title.
 - Fix: improve performance when a review has lots of drafts open.
 - Fix: preserve branch name when the branch has been deleted.
