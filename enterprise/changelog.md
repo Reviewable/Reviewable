@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+- Fix: don't erroneously consider a file reviewed if it has been reverted and newer revisions created in the review.
 
 #### Release 3268.5067 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-19
 - Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
