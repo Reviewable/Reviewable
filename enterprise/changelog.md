@@ -8,8 +8,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Upd: increase timeouts related to handling interactive client requests on the server from 5s to 15s.
+- Upd: display instructions for adding/removing labels, assignees and reviewers in the corner of the top level draft while it's empty.
 - Fix: don't erroneously consider a file reviewed if it has been reverted and newer revisions created in the review.
 - Fix: set max-width on videos to 100% to avoid overflow.
+- Fix: allow user to correctly select and copy lines near the beginning or end of a diff.
+- Fix: don't snapshot revisions when the PR author is looking at the review unless required for data integrity.  Provisional revisions should now remain provisional more reliably until a reviewer visits the review.
 
 #### Release 3268.5067 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-19
 - Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
