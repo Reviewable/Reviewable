@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Upd: increase timeouts related to handling interactive client requests on the server from 5s to 15s.
 - Upd: display instructions for adding/removing labels, assignees and reviewers in the corner of the top level draft while it's empty.
+- Upd: improve editor link settings section to be easier to use without having to refer to docs.
 - Upd: upgrade HighlightJS to the latest version. This is usually painless (and we don't bother calling it out), but with this upgrade we've observed a strange "Syntax error in regular expression" on load in the wild that claims to originate from Firefox 78.0 on Windows 10.  However, the issue is exceedingly rare, not reproducible in that environment, and never seems to occur twice for the same user.  Please let us know if your users spot it!
 - Fix: don't erroneously consider a file reviewed if it has been reverted and newer revisions created in the review.
 - Fix: set max-width on videos to 100% to avoid overflow.
