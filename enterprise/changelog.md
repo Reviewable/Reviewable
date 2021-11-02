@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow user to correctly select and copy lines near the beginning or end of a diff.
 - Fix: don't snapshot revisions when the PR author is looking at the review unless required for data integrity.  Provisional revisions should now remain provisional more reliably until a reviewer visits the review.
 - Fix: wait for Lambda function to become active before invoking it.
+- Fix: if a completion condition sets `syncRequestedReviewers` but we can't find an admin account associated with the repo to do the work, fail the status check with an error rather than getting stuck in an infinite retry loop.
 
 #### Release 3268.5067 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-19
 - Upd: indicate in synthetic `commits file` that commits were added to a revision if they didn't affect files in the pull request.
