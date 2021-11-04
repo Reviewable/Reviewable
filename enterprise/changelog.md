@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+
+#### Release 3291.5093 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-04
 - Upd: increase timeouts related to handling interactive client requests on the server from 5s to 15s.
 - Upd: display instructions for adding/removing labels, assignees and reviewers in the corner of the top level draft while it's empty.
 - Upd: improve editor link settings section to be easier to use without having to refer to docs.
