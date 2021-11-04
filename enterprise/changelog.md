@@ -11,7 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: display instructions for adding/removing labels, assignees and reviewers in the corner of the top level draft while it's empty.
 - Upd: improve editor link settings section to be easier to use without having to refer to docs.
 - Upd: change the discussion line links into two separate icon links to GitHub and the editor.
-- Upd: upgrade HighlightJS to the latest version. This is usually painless (and we don't bother calling it out), but with this upgrade we've observed a strange "Syntax error in regular expression" on load in the wild that claims to originate from Firefox 78.0 on Windows 10.  However, the issue is exceedingly rare, not reproducible in that environment, and never seems to occur twice for the same user.  Please let us know if your users spot it!
+- Upd: upgrade HighlightJS to the latest version. This has resulted in some strange crashes on page load reported for reviewable.io but after extensive investigation we believe they're false positives.  Please let us know if you run into trouble, though!
 - Upd: allow other ways to inject AWS credentials into Reviewable for Lambda and S3 besides specifying `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.  Using these environment variables will continue to work, though if you forget to set them (and don't have any other means for the SDK to get credentials) the error message might not be as clear.
 - Fix: don't erroneously consider a file reviewed if it has been reverted and newer revisions created in the review.
 - Fix: set max-width on videos to 100% to avoid overflow.
