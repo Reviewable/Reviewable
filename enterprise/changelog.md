@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: automatically add an `[archived]` annotation to the GitHub status of reviews when they're archived.
 - Upd: hide editor and GitHub links behind the line number in discussion headers.
 - Fix: remove review author from requested reviewers upon publishing.
+- Fix: don't crash when clicking on link to GitHub (though this often went unnoticed since clicking the link navigates away from Reviewable).
 
 #### Release 3291.5093 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-04
 - Upd: increase timeouts related to handling interactive client requests on the server from 5s to 15s.
