@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: don't update archived reviews in response to GitHub webhooks. Closed reviews are archived within 30-60 days after they're created or last accessed by a user, and open reviews within 180-210 days.  This means that the completion condition won't be triggered on archived reviews even if the state changes, and the GitHub status won't be updated either.  A visit to the review will automatically unarchive it and bring everything up to date again.
 - Upd: automatically add an `[archived]` annotation to the GitHub status of reviews when they're archived.
 - Upd: hide editor and GitHub links behind the line number in discussion headers.
+- Upd: when evaluating the completion condition, use internally available data to map usernames to user IDs when possible instead of always fetching it from GitHub.
 - Fix: keep better track of requested reviewers in Reviewable, updating more eagerly and avoiding false positives in computing pending reviewers.
 - Fix: don't crash when clicking on link to GitHub (though this often went unnoticed since clicking the link navigates away from Reviewable).
 - Fix: sync drafts correctly between tabs.
