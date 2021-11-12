@@ -58,7 +58,7 @@ Use these variables in your custom URL template:
 * `{{path}}`: the full path to the file (does not start with /).
 * `{{sha}}`: the commit sha of the latest revision in this review.
 * `{{line}}:` the line number in the latest revision of the file that best represents the original context in which the comment was made.
-* `{{viewLine}}`: the line number in the revision in which the discussion currently appears. This is the number that appears in the top-right corner of the discussion.
+* `{{viewLine}}`: the line number in the revision in which the discussion currently appears. This is the number that appears in the top-right corner of the discussion.  Not available for code blocks.
 
 Typically, you'll want to edit and load the latest version of the file into the editor, so you probably want to use `{{line}}` rather than `{{viewLine}}`. If you need any other variables for your template, please let us know.
 

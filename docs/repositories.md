@@ -88,7 +88,7 @@ By contrast, Reviewable doesn't get write access to the repo if you individually
 Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.
 
 {:.tip}
-You may find it impracticable to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
+You may find it impractical to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
 
 <a id="repo-settings"></a>
 
@@ -138,6 +138,27 @@ This setting controls what permissions a user needs to have to be able to [dismi
 
 This setting determines whether or not to post the current completion status of the review as a status check on GitHub. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
+### Code coverage
+
+You can configure Reviewable to display code coverage information next to diffs by letting it know where to fetch code coverage reports from.  You'll need to enter a URL template that Reviewable can instantiate to grab a report for all the files at a given commit.  The template can make use of these variables:
+
+* `{{owner}}`: the repo owner (or organization) username.
+* `{{repo}}`: the repo name.
+* `{{commitSha}}`: the full SHA of the target commit.
+
+If needed, you can also specify one additional header to send with the request.  This will typically be an `Authorization` header that passes some kind of access token to enable access to private coverage reports.
+
+{:important}
+The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the headers instead.
+
+{:tip}
+If you added a header we will proxy the request through our server to keep the header's value a secret.  However, we have a short list of domains that we're willing to proxy for.  If your URL isn't on it you'll get an error and need to get in touch with us to get it whitelisted.
+
+There's a button to let you easily set the report source to [Codecov](https://codecov.io), a popular code coverage report aggregation service.  For private repos, you can generate an API access token under your account Settings > Access, and paste it as the value of the `Authorization` header.  If you're using a self-hosted instance of Codecov Enterprise then you'll need to set the URL to something like this instead:  `https://LOCAL_CODECOV_HOSTNAME/api/ghe/{{owner}}/{{repo}}/commits/{{commitSha}}?src=extension`, with `LOCAL_CODECOV_HOSTNAME` replaced by the name of the host where you're running Codecov.
+
+The coverage reports must be in a format that Reviewable understands.  Currently, we only support the Codecov native API format and Codecov's generic [inbound report format](https://docs.codecov.com/docs/codecov-custom-coverage-format).  If you need support for a different format please [let us know](mailto:support@reviewable.io) and we'll consider it, but in general we're biased towards fetching normalized reports from aggregators.
+
+
 <a id="completion-condition"></a>
 
 ## Custom review completion condition
@@ -178,7 +199,7 @@ The current state of the review is accessible to your code via the `review` vari
     numUnreviewedFiles: 1,          // Number of files not reviewed by anyone at latest revision
     numFilesReviewedByAtLeast: [1]  // Number of files reviewed by at least N people (as index)
       // e.g., numFilesReviewedByAtLeast[2] is the number of file reviewed by at least 2 people
-    commitsFileReviewed: true  
+    commitsFileReviewed: true
   },
   pullRequest: {
     title: 'Work work work',
@@ -342,6 +363,8 @@ A URL string that Reviewable will send review status update notifications to.  Y
 }
 ```
 If a webhook request fails the error will be displayed to repository admins on the corresponding review page.  (The error message returned by your server will technically be accessible to anyone with pull permissions on the repo; however, the webhook URL itself will never be disclosed.)
+
+Note that archived reviews will not generally update their state even if relevant events occur, and hence will not trigger the webhook.
 
 #### `disableGitHubApprovals`
 A boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
