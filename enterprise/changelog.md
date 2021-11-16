@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: hide editor and GitHub links behind the line number in discussion headers.
 - Upd: when evaluating the completion condition, use internally available data to map usernames to user IDs when possible instead of always fetching it from GitHub.
 - Fix: keep better track of requested reviewers in Reviewable, updating more eagerly and avoiding false positives in computing pending reviewers.
+- Fix: process `check_run` and `check_suite` events.  They were being dropped by mistake, though the checks status was still refreshed when the review was loaded.
 - Fix: don't crash when clicking on link to GitHub (though this often went unnoticed since clicking the link navigates away from Reviewable).
 - Fix: sync drafts correctly between tabs.
 - Fix: improve styling for images in comments, removing the underline.
