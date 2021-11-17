@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash when clicking on link to GitHub (though this often went unnoticed since clicking the link navigates away from Reviewable).
 - Fix: sync drafts correctly between tabs.
 - Fix: improve styling for images in comments, removing the underline.
+- Fix: escape pull request / review titles for display.  This wasn't a security issue because the values were sent through `DOMPurify` but if your title included HTML-like tags they wouldn't show up properly.
 - Note: this version can render suggestions, and will become the min rollback version once that feature launches.
 
 #### Release 3291.5093 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-04
