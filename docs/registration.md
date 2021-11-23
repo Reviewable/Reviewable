@@ -40,7 +40,7 @@ Here's how we use the [GitHub authorizations](https://developer.github.com/apps/
 Reviewable staff may also contact you directly in exceptional circumstances — such as when something has gone wrong with your account. All day-to-day review email from Reviewable is sent indirectly through GitHub, and is controllable with GitHub notification settings.
 
 {:.important}
-GitHub lets you connect multiple email accounts and define how to route notifications based on which organization they pertain to. Unfortunately, this routing table isn't available through their API, so Reviewable always sends email messages to the primary email address for your account.
+GitHub lets you connect multiple email accounts and define how to route notifications based on which organization they pertain to. Unfortunately, this routing table isn't available through their API, so Reviewable always sends non-review email messages to the primary email address for your account.  Review emails are handled by GitHub, which has access to the routing configuration and will honor it.
 
 While Reviewable only needs read access to your repositories to function, GitHub permission scopes don't distinguish between read and read/write access.  Write access is also required to post pull request reviews on your behalf, and let you merge PRs from within Reviewable.
 
