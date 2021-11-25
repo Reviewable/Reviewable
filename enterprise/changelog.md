@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+
+#### Release 3340.5125 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-25
 - New: display code coverage in diffs using a thin color bar.  You'll need to configure access to coverage reports on each repository's settings page.  To start with we're only support the Codecov report format but are open to adding more.  See [the docs](https://docs.reviewable.io/repositories.html#code-coverage) for details.
 - Upd: don't update archived reviews in response to GitHub webhooks. Closed reviews are archived within 30-60 days after they're created or last accessed by a user, and open reviews within 180-210 days.  This means that the completion condition won't be triggered on archived reviews even if the state changes, and the GitHub status won't be updated either.  A visit to the review will automatically unarchive it and bring everything up to date again.
 - Upd: automatically add an `[archived]` annotation to the GitHub status of reviews when they're archived.
