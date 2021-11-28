@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Fix: don't crash when making some specific kinds of edits to the code coverage settings.
+- Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the PR author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
 
 #### Release 3340.5125 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-25
 - New: display code coverage in diffs using a thin color bar.  You'll need to configure access to coverage reports on each repository's settings page.  To start with we're only support the Codecov report format but are open to adding more.  See [the docs](https://docs.reviewable.io/repositories.html#code-coverage) for details.
