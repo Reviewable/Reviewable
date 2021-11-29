@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: show a "go to next file" button at the bottom of previously reviewed diffs when operating in "too many files" mode.  This lets you easily page through a long review even after you've marked everything reviewed.
 - Fix: don't crash when making some specific kinds of edits to the code coverage settings.
 - Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the pull request author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
+- Fix: query PRs much more efficiently when you have "Also show pull requests you're not involved with from all repos to which you can push" checked on the dashboard and limited to one or both of starred or watched repositories.
 
 #### Release 3340.5125 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-25
 - New: display code coverage in diffs using a thin color bar.  You'll need to configure access to coverage reports on each repository's settings page.  To start with we're only support the Codecov report format but are open to adding more.  See [the docs](https://docs.reviewable.io/repositories.html#code-coverage) for details.
