@@ -7,8 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+- Upd: omit pull requests in archived repositories from the reviews dashboard.
 - Fix: don't crash when making some specific kinds of edits to the code coverage settings.
-- Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the PR author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
+- Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the pull request author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
 
 #### Release 3340.5125 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-25
 - New: display code coverage in diffs using a thin color bar.  You'll need to configure access to coverage reports on each repository's settings page.  To start with we're only support the Codecov report format but are open to adding more.  See [the docs](https://docs.reviewable.io/repositories.html#code-coverage) for details.
