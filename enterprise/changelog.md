@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
 - Upd: omit pull requests in archived repositories from the reviews dashboard.
+- Upd: show a "go to next file" button at the bottom of previously reviewed diffs when operating in "too many files" mode.  This lets you easily page through a long review even after you've marked everything reviewed.
 - Fix: don't crash when making some specific kinds of edits to the code coverage settings.
 - Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the pull request author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
 
