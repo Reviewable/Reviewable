@@ -13,7 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the pull request author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
 - Fix: query PRs much more efficiently when you have "Also show pull requests you're not involved with from all repos to which you can push" checked on the dashboard and limited to one or both of starred or watched repositories.
 - Fix: stop dropping `check_run` and `check_suite` events for pull requests that originate from a fork.  Apparently in those cases GitHub doesn't list the relevant pull requests in the event, but we can still find them using a custom query.
-- Fix: reassign `non obsolete revision keys` to revisions with commits that are still in the pull request when folding equivalents.
+- Fix: correctly update which revisions are obsolete when squashing commits with no other changes.  This affects the commits shown in the virtual Commits file when diffing against base.
+- Fix: drop status update events when fetching a list of checks and statuses results in repeated 502 errors from GitHub.
 
 #### Release 3340.5125 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-25
 - New: display code coverage in diffs using a thin color bar.  You'll need to configure access to coverage reports on each repository's settings page.  To start with we're only support the Codecov report format but are open to adding more.  See [the docs](https://docs.reviewable.io/repositories.html#code-coverage) for details.
