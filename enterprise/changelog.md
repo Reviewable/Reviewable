@@ -6,13 +6,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images are broken in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 3107.4890 GHE 2.17+ or 3.0+)
+#### Upcoming changes (min 3107.4890 GHE 2.19+ or 3.0+)
 - Upd: omit pull requests in archived repositories from the reviews dashboard.
 - Upd: show a "go to next file" button at the bottom of previously reviewed diffs when operating in "too many files" mode.  This lets you easily page through a long review even after you've marked everything reviewed.
+- Upd: use a more efficient GraphQL query for finding pull requests matching a commit SHA when processing status events.
 - Fix: don't crash when making some specific kinds of edits to the code coverage settings.
 - Fix: snapshot the current revision when creating a new top level draft comment.  In edge cases, if the pull request author created such a comment and left the revision provisional, the review could get into an invalid state and fail to update.
 - Fix: query PRs much more efficiently when you have "Also show pull requests you're not involved with from all repos to which you can push" checked on the dashboard and limited to one or both of starred or watched repositories.
-- Fix: stop dropping `check_run` and `check_suite` events for pull requests that originate from a fork.  Apparently in those cases GitHub doesn't list the relevant pull requests in the event, but we can still find them using a custom query.
 - Fix: correctly update which revisions are obsolete when squashing commits with no other changes.  This affects the commits shown in the virtual Commits file when diffing against base.
 - Fix: drop status update events when fetching a list of checks and statuses results in repeated 502 errors from GitHub.
 
