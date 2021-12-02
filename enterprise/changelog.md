@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: query PRs much more efficiently when you have "Also show pull requests you're not involved with from all repos to which you can push" checked on the dashboard and limited to one or both of starred or watched repositories.
 - Fix: correctly update which revisions are obsolete when squashing commits with no other changes.  This affects the commits shown in the virtual Commits file when diffing against base.
 - Fix: drop status update events when fetching a list of checks and statuses results in repeated 502 errors from GitHub.
+- Fix: avoid getting into an infinite loop of refreshing permissions when a user is signed in on the client but their token is missing server-side.  This shouldn't happen under normal circumstances.
 
 #### Release 3340.5125 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-25
 - New: display code coverage in diffs using a thin color bar.  You'll need to configure access to coverage reports on each repository's settings page.  To start with we're only support the Codecov report format but are open to adding more.  See [the docs](https://docs.reviewable.io/repositories.html#code-coverage) for details.
