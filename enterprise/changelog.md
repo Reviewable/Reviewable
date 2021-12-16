@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3107.4890 GHE 2.19+ or 3.0+)
+- New: let reviewers suggest code changes, with a mini code editor to make writing them easier and a mini diff to show what changed.  Please see [the announcement](https://headwayapp.co/reviewable-changes/code-suggestions-216787) for more details.
 - Upd: omit pull requests in archived repositories from the reviews dashboard.
 - Upd: show a "go to next file" button at the bottom of previously reviewed diffs when operating in "too many files" mode.  This lets you easily page through a long review even after you've marked everything reviewed.
 - Upd: use a more efficient GraphQL query for finding pull requests matching a commit SHA when processing status events.
