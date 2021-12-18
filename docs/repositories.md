@@ -148,10 +148,10 @@ You can configure Reviewable to display code coverage information next to diffs 
 
 If needed, you can also specify one additional header to send with the request.  This will typically be an `Authorization` header that passes some kind of access token to enable access to private coverage reports.
 
-{:important}
+{:.important}
 The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the headers instead.
 
-{:tip}
+{:.tip}
 If you added a header we will proxy the request through our server to keep the header's value a secret.  However, we have a short list of domains that we're willing to proxy for.  If your URL isn't on it you'll get an error and need to get in touch with us to get it whitelisted.
 
 There's a button to let you easily set the report source to [Codecov](https://codecov.io), a popular code coverage report aggregation service.  For private repos, you can generate an API access token under your account Settings > Access, and paste it as the value of the `Authorization` header.  If you're using a self-hosted instance of Codecov Enterprise then you'll need to set the URL to something like this instead:  `https://LOCAL_CODECOV_HOSTNAME/api/ghe/{{owner}}/{{repo}}/commits/{{commitSha}}?src=extension`, with `LOCAL_CODECOV_HOSTNAME` replaced by the name of the host where you're running Codecov.

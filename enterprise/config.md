@@ -121,6 +121,7 @@ Some features, such as [custom review completion rules](https://docs.reviewable.
             "lambda:CreateFunction",
             "lambda:DeleteFunction",
             "lambda:InvokeFunction",
+            "lambda:GetFunctionConfiguration",
             "lambda:ListFunctions"
         ],
         "Resource": [
