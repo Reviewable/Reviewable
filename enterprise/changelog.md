@@ -6,8 +6,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images are broken in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 3107.4890 GHE 2.19+ or 3.0+)
-**NOTE**: if you're using AWS Lambda for executing completion conditions, you need to grant the user (or role) the `lambda:GetFunctionConfiguration` permission, on top of the other ones it already needs.  This was due to a fix introduced in v3291.5093 but went unnoticed at the time.  Until this permission is granted the first execution of a condition in a repository will fail, and subsequent ones may very rarely fail as well with an `AccessDeniedException`.
+#### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3359.5145 (min 3340.5125 GHE 2.19+ or 3.0+) 2021-12-22
 - New: let reviewers suggest code changes, with a mini code editor to make writing them easier and a mini diff to show what changed.  Please see [the announcement](https://headwayapp.co/reviewable-changes/code-suggestions-216787) for more details.
 - Upd: omit pull requests in archived repositories from the reviews dashboard.
 - Upd: show a "go to next file" button at the bottom of previously reviewed diffs when operating in "too many files" mode.  This lets you easily page through a long review even after you've marked everything reviewed.
@@ -34,9 +35,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: sync drafts correctly between tabs.
 - Fix: improve styling for images in comments, removing the underline.
 - Fix: escape pull request / review titles for display.  This wasn't a security issue because the values were sent through `DOMPurify` but if your title included HTML-like tags they wouldn't show up properly.
-- Note: this version can render suggestions, and will become the min rollback version once that feature launches.
 
 #### Release 3291.5093 (min 3107.4890 GHE 2.17+ or 3.0+) 2021-11-04
+**NOTE**: if you're using AWS Lambda for executing completion conditions, you need to grant the user (or role) the `lambda:GetFunctionConfiguration` permission, on top of the other ones it already needs.  Until this permission is granted the first execution of a condition in a repository will fail, and subsequent ones may very rarely fail as well with an `AccessDeniedException`.
 - Upd: increase timeouts related to handling interactive client requests on the server from 5s to 15s.
 - Upd: display instructions for adding/removing labels, assignees and reviewers in the corner of the top level draft while it's empty.
 - Upd: improve editor link settings section to be easier to use without having to refer to docs.
