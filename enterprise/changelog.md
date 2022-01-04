@@ -7,7 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: support omitting "Reviewable" badges in public repos.
 - Fix: replace astral plane Unicode characters with a placeholder before posting a custom completion description to Reviewable's GitHub status, as GitHub can't handle them.  Remember kids, fancy emojis are all fun and games until you run into a database that only supports UCS-2!
+- Fix: avoid crashing when creating a comment after a text selection in the diff has disappeared but is still active.
 
 #### Release 3359.5145 (min 3340.5125 GHE 2.19+ or 3.0+) 2021-12-22
 - New: let reviewers suggest code changes, with a mini code editor to make writing them easier and a mini diff to show what changed.  Please see [the announcement](https://headwayapp.co/reviewable-changes/code-suggestions-216787) for more details.
