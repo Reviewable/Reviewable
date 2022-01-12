@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: updated server build process.  There should be no impact on vanilla deployments.  If you customized things please note that the new image entrypoint is `node dist/main.js` and the server code is now minified.
 - Upd: updated syntax highlighting library with improvements to many language definitions.
 - Upd: improved browser caching behavior when serving the page.
+- Upd: note on startup when Sentry is active and capture an info message to help in debugging the configuration.
 - Fix: replace astral plane Unicode characters with a placeholder before posting a custom completion description to Reviewable's GitHub status, as GitHub can't handle them.  Remember kids, fancy emojis are all fun and games until you run into a database that only supports UCS-2!
 - Fix: avoid crashing when creating a comment after a text selection in the diff has disappeared but is still active.
 
