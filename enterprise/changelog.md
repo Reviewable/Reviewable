@@ -7,10 +7,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- New: add a new "pondering" disposition that prevents a draft from being published.  Useful for notes-to-self while reviewing that you'll delete or flesh out before sending.
 - Upd: support omitting "Reviewable" badges in public repos.
-- Upd: updated server build process.  There should be no impact on vanilla deployments.  If you customized things please note that the new image entrypoint is `node dist/main.js` and the server code is now minified.
-- Upd: updated syntax highlighting library with improvements to many language definitions.
-- Upd: improved browser caching behavior when serving the page.
+- Upd: update server build process.  There should be no impact on vanilla deployments.  If you customized things please note that the new image entrypoint is `node dist/main.js` and the server code is now minified.
+- Upd: update syntax highlighting library with improvements to many language definitions.
+- Upd: improve browser caching behavior when serving the page.
 - Upd: note on startup when Sentry is active and capture an info message to help in debugging the configuration.
 - Fix: replace astral plane Unicode characters with a placeholder before posting a custom completion description to Reviewable's GitHub status, as GitHub can't handle them.  Remember kids, fancy emojis are all fun and games until you run into a database that only supports UCS-2!
 - Fix: avoid crashing when creating a comment after a text selection in the diff has disappeared but is still active.
