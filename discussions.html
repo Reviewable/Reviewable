@@ -290,7 +290,7 @@
 <p>Review participants engage in discussions about the changes proposed in the pull request. A discussion is unresolved until it meets resolution criteria that corresponds to the dispositions of the participants. Any discussion will remain in place until it is resolved by the participants — irrespective of whatever changes occur to the files in the PR.  A discussion may also be unreplied for specific users; this state is independent of the discussion being resolved or not.</p>
 <p>This chapter covers all types of Reviewable discussions, including the general discussion, other top-level discussions, and all the various line-specific discussions that occur among all review participants.</p>
 <div class="tip">
-<p>All draft comments, pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the <a href="reviews.html#publish">Publishing section</a>.</p>
+<p>All draft comments (except ones you're still <strong><i class="fa fa-question-circle"> Pondering</strong>), pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the <a href="reviews.html#publish">Publishing section</a>.</p>
 </div>
 <p>Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.</p>
 <h2><a class="header" href="#starting-a-new-discussion" id="starting-a-new-discussion">Starting a new discussion</a></h2>
@@ -363,7 +363,7 @@
 <li><strong><i class="fa fa-check-circle"></i> Satisfied</strong> — In favor of resolving the discussion. If there are no other participants, then the discussion is resolved and will not be brought to the attention of others.</li>
 <li><strong><i class="fa fa-info-circle"></i> Informing</strong> — Discussion is resolved, but left active for others to comment.</li>
 </ul>
-<p>Passive participants will exhibit other dispositions, such as <strong><i class="fa fa-ellipsis-h"></i> Following</strong>, <strong><i class="fa fa-at"></i> Mentioned</strong>, and <strong><i class="fa fa-ban"></i> Dismissed</strong>.</p>
+<p>Passive participants will exhibit other dispositions, such as <strong><i class="fa fa-ellipsis-h"></i> Following</strong>, <strong><i class="fa fa-at"></i> Mentioned</strong>, and <strong><i class="fa fa-ban"></i> Dismissed</strong>.  Another special disposition is <strong><i class="fa fa-question-circle"></i> Pondering</strong>, which indicates that you're still thinking about an issue and your draft will not be published.</p>
 <p>A discussion is <em>resolved</em> if and only if at least one participant is <strong><i class="fa fa-check-circle"></i> Satisfied</strong> or <strong><i class="fa fa-info-circle"></i> Informing</strong> and none of the participants are <strong><i class="fa fa-play-circle"></i> Working</strong> or <strong><i class="fa fa-minus-circle"></i> Blocking</strong>, or if there are no active participants left. (Participants whose disposition is <strong><i class="fa fa-circle-o"></i> Discussing</strong> are abstaining from the decision.)</p>
 <div class="tip">
 <p>If you have draft state on the discussion (as in the case of a reply, for example), the proposed value is used when computing the resolved state in your view.</p>
