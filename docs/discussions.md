@@ -5,7 +5,7 @@ Review participants engage in discussions about the changes proposed in the pull
 This chapter covers all types of Reviewable discussions, including the general discussion, other top-level discussions, and all the various line-specific discussions that occur among all review participants.
 
 {:.tip}
-All draft comments (except ones you're still **<i class="fa fa-question-circle"> Pondering**), pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the [Publishing section](reviews.md#publish).
+All draft comments (except ones you're still **<i class="fa fa-question-circle"></i> Pondering**), pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the [Publishing section](reviews.md#publish).
 
 Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.
 
