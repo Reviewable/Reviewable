@@ -26,6 +26,9 @@ It's possible for one person to be both the author and a reviewer in a “self-r
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
 {:.tip}
+To temporarily keep a draft from being published, switch its disposition to **<i class="fa fa-question-circle"> Pondering**.
+
+{:.tip}
 If you'd like to suppress posting the combined message to Github, e.g. because you want to separate the Reviewable review from the GitHub review process, you can do so on a PR-by-PR basis. Just add the `Comments only in Reviewable` label (exact spelling!) to the PR and neither batch published nor single-send comments will be posted to GitHub.
 
 {:.important}

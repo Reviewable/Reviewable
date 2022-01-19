@@ -5,7 +5,7 @@ Review participants engage in discussions about the changes proposed in the pull
 This chapter covers all types of Reviewable discussions, including the general discussion, other top-level discussions, and all the various line-specific discussions that occur among all review participants.
 
 {:.tip}
-All draft comments, pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the [Publishing section](reviews.md#publish).
+All draft comments (except ones you're still **<i class="fa fa-question-circle"> Pondering**), pending acknowledgements, disposition changes, and dismissals will be published along with the review. Learn more in the [Publishing section](reviews.md#publish).
 
 Each comment indicates its author via an avatar, over which you can hover for more details. You can use the browser's find in page feature to search through all the comments for all instances of the author’s name or username. This technique will work even though the names and usernames aren’t actually visible on the page.
 
@@ -106,7 +106,7 @@ These are the dispositions that make one an active participant in a discussion a
 * **<i class="fa fa-check-circle"></i> Satisfied** — In favor of resolving the discussion. If there are no other participants, then the discussion is resolved and will not be brought to the attention of others.
 * **<i class="fa fa-info-circle"></i> Informing** — Discussion is resolved, but left active for others to comment.
 
-Passive participants will exhibit other dispositions, such as **<i class="fa fa-ellipsis-h"></i> Following**, **<i class="fa fa-at"></i> Mentioned**, and **<i class="fa fa-ban"></i> Dismissed**.
+Passive participants will exhibit other dispositions, such as **<i class="fa fa-ellipsis-h"></i> Following**, **<i class="fa fa-at"></i> Mentioned**, and **<i class="fa fa-ban"></i> Dismissed**.  Another special disposition is **<i class="fa fa-question-circle"></i> Pondering**, which indicates that you're still thinking about an issue and your draft will not be published.
 
 A discussion is _resolved_ if and only if at least one participant is **<i class="fa fa-check-circle"></i> Satisfied** or **<i class="fa fa-info-circle"></i> Informing** and none of the participants are **<i class="fa fa-play-circle"></i> Working** or **<i class="fa fa-minus-circle"></i> Blocking**, or if there are no active participants left. (Participants whose disposition is **<i class="fa fa-circle-o"></i> Discussing** are abstaining from the decision.)
 
