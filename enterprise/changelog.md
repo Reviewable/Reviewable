@@ -8,12 +8,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add a new "pondering" disposition that prevents a draft from being published.  Useful for notes-to-self while reviewing that you'll delete or flesh out before sending.
+- Upd: include reviews where the user is blocking (i.e., in `pendingReviewers`) on the dashboard even if they're not involved with the pull request from GitHub's point of view.  This is helpful for custom completion conditions that assign pending reviewers from a hardcoded list, rather than just managing the users already participating in the review.
 - Upd: support omitting "Reviewable" badges in public repos.
 - Upd: update server build process.  There should be no impact on vanilla deployments.  If you customized things please note that the new image entrypoint is `node dist/main.js` and the server code is now minified.
 - Upd: update syntax highlighting library with improvements to many language definitions.
 - Upd: improve browser caching behavior when serving the page.
 - Upd: note on startup when Sentry is active and capture an info message to help in debugging the configuration.
-- Fix: include reviews where the user is blocking (i.e., in `pendingReviewers`) on the dashboard even if they're not involved with the pull request from GitHub's point of view.  This is helpful for custom completion conditions that assign pending reviewers from a hardcoded list, rather than just managing the users already participating in the review.
 - Fix: replace astral plane Unicode characters with a placeholder before posting a custom completion description to Reviewable's GitHub status, as GitHub can't handle them.  Remember kids, fancy emojis are all fun and games until you run into a database that only supports UCS-2!
 - Fix: avoid crashing when creating a comment after a text selection in the diff has disappeared but is still active.
 - Fix: allow reviews with codeblocks sourced from a different file than the parent discussion to be unarchived correctly.
