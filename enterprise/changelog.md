@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3371.5161 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-02-02
 - New: add a new "pondering" disposition that prevents a draft from being published.  Useful for notes-to-self while reviewing that you'll delete or flesh out before sending.
 - Upd: include reviews where the user is blocking (i.e., in `pendingReviewers`) on the dashboard even if they're not involved with the pull request from GitHub's point of view.  This is helpful for custom completion conditions that assign pending reviewers from a hardcoded list, rather than just managing the users already participating in the review.
 - Upd: support omitting "Reviewable" badges in public repos.
