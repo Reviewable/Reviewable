@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: add buttons to copy filename in file and discussion headers.
 - Upd: darken link underlines in comments to make them easier to spot.
+- Fix: implement a failsafe to prevent getting stuck with a dead stickied file header when switching files in single-file mode.
 
 #### Release 3371.5161 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-02-02
 - New: add a new "pondering" disposition that prevents a draft from being published.  Useful for notes-to-self while reviewing that you'll delete or flesh out before sending.
