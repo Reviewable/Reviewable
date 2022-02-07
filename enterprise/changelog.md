@@ -9,10 +9,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: add buttons to copy filename in file and discussion headers.
 - Upd: darken link underlines in comments to make them easier to spot.
+- Fix: fix the `vm2` code executor that was broken in v3371.5161.
 - Fix: implement a failsafe to prevent getting stuck with a dead stickied file header when switching files in single-file mode.
 - Fix: allow marking a group as reviewed even if some files are diffed at a different right bound, as long as they have no valid revisions between their bound and the dominant revision.  This is especially useful for the Reverted group since files there won't have any revisions after the reversion.
 
 #### Release 3371.5161 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-02-02
+**WARNING**: the `vm2` executor is broken in this release.
 - New: add a new "pondering" disposition that prevents a draft from being published.  Useful for notes-to-self while reviewing that you'll delete or flesh out before sending.
 - Upd: include reviews where the user is blocking (i.e., in `pendingReviewers`) on the dashboard even if they're not involved with the pull request from GitHub's point of view.  This is helpful for custom completion conditions that assign pending reviewers from a hardcoded list, rather than just managing the users already participating in the review.
 - Upd: support omitting "Reviewable" badges in public repos.
