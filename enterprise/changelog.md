@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- New: support executing completion conditions in Azure Functions.  For details see the newly added [instructions](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#user-code-execution) for the `azurefns` config option.
 - Upd: add buttons to copy filename in file and discussion headers.
 - Upd: darken link underlines in comments to make them easier to spot.
 - Fix: fix the `vm2` code executor that was broken in v3371.5161.
