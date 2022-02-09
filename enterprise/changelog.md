@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3391.5185 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-02-08
 - New: introduce guest passes to make license seat management more flexible.  If a user is prevented from obtaining a normal seat -- whether because they're all allocated to others or because there's a team constraint applied to the license -- they're given a temporary guest pass seat instead.  A guest pass is valid for 14 days, doesn't count against the licensed seats, and there's no limit to how many can be handed out.  However, once a user has signed in (whether to a full or guest seat) they'll only be eligible for another guest pass after 90 days, so this is not an alternative to getting a normal licensed seat for long term users.  We hope this helps others in your organization try out Reviewable without having to worry about exhausting your license!
 - New: support executing completion conditions in Azure Functions.  For details see the newly added [instructions](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#user-code-execution) for the `azurefns` executor option.
 - Upd: add buttons to copy filename in file and discussion headers.
