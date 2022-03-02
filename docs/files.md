@@ -118,7 +118,7 @@ If a file requires your review, you'll see a tab at the bottom of the diff to [m
 
 As you decrease the width of the browser window, the diff will convert from a side-by-side view to a unified view and vice-versa. Also, the code will automatically be wrapped at a reasonable, round number of columns proportional to the window width.  (Lines that are wrapped get a thick vertical bar on the left side.)
 
-You can override this behavior using the small caret in the top right corner of every diff:
+You can override this behavior to shrink or expand the view using the small caret in the top right corner of every diff:
 
 ![reviewable fill diffs width control](images/filediffs_16.png)
 
