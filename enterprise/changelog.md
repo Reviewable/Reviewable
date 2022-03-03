@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: add ability to reverse iteration of files, comments, and drafts by using ```⇧ + click``` on respective counters in the statusbar.
 - Upd: upgrade AWS SDK to v3 to reduce distro size.
 - Upd: allow requested reviewers, assignees, and labels to be added directly in the Github PR overview. Note this follows the same convention as used on Reviewable.
 - Fix: avoid a very rare server-side failure when updating review state.
