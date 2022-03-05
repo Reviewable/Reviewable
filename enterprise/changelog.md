@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add ability to reverse iteration of files, comments, and drafts by using ```⇧ + click``` on respective counters in the statusbar.
 - Upd: upgrade AWS SDK to v3 to reduce distro size.
 - Upd: allow requested reviewers, assignees, and labels to be added directly in the Github PR overview. Note this follows the same convention as used on Reviewable.
+- Upd: try to grab Firebase credentials from ambient sources if none of the Reviewable-specific environment variables are set.
 - Fix: avoid a very rare server-side failure when updating review state.
 - Fix: improve processing and display of exception stack traces when executing completion conditions in AWS Lambda.
 - Fix: migrate team constraint checking away from deprecated GitHub API.
