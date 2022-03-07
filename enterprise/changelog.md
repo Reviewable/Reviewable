@@ -9,8 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 
 #### Release 3415.5193 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-07
-- Upd: allow requested reviewers, assignees, and labels to be added directly in the Github PR overview. Note this follows the same convention as used on Reviewable.
-- Upd: add ability to reverse iteration of files, comments, and drafts by using `⇧ + click` on respective counters in the statusbar.
+- Upd: allow requested reviewers, assignees, and labels to be added directly in the Github PR description. Note this follows the same convention as used on Reviewable.
+- Upd: add ability to reverse iteration of files, comments, and drafts by using `⇧ + click` on respective counters in the status bar.
 - Upd: try to grab Firebase credentials from ambient sources if none of the Reviewable-specific environment variables are set.
 - Upd: upgrade AWS SDK to v3 to reduce distro size.
 - Fix: migrate team constraint checking away from deprecated GitHub API.
