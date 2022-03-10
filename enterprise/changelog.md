@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3415.5194 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-09
 - Fix **SECURITY**: encrypt keys used to keep track of AWS Lambda functions in Reviewable's database.  If you use AWS Lambda for custom condition execution and ran any version of Reviewable between 3256.5037 and 3415.5193 (inclusive) with encryption enabled, then some repository names were exposed unencrypted in the database.  No other data was exposed, and thanks to our two-level security setup (encryption + security rules) it's extremely unlikely that anybody actually saw anything.  This release will gradually fix things up over the week after installation, but you can manually delete `/lastExecutionTimestampByContainerName` in the Firebase console if you'd like instead.
 
 #### Release 3415.5193 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-07
