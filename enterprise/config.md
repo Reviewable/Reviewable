@@ -4,7 +4,7 @@ To get started you first need to obtain an SSL certificate, create a GitHub appl
 
 ##### SSL certificate
 
-You'll need to decide the URL at which your Reviewable instance will operate, called `REVIEWABLE_HOST_URL`.  You'll want to obtain an SSL certificate so that connections to this address will be secure, and set up a proxy to terminate and load balance connections to Reviewable's server cluster.
+You'll need to decide the URL at which your Reviewable instance will operate, called `REVIEWABLE_HOST_URL`.  It's [best](https://github.com/Reviewable/Reviewable/issues/770) if this is under the same domain as your GitHub Enterprise installation, especially if you're running it in private mode.  You'll want to obtain an SSL certificate so that connections to this address will be secure, and set up a proxy to terminate and load balance connections to Reviewable's server cluster.
 
 ##### GitHub application
 
