@@ -98,6 +98,12 @@ Depending on your package manager, you sometimes need to commit dependency sourc
 2. Use a custom review completion condition to [group vendored files](repositories.md#files) in the file matrix, which will allow you to mark them all as reviewed with one click.
 3. Use a custom review completion condition to preemptively [treat all such files as reviewed](repositories.md#files).  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.
 
+## Ignore comments by bots
+
+When a user posts a comment (whether via Reviewable or GiHub), we automatically snapshot all revisions to ensure that the comment's context is preserved.  This can lead to a mess, though, if you're taking your time pushing commits to a PR before asking for a review and a bot (perhaps CI?) is posting comments as you go.  There can be dozens of snapshotted revisions by the time you invite a reviewer!
+
+To avoid this situation, Reviewable attempts to detect whether a comment was posted by a bot and avoids snapshotting revisions in that case.  We detect bots by checking whether the username ends with `[bot]` (for GitHub app bots) or `-bot`, or the display name ends with `(bot)`.  If you have a favorite bot account changing its username could be tricky, but it should be easy to append `(bot)` to its name since that oughtn't be referenced anywhere.
+
 ## Easy local revision checkout
 
 ### TLDR
