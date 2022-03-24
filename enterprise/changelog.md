@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: mark files that have open discussion with a small icon in the file matrix.
 - Fix: reduce logged exception false alarms originating from status / check events.
 - Fix: save repository settings even if unchanged when selecting multiple repositories to apply to.
 - Fix: fall back to procedurally generated avatar images if the real ones fail to load due to [issue #770](https://github.com/Reviewable/Reviewable/issues/770) or because the user is not signed in to GitHub.
