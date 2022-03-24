@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: mark files that have open discussion with a small icon in the file matrix.
+- Upd: don't snapshot revisions when a bot comments on the PR.  (See [here](https://docs.reviewable.io/tips.html#ignore-comments-by-bots) for how we detect whether a user is a bot.)
 - Fix: reduce logged exception false alarms originating from status / check events.
 - Fix: save repository settings even if unchanged when selecting multiple repositories to apply to.
 - Fix: fall back to procedurally generated avatar images if the real ones fail to load due to [issue #770](https://github.com/Reviewable/Reviewable/issues/770) or because the user is not signed in to GitHub.
