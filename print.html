@@ -1427,6 +1427,9 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 <li>Use a custom review completion condition to <a href="repositories.html#files">group vendored files</a> in the file matrix, which will allow you to mark them all as reviewed with one click.</li>
 <li>Use a custom review completion condition to preemptively <a href="repositories.html#files">treat all such files as reviewed</a>.  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.</li>
 </ol>
+<h2><a class="header" href="#ignore-comments-by-bots" id="ignore-comments-by-bots">Ignore comments by bots</a></h2>
+<p>When a user posts a comment (whether via Reviewable or GiHub), we automatically snapshot all revisions to ensure that the comment's context is preserved.  This can lead to a mess, though, if you're taking your time pushing commits to a PR before asking for a review and a bot (perhaps CI?) is posting comments as you go.  There can be dozens of snapshotted revisions by the time you invite a reviewer!</p>
+<p>To avoid this situation, Reviewable attempts to detect whether a comment was posted by a bot and avoids snapshotting revisions in that case.  We detect bots by checking whether the username ends with <code>[bot]</code> (for GitHub app bots) or <code>-bot</code>, or the display name ends with <code>(bot)</code>.  If you have a favorite bot account changing its username could be tricky, but it should be easy to append <code>(bot)</code> to its name since that oughtn't be referenced anywhere.</p>
 <h2><a class="header" href="#easy-local-revision-checkout" id="easy-local-revision-checkout">Easy local revision checkout</a></h2>
 <h3><a class="header" href="#tldr" id="tldr">TLDR</a></h3>
 <pre><code class="language-sh">git fetch origin refs/reviewable/pr756/r6
