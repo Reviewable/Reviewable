@@ -15,6 +15,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: remove extra dot from trailing whitespace decoration.
 - Fix: allow one-off send of a comment with only code blocks and no text.
 - Fix: correctly display suggestion code blocks that delete all of the original code.
+- Fix: lower query chunk size when running searches from the Reviews page to (hopefully) avoid 502 errors.
+- Fix: don't add a horizontal rule to the message when doing an immediate send of a single comment.
+- Fix: wrap long branch names at the edge of the Changes panel.
 
 #### Release 3415.5195 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-09
 - Fix **SECURITY**: encrypt data used to keep track of AWS Lambda functions in Reviewable's database.  If you use AWS Lambda for custom condition execution and ran any version of Reviewable between 3256.5037 and 3415.5193 (inclusive) with encryption enabled, then some repository names were exposed unencrypted in the database.  No other data was exposed, and thanks to our two-level security setup (encryption + security rules) it's extremely unlikely that anybody actually saw anything.  This release will gradually fix things up over the week after you install it, but you can manually delete `/lastExecutionTimestampByContainerName` in the Firebase console if you'd like instead.
