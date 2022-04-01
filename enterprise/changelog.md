@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3424.5210 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-31
 - Upd: mark files that have open discussion with a small icon in the file matrix.
 - Upd: don't snapshot revisions when a bot comments on the PR.  (See [here](https://docs.reviewable.io/tips.html#ignore-comments-by-bots) for how we detect whether a user is a bot.)
 - Fix: reduce logged exception false alarms originating from status / check events.
