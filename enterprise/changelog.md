@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- New: add support for tracking `spr` stacked pull requests.
 
 #### Release 3424.5210 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-31
 - Upd: mark files that have open discussion with a small icon in the file matrix.
