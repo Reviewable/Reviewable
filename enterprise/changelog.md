@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add support for tracking `spr` stacked pull requests.
+- Fix: log exceptions properly when neither Sentry nor a log sink are set up.
+- Fix: check license team constraints correctly.  This got broken in v3415.5193 such that every membership check returned false.
 
 #### Release 3424.5210 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-31
 - Upd: mark files that have open discussion with a small icon in the file matrix.
