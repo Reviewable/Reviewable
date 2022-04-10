@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure that mentioning a user in a Reviewable comment makes the review show up on their dashboard.
 - Fix: respect choice of default comment disposition when user clicks on the comment's current disposition.
 - Fix: don't hide significant whitespace deltas by default (e.g., whitespace changes in string literals).
+- Fix: don't insert random `null`s into code block diffs.
 
 #### Release 3424.5210 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-03-31
 - Upd: mark files that have open discussion with a small icon in the file matrix.
