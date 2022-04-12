@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add support for tracking `spr` stacked pull requests. Please see [the announcement](https://headwayapp.co/reviewable-changes/support-for-git-spr-(stacked-pull-requests)-228260) for more details.
 - Upd: be more aggressive about hiding files that the user doesn't need to review.
 - Upd: use `reviewed` flags set by custom completion condition to help determine `pendingReviewers` if the condition didn't output its own list.
+- Upd: switch to CSS-native hyphenation, which should be more reliable nowadays than the JS module we've been using so far.
 - Fix: log exceptions properly when neither Sentry nor a log sink are set up.
 - Fix: check license team constraints correctly.  This got broken in v3415.5193 such that every membership check returned false.
 - Fix: set default disposition correctly when it's already set as the discussion's disposition.
