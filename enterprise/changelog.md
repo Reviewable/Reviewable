@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3477.5231 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-04-17
 - New: add support for tracking `spr` stacked pull requests. Please see [the announcement](https://headwayapp.co/reviewable-changes/support-for-git-spr-(stacked-pull-requests)-228260) for more details.
 - Upd: be more aggressive about hiding files that the user doesn't need to review.
 - Upd: use `reviewed` flags set by custom completion condition when computing default result values, including `completed` and `pendingReviewers`.
@@ -15,7 +17,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: check license team constraints correctly.  This got broken in v3415.5193 such that every membership check returned false.
 - Fix: set default disposition correctly when it's already set as the discussion's disposition.
 - Fix: ensure that mentioning a user in a Reviewable comment makes the review show up on their dashboard.
-- Fix: respect choice of default comment disposition when user clicks on the comment's current disposition.
 - Fix: don't hide significant whitespace deltas by default (e.g., whitespace changes in string literals).
 - Fix: don't insert random `null`s into code block diffs.
 
