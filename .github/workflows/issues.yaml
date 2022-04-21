@@ -1,7 +1,7 @@
 name: Add all issues to Task Central project
 
 on:
-  issue:
+  issues:
     types: [opened]
 
 jobs:
