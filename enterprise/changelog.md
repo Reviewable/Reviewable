@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Fix: escape Markdown-sensitive characters in file paths when publishing comments.
+- Fix: explicitly increment parent counters for `statsd` and fix `github.request.*` names to reflect queues, not task IDs.
 
 #### Release 3477.5231 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-04-17
 - New: add support for tracking `spr` stacked pull requests. Please see [the announcement](https://headwayapp.co/reviewable-changes/support-for-git-spr-(stacked-pull-requests)-228260) for more details.
