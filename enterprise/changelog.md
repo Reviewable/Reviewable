@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: respect GitHub hidden comments in Reviewable.
 - Fix: escape Markdown-sensitive characters in file paths when publishing comments.
 - Fix: explicitly increment parent counters for `statsd` and fix `github.request.*` names to reflect queues, not task IDs.
 
