@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show function/class headers when part of the block is collapsed in a diff. (It's not entirely clear when this regression was introduced -- possibly as far back as mid-2021.)
 - Fix: make the review summary draft area in the bunny drop-down menu work properly again.
 - Fix: publish only comment text when sending ad-hoc top level comments.
+- Fix: allow old reviews to be opened (and unarchived, if necessary) in archived repos.
 
 #### Release 3477.5231 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-04-17
 - New: add support for tracking `spr` stacked pull requests. Please see [the announcement](https://headwayapp.co/reviewable-changes/support-for-git-spr-(stacked-pull-requests)-228260) for more details.
