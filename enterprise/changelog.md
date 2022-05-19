@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: respect GitHub hidden comments in Reviewable.
+- Upd: switch to a more comprehensive icon set and update some icons.
 - Fix: escape Markdown-sensitive characters in file paths when publishing comments.
 - Fix: explicitly increment parent counters for `statsd` and fix `github.request.*` names to reflect queues, not task IDs.
 - Fix: show function/class headers when part of the block is collapsed in a diff. (It's not entirely clear when this regression was introduced -- possibly as far back as mid-2021.)
