@@ -7,8 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- New: added support for HSTS with `REVIEWABLE_STRICT_TRANSPORT_SECURITY`.  It defaults to off for backwards-compatibility, but you can set it to any valid header value (e.g., `max-age=31536000`) to turn it on.
 - Upd: respect GitHub hidden comments in Reviewable.
 - Upd: switch to a more comprehensive icon set and update some icons.
+- Upd: add `Referrer-Policy: strict-origin-when-cross-origin` header to all responses.
 - Fix: escape Markdown-sensitive characters in file paths when publishing comments.
 - Fix: explicitly increment parent counters for `statsd` and fix `github.request.*` names to reflect queues, not task IDs.
 - Fix: show function/class headers when part of the block is collapsed in a diff. (It's not entirely clear when this regression was introduced -- possibly as far back as mid-2021.)
