@@ -341,7 +341,7 @@ The user updated their SaaS subscription.  Not applicable to Enterprise installs
   organization: string,
   oldPlanId?: string,
   newPlanId?: string,
-  coverage: 'all' | 'team' | 'solo'
+  coverage: 'all' | 'solo'
   updatedCard: boolean
 }
 ```
