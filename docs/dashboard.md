@@ -29,7 +29,7 @@ Each review in the listing indicates the state of the review, in more-or-less re
 
 The <i class="fa fa-chain-broken" style="color: #7D8084"></i> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [Repository page](repositories.md).
 
-A <i class="fa fa-calendar-times-o" style="color: #7D8084"></i> icon indicates a stalled review that has not been updated in over two weeks.
+A <i class="fa fa-calendar-minus-o" style="color: #7D8084"></i> icon indicates a stalled review that has not been updated in over two weeks.
 
 Counter reflect the same information as you'll see on the review page:
 
