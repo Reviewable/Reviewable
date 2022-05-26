@@ -228,7 +228,8 @@ This summary appears at the bottom of the general discussion (see the screenshot
 
 For each participant:
 
-* a red or grey dot on the avatar indicates their current approval and “needed” status—identical to the review list.
+* A <i class="fa fa-hand-o-right" style="color: #7D8084"></i> to the left of the avatar indicates if the person is being waited on.
+* Their current approval status is shown next to the avatar (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested).
 * The comment icon will be dark in color if the participant has any drafts pending.
 * The comment text indicates the last time they edited the review.
 * The **assigned** and **review requested** markers indicate the corresponding state.

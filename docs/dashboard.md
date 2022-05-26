@@ -23,7 +23,7 @@ Up to three closed PRs from the previous three days may also be shown here. This
 
 ## Review state
 
-Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first, and people whose attention the review currently needs to the right of the <i class="fa fa-hand-o-right"></i>. You can see the approval status icon for any reviewer, which will appear with a <i class="fa fa-circle" style="color: #D87D7C"></i> if the review is waiting on those reviewers. You’ll also see a summary, current milestone, and labels (if any).
+Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first. People whose attention the review currently needs are show to the right of the <i class="fa fa-hand-o-right" style="color: #7D8084"></i>, while other participants follow the <i class="fa fa-pause" style="color: #7D8084"></i>. You can see the approval status for each reviewer (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i>), as well as the pull request summary, current milestone, and labels (if any).
 
 ![reviews list](images/reviews_10.png)
 
@@ -43,7 +43,7 @@ Other possible states include **Merged**, **Closed**, and **Archived** (automati
 
 ## Open a review
 
-Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #85C88B"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.
+Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #7D8084"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.
 
 Click the link on the right end of a listing to access the pull request on GitHub.
 
