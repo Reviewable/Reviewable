@@ -23,7 +23,7 @@ Up to three closed PRs from the previous three days may also be shown here. This
 
 ## Review state
 
-Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first. People whose attention the review currently needs are show to the right of the <i class="fa fa-hand-o-right" style="color: #7D8084"></i>, while other participants follow the <i class="fa fa-pause" style="color: #7D8084"></i>. You can see the approval status for each reviewer (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i>), as well as the pull request summary, current milestone, and labels (if any).
+Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first. People whose attention the review currently needs are show to the right of the <i class="fa fa-hand-o-right" style="color: #7D8084"></i>, while other participants follow the <i class="fa fa-pause" style="color: #7D8084"></i>. You can see the approval status for each reviewer (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested), as well as the pull request summary, current milestone, and labels (if any).
 
 ![reviews list](images/reviews_10.png)
 
