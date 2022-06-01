@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: respect GitHub hidden comments in Reviewable.
 - Upd: switch to a more comprehensive icon set and update some icons.
 - Upd: add `Referrer-Policy: strict-origin-when-cross-origin` header to all responses.
+- Upd: upgrade to Sentry SDK v7.0  If you have a self-hosted deployment of Sentry you need to upgrade it to at least v20.6.0.
 - Fix: escape Markdown-sensitive characters in file paths when publishing comments.
 - Fix: explicitly increment parent counters for `statsd` and fix `github.request.*` names to reflect queues, not task IDs.
 - Fix: show function/class headers when part of the block is collapsed in a diff. (It's not entirely clear when this regression was introduced -- possibly as far back as mid-2021.)
@@ -18,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: publish only comment text when sending ad-hoc top level comments.
 - Fix: allow old reviews to be opened (and unarchived, if necessary) in archived repos.
 - Fix: fix some small bugs with editing coverage report fetch settings.
+- Fix: notice unclosed extended code fences in comments (more than 3 backticks) and close them properly when forming batch message.
 
 #### Release 3477.5231 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-04-17
 - New: add support for tracking `spr` stacked pull requests. Please see [the announcement](https://headwayapp.co/reviewable-changes/support-for-git-spr-(stacked-pull-requests)-228260) for more details.
