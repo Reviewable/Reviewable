@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add `Referrer-Policy: strict-origin-when-cross-origin` header to all responses.
 - Upd: upgrade to Sentry SDK v7.0  If you have a self-hosted deployment of Sentry you need to upgrade it to at least v20.6.0.
 - Upd: when configured with `REVIEWABLE_UPLOADS_PROVIDER=gcs`, optionally use ambient GCP credentials instead of a private key.
+- Upd: add `?debug=crash` to log more information to the console in case of a "broken goggles" crash.
 - Fix: escape Markdown-sensitive characters in file paths when publishing comments.
 - Fix: explicitly increment parent counters for `statsd` and fix `github.request.*` names to reflect queues, not task IDs.
 - Fix: show function/class headers when part of the block is collapsed in a diff. (It's not entirely clear when this regression was introduced -- possibly as far back as mid-2021.)
