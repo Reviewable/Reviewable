@@ -35,22 +35,37 @@ By default, only the actual deltas have red/green highlights in two-column mode.
 
 <a id="line-link-template"></a>
 
-## Custom line link template
+## External editor line link template
 
-You can specify the URL template for the **line** link that appears in the upper-right corner of discussions. You can use this to open the file in your favorite editor on the specific line that is under review. If there's no template, the default destination is the file's page on Github.
+You can specify the file path to your git repos directory for the **external editor line link** that appears in the upper-right corner of discussions.
 
-Your editor must support a custom URL scheme for linking to files to use this feature. The sample templates below assume that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also assume that each repo directory is named the same as its repo. Look for your editor below to see the correct entry that you'll need to insert into the field.
+![custom line editor links](images/accountsettings_2.png)
 
-* **GitHub:** `https://github.com/{{owner}}/{{repo}}/blob/{{viewSha}}/{{path}}#L{{viewLine}}` is the built-in default that opens GitHub on the exact version of the file you're looking at with the line highlighted.
-* **Visual Studio Code:** `vscode://file/directory/with/repos/{{repo}}/{{path}}:{{line}}`.
-* **TextMate:** `txmt://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}`.
-* **Sublime Text:** `subl://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}` if you install an appropriate URL handler.
-* **Emacs:** `emacs://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}` if you install the [Emacs URL Handler](https://github.com/typester/emacs-handler) on OS X.
-* **Atom:** `atm://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}` if you install the [Atom Handler](https://github.com/WizardOfOgz/atom-handler) on OS X.
-* **Eclipse:** `openineclipse://open?url=file:///directory/with/repos/{{repo}}/{{path}}&line={{line}}` if you install the [OpenInEclipse](https://gist.github.com/uncreative/1100212) script on OS X, or [follow the instructions for Linux](https://gist.github.com/jGleitz/cf9df461698f4e133cef). If you know of solutions for Windows, please [let us know](mailto:support@reviewable.io)!
-* **IntelliJ IDEA, Android Studio, PyCharm, PHPStorm:** `idea://open?file=/directory/with/repos/{{repo}}/{{path}}&line={{line}}` (or replace `idea:` with `pycharm:`, `phpstorm:`, etc.). This should work on OS X, not sure about other platforms.
+You can use this to open the file in your favorite editor on the specific line that is under review.
 
-Use these variables in your custom URL template:
+![line editor link in discussion](images/line_editor_link.png)
+
+Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also assume that each repo directory is named the same as its repo.
+
+There are a few caveats for specific editors: 
+
+* **Sublime Text:** You must install an appropriate URL handler.
+* **Emacs:** You must install the [Emacs URL Handler](https://github.com/typester/emacs-handler) on OS X.
+* **Atom:** You must install the [Atom Handler](https://github.com/WizardOfOgz/atom-handler) on OS X.
+* **Eclipse:** You must install the [OpenInEclipse](https://gist.github.com/uncreative/1100212) script on OS X, or [follow the instructions for Linux](https://gist.github.com/jGleitz/cf9df461698f4e133cef). If you know of solutions for Windows, please [let us know](mailto:support@reviewable.io)!
+* **IntelliJ IDEA, Android Studio, PyCharm, PHPStorm:** Should work on OS X, but not confirmed for other platforms.
+
+### Custom line link template
+
+You can also specify a custom line link template by choosing the `Custom` option in the dropdown. If you would like to base your custom template on one of the available editor templates, first select that template in the dropdown and then select `Custom`.
+
+For example, if you initially select `VS Code` and then select `Custom`, the following template will populate the template field: 
+
+`vscode://file//directory/with/repos/{{repo}}/{{path}}:{{line}}`
+
+If you have entered your `/directory/with/repos/` path, it will automatically carry over to your new custom template.
+
+You can use these variables in your custom URL template:
 
 * `{{owner}}`: the repo owner (or organization) username.
 * `{{repo}}`: the repo name.
