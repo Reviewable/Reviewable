@@ -7,6 +7,9 @@ Ported by Fabrício Tavares de Oliveira
 
 .hljs {
   background: white;
+  display: block;
+  padding: 0.5em;
+  overflow-x: auto;
 }
 
 .hljs,
