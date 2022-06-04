@@ -45,7 +45,7 @@ You can use this to open the file in your favorite editor on the specific line t
 
 ![line editor link in discussion](images/line_editor_link.png)
 
-Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also assume that each repo directory is named the same as its repo.
+Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also that each repo directory is named the same as its repo.
 
 There are a few caveats for specific editors: 
 
