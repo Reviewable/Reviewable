@@ -7,9 +7,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3512.5323 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-06-08
+- Upd: add `?debug=navigation` debugging mode.
+- Fix: allow license admin to load Repositories page without causing a permission denied crash.
 - Fix: guard against a handful of client crashes caused by very rare conditions.
 
 #### Release 3512.5320 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-06-02
+**WARNING**: access to the Repositories page by the license admin is broken in this release.
 - New: add support for HSTS with `REVIEWABLE_STRICT_TRANSPORT_SECURITY`.  It defaults to off for backwards compatibility, but you can set it to any valid header value (e.g., `max-age=31536000`) to turn it on.
 - Upd: respect GitHub hidden comments in Reviewable.
 - Upd: switch to a more comprehensive icon set and update some icons.
