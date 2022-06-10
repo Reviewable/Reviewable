@@ -8,7 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: when configured with `REVIEWABLE_UPLOADS_PROVIDER=gcs`, optionally use ambient GCP credentials instead of a private key.
-- Fix: back off mergeability sync retry interval up to 15 minutes in case it's taking a long time to settle on GitHub.
+- Fix: back off mergeability sync retry interval up to 15 minutes in case it's taking a long time to settle on GitHub.  Also capped retries at 1 hour; after that, the user can force a sync by visiting a review.
 - Fix: avoid a vicious feedback loop that could occur if events were received for merged or closed PRs in archived repos.
 
 #### Release 3512.5323 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-06-08
