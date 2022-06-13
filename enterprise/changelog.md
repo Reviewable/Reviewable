@@ -7,7 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: let all GHE site admins access the license details panel on the Repositories, not just the designated license admin.  At this point, the designated license admin account is only needed as a fallback for "anonymous" GitHub requests when GHE is running in private mode.
 - Upd: when configured with `REVIEWABLE_UPLOADS_PROVIDER=gcs`, optionally use ambient GCP credentials instead of a private key.
+- Upd: subdivide `statsd` counter names by action for tasks on the `requests` queue, and if a request times out report its action in the error message on the client.  Also add a new `task_waiting_time` timer that measures how long a task was waiting in the queue before getting picked up (the first time only, so we don't measure retries).
 - Fix: back off mergeability sync retry interval up to 15 minutes in case it's taking a long time to settle on GitHub.  Also capped retries at 1 hour; after that, the user can force a sync by visiting a review.
 - Fix: avoid a vicious feedback loop that could occur if events were received for merged or closed PRs in archived repos.
 
