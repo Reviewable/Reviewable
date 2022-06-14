@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: subdivide `statsd` counter names by action for tasks on the `requests` queue, and if a request times out report its action in the error message on the client.  Also add a new `task_waiting_time` timer that measures how long a task was waiting in the queue before getting picked up (the first time only, so we don't measure retries).
 - Fix: back off mergeability sync retry interval up to 15 minutes in case it's taking a long time to settle on GitHub.  Also capped retries at 1 hour; after that, the user can force a sync by visiting a review.
 - Fix: avoid a vicious feedback loop that could occur if events were received for merged or closed PRs in archived repos.
+- Fix: don't HTML-escape the inside of code blocks in a pull request title.
 
 #### Release 3512.5323 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-06-08
 - Upd: add `?debug=navigation` debugging mode.
