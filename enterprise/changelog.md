@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: when configured with `REVIEWABLE_UPLOADS_PROVIDER=gcs`, optionally use ambient GCP credentials instead of a private key.
 - Upd: subdivide `statsd` counter names by action for tasks on the `requests` queue, and if a request times out report its action in the error message on the client.  Also add a new `task_waiting_time` timer that measures how long a task was waiting in the queue before getting picked up (the first time only, so we don't measure retries).
 - Upd: add comment/copy actions in a command palette that appears when text is selected inside a diff block.
+- Upd: add `?debug=firebase` for debugging of the low-level Firebase protocol.
 - Fix: back off mergeability sync retry interval up to 15 minutes in case it's taking a long time to settle on GitHub.  Also capped retries at 1 hour; after that, the user can force a sync by visiting a review.
 - Fix: avoid a vicious feedback loop that could occur if events were received for merged or closed PRs in archived repos.
 - Fix: don't HTML-escape the inside of code blocks in a pull request title.
