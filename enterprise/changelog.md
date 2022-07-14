@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Fix: allow in-comment badges to be created in unconnected repositories even if the publishing user isn't the author and doesn't have admin rights.
+- Fix: refresh the review after publishing in unconnected repositories.
 - Fix: successfully complete review completion condition tasks in connected repositories even if the connecting user's token has disappeared.
 
 #### Release 3537.5352 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-09
