@@ -10,6 +10,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow in-comment badges to be created in unconnected repositories even if the publishing user isn't the author and doesn't have admin rights.
 - Fix: refresh the review after publishing in unconnected repositories.
 - Fix: successfully complete review completion condition tasks in connected repositories even if the connecting user's token has disappeared.
+- Fix: add breakpoints for wrapping long branch names in the commits section of the Changes panel. 
+- Fix: fix visual glitch in file headers where the revision cells were partially obstructed.
+- Fix: address lack of text overflow handling in the codeblock viewer that made long lines inaccessible.
 
 #### Release 3537.5352 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-09
 - Upd: let all GHE site admins access the license details panel on the Repositories, not just the designated license admin.  At this point, the designated license admin account is only needed as a fallback for "anonymous" GitHub requests when GHE is running in private mode.
