@@ -197,7 +197,7 @@ For details on the syntax, see the [gitattributes reference doc](https://git-scm
 
 ## Special states
 
-The way diffs are displayed is suject to some special states, on both file-by-file and whole-review bases.
+The way diffs are displayed is subject to some special states, on both file-by-file and whole-review bases.
 
 ### Diff-suppressing states
 
