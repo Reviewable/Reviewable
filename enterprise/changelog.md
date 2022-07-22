@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: fix visual glitch in file headers where the revision cells were partially obstructed.
 - Fix: address lack of text overflow handling in the codeblock viewer that made long lines inaccessible.
 - Fix: be more tolerant when trying to unarchive reviews with slightly malformed data.
+- Fix: exclude bots from "new messages for" lists in webhook notifications.
 
 #### Release 3537.5352 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-09
 - Upd: let all GHE site admins access the license details panel on the Repositories, not just the designated license admin.  At this point, the designated license admin account is only needed as a fallback for "anonymous" GitHub requests when GHE is running in private mode.
