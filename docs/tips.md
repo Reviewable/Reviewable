@@ -42,6 +42,8 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 
 If you don't need to tweak these styles, just paste `https://gist.githack.com/pkaminski/4fd7c7b9014856de32bb43f84a396772/raw/line_numbers.css` into the custom stylesheet field.
 
+**Be careful** though: by changing the layout in this way, Reviewable won't be able to automatically pick a diff width that fits your window so you'll need to [control it manually](files.md#diff-layout).
+
 ### Diff line background
 
 When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mdash; just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:
