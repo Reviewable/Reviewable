@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: prevent file matrix bulk diff bound selection from diffing files in collapsed groups, unless they need to remain displayed (e.g., they're unreviewed or have discussions).  This can help with hiding grouped files from the page while retaining the ability to quickly manipulate the diff bounds of remaining ones.
 - Fix: allow in-comment badges to be created in unconnected repositories even if the publishing user isn't the author and doesn't have admin rights.
 - Fix: refresh the review after publishing in unconnected repositories.
 - Fix: successfully complete review completion condition tasks in connected repositories even if the connecting user's token has disappeared.
