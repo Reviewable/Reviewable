@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: be more tolerant when trying to unarchive reviews with slightly malformed data.
 - Fix: exclude bots from "new messages for" lists in webhook notifications.
 - Fix: when selecting bounds by dragging in the file matrix header, include files that may not be present in the PR at the bounds' exact revision, but do have changes in between.  (This fix also ironed out a bunch of other edge cases having to do with missing revisions.)
+- Fix: distinguish between one's own and other people's review marks in later revisions when in "personally review every file" mode.  (The two states are still visually conflated, both being represented by a grey button with green rim, but are now treated differently internally when appropriate.)
 
 #### Release 3537.5352 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-09
 - Upd: let all GHE site admins access the license details panel on the Repositories, not just the designated license admin.  At this point, the designated license admin account is only needed as a fallback for "anonymous" GitHub requests when GHE is running in private mode.
