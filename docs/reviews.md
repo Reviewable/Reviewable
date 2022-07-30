@@ -267,3 +267,7 @@ While the commit file is virtual, it still needs to be marked as reviewed as muc
 There are a number of keyboard shortcuts available to power your way through a review. Type `?` to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the [Custom key bindings](accountsettings.md#custom-key-bindings) section.
 
 ![reviewable keyboard shortcuts](images/toptoolbar_7.png)
+
+## Review summary
+
+When reviewing multiple files simulataneously, Reviewable will provide a **review summary** at the end of the review. The review summary allows you the option to mark all files you're personally responsible for as reviewed and/or mark any discussions left **unread** as **read**. In addition, you can also leave a summary of the review or simply **approve** the review (if allowed), by clicking the `:lgtm:` button on the draft. For more information on using the `:lgtm/approve` functionality, see [the docs](repositories.md#approve-button-output) here. Note any discussions started in the **review summary** will be added to the **top level review discussion**, which is always considered resolved.
