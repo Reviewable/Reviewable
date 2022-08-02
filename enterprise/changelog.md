@@ -7,9 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
-- New: add the ability to leave an optional review summary. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
+- New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
+- Upd: display a message in the diff when a file has been reverted to base at its last revision.
 - Fix: avoid a rare permission denied error (not user-visible) when doing a background update of extra mention details from the dashboard page.
-- Upd: display an informing message in diff when a file has been reverted to base at its last revision.
+- Fix: prevent "review missing last revision" errors.
 
 #### Release 3542.5405 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-31
 - Upd: prevent file matrix bulk diff bound selection from diffing files in collapsed groups, unless they need to remain displayed (e.g., they're unreviewed or have discussions).  This can help with hiding grouped files from the page while retaining the ability to quickly manipulate the diff bounds of remaining ones.
