@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add the ability to leave an optional review summary. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
+- Fix: avoid a rare permission denied error (not user-visible) when doing a background update of extra mention details from the dashboard page.
 
 #### Release 3542.5405 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-31
 - Upd: prevent file matrix bulk diff bound selection from diffing files in collapsed groups, unless they need to remain displayed (e.g., they're unreviewed or have discussions).  This can help with hiding grouped files from the page while retaining the ability to quickly manipulate the diff bounds of remaining ones.
