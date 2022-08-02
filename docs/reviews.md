@@ -36,6 +36,14 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 You can open the dropdown menu off the **Publish** button to set a few extra options. The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
+{:.important}
+For convenience (to avoid scrolling back to the top to leave a comment), Reviewable will provide a **review summary** at the end of the review, unless the number of files forced the review into displaying one file at a time. The review summary allows you the option to mark all files you're personally responsible for as reviewed and/or mark any discussions left **unread** as **read**. When these counters are <span class="red label">red</span>, it indicates there's still pending actions for *you* to take, which can be done by hovering or clicking the <span class="red label">red counter</span>. If the counters are grey, it's purely an indication of the review state.
+
+![reviewable summary](images/review_summary.png)
+
+In addition, you can also leave a summary of the review or simply **approve** the review (if allowed), by clicking the `:lgtm:` button on the draft. For more information on using the `:lgtm:/approve` functionality, see [the docs](repositories.md#approve-button-output) here. Note any discussions started in the **review summary** will be added to the **top level review discussion**, which is always considered resolved.
+
+
 ![reviewable set the approval level](images/publish_1.png ':size=628')
 
 ### Approval levels
