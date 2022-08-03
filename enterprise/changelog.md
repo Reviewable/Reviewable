@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
+- Upd: add a badge condition setting to limit the circumstances under which a Reviewable badge will be added to the PR, even in a connected repository.
 - Upd: display a message in the diff when a file has been reverted to base at its last revision.
 - Fix: prevent "review missing last revision" errors.
 - Fix: ensure that all participants being waited on are shown to the right of the pointing hand on the dashboard page, even if they haven't started working on the review yet.
