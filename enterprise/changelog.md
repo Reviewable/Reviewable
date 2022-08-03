@@ -9,7 +9,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
 - Upd: display a message in the diff when a file has been reverted to base at its last revision.
-- Fix: avoid a rare permission denied error (not user-visible) when doing a background update of extra mention details from the dashboard page.
 - Fix: prevent "review missing last revision" errors.
 - Fix: ensure that all participants being waited on are shown to the right of the pointing hand on the dashboard page, even if they haven't started working on the review yet.
 
