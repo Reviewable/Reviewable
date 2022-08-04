@@ -8,7 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
-- New: detect vendored files (based on simple path heuristics) and give them special treatment:  put them into a group that's collapsed by default, and exclude them from renamed file matching.
+- New: detect vendored files (based on simple path heuristics) and give them special treatment:  put them into a group that's collapsed by default, and exclude them from renamed file matching.  See [announcement](https://headwayapp.co/reviewable-changes/vendored-files-support-240076).
 - Upd: add a badge condition setting to limit the circumstances under which a Reviewable badge will be added to the PR, even in a connected repository.
 - Upd: display a message in the diff when a file has been reverted to base at its last revision.
 - Fix: prevent "review missing last revision" errors.
