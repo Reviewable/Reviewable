@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: display a message in the diff when a file has been reverted to base at its last revision.
 - Fix: prevent "review missing last revision" errors.
 - Fix: ensure that all participants being waited on are shown to the right of the pointing hand on the dashboard page, even if they haven't started working on the review yet.
+- Fix: don't remove empty lines when rendering code blocks in comments.
 
 #### Release 3542.5405 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-31
 - Upd: prevent file matrix bulk diff bound selection from diffing files in collapsed groups, unless they need to remain displayed (e.g., they're unreviewed or have discussions).  This can help with hiding grouped files from the page while retaining the ability to quickly manipulate the diff bounds of remaining ones.
