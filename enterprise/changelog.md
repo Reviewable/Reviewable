@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't remove empty lines when rendering code blocks in comments.
 - Fix: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
 - Fix: avoid rare but persistent permission denied error when updating a review's completion status that would cause the update to get stuck, potentially forever.
+- Fix: when loading a review link with an anchor to a discussion made on a base revision, scroll to the discussion instead of locking out the file with a spinner.
 
 #### Release 3542.5405 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-07-31
 - Upd: prevent file matrix bulk diff bound selection from diffing files in collapsed groups, unless they need to remain displayed (e.g., they're unreviewed or have discussions).  This can help with hiding grouped files from the page while retaining the ability to quickly manipulate the diff bounds of remaining ones.
