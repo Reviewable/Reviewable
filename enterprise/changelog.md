@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Fix: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
+- Fix: guard against crashes when creating a discussion on the base revision of a file that was renamed multiple times within one pull request.
+- Fix: publish only comment text when sending ad-hoc top level comments.  The original fix in v3512.5320 didn't work right.
 
 #### Release 3550.5439 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
