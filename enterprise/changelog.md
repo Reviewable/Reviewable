@@ -3,18 +3,19 @@ This is the release log for Reviewable's Enterprise branch.  Each release has a 
 New releases are announced on the [reviewable-enterprise-announce mailing list](https://groups.google.com/forum/#!forum/reviewable-enterprise-announce).
 
 #### Known issues
-- Avatar images user a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
+- Avatar images use a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (later)
+#### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Fix: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
 
-#### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+#### Release 3550.5439 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
 - New: detect vendored files (based on simple path heuristics) and give them special treatment:  put them into a group that's collapsed by default, and exclude them from renamed file matching.  See [announcement](https://headwayapp.co/reviewable-changes/vendored-files-support-240076).
 - Upd: add a badge condition setting to limit the circumstances under which a Reviewable badge will be added to the PR, even in a connected repository.
 - Upd: display a message in the diff when a file has been reverted to base at its last revision.
 - Upd: add an icon to the approve / block specifier that shows in the Publish button.
+- Upd: increase the threshold for "show just one file at a time" mode from 25 to 50 visible diffs.  If this doesn't lead to performance issues we'll probably increase it further.
 - Fix: prevent "review missing last revision" errors.
 - Fix: ensure that all participants being waited on are shown to the right of the pointing hand on the dashboard page, even if they haven't started working on the review yet.
 - Fix: don't remove empty lines when rendering code blocks in comments.
