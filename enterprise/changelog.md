@@ -6,6 +6,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images user a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
+#### Upcoming changes (later)
+- Fix: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
+
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
 - New: detect vendored files (based on simple path heuristics) and give them special treatment:  put them into a group that's collapsed by default, and exclude them from renamed file matching.  See [announcement](https://headwayapp.co/reviewable-changes/vendored-files-support-240076).
@@ -15,7 +18,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent "review missing last revision" errors.
 - Fix: ensure that all participants being waited on are shown to the right of the pointing hand on the dashboard page, even if they haven't started working on the review yet.
 - Fix: don't remove empty lines when rendering code blocks in comments.
-- Fix: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
 - Fix: avoid rare but persistent permission denied error when updating a review's completion status that would cause the update to get stuck, potentially forever.
 - Fix: when loading a review link with an anchor to a discussion made on a base revision, scroll to the discussion instead of locking out the file with a spinner.
 - Fix: guard against some rare transient crashes on the client, on the review page and on the dashboard.
