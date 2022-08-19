@@ -12,6 +12,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against crashes when creating a discussion on the base revision of a file that was renamed multiple times within one pull request.
 - Fix: correctly handle rename chains where a file two or more renames away gets reintroduced into the pull request.  Previously, this could cause such a reintroduced file to get stuck with no default diff bounds, and no way to set any.
 - Fix: don't insert random `null`s into code block diffs.  This regression was introduced in v3550.5439.
+- Fix: set the focus to the draft after clicking Approve or LGTM.
+- Fix: delete the draft altogether if you clear all text from the review summary and click out of the field.
 
 #### Release 3550.5439 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
