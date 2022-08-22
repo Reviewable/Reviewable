@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: set the focus to the draft after clicking Approve or LGTM.
 - Fix: delete the draft altogether if you clear all text from the review summary and click out of the field.
 - Fix: ensure that clicking LGTM in the review summary always inserts the LGTM into the draft.
+- Fix: show the same number of unresolved discussions in the review summary counter as we do in the toolbar.  (The bottom number wasn't taking into account the drafts about to be sent.)
 
 #### Release 3550.5439 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
