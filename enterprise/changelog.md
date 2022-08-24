@@ -8,7 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
-- Upd: started sampling certain too-common Sentry events meant for debugging.  If you have Reviewable hooked up to Sentry you'll see an apparent drastic reduction in some high volume events.
+- Upd: start sampling certain too-common Sentry events meant for debugging.  If you have Reviewable hooked up to Sentry you'll see an apparent drastic reduction in some high volume events.
 - Fix: publish only comment text when sending ad-hoc top level comments.  The original fix in v3512.5320 didn't work right.
 - Fix: guard against crashes when creating a discussion on the base revision of a file that was renamed multiple times within one pull request.
 - Fix: correctly handle rename chains where a file two or more renames away gets reintroduced into the pull request.  Previously, this could cause such a reintroduced file to get stuck with no default diff bounds, and no way to set any.
