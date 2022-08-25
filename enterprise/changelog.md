@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- New: add ability to create single and multiline code suggestions from inside a comment draft and provide handles for manipulating line selection.
 - Upd: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
 - Upd: start sampling certain too-common Sentry events meant for debugging.  If you have Reviewable hooked up to Sentry you'll see an apparent drastic reduction in some high volume events.
 - Upd: support `maintain` and `triage` permission levels and add `maintain` as an option for discussion dismissal authority. You may need to wait 30-60 minutes after deploying this release before user permissions get refreshed and the new levels become usable.
