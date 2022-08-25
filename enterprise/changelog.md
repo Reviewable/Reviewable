@@ -9,8 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - Upd: use the SVG format badge in comments as well, as GitHub now appears to be supporting this.
 - Upd: start sampling certain too-common Sentry events meant for debugging.  If you have Reviewable hooked up to Sentry you'll see an apparent drastic reduction in some high volume events.
-- Upd: support `maintain` and `triage` permission levels and add `maintain` as option for discussion dismissal authority. Note you may need to refresh your browser.
-- Upd: allow `triage` permission level to add/remove directives to PR.
+- Upd: support `maintain` and `triage` permission levels and add `maintain` as option for discussion dismissal authority. You may need to wait 30-60 minutes after deploying this release before user permissions get refreshed and the new levels become usable.
+- Upd: allow `triage` permission level to use various add/remove directives in comments.
 - Fix: publish only comment text when sending ad-hoc top level comments.  The original fix in v3512.5320 didn't work right.
 - Fix: guard against crashes when creating a discussion on the base revision of a file that was renamed multiple times within one pull request.
 - Fix: correctly handle rename chains where a file two or more renames away gets reintroduced into the pull request.  Previously, this could cause such a reintroduced file to get stuck with no default diff bounds, and no way to set any.
