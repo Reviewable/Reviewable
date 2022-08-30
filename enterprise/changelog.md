@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: start sampling certain too-common Sentry events meant for debugging.  If you have Reviewable hooked up to Sentry you'll see an apparent drastic reduction in some high volume events.
 - Upd: support `maintain` and `triage` permission levels and add `maintain` as an option for discussion dismissal authority. You may need to wait 30-60 minutes after deploying this release before user permissions get refreshed and the new levels become usable.
 - Upd: allow `triage` permission level to use various add/remove directives in comments.
+- Upd: display a warning message in the diff if a revision contains more commits than expected.
 - Fix: publish only comment text when sending ad-hoc top level comments.  The original fix in v3512.5320 didn't work right.
 - Fix: guard against crashes when creating a discussion on the base revision of a file that was renamed multiple times within one pull request.
 - Fix: correctly handle rename chains where a file two or more renames away gets reintroduced into the pull request.  Previously, this could cause such a reintroduced file to get stuck with no default diff bounds, and no way to set any.
@@ -22,7 +23,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show the same number of unresolved discussions in the review summary counter as we do in the toolbar.  (The bottom number wasn't taking into account the drafts about to be sent.)
 - Fix: ensure that dashboard doesn't get stuck in "Loading" state if some very old reviews are in the list.
 - Fix: guard against rare "can't access dead object" error in Firefox.
-- Fix: display a warning message if a revision contains more commits than expected.
 
 #### Release 3550.5439 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
