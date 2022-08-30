@@ -24,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show the same number of unresolved discussions in the review summary counter as we do in the toolbar.  (The bottom number wasn't taking into account the drafts about to be sent.)
 - Fix: ensure that dashboard doesn't get stuck in "Loading" state if some very old reviews are in the list.
 - Fix: guard against rare "can't access dead object" error in Firefox.
+- Fix: correctly track when the review's completion state was last computed.  This bug resulted in running completion and review state updates more frequently than necessary.
 
 #### Release 3550.5439 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15
 - New: add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
