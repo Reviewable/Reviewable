@@ -314,11 +314,6 @@
 <p>Some Reviewable inline comments won't appear as inline comments in GitHub and vice-versa, because the GitHub model for comment placement is poor and trying to conform to it would invalidate many of the best features in Reviewable. <more> In more detail, it's important to understand that GitHub has two types of inline comments: pull request (PR) comments and commit comments. PR comments are assigned to lines based on the raw git diffs between two commits. Reviewable doesn't use these diffs, making mapping locations hard (see <a href="https://github.com/Reviewable/Reviewable/issues/14">issue #14</a>), and can place comments on lines that don't appear in the diffs. Also, comments placed on negative delta lines in GitHub don't actually record sufficient information to figure out what line they're really on! Commit comments share most of those limitations, and also disappear from the PR if the branch is rebased. Finally, it's impossible to post commit comments without triggering a notification email for each and every comment, and while PR comments can be batched the API only allows one commit to be targeted per batch and doesn't support threading.</more></p>
 </div>
 <p>You can open the dropdown menu off the <strong>Publish</strong> button to set a few extra options. The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.</p>
-<div class="important">
-<p>For convenience (to avoid scrolling back to the top to leave a comment), Reviewable will provide a <strong>review summary</strong> at the end of the review, unless the number of files forced the review into displaying one file at a time. The review summary allows you the option to mark all files you're personally responsible for as reviewed and/or mark any discussions left <strong>unread</strong> as <strong>read</strong>. When these counters are <span class="red label">red</span>, it indicates there's still pending actions for <em>you</em> to take, which can be done by hovering or clicking the <span class="red label">red counter</span>. If the counters are grey, it's purely an indication of the review state.</p>
-</div>
-<p><img src="images/review_summary.png" alt="reviewable summary" /></p>
-<p>In addition, you can also leave a summary of the review or simply <strong>approve</strong> the review (if allowed), by clicking the <code>:lgtm:</code> button on the draft. For more information on using the <code>:lgtm:/approve</code> functionality, see <a href="repositories.html#approve-button-output">the docs</a> here. Note any discussions started in the <strong>review summary</strong> will be added to the <strong>top level review discussion</strong>, which is always considered resolved.</p>
 <p><img src="images/publish_1.png" alt="reviewable set the approval level" title=":size=628" /></p>
 <h3><a class="header" href="#approval-levels" id="approval-levels">Approval levels</a></h3>
 <p>Like for GitHub reviews, there are three approval levels you can choose from when publishing via the dropdown attached to the button:</p>
@@ -344,6 +339,17 @@
 <p>Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools, such as <a href="https://pullreminders.com/">Pull Reminders</a>.</p>
 </div>
 <p>Repository admins can customize the list of awaited reviewers and, if desired, override the <strong>Sync requested reviewers</strong> checkbox in a <a href="repositories.html#completion-condition">custom review completion condition</a>.  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.</p>
+<h3><a class="header" href="#review-summary" id="review-summary">Review summary</a></h3>
+<p>For your convenience, Reviewable will provide a review summary panel at the end of the review so you don't have to scroll back to the top of the page to leave a comment in the top-level review discussion.</p>
+<p><img src="images/review_summary.png" alt="reviewable summary" /></p>
+<div class="tip">
+<p>The review summary doesn't show up if the review was forced into one file at a time mode, due to too many files showing.</p>
+</div>
+<p>The draft has an LGTM button that you can use to approve the pull request.  (See the <a href="repositories.html#approve-button-output">repository settings</a> for information on how to customize this button.)</p>
+<p>Below the draft, there are counters of unreviewed files and unresolved discussions.  A <span class="red label">red</span> counter indicates that there's still something for you to do: either review some files, or read / respond to some discussions.  When appropriate, you can hover over a counter to reveal a button underneath that will mark files as reviewed or discussions as read.</p>
+<div class="tip">
+<p>Grey counters — even if non-zero — are just an indication of the review's state, but don't imply that any action is required from you at this time.</p>
+</div>
 <p><a id="merge"></a></p>
 <h2><a class="header" href="#merging-a-pull-request" id="merging-a-pull-request">Merging a pull request</a></h2>
 <p>When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.</p>
