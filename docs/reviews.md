@@ -36,14 +36,6 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 You can open the dropdown menu off the **Publish** button to set a few extra options. The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
-{:.important}
-For convenience (to avoid scrolling back to the top to leave a comment), Reviewable will provide a **review summary** at the end of the review, unless the number of files forced the review into displaying one file at a time. The review summary allows you the option to mark all files you're personally responsible for as reviewed and/or mark any discussions left **unread** as **read**. When these counters are <span class="red label">red</span>, it indicates there's still pending actions for *you* to take, which can be done by hovering or clicking the <span class="red label">red counter</span>. If the counters are grey, it's purely an indication of the review state.
-
-![reviewable summary](images/review_summary.png)
-
-In addition, you can also leave a summary of the review or simply **approve** the review (if allowed), by clicking the `:lgtm:` button on the draft. For more information on using the `:lgtm:/approve` functionality, see [the docs](repositories.md#approve-button-output) here. Note any discussions started in the **review summary** will be added to the **top level review discussion**, which is always considered resolved.
-
-
 ![reviewable set the approval level](images/publish_1.png ':size=628')
 
 ### Approval levels
@@ -75,6 +67,23 @@ It's not possible to request a review from the pull request's author in GitHub, 
 Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools, such as [Pull Reminders](https://pullreminders.com/).
 
 Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](repositories.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
+
+### Review summary
+
+For your convenience, Reviewable will provide a review summary panel at the end of the review so you don't have to scroll back to the top of the page to leave a comment in the top-level review discussion.
+
+![reviewable summary](images/review_summary.png)
+
+{:.tip}
+The review summary doesn't show up if the review was forced into one file at a time mode, due to too many files showing.
+
+The draft has an LGTM button that you can use to approve the pull request.  (See the [repository settings](repositories.md#approve-button-output) for information on how to customize this button.)
+
+Below the draft, there are counters of unreviewed files and unresolved discussions.  A <span class="red label">red</span> counter indicates that there's still something for you to do: either review some files, or read / respond to some discussions.  When appropriate, you can hover over a counter to reveal a button underneath that will mark files as reviewed or discussions as read.
+
+{:.tip}
+Grey counters &mdash; even if non-zero &mdash; are just an indication of the review's state, but don't imply that any action is required from you at this time.
+
 
 <a id="merge"></a>
 
