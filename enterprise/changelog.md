@@ -7,7 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
-- New: Add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
+- New: add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
+- Fix: upgrade to the latest versions of the Firebase SDK.
+- Fix: allow anonymous access to public repos again (broken in v3581.5517).
 
 #### Release 3581.5517 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-31
 - New: add ability to create single and multiline code suggestions from inside a comment draft and provide handles for manipulating line selection.
