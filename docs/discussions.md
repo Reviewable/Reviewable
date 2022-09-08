@@ -134,6 +134,9 @@ Starting your draft with one of these words will switch to the corresponding dis
 
 ![reviewable override with magic starting word](images/discussions_4.png)
 
+{:.tip}
+If you find yourself using these words to switch dispositions accidentally, you can disable the feature altogether in the panel accessed via the small <i class="fa fa-cog"></i> settings icon in the top-right corner of any of your disposition dropdowns.
+
 You can also assign disposition changes to [keyboard shortcuts](accountsettings.md#custom-key-bindings) with the `setCurrentDiscussionDisposition` command.
 
 {:.tip}
