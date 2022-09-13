@@ -14,7 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: implement workarounds for getting stuck waiting on permissions and "request queued but server did not respond" issues (that often blocked publishing).  The root cause lies in the Firebase SDK, but will need to be isolated (by us) and addressed by Google at some point.
 - Fix: upgrade to the latest versions of the Firebase SDK.
 - Fix: allow anonymous access to public repos again (broken in v3581.5517).
-- Fix: allow `deferring` reviewers to continue reviews that have been closed/merged by clicking the "Continue review now" button.
+- Fix: allow users to continue deferred reviews that have been closed or merged by clicking the "Continue review now" button.
 
 #### Release 3581.5517 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-31
 - New: add ability to create single and multiline code suggestions from inside a comment draft and provide handles for manipulating line selection.
