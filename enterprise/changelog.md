@@ -8,10 +8,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
-- Upd: added a per-user toggle to disable disposition inference from message keywords.  It's hiding in the disposition settings panel, accessible via the small gear in the top-right of any of your disposition dropdowns.
-- Upd: moved open source dependencies list and licenses recitation to an in-app page.
-- Upd: switched the completion condition editor to our own and removed the dependency on CodeMirror.  This should have no end-user impact but helps slim down the build.
+- Upd: add a per-user toggle to disable disposition inference from message keywords.  It's hiding in the disposition settings panel, accessible via the small gear in the top-right of any of your disposition dropdowns.
+- Upd: move the open source dependencies list and the licenses recitation to an in-app page.
+- Upd: switch the completion condition editor to our own and remove the dependency on CodeMirror.  This should have no end-user impact but helps slim down the build.
 - Fix: implement workarounds for getting stuck waiting on permissions and "request queued but server did not respond" issues (that often blocked publishing).  The root cause lies in the Firebase SDK, but will need to be isolated (by us) and addressed by Google at some point.
+- Fix: make the order of files in the page match the order of files in the matrix.  This was a regression introduced in v3550.5439.
 - Fix: upgrade to the latest versions of the Firebase SDK.
 - Fix: allow anonymous access to public repos again (broken in v3581.5517).
 - Fix: allow users to continue deferred reviews that have been closed or merged by clicking the "Continue review now" button.
