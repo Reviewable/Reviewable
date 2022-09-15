@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: when inferring a disposition from a keyword in the comment draft, shortly flash the disposition icon to attract the user's attention to the connection.
 - Upd: move the open source dependencies list and the licenses recitation to an in-app page.
 - Upd: switch the completion condition editor to our own and remove the dependency on CodeMirror.  This should have no end-user impact but helps slim down the build.
+- Upd: add co-authors to default squash and merge commit messages. Note these are aggregated per review and not per revision.
 - Fix: implement workarounds for getting stuck waiting on permissions and "request queued but server did not respond" issues (that often blocked publishing).  The root cause lies in the Firebase SDK, but will need to be isolated (by us) and addressed by Google at some point.
 - Fix: make the order of files in the page match the order of files in the matrix.  This was a regression introduced in v3550.5439.
 - Fix: upgrade to the latest versions of the Firebase SDK.
