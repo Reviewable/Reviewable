@@ -144,11 +144,9 @@ You may find it necessary to dismiss a user from a discussion — if, for exampl
 
 ### Resolution workflows
 
-By default, a comment that creates a new discussion will set your disposition to **<i class="fa fa-minus-circle"></i> Blocking**. A user's first reply to an existing discussion will set their disposition to **<i class="fa fa-circle-o"></i> Discussing** if not already an active participant. You can change the default disposition to fit your workflow preference.
+By default, a comment that creates a new discussion will set your disposition to **<i class="fa fa-minus-circle"></i> Blocking** if you're a reviewer, or to **<i class="fa fa-circle-o"></i> Discussing** if you're the pull request's author. Your first reply to an existing discussion will set your disposition to **<i class="fa fa-circle-o"></i> Discussing** if not already an active participant. You can change the default disposition to fit your workflow preference.
 
-For example, consider that the default disposition is **<i class="fa fa-minus-circle"></i> Blocking** for both PR author-initiated and reviewer-initiated discussions. However, as the PR author, you may want to let the reviewer resolve these by changing the default disposition to **<i class="fa fa-circle-o"></i> Discussing**, or choose **<i class="fa fa-info-circle"></i> Informing** as the default to encourage purely informational discussions.
-
-Similarly, if you're following an informal review process, you may want to set the default disposition of your reviewer-initiated discussions to **<i class="fa fa-circle-o"></i> Discussing**, which enables the author to resolve a discussion directly.
+For example, if you're following an informal review process, you may want to set the default disposition of your reviewer-initiated discussions to **<i class="fa fa-circle-o"></i> Discussing**, which enables the author to resolve a discussion directly.
 
 There are 4 default dispositions (the combinations of author/reviewer and new/reply), and you can set each one individually. The disposition dropdown has a **Change default disposition** link at the bottom that, once clicked, will lock in your next selection as the default for situations like that of the current comment.  (For clarity, the link will change to a description that states which default you're setting.)
 
