@@ -8,11 +8,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
+- Upd: modify some disposition keywords, used to infer your disposition when found at the beginning of a comment.  We now always map `FYI` to Informing and `BTW` to Discussing, whereas before their meaning was context-dependent (new discussion vs reply).  We also removed `OK` as it resulted in too many false positives when reviewers used it to start a longer sentence.  Previously inferred dispositions will remain unchanged, but if you edit a previously created draft in this release it will be re-interpreted under the new rules (even if you don't edit the keyword itself).
 - Upd: add a per-user toggle to disable disposition inference from message keywords.  It's hiding in the disposition settings panel, accessible via the small gear in the top-right of any of your disposition dropdowns.
 - Upd: when inferring a disposition from a keyword in the comment draft, shortly flash the disposition icon to attract the user's attention to the connection.
-- Upd: move the open source dependencies list and the licenses recitation to an in-app page.
+- Upd: change the default disposition for author-initiated discussions from Blocking to Discussing.  The old default was unintuitive, and often resulted in authors accidentally blocking their own reviews.  The disposition can still be changed explicitly, and each user can set a different personal default for this scenario, of course.
+- Upd: list co-authors at the end of default merge commit messages. Note that these are aggregated per review and not per revision/commit.
 - Upd: switch the completion condition editor to our own and remove the dependency on CodeMirror.  This should have no end-user impact but helps slim down the build.
-- Upd: add co-authors to default squash and merge commit messages. Note these are aggregated per review and not per revision.
+- Upd: move the open source dependencies list and the licenses recitation to an in-app page.
 - Fix: implement workarounds for getting stuck waiting on permissions and "request queued but server did not respond" issues (that often blocked publishing).  The root cause lies in the Firebase SDK, but will need to be isolated (by us) and addressed by Google at some point.
 - Fix: make the order of files in the page match the order of files in the matrix.  This was a regression introduced in v3550.5439.
 - Fix: upgrade to the latest versions of the Firebase SDK.
