@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: list co-authors at the end of default merge commit messages. Note that these are aggregated per review and not per revision/commit.
 - Upd: switch the completion condition editor to our own and remove the dependency on CodeMirror.  This should have no end-user impact but helps slim down the build.
 - Upd: move the open source dependencies list and the licenses recitation to an in-app page.
+- Upd: add `REVIEWABLE_SENTRY_DEBUG` config flag to turn on Sentry debug mode.
 - Fix: implement workarounds for getting stuck waiting on permissions and "request queued but server did not respond" issues (that often blocked publishing).  The root cause lies in the Firebase SDK, but will need to be isolated (by us) and addressed by Google at some point.
 - Fix: make the order of files in the page match the order of files in the matrix.  This was a regression introduced in v3550.5439.
 - Fix: upgrade to the latest versions of the Firebase SDK.
@@ -61,7 +62,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow in-comment badges to be created in unconnected repositories even if the publishing user isn't the author and doesn't have admin rights.
 - Fix: refresh the review after publishing in unconnected repositories.
 - Fix: successfully complete review completion condition tasks in connected repositories even if the connecting user's token has disappeared.
-- Fix: add breakpoints for wrapping long branch names in the commits section of the Changes panel. 
+- Fix: add breakpoints for wrapping long branch names in the commits section of the Changes panel.
 - Fix: fix visual glitch in file headers where the revision cells were partially obstructed.
 - Fix: address lack of text overflow handling in the codeblock viewer that made long lines inaccessible.
 - Fix: be more tolerant when trying to unarchive reviews with slightly malformed data.
