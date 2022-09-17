@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
 - New: add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
+- New: add a repository-level setting for the default review overlap strategy.  This will override personal settings, but can in turn be overridden by any user for themselves for a given review.
 - Upd: modify some disposition keywords, used to infer your disposition when found at the beginning of a comment.  We now always map `FYI` to Informing and `BTW` to Discussing, whereas before their meaning was context-dependent (new discussion vs reply).  We also removed `OK` as it resulted in too many false positives when reviewers used it to start a longer sentence.  Previously inferred dispositions will remain unchanged, but if you edit a previously created draft in this release it will be re-interpreted under the new rules (even if you don't edit the keyword itself).
 - Upd: add a per-user toggle to disable disposition inference from message keywords.  It's hiding in the disposition settings panel, accessible via the small gear in the top-right of any of your disposition dropdowns.
 - Upd: when inferring a disposition from a keyword in the comment draft, shortly flash the disposition icon to attract the user's attention to the connection.
