@@ -25,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow users to continue deferred reviews that have been closed or merged by clicking the "Continue review now" button.
 - Fix: scroll page to the right spot when opening repository settings panel.
 - Fix: prevent "Mark as reviewed and move to next and show next diff" from showing up at the bottom of a file.
+- Fix: guard against a rare `parentNode is null` exception when creating a code block.
 
 #### Release 3581.5517 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-31
 - New: add ability to create single and multiline code suggestions from inside a comment draft and provide handles for manipulating line selection.
