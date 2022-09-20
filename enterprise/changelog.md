@@ -20,9 +20,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: move the open source dependencies list and the licenses recitation to an in-app page.
 - Upd: add `REVIEWABLE_SENTRY_DEBUG` config flag to turn on Sentry debug mode.
 - Upd: add workarounds for GHE's propensity to declare a user suspended when under heavy load even though they're not.  There's a workaround that should work automatically, but if you're still seeing an issue with repositories getting disconnected with a bogus "GitHub account suspended" message please get in touch to learn how to set up a stronger mechanism.
+- Upd: upgrade to the latest versions of the Firebase SDK, up by a couple major versions.
 - Fix: implement workarounds for getting stuck waiting on permissions and "request queued but server did not respond" issues (that often blocked publishing).  The root cause lies in the Firebase SDK, but will need to be isolated (by us) and addressed by Google at some point.
 - Fix: make the order of files in the page match the order of files in the matrix.  This was a regression introduced in v3550.5439.
-- Fix: upgrade to the latest versions of the Firebase SDK.
 - Fix: allow anonymous access to public repos again (broken in v3581.5517).
 - Fix: allow users to continue deferred reviews that have been closed or merged by clicking the "Continue review now" button.
 - Fix: prevent "Mark as reviewed and move to next and show next diff" from showing up at the bottom of a file.
