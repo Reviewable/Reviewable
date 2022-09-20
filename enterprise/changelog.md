@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+
+#### Release 3618.5574 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-09-20
 - New: add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
 - New: add a repository-level setting for the default review overlap strategy.  This will override personal settings, but can in turn be overridden by any user for themselves for a given review.
 - Upd: modify some disposition keywords, used to infer your disposition when found at the beginning of a comment.  We now always map `FYI` to Informing and `BTW` to Discussing, whereas before their meaning was context-dependent (new discussion vs reply).  We also removed `OK` as it resulted in too many false positives when reviewers used it to start a longer sentence.  Previously inferred dispositions will remain unchanged, but if you edit a previously created draft in this release it will be re-interpreted under the new rules (even if you don't edit the keyword itself).
@@ -23,7 +25,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: upgrade to the latest versions of the Firebase SDK.
 - Fix: allow anonymous access to public repos again (broken in v3581.5517).
 - Fix: allow users to continue deferred reviews that have been closed or merged by clicking the "Continue review now" button.
-- Fix: scroll page to the right spot when opening repository settings panel.
 - Fix: prevent "Mark as reviewed and move to next and show next diff" from showing up at the bottom of a file.
 - Fix: guard against a rare `parentNode is null` exception when creating a code block.
 - Fix: respect Sentry DSNs configured via the `REVIEWABLE_CONFIG_FILE` instead of directly as env vars.
