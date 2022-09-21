@@ -7,11 +7,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+- Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
 - Fix: prevent client from getting stuck "Mapping renamed files".  This likely only affected old archived reviews.
 - Fix: improve error identification on failed status check syncs, helping invalidate repository connection earlier (and reduce bogus load).
 - Fix: improve error identification when auto-connecting a repository fails, to invalidate the auto-connection setting if necessary.
 
 #### Release 3619.5574 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-09-20
+**WARNING**: this release is broken if you're using encryption.
 - New: add visual warnings if auto-merge is enabled (wand icon in publish button and checked box in publish dropdown). Also require hold to arm when publishing a review that Reviewable thinks may trigger merging of the pull request.
 - New: add a repository-level setting for the default review overlap strategy.  This will override personal settings, but can in turn be overridden by any user for themselves for a given review.
 - Upd: modify some disposition keywords, used to infer your disposition when found at the beginning of a comment.  We now always map `FYI` to Informing and `BTW` to Discussing, whereas before their meaning was context-dependent (new discussion vs reply).  We also removed `OK` as it resulted in too many false positives when reviewers used it to start a longer sentence.  Previously inferred dispositions will remain unchanged, but if you edit a previously created draft in this release it will be re-interpreted under the new rules (even if you don't edit the keyword itself).
