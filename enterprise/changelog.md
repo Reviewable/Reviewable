@@ -6,11 +6,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images use a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 3340.5125 GHE 2.19+ or 3.0+)
+#### Upcoming changes (min 3619.5574 GHE 2.19+ or 3.0+)
+**WARNING**: due to a bug in older versions, this version effectively cannot be rolled back.
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
 - Fix: prevent client from getting stuck "Mapping renamed files".  This likely only affected old archived reviews.
-- Fix: improve error identification on failed status check syncs, helping invalidate repository connection earlier (and reduce bogus load).
-- Fix: improve error identification when auto-connecting a repository fails, to invalidate the auto-connection setting if necessary.
+- Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier
 
 #### Release 3619.5574 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-09-20
 **WARNING**: this release is broken if you're using encryption.
