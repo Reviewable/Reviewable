@@ -12,8 +12,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier
 
 #### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
-**WARNING**: a bug in older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
-- Fix: don't break encryption when opening Reviewable in multiple tabs simultaneously.
+**WARNING**: a bug in recent older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
+- Fix: don't break encryption when opening Reviewable in multiple tabs simultaneously (regression introduced in v3619.5574).
 
 #### Release 3619.5574 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-09-20
 **WARNING**: this release is broken if you're using encryption.
@@ -36,6 +36,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent "Mark as reviewed and move to next and show next diff" from showing up at the bottom of a file.
 - Fix: guard against a rare `parentNode is null` exception when creating a code block.
 - Fix: respect Sentry DSNs configured via the `REVIEWABLE_CONFIG_FILE` instead of directly as env vars.
+- Fix: don't overwrite newer database schema when rolling back.  It's not clear when this regression was introduced, but you should assume that recent versions will not roll back correctly.
 
 #### Release 3581.5517 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-31
 - New: add ability to create single and multiline code suggestions from inside a comment draft and provide handles for manipulating line selection.
