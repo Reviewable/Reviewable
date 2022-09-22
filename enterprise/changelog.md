@@ -6,11 +6,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images use a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 3619.5574 GHE 2.19+ or 3.0+)
-**WARNING**: due to a bug in older versions, this version effectively cannot be rolled back.
+#### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
 - Fix: prevent client from getting stuck "Mapping renamed files".  This likely only affected old archived reviews.
 - Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier
+
+#### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
+**WARNING**: a bug in older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
+- Fix: don't break encryption when opening Reviewable in multiple tabs simultaneously.
 
 #### Release 3619.5574 (min 3340.5125 GHE 2.19+ or 3.0+) 2022-09-20
 **WARNING**: this release is broken if you're using encryption.
