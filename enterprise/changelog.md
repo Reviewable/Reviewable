@@ -9,7 +9,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
 - Fix: prevent client from getting stuck "Mapping renamed files".  This likely only affected old archived reviews.
-- Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier
+- Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier.
+- Fix: address a Firefox bug where using the diff line selection button would lock down text selection inside discussions.
+- Fix: prevent occasional `First argument contains undefined in property` errors that would happen on first click of a session.
 
 #### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
 **WARNING**: a bug in recent older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
