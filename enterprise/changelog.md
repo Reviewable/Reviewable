@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier.
 - Fix: address a Firefox bug where using the diff line selection button would lock down text selection inside discussions.
 - Fix: prevent occasional `First argument contains undefined in property` errors that would happen on first click of a session.
+- Fix: prevent "Resuming session" spinning forever when signing in from the home page in an instance running in private mode.
 
 #### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
 **WARNING**: a bug in recent older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
