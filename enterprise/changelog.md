@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
+- Upd: improve squash and merge commit messages to closely mirror Github defaults set for the repository.
 - Fix: prevent client from getting stuck "Mapping renamed files".  This likely only affected old archived reviews.
 - Fix: improve GitHub error identification in various spots, helping invalidate repository connections and organization-wide auto-connection earlier.
 - Fix: address a Firefox bug where using the diff line selection button would lock down text selection inside discussions.
