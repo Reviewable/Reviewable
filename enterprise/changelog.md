@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't show the "(Repository default)" annotation if the review overlap strategy dropdown isn't also showing.
 - Fix: actually check the user's display name for "(bot)" when syncing comments, and sync the correct name into our database.
 - Fix: optimize the number of queries used to fetch PRs the user was mentioned in on the dashboard.  Before this fix, if you were mentioned a lot in review comments on GitHub, we could potentially emit hundreds of requests!  This should be cut down to one or two now.
+- Fix: guard against rare `Cannot destructure property 'preferredTitle'` crash.
 
 #### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
 **WARNING**: a bug in recent older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
