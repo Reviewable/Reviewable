@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+- New: track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://reviewable.headway.io/???) for details.
 - New: add ability to show a single previous comment at a time instead of showing the entire discussion thread.
 - Upd: updated the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.
 
