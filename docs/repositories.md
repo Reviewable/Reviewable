@@ -173,7 +173,7 @@ Reviewable allows you to write custom code that determines when a review is comp
 
 The **Review completion condition** section of the repository settings helps you refine your code in a live evaluation environment.
 
-In the **Condition Code** panel, you can edit the code that determines when a review is complete.  It starts off with the code that Reviewable uses by default and you can pick other sample conditions to customize or study from the small **Examples** menu above the editor.
+In the **Condition Code** panel, you can edit the code that determines when a review is complete and otherwise tweaks low-level review data.  Simple things are pretty easy to accomplish but you have the power to implement arbitrarily complex logic if you need to.  You can find [a number of examples](https://github.com/Reviewable/Reviewable/tree/master/examples/conditions) in our repository to get you started, and full details follow below.
 
 The condition code will run in an isolated NodeJS 14.x environment (as of this writing — this gets updated regularly) that includes the 4.x `lodash` module available through the customary `_`.  Note the `lodash` version was updated to `4.x` on _9/9/2021_, so if you have a condition written before the update it will still use the `lodash` 3.x module.  You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
 
@@ -299,6 +299,7 @@ The current state of the review is accessible to your code via the `review` vari
           action: 'modified',  // one of 'added', 'modified', 'removed', or 'renamed' (without changes)
           obsolete: false,
           reverted: false,  // true if this revision of the file is the same as base
+          baseChangesOnly: false,  // true if all changes can be attributed to the base branch
           reviewers: [  // List of users who marked file as reviewed at this revision
             {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
           ]
@@ -323,6 +324,10 @@ The current state of the review is accessible to your code via the `review` vari
   ]
 }
 ```
+
+The file revision properties require a bit of additional explanation.  First, renamed file matching and base change detection is performed only in clients, so the condition will get incomplete input data until a user with appropriate permissions visits the review.
+
+Second, the `baseChangesOnly` flag is computed relative to its revision's *prior revision*, which is not necessarily the immediately preceding one.  This becomes important when rebasing multiple commits in a review following "review each commit" style, as Reviewable will do its best to match up each "new" commit to its semantic antecedent.  We don't surface these details in the data structure above but our algorithm is fairly robust and biased towards needing strong evidence for a match, so false positive `baseChangesOnly` flags should be extremely rare.
 
 ### Condition output
 
