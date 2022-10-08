@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: optimize the number of queries used to fetch PRs the user was mentioned in on the dashboard.  Before this fix, if you were mentioned a lot in review comments on GitHub, we could potentially emit hundreds of requests!  This should be cut down to one or two now.
 - Fix: guard against rare `Cannot destructure property 'preferredTitle'` crash.
 - Fix: include new blocking discussion drafts in unresolved discussions count and navigation cycle.
+- Fix: include `review.deferringReviewers` in completion condition sample input data.  This was always included in "real" evaluations of a condition, but accidentally omitted from the settings playground.
 
 #### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
 **WARNING**: a bug in recent older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
