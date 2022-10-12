@@ -22,6 +22,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: include `review.deferringReviewers` in completion condition sample input data.  This was always included in "real" evaluations of a condition, but accidentally omitted from the settings playground.
 - Fix: work around rare (invisible) errors when setting the "user has drafts pending" flag, which gets shown in the participants panel.
 - Fix: accept file uploads in the review summary draft when no text was entered.
+- Fix: keep virtual `Commits` file contents stable in the face of unusual commit histories.  This could lead to discussions on the file being "lost", where they'd still be counted but fail to be displayed anywhere.
+- Fix: prevent multiple scrollbars from showing up in long drafts, and correctly position DRAFT watermark and drag-and-drop landing area.
 
 #### Release 3619.5594 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-09-22
 **WARNING**: a bug in recent older versions breaks rollbacks, so the minimum version here is set to prevent them.  If you really need to roll back please get in touch -- we know how to craft a workaround given a specific version to roll back to.
