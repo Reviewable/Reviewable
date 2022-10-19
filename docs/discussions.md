@@ -87,7 +87,7 @@ Marking comments as read (by any means) is also buffered as a draft and revealed
 
 ![reviewable mark read](images/discussions_1.png)
 
-Some older comments may be hidden, as indicated by the **Show N older comments** link in the discussion header. Click the link to toggle showing older comments for this discussion, or click the drop-down arrow to reveal options for displaying older comments in **this file** or in **all files**.
+Some older comments may be hidden, as indicated by the **N older** or **N older comments** button in the upper right corner of a discussion. Click the upward pointing chevron to show the previous comment for this discussion, or click the drop-down arrow to reveal options for displaying or hiding all older comments in **this discussion**, **this file**, or in **all files**.
 
 ![reviewable older comments](images/discussions_5.png)
 
