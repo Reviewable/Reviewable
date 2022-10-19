@@ -7,8 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
-- New: add ability to show a single previous comment at a time instead of showing the entire discussion thread.
-- Upd: updated the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.
+- Upd: updated the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.  Added a convenient control for showing one more older comment at a time while at it.
 
 #### Release 3644.5629 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-10-16
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
