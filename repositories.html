@@ -408,7 +408,7 @@
 </ul>
 <h3><a class="header" href="#development-environment" id="development-environment">Development environment</a></h3>
 <p>The <strong>Review completion condition</strong> section of the repository settings helps you refine your code in a live evaluation environment.</p>
-<p>In the <strong>Condition Code</strong> panel, you can edit the code that determines when a review is complete.  It starts off with the code that Reviewable uses by default and you can pick other sample conditions to customize or study from the small <strong>Examples</strong> menu above the editor.</p>
+<p>In the <strong>Condition Code</strong> panel, you can edit the code that determines when a review is complete and otherwise tweaks low-level review data.  Simple things are pretty easy to accomplish but you have the power to implement arbitrarily complex logic if you need to.  You can find <a href="https://github.com/Reviewable/Reviewable/tree/master/examples/conditions">a number of examples</a> in our repository to get you started, and full details follow below.</p>
 <p>The condition code will run in an isolated NodeJS 14.x environment (as of this writing — this gets updated regularly) that includes the 4.x <code>lodash</code> module available through the customary <code>_</code>.  Note the <code>lodash</code> version was updated to <code>4.x</code> on <em>9/9/2021</em>, so if you have a condition written before the update it will still use the <code>lodash</code> 3.x module.  You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.</p>
 <div class="tip">
 <p>You can update existing conditions to use <code>lodash</code> 4.x  by inserting a commmented <strong>dependencies</strong> flag anywhere in your condition code using the following format: <code>// dependencies: lodash4</code></p>
@@ -526,6 +526,7 @@
           action: 'modified',  // one of 'added', 'modified', 'removed', or 'renamed' (without changes)
           obsolete: false,
           reverted: false,  // true if this revision of the file is the same as base
+          baseChangesOnly: false,  // true if all changes can be attributed to the base branch
           reviewers: [  // List of users who marked file as reviewed at this revision
             {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
           ]
@@ -550,6 +551,8 @@
   ]
 }
 </code></pre>
+<p>The file revision properties require a bit of additional explanation.  First, renamed file matching and base change detection is performed only in clients, so the condition will get incomplete input data until a user with appropriate permissions visits the review.</p>
+<p>Second, the <code>baseChangesOnly</code> flag is computed relative to its revision's <em>prior revision</em>, which is not necessarily the immediately preceding one.  This becomes important when rebasing multiple commits in a review following &quot;review each commit&quot; style, as Reviewable will do its best to match up each &quot;new&quot; commit to its semantic antecedent.  We don't surface these details in the data structure above but our algorithm is fairly robust and biased towards needing strong evidence for a match, so false positive <code>baseChangesOnly</code> flags should be extremely rare.</p>
 <h3><a class="header" href="#condition-output" id="condition-output">Condition output</a></h3>
 <p>Your code must return an object with some or all of the following properties.  Any missing properties (at the top level) will be filled in by using the built-in default condition.  This means that you can safely return, e.g., just the <code>disableGitHubApprovals</code> flag and the rest will be defaulted for you.</p>
 <h4><a class="header" href="#completed" id="completed"><code>completed</code></a></h4>
