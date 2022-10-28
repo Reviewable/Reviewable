@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: updated the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.  Added a convenient control for showing one more older comment at a time while at it.
 - Fix: correctly determine which lines in a diff have base changes only.  Before this fix, base changes flags could sometimes bleed into adjacent lines within the same block.
 - Fix: bring back the participants overflow ellipsis on the dashboard.
+- Fix: don't busy-spin forever on a file when it needs to be shown (e.g., because there's an unresolved discussion) but no diff bounds are set for some reason.
 
 #### Release 3644.5629 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-10-16
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
