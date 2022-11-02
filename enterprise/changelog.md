@@ -13,7 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add ability to double click a draft preview to return to write mode.
 - Fix: correctly determine which lines in a diff have base changes only.  Before this fix, base changes flags could sometimes bleed into adjacent lines within the same block.
 - Fix: bring back the participants overflow ellipsis on the dashboard.
-- Fix: don't busy-spin forever on a file when it needs to be shown (e.g., because there's an unresolved discussion) but no diff bounds are set for some reason.
+- Fix: don't busy-spin forever on a file when it needs to be shown (e.g., because there's an unresolved discussion) but no diff bounds are set for some reason.  This was a regression introduced in v3542.5405.
 - Fix: don't show the user's own main thread comment as new/unread if the pull request's branch was pushed to after the comment was drafted but before it was sent.
 - Fix: work around more rare and invisible errors when setting the "user last interacted with review" timestamp.
 
