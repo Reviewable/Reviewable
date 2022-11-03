@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't busy-spin forever on a file when it needs to be shown (e.g., because there's an unresolved discussion) but no diff bounds are set for some reason.  This was a regression introduced in v3542.5405.
 - Fix: don't show the user's own main thread comment as new/unread if the pull request's branch was pushed to after the comment was drafted but before it was sent.
 - Fix: work around more rare and invisible errors when setting the "user last interacted with review" timestamp.
+- Fix: correctly interpret merge message default settings in older versions of GHE (we think 3.6 and below), so that you don't end up with merge commits with the message `undefined`.
 
 #### Release 3644.5629 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-10-16
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
