@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: allow image files to be drag-and-dropped directly onto a "Reply..." or "Follow up..." field, creating a draft automatically.
 - Upd: add ability to double click a draft preview to return to write mode.
 - Fix: correctly determine which lines in a diff have base changes only.  Before this fix, base changes flags could sometimes bleed into adjacent lines within the same block.
+- Fix: do a better job of diffing around the transition from a base only change area to a normal change one.  Previously, it was possible for a line where the left and right sides were clearly edits of each other to get split into two parts that weren't diffed together.
 - Fix: bring back the participants overflow ellipsis on the dashboard.
 - Fix: don't busy-spin forever on a file when it needs to be shown (e.g., because there's an unresolved discussion) but no diff bounds are set for some reason.  This was a regression introduced in v3542.5405.
 - Fix: don't show the user's own main thread comment as new/unread if the pull request's branch was pushed to after the comment was drafted but before it was sent.
