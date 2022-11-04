@@ -18,6 +18,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't show the user's own main thread comment as new/unread if the pull request's branch was pushed to after the comment was drafted but before it was sent.
 - Fix: work around more rare and invisible errors when setting the "user last interacted with review" timestamp.
 - Fix: correctly interpret merge message default settings in older versions of GHE (we think 3.6 and below), so that you don't end up with merge commits with the message `undefined`.  This was a regression introduced in the previous release.
+- Fix: cull PR polling enrollments ("My PRs in any public repo", etc.) that are failing with errors more aggressively.
+- Fix: lower the "review too large to process" threshold from 8000 to 4000 files.  We've seen instances of reviews with more than 4000 files falling into endless update timeout loops.
 
 #### Release 3644.5629 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-10-16
 - Upd: add `REVIEWABLE_ENCRYPTION_AES_ENABLED` flag that you can set to tell Reviewable that you expect `REVIEWABLE_ENCRYPTION_AES_KEY` to be set as well.  This can help you detect cases where the key silently failed to be fetched from some vault system and prevent Reviewable from accidentally running without encryption.
