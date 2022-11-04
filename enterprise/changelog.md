@@ -7,16 +7,18 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3657.5690 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-11-04
 - New: track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://headwayapp.co/reviewable-changes/base-changes-only-247444) for details.
-- Upd: update the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.  Add a convenient control for showing one more older comment at a time while at it.
+- Upd: update the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.  Add a convenient control for showing just one more older comment while at it.
 - Upd: allow image files to be drag-and-dropped directly onto a "Reply..." or "Follow up..." field, creating a draft automatically.
 - Upd: add ability to double click a draft preview to return to write mode.
 - Fix: correctly determine which lines in a diff have base changes only.  Before this fix, base changes flags could sometimes bleed into adjacent lines within the same block.
-- Fix: do a better job of diffing around the transition from a base only change area to a normal change one.  Previously, it was possible for a line where the left and right sides were clearly edits of each other to get split into two parts that weren't diffed together.
+- Fix: do a better job of diffing around the transition from a base only change area to a normal change one.  Previously, it was possible for a line where the left and right sides were clearly a single edit to get split into two parts that weren't diffed together.
 - Fix: bring back the participants overflow ellipsis on the dashboard.
 - Fix: don't busy-spin forever on a file when it needs to be shown (e.g., because there's an unresolved discussion) but no diff bounds are set for some reason.  This was a regression introduced in v3542.5405.
 - Fix: don't show the user's own main thread comment as new/unread if the pull request's branch was pushed to after the comment was drafted but before it was sent.
-- Fix: work around more rare and invisible errors when setting the "user last interacted with review" timestamp.
+- Fix: work around more rare and invisible errors when setting the "user's last interaction with review" timestamp.
 - Fix: correctly interpret merge message default settings in older versions of GHE (we think 3.6 and below), so that you don't end up with merge commits with the message `undefined`.  This was a regression introduced in the previous release.
 - Fix: cull PR polling enrollments ("My PRs in any public repo", etc.) that are failing with errors more aggressively.
 - Fix: lower the "review too large to process" threshold from 8000 to 4000 files.  We've seen instances of reviews with more than 4000 files falling into endless update timeout loops.
