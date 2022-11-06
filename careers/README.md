@@ -17,7 +17,7 @@ We're looking for a generalist who can handle most anything except UI, though th
 - **Firebase real-time database**:  You've used the Firebase RTDB before, understand its security model, and can work around its tree-shaped data structure and limited query features.  You're able to design schemas that can be evolved gracefully (and in a strictly backwards-compatible fashion) to account for new features, and that simultaneously take bandwidth usage into account.  Tasks all orbit around designing schemas and debugging permission denied errors.
 - **JavaScript and TypeScript**:  You can write clean, elegant code in JavaScript and TypeScript, and set up / debug build toolchains.  You're comfortable with both object-oriented and functional paradigms.  If push comes to shove, you're capable of debugging issues in asynchronous, queue-based systems.
 
-Beyond these technical skills, you must be fluent in English, excellent at written communication, and able to work effectively with minimal supervision.  We're nominally looking for a mid-level engineer, but could accommodate either higher or lower in the right circumstances.  If this sounds like you, please [get in touch](mailto:piotr@reviewable.io)!
+Beyond these technical skills, you must be fluent in English, excellent at written communication, and able to work effectively with minimal supervision.  We're nominally looking for a mid-level engineer, but could accommodate either higher or lower in the right circumstances.  If this sounds like you, please [get in touch](mailto:careers@reviewable.io)!
 
 <hr/>
 
