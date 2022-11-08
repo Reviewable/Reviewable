@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: improve error message when GitHub returns an invalid response to a permissions query. Experience shows this is likely due to the user having received a bad OAuth token for some reason, so the new message recommends signing out and back in.
+- Fix: prevent permission denied error when loading some reviews in repositories with mixed case names.
+- Fix: prevent an extremely rare crash on the review page due to some review metadata being undefined.
 
 #### Release 3657.5690 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-11-04
 - New: track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://headwayapp.co/reviewable-changes/base-changes-only-247444) for details.
