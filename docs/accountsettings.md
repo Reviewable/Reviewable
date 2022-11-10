@@ -13,7 +13,7 @@ You can customize the font used in all the diffs. The font must be [monospace](h
 You can point to a custom stylesheet that you want to apply to all diffs.  Reviewable uses [highlight.js](https://highlightjs.org/), so you might prefer to use one of those [predefined styles](https://highlightjs.org/static/demo/) that can be found in their [styles directory](https://github.com/isagalaev/highlight.js/tree/master/src/styles). To use the GitHub style, for example, set the URL to `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css`.  You can also create [your own styles](http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html).
 
 {:.important}
-Ensure that the stylesheet is served as text/css. It may be necessary for you to use [https://gitcdn.xyz](https://gitcdn.xyz) or another similar service.
+Ensure that the stylesheet is served as text/css. It may be necessary for you to use [https://raw.githack.com](https://raw.githack.com) or another similar service.
 
 We also have a few extra styles used to highlight tabs, trailing whitespace, and lack of final newline that you can customize:
 

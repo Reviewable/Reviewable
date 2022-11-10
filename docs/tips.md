@@ -92,6 +92,30 @@ Don't like the merge bunny?  Turn it off like this:
 .victory.decor {display: none}
 ```
 
+### Wavy lines on collapsed regions
+
+Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:
+
+```css
+.review-page .diff-area .wavy.edge {
+  background-image: none;
+}
+
+.review-page .diff-area .top.wavy.edge {
+  margin-top: 1em;
+  margin-bottom: -0.5em;
+}
+
+.review-page .diff-area .bottom.wavy.edge {
+  margin-bottom: 0.5em;
+}
+
+.review-page .diff-area .declaration.include {
+  padding-top: 1em;
+}
+```
+You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/9f23b1cc0c6df3a9399f996d0ec52daa872afe3d/no-wave.css`
+
 ## Skipping reviews of vendored dependencies
 
 Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable offers a few helpful features for this situation, from least to most invasive:
