@@ -31,7 +31,7 @@ We also have a few extra styles used to highlight tabs, trailing whitespace, and
 }
 ```
 
-By default, only the actual deltas have red/green highlights in two-column mode. If you'd like the whole line to be highlighted as well (like on GitHub) you can add the styles from [this example](https://gist.github.com/pkaminski/2922da3d58f76a8ed7bf), or simply set your account custom stylesheet URL to `https://gitcdn.xyz/cdn/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css`.
+By default, only the actual deltas have red/green highlights in two-column mode. If you'd like the whole line to be highlighted as well (like on GitHub) you can add the styles from [this example](https://gist.github.com/pkaminski/2922da3d58f76a8ed7bf).
 
 <a id="line-link-template"></a>
 
