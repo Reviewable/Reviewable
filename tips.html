@@ -365,24 +365,24 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 </code></pre>
 <h3><a class="header" href="#wavy-lines-on-collapsed-regions" id="wavy-lines-on-collapsed-regions">Wavy lines on collapsed regions</a></h3>
 <p>Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:</p>
-<pre><code class="language-css">.review-page .diff-area .wavy.edge {
+<pre><code class="language-css">.review-page .file.root .file .wavy.edge {
   background-image: none;
 }
 
-.review-page .diff-area .top.wavy.edge {
+.review-page .file.root .file .top.wavy.edge {
   margin-top: 1em;
   margin-bottom: -0.5em;
 }
 
-.review-page .diff-area .bottom.wavy.edge {
+.review-page .file.root .file .bottom.wavy.edge {
   margin-bottom: 0.5em;
 }
 
-.review-page .diff-area .declaration.include {
+.review-page .file.root .file .declaration.include {
   padding-top: 1em;
 }
 </code></pre>
-<p>You can also use this link: <code>https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/9f23b1cc0c6df3a9399f996d0ec52daa872afe3d/no-wave.css</code></p>
+<p>You can also use this link: <code>https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/6e35f21b6fa3d3978a4ae5f8ba0f23e2d5d6a475/no-wave.css</code></p>
 <h2><a class="header" href="#skipping-reviews-of-vendored-dependencies" id="skipping-reviews-of-vendored-dependencies">Skipping reviews of vendored dependencies</a></h2>
 <p>Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable offers a few helpful features for this situation, from least to most invasive:</p>
 <ol>
