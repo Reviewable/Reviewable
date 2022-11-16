@@ -97,24 +97,24 @@ Don't like the merge bunny?  Turn it off like this:
 Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:
 
 ```css
-.review-page .diff-area .wavy.edge {
+.review-page .file.root .file .wavy.edge {
   background-image: none;
 }
 
-.review-page .diff-area .top.wavy.edge {
+.review-page .file.root .file .top.wavy.edge {
   margin-top: 1em;
   margin-bottom: -0.5em;
 }
 
-.review-page .diff-area .bottom.wavy.edge {
+.review-page .file.root .file .bottom.wavy.edge {
   margin-bottom: 0.5em;
 }
 
-.review-page .diff-area .declaration.include {
+.review-page .file.root .file .declaration.include {
   padding-top: 1em;
 }
 ```
-You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/9f23b1cc0c6df3a9399f996d0ec52daa872afe3d/no-wave.css`
+You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/6e35f21b6fa3d3978a4ae5f8ba0f23e2d5d6a475/no-wave.css`
 
 ## Skipping reviews of vendored dependencies
 
