@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent an extremely rare crash on the review page due to some review metadata being undefined.
 - Fix: reinstate author and committer information in the completion condition's input data for review revisions.  This was a regression in v3619.5574.
 - Fix: prevent "mergeable block range mismatch" errors when diffing files with complex base changes.  This was a regression in v3657.5690.
+- Fix: eliminate a potential race condition in invalidating Reviewable pull request statuses when quickly disconnecting and reconnecting a repository.  This could've theoretically resulted in pull requests showing an error status of "Repo disconnected, unable to update review status", even though the repo had been reconnected.
 
 #### Release 3657.5690 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-11-04
 - New: track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://headwayapp.co/reviewable-changes/base-changes-only-247444) for details.
