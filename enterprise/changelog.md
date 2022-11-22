@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: if a review enters an error state (e.g, because there are too many files in the pull request), set the head commit's status check to an error as well if needed.  Previously we left the last status check in place, or didn't set one on new commits at all.
 - Fix: ignore account suspended errors emitted by GitHub when fetching user information, in an attempt to prevent unnecessary failures and repository disconnections.  It would appear that GitHub can return a 403 Account Suspended error on some API requests if the *target* is suspended, even thought the request's originator is fine.  This supersedes the attempted fix in v3619.5574, which was ineffective.
 - Fix: guard against a rare crash with error `this.tracker.resolvedIf is undefined`.
+- Fix: guard against a rare crash when trying to change the default review overlap strategy for a repository.
 
 #### Release 3657.5690 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-11-04
 - New: track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://headwayapp.co/reviewable-changes/base-changes-only-247444) for details.
