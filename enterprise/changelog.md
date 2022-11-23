@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: hide metadata-only diffs in the virtual Commits file when commits were rebased without changing the commit message.
 - Upd: improve error message when GitHub returns an invalid response to a permissions query. Experience shows this is likely due to the user having received a bad OAuth token for some reason, so the new message recommends signing out and back in.
+- Upd: ensure the file matrix is always wide enough to fit directory names, and let them extend past the edges on hover.
 - Fix: prevent permission denied error when loading some reviews in repositories with mixed case names.
 - Fix: prevent an extremely rare crash on the review page due to some review metadata being undefined.
 - Fix: reinstate author and committer information in the completion condition's input data for review revisions.  This was a regression in v3619.5574.
