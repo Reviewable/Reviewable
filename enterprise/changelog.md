@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against a rare crash with error `this.tracker.resolvedIf is undefined`.
 - Fix: guard against a rare crash when trying to change the default review overlap strategy for a repository.
 - Fix: guard against a rare crash on the dashboard when a pull request you were mentioned in has disappeared.
+- Fix: guard against a rare crash in the code snippet editor, cause by a race condition when, e.g., switching diff bounds.
 
 #### Release 3657.5690 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-11-04
 - New: track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://headwayapp.co/reviewable-changes/base-changes-only-247444) for details.
