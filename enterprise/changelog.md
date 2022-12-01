@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: eliminate a potential race condition in invalidating Reviewable pull request statuses when quickly disconnecting and reconnecting a repository.  This could've theoretically resulted in pull requests showing an error status of "Repo disconnected, unable to update review status", even though the repo had been reconnected.
 - Fix: if a review enters an error state (e.g, because there are too many files in the pull request), set the head commit's status check to an error as well if needed.  Previously we left the last status check in place, or didn't set one on new commits at all.
 - Fix: ignore account suspended errors emitted by GitHub when fetching user information, in an attempt to prevent unnecessary failures and repository disconnections.  It would appear that GitHub can return a 403 Account Suspended error on some API requests if the *target* is suspended, even thought the request's originator is fine.  This supersedes the attempted fix in v3619.5574, which was ineffective.
+- Fix: avoid using `SharedWorker` in Safari 16, as their newly-added support is half-baked.
 - Fix: guard against a rare crash with error `this.tracker.resolvedIf is undefined`.
 - Fix: guard against a rare crash when trying to change the default review overlap strategy for a repository.
 - Fix: guard against a rare crash on the dashboard when a pull request you were mentioned in has disappeared.
