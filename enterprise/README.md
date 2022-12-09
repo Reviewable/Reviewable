@@ -19,6 +19,6 @@ If you already have a license, you'll want to explore the links below.
 
 ##### [Changelog](https://github.com/Reviewable/Reviewable/blob/master/enterprise/changelog.md)
 
-##### Open source [server dependencies](https://app.fossa.io/reports/ef41d9ac-ed5e-461b-82ce-3c06154c0321) and [client dependencies](https://app.fossa.io/reports/efbaf284-6782-49f5-9cf2-57a98792a723) distributed with the image.
+##### [Announcements mailing list](https://groups.google.com/g/reviewable-enterprise-announce)
 
 ##### Default [License Agreement](https://github.com/Reviewable/Reviewable/raw/master/enterprise/Reviewable%20MLA%20Template.pdf) template
