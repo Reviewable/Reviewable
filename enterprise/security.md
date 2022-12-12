@@ -20,7 +20,7 @@ When a user signs in, Reviewable obtains and stores an OAuth token that lets it 
 
 Authorizations in Reviewable are inferred from the permissions granted to users in GHE, i.e. repository read/write/admin and organization owner.  There are no separate roles or authorizations maintained within Reviewable (with one small exception, detailed below).  Permission checks against GHE are cached and revalidated at least every 30 minutes.
 
-When you set up a Reviewable Enterprise license, you get to designate one GHE account to serve as license administrator.  This account is encoded into the license key you'll receive and has a few extra privileges related to license management.  (For example, it can check the license's expiry and number of seats, and observe which users are currently occupying seats and for how long.  It can also manage some license-level settings, such as restricting which users are allowed to sign in to Reviewable.)  If you need to designate a new license administrator we're happy to reissue your license key at any time.
+Reviewable has an additional role of "license administrator" that can check the license details and manage some license-level settings.  All GHE installation owners (i.e., instance admins) are considered to be license administrators, and you can also explicitly designate one additional user as such (encoded in the license key).
 
 ## Firebase
 
