@@ -18,7 +18,11 @@ Next, visit the [Firebase console](https://console.firebase.google.com/) and cre
 
 When your project is ready, select the _Realtime Database_ section and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.
 
-When that's done, visit the _Authentication_ section and click _Get Started_.  Reviewable doesn't actually use Firebase Authentication so there's nothing more to do here (leave all the providers disabled), but this is the easiest way to have Firebase create a generic Web API Key for you.
+When that's done, visit the _Authentication_ section and click _Get Started_. You can find the _Authentication_ section on the left side of the screen as an item inside the _Engage_ dropdown. 
+
+![Firebase authentication settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_authentication_settings.png)
+
+Reviewable doesn't actually use Firebase Authentication so there's nothing more to do here (leave all the providers disabled), but this is the easiest way to have Firebase create a generic Web API Key for you.
 
 Finally go to your Project Settings and prepare the following for configuring Reviewable:
 
