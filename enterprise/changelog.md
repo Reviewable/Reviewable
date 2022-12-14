@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: log summaries of queue task execution outcome and performance in JSON format.  If you don't have `statsd` set up then you can parse and aggregate this data instead to get some pretty charts of Reviewable server performance.
 - Upd: add support for turning off the LGTM/approve button in reviews.
 - Fix: guard against review size getting blown out due to a multitude of long GitHub comments that nonetheless fall under the per-comment length cap.  This would result in the review trying to sync forever, and repeatedly causing regular Firebase disconnects.
+- Fix: improve dashboard layout at low screen widths.
 
 #### Release 3663.5716 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-12-01
 This is mainly a bugfix + stabilization release.
