@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
 - Upd: log summaries of queue task execution outcome and performance in JSON format.  If you don't have `statsd` set up then you can parse and aggregate this data instead to get some pretty charts of Reviewable server performance.
 - Upd: add support for turning off the LGTM/approve button in reviews.
+- Upd: indicate with a colored ring when a user is changing their disposition to one that would block resolution, or one that would resolve the discussion.  We also removed the old "resolving" indicator (a tiny icon in the draft ribbon that likely nobody noticed) and added notes about becoming newly blocking to the dispositions dropdown.
 - Fix: guard against review size getting blown out due to a multitude of long GitHub comments that nonetheless fall under the per-comment length cap.  This would result in the review trying to sync forever, and repeatedly causing regular Firebase disconnects.
 - Fix: improve dashboard layout at low screen widths.
 
