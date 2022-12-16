@@ -96,12 +96,6 @@ Certain admin-only functions may be run on server-start.
 
 * `REVIEWABLE_DISABLED_CONNECTIONS`: A comma-delimited collection of fully-qualified repo names. The repos in this string will be toggled to a disabled status in Firebase when server starts. When a repo is disabled, it cannot be connected to via toggling from the Repositories tab until it is un-disabled. Un-disabling a repo means removing it from the string and then restarting server. When a repo is un-disabled, it gets set to a closed status. That enables the repo to be connected to again from the Repositories tab. Here is an example showing the desired format in a `.zshrc` file: `export REVIEWABLE_DISABLED_CONNECTIONS="repoOwner/repo1,repoOwner/repo2"`.
 
-##### Admin functionality on server start
-
-Certain admin-only functions may be run on server-start.
-
-* `REVIEWABLE_DISABLED_CONNECTIONS`: A comma-delimited collection of fully-qualified repo names. The repos in this string will be toggled to a disabled status in Firebase when server starts. When a repo is disabled, it cannot be connected to via toggling from the Repositories tab until it is un-disabled. Un-disabling a repo means removing it from the string and then restarting server. When a repo is un-disabled, it gets set to a closed status. That enables the repo to be connected to again from the Repositories tab. Here is an example showing the desired format in a `.zshrc` file: `export REVIEWABLE_DISABLED_CONNECTIONS="repoOwner/repo1,repoOwner/repo2"`.
-
 ##### Email
 
 Outbound email server configuration, used to send the occasional admin or error notification.  Normal review notifications all go through GitHub.
