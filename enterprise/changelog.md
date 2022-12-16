@@ -11,8 +11,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: log summaries of queue task execution outcome and performance in JSON format.  If you don't have `statsd` set up then you can parse and aggregate this data instead to get some pretty charts of Reviewable server performance.
 - Upd: add support for turning off the LGTM/approve button in reviews.
 - Upd: indicate with a colored ring when a user is changing their disposition to one that would block resolution, or one that would resolve the discussion.  We also removed the old "resolving" indicator (a tiny icon in the draft ribbon that likely nobody noticed) and added notes about becoming newly blocking to the dispositions dropdown.
+- Upd: highlight disposition-changing keywords in drafts and pop up a tooltip explaining what's going on if needed.  If a keyword is being ignored, cross it out and explain why in the tooltip.
 - Fix: guard against review size getting blown out due to a multitude of long GitHub comments that nonetheless fall under the per-comment length cap.  This would result in the review trying to sync forever, and repeatedly causing regular Firebase disconnects.
 - Fix: improve dashboard layout at low screen widths.
+- Fix: don't show disposition keyword tips in lower-right corner of draft if the user turned off the keyword disposition inference feature.
 
 #### Release 3663.5716 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-12-01
 This is mainly a bugfix + stabilization release.
