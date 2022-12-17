@@ -14,7 +14,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: highlight disposition-changing keywords in drafts and pop up a tooltip explaining what's going on if needed.  If a keyword is being ignored, cross it out and explain why in the tooltip.
 - Fix: guard against review size getting blown out due to a multitude of long GitHub comments that nonetheless fall under the per-comment length cap.  This would result in the review trying to sync forever, and repeatedly causing regular Firebase disconnects.
 - Fix: improve dashboard layout at low screen widths.
-- Fix: don't show disposition keyword tips in lower-right corner of draft if the user turned off the keyword disposition inference feature.
 
 #### Release 3663.5716 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-12-01
 This is mainly a bugfix + stabilization release.
