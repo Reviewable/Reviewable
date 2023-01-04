@@ -130,7 +130,7 @@ You can also change your disposition as you're writing your comment without touc
 * BTW, Minor or Nit → **<i class="fa fa-circle-o"></i> Discussing**
 * Working or Will do → **<i class="fa fa-play-circle"></i> Working**
 
-Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.
+Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.  If a word was accepted it will be highlighted in yellow; if it was discarded it will be crossed out.  Either way, you can click on it to get a short explanation of what happened.
 
 ![reviewable override with magic starting word](images/discussions_4.png)
 
