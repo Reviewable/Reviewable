@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: highlight disposition-changing keywords in drafts and pop up a tooltip explaining what's going on if needed.  If a keyword is being ignored, cross it out and explain why in the tooltip.
 - Upd: show source and target branch for each pull request on the dashboard, and elide owner and repository name when not needed (e.g., in an organization-specific or repository-specific list).  The branch names are always shown in full in the (new) tooltip, and also inlined when the owner or repository are elided.
 - Upd: cache dashboard query results to greatly improve page load times, and indicate result age under the header.
+- Upd: offer link to a repository-specific dashboard (that shows all pull requests in the repository) when you enter something that looks like a repository name in the dashboard's query field.
 - Fix: guard against review size getting blown out due to a multitude of long GitHub comments that nonetheless fall under the per-comment length cap.  This would result in the review trying to sync forever, and repeatedly causing regular Firebase disconnects.
 - Fix: improve dashboard layout at low screen widths.
 - Fix: prevent occasional endless failure loops when a review exceeds the max file limit.  The review should now be marked reliably as being in an error state.
