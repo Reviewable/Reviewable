@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add support for turning off the LGTM/approve button in reviews.
 - Upd: indicate with a colored ring when a user is changing their disposition to one that would block resolution, or one that would resolve the discussion.  We also removed the old "resolving" indicator (a tiny icon in the draft ribbon that likely nobody noticed) and added notes about becoming newly blocking to the dispositions dropdown.
 - Upd: highlight disposition-changing keywords in drafts and pop up a tooltip explaining what's going on if needed.  If a keyword is being ignored, cross it out and explain why in the tooltip.
+- Upd: introduce keywords to set a draft's disposition to Blocking ("bug", "major", and "hold on").
 - Upd: show source and target branch for each pull request on the dashboard, and elide owner and repository name when not needed (e.g., in an organization-specific or repository-specific list).  The branch names are always shown in full in the (new) tooltip, and also inlined when the owner or repository are elided.
 - Upd: cache dashboard query results to greatly improve page load times, and indicate result age under the header.
 - Upd: offer link to a repository-specific dashboard (that shows all pull requests in the repository) when you enter something that looks like a repository name in the dashboard's query field.
