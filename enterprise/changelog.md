@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent occasional endless failure loops when a review exceeds the max file limit.  The review should now be marked reliably as being in an error state.
 - Fix: clear error message on dashboard after a successful fetch.
 - Fix: avoid small visual hitch when activating organization dropdown on dashboard.
+- Fix: request `workflow` scope from the user if merging a pull request with a file in `.github/workflows` fails, and retry.
 
 #### Release 3663.5716 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-12-01
 This is mainly a bugfix + stabilization release.
