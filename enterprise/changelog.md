@@ -6,6 +6,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images use a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
+#### Coming even later
+- Fix: use the original casing of owner and repository names in badge and comment links.
+- Fix: use the original casing of user and team names in `@` autocompletions in draft comments.
+
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
 - Upd: log summaries of queue task execution outcome and performance in JSON format.  If you don't have `statsd` set up then you can parse and aggregate this data instead to get some pretty charts of Reviewable server performance.
