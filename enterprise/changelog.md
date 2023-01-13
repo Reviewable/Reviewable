@@ -24,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: request `workflow` scope from the user if merging a pull request with a file in `.github/workflows` fails, and retry.
 - Fix: use the original casing of owner and repository names in badge and comment links.
 - Fix: use the original casing of user and team names in `@` autocompletions in draft comments.
+- Fix: guard against a rare crash when leaving a review page while a diff operation is in progress.
 
 #### Release 3663.5716 (min 3619.5594 GHE 2.19+ or 3.0+) 2022-12-01
 This is mainly a bugfix + stabilization release.
