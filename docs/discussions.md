@@ -126,7 +126,7 @@ Your avatar in the lower-right corner of every discussion box has a small icon t
 
 You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These are some examples of what you'll find there:
 
-* FYI → **<i class="fa fa-info-circle"></i> Informing**
+* FYI or Tip → **<i class="fa fa-info-circle"></i> Informing**
 * BTW, Minor or Nit → **<i class="fa fa-circle-o"></i> Discussing**
 * Working or Will do → **<i class="fa fa-play-circle"></i> Working**
 
