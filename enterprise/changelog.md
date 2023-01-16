@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3689.5783 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-01-15
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
 - Upd: log summaries of queue task execution outcome and performance in JSON format.  If you don't have `statsd` set up then you can parse and aggregate this data instead to get some pretty charts of Reviewable server performance.
 - Upd: add support for turning off the LGTM/approve button in reviews.
