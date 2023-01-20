@@ -92,7 +92,21 @@ Don't like the merge bunny?  Turn it off like this:
 .victory.decor {display: none}
 ```
 
-### Wavy lines on collapsed regions
+### Accessibility
+
+This snippet can be used to alter the diff colors for additions and removals, making them standout more. This may be helpful for those with Deuteranopia/Protanopia (green/red color blindness).
+
+```css
+:root {
+  --diff-add: 33, 150, 243;
+  --diff-remove: 255, 235, 59;
+}
+```
+
+{:.important}
+The three values for each variable correspond to R,G and B color values and can be used to set the diffs to whatever colors you'd like. Do not add the `rgb()` wrapper around the values.
+
+### Removing wavy lines on collapsed regions
 
 Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:
 
