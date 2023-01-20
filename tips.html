@@ -363,7 +363,17 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 <p>Don't like the merge bunny?  Turn it off like this:</p>
 <pre><code class="language-css">.victory.decor {display: none}
 </code></pre>
-<h3><a class="header" href="#wavy-lines-on-collapsed-regions" id="wavy-lines-on-collapsed-regions">Wavy lines on collapsed regions</a></h3>
+<h3><a class="header" href="#accessibility" id="accessibility">Accessibility</a></h3>
+<p>This snippet can be used to alter the diff colors for additions and removals, making them standout more. This may be helpful for those with Deuteranopia/Protanopia (green/red color blindness).</p>
+<pre><code class="language-css">:root {
+  --diff-add: 33, 150, 243;
+  --diff-remove: 255, 235, 59;
+}
+</code></pre>
+<div class="important">
+<p>The three values for each variable correspond to R,G and B color values and can be used to set the diffs to whatever colors you'd like. Do not add the <code>rgb()</code> wrapper around the values.</p>
+</div>
+<h3><a class="header" href="#removing-wavy-lines-on-collapsed-regions" id="removing-wavy-lines-on-collapsed-regions">Removing wavy lines on collapsed regions</a></h3>
 <p>Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:</p>
 <pre><code class="language-css">.review-page .file.root .file .wavy.edge {
   background-image: none;

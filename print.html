@@ -962,7 +962,7 @@
 }
 </code></pre>
 <p>By default, only the actual deltas have red/green highlights in two-column mode. If you'd like the whole line to be highlighted as well (like on GitHub) you can add the styles from <a href="https://gist.github.com/pkaminski/2922da3d58f76a8ed7bf">this example</a>.</p>
-<p><a id="line-link-template"></a></p>
+<p>See more snippets at <a href="tips.html#visual-tweaks">visual tweaks</a>.</p>
 <h2><a class="header" href="#external-editor-line-link-template" id="external-editor-line-link-template">External editor line link template</a></h2>
 <p>You can specify the file path to your git repos directory for the <strong>external editor line link</strong> that appears in the upper-right corner of discussions.</p>
 <p><img src="images/accountsettings_2.png" alt="custom line editor links" /></p>
@@ -1444,7 +1444,17 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 <p>Don't like the merge bunny?  Turn it off like this:</p>
 <pre><code class="language-css">.victory.decor {display: none}
 </code></pre>
-<h3><a class="header" href="#wavy-lines-on-collapsed-regions" id="wavy-lines-on-collapsed-regions">Wavy lines on collapsed regions</a></h3>
+<h3><a class="header" href="#accessibility" id="accessibility">Accessibility</a></h3>
+<p>This snippet can be used to alter the diff colors for additions and removals, making them standout more. This may be helpful for those with Deuteranopia/Protanopia (green/red color blindness).</p>
+<pre><code class="language-css">:root {
+  --diff-add: 33, 150, 243;
+  --diff-remove: 255, 235, 59;
+}
+</code></pre>
+<div class="important">
+<p>The three values for each variable correspond to R,G and B color values and can be used to set the diffs to whatever colors you'd like. Do not add the <code>rgb()</code> wrapper around the values.</p>
+</div>
+<h3><a class="header" href="#removing-wavy-lines-on-collapsed-regions" id="removing-wavy-lines-on-collapsed-regions">Removing wavy lines on collapsed regions</a></h3>
 <p>Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:</p>
 <pre><code class="language-css">.review-page .file.root .file .wavy.edge {
   background-image: none;
