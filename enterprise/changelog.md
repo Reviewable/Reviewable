@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: add "tip" as a keyword for setting disposition to Informing.
 - Fix: correctly handle the case when a pull request is missing its head commit.  This was a regression from some time ago.
+- Fix: guard against a rare race condition that could lead to a crash when there are renamed files in the review.
 
 #### Release 3690.5783 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-01-15
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
