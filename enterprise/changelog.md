@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+- Upd: show account settings while scrolling so that visual setting updates can be seen in real time.
 - Upd: add "tip" as a keyword for setting disposition to Informing.
 - Upd: show requested review teams on the dashboard, and include such pull requests in `needs:reviewer` and `needs:me` filters as appropriate.
 - Fix: don't count rate limiting-driven retries as task execution attempts for the first 2 hours, to lower the rate of false positive "Repeatedly failed to process event" errors.
