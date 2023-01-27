@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't show the tip for Satisfied keywords when the user's disposition is Informing, as they're not useful.
 - Fix: avoid continuously rewriting badge links if the organization or repository name contains uppercase characters.  This regression was introduced in v3690.5783 and could lead to quota exhaustion.
 - Fix: display correct unreviewed file count when a custom review completion condition sets `reviewed: false` flags on some files.  Also fixed a bug that could lead to worse-than-expected unreviewed file count estimates for pull requests with renamed files.
+- Fix: if a file was brought into the review with a provisional revision, and that revision is replaced with another one that doesn't modify the file, correctly remove the file from the review.
 
 #### Release 3690.5783 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-01-15
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
