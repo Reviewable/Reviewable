@@ -548,18 +548,37 @@
 <div class="important">
 <p>Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.</p>
 </div>
-<h2><a class="header" href="#labels-and-participants-summary" id="labels-and-participants-summary">Labels and participants summary</a></h2>
-<p>This summary appears at the bottom of the general discussion (see the screenshot below). It includes the relevant milestone for the PR, any labels that have been applied, and a list of participants in the review.</p>
-<p>For each participant:</p>
-<ul>
-<li>A <i class="fa fa-hand-o-right" style="color: #7D8084"></i> to the left of the avatar indicates if the person is being waited on.</li>
-<li>Their current approval status is shown next to the avatar (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested).</li>
-<li>The comment icon will be dark in color if the participant has any drafts pending.</li>
-<li>The comment text indicates the last time they edited the review.</li>
-<li>The <strong>assigned</strong> and <strong>review requested</strong> markers indicate the corresponding state.</li>
-<li>There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).</li>
-</ul>
-<p><img src="images/summary_3.png" alt="reviewable review labels and participants" /></p>
+<h2><a class="header" href="#labels" id="labels">Labels</a></h2>
+<p>Any labels or milestones that have been applied to the PR appear in the Review discussion footer.</p>
+<p><img src="images/labels_1.png" alt="reviewable review labels" /></p>
+<h2><a class="header" href="#participants-panel" id="participants-panel">Participants Panel</a></h2>
+<p>The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i> button. You can sort participants by each category using the <i class="icon sort"></i> button.</p>
+<p><img src="images/participants_panel_1.png" alt="reviewable review participants panel" /></p>
+<p>For each participant the following information is provided:</p>
+<table><thead><tr><th align="center">Icon</th><th>Participant is:</th></tr></thead><tbody>
+<tr><td align="center"><i class="icon waiting on"></i></td><td>is <strong>responsible for the next step of this review.</strong></td></tr>
+<tr><td align="center"><i class="icon waiting on circular no data"></i></td><td>is <strong>not being waited on in the review.</strong></td></tr>
+<tr><td align="center"><i class="icon disposition blocking"></i></td><td>is <strong>blocking the review from being approved</strong>.</td></tr>
+<tr><td align="center"><img src="images/lgtm.png" style="max-width: 3em;"/></td><td>says 'Everything <strong>Looks good to me</strong>!'</td></tr>
+<tr><td align="center"><i class="icon disposition satisfied"></i></td><td>has <strong>approved the PR</strong>.</td></tr>
+<tr><td align="center"><i class="icon participant status circular no data"></i></td><td>has <strong>no status</strong>.</td></tr>
+<tr><td align="center"><i class="icon review requested"></i></td><td>is <strong>a requested reviewer</strong>.</td></tr>
+<tr><td align="center"><i class="icon assigned"></i></td><td>is <strong>assigned to this PR</strong>.</td></tr>
+<tr><td align="center"><i class="icon github circular no data"></i></td><td>is <strong>neither assigned nor requested</strong>.</td></tr>
+<tr><td align="center"><i class="icon author"></i></td><td>is an <strong>author of the PR</strong>.</td></tr>
+<tr><td align="center"><i class="icon reviewer"></i></td><td>is a <strong>reviewer</strong>.</td></tr>
+<tr><td align="center"><i class="icon passive"></i></td><td>is looking around <strong>without actively reviewing</strong>.</td></tr>
+<tr><td align="center"><i class="icon commit"></i></td><td>is either an <strong>author of code within a commit or is a committer to the PR</strong>.</td></tr>
+<tr><td align="center"><i class="icon commit circular no data"></i></td><td>has <strong>not made or authored any commits in this PR</strong>.</td></tr>
+<tr><td align="center"><i class="icon active circular no data"></i></td><td>is <strong>not yet active in the review</strong>.</td></tr>
+<tr><td align="center"><i class="icon drafts"></i></td><td>has <strong>pending comments drafted</strong> that are not yet published.</td></tr>
+<tr><td align="center"><i class="icon drafts circular no data"></i></td><td>has <strong>no pending drafts</strong>.</td></tr>
+<tr><td align="center"><i class="icon comments circular no data"></i></td><td>is <strong>not engaged in any discussions</strong>.</td></tr>
+</tbody></table>
+<h3><a class="header" href="#participants-panel-actions" id="participants-panel-actions">Participants Panel Actions</a></h3>
+<h4><a class="header" href="#discussions" id="discussions">Discussions</a></h4>
+<p><img src="images/participants_panel_2.png" alt="participants panel dismiss from all" /></p>
+<p>If you have the necessary permissions on the repo, you can open the actions dropdown for another active participant and click <strong>dismiss from all</strong> in the drop-down, which will dismiss the participant from all unresolved discussions they are engaged in. You can undo this action until you publish.</p>
 <h2><a class="header" href="#deferring-a-review" id="deferring-a-review">Deferring a review</a></h2>
 <p>When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a red stripe and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.</p>
 <p><img src="images/deferring_dashboard.png" alt="reviewable deferral dashboard" /></p>
