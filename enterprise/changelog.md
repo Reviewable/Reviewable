@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: display correct unreviewed file count when a custom review completion condition sets `reviewed: false` flags on some files.  Also fixed a bug that could lead to worse-than-expected unreviewed file count estimates for pull requests with renamed files.
 - Fix: if a file was brought into the review with a provisional revision, and that revision is replaced with another one that doesn't modify the file, correctly remove the file from the review.
 - Fix: don't misattribute GitHub errors encountered by the server when using a secondary account to a repository's primary connecting account.  If the secondary user was suspended, for example, this could cause the repository to disconnect even though the connecting user's credentials were perfectly fine.
+- Fix: don't cross out disposition keyword if it matches the manually set disposition.  This happened most often when clicking "Done" in v3690.5783 and could be quite confusing.
 
 #### Release 3690.5783 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-01-15
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
