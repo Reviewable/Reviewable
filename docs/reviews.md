@@ -239,20 +239,48 @@ If you're a repo admin, you can also set the default review style for the repo v
 {:.important}
 Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
 
-## Labels and participants summary
+## Labels
 
-This summary appears at the bottom of the general discussion (see the screenshot below). It includes the relevant milestone for the PR, any labels that have been applied, and a list of participants in the review.
+Any labels or milestones that have been applied to the PR appear in the Review discussion footer.
 
-For each participant:
+![reviewable review labels](images/labels_1.png)
 
-* A <i class="fa fa-hand-o-right" style="color: #7D8084"></i> to the left of the avatar indicates if the person is being waited on.
-* Their current approval status is shown next to the avatar (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested).
-* The comment icon will be dark in color if the participant has any drafts pending.
-* The comment text indicates the last time they edited the review.
-* The **assigned** and **review requested** markers indicate the corresponding state.
-* There may also be a chronological listing of all the emojis used in comments (any comments, not just in the general discussion).
+## Participants Panel
 
-![reviewable review labels and participants](images/summary_3.png)
+The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i> button. You can sort participants by each category using the <i class="icon sort"></i> button.
+
+![reviewable review participants panel](images/participants_panel_1.png)
+
+For each participant the following information is provided:
+
+Icon | Participant is:
+:----:|---------
+<i class="icon waiting on"></i> | is **responsible for the next step of this review.**
+<i class="icon waiting on circular no data"></i> | is **not being waited on in the review.**
+<i class="icon disposition blocking"></i> | is **blocking the review from being approved**.
+<img src="images/lgtm.png" style="max-width: 3em;"/> | says 'Everything **Looks good to me**!'
+<i class="icon disposition satisfied"></i> | has **approved the PR**.
+<i class="icon participant status circular no data"></i> | has **no status**.
+<i class="icon review requested"></i> | is **a requested reviewer**.
+<i class="icon assigned"></i> | is **assigned to this PR**.
+<i class="icon github circular no data"></i> | is **neither assigned nor requested**.
+<i class="icon author"></i> | is an **author of the PR**.
+<i class="icon reviewer"></i> | is a **reviewer**.
+<i class="icon passive"></i> | is looking around **without actively reviewing**.
+<i class="icon commit"></i> |  is either an **author of code within a commit or is a committer to the PR**.
+<i class="icon commit circular no data"></i> | has **not made or authored any commits in this PR**.
+<i class="icon active circular no data"></i> | is **not yet active in the review**.
+<i class="icon drafts"></i> | has **pending comments drafted** that are not yet published.
+<i class="icon drafts circular no data"></i> | has **no pending drafts**.
+<i class="icon comments circular no data"></i> | is **not engaged in any discussions**.
+
+### Participants Panel Actions
+
+#### Discussions
+
+![participants panel dismiss from all](images/participants_panel_2.png)
+
+If you have the necessary permissions on the repo, you can open the actions dropdown for another active participant and click **dismiss from all** in the drop-down, which will dismiss the participant from all unresolved discussions they are engaged in. You can undo this action until you publish.
 
 ## Deferring a review
 

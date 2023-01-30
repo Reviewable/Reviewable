@@ -239,18 +239,20 @@ blockquote {
     font-weight: bold;
 }
 
-
 .label {
     padding: 1px 3px;
     color: white;
     border-radius: 2px;
 }
+
 .red.label {
     background-color: #D95C5C;
 }
+
 .green.label {
     background-color: #5BBD72;
 }
+
 .grey.label {
     background-color: #B0B0B0;
 }
@@ -264,3 +266,281 @@ blockquote {
         #D95C5C 66.6%
     );
 }
+
+i {
+    font-style: normal;
+}
+
+.circular.no.data::after {
+    content: "\f05e";
+    font-family: Icons-regular;
+    color: red;
+    position: absolute;
+    left: -3.5px;
+    top: 0;
+    font-size: 1.5em;
+    opacity: 0.5;
+}
+
+i.icon {
+    position: relative;
+    opacity: 0.7;
+}
+
+/*
+  The following is copied from Reviewable/reviewable-client/src/generated_icons.css.
+  That file is generated during dev, and its contents should be copied over top of the following whenever
+  a new icon that we want to reference in the docs has been added to Reviewable/reviewable-client/icons.yaml.
+*/
+
+@font-face {
+    font-family: Icons-duotone;
+    src: url('/fonts/Icons-duotone.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+    font-weight: 900;
+    font-display: block;
+}
+  
+@font-face {
+    font-family: Icons-brands;
+    src: url('/fonts/Icons-brands.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+    font-weight: 400;
+    font-display: block;
+}
+
+@font-face {
+    font-family: Icons-light;
+    src: url('/fonts/Icons-light.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+    font-weight: 300;
+    font-display: block;
+}
+
+@font-face {
+    font-family: Icons-regular;
+    src: url('/fonts/Icons-regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+    font-weight: 400;
+    font-display: block;
+}
+
+@font-face {
+    font-family: Icons-solid;
+    src: url('/fonts/Icons-solid.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: inherit;
+    text-transform: none;
+    font-weight: 900;
+    font-display: block;
+}
+
+i.icon.announcement::before {content: "\f0a1"; font-family: Icons-solid;}
+i.icon.arrow.down::before {content: "\f063"; font-family: Icons-solid;}
+i.icon.arrow.down.left.turn::before {content: "\e331"; font-family: Icons-regular;}
+i.icon.back::before {content: "\f060"; font-family: Icons-solid;}
+i.icon.background.circle::before {content: "\f111"; font-family: Icons-solid;}
+i.icon.circle.outline::before {content: "\f111"; font-family: Icons-regular;}
+i.icon.clone.successful::before {content: "\f00c"; font-family: Icons-regular;}
+i.icon.clone::before {content: "\f24d"; font-family: Icons-regular;}
+i.icon.close::before {content: "\f00d"; font-family: Icons-solid;}
+i.icon.current.indicator::before {content: "\f054"; font-family: Icons-regular;}
+i.icon.dropdown::before {content: "\f0d7"; font-family: Icons-solid;}
+i.icon.external::before {content: "\f35d"; font-family: Icons-regular;}
+i.icon.confused.face::before {content: "\e36d"; font-family: Icons-light;}
+i.icon.face.frowning::before {content: "\e376"; font-family: Icons-light;}
+i.icon.face.meh::before {content: "\f11a"; font-family: Icons-light;}
+i.icon.circle.help::before {content: "\f059"; font-family: Icons-solid;}
+i.icon.circle.info::before {content: "\f05a"; font-family: Icons-solid;}
+i.icon.invalid::before {content: "\f00d"; font-family: Icons-regular;}
+i.icon.no.signal::before {content: "\f695"; font-family: Icons-regular;}
+i.icon.search::before {content: "\f002"; font-family: Icons-solid;}
+i.icon.settings::before {content: "\f013"; font-family: Icons-solid;}
+i.icon.spinner::before {content: "\f110"; font-family: Icons-solid;}
+i.icon.undo::before {content: "\f2ea"; font-family: Icons-regular;}
+i.icon.up::before {content: "\f062"; font-family: Icons-solid;}
+i.icon.valid::before {content: "\f00c"; font-family: Icons-regular;}
+i.icon.circle.warning::before {content: "\f06a"; font-family: Icons-solid;}
+i.icon.sign.warning::before {content: "\f071"; font-family: Icons-solid;}
+i.icon.warning::before {content: "\21"; font-family: Icons-solid;}
+i.icon.all.organizations::before {content: "\f57d"; font-family: Icons-regular;}
+i.icon.all.repositories::before {content: "\f5db"; font-family: Icons-regular;}
+i.icon.authorize::before {content: "\f13e"; font-family: Icons-solid;}
+i.icon.github::before {content: "\f09b"; font-family: Icons-brands;}
+i.icon.milestone::before {content: "\f277"; font-family: Icons-solid;}
+i.icon.private::before {content: "\f30d"; font-family: Icons-solid;}
+i.icon.approved.sanction::before {content: "\f164"; font-family: Icons-solid; color: #5BBD72;}
+i.icon.blocked.sanction::before {content: "\f256"; font-family: Icons-solid; color: #FFA22E;}
+i.icon.commented.sanction::before {content: "\f075"; font-family: Icons-solid;}
+i.icon.dismissed.sanction::before {content: "\e378"; font-family: Icons-solid; color: #777777;}
+i.icon.check.error.status::before {content: "\f071"; font-family: Icons-solid; color: #D95C5C;}
+i.icon.check.failure.status::before {content: "\e59b"; font-family: Icons-regular; color: #D95C5C;}
+i.icon.check.inprogress.status::before {content: "\f828"; font-family: Icons-regular;}
+i.icon.check.missing.status::before {content: "\f251"; font-family: Icons-regular;}
+i.icon.check.pending.status::before {content: "\f254"; font-family: Icons-regular;}
+i.icon.check.status.success::before {content: "\f00c"; font-family: Icons-solid; color: #5BBD72;}
+i.icon.timeout.trial::before {content: "\e0d2"; font-family: Icons-regular;}
+i.icon.twitter::before {content: "\f099"; font-family: Icons-brands;}
+i.icon.on.waiting::before {content: "\f0a4"; font-family: Icons-regular;}
+i.icon.assigned::before {content: "\f85e"; font-family: Icons-regular;}
+i.icon.mentionee::before {content: "\f507"; font-family: Icons-regular;}
+i.icon.sort::before {content: "\e0ae"; font-family: Icons-regular;}
+i.icon.author::before {content: "\f4ff"; font-family: Icons-regular;}
+i.icon.reviewer::before {content: "\e5c5"; font-family: Icons-regular;}
+i.icon.passive::before {content: "\f21b"; font-family: Icons-duotone; position: absolute;}
+i.icon.passive::after {content: "\10f21b"; font-family: Icons-duotone;}
+i.icon.participants::before {content: "\e533"; font-family: Icons-solid;}
+i.icon.active::before {content: "\f5f8"; font-family: Icons-solid;}
+i.icon.participant.status::before {content: "\e32e"; font-family: Icons-solid;}
+i.icon.blog::before {content: "\f09e"; font-family: Icons-light;}
+i.icon.careers::before {content: "\f5fc"; font-family: Icons-light;}
+i.icon.changelog::before {content: "\f1da"; font-family: Icons-light;}
+i.icon.chatroom::before {content: "\e1e7"; font-family: Icons-light;}
+i.icon.email.us::before {content: "\f0e0"; font-family: Icons-light;}
+i.icon.help::before {content: "\f059"; font-family: Icons-light;}
+i.icon.issues::before {content: "\e490"; font-family: Icons-light;}
+i.icon.keyboard.shortcuts::before {content: "\f11c"; font-family: Icons-light;}
+i.icon.legal::before {content: "\f24e"; font-family: Icons-light;}
+i.icon.licenses::before {content: "\f70e"; font-family: Icons-light;}
+i.icon.privacy::before {content: "\f06c"; font-family: Icons-light;}
+i.icon.dashboard.repositories::before {content: "\f6b8"; font-family: Icons-light;}
+i.icon.dashboard.reviews::before {content: "\e147"; font-family: Icons-light;}
+i.icon.in.sign::before {content: "\f2f6"; font-family: Icons-solid;}
+i.icon.out.sign::before {content: "\f2f5"; font-family: Icons-solid;}
+i.icon.support::before {content: "\e492"; font-family: Icons-light;}
+i.icon.guide.user::before {content: "\f7e7"; font-family: Icons-light;}
+i.icon.amex.card::before {content: "\f1f3"; font-family: Icons-brands;}
+i.icon.card.club.diners::before {content: "\f24c"; font-family: Icons-brands;}
+i.icon.card.discover::before {content: "\f1f2"; font-family: Icons-brands;}
+i.icon.card.expiry::before {content: "\f133"; font-family: Icons-regular;}
+i.icon.card.generic::before {content: "\f09d"; font-family: Icons-light;}
+i.icon.card.jcb::before {content: "\f24b"; font-family: Icons-brands;}
+i.icon.card.mastercard::before {content: "\f1f1"; font-family: Icons-brands;}
+i.icon.card.visa::before {content: "\f1f0"; font-family: Icons-brands;}
+i.icon.disallowed::before {content: "\f05e"; font-family: Icons-regular;}
+i.icon.address.email::before {content: "\f0e0"; font-family: Icons-regular;}
+i.icon.memo.personal::before {content: "\e1d8"; font-family: Icons-regular;}
+i.icon.receipt::before {content: "\f543"; font-family: Icons-regular;}
+i.icon.code.security::before {content: "\f023"; font-family: Icons-regular;}
+i.icon.down.pointing::before {content: "\f0a7"; font-family: Icons-regular;}
+i.icon.panel.settings::before {content: "\f085"; font-family: Icons-solid;}
+i.icon.branch.pull.request::before {content: "\f387"; font-family: Icons-light;}
+i.icon.connected.off::before {content: "\f204"; font-family: Icons-regular;}
+i.icon.connected.on::before {content: "\f205"; font-family: Icons-regular;}
+i.icon.counter.discussions::before {content: "\f086"; font-family: Icons-light;}
+i.icon.counter.drafts::before {content: "\e212"; font-family: Icons-light;}
+i.icon.counter.files::before {content: "\e178"; font-family: Icons-light;}
+i.icon.checks.counter.status::before {content: "\f21e"; font-family: Icons-light;}
+i.icon.create.review::before {content: "\f4b2"; font-family: Icons-solid; color: #5C6166;}
+i.icon.default.query.set::before {content: "\f058"; font-family: Icons-light;}
+i.icon.more::before {content: "\f141"; font-family: Icons-solid;}
+i.icon.participating::before {content: "\f04c"; font-family: Icons-solid;}
+i.icon.stalled::before {content: "\f272"; font-family: Icons-regular;}
+i.icon.off.starred::before {content: "\f005"; font-family: Icons-regular;}
+i.icon.on.starred::before {content: "\f005"; font-family: Icons-solid;}
+i.icon.branch.target::before {content: "\f061"; font-family: Icons-light;}
+i.icon.unconnected::before {content: "\f127"; font-family: Icons-regular;}
+i.icon.off.watched::before {content: "\f02e"; font-family: Icons-regular;}
+i.icon.on.watched::before {content: "\f02e"; font-family: Icons-solid;}
+i.icon.automerge::before {content: "\e2ca"; font-family: Icons-regular;}
+i.icon.abandoned.branch::before {content: "\e3f9"; font-family: Icons-regular;}
+i.icon.branch.merged::before {content: "\e13c"; font-family: Icons-regular;}
+i.icon.cell.renamed::before {content: "\f074"; font-family: Icons-solid;}
+i.icon.cell.reverted::before {content: "\f2ea"; font-family: Icons-solid;}
+i.icon.cell.reviewed::before {content: "\f06e"; font-family: Icons-solid;}
+i.icon.changes::before {content: "\f042"; font-family: Icons-regular;}
+i.icon.checkbox.checked::before {content: "\f14a"; font-family: Icons-regular;}
+i.icon.checkbox.empty::before {content: "\f0c8"; font-family: Icons-regular;}
+i.icon.comments::before {content: "\f086"; font-family: Icons-regular;}
+i.icon.commit::before {content: "\f386"; font-family: Icons-regular;}
+i.icon.configure.repository::before {content: "\f0ad"; font-family: Icons-solid;}
+i.icon.coverage::before {content: "\f0e9"; font-family: Icons-solid;}
+i.icon.codeblock.create::before {content: "\f121"; font-family: Icons-solid;}
+i.icon.deferred::before {content: "\f845"; font-family: Icons-duotone; position: absolute;}
+i.icon.deferred::after {content: "\10f845"; font-family: Icons-duotone;}
+i.icon.delete.draft::before {content: "\f1f8"; font-family: Icons-regular;}
+i.icon.diff::before {content: "\e177"; font-family: Icons-regular;}
+i.icon.discussion.main::before {content: "\e487"; font-family: Icons-regular;}
+i.icon.discussion.new::before {content: "\e14b"; font-family: Icons-regular;}
+i.icon.discussion.nonblocking::before {content: "\f086"; font-family: Icons-regular;}
+i.icon.discussion.ongoing::before {content: "\e14e"; font-family: Icons-regular;}
+i.icon.discussion.resolved::before {content: "\e14f"; font-family: Icons-regular;}
+i.icon.discussions::before {content: "\f086"; font-family: Icons-regular;}
+i.icon.dismiss::before {content: "\f05e"; font-family: Icons-regular;}
+i.icon.blocking.disposition::before {content: "\f5ec"; font-family: Icons-solid;}
+i.icon.discussing.disposition::before {content: "\f111"; font-family: Icons-regular;}
+i.icon.dismissed.disposition::before {content: "\f05e"; font-family: Icons-solid;}
+i.icon.disposition.following::before {content: "\f141"; font-family: Icons-solid;}
+i.icon.disposition.informing::before {content: "\f05a"; font-family: Icons-solid;}
+i.icon.disposition.mentioned::before {content: "\40"; font-family: Icons-solid;}
+i.icon.disposition.pondering::before {content: "\f059"; font-family: Icons-solid;}
+i.icon.disposition.satisfied::before {content: "\f058"; font-family: Icons-solid;}
+i.icon.disposition.uninvolved::before {content: "\2e"; font-family: Icons-solid;}
+i.icon.disposition.withdrawn::before {content: "\f2ea"; font-family: Icons-solid;}
+i.icon.disposition.working::before {content: "\f144"; font-family: Icons-solid;}
+i.icon.drafts.pending::before {content: "\e212"; font-family: Icons-regular;}
+i.icon.drafts::before {content: "\e212"; font-family: Icons-regular;}
+i.icon.branch.edit.name::before {content: "\f044"; font-family: Icons-regular;}
+i.icon.editor.solid::before {content: "\f31c"; font-family: Icons-solid;}
+i.icon.editor::before {content: "\f31c"; font-family: Icons-regular;}
+i.icon.down.expand::before {content: "\f078"; font-family: Icons-solid;}
+i.icon.expand.up::before {content: "\f077"; font-family: Icons-solid;}
+i.icon.down.expand.many::before {content: "\f322"; font-family: Icons-solid;}
+i.icon.expand.many.up::before {content: "\f325"; font-family: Icons-solid;}
+i.icon.file.list::before {content: "\f03a"; font-family: Icons-regular;}
+i.icon.file.matrix::before {content: "\e1d2"; font-family: Icons-regular;}
+i.icon.files::before {content: "\e178"; font-family: Icons-regular;}
+i.icon.closed.group::before {content: "\f0da"; font-family: Icons-solid;}
+i.icon.group.open::before {content: "\f0d7"; font-family: Icons-solid;}
+i.icon.issue::before {content: "\f2f8"; font-family: Icons-regular;}
+i.icon.labels::before {content: "\f02c"; font-family: Icons-regular;}
+i.icon.last.reviewed::before {content: "\f06e"; font-family: Icons-regular;}
+i.icon.last.update::before {content: "\e367"; font-family: Icons-regular;}
+i.icon.line.marker::before {content: "\f3c5"; font-family: Icons-solid;}
+i.icon.markdown::before {content: "\f60f"; font-family: Icons-brands;}
+i.icon.merge::before {content: "\f387"; font-family: Icons-regular;}
+i.icon.file.next::before {content: "\f0a9"; font-family: Icons-solid;}
+i.icon.diffs.no::before {content: "\e481"; font-family: Icons-light;}
+i.icon.overflow::before {content: "\f626"; font-family: Icons-duotone; position: absolute;}
+i.icon.overflow::after {content: "\10f626"; font-family: Icons-duotone;}
+i.icon.github.provenance::before {content: "\f113"; font-family: Icons-brands;}
+i.icon.mail.provenance::before {content: "\f0e0"; font-family: Icons-regular;}
+i.icon.provenance.synthetic::before {content: "\f30f"; font-family: Icons-solid;}
+i.icon.publish::before {content: "\f367"; font-family: Icons-solid;}
+i.icon.pull.request::before {content: "\e13c"; font-family: Icons-regular;}
+i.icon.recover::before {content: "\f895"; font-family: Icons-solid;}
+i.icon.renamed::before {content: "\f074"; font-family: Icons-regular;}
+i.icon.required::before {content: "\2a"; font-family: Icons-solid;}
+i.icon.requested.review::before {content: "\e4bf"; font-family: Icons-regular;}
+i.icon.ball.published.review.summary.tennis::before {content: "\f45e"; font-family: Icons-regular; color: #5BBD72;}
+i.icon.published.racquet.review.summary.tennis::before {content: "\f45a"; font-family: Icons-regular;}
+i.icon.review::before {content: "\e147"; font-family: Icons-regular;}
+i.icon.reviewed::before {content: "\f06e"; font-family: Icons-light;}
+i.icon.send::before {content: "\f064"; font-family: Icons-solid;}
+i.icon.diffs.show.unreviewed::before {content: "\f05b"; font-family: Icons-light;}
+i.icon.checks.status::before {content: "\f21e"; font-family: Icons-regular;}
+i.icon.unreviewed::before {content: "\f070"; font-family: Icons-light;}
+i.icon.base.upload::before {content: "\f03e"; font-family: Icons-solid;}
+i.icon.cover.upload::before {content: "\f03e"; font-family: Icons-regular;}
+i.icon.video::before {content: "\f03d"; font-family: Icons-regular;}
+i.icon.around.wrapped::before {content: "\f2f9"; font-family: Icons-regular;}
+i.icon.box.checkmark::before {content: "\f14a"; font-family: Icons-regular;}
+i.icon.outline.square::before {content: "\f0c8"; font-family: Icons-regular;}
