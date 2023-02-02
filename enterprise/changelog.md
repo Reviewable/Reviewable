@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add "tip" as a keyword for setting disposition to Informing.
 - Upd: show requested review teams on the dashboard, and include such pull requests in `needs:reviewer` and `needs:me` filters as appropriate.
 - Upd: refresh the list of pull requests when reloading a dashboard page, even if the last update falls below the normal refresh threshold.  This way, if you know there's a new pull request you can just reload the dashboard rather than waiting for the next automatic update.
+- Upd: don't hide "obsolete" files.  We used to hide files that were reverted and reviewed altogether, but this was confusing and now that we have an automatic Reverted group in the file matrix we can just rely on that instead.
 - Fix: don't count rate limiting-driven retries as task execution attempts for the first 2 hours, to lower the rate of false positive "Repeatedly failed to process event" errors.
 - Fix: correctly handle the case when a pull request is missing its head commit.  This was a regression from some time ago.
 - Fix: guard against a rare race condition that could lead to a crash when there are renamed files in the review.
