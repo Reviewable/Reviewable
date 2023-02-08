@@ -304,7 +304,7 @@ i.icon {
     font-weight: 900;
     font-display: block;
 }
-  
+
 @font-face {
     font-family: Icons-brands;
     src: url('/fonts/Icons-brands.woff2') format('woff2');
@@ -400,16 +400,18 @@ i.icon.check.status.success::before {content: "\f00c"; font-family: Icons-solid;
 i.icon.timeout.trial::before {content: "\e0d2"; font-family: Icons-regular;}
 i.icon.twitter::before {content: "\f099"; font-family: Icons-brands;}
 i.icon.on.waiting::before {content: "\f0a4"; font-family: Icons-regular;}
-i.icon.assigned::before {content: "\f85e"; font-family: Icons-regular;}
-i.icon.mentionee::before {content: "\f507"; font-family: Icons-regular;}
-i.icon.sort::before {content: "\e0ae"; font-family: Icons-regular;}
-i.icon.author::before {content: "\f4ff"; font-family: Icons-regular;}
-i.icon.reviewer::before {content: "\e5c5"; font-family: Icons-regular;}
+i.icon.active::before {content: "\f5f8"; font-family: Icons-solid;}
+i.icon.assignee.left::before {content: "\f105"; font-family: Icons-regular;}
+i.icon.assignee.right::before {content: "\f104"; font-family: Icons-regular;}
+i.icon.author::before {content: "\f4bf"; font-family: Icons-regular;}
+i.icon.mentionee::before {content: "\40"; font-family: Icons-regular;}
+i.icon.participant.status::before {content: "\e32e"; font-family: Icons-solid;}
+i.icon.participants::before {content: "\e533"; font-family: Icons-solid;}
 i.icon.passive::before {content: "\f21b"; font-family: Icons-duotone; position: absolute;}
 i.icon.passive::after {content: "\10f21b"; font-family: Icons-duotone;}
-i.icon.participants::before {content: "\e533"; font-family: Icons-solid;}
-i.icon.active::before {content: "\f5f8"; font-family: Icons-solid;}
-i.icon.participant.status::before {content: "\e32e"; font-family: Icons-solid;}
+i.icon.requested.review::before {content: "\e4bf"; font-family: Icons-regular;}
+i.icon.reviewer::before {content: "\f06e"; font-family: Icons-regular;}
+i.icon.sort::before {content: "\e0ae"; font-family: Icons-regular;}
 i.icon.blog::before {content: "\f09e"; font-family: Icons-light;}
 i.icon.careers::before {content: "\f5fc"; font-family: Icons-light;}
 i.icon.changelog::before {content: "\f1da"; font-family: Icons-light;}
@@ -529,7 +531,6 @@ i.icon.pull.request::before {content: "\e13c"; font-family: Icons-regular;}
 i.icon.recover::before {content: "\f895"; font-family: Icons-solid;}
 i.icon.renamed::before {content: "\f074"; font-family: Icons-regular;}
 i.icon.required::before {content: "\2a"; font-family: Icons-solid;}
-i.icon.requested.review::before {content: "\e4bf"; font-family: Icons-regular;}
 i.icon.ball.published.review.summary.tennis::before {content: "\f45e"; font-family: Icons-regular; color: #5BBD72;}
 i.icon.published.racquet.review.summary.tennis::before {content: "\f45a"; font-family: Icons-regular;}
 i.icon.review::before {content: "\e147"; font-family: Icons-regular;}
