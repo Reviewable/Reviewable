@@ -255,20 +255,21 @@ For each participant the following information is provided:
 
 Icon | Participant is:
 :----:|---------
-<i class="icon waiting on"></i> | is **responsible for the next step of this review.**
-<i class="icon waiting on circular no data"></i> | is **not being waited on in the review.**
-<i class="icon disposition blocking"></i> | is **blocking the review from being approved**.
-<img src="images/lgtm.png" style="max-width: 3em;"/> | says 'Everything **Looks good to me**!'
-<i class="icon disposition satisfied"></i> | has **approved the PR**.
-<i class="icon participant status circular no data"></i> | has **no status**.
-<i class="icon review requested"></i> | is **a requested reviewer**.
-<i class="icon assigned"></i> | is **assigned to this PR**.
-<i class="icon github circular no data"></i> | is **neither assigned nor requested**.
-<i class="icon author"></i> | is an **author of the PR**.
+<i class="icon waiting on"></i> | is **responsible for the next step** of this review.
+<i class="icon waiting on circular no data"></i> | is **not being waited on** in the review.
+<i class="icon sanction approved"></i> | has **approved the pull request**.
+<i class="icon sanction blocked"></i> | has **requested changes** to the pull request.
+<img src="images/lgtm.png" style="max-width: 3em;"/> | says 'Everything **looks good to me**!'
+<i class="icon disposition blocking"></i> | is **blocking a discussion** in the review.
+<i class="icon participant status circular no data"></i> | has **no approval-related status**.
+<i class="icon author"></i> | is an **author of the pull request**.
 <i class="icon reviewer"></i> | is a **reviewer**.
-<i class="icon passive"></i> | is looking around **without actively reviewing**.
-<i class="icon commit"></i> |  is either an **author of code within a commit or is a committer to the PR**.
-<i class="icon commit circular no data"></i> | has **not made or authored any commits in this PR**.
+<i class="icon review requested"></i> | is **a requested reviewer**.
+<i class="icon mentionee"></i> | has only been **@-mentioned** in a discussion.
+<i class="icon passive"></i> | is **not directly participating** in the review.
+<i class="icon assignee left"></i> <i class="icon assignee right"></i> | is **assigned to this pull request**.
+<i class="icon commit"></i> |  has either **authored or submitted a commit** in this pull request.
+<i class="icon commit circular no data"></i> | was **not involved with commits** in this pull request.
 <i class="icon active circular no data"></i> | is **not yet active in the review**.
 <i class="icon drafts"></i> | has **pending comments drafted** that are not yet published.
 <i class="icon drafts circular no data"></i> | has **no pending drafts**.
