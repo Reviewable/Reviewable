@@ -24,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't misattribute GitHub errors encountered by the server when using a secondary account to a repository's primary connecting account.  If the secondary user was suspended, for example, this could cause the repository to disconnect even though the connecting user's credentials were perfectly fine.
 - Fix: don't cross out disposition keyword if it matches the manually set disposition.  This happened most often when clicking "Done" in v3690.5783 and could be quite confusing.
 - Fix: avoid crash on the Repositories page.  This was a regression introduced in v3690.5783 and affecting only the Enterprise installs -- sorry!
+- Fix: avoid error message on the reviews dashboard when a cached pull request belongs to a repository the user no longer has access to.
 
 #### Release 3690.5783 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-01-15
 - Upd: rewrite the Reviewable badge in the pull request if it points to the wrong review in the same Reviewable instance.  Previously, we'd keep the incorrect link and report an error, but this proved hard to notice and fix in the common case where a developer copies a description (with badge) from an old pull request to a new one.  This scenario should now be handled correctly automatically.
