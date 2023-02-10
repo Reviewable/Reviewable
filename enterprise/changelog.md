@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3717.5839 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-02-10
 - New: add participants panel for quickly viewing all user roles, status, other stats, and taking user-related actions.
 - Upd: show account settings while scrolling so that visual setting updates can be seen in real time.
 - Upd: update user contrast settings to allow for customizing diff background colors for better accessibility.
