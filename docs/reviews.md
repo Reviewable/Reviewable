@@ -208,16 +208,16 @@ The **Show Unreviewed Diffs** button (exact wording varies) in this section will
 {:.tip}
 When applicable, you’ll find a small **Show full diff** link beneath the **Show Unreviewed Diffs** button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.
 
-When there is more than on reviewer participating in the review, a dropdown with three **review overlap strategy** options will appear beneath the button. This setting changes which file diffs are suggested for the user to review and implicitly sets the default for any future reviews.
-
 <a id="file-review-type"></a>
+
+When there is more than one reviewer participating in the review, a dropdown with three **review overlap strategy** options will appear beneath the button. This setting changes which file diffs are suggested for the user to review and implicitly sets the default for any future reviews.
 
 - **Skip files claimed by others** suggests files that have been previously reviewed by you, or that nobody has reviewed yet. Select this if you want to divide work by skipping files already reviewed by someone at an earlier version.
 - **Review any unreviewed files** suggests files to review if they have not been reviewed by anyone at the current revision. Select this if you want to combine efforts and review any file that needs reviewing.
 - **Review all files personally** suggests files you have not personally reviewed. Select this if you want to ensure that you review every file yourself, ignoring other reviewers.
 
 {:.tip}
-Re­gard­less of which op­tion you se­lect you will still be able to man­u­ally diff and re­view any file you want.
+Regardless of which option you select you will still be able to manually diff and review any file you want.
 
 <a id="changes-commits"></a>
 
