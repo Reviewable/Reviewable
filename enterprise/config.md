@@ -16,9 +16,9 @@ Set the application name, homepage URL, and application description to taste (bu
 
 Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  You don't need to enable Google Analytics.
 
-When your project is ready, select the _Realtime Database_ section and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.
+When your project is ready, go to _Build_ → _Realtime Database_ and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.
 
-When that's done, visit the _Authentication_ section and click _Get Started_.  Reviewable doesn't actually use Firebase Authentication so there's nothing more to do here (leave all the providers disabled), but this is the easiest way to have Firebase create a generic Web API Key for you.
+When that's done, go to _Build_ → _Authentication_ and click _Get Started_.  Reviewable doesn't actually use Firebase Authentication so there's nothing more to do here (leave all the providers disabled), but this is the easiest way to have Firebase create a generic Web API Key for you.
 
 Finally go to your Project Settings and prepare the following for configuring Reviewable:
 
