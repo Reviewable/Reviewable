@@ -8,7 +8,7 @@ If PRs appear to be missing from the list, try clicking the **Include stalled pu
 
 ![reviewable reviews list](images/reviews_4.png)
 
-PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the **Waiting on me** group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
+PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the **Waiting on me** group, the PRs that are only waiting on you appear before others; the logic that determines if a PR is waiting on you is described ([here](reviews.md#waiting-on)). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
 
 You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md).
 

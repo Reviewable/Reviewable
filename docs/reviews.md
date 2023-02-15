@@ -245,7 +245,7 @@ Any labels or milestones that have been applied to the PR appear in the Review d
 
 ![reviewable review labels](images/labels_1.png)
 
-## Participants Panel
+## Participants
 
 The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i> button. You can sort participants by each category using the <i class="icon sort"></i> button.
 
@@ -275,7 +275,18 @@ Icon | Participant is:
 <i class="icon drafts circular no data"></i> | has **no pending drafts**.
 <i class="icon comments circular no data"></i> | is **not engaged in any discussions**.
 
-### Participants Panel Actions
+### Waiting on
+
+Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"></i> pointing hand.  The list is roughly the union of the following:
+- All participants involved in unresolved discussions that are [unreplied](discussions.md#unreplied-discussions) for them.
+- All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.
+- All requested reviewers, or if none all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers .
+
+However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waiting-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)
+
+You can see the algorithm above written out as code [here](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) and [customize it](repositories.md#pendingreviewers) to better fit your workflow.
+
+### Actions
 
 #### Discussions
 
