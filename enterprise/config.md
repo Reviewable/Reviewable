@@ -162,6 +162,7 @@ Basic UI customization.
 
 * `REVIEWABLE_TERMS_URL`: The URL for the Terms link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_PRIVACY_URL`: The URL for the Privacy link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
+* `REVIEWABLE_DISABLED_CONNECTIONS`: A comma-separated list of fully qualified repository names that will not be allowed to connect to this Reviewable instance.
 
 ##### Container configuration
 
