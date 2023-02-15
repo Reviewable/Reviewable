@@ -551,7 +551,7 @@
 <h2><a class="header" href="#labels" id="labels">Labels</a></h2>
 <p>Any labels or milestones that have been applied to the PR appear in the Review discussion footer.</p>
 <p><img src="images/labels_1.png" alt="reviewable review labels" /></p>
-<h2><a class="header" href="#participants-panel" id="participants-panel">Participants Panel</a></h2>
+<h2><a class="header" href="#participants" id="participants">Participants</a></h2>
 <p>The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i> button. You can sort participants by each category using the <i class="icon sort"></i> button.</p>
 <p><img src="images/participants_panel_1.png" alt="reviewable review participants panel" /></p>
 <p>For each participant the following information is provided:</p>
@@ -576,7 +576,16 @@
 <tr><td align="center"><i class="icon drafts circular no data"></i></td><td>has <strong>no pending drafts</strong>.</td></tr>
 <tr><td align="center"><i class="icon comments circular no data"></i></td><td>is <strong>not engaged in any discussions</strong>.</td></tr>
 </tbody></table>
-<h3><a class="header" href="#participants-panel-actions" id="participants-panel-actions">Participants Panel Actions</a></h3>
+<h3><a class="header" href="#waiting-on" id="waiting-on">Waiting on</a></h3>
+<p>Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"></i> pointing hand.  The list is roughly the union of the following:</p>
+<ul>
+<li>All participants involved in unresolved discussions that are <a href="discussions.html#unreplied-discussions">unreplied</a> for them.</li>
+<li>All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.</li>
+<li>All requested reviewers, or if none all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers .</li>
+</ul>
+<p>However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waiting-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)</p>
+<p>You can see the algorithm above written out as code <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js">here</a> and <a href="repositories.html#pendingreviewers">customize it</a> to better fit your workflow.</p>
+<h3><a class="header" href="#actions" id="actions">Actions</a></h3>
 <h4><a class="header" href="#discussions" id="discussions">Discussions</a></h4>
 <p><img src="images/participants_panel_2.png" alt="participants panel dismiss from all" /></p>
 <p>If you have the necessary permissions on the repo, you can open the actions dropdown for another active participant and click <strong>dismiss from all</strong> in the drop-down, which will dismiss the participant from all unresolved discussions they are engaged in. You can undo this action until you publish.</p>
@@ -892,7 +901,7 @@
 <p>If PRs appear to be missing from the list, try clicking the <strong>Include stalled pull requests/reviews</strong> link at the bottom of the panel. You may also want to click the green <strong>Also show team reviews</strong> or <strong>Also show private reviews</strong> buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.</p>
 </div>
 <p><img src="images/reviews_4.png" alt="reviewable reviews list" /></p>
-<p>PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the <strong>Waiting on me</strong> group, the PRs that are only waiting on you appear before others. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).</p>
+<p>PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the <strong>Waiting on me</strong> group, the PRs that are only waiting on you appear before others; the logic that determines if a PR is waiting on you is described (<a href="reviews.html#waiting-on">here</a>). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).</p>
 <p>You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the <a href="repositories.html">Repository page</a>.</p>
 <div class="tip">
 <p>Loading the list of reviews for a single organization or repository will be much faster than doing so for all your repositories.</p>
@@ -1300,6 +1309,7 @@
 <p>A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the <code>description</code> instead.</p>
 <h4><a class="header" href="#pendingreviewers" id="pendingreviewers"><code>pendingReviewers</code></a></h4>
 <p>An array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.  You can either compute this value from scratch, or crib from the <code>review.pendingReviewers</code> input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own <code>pendingReviewers</code> from scratch, Reviewable will remove any users who are <a href="reviews.html#deferring-a-review">deferring</a> from the list of <code>pendingReviewers</code>, unless your code accesses <code>review.deferringReviewers</code>.</p>
+<p>You can read a description of the <a href="reviews.html#waiting-on">default pending reviewers logic</a> and take a look at the <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js">code</a> that computes the default value.</p>
 <h4><a class="header" href="#files-1" id="files-1"><code>files</code></a></h4>
 <p>An array of objects that look like <code>{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}</code>.  (It's OK to just augment the <code>review.files</code> structure with additional properties and return the whole thing here.)</p>
 <ul>
