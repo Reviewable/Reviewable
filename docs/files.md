@@ -193,7 +193,7 @@ Select the line (or lines) of code before making a comment. Once you have made a
 
 If you have already started writing a comment, you can click the <i class="icon create codeblock"></i> button in the actions bar and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
 
-![reviewable code suggestions](images/code_suggestions.gif)
+![reviewable code suggestions](images/code_suggestions.png)
 
 {:.tip}
 Double click the 'select diff lines' button to quickly grab the current, single line of code from inside an existing comment.
