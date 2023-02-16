@@ -155,7 +155,7 @@ The only way to collapse expanded diff lines back down is to change the diff bou
 
 ## Line-specific discussions
 
-Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.  If you select some code first, it will automatically be quoted and copied into your message.
+Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.
 
 ![reviewable fill diffs begin a new discussion](images/filediffs_12.png)
 
@@ -189,9 +189,9 @@ Select the line (or lines) of code before making a comment. Once you have made a
 
 ![reviewable insert code using command palette](images/command_palette.png)
 
-#### Adding code to existing comment
+#### Adding code to an existing comment
 
-If you have already started writing a comment, you can click the <i class="icon create codeblock"></i> button in the actions bar and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
+If you have already started writing a comment, you can click the <i class="icon create codeblock"></i> button in the actions menu and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
 
 ![reviewable code suggestions](images/code_suggestions.png)
 
