@@ -407,6 +407,24 @@
 <p>You can <a href="accountsettings.html#line-link-template">customize the line link</a> to open your favorite editor on the given line instead.</p>
 </div>
 <p>For lots more information on discussions, please see the <a href="discussions.html">next chapter</a>.</p>
+<h3><a class="header" href="#code-snippets-quoting-code-and-making-code-suggestions" id="code-snippets-quoting-code-and-making-code-suggestions">Code Snippets, Quoting Code, and Making Code Suggestions</a></h3>
+<p>It's easy to add new code, quote existing code, or make explicit code suggestions that show a diff of your proposed changes all right inside your comment. The most basic way to add a snippet of code to a comment is by clicking the <i class="icon create codeblock"></i> button in the actions menu and typing your code in the codeblock.</p>
+<p><img src="images/add_codeblock.png" alt="reviewable insert codeblock" /></p>
+<div class="tip">
+<p>You can add as many codeblocks as you want to your comment!</p>
+</div>
+<p>You can also insert existing code from the diffs into your codeblock. There are a couple of ways to get the code into the codeblock at your disposal.</p>
+<h4><a class="header" href="#before-making-a-comment" id="before-making-a-comment">Before making a comment</a></h4>
+<p>Select the line (or lines) of code before making a comment. Once you have made a selection you can use the command palette to insert the comment at the last selected line with a codeblock containing your selected code.</p>
+<p><img src="images/command_palette.png" alt="reviewable insert code using command palette" /></p>
+<h4><a class="header" href="#adding-code-to-existing-comment" id="adding-code-to-existing-comment">Adding code to existing comment</a></h4>
+<p>If you have already started writing a comment, you can click the <i class="icon create codeblock"></i> button in the actions bar and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.</p>
+<p><img src="images/code_suggestions.gif" alt="reviewable code suggestions" /></p>
+<div class="tip">
+<p>Double click the 'select diff lines' button to quickly grab the current, single line of code from inside an existing comment.</p>
+</div>
+<p>Code in the codeblock remains a code quote until you make a change to it inside the codeblock. Once a change is made, the codeblock becomes a suggestion and in preview mode you can preview the diff or turn off the preview by clicking the toggle in the codeblock header.</p>
+<p><img src="images/codeblock_preview_diffs.png" alt="reviewable codeblock preview diff" /></p>
 <h2><a class="header" href="#diff-customization" id="diff-customization">Diff customization</a></h2>
 <p>You can customize which files are diffed and how the diffs are displayed at the repository level.</p>
 <h3><a class="header" href="#generated-files" id="generated-files">Generated files</a></h3>
