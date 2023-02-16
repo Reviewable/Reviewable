@@ -173,6 +173,35 @@ You can [customize the line link](accountsettings.md#line-link-template) to open
 
 For lots more information on discussions, please see the [next chapter](discussions.md).
 
+### Code Snippets, Quoting Code, and Making Code Suggestions
+
+It's easy to add new code, quote existing code, or make explicit code suggestions that show a diff of your proposed changes all right inside your comment. The most basic way to add a snippet of code to a comment is by clicking the <i class="icon create codeblock"></i> button in the actions menu and typing your code in the codeblock.
+
+![reviewable insert codeblock](images/add_codeblock.png)
+
+{:.tip}
+You can add as many codeblocks as you want to your comment!
+
+You can also insert existing code from the diffs into your codeblock. There are a couple of ways to get the code into the codeblock at your disposal.
+
+#### Before making a comment
+Select the line (or lines) of code before making a comment. Once you have made a selection you can use the command palette to insert the comment at the last selected line with a codeblock containing your selected code.
+
+![reviewable insert code using command palette](images/command_palette.png)
+
+#### Adding code to existing comment
+
+If you have already started writing a comment, you can click the <i class="icon create codeblock"></i> button in the actions bar and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
+
+![reviewable code suggestions](images/code_suggestions.gif)
+
+{:.tip}
+Double click the 'select diff lines' button to quickly grab the current, single line of code from inside an existing comment.
+
+Code in the codeblock remains a code quote until you make a change to it inside the codeblock. Once a change is made, the codeblock becomes a suggestion and in preview mode you can preview the diff or turn off the preview by clicking the toggle in the codeblock header.
+
+![reviewable codeblock preview diff](images/codeblock_preview_diffs.png)
+
 ## Diff customization
 
 You can customize which files are diffed and how the diffs are displayed at the repository level.
