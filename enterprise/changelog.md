@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
 - Fix: correctly style notification emails.
 - Fix: ensure that some rare permission / token errors are attributed to the right user and will correctly cause a repository to be disconnected.
+- Fix: detect "no admin permissions" errors when a specific user is designated to post badge comments for a repository, and handle appropriately.
 
 #### Release 3717.5839 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-02-10
 - New: add participants panel for quickly viewing all user roles, status, other stats, and taking user-related actions.
