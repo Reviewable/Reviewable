@@ -137,6 +137,8 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 
 2. If you see a small, light-colored declaration immediately below the collapsed section, this indicates the nearest syntactic unit that the code below is a part of — e.g., a function or a class.  You can click this signature to expand the diff to show all of the syntactic unit.
 
+![reviewable syntactic unit expansion](images/syntactic_unit_expansion.png)
+
 3. In the collapsed section gap, you will see some subset of the following line counts.  Clicking on any of these collapsed line categories will expand only those lines (plus a bit of context around them).
 
 * **No changes** — lines with no changes at all between your current diff bounds.
