@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
+- Fix: properly handle commit messages generated when using squash merge.
+- Fix: avoid wrongly showing subscription needed banner if card is missing on free plans.
 - Fix: correctly style notification emails.
 - Fix: ensure that some rare permission / token errors are attributed to the right user and will correctly cause a repository to be disconnected.
 - Fix: detect "no admin permissions" errors when a specific user is designated to post badge comments for a repository, and handle appropriately.
