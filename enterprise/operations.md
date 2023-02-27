@@ -69,9 +69,8 @@ You can work with us to migrate in-progress reviews and user data from reviewabl
 First, you need to request a migration from Reviewable support and provide the following information:
 1. A list of all repos to be migrated, as a JSON array of `"owner/repo"` strings.  If it's not obvious we may ask for proof of ownership of the repos.
 2. A mapping of github.com numeric user IDs to new GHE user IDs, as a JSON object of `"github:MMMM": "github:NNNN"` key-value pairs, where `MMMM` is the old numeric ID and `NNNN` the new one.  Note that only settings and data related to reviews in the repos above will be migrated &mdash; no personal information gets copied.
-3. The numeric GHE user ID of a "ghost" user that will be substituted for any referenced users that don't appear in your mapping.  GitHub maintains the [ghost](https://github.com/ghost) account on github.com and you probably want to create something similar.
 
-Next, we'll extract the required data from the reviewable.io datastore and send you a large JSON file that you'll use as input for the third phase.  It's probably best if there's no activity in your repos during this step and the following one so you get a clean copy.
+Next, we'll extract the required data from the reviewable.io datastore and send you a large newline-delimited JSON file that you'll use as input for the third phase.  It's probably best if there's no activity in your repos during this step and the following one so you get a clean copy.
 
 Finally, you'll load the extracted data into your own Reviewable datastore and sync it with your GHE instance.  Note that existing data will be overwritten so it's best to do this on an installation that hasn't seen actual use yet.
 1. Make sure you've signed in to your instance of Reviewable with your license admin account at least once.
