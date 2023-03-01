@@ -13,6 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly style notification emails.
 - Fix: ensure that some rare permission / token errors are attributed to the right user and will correctly cause a repository to be disconnected.
 - Fix: detect "no admin permissions" errors when a specific user is designated to post badge comments for a repository, and handle appropriately.
+- Fix: don't send a notification to a user who connected a repository they no longer have access to every time they sign in.
+- Fix: don't display a spurious warning on the dashboard when the user was mentioned in a pull request they no longer have access to.
 
 #### Release 3717.5839 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-02-10
 - New: add participants panel for quickly viewing all user roles, status, other stats, and taking user-related actions.
