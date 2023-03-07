@@ -175,7 +175,9 @@ The **Review completion condition** section of the repository settings helps you
 
 In the **Condition Code** panel, you can edit the code that determines when a review is complete and otherwise tweaks low-level review data.  Simple things are pretty easy to accomplish but you have the power to implement arbitrarily complex logic if you need to.  You can find [a number of examples](https://github.com/Reviewable/Reviewable/tree/master/examples/conditions) in our repository to get you started, and full details follow below.
 
-The condition code will run in an isolated NodeJS 14.x environment (as of this writing — this gets updated regularly) that includes the 4.x `lodash` module available through the customary `_`.  Note the `lodash` version was updated to `4.x` on _9/9/2021_, so if you have a condition written before the update it will still use the `lodash` 3.x module.  You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
+The condition code will run in an isolated environment on AWS Lambda, Azure Functions, or in a VM, depending on your deployment. For `https://reviewable.io/` customers, this is AWS Lambda. As of this writing, and this gets updated regularly, deployments against AWS Lambda run in a NodeJS 18.x environment.
+
+The environment includes the 4.x `lodash` module available through the customary `_`.  Note the `lodash` version was updated to `4.x` on _9/9/2021_, so if you have a condition written before the update it will still use the `lodash` 3.x module.  You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
 
 {:.tip}
 You can update existing conditions to use `lodash` 4.x  by inserting a commmented **dependencies** flag anywhere in your condition code using the following format: ```// dependencies: lodash4```
