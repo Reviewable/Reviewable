@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't send a notification to a user who connected a repository they no longer have access to every time they sign in.
 - Fix: don't display a spurious warning on the dashboard when the user was mentioned in a pull request they no longer have access to.
 - Fix: detect declaration lines in Go code again.  This was a regression, going perhaps as far back as v3291.5093.
+- Fix: don't crash when switching a draft to Pondering disposition after previously switching the discussion to a different disposition.
 
 #### Release 3717.5839 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-02-10
 - New: add participants panel for quickly viewing all user roles, status, other stats, and taking user-related actions.
