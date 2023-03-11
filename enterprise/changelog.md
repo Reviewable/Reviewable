@@ -22,6 +22,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: detect declaration lines in Go code again.  This was a regression, going perhaps as far back as v3291.5093.
 - Fix: don't crash when switching a draft to Pondering disposition after previously switching the discussion to a different disposition.
 - Fix: when sending an individual comment, apply and clear out any other draft state associated with the discussion.  This includes applying any pending dismissals, and clearing out any acknowledgement so that the sent comment doesn't appear as new to the sender (!).
+- Fix: relax database schema to allow certain writes of review-dependent data after a review has been archived.  These writes don't occur in normal operation but can, for example, be issued when migrating to another instance.
 
 #### Release 3717.5839 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-02-10
 - New: add participants panel for quickly viewing all user roles, status, other stats, and taking user-related actions.
