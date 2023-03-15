@@ -1174,7 +1174,11 @@
 <h3><a class="header" href="#development-environment" id="development-environment">Development environment</a></h3>
 <p>The <strong>Review completion condition</strong> section of the repository settings helps you refine your code in a live evaluation environment.</p>
 <p>In the <strong>Condition Code</strong> panel, you can edit the code that determines when a review is complete and otherwise tweaks low-level review data.  Simple things are pretty easy to accomplish but you have the power to implement arbitrarily complex logic if you need to.  You can find <a href="https://github.com/Reviewable/Reviewable/tree/master/examples/conditions">a number of examples</a> in our repository to get you started, and full details follow below.</p>
-<p>The condition code will run in an isolated NodeJS 14.x environment (as of this writing — this gets updated regularly) that includes the 4.x <code>lodash</code> module available through the customary <code>_</code>.  Note the <code>lodash</code> version was updated to <code>4.x</code> on <em>9/9/2021</em>, so if you have a condition written before the update it will still use the <code>lodash</code> 3.x module.  You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.</p>
+<p>The condition code will run in an isolated NodeJS 18.x environment, which gets updated regularly.
+The environment includes the 4.x <code>lodash</code> module available through the customary <code>_</code>.
+Note the <code>lodash</code> version was updated to <code>4.x</code> on <em>9/9/2021</em>, so if you have a condition written before the update it will still use the <code>lodash</code> 3.x module.
+You can require other built-in Node modules, though some may be disallowed.
+Each invocation of your code must return a result within three seconds.</p>
 <div class="tip">
 <p>You can update existing conditions to use <code>lodash</code> 4.x  by inserting a commmented <strong>dependencies</strong> flag anywhere in your condition code using the following format: <code>// dependencies: lodash4</code></p>
 </div>
