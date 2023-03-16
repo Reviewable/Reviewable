@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add a "new comments for me" section to the dashboard that surfaces reviews where you have unread comments (including concluded ones!) but that aren't awaiting your action.
 - Upd: accept uploads of `webm` videos as comment attachments.
 - Upd: upgrade to Node 18 and Debian 11.
+- Fix: revert to center aligned merge/closed/archived notices in the dashboard.
 - Fix: strip extra whitespace that was copied when selecting over empty diff lines.
 - Fix: properly handle commit messages generated when using squash merge.
 - Fix: correctly style notification emails.
