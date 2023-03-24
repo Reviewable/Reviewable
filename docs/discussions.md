@@ -124,13 +124,13 @@ Your avatar in the lower-right corner of every discussion box has a small icon t
 
 ![reviewable dispositions](images/discussions_3.png)
 
-You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These are some examples of what you'll find there:
+You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These keywords perform the following default mapping:
 
 * FYI, Tip or Thanks → **<i class="fa fa-info-circle"></i> Informing**
 * BTW, Minor, Typo or Nit → **<i class="fa fa-circle-o"></i> Discussing**
+* Major, Bug, or Hold on → **<i class="fa fa-play-circle"></i> Blocking**
 * Working or Will do → **<i class="fa fa-play-circle"></i> Working**
 * ??? → **<i class="fa fa-play-circle"></i> Pondering**
-* Bug, Major, or Hold on → **<i class="fa fa-play-circle"></i> Blocking**
 
 Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.  If a word was accepted it will be highlighted in yellow; if it was discarded it will be crossed out.  Either way, you can click on it to get a short explanation of what happened.
 
