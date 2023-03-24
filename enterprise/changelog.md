@@ -7,10 +7,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3807.5940 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-03-23
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
 - New: the maximum upload file size is now configurable via the `REVIEWABLE_MAX_UPLOAD_IMAGE_SIZE` and `REVIEWABLE_MAX_UPLOAD_VIDEO_SIZE` environment variables.
-- Upd: respect nested language when syntax highlighting discussion codeblocks.
-- Upd: add date and time to last active column dropdown and better formatting for cells with multiple icons in the participants panel.
+- Upd: respect nested language when syntax highlighting discussion code blocks.
+- Upd: add date and time to last active column dropdown and improve formatting for cells with multiple icons in the participants panel.
 - Upd: add a "new comments for me" section to the dashboard that surfaces reviews where you have unread comments (including concluded ones!) but that aren't awaiting your action.
 - Upd: accept uploads of `webm` videos as comment attachments.
 - Upd: upgrade to Node 18 and Debian 11.
