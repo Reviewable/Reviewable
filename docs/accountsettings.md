@@ -47,7 +47,7 @@ You can use this to open the file in your favorite editor on the specific line t
 
 Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also that each repo directory is named the same as its repo.
 
-There are a few caveats for specific editors: 
+There are a few caveats for specific editors:
 
 * **Sublime Text:** You must install an appropriate URL handler.
 * **Emacs:** You must install the [Emacs URL Handler](https://github.com/typester/emacs-handler) on OS X.
@@ -59,7 +59,7 @@ There are a few caveats for specific editors:
 
 You can also specify a custom line link template by choosing the `Custom` option in the dropdown. If you would like to base your custom template on one of the available editor templates, first select that template in the dropdown and then select `Custom`.
 
-For example, if you initially select `VS Code` and then select `Custom`, the following template will populate the template field: 
+For example, if you initially select `VS Code` and then select `Custom`, the following template will populate the template field:
 
 `vscode://file//directory/with/repos/{{repo}}/{{path}}:{{line}}`
 
@@ -70,6 +70,8 @@ You can use these variables in your custom URL template:
 * `{{owner}}`: the repo owner (or organization) username.
 * `{{repo}}`: the repo name.
 * `{{pr}}`: the pull request number.
+* `{{headBranch}}`: the name of the head (source) branch.
+* `{{baseBranch}}`: the name of the base (target) branch.
 * `{{path}}`: the full path to the file (does not start with /).
 * `{{sha}}`: the commit sha of the latest revision in this review.
 * `{{line}}:` the line number in the latest revision of the file that best represents the original context in which the comment was made.
