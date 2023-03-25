@@ -317,7 +317,7 @@
 <p>You can use this to open the file in your favorite editor on the specific line that is under review.</p>
 <p><img src="images/line_editor_link.png" alt="line editor link in discussion" /></p>
 <p>Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that <code>/directory/with/repos</code> is the absolute path to the directory where your git repos live, and also that each repo directory is named the same as its repo.</p>
-<p>There are a few caveats for specific editors: </p>
+<p>There are a few caveats for specific editors:</p>
 <ul>
 <li><strong>Sublime Text:</strong> You must install an appropriate URL handler.</li>
 <li><strong>Emacs:</strong> You must install the <a href="https://github.com/typester/emacs-handler">Emacs URL Handler</a> on OS X.</li>
@@ -327,7 +327,7 @@
 </ul>
 <h3><a class="header" href="#custom-line-link-template" id="custom-line-link-template">Custom line link template</a></h3>
 <p>You can also specify a custom line link template by choosing the <code>Custom</code> option in the dropdown. If you would like to base your custom template on one of the available editor templates, first select that template in the dropdown and then select <code>Custom</code>.</p>
-<p>For example, if you initially select <code>VS Code</code> and then select <code>Custom</code>, the following template will populate the template field: </p>
+<p>For example, if you initially select <code>VS Code</code> and then select <code>Custom</code>, the following template will populate the template field:</p>
 <p><code>vscode://file//directory/with/repos/{{repo}}/{{path}}:{{line}}</code></p>
 <p>If you have entered your <code>/directory/with/repos/</code> path, it will automatically carry over to your new custom template.</p>
 <p>You can use these variables in your custom URL template:</p>
@@ -335,6 +335,8 @@
 <li><code>{{owner}}</code>: the repo owner (or organization) username.</li>
 <li><code>{{repo}}</code>: the repo name.</li>
 <li><code>{{pr}}</code>: the pull request number.</li>
+<li><code>{{headBranch}}</code>: the name of the head (source) branch.</li>
+<li><code>{{baseBranch}}</code>: the name of the base (target) branch.</li>
 <li><code>{{path}}</code>: the full path to the file (does not start with /).</li>
 <li><code>{{sha}}</code>: the commit sha of the latest revision in this review.</li>
 <li><code>{{line}}:</code> the line number in the latest revision of the file that best represents the original context in which the comment was made.</li>
