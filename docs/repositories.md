@@ -381,8 +381,8 @@ A URL string that Reviewable will send review status update notifications to.  Y
   "body": {
     "text": "<https://reviewable.io/reviews/reviewable/demo/1|*Review in progress: 1 of 4 files reviewed, 2 unresolved discussions*>\nWaiting on: *pkaminski*",
     "plainText": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions\nWaiting on: pkaminski",
-    "html": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions\n<br>Waiting on: <b>pkaminski</b>",
-    "markdown": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions  \nWaiting on: **pkaminski**"
+    "html": "<a href=\"https://reviewable.io/reviews/Reviewable/demo/1\">Review in progress</a>: 1 of 4 files reviewed, 2 unresolved discussions\n<br>Waiting on: <b>pkaminski</b>",
+    "markdown": "[Review in progress](https://reviewable.io/reviews/Reviewable/demo/1): 1 of 4 files reviewed, 2 unresolved discussions  \nWaiting on: **pkaminski**"
   },
   // And now the ultimate in customizability:
   // For if you want to build your own string, or interconnect with another system,
