@@ -364,7 +364,7 @@ A timestamp in milliseconds since the epoch for when the completion condition sh
 A URL string that Reviewable will send review status update notifications to.  You can hook this up directly to a Slack webhook or, through something like Zapier or Integromat, to most any other communication tool.  Specifically, whenever the `completed`, `description`,  `pendingReviewers`, or merge state of a review changes, after a short debouncing delay Reviewable will `POST` a JSON structure like the following to the webhook URL:
 ```js
 {
-  // for Slack, this is technically Markdown: https://www.markdownguide.org/tools/slack/
+  // for Slack, this is Slack's Markdown flavor. See https://www.markdownguide.org/tools/slack/ for details.
   "text": "<https://reviewable.io/reviews/reviewable/demo/1|*Demo code review (shared)*>  [Reviewable/demo #1]\nReview in progress: 1 of 4 files reviewed, 2 unresolved discussions\nWaiting on: *pkaminski*",
   // for other Markdown-based applications using more standard Markdown
   "markdown": "[Demo code review (shared)](https://reviewable.io/reviews/reviewable/demo/1)  \\[Reviewable/demo #1\\]\nReview in progress: 1 of 4 files reviewed, 2 unresolved discussions\nWaiting on: **pkaminski**",
@@ -374,25 +374,25 @@ A URL string that Reviewable will send review status update notifications to.  Y
   "html": "<b><a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Demo code review (shared)</a></b> &emsp; [Reviewable/demo #1]<br>Review in progress: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
   // for email gateways
   "subject": "Demo code review (shared) [Reviewable/demo #1]",
-  "htmlBody": "<a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Review in progress</a>: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
   "key": "Reviewable/demo/1",  // you can use this identifier for threading
   
-  // The following is meant for more customized workflows, so feel free to mix-and-match here and above:
+  // The following is meant for other workflows that separate the subject from the body, such as email-like applications:
+  "htmlBody": "<a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Review in progress</a>: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
   "body": {
     "text": "<https://reviewable.io/reviews/reviewable/demo/1|*Review in progress: 1 of 4 files reviewed, 2 unresolved discussions*>\nWaiting on: *pkaminski*",
     "plainText": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions\nWaiting on: pkaminski",
     "html": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions\n<br>Waiting on: <b>pkaminski</b>",
-    "markdown": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions  \nWaiting on: **fahhem**"
+    "markdown": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions  \nWaiting on: **pkaminski**"
   },
   // And now the ultimate in customizability:
   // For if you want to build your own string, or interconnect with another system,
   // or really anything else!
   "data": {
     "pullRequest": {
-      "number": 1,
       "title": "Demo code review (shared)",
       "owner": "Reviewable",
       "repository": "Reviewable",
+      "number": 1,
       "state": "open"
     },
     "review": {
