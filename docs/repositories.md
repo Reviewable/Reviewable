@@ -109,6 +109,16 @@ If you are an organization owner, you can set a repo as the settings prototype f
 {:.tip}
 This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future).
 
+If you would like to see if there is or is not a current prototype repository, and which repository it is, simply hover over the link. A tooltip will come up with one of the following texts:
+
+* "Checking permissions...", "Loading current state..."
+  * Please wait a few seconds.
+* "Restricted to organization owners."
+  * You cannot view or edit this setting unless you're an organization owner.
+* "No prototype repository set."
+* "This is the current prototype repository."
+* "The current prototype repository is ____.".
+
 ### Reviewable badge
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
