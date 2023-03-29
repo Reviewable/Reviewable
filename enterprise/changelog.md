@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: fix style bug that caused inconsistent font size in participant panel dropdowns.
 - Fix: avoid obscuring disposition dropdowns which would happen when empty drafts were collapsed after their dropdown was opened.
 - Fix: address visual bug where new disposition ribbon spanned full width of discussions.
+- Fix: work around a bug in GitHub's Markdown renderer that would render some text with unterminated HTML elements as an empty document.  This was always a problem, but since v3807.5940 it would also cause permission denied errors when trying to post such comments as we tightened up the schema.
 
 #### Release 3807.5940 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-03-23
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
