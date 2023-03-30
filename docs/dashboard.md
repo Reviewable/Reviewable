@@ -10,20 +10,22 @@ If PRs appear to be missing from the list, try clicking the **Include stalled pu
 
 PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the **Waiting on me** group, the PRs that are only waiting on you appear before others; the logic that determines if a PR is waiting on you is described ([here](reviews.md#waiting-on)). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
 
-You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md).
+You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md), or by entering the full repository name and clicking on the "Go to dashboard for..." link under the query field.
 
 {:.tip}
 Loading the list of reviews for a single organization or repository will be much faster than doing so for all your repositories.
 
 You can further modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.
 
+The time since the list of PRs was last updated is displayed under the header.  The list refreshes automatically at regular intervals, but you can also force an immediate refresh by reloading the page.
+
 {:.tip}
-Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow-up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  To show older closed PRs click **Show more concluded reviews** at the bottom of the panel, repeating as necessary.
+Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  To show older closed PRs click **Show more concluded reviews** at the bottom of the panel, repeating as necessary.
 
 
 ## Review state
 
-Each review in the listing indicates the state of the review, in more-or-less real time.  The author of the PR is shown first. People whose attention the review currently needs are show to the right of the <i class="fa fa-hand-o-right" style="color: #7D8084"></i>, while other participants follow the <i class="fa fa-pause" style="color: #7D8084"></i>. You can see the approval status for each reviewer (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested), as well as the pull request summary, current milestone, and labels (if any).
+Each review in the listing indicates the state of the review, in more-or-less real time.  People whose attention the review currently needs are show to the right of the <i class="fa fa-hand-o-right" style="color: #7D8084"></i>, while other participants follow the <i class="fa fa-circle-o" style="color: #7D8084"></i>.  Each avatar is decorated with the participant's current most important status, including PR authorship, GitHub approval (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested), discussion blocker, and LGTM. The rest of the line shows the pull request summary, current milestone, and labels (if any).
 
 ![reviews list](images/reviews_10.png)
 
@@ -31,7 +33,7 @@ The <i class="fa fa-chain-broken" style="color: #7D8084"></i> icon indicates tha
 
 A <i class="fa fa-calendar-minus-o" style="color: #7D8084"></i> icon indicates a stalled review that has not been updated in over two weeks.
 
-Counter reflect the same information as you'll see on the review page:
+Counters reflect the same information as you'll see on the review page:
 
 ![reviewable review state](images/reviews_5.png)
 
