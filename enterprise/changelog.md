@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add "thanks" as a keyword to set disposition to Informing.  (Like other keywords for Informing, it only works in the first comment of a discussion.)
 - Upd: include `headBranch` and `baseBranch` in the available custom line link variables.
 - Upd: add link back to the reviews dashboard to the bottom of the review page.
+- Upd: revamp the avatars column on the reviews dashboard: improve the iconography, indicate more statuses than just GitHub approval, and add a tooltip to the ellipsis listing the participants that didn't fit.
 - Fix: guard against a rare crash when a provisional renamed file disappears from the pull request.
 - Fix: refine schema constraints to guard against partial review structures being written.  In very rare cases, if a write was happening while a review was being automatically archived, this could lead to a broken review.
 - Fix: remove unnecessary "no statuses fetched" warning from logs.
