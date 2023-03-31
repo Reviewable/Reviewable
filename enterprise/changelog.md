@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: include `headBranch` and `baseBranch` in the available custom line link variables.
 - Upd: add link back to the reviews dashboard to the bottom of the review page.
 - Upd: revamp the avatars column on the reviews dashboard: improve the iconography, indicate more statuses than just GitHub approval, and add a tooltip to the ellipsis listing the participants that didn't fit.
+- Upd: drop events from disconnected repositories that still have a webhook enabled earlier, to improve server performance and reduce pressure on Firebase.
 - Fix: guard against a rare crash when a provisional renamed file disappears from the pull request.
 - Fix: refine schema constraints to guard against partial review structures being written.  In very rare cases, if a write was happening while a review was being automatically archived, this could lead to a broken review.
 - Fix: remove unnecessary "no statuses fetched" warning from logs.
@@ -24,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prioritize generated file detection over other special file natures (long lines, etc.).
 - Fix: ensure Android mobile login works even with GitHub app installed
 - Fix: fix extremely rare race condition when computing file rename matches that could result in a crash.
+- Fix: don't spam a user who connected a repository then lost access to it with endless entreaties to sign back in.
 
 #### Release 3807.5940 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-03-23
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
