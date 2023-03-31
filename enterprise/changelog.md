@@ -22,7 +22,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: address visual bug where new disposition ribbon spanned full width of discussions.
 - Fix: work around a bug in GitHub's Markdown renderer that would render some text with unterminated HTML elements as an empty comment.  This was always a problem, but since v3807.5940 it would also cause permission denied errors when trying to post such comments as we tightened up the schema.
 - Fix: prioritize generated file detection over other special file natures (long lines, etc.).
-- Fix: Android mobile login works even with GitHub app installed
+- Fix: ensure Android mobile login works even with GitHub app installed
+- Fix: fix extremely rare race condition when computing file rename matches that could result in a crash.
 
 #### Release 3807.5940 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-03-23
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
