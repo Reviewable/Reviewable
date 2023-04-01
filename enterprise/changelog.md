@@ -26,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure Android mobile login works even with GitHub app installed
 - Fix: fix extremely rare race condition when computing file rename matches that could result in a crash.
 - Fix: don't spam a user who connected a repository then lost access to it with endless entreaties to sign back in.
+- Fix: be more selective about eliding a status check context in the checks dropdown if it also shows up in the check's description.
 
 #### Release 3807.5940 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-03-23
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
