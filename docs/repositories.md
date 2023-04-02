@@ -406,8 +406,9 @@ A URL string that Reviewable will send review status update notifications to.  Y
       "state": "open"
     },
     "review": {
-      "url": "https://reviewable.io/reviews/Reviewable/Reviewable/1",
-      "completed": false
+      "url": "https://reviewable.io/reviews/Reviewable/demo/1",
+      "completed": false,
+      "status": "0 of 4 files reviewed, 3 unresolved discussions"
     },
     "usernames": {
       "author": "pkaminski",
