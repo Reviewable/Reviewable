@@ -28,6 +28,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't spam a user who connected a repository then lost access to it with endless entreaties to sign back in.
 - Fix: be more selective about eliding a status check context in the checks dropdown if it also shows up in the check's description.
 - Fix: ensure that unreplied discussions are always shown in the diff.  Prior to this fix, it was occasionally possible to have a non-zero red discussion counter that did nothing when clicked, as the unreplied discussions were collapsed into gutter icons likely due to a race condition.  Incidentally, this fix also addressed similar issues when toggling trust-and-verify mode on and off.
+- Fix: limit the width of discussions that appear in a diff viewer when the diff is collapsed, which would previously span the entire column, no matter how wide.
 
 #### Release 3807.5940 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-03-23
 - New: add support for disabled repository connections via the `REVIEWABLE_DISABLED_CONNECTIONS` environment variable.
