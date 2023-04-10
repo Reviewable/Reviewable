@@ -84,6 +84,18 @@ When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mda
 
 Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css`.
 
+### Code Coverage Bars
+
+If you have Reviewable set up to [show code coverage bars](repositories.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet.
+
+```css
+:root {
+  --coverage-bar-color-full: /* Custom color here*/;
+  --coverage-bar-color-partial: /* Custom color here*/;
+  --coverage-bar-color-none: /* Custom color here*/;
+}
+```
+
 ### Victory bunny
 
 Don't like the merge bunny?  Turn it off like this:
