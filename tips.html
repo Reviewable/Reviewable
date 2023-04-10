@@ -359,6 +359,14 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 }
 </code></pre>
 <p>Or just use this link:  <code>https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css</code>.</p>
+<h3><a class="header" href="#code-coverage-bars" id="code-coverage-bars">Code Coverage Bars</a></h3>
+<p>If you have Reviewable set up to <a href="repositories.html#code-coverage">show code coverage bars</a> in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet.</p>
+<pre><code class="language-css">:root {
+  --coverage-bar-color-full: /* Custom color here*/;
+  --coverage-bar-color-partial: /* Custom color here*/;
+  --coverage-bar-color-none: /* Custom color here*/;
+}
+</code></pre>
 <h3><a class="header" href="#victory-bunny" id="victory-bunny">Victory bunny</a></h3>
 <p>Don't like the merge bunny?  Turn it off like this:</p>
 <pre><code class="language-css">.victory.decor {display: none}
