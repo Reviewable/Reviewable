@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: revamp the avatars column on the reviews dashboard: improve the iconography, indicate more statuses than just GitHub approval, and add a tooltip to the ellipsis listing the participants that didn't fit.
 - Upd: drop events from disconnected repositories that still have a webhook enabled earlier, to improve server performance and reduce pressure on Firebase.
 - Upd: make code coverage indicators customizable via custom stylesheets.
+- Upd: improve mapping of comments from GitHub into Reviewable.  We now correctly separate multiple threads attached to the same line, and sync file-level comments and line comments where we couldn't map the line to the top of the file.
 - Fix: guard against a rare crash when a provisional renamed file disappears from the pull request.
 - Fix: refine schema constraints to guard against partial review structures being written.  In very rare cases, if a write was happening while a review was being automatically archived, this could lead to a broken review.
 - Fix: remove unnecessary "no statuses fetched" warning from logs.
