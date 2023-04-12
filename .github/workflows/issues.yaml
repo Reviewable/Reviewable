@@ -8,7 +8,7 @@ jobs:
   automate-project-columns:
     runs-on: ubuntu-latest
     steps:
-      - uses: leonsteinhaeuser/project-beta-automations@v2.0.1
+      - uses: leonsteinhaeuser/project-beta-automations@v2.1.0
         with:
           gh_token: ${{ secrets.ORGANIZATION_PROJECT_TOKEN }}
           organization: reviewable
