@@ -127,6 +127,7 @@ Your avatar in the lower-right corner of every discussion box has a small icon t
 You can also change your disposition as you're writing your comment without touching the mouse. When you create a new draft notice — before you begin typing — the small list of disposition mappings in the lower-right corner of the draft box. These keywords perform the following default mapping:
 
 * FYI, Tip or Thanks → **<i class="fa fa-info-circle"></i> Informing**
+* LGTM, Done → **<i class="fa fa-check-circle"></i> Satisfied**
 * BTW, Minor, Typo or Nit → **<i class="fa fa-circle-o"></i> Discussing**
 * Major, Bug, or Hold on → **<i class="fa fa-play-circle"></i> Blocking**
 * Working or Will do → **<i class="fa fa-play-circle"></i> Working**
