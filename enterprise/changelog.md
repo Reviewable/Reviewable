@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+- Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
 - Fix: infer GitHub search timeout failures in dashboard queries and do our best to reshape the queries until they succeed.  This should reduce or eliminate "something went wrong" errors.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
