@@ -90,9 +90,9 @@ If you have Reviewable set up to [show code coverage bars](repositories.md#code-
 
 ```css
 :root {
-  --coverage-bar-color-full: /* Custom color here*/;
-  --coverage-bar-color-partial: /* Custom color here*/;
-  --coverage-bar-color-none: /* Custom color here*/;
+  --coverage-bar-color-full: #ABD1F2 /* light blue */;
+  --coverage-bar-color-partial: #CDE5FA /* lighter blue */;
+  --coverage-bar-color-none: #FFD6A9 /* orange */;
 }
 ```
 
