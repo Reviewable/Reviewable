@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ignore "go to file matrix" command if the page doesn't have a file matrix.
 - Fix: count reverted files towards the threshold that switches the view to single-file mode.
 - Fix: Regression introduced in 3663.5716 causing small regions of collapsed lines to be rendered in diffs.
+- Fix: avoid a rare crash when moving directly from the dashboard to a review with a discussion target in the URL.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
 - Upd: recognize draft pull requests more reliably, and indicate draft state in review status description.
