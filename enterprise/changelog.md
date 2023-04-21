@@ -9,10 +9,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
 - Upd: improved `?debug=latency` to log much more comprehensive page load latency stats.
+- Upd: implement filtering by participant or author on the dashboard (try clicking on an avatar!), and move the author avatar to the pull request title as it was feeling a bit lonely out there on the right.
 - Fix: infer GitHub search timeout failures in dashboard queries and do our best to reshape the queries until they succeed.  This should reduce or eliminate "something went wrong" errors.
 - Fix: avoid overwriting selected text in draft when uploading an image.
 - Fix: ignore "go to file matrix" command if the page doesn't have a file matrix.
 - Fix: count reverted files towards the threshold that switches the view to single-file mode.
+- Fix: Regression introduced in 3663.5716 causing small regions of collapsed lines to be rendered in diffs.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
 - Upd: recognize draft pull requests more reliably, and indicate draft state in review status description.
