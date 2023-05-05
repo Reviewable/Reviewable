@@ -24,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show command palette if only non-delta content selected in single-column diff.
 - Fix: don't mix added/removed lines when making a selection in a code block diff.
 - Fix: treat a required failing PullApprove status check as potentially successful when deciding whether publishing might trigger auto merge.
+- Fix: Set custom contrast settings when the page loads, not when account settings menu is opened.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
 - Upd: recognize draft pull requests more reliably, and indicate draft state in review status description.
