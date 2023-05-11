@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add diff (patch) syntax highlighting, and don't mark a leading space on an otherwise empty line with a red dot in diffs of such files.
 - Upd: add a command palette to comment selections that allows for explicit quoting of selected text, and remove auto-quoting of the selection upon draft creation for both comments and the diff.
 - Upd: retain Markdown styling in comment quotes.
+- Upd: show failing checks that are not required in orange in the status bar checks ring.
 - Fix: infer GitHub search timeout failures in dashboard queries and do our best to reshape the queries until they succeed.  This should reduce or eliminate "something went wrong" errors.
 - Fix: avoid overwriting selected text in draft when uploading an image.
 - Fix: ignore "go to file matrix" command if the page doesn't have a file matrix.
@@ -25,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't mix added/removed lines when making a selection in a code block diff.
 - Fix: treat a required failing PullApprove status check as potentially successful when deciding whether publishing might trigger auto merge.
 - Fix: Set custom contrast settings when the page loads, not when account settings menu is opened.
+- Fix: when following a permalink to a comment in Reviewable that originated from GitHub, correctly jump to and focus the comment.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
 - Upd: recognize draft pull requests more reliably, and indicate draft state in review status description.
