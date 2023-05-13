@@ -30,6 +30,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: when following a permalink to a comment in Reviewable that originated from GitHub, correctly jump to and focus the comment.
 - Fix: add missing contextual help for the selection command palette.
 - Fix: ensure the selection command palette doesn't show up offscreen.
+- Fix: Major improvements to participants panel loading performance in reviews with many participants.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
 - Upd: recognize draft pull requests more reliably, and indicate draft state in review status description.
