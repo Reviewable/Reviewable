@@ -7,8 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
-- Upd: improved `?debug=latency` to log much more comprehensive page load latency stats.
+- Upd: improve `?debug=latency` to log much more comprehensive page load latency stats.
 - Upd: implement filtering by participant or author on the dashboard (try clicking on an avatar!), and move the author avatar to the pull request title as it was feeling a bit lonely out there on the right.
 - Upd: automatically collapse groups with 200+ files, and don't count files in collapsed groups towards the threshold used to automatically hide the file matrix.
 - Upd: add diff (patch) syntax highlighting, and don't mark a leading space on an otherwise empty line with a red dot in diffs of such files.
@@ -20,17 +22,17 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid overwriting selected text in draft when uploading an image.
 - Fix: ignore "go to file matrix" command if the page doesn't have a file matrix.
 - Fix: count reverted files towards the threshold that switches the view to single-file mode.
-- Fix: Regression introduced in 3663.5716 causing small regions of collapsed lines to be rendered in diffs.
+- Fix: fix regression introduced in v3663.5716 causing small regions of collapsed lines to be rendered in diffs.
 - Fix: avoid a rare crash when moving directly from the dashboard to a review with a discussion target in the URL.
 - Fix: ensure that discussions with a draft are always displayed, even if they're replied and resolved. This should avoid the situation where you have a red non-zero draft counter but clicking it doesn't navigate to a discussion.
 - Fix: show command palette if only non-delta content selected in single-column diff.
 - Fix: don't mix added/removed lines when making a selection in a code block diff.
 - Fix: treat a required failing PullApprove status check as potentially successful when deciding whether publishing might trigger auto merge.
-- Fix: Set custom contrast settings when the page loads, not when account settings menu is opened.
+- Fix: set custom contrast settings when the page loads, not when account settings menu is opened.
 - Fix: when following a permalink to a comment in Reviewable that originated from GitHub, correctly jump to and focus the comment.
 - Fix: add missing contextual help for the selection command palette.
 - Fix: ensure the selection command palette doesn't show up offscreen.
-- Fix: Major improvements to participants panel loading performance in reviews with many participants.
+- Fix: make major improvements to participants panel loading performance in reviews with many participants.
 
 #### Release 3827.6001 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-04-11
 - Upd: recognize draft pull requests more reliably, and indicate draft state in review status description.
