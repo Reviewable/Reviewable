@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+- Fix: prevent a crash on the reviews dashboard when Safari disallows access to local storage.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
