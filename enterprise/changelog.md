@@ -8,6 +8,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Fix: prevent a crash on the reviews dashboard when Safari disallows access to local storage.
+- Fix: don't offer quoting via the selection palette to signed out users.
+- Fix: make normal (short) clicks work consistently on the Publish button even if the page has been loaded for a very long time.
+- Fix: guard against rare crash in code block editor.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
