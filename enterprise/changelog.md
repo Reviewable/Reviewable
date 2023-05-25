@@ -13,6 +13,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against rare crash in code block editor.
 - Fix: prevent review from loading forever for some ill-fated draft discussion states.
 - Fix: collapse discussions upon resolving (regression introduced in v3657.5690).
+- Fix: don't crash when displaying a review with a milestone assigned.  Also clean up styling a bit.
+- Fix: prevent page from being closed if an operation is in progress.
+- Fix: Don't show empty avatar image placeholders where no image would be shown.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
