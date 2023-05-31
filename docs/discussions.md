@@ -129,9 +129,9 @@ You can also change your disposition as you're writing your comment without touc
 * FYI or Tip → **<i class="fa fa-info-circle"></i> Informing**
 * LGTM or Done → **<i class="fa fa-check-circle"></i> Satisfied**
 * BTW, Minor, Typo or Nit → **<i class="fa fa-circle-o"></i> Discussing**
-* Major, Bug, or Hold on → **<i class="fa fa-play-circle"></i> Blocking**
+* Major, Bug, or Hold on → **<i class="fa fa-minus-circle"></i> Blocking**
 * Working or Will do → **<i class="fa fa-play-circle"></i> Working**
-* ??? → **<i class="fa fa-play-circle"></i> Pondering**
+* ??? → **<i class="fa fa-question-circle"></i> Pondering**
 
 Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.  If a word was accepted it will be highlighted in yellow; if it was discarded it will be crossed out.  Either way, you can click on it to get a short explanation of what happened.
 
