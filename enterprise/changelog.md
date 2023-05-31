@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent crashes when hovering over participant panel cells.
 - Fix: make sure file headers don't move past the status bar when scrolling.
 - Fix: don't remove words that match dispositions names (e.g., "blocking") from comments posted to the pull request outside Reviewable.
+- Fix: post Reviewable's status checks for commits created by GitHub's merge queues.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
