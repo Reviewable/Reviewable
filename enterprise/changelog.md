@@ -21,7 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent crashes when hovering over participant panel cells.
 - Fix: make sure file headers don't move past the status bar when scrolling.
 - Fix: don't remove words that match dispositions names (e.g., "blocking") from comments posted to the pull request outside Reviewable.
-- Fix: post Reviewable's status checks for commits created by GitHub's merge queues.
+- Fix: post Reviewable's status checks for commits created by GitHub's merge queues.  There's also a new `review.pullRequest.mergeQueueCheck` boolean property that lets completion conditions know whether they're running on a merge queue commit or on a normal one.
 - Fix: don't try to fetch commit statuses for an undefined SHA.
 - Fix: prevent users from signing out in the middle of a merge operation.
 - Fix: copy icon no longer shows above long paths in the file header.
