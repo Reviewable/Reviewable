@@ -486,6 +486,8 @@ Each invocation of your code must return a result within three seconds.</p>
     source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'},
     // one of dirty, unknown, blocked, behind, unstable, has_hooks, clean, or draft
     mergeability: 'clean',
+    // whether this completion is running on a merge queue commit or on a normal one
+    mergeQueueCheck: false,
     checks: {
       Shippable: {
         state: 'failure',
@@ -607,7 +609,7 @@ Each invocation of your code must return a result within three seconds.</p>
   // for email gateways
   &quot;subject&quot;: &quot;Demo code review (shared) [Reviewable/demo #1]&quot;,
   &quot;key&quot;: &quot;Reviewable/demo/1&quot;,  // you can use this identifier for threading
-  
+
   // The following is meant for other workflows that separate the subject from the body, such as email-like applications:
   &quot;htmlBody&quot;: &quot;&lt;a href=\&quot;https://reviewable.io/reviews/reviewable/demo/1\&quot;&gt;Review in progress&lt;/a&gt;: 1 of 4 files reviewed, 2 unresolved discussions&lt;br&gt;Waiting on: &lt;b&gt;pkaminski&lt;/b&gt;&quot;,
   &quot;body&quot;: {
