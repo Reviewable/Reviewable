@@ -253,6 +253,8 @@ The current state of the review is accessible to your code via the `review` vari
     source: {owner: 'pkaminski', repo: 'sample', branch: 'pkaminski-patch-9'},
     // one of dirty, unknown, blocked, behind, unstable, has_hooks, clean, or draft
     mergeability: 'clean',
+    // whether this completion is running on a merge queue commit or on a normal one
+    mergeQueueCheck: false,
     checks: {
       Shippable: {
         state: 'failure',
@@ -385,7 +387,7 @@ A URL string that Reviewable will send review status update notifications to.  Y
   // for email gateways
   "subject": "Demo code review (shared) [Reviewable/demo #1]",
   "key": "Reviewable/demo/1",  // you can use this identifier for threading
-  
+
   // The following is meant for other workflows that separate the subject from the body, such as email-like applications:
   "htmlBody": "<a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Review in progress</a>: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
   "body": {
