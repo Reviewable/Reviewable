@@ -25,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't try to fetch commit statuses for an undefined SHA.
 - Fix: prevent users from signing out in the middle of a merge operation.
 - Fix: copy icon no longer shows above long paths in the file header.
+- Fix: remove user display name and avatar from Reviewable if they're deleted from the GitHub profile.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
