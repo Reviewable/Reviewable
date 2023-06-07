@@ -26,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent users from signing out in the middle of a merge operation.
 - Fix: copy icon no longer shows above long paths in the file header.
 - Fix: remove user display name and avatar from Reviewable if they're deleted from the GitHub profile.
+- Fix: wait for session to be resumed before sending analytics events, so we don't send anonymous events when the user was actually signed in.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
