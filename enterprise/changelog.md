@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add actions dropdown to file and discussion headers, including 'link to discussion' and 'edit in GitHub' actions.
 - Upd: add hints to line link template field in account settings.
 - Upd: send all analytics event via a queue in the database, so only the server connects to `REVIEWABLE_ANALYTICS_URL`.  While at it, retry failed requests a few times to smooth over any transient errors.
+- Upd: respect the "BTW" keyword only in a user's first comment of a discussion, to reduce the risk of inadverent disposition changes in follow up comments.
 - Fix: prevent a crash on the reviews dashboard when Safari disallows access to local storage.
 - Fix: don't offer quoting via the selection palette to signed out users.
 - Fix: make normal (short) clicks work consistently on the Publish button even if the page has been loaded for a very long time.
@@ -28,7 +29,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: copy icon no longer shows above long paths in the file header.
 - Fix: remove user display name and avatar from Reviewable if they're deleted from the GitHub profile.
 - Fix: wait for session to be resumed before sending analytics events, so we don't send anonymous events when the user was actually signed in.
-- Fix: respect the "BTW" keyword only in a user's first comment of a discussion, to reduce the risk of inadverent disposition changes in follow up comments.
 
 #### Release 3842.6109 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-05-15
 - Upd: revert the "thanks" keyword for the Informing disposition, as it's too generic and has proven error-prone in practice.
