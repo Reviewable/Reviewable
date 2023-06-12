@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add hints to line link template field in account settings.
 - Upd: send all analytics event via a queue in the database, so only the server connects to `REVIEWABLE_ANALYTICS_URL`.  While at it, retry failed requests a few times to smooth over any transient errors.
 - Upd: respect the "BTW" keyword only in a user's first comment of a discussion, to reduce the risk of inadverent disposition changes in follow up comments.
+- Upd: highlight `.toml` files.
 - Fix: prevent a crash on the reviews dashboard when Safari disallows access to local storage.
 - Fix: don't offer quoting via the selection palette to signed out users.
 - Fix: make normal (short) clicks work consistently on the Publish button even if the page has been loaded for a very long time.
