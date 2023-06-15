@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+- Upd: improve latency for auto-connecting repositories if the repository creation event somehow gets lost, by listening to other repository-related events as well.
 - Fix: improve Firebase data caching behavior on the servers.
 - Fix: allow dashboard filtering by clicks on bot users.
 - Fix: in Chrome, keep user filtering working when bot users are displayed on any PRs.
