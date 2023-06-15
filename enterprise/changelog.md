@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - Fix: improve Firebase data caching behavior on the servers.
+- Fix: allow dashboard filtering by clicks on bot users.
+- Fix: in Chrome, keep user filtering working when bot users are displayed on any PRs.
 
 #### Release 3923.6172 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-14
 - New: add actions dropdown to file and discussion headers, including 'link to discussion' and 'edit in GitHub' actions.
