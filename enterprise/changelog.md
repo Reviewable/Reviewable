@@ -12,7 +12,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow dashboard filtering by clicks on bot users.
 - Fix: in Chrome, keep user filtering working when bot users are displayed on any PRs.
 
-#### Release 3923.6172 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-14
+#### Release 3923.6172 (min 3619.5594 GHE 3.10+) 2023-06-14
+**WARNING**: this release only works with GHE 3.10+.
 - New: add actions dropdown to file and discussion headers, including 'link to discussion' and 'edit in GitHub' actions.
 - Upd: add hints to line link template field in account settings.
 - Upd: send all analytics events via a queue in the database, so only the server connects to `REVIEWABLE_ANALYTICS_URL`.  While at it, retry failed requests a few times to smooth over any transient errors.
