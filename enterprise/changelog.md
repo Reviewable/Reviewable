@@ -14,6 +14,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: Ensure code quote selection handles cannot get stuck behind discussions.
 - Fix: avoid persistent high CPU loads after repeatedly moving back-and-forth between a large review and the dashboard (regression introduced in v3717.5839).
 - Fix: adjust minor layout issues in collapsed diff regions.
+- Fix: handle AWS Lambda `ResourceConflictException` errors more gracefully.
+- Fix: prevent new GraphQL query that checks for merge queue activity from breaking under older versions of GHE.
 
 #### Release 3923.6172 (min 3619.5594 GHE 3.10+) 2023-06-14
 **WARNING**: this release only works with GHE 3.10+.
