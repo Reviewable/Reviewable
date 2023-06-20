@@ -11,6 +11,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve Firebase data caching behavior on the servers.
 - Fix: allow dashboard filtering by clicks on bot users.
 - Fix: in Chrome, keep user filtering working when bot users are displayed on any PRs.
+- Fix: Ensure code quote selection handles cannot get stuck behind discussions.
+- Fix: avoid persistent high CPU loads after repeatedly moving back-and-forth between a large review and the dashboard (regression introduced in v3717.5839).
+- Fix: adjust minor layout issues in collapsed diff regions.
 
 #### Release 3923.6172 (min 3619.5594 GHE 3.10+) 2023-06-14
 **WARNING**: this release only works with GHE 3.10+.
