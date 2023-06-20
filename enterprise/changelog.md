@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: adjust minor layout issues in collapsed diff regions.
 - Fix: handle AWS Lambda `ResourceConflictException` errors more gracefully.
 - Fix: prevent new GraphQL query that checks for merge queue activity from breaking under older versions of GHE.
+- Fix: ensure file dropdown is not hidden by a discussion.
 
 #### Release 3923.6172 (min 3619.5594 GHE 3.10+) 2023-06-14
 **WARNING**: this release only works with GHE 3.10+.
