@@ -7,6 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+- New: allow repo admins to override Reviewable's status check for broken reviews.
+- New: add option to start a file-level discussion to the file dropdown menu. 
+- Fix: restrict file matrix modifier icons to show only when matrix is hovered.
 
 #### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-20
 - Upd: improve latency for auto-connecting repositories if the repository creation event somehow gets lost, by listening to other repository-related events as well.
