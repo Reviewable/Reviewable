@@ -7,7 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
-- New: allow repo admins to override Reviewable's status check for broken reviews.
+- New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
 - Upd: include author, state and title when rendering issue and pull request references in comments.  Distinguish between completed/dropped and merged/closed states.  At the same time, align state icons and colors with GitHub, including in issue autocompletion popup.
 - Upd: show pull requests merged with `spr` as merged rather than closed in references and autocompletion popup.  (Going forward only -- no backfill.)
