@@ -11,8 +11,16 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add option to start a file-level discussion to the file dropdown menu. 
 - Upd: include author, state and title when rendering issue and pull request references in comments.  Distinguish between completed/dropped and merged/closed states.  At the same time, align state icons and colors with GitHub, including in issue autocompletion popup.
 - Upd: show pull requests merged with `spr` as merged rather than closed in references and autocompletion popup.  (Going forward only -- no backfill.)
+- Upd: accept pasting of rich text into drafts, with automatic conversion to Markdown.
+- Upd: keep new revisions provisional even if a reviewer has the review open, as long as the tab isn't active.
 - Fix: restrict file matrix modifier icons to show only when matrix is hovered.
 - Fix: enable usage of alt as a hotkey modifier inside of drafts.
+- Fix: allow copying out plain text from discussion comments, without Markdown decorations or escaping.
+- Fix: allow copying text out of draft previews.
+- Fix: improve placement of the selection command palette (regression introduced in v3842.6109).
+- Fix: guard against rare crash caused by missing scroll element. (#743)
+- Fix: keep modifier icons from getting stuck after using find in page.
+- Fix: avoid redundant underlines in file matrix file names.
 
 #### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-20
 - Upd: improve latency for auto-connecting repositories if the repository creation event somehow gets lost, by listening to other repository-related events as well.
