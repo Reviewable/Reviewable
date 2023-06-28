@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
+- New: let users bow out of a discussion to void their resolution vote and avoid becoming awaited whenever new comments are posted.  This is equivalent to dismissing yourself but bypasses the permission constraint.
 - Upd: include author, state and title when rendering issue and pull request references in comments.  Distinguish between completed/dropped and merged/closed states.  At the same time, align state icons and colors with GitHub, including in issue autocompletion popup.
 - Upd: show pull requests merged with `spr` as merged rather than closed in references and autocompletion popup.  (Going forward only -- no backfill.)
 - Upd: accept pasting of rich text into drafts, with automatic conversion to Markdown.
