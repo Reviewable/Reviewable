@@ -10,3 +10,9 @@ Just run `docker compose up -d` in this folder!
 
 **NOTE**: There is an insecure password in `docker-compose.yml` that should be
 changed if you're running this in production, and it's matched in ormconfig.json.
+
+# Grafana dashboards
+
+A dashboard has been checked in at `dashboard/general.json` that can be
+[imported into Grafana](https://grafana.com/docs/grafana/latest/dashboards/manage-dashboards/#export-and-import-dashboards)
+to get started right away.
