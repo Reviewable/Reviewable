@@ -19,8 +19,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow copying out plain text from discussion comments, without Markdown decorations or escaping.
 - Fix: allow copying text out of draft previews.
 - Fix: improve placement of the selection command palette (regression introduced in v3842.6109).
-- Fix: guard against rare crash caused by missing scroll element. (#743)
-- Fix: keep modifier icons from getting stuck after using find in page.
+- Fix: guard against rare crash caused by missing scroll element.
+- Fix: keep modifier icons from getting stuck after using find in page on a Mac.
 - Fix: avoid redundant underlines in file matrix file names.
 
 #### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-20
