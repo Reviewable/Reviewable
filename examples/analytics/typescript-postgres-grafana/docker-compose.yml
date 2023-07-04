@@ -11,10 +11,9 @@ services:
     environment:
       POSTGRES_PASSWORD: insecurepassword
       POSTGRES_DB: reviewable-analytics
-    # volumes:
-    #   - type: bind
-    #     source: initdb.sh
-    #     target: /docker-entrypoint-initdb.d/init-user-db.sh
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+    - data/:/var/lib/postgresql/data
 
   reviewable-analytics-adminer:
     image: adminer
