@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
 - New: let users bow out of a discussion to void their resolution vote and avoid becoming awaited whenever new comments are posted.  This is equivalent to dismissing yourself but bypasses the permission constraint.
@@ -25,6 +27,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash on sign-in when running with encryption configured.  (Regression introduced in v3935.6189.)
 
 #### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-20
+**WARNING**: this release breaks sign-in on installations that configured encryption.
 - Upd: improve latency for auto-connecting repositories if the repository creation event somehow gets lost, by listening to other repository-related events as well.
 - Fix: improve Firebase data caching behavior on the servers.
 - Fix: allow dashboard filtering by clicks on bot users.
