@@ -22,6 +22,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against rare crash caused by missing scroll element.
 - Fix: keep modifier icons from getting stuck after using find in page on a Mac.
 - Fix: avoid redundant underlines in file matrix file names.
+- Fix: don't crash on sign-in when running with encryption configured.  (Regression introduced in v3935.6189.)
 
 #### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-20
 - Upd: improve latency for auto-connecting repositories if the repository creation event somehow gets lost, by listening to other repository-related events as well.
