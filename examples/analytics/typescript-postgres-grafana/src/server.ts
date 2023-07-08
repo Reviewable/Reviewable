@@ -6,16 +6,16 @@ import ormconfig from './ormconfig';
 
 const dataSourceConfig = {
   ...ormconfig,
-  synchronize: false,
+  // This can cause data loss if you change the entities in the ormconfig. Set
+  // based on process.env.NODE_ENV if you're doing development to avoid data
+  // loss.
+  synchronize: true,
   entities: [Event, User],
 };
-if (true) {  // dev-only
-  dataSourceConfig.synchronize = true;
-}
 const dataSource = new DataSource(dataSourceConfig);
 const dataSourceReady = dataSource.initialize();
 dataSourceReady.catch((err) => {
-  console.error("Error during data source init:", err)
+  console.error('Error during data source init:', err)
 })
 
 const app = express();
@@ -44,7 +44,7 @@ interface ReviewableEvent {
   }
 }
 
-function convertReviewableTraitsToUser(userId: string, traits: ReviewableEvent["context"]["traits"]) : User {
+function convertReviewableTraitsToUser(userId: string, traits: ReviewableEvent['context']['traits']) : User {
   const user = new User();
   user.userId = userId;
   if (traits) {
@@ -85,6 +85,7 @@ app.post('/', async (req, res) => {
 
     // Create a new entity instance
     const entity = convertReviewableEventToEvent(req.body as ReviewableEvent);
+    console.log(`Handling event: ${entity.event}`);
 
     // Save the entity to the database
     const events = dataSource.getRepository(Event);
@@ -100,7 +101,7 @@ app.post('/', async (req, res) => {
 
 // Start the server and establish the database connection
 app.listen(port, async () => {
-  console.log("Server starting up");
+  console.log('Server starting up');
   await dataSourceReady;
   console.log(`Server is running on port ${port}`);
 });

@@ -9,7 +9,7 @@ This folder contains the following:
 Just run `docker compose up -d` in this folder!
 
 **NOTE**: There is an insecure password in `docker-compose.yml` that should be
-changed if you're running this in production, and it's matched in ormconfig.json.
+changed if you're running this in production, and it's matched in ormconfig.ts.
 
 # Grafana dashboards
 
