@@ -63,6 +63,7 @@ These are required unless stated otherwise.
 * `REVIEWABLE_GITHUB_URL`: The URL for your instance of GitHub Enterprise, used by Reviewable for authentication, API calls, and links to the web interface.  If your license allows you to run against `github.com` instead you should set this to `https://github.com`.
 * `REVIEWABLE_GITHUB_CLIENT_ID`: The hex client ID assigned to the GitHub application you created above.
 * `REVIEWABLE_GITHUB_CLIENT_SECRET`: The hex client secret assigned to the GitHub application you created above.
+* `REVIEWABLE_HOST_INACCESSIBLE`: (optional) Set to a non-empty value if your `REVIEWABLE_HOST_URL` is not reachable from `REVIEWABLE_GITHUB_URL`.  This will redirect incoming requests from GitHub either directly to your Firebase (for webhooks) or to `reviewable.io` (for images).
 
 ##### Security
 
