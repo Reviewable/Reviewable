@@ -1,0 +1,41 @@
+# Use postgres/insecurepassword user/password credentials
+version: '3.1'
+
+services:
+
+  reviewable-analytics-postgres:
+    image: postgres
+    restart: always
+    expose:
+    - "5432"
+    environment:
+      POSTGRES_PASSWORD: insecurepassword
+      POSTGRES_DB: reviewable-analytics
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+    - ./data/:/var/lib/postgresql/data
+
+  reviewable-analytics-adminer:
+    image: adminer
+    restart: always
+    ports:
+    - 9001:8080
+
+  reviewable-analytics-grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+     - 9002:3000
+
+  reviewable-analytics-bridge:
+    image: node:18
+    command: ["yarn", "dev"]
+    restart: always
+    volumes:
+      - type: bind
+        source: .
+        target: /workdir
+    ports:
+    - 9000:9000
+
