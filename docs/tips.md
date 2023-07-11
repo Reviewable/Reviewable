@@ -25,19 +25,7 @@ Reviewable doesn't have a lot of settings exposed in the UI to customize how thi
 Reviewable doesn't show line numbers in the diff for a number of reasons &mdash; there's a long discussion in [issue #147](https://github.com/Reviewable/Reviewable/issues/147).  The snippet below overrides this.  It's not perfect but it should work in the vast majority of cases:
 
 ```css
-div[data-line-number]:not([data-line-number="0"]):before {
-  content:attr(data-line-number);
-  position:absolute;
-  color: #444;
-  padding: 1px 3px 3px;
-  font-size: x-small;
-  display: block;
-  width: 20px;
-  text-align: right;
-}
-div[data-line-number]:not([data-line-number="0"]) div.hljs {
-  margin-left: 26px;
-}
+{{#include tweaks.css:show-line-numbers}}
 ```
 
 If you don't need to tweak these styles, just paste `https://gist.githack.com/pkaminski/4fd7c7b9014856de32bb43f84a396772/raw/line_numbers.css` into the custom stylesheet field.
@@ -49,37 +37,7 @@ If you don't need to tweak these styles, just paste `https://gist.githack.com/pk
 When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mdash; just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:
 
 ```css
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FBDDDD;  /* rgba(91, 220, 114, 0.20) on white */
-}
-.two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .left.line.content,
-.two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FFF7F7;  /* rgba(91, 220, 114, 0.05) on white */
-}
-
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #DDF7E2;  /* rgba(91, 220, 114, 0.20) on white */
-}
-.two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .right.line.content,
-.two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #EFFCF1;  /* rgba(91, 220, 114, 0.05) on white */
-}
-
-.two.column.diff .diff.line .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.30);
-}
-.two.column.diff .diff.line.base .left.line.content .delta,
-.two.column.diff .diff.line.whitespace .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.15);
-}
-
-.two.column.diff .diff.line .right.line.content .delta {
-  background-color: rgba(91, 220, 114, 0.30);
-}
-.two.column.diff .diff.line.base .right.line.content .delta,
-.two.column.diff .diff.line.whitespace .right.line.content .delta {
-  background-color: rgba(91, 220, 114, 0.15);
-}
+{{#include tweaks.css:highlight-whole-line}}
 ```
 
 Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css`.
@@ -89,11 +47,12 @@ Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/h
 If you have Reviewable set up to [show code coverage bars](repositories.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet.
 
 ```css
-:root {
-  --coverage-bar-color-full: #ABD1F2 /* light blue */;
-  --coverage-bar-color-partial: #CDE5FA /* lighter blue */;
-  --coverage-bar-color-none: #FFD6A9 /* orange */;
-}
+{{#include tweaks.css:code-coverage-default}}
+```
+
+A darker example:
+```css
+{{#include tweaks.css:code-coverage-darker}}
 ```
 
 ### Victory bunny
@@ -101,7 +60,7 @@ If you have Reviewable set up to [show code coverage bars](repositories.md#code-
 Don't like the merge bunny?  Turn it off like this:
 
 ```css
-.victory.decor {display: none}
+{{#include tweaks.css:no-bunny}}
 ```
 
 ### Accessibility
@@ -109,10 +68,7 @@ Don't like the merge bunny?  Turn it off like this:
 This snippet can be used to alter the diff colors for additions and removals, making them standout more. This may be helpful for those with Deuteranopia/Protanopia (green/red color blindness).
 
 ```css
-:root {
-  --diff-add: 33, 150, 243;
-  --diff-remove: 255, 235, 59;
-}
+{{#include tweaks.css:diff-accessible}}
 ```
 
 {:.important}
@@ -123,22 +79,7 @@ The three values for each variable correspond to R,G and B color values and can 
 Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:
 
 ```css
-.review-page .file.root .file .wavy.edge {
-  background-image: none;
-}
-
-.review-page .file.root .file .top.wavy.edge {
-  margin-top: 1em;
-  margin-bottom: -0.5em;
-}
-
-.review-page .file.root .file .bottom.wavy.edge {
-  margin-bottom: 0.5em;
-}
-
-.review-page .file.root .file .declaration.include {
-  padding-top: 1em;
-}
+{{#include tweaks.css:no-collapsed-region-wavy-lines}}
 ```
 You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/6e35f21b6fa3d3978a4ae5f8ba0f23e2d5d6a475/no-wave.css`
 
