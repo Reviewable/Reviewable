@@ -1518,7 +1518,8 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 <p><strong>Be careful</strong> though: by changing the layout in this way, Reviewable won't be able to automatically pick a diff width that fits your window so you'll need to <a href="files.html#diff-layout">control it manually</a>.</p>
 <h3><a class="header" href="#diff-line-background" id="diff-line-background">Diff line background</a></h3>
 <p>When in side-by-side diff mode, Reviewable doesn't highlight the whole line — just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:</p>
-<pre><code class="language-css">.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
+<pre><code class="language-css">
+.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
   background-color: #FBDDDD;  /* rgba(91, 220, 114, 0.20) on white */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .left.line.content,
@@ -1557,6 +1558,13 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
   --coverage-bar-color-full: #ABD1F2 /* light blue */;
   --coverage-bar-color-partial: #CDE5FA /* lighter blue */;
   --coverage-bar-color-none: #FFD6A9 /* orange */;
+}
+</code></pre>
+<p>A darker example:</p>
+<pre><code class="language-css">:root {
+  --coverage-bar-color-full: #16578F    /* blue */;
+  --coverage-bar-color-partial: #1160A5 /* dark blue */;
+  --coverage-bar-color-none: #AA5900    /* orange */;
 }
 </code></pre>
 <h3><a class="header" href="#victory-bunny" id="victory-bunny">Victory bunny</a></h3>
