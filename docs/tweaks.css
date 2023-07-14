@@ -2,7 +2,7 @@
 div[data-line-number]:not([data-line-number="0"]):before {
   content:attr(data-line-number);
   position:absolute;
-  color: #444; /* line number background */
+  color: #444; /* line number text color */
   padding: 1px 3px 3px;
   font-size: x-small;
   display: block;
@@ -16,20 +16,20 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 
 // ANCHOR: highlight-whole-line
 
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
+.two.column.diff .diff.line:not(.keep) .line.wrapper.diffwidth:not(.empty) .left.line.content {
   background-color: #FBDDDD;  /* removed line on the left */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .left.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FFF7F7;  /* normal line on the left */
+  background-color: #FFF7F7;  /* line on the left with no or only whitespace changes */
 }
 
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .right.line.content {
+.two.column.diff .diff.line:not(.keep) .line.wrapper.diffwidth:not(.empty) .right.line.content {
   background-color: #DDF7E2;  /* added line on the right */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .right.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #EFFCF1;  /* normal line on the right */
+  background-color: #EFFCF1;  /* line on the right with no or only whitespace changes */
 }
 
 .two.column.diff .diff.line .left.line.content .delta {
@@ -37,7 +37,7 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 }
 .two.column.diff .diff.line.base .left.line.content .delta,
 .two.column.diff .diff.line.whitespace .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.15); /* removed line whitespace */
+  background-color: rgba(240, 92, 92, 0.15); /* removed blank or whitespace-only line */
 }
 
 .two.column.diff .diff.line .right.line.content .delta {
