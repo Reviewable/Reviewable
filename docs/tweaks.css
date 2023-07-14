@@ -29,7 +29,7 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .right.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #EFFCF1;  /* line on the left with base- or whitespace-only changes */
+  background-color: #EFFCF1;  /* line on the right with base- or whitespace-only changes */
 }
 
 .two.column.diff .diff.line .left.line.content .delta {
@@ -45,7 +45,7 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 }
 .two.column.diff .diff.line.base .right.line.content .delta,
 .two.column.diff .diff.line.whitespace .right.line.content .delta {
- background-color: rgba(91, 220, 114, 0.15); /* added line whitespace */
+ background-color: rgba(91, 220, 114, 0.15); /* added line whitespace or base-only changes */
 }
 // ANCHOR_END: highlight-whole-diff-line
 
