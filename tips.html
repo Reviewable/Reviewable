@@ -311,7 +311,7 @@
 <pre><code class="language-css">div[data-line-number]:not([data-line-number=&quot;0&quot;]):before {
   content:attr(data-line-number);
   position:absolute;
-  color: #444;
+  color: #444; /* line number text color */
   padding: 1px 3px 3px;
   font-size: x-small;
   display: block;
@@ -327,36 +327,36 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 <h3><a class="header" href="#diff-line-background" id="diff-line-background">Diff line background</a></h3>
 <p>When in side-by-side diff mode, Reviewable doesn't highlight the whole line — just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:</p>
 <pre><code class="language-css">
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FBDDDD;  /* rgba(91, 220, 114, 0.20) on white */
+.two.column.diff .diff.line:not(.keep) .line.wrapper.diffwidth:not(.empty) .left.line.content {
+  background-color: #FBDDDD;  /* removed line on the left */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .left.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FFF7F7;  /* rgba(91, 220, 114, 0.05) on white */
+  background-color: #FFF7F7;  /* line on the left with base- or whitespace-only changes */
 }
 
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #DDF7E2;  /* rgba(91, 220, 114, 0.20) on white */
+.two.column.diff .diff.line:not(.keep) .line.wrapper.diffwidth:not(.empty) .right.line.content {
+  background-color: #DDF7E2;  /* added line on the right */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .right.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #EFFCF1;  /* rgba(91, 220, 114, 0.05) on white */
+  background-color: #EFFCF1;  /* line on the right with base- or whitespace-only changes */
 }
 
 .two.column.diff .diff.line .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.30);
+  background-color: rgba(240, 92, 92, 0.30); /* removed line */
 }
 .two.column.diff .diff.line.base .left.line.content .delta,
 .two.column.diff .diff.line.whitespace .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.15);
+  background-color: rgba(240, 92, 92, 0.15); /* removed base- or whitespace-only changed line */
 }
 
 .two.column.diff .diff.line .right.line.content .delta {
-  background-color: rgba(91, 220, 114, 0.30);
+  background-color: rgba(91, 220, 114, 0.30); /* added line */
 }
 .two.column.diff .diff.line.base .right.line.content .delta,
 .two.column.diff .diff.line.whitespace .right.line.content .delta {
-  background-color: rgba(91, 220, 114, 0.15);
+ background-color: rgba(91, 220, 114, 0.15); /* added line whitespace or base-only changes */
 }
 </code></pre>
 <p>Or just use this link:  <code>https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css</code>.</p>
