@@ -67,8 +67,10 @@ If you have entered your `/directory/with/repos/` path, it will automatically ca
 
 You can use these variables in your custom URL template:
 
-* `{{owner}}`: the repo owner (or organization) username.
-* `{{repo}}`: the repo name.
+* `{{owner}}`: the repo owner (or organization) username of the head (source) branch.
+* `{{repo}}`: the repo name of the head (source) branch.
+* `{{baseOwner}}`: the repo owner (or organization) username of the base (target) branch.
+* `{{baseRepo}}`: the repo name of the base (target) branch.
 * `{{pr}}`: the pull request number.
 * `{{headBranch}}`: the name of the head (source) branch.
 * `{{baseBranch}}`: the name of the base (target) branch.
