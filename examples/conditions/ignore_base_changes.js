@@ -5,21 +5,23 @@ let completed = true;
 let reasons = [];  // pieces of the status description
 let shortReasons = [];  // pieces of the short status description
 
-const lastRevisionIndex = _.parseInt(review.summary.lastRevision.slice(1));
+const lastRevisionNumber = _.parseInt(review.summary.lastRevision.slice(1));
 let numUnreviewedFiles = 0;
 _.forEach(review.files, file => {
-  // Find the last file revision that 1) is not past the review's last revision and 2) doesn't have
-  // only changes traceable to edits in the base branch.  Note that this revision might itself be
+  // Look at all file revisions between the last one that has changes not traceable solely to edits
+  // in the base branch and the review's last revision.  Note that some of these revisions might be
   // obsolete if, for example, the author force pushed a last (clean) rebase after the previous
-  // revision was reviewed, but it's still the right one to look at for reviewers.
-  const lastRev = _(file.revisions)
-    // This drops any trailing obsolete revisions in case the branch was reverted to an earlier
-    // state.
-    .reject(rev => _.parseInt(rev.key.slice(1)) > lastRevisionIndex)
-    .findLast({baseChangesOnly: false});
-  // If there's no last revision that satisfies the criteria, then the file is no longer part of the
+  // revision was reviewed, but it's still OK to look at these for reviewers.
+  const lastMeaningfulChangeRevIndex = _.findLastIndex(file.revisions, {baseChangesOnly: false});
+  const lastRevIndex =
+    _.findLastIndex(file.revisions, rev => _.parseInt(rev.key.slice(1)) <= lastRevisionNumber);
+  // If there are no revisions that satisfy the criteria, then the file is no longer part of the
   // pull request and can be ignored.
-  if (lastRev && _.isEmpty(lastRev.reviewers)) numUnreviewedFiles++;
+  if (lastMeaningfulChangeRevIndex > lastRevIndex) return;
+  const reviewed = _(file.revisions)
+    .slice(lastMeaningfulChangeRevIndex, lastRevIndex + 1)
+    .some(rev => !_.isEmpty(rev.reviewers));
+  if (!reviewed) numUnreviewedFiles++;
 });
 
 if (numUnreviewedFiles) {
