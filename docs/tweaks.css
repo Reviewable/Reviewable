@@ -2,7 +2,7 @@
 div[data-line-number]:not([data-line-number="0"]):before {
   content:attr(data-line-number);
   position:absolute;
-  color: #444;
+  color: #444; /* line number text color */
   padding: 1px 3px 3px;
   font-size: x-small;
   display: block;
@@ -14,40 +14,40 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 }
 // ANCHOR_END: show-line-numbers
 
-// ANCHOR: highlight-whole-line
+// ANCHOR: highlight-whole-diff-line
 
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FBDDDD;  /* rgba(91, 220, 114, 0.20) on white */
+.two.column.diff .diff.line:not(.keep) .line.wrapper.diffwidth:not(.empty) .left.line.content {
+  background-color: #FBDDDD;  /* removed line on the left */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .left.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .left.line.content {
-  background-color: #FFF7F7;  /* rgba(91, 220, 114, 0.05) on white */
+  background-color: #FFF7F7;  /* line on the left with base- or whitespace-only changes */
 }
 
-.two.column.diff .diff.line:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #DDF7E2;  /* rgba(91, 220, 114, 0.20) on white */
+.two.column.diff .diff.line:not(.keep) .line.wrapper.diffwidth:not(.empty) .right.line.content {
+  background-color: #DDF7E2;  /* added line on the right */
 }
 .two.column.diff .diff.line.base:not(.keep) .line.wrapper:not(.empty) .right.line.content,
 .two.column.diff .diff.line.whitespace:not(.keep) .line.wrapper:not(.empty) .right.line.content {
-  background-color: #EFFCF1;  /* rgba(91, 220, 114, 0.05) on white */
+  background-color: #EFFCF1;  /* line on the right with base- or whitespace-only changes */
 }
 
 .two.column.diff .diff.line .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.30);
+  background-color: rgba(240, 92, 92, 0.30); /* removed line */
 }
 .two.column.diff .diff.line.base .left.line.content .delta,
 .two.column.diff .diff.line.whitespace .left.line.content .delta {
-  background-color: rgba(240, 92, 92, 0.15);
+  background-color: rgba(240, 92, 92, 0.15); /* removed base- or whitespace-only changed line */
 }
 
 .two.column.diff .diff.line .right.line.content .delta {
-  background-color: rgba(91, 220, 114, 0.30);
+  background-color: rgba(91, 220, 114, 0.30); /* added line */
 }
 .two.column.diff .diff.line.base .right.line.content .delta,
 .two.column.diff .diff.line.whitespace .right.line.content .delta {
-  background-color: rgba(91, 220, 114, 0.15);
+ background-color: rgba(91, 220, 114, 0.15); /* added line whitespace or base-only changes */
 }
-// ANCHOR_END: highlight-whole-line
+// ANCHOR_END: highlight-whole-diff-line
 
 // ANCHOR: code-coverage-default
 :root {
@@ -57,6 +57,7 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 }
 // ANCHOR_END: code-coverage-default
 
+// SKIP EXPERIMENTS
 // ANCHOR: code-coverage-darker
 :root {
   --coverage-bar-color-full: #16578F    /* blue */;
@@ -65,16 +66,16 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 }
 // ANCHOR_END: code-coverage-darker
 
-// ANCHOR: no-bunny
+// ANCHOR: no-merge-bunny
 .victory.decor {display: none}
-// ANCHOR_END: no-bunny
+// ANCHOR_END: no-merge-bunny
 
-// ANCHOR: diff-accessible
+// ANCHOR: diff-accessible-colors
 :root {
   --diff-add: 33, 150, 243;
   --diff-remove: 255, 235, 59;
 }
-// ANCHOR_END: diff-accessible
+// ANCHOR_END: diff-accessible-colors
 
 // ANCHOR: no-collapsed-region-wavy-lines
 .review-page .file.root .file .wavy.edge {

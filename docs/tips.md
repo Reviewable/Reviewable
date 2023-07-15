@@ -37,7 +37,7 @@ If you don't need to tweak these styles, just paste `https://gist.githack.com/pk
 When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mdash; just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:
 
 ```css
-{{#include tweaks.css:highlight-whole-line}}
+{{#include tweaks.css:highlight-whole-diff-line}}
 ```
 
 Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css`.
@@ -60,7 +60,7 @@ A darker example:
 Don't like the merge bunny?  Turn it off like this:
 
 ```css
-{{#include tweaks.css:no-bunny}}
+{{#include tweaks.css:no-merge-bunny}}
 ```
 
 ### Accessibility
@@ -68,7 +68,7 @@ Don't like the merge bunny?  Turn it off like this:
 This snippet can be used to alter the diff colors for additions and removals, making them standout more. This may be helpful for those with Deuteranopia/Protanopia (green/red color blindness).
 
 ```css
-{{#include tweaks.css:diff-accessible}}
+{{#include tweaks.css:diff-accessible-colors}}
 ```
 
 {:.important}
