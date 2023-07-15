@@ -332,8 +332,10 @@
 <p>If you have entered your <code>/directory/with/repos/</code> path, it will automatically carry over to your new custom template.</p>
 <p>You can use these variables in your custom URL template:</p>
 <ul>
-<li><code>{{owner}}</code>: the repo owner (or organization) username.</li>
-<li><code>{{repo}}</code>: the repo name.</li>
+<li><code>{{owner}}</code>: the repo owner (or organization) username of the head (source) branch.</li>
+<li><code>{{repo}}</code>: the repo name of the head (source) branch.</li>
+<li><code>{{baseOwner}}</code>: the repo owner (or organization) username of the base (target) branch.</li>
+<li><code>{{baseRepo}}</code>: the repo name of the base (target) branch.</li>
 <li><code>{{pr}}</code>: the pull request number.</li>
 <li><code>{{headBranch}}</code>: the name of the head (source) branch.</li>
 <li><code>{{baseBranch}}</code>: the name of the base (target) branch.</li>
