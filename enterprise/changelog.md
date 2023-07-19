@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: automatically format links when pasting a URL onto a selection in a draft comment.
 - Upd: remove stealth updates of URL hash to match clicked discussion -- please use the dropdown menu to copy the discussion's URL to the clipboard instead.  (We also enabled this menu on top-level discussions.)
 - Upd: add support for Codecov's v2 API. The old API (and its data format) will continue to be supported indefinitely as well.
+- Upd: improve args reporting when capturing Firebase exceptions in Sentry.
 - Fix: correctly align diff bound brackets on revision cells.
 - Fix: keep inline code formatting from overlapping in rendered markdown. (#754)
 - Fix: don't lock out discussion navigation after spamming diff selection.
