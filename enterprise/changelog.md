@@ -10,6 +10,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - New: add a `REVIEWABLE_HOST_INACCESSIBLE` flag to indicate that the Reviewable host is not accessible from GitHub.
 - Upd: move participants panel actions from discussions cell to the user cell dropdown.
+- Upd: include requested reviewer teams in the participants panel.
+- Upd: automatically format links when pasting a URL onto a selection in a draft comment.
+- Upd: remove stealth updates of URL hash to match clicked discussion -- please use the dropdown menu to copy the discussion's URL to the clipboard instead.  (We also enabled this menu on top-level discussions.)
+- Upd: add support for Codecov's v2 API. The old API (and its data format) will continue to be supported indefinitely as well.
 - Fix: correctly align diff bound brackets on revision cells.
 - Fix: keep inline code formatting from overlapping in rendered markdown. (#754)
 - Fix: don't lock out discussion navigation after spamming diff selection.
@@ -20,6 +24,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: minor layout fixes in drafts including keeping the draft layout from shifting when toggling between write and preview modes.
 - Fix: avoid rare "maximum call stack exceeded" crash on the server.
 - Fix: try to recover automatically if multiple merge queue entries share a common commit SHA.
+- Fix: avoid error on dashboard when we fail to fetch a repository's default branch name. (#762)
+- Fix: don't scroll to a random spot on the page when the first click lands on a discussion.
 #### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
