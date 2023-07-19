@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid copying/quoting extra spaces (regression introduced in 3842.6109).
 - Fix: minor layout fixes in drafts including keeping the draft layout from shifting when toggling between write and preview modes.
 - Fix: avoid rare "maximum call stack exceeded" crash on the server.
+- Fix: try to recover automatically if multiple merge queue entries share a common commit SHA.
 #### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
