@@ -84,6 +84,8 @@ Filter | Meaning
 `±private` | PRs from private repos
 `±starred` | PRs from repos you starred
 `±watched` | PRs from repos you're watching
+<code>±by:<i>username</i></code> | PRs authored by given user
+<code>±with:<i>username</i></code> | PRs involving given user (or team)
 
 {:.tip}
 Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
