@@ -27,6 +27,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: try to recover automatically if multiple merge queue entries share a common commit SHA.
 - Fix: avoid error on dashboard when we fail to fetch a repository's default branch name. (#762)
 - Fix: don't scroll to a random spot on the page when the first click lands on a discussion.
+- Fix: Ensure publish previews are not accidentally hidden.
+- Fix: Make sure file header always stays fixed in place when scrolling.
+- Fix: Support file dropdowns opening from the status bar in Safari.
+- Fix: add contextual help for the "merge latest changes into branch" button.
 #### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
