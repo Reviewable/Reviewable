@@ -15,6 +15,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: remove stealth updates of URL hash to match clicked discussion -- please use the dropdown menu to copy the discussion's URL to the clipboard instead.  (We also enabled this menu on top-level discussions.)
 - Upd: add support for Codecov's v2 API. The old API (and its data format) will continue to be supported indefinitely as well.
 - Upd: improve args reporting when capturing Firebase exceptions in Sentry.
+- Upd: add `+by:username` and `+with:username` query terms to the dashboard. (#779)
+- Upd: auto-delete empty drafts on click outside discussion, `Esc`, or preview/publish.  We no longer auto-delete on blur, as this was both too aggressive and inconsistent.
+- Upd: show declaration headers for scopes that continue after a collapsed diff section. (#782)
 - Fix: correctly align diff bound brackets on revision cells.
 - Fix: keep inline code formatting from overlapping in rendered markdown. (#754)
 - Fix: don't lock out discussion navigation after spamming diff selection.
@@ -31,6 +34,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: Make sure file header always stays fixed in place when scrolling.
 - Fix: Support file dropdowns opening from the status bar in Safari.
 - Fix: add contextual help for the "merge latest changes into branch" button.
+- Fix: back off query size in response to a wider range of errors on the dashboard.  This should help prevent "something went wrong" warnings.
 #### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
