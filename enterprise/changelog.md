@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 
+- New: Temporary UI Experiments now available at https://experiments.reviewable.io/ to generate custom CSS combinations
 - New: add a `REVIEWABLE_HOST_INACCESSIBLE` flag to indicate that the Reviewable host is not accessible from GitHub.
 - Upd: move participants panel actions from discussions cell to the user cell dropdown.
 - Upd: include requested reviewer teams in the participants panel.
