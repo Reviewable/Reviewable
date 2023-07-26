@@ -8,6 +8,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 
+- Fix: don't get stuck forever retrying the status sync task when a review's file rename map is out of date.
+- Fix: prevent a spurious error about "stripe is not defined" from being logged when users load a page.
+- Fix: allow organizations to be renamed.
 #### Release 3980.6275 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-26
 - New: launch temporary UI Experiments at https://experiments.reviewable.io/ to generate custom CSS combinations
 - New: add a `REVIEWABLE_HOST_INACCESSIBLE` flag to indicate that the Reviewable host is not accessible from GitHub.
