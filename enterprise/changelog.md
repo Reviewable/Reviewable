@@ -7,8 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
-
-- New: Temporary UI Experiments now available at https://experiments.reviewable.io/ to generate custom CSS combinations
+- New: launch temporary UI Experiments at https://experiments.reviewable.io/ to generate custom CSS combinations
 - New: add a `REVIEWABLE_HOST_INACCESSIBLE` flag to indicate that the Reviewable host is not accessible from GitHub.
 - Upd: move participants panel actions from discussions cell to the user cell dropdown.
 - Upd: include requested reviewer teams in the participants panel.
@@ -36,6 +35,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: Support file dropdowns opening from the status bar in Safari.
 - Fix: add contextual help for the "merge latest changes into branch" button.
 - Fix: back off query size in response to a wider range of errors on the dashboard.  This should help prevent "something went wrong" warnings.
+
 #### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
