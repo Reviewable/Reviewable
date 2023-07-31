@@ -154,6 +154,7 @@ You can configure Reviewable to display code coverage information next to diffs 
 
 * `{{owner}}`: the repo owner (or organization) username.
 * `{{repo}}`: the repo name.
+* `{{pr}}`: the pull request number.
 * `{{commitSha}}`: the full SHA of the target commit.
 
 If needed, you can also specify one additional header to send with the request.  This will typically be an `Authorization` header that passes some kind of access token to enable access to private coverage reports.
