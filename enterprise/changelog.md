@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid rare participant cell animation crash and guard against cell flickering in Firefox.
 - Fix: adjust padding on magic keyword highlights.
 - Fix: drop empty beginning / end of line ranges from selection, as well as leading and trailing empty lines.  This should make it easier to make clean selections and place the command palette closer to the actual selection in some edge cases.
+- Fix: eliminate a redundant completion condition execution on pushes to the base branch. (#375)
 #### Release 3980.6275 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-26
 - New: launch temporary UI Experiments at https://experiments.reviewable.io/ to generate custom CSS combinations
 - New: add a `REVIEWABLE_HOST_INACCESSIBLE` flag to indicate that the Reviewable host is not accessible from GitHub.
