@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: drop empty beginning / end of line ranges from selection, as well as leading and trailing empty lines.  This should make it easier to make clean selections and place the command palette closer to the actual selection in some edge cases.
 - Fix: eliminate a redundant completion condition execution on pushes to the base branch.
 - Fix: guard against an error (that seems to cause crashes for some people, though it shouldn't) when the Reviewable instance is running in private mode and has the analytics hook enabled.  (Regression introduced in v3923.6172.)
+- Fix: prevent an "encryption not set up" crash when loading Reviewable without being signed in on an encrypted instance.  (Regression introduced in v3935.6189.)
 
 #### Release 3980.6275 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-26
 - New: launch temporary UI Experiments at https://experiments.reviewable.io/ to generate custom CSS combinations
