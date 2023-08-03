@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
+
+#### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
 - Upd: stop extending diff selection to cover entire lines, and add a Copy Lines item to the selection command palette instead that does this only on demand.
 - Fix: don't get stuck forever retrying the status sync task when a review's file rename map is out of date.
