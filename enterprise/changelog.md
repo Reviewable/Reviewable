@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add support for an `error` property in coverage reports.
 - Fix: prevent HTML caching to avoid the browser trying to load JS and CSS files from a previous version that no longer exist, leading to a broken page.  (The HTML file is tiny and all other files are still cached aggressively, so this shouldn't affect load latency.)
 - Fix: don't crash when attempting to send a draft with code blocks and a whitespace-only body.
+- Fix: reduce the number of GitHub requests issued when syncing a review.
 #### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
 - Upd: stop extending diff selection to cover entire lines, and add a Copy Lines item to the selection command palette instead that does this only on demand.
