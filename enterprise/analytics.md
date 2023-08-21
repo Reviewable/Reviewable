@@ -346,21 +346,4 @@ The user updated their SaaS subscription.  Not applicable to Enterprise installs
 }
 ```
 
-##### Paid
-The user paid for their SaaS subscription.  Not applicable to Enterprise installs.
-```
-{
-  organization: string,
-  revenue?: number       // in dollars
-}
-```
-
-##### Unpaid
-The user failed to pay for their SaaS subscription.  Not applicable to Enterprise installs.
-```
-{
-  organization: string,
-  revenue?: number       // in dollars
-}
-```
 
