@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 
+- New: reflect GitHub's pull request approval status (as regulated by branch protection) in a new entry in the checks dropdown panel.
 - Upd: add support for an `error` property in coverage reports.
 - Upd: recognize Poetry lock files as generated files.
 - Fix: prevent HTML caching to avoid the browser trying to load JS and CSS files from a previous version that no longer exist, leading to a broken page.  (The HTML file is tiny and all other files are still cached aggressively, so this shouldn't affect load latency.)
