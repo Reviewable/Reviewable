@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: reflect GitHub's pull request approval status (as regulated by branch protection) in a new entry in the checks dropdown panel.
 - Upd: add support for an `error` property in coverage reports.
 - Upd: recognize Poetry lock files as generated files.
+- Upd: send bad connection notification emails only if the connecting user is still a member of the organization.
 - Fix: prevent HTML caching to avoid the browser trying to load JS and CSS files from a previous version that no longer exist, leading to a broken page.  (The HTML file is tiny and all other files are still cached aggressively, so this shouldn't affect load latency.)
 - Fix: don't crash when attempting to send a draft with code blocks and a whitespace-only body.
 - Fix: reduce the number of GitHub requests issued when syncing a review.
