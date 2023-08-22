@@ -14,9 +14,9 @@ interface Event {
   userId?: string,      // the github:NNNN id of the user associated with the event, if any
   anonymousId?: string, // if no user is signed in on the client this will be a unique transient id
   context: {
-    active: boolean,    // true if caused by a direct user action, false if originated from server
-    userAgent?: string, // the browser's userAgent if active is true
-    traits?: {          // some details about the user if they're signed in on the client
+    active: boolean,    // true if caused by a direct user action, false if background action
+    userAgent?: string, // the browser's userAgent if originated from the client
+    traits?: {          // some details about the user if available
       avatar: string | null,
       email: string | null,
       name: string | null,
