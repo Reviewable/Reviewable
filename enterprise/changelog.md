@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't highlight deltas in hunk header lines, and prevent them from wrapping.
 - Fix: improve sticky file header positioning on refresh and review updates.
 - Fix: clean up the layout of the checks dropdown panel.
+- Fix: guard against nil file values returned by the completion condition.
 #### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
 - Upd: stop extending diff selection to cover entire lines, and add a Copy Lines item to the selection command palette instead that does this only on demand.
