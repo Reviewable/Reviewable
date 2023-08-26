@@ -19,7 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve sticky file header positioning on refresh and review updates.
 - Fix: clean up the layout of the checks dropdown panel.
 - Fix: guard against nil file values returned by the completion condition.
-- Fix: recognize .cjs and .mjs files as JavaScript for syntax highlighting.
+- Fix: recognize `.cjs` and `.mjs` files as JavaScript for syntax highlighting.
 - Fix: hide comment actions until the sign in process is fully completed.  Clicking on an action early would cause a crash.
 #### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
