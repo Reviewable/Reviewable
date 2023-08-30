@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: send bad connection notification emails only if the connecting user is still a member of the organization.
 - Upd: let `Reviewable.workOfflineAtMyOwnRisk()` take a boolean flag to make the setting sticky.
 - Upd: set `offline` class on `body` to enable custom styling.
+- Upd: improve permission check frequency with adaptive timings and jitter, to reduce database load spikes.
 - Fix: prevent HTML caching to avoid the browser trying to load JS and CSS files from a previous version that no longer exist, leading to a broken page.  (The HTML file is tiny and all other files are still cached aggressively, so this shouldn't affect load latency.)
 - Fix: don't crash when attempting to send a draft with code blocks and a whitespace-only body.
 - Fix: reduce the number of GitHub requests issued when syncing a review.
