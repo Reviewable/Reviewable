@@ -19,7 +19,7 @@ First off, Reviewable will never store your source code on its servers. Each ses
 * Subscription data, but only the last 4 of the credit card and expiration date are kept.
 * Issue titles, commit messages, and GitHub branch protection settings are cached and flushed regularly.
 
-Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every half hour. All data is always transmitted across secure connections.
+Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every 15 minutes to 2 hours, depending on the permission's power. All data is always transmitted across secure connections.
 
 The access token remains encrypted at rest with a key known only to Reviewable servers, and used only to access GitHub on your behalf. Unless you grant explicit written authorization, Reviewable staff will never use the token to access your repository contents or mutate data.  (We may use it to test innocuous read-only metadata API calls when debugging an issue specific to your account.)
 
