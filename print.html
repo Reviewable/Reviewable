@@ -1077,7 +1077,7 @@
 <li>Subscription data, but only the last 4 of the credit card and expiration date are kept.</li>
 <li>Issue titles, commit messages, and GitHub branch protection settings are cached and flushed regularly.</li>
 </ul>
-<p>Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every half hour. All data is always transmitted across secure connections.</p>
+<p>Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every 15 minutes to 2 hours, depending on the permission's power. All data is always transmitted across secure connections.</p>
 <p>The access token remains encrypted at rest with a key known only to Reviewable servers, and used only to access GitHub on your behalf. Unless you grant explicit written authorization, Reviewable staff will never use the token to access your repository contents or mutate data.  (We may use it to test innocuous read-only metadata API calls when debugging an issue specific to your account.)</p>
 <p>Reviewable does need write permissions for your repos.  See the <a href="registration.html#github-authorizations">GitHub authorizations</a> section for a full explanation.</p>
 <p>And of course under no circumstances will we disclose any of your private information to other parties beyond what's needed to provide our service — please see our <a href="https://github.com/Reviewable/Reviewable/blob/master/legal/terms.md">terms of service</a> and <a href="https://github.com/Reviewable/Reviewable/blob/master/legal/privacy.md">privacy policy</a> for the legal details.</p>
