@@ -6,9 +6,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Avatar images use a procedurally generated fallback in some (but not all) installations of GHE running in private mode.  This is a bug with how GHE handles authentication cookies and can only be fixed from their side.  See [issue #770](https://github.com/Reviewable/Reviewable/issues/770).
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
-#### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
-- Fix: don't crash with `$digest already in progress` when navigating to a pull request that doesn't have a review yet from the dashboard while signed in without `public_repo` scope.
 **WARNING**: This version includes a fix to the task queuing system that is likely to result in a burst of task processing activity on first launch.  This may be high enough to temporarily overload Firebase, so we recommend that you schedule the upgrade for off-hours.
+#### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
 - New: reflect GitHub's pull request approval status (as regulated by branch protection) in a new entry in the checks dropdown panel.
 - Upd: add support for an `error` property in coverage reports.
 - Upd: recognize Poetry lock files as generated files.
@@ -26,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: recognize `.cjs` and `.mjs` files as JavaScript for syntax highlighting.
 - Fix: hide comment actions until the sign in process is fully completed.  Clicking on an action early would cause a crash.
 - Fix: improve server queue handling so tasks don't get stuck for a long time.  This should reduce the number of occurrences of "waiting for permissions" or "request queued but server did not respond" errors, among other things.
+- Fix: don't crash with `$digest already in progress` when navigating to a pull request that doesn't have a review yet from the dashboard while signed in without `public_repo` scope.
 
 #### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
