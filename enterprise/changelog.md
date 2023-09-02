@@ -26,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: hide comment actions until the sign in process is fully completed.  Clicking on an action early would cause a crash.
 - Fix: improve server queue handling so tasks don't get stuck for a long time.  This should reduce the number of occurrences of "waiting for permissions" or "request queued but server did not respond" errors, among other things.
 - Fix: don't crash with `$digest already in progress` when navigating to a pull request that doesn't have a review yet from the dashboard while signed in without `public_repo` scope.
+- Fix: bump client timeout for user-requested pull request syncs from 30s to 60s.  This should reduce false positive timeout errors on big pull requests.
 
 #### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
