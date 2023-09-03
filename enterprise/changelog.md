@@ -8,7 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 **WARNING**: This version includes a fix to the task queuing system that is likely to result in a burst of task processing activity on first launch.  This may be high enough to temporarily overload Firebase, so we recommend that you schedule the upgrade for off-hours.
 #### Upcoming changes (min 3619.5594 GHE 2.19+ or 3.0+)
-- New: reflect GitHub's pull request approval status (as regulated by branch protection) in a new entry in the checks dropdown panel.
+- New: reflect GitHub's pull request approval status (as regulated by branch protection) in a new entry in the checks dropdown panel.  (This doesn't reflect `CODEOWNERS` yet, but will in the next release.)
 - Upd: add support for an `error` property in coverage reports.
 - Upd: recognize Poetry lock files as generated files.
 - Upd: send bad connection notification emails only if the connecting user is still a member of the organization.
