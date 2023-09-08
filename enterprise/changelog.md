@@ -7,6 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+- Upd: modernize the client's color system.  There should be no user-visible effect though the eagle-eyed may notice some slight changes in color here and there.  The new system should be compatible with existing stylesheet customizations.
 
 #### Release 4046.6345 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-09-07
 **WARNING**: This version includes a fix to the task queuing system that is likely to result in a burst of task processing activity on first launch.  This may be high enough to temporarily overload Firebase, so we recommend that you schedule the upgrade for off-hours.
