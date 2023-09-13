@@ -9,8 +9,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: modernize the client's color system.  There should be no user-visible effect though the eagle-eyed may notice some slight changes in color here and there.  The new system should be compatible with existing stylesheet customizations.
 - Upd: render Markdown-style links in coverage errors.
+- Fix: don't break under GHE 3.10.  This regression was introduced in v3935.6189 and specifically affects _only_ GHE 3.10.
 
-#### Release 4046.6345 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-09-07
+#### Release 4046.6345 (min 3619.5594 GHE 2.19+ or 3.0+ but not 3.10) 2023-09-07
 **WARNING**: This version includes a fix to the task queuing system that is likely to result in a burst of task processing activity on first launch.  This may be high enough to temporarily overload Firebase, so we recommend that you schedule the upgrade for off-hours.
 - New: reflect GitHub's pull request approval status (as regulated by branch protection) in a new entry in the checks dropdown panel.  (This doesn't reflect `CODEOWNERS` yet, but will in the next release.)
 - Upd: add support for an `error` property in coverage reports.
@@ -31,7 +32,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash with `$digest already in progress` when navigating to a pull request that doesn't have a review yet from the dashboard while signed in without `public_repo` scope.
 - Fix: bump client timeout for user-requested review syncs from 30s to 60s.  This should reduce false positive timeout errors on big pull requests.
 
-#### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-08-03
+#### Release 3991.6302 (min 3619.5594 GHE 2.19+ or 3.0+ but not 3.10) 2023-08-03
 - Upd: make `pr` variable available in coverage data URL templates.
 - Upd: stop extending diff selection to cover entire lines, and add a Copy Lines item to the selection command palette instead that does this only on demand.
 - Fix: don't get stuck forever retrying the status sync task when a review's file rename map is out of date.
@@ -44,7 +45,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against an error (that seems to cause crashes for some people, though it shouldn't) when the Reviewable instance is running in private mode and has the analytics hook enabled.  (Regression introduced in v3923.6172.)
 - Fix: prevent an "encryption not set up" crash when loading Reviewable without being signed in on an encrypted instance.  (Regression introduced in v3935.6189.)
 
-#### Release 3980.6275 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-26
+#### Release 3980.6275 (min 3619.5594 GHE 2.19+ or 3.0+ but not 3.10) 2023-07-26
 - New: launch temporary UI Experiments at https://experiments.reviewable.io/ to generate custom CSS combinations
 - New: add a `REVIEWABLE_HOST_INACCESSIBLE` flag to indicate that the Reviewable host is not accessible from GitHub.
 - Upd: move participants panel actions from discussions cell to the user cell dropdown.
@@ -74,7 +75,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: add contextual help for the "merge latest changes into branch" button.
 - Fix: back off query size in response to a wider range of errors on the dashboard.  This should help prevent "something went wrong" warnings.
 
-#### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-07-04
+#### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+ but not 3.10) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
 - New: add option to start a file-level discussion to the file dropdown menu. 
 - New: let users bow out of a discussion to void their resolution vote and avoid becoming awaited whenever new comments are posted.  This is equivalent to dismissing yourself but bypasses the permission constraint.
@@ -92,7 +93,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid redundant underlines in file matrix file names.
 - Fix: don't crash on sign-in when running with encryption configured.  (Regression introduced in v3935.6189.)
 
-#### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+) 2023-06-20
+#### Release 3935.6189 (min 3619.5594 GHE 2.19+ or 3.0+ but not 3.10) 2023-06-20
 **WARNING**: this release breaks sign-in on installations that configured encryption.
 - Upd: improve latency for auto-connecting repositories if the repository creation event somehow gets lost, by listening to other repository-related events as well.
 - Fix: improve Firebase data caching behavior on the servers.
@@ -106,8 +107,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure file dropdown is not hidden by a discussion.
 - Fix: keep collapsed region settings dropdown from being obscured by discussions.
 
-#### Release 3923.6172 (min 3619.5594 GHE 3.10+) 2023-06-14
-**WARNING**: this release only works with GHE 3.10+.
+#### Release 3923.6172 (min 3619.5594 GHE 3.11+) 2023-06-14
+**WARNING**: this release only works with GHE 3.11+.
 - New: add actions dropdown to file and discussion headers, including 'link to discussion' and 'edit in GitHub' actions.
 - Upd: add hints to line link template field in account settings.
 - Upd: send all analytics events via a queue in the database, so only the server connects to `REVIEWABLE_ANALYTICS_URL`.  While at it, retry failed requests a few times to smooth over any transient errors.
