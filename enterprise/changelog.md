@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4055.6359 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-09-14
 - Upd: modernize the client's color system.  There should be no user-visible effect though the eagle-eyed may notice some slight changes in color here and there.  The new system should be compatible with existing stylesheet customizations.
 - Upd: render Markdown-style links in coverage errors.
 - Fix: don't break under GHE 3.10.  This regression was introduced in v3935.6189 and specifically affects _only_ GHE 3.10.
