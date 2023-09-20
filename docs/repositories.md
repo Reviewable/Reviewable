@@ -369,6 +369,16 @@ An array of objects that look like `{path: 'full/path/to/file', group: 'Some Gro
   - To [group files in the file matrix](files.md#file-list), set an optional `group` property on each file with any name you'd like; all files with the same `group` value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.
   - To mark files as vendored, set an optional `vendored` property to `true` on any such file.  These files will default to a special Vendored group, won't participate in file rename matching, and won't display a diff by default.  Reviewable has hardcoded path-based heuristics for vendored files as well, which you can override by setting `vendored` to `false` on any files you'd like to exempt.
   - To override whether a file has been reviewed at a revision set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.
+  - To [designate specific users or team members to review a file](TODO:link_here), set a `designatedReviewers` property on the file.  Its contents should be an array of designations (see example below) that specify a `username` or `team`, an optional `scope`, and optionally whether reviews of past revisions separated from the latest one only by base changes should be considered as valid (`omitBaseChanges`).  You can also add two special kinds of entries to the array:  `{builtin: 'anyone'}` welcomes any reviewer to review the file (optionally with `omitBaseChanges`) and is the default if `designatedReviewers` is not set; it cannot be qualified with a scope.  `{builtin: 'fulfilled', scope: '<something>'}` marks the given scope as fulfilled, meaning that no further reviewers from that scope will be sought.  It must be qualified with a scope, and differs from just removing designations targeting that scope altogether as the scope will still be used to group accepted reviewers and indicate that the its review requirements have been fulfilled.  _Note that fulfilled scopes don't affect the file's `reviewed` status in any way._
+
+```
+file.designatedReviewers = [
+  {username: 'fahhem'},                                  // fahhem to review at latest revision
+  {username: 'pkaminski', omitBaseChanges: true},        // pkaminski to review as well, except base-only changes
+  {team: 'reviewable/security-team', scope: 'security'}, // also need a review from security-team
+  {builtin: anyone}                                      // anyone else is welcome to review as well
+];
+```
 
 #### `refreshTimestamp`
 A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.
