@@ -221,7 +221,9 @@ The current state of the review is accessible to your code via the `review` vari
     number: 44,
     state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
-    author: {username: 'pkaminski'},
+    // All users are annotated with a full list of teams they're members of; if the property is
+    // undefined then Reviewable wasn't able to fetch this list.
+    author: {username: 'pkaminski', teams: ['reviewable/developers']},
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
     draft: false,
     assignees: [
@@ -265,7 +267,7 @@ The current state of the review is accessible to your code via the `review` vari
     }
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
-    {username: 'pkaminski'}
+    {username: 'pkaminski', teams: ['reviewable/developers']}
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
   // by default unless your completion condition accesses pendingReviewers or deferringReviewers
@@ -287,7 +289,7 @@ The current state of the review is accessible to your code via the `review` vari
     'Comments only in Reviewable'
   ],
   sentiments: [  // List of sentiments (currently just emojis) extracted from comments
-    {username: 'pkaminski', emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
+    {username: 'pkaminski', teams: ['reviewable/developers'], emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
   ],
   discussions: [  // List of the discussions in the review (metadata only)
     {
@@ -295,7 +297,7 @@ The current state of the review is accessible to your code via the `review` vari
       resolved: false,  // Whether the overall discussion is resolved
       participants: [
         {
-          username: 'pkaminski',
+          username: 'pkaminski', teams: ['reviewable/developers'],
           disposition: 'discussing',  // Participant's current disposition
           resolved: true,  // False if this participant is blocking resolution
           read: true,  // False if this participant has unread messages in this discussion
@@ -321,6 +323,10 @@ The current state of the review is accessible to your code via the `review` vari
             {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
           ]
         }
+      ],
+      designatedReviewers: [  // Designations inferred from CODEOWNERS
+        {team: 'reviewable/legal'},
+        {builtin: 'anyone'}
       ]
     }
   ],
@@ -369,6 +375,44 @@ An array of objects that look like `{path: 'full/path/to/file', group: 'Some Gro
   - To [group files in the file matrix](files.md#file-list), set an optional `group` property on each file with any name you'd like; all files with the same `group` value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.
   - To mark files as vendored, set an optional `vendored` property to `true` on any such file.  These files will default to a special Vendored group, won't participate in file rename matching, and won't display a diff by default.  Reviewable has hardcoded path-based heuristics for vendored files as well, which you can override by setting `vendored` to `false` on any files you'd like to exempt.
   - To override whether a file has been reviewed at a revision set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.
+  - To [designate specific people for review](files.md#file-review-state), set a `designatedReviewers` property on the file as detailed below.
+
+##### Designated reviewers
+Designated reviewers are a list of individuals and teams who have been requested to review a given file.  They are grouped into "scopes", which you can use to indicate the focus of the requested review (e.g., "security"), hint at multiplicity requirements (e.g., "one lead or two devs"), or provide any other context for a group of designations that you'd like.  There's an implicit and unnamed default scope; you can mix named scopes with the default one but this can result in confusing UX so it's best avoided.
+
+The per-file `designatedReviewers` property should be an array of any of the following:
+  - A specific user identified by their username: `{username: 'pkaminski'}`.
+  - A team identified by their team slug: `{team: 'reviewable/security-team'}`.
+  - A special marker to indicate that anyone is welcome to review the file: `{builtin: 'anyone'}`.  This marker cannot be scoped, but it's fine to mix with scoped designations as it gets special treatment in the UI.  Leaving it out won't actually prevent undesignated users from reviewing the file, just make it clear that their review isn't needed.
+  - A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: `{builtin: 'fulfilled', scope: 'security'}`.  It must be qualified with a scope, and differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.
+
+Unless otherwise stated, each entry in the array can be modified with any combination of the following:
+  - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
+  - An `omitBaseChanges` flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., `{username: 'pkaminski', omitBaseChanges: true}`.
+
+{:important}
+The contents of `designatedReviewers` are _only_ used to compute the [file review state](files#file-review-state) and will _not_ affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a [sample script](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.
+
+Here's an example of a `designatedReviewers` property:
+
+```
+file.designatedReviewers = [
+  // fahhem to review at the latest revision
+  {username: 'fahhem'},
+  // pkaminski to review at the latest revision as well, though reviews at earlier
+  // revisions will be accepted if all later revisions are `baseChangesOnly: true`
+  {username: 'pkaminski', omitBaseChanges: true},
+  // also need a review from security-team, focused on security
+  {team: 'reviewable/security-team', scope: 'security'},
+  // and anyone else is welcome to review as well!
+  {builtin: 'anyone'}
+];
+```
+
+If `designatedReviewers` is not set it's treated as if it consisted only of `{builtin: 'anyone'}`.  Reviewable will also automatically create scopes for designations inferred from `CODEOWNERS` files (`code owners`), unsolicited reviewers if `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as reviewed against recommendations (`author`).
+
+{:tip}
+If you have a `CODEOWNERS` file in the repository, the `review.files` input structure will have precomputed `designatedReviewers` properties inferred from the code owners.  You can leave these as-is, tweak them (e.g., by removing `{builtin: 'anyone'}` from the array), or overwrite them altogether.  Note that if you leave `designatedReviewers` unset for a file it'll fall back to the code owners default instead of `{builtin: 'anyone'}`.
 
 #### `refreshTimestamp`
 A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.

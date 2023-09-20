@@ -294,63 +294,75 @@ i.icon {
 */
 
 @font-face {
-    font-family: Icons-duotone;
-    src: url('/fonts/Icons-duotone.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 900;
-    font-display: block;
+  font-family: Icons-thin;
+  src: url('/fonts/Icons-thin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 100;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-brands;
-    src: url('/fonts/Icons-brands.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 400;
-    font-display: block;
+  font-family: Icons-duotone;
+  src: url('/fonts/Icons-duotone.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 900;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-light;
-    src: url('/fonts/Icons-light.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 300;
-    font-display: block;
+  font-family: Icons-brands;
+  src: url('/fonts/Icons-brands.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 400;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-regular;
-    src: url('/fonts/Icons-regular.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 400;
-    font-display: block;
+  font-family: Icons-light;
+  src: url('/fonts/Icons-light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 300;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-solid;
-    src: url('/fonts/Icons-solid.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 900;
-    font-display: block;
+  font-family: Icons-regular;
+  src: url('/fonts/Icons-regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: Icons-solid;
+  src: url('/fonts/Icons-solid.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 900;
+  font-display: block;
 }
 
 i.icon.announcement::before {content: "\f0a1"; font-family: Icons-solid;}
@@ -375,30 +387,35 @@ i.icon.no.signal::before {content: "\f695"; font-family: Icons-regular;}
 i.icon.search::before {content: "\f002"; font-family: Icons-solid;}
 i.icon.settings::before {content: "\f013"; font-family: Icons-solid;}
 i.icon.spinner::before {content: "\f110"; font-family: Icons-solid;}
+i.icon.tip::before {content: "\f672"; font-family: Icons-regular;}
 i.icon.undo::before {content: "\f2ea"; font-family: Icons-regular;}
 i.icon.up::before {content: "\f062"; font-family: Icons-solid;}
 i.icon.valid::before {content: "\f00c"; font-family: Icons-regular;}
 i.icon.circle.warning::before {content: "\f06a"; font-family: Icons-solid;}
 i.icon.sign.warning::before {content: "\f071"; font-family: Icons-solid;}
 i.icon.warning::before {content: "\21"; font-family: Icons-solid;}
+i.icon.internal-link::before {content: "\f0c1"; font-family: Icons-regular;}
 i.icon.all.organizations::before {content: "\f57d"; font-family: Icons-regular;}
 i.icon.all.repositories::before {content: "\f5db"; font-family: Icons-regular;}
 i.icon.authorize::before {content: "\f13e"; font-family: Icons-solid;}
 i.icon.github::before {content: "\f09b"; font-family: Icons-brands;}
 i.icon.milestone::before {content: "\f277"; font-family: Icons-solid;}
+i.icon.mouse::before {content: "\f8cc"; font-family: Icons-solid;}
+i.icon.mystery::before {content: "\f059"; font-family: Icons-solid;}
 i.icon.private::before {content: "\f30d"; font-family: Icons-solid;}
-i.icon.approved.sanction::before {content: "\f164"; font-family: Icons-solid; color: #5BBD72;}
-i.icon.blocked.sanction::before {content: "\f256"; font-family: Icons-solid; color: #FFA22E;}
+i.icon.approved.sanction::before {content: "\f164"; font-family: Icons-solid; color: var(--green-2);}
+i.icon.blocked.sanction::before {content: "\f256"; font-family: Icons-solid; color: var(--orange-2);}
 i.icon.commented.sanction::before {content: "\f075"; font-family: Icons-solid;}
-i.icon.dismissed.sanction::before {content: "\e378"; font-family: Icons-solid; color: #777777;}
-i.icon.check.error.status::before {content: "\f071"; font-family: Icons-solid; color: #D95C5C;}
-i.icon.check.failure.status::before {content: "\e59b"; font-family: Icons-regular; color: #D95C5C;}
+i.icon.dismissed.sanction::before {content: "\e378"; font-family: Icons-solid; color: var(--grey-3);}
+i.icon.check.error.status::before {content: "\f071"; font-family: Icons-solid; color: var(--red-4);}
+i.icon.check.failure.status::before {content: "\e59b"; font-family: Icons-regular; color: var(--red-4);}
 i.icon.check.inprogress.status::before {content: "\f828"; font-family: Icons-regular;}
 i.icon.check.missing.status::before {content: "\f251"; font-family: Icons-regular;}
 i.icon.check.pending.status::before {content: "\f254"; font-family: Icons-regular;}
-i.icon.check.status.success::before {content: "\f00c"; font-family: Icons-solid; color: #5BBD72;}
+i.icon.check.status.success::before {content: "\f00c"; font-family: Icons-solid; color: var(--green-2);}
+i.icon.team::before {content: "\f500"; font-family: Icons-solid;}
 i.icon.timeout.trial::before {content: "\e0d2"; font-family: Icons-regular;}
-i.icon.twitter::before {content: "\f099"; font-family: Icons-brands;}
+i.icon.twitter::before {content: "\e61b"; font-family: Icons-brands;}
 i.icon.on.waiting::before {content: "\f0a4"; font-family: Icons-regular;}
 i.icon.active::before {content: "\f5f8"; font-family: Icons-solid;}
 i.icon.assignee.left::before {content: "\f105"; font-family: Icons-regular;}
@@ -412,36 +429,24 @@ i.icon.passive::after {content: "\10f21b"; font-family: Icons-duotone;}
 i.icon.requested.review::before {content: "\e4bf"; font-family: Icons-regular;}
 i.icon.reviewer::before {content: "\f06e"; font-family: Icons-regular;}
 i.icon.sort::before {content: "\e0ae"; font-family: Icons-regular;}
-i.icon.blog::before {content: "\f09e"; font-family: Icons-light;}
-i.icon.careers::before {content: "\f5fc"; font-family: Icons-light;}
-i.icon.changelog::before {content: "\f1da"; font-family: Icons-light;}
-i.icon.chatroom::before {content: "\e1e7"; font-family: Icons-light;}
-i.icon.email.us::before {content: "\f0e0"; font-family: Icons-light;}
-i.icon.help::before {content: "\f059"; font-family: Icons-light;}
-i.icon.issues::before {content: "\e490"; font-family: Icons-light;}
-i.icon.keyboard.shortcuts::before {content: "\f11c"; font-family: Icons-light;}
-i.icon.legal::before {content: "\f24e"; font-family: Icons-light;}
-i.icon.licenses::before {content: "\f70e"; font-family: Icons-light;}
-i.icon.privacy::before {content: "\f06c"; font-family: Icons-light;}
-i.icon.dashboard.repositories::before {content: "\f6b8"; font-family: Icons-light;}
-i.icon.dashboard.reviews::before {content: "\e147"; font-family: Icons-light;}
-i.icon.in.sign::before {content: "\f2f6"; font-family: Icons-solid;}
-i.icon.out.sign::before {content: "\f2f5"; font-family: Icons-solid;}
-i.icon.support::before {content: "\e492"; font-family: Icons-light;}
-i.icon.guide.user::before {content: "\f7e7"; font-family: Icons-light;}
-i.icon.amex.card::before {content: "\f1f3"; font-family: Icons-brands;}
-i.icon.card.club.diners::before {content: "\f24c"; font-family: Icons-brands;}
-i.icon.card.discover::before {content: "\f1f2"; font-family: Icons-brands;}
-i.icon.card.expiry::before {content: "\f133"; font-family: Icons-regular;}
+i.icon.blog::before {content: "\f09e"; font-family: Icons-thin;}
+i.icon.careers::before {content: "\f5fc"; font-family: Icons-thin;}
+i.icon.changelog::before {content: "\f1da"; font-family: Icons-thin;}
+i.icon.chatroom::before {content: "\e1e7"; font-family: Icons-thin;}
+i.icon.email.us::before {content: "\f0e0"; font-family: Icons-thin;}
+i.icon.help::before {content: "\f059"; font-family: Icons-thin;}
+i.icon.issues::before {content: "\e490"; font-family: Icons-thin;}
+i.icon.keyboard.shortcuts::before {content: "\f11c"; font-family: Icons-thin;}
+i.icon.legal::before {content: "\f24e"; font-family: Icons-thin;}
+i.icon.licenses::before {content: "\f70e"; font-family: Icons-thin;}
+i.icon.privacy::before {content: "\f06c"; font-family: Icons-thin;}
+i.icon.dashboard.repositories::before {content: "\f6b8"; font-family: Icons-thin;}
+i.icon.dashboard.reviews::before {content: "\e147"; font-family: Icons-thin;}
+i.icon.in.sign::before {content: "\f2f6"; font-family: Icons-light;}
+i.icon.out.sign::before {content: "\f2f5"; font-family: Icons-light;}
+i.icon.support::before {content: "\e492"; font-family: Icons-thin;}
+i.icon.guide.user::before {content: "\f7e7"; font-family: Icons-thin;}
 i.icon.card.generic::before {content: "\f09d"; font-family: Icons-light;}
-i.icon.card.jcb::before {content: "\f24b"; font-family: Icons-brands;}
-i.icon.card.mastercard::before {content: "\f1f1"; font-family: Icons-brands;}
-i.icon.card.visa::before {content: "\f1f0"; font-family: Icons-brands;}
-i.icon.disallowed::before {content: "\f05e"; font-family: Icons-regular;}
-i.icon.address.email::before {content: "\f0e0"; font-family: Icons-regular;}
-i.icon.memo.personal::before {content: "\e1d8"; font-family: Icons-regular;}
-i.icon.receipt::before {content: "\f543"; font-family: Icons-regular;}
-i.icon.code.security::before {content: "\f023"; font-family: Icons-regular;}
 i.icon.down.pointing::before {content: "\f0a7"; font-family: Icons-regular;}
 i.icon.panel.settings::before {content: "\f085"; font-family: Icons-solid;}
 i.icon.branch.pull.request::before {content: "\f387"; font-family: Icons-light;}
@@ -451,10 +456,10 @@ i.icon.counter.discussions::before {content: "\f086"; font-family: Icons-light;}
 i.icon.counter.drafts::before {content: "\e212"; font-family: Icons-light;}
 i.icon.counter.files::before {content: "\e178"; font-family: Icons-light;}
 i.icon.checks.counter.status::before {content: "\f21e"; font-family: Icons-light;}
-i.icon.create.review::before {content: "\f4b2"; font-family: Icons-solid; color: #5C6166;}
+i.icon.create.review::before {content: "\f4b2"; font-family: Icons-solid; color: var(--grey-2);}
 i.icon.default.query.set::before {content: "\f058"; font-family: Icons-light;}
 i.icon.more::before {content: "\f141"; font-family: Icons-solid;}
-i.icon.participating::before {content: "\f04c"; font-family: Icons-solid;}
+i.icon.participating::before {content: "\e122"; font-family: Icons-regular;}
 i.icon.stalled::before {content: "\f272"; font-family: Icons-regular;}
 i.icon.off.starred::before {content: "\f005"; font-family: Icons-regular;}
 i.icon.on.starred::before {content: "\f005"; font-family: Icons-solid;}
@@ -479,12 +484,18 @@ i.icon.codeblock.create::before {content: "\f121"; font-family: Icons-solid;}
 i.icon.deferred::before {content: "\f845"; font-family: Icons-duotone; position: absolute;}
 i.icon.deferred::after {content: "\10f845"; font-family: Icons-duotone;}
 i.icon.delete.draft::before {content: "\f1f8"; font-family: Icons-regular;}
+i.icon.designation.you::before {content: "\e27f"; font-family: Icons-solid;}
+i.icon.anyone.designation::before {content: "\f0c8"; font-family: Icons-regular;}
+i.icon.designation.others::before {content: "\e26e"; font-family: Icons-regular;}
+i.icon.designation.done::before {content: "\f14a"; font-family: Icons-regular;}
+i.icon.designation.preparing::before {content: "\f0c8"; font-family: Icons-solid;}
 i.icon.diff::before {content: "\e177"; font-family: Icons-regular;}
 i.icon.discussion.main::before {content: "\e487"; font-family: Icons-regular;}
 i.icon.discussion.new::before {content: "\e14b"; font-family: Icons-regular;}
 i.icon.discussion.nonblocking::before {content: "\f086"; font-family: Icons-regular;}
 i.icon.discussion.ongoing::before {content: "\e14e"; font-family: Icons-regular;}
 i.icon.discussion.resolved::before {content: "\e14f"; font-family: Icons-regular;}
+i.icon.discussion.scope::before {content: "\e59f"; font-family: Icons-regular;}
 i.icon.discussions::before {content: "\f086"; font-family: Icons-regular;}
 i.icon.dismiss::before {content: "\f05e"; font-family: Icons-regular;}
 i.icon.blocking.disposition::before {content: "\f5ec"; font-family: Icons-solid;}
@@ -513,31 +524,40 @@ i.icon.files::before {content: "\e178"; font-family: Icons-regular;}
 i.icon.closed.group::before {content: "\f0da"; font-family: Icons-solid;}
 i.icon.group.open::before {content: "\f0d7"; font-family: Icons-solid;}
 i.icon.issue::before {content: "\f2f8"; font-family: Icons-regular;}
+i.icon.closed.issue::before {content: "\f058"; font-family: Icons-regular;}
+i.icon.dropped.issue::before {content: "\f056"; font-family: Icons-regular;}
 i.icon.labels::before {content: "\f02c"; font-family: Icons-regular;}
 i.icon.last.reviewed::before {content: "\f06e"; font-family: Icons-regular;}
 i.icon.last.update::before {content: "\e367"; font-family: Icons-regular;}
 i.icon.line.marker::before {content: "\f3c5"; font-family: Icons-solid;}
 i.icon.markdown::before {content: "\f60f"; font-family: Icons-brands;}
 i.icon.merge::before {content: "\f387"; font-family: Icons-regular;}
+i.icon.message.read::before {content: "\f2b6"; font-family: Icons-light;}
+i.icon.message.unread::before {content: "\f0e0"; font-family: Icons-light;}
 i.icon.file.next::before {content: "\f0a9"; font-family: Icons-solid;}
 i.icon.diffs.no::before {content: "\e481"; font-family: Icons-light;}
 i.icon.overflow::before {content: "\f626"; font-family: Icons-duotone; position: absolute;}
 i.icon.overflow::after {content: "\10f626"; font-family: Icons-duotone;}
+i.icon.pen::before {content: "\f304"; font-family: Icons-solid;}
 i.icon.github.provenance::before {content: "\f113"; font-family: Icons-brands;}
 i.icon.mail.provenance::before {content: "\f0e0"; font-family: Icons-regular;}
 i.icon.provenance.synthetic::before {content: "\f30f"; font-family: Icons-solid;}
 i.icon.publish::before {content: "\f367"; font-family: Icons-solid;}
 i.icon.pull.request::before {content: "\e13c"; font-family: Icons-regular;}
+i.icon.closed.pull.request::before {content: "\f387"; font-family: Icons-regular;}
+i.icon.dropped.pull.request::before {content: "\e3f9"; font-family: Icons-regular;}
+i.icon.quote::before {content: "\f10e"; font-family: Icons-solid;}
 i.icon.recover::before {content: "\f895"; font-family: Icons-solid;}
 i.icon.renamed::before {content: "\f074"; font-family: Icons-regular;}
 i.icon.required::before {content: "\2a"; font-family: Icons-solid;}
-i.icon.ball.published.review.summary.tennis::before {content: "\f45e"; font-family: Icons-regular; color: #5BBD72;}
+i.icon.ball.published.review.summary.tennis::before {content: "\f45e"; font-family: Icons-regular; color: var(--green-2);}
 i.icon.published.racquet.review.summary.tennis::before {content: "\f45a"; font-family: Icons-regular;}
 i.icon.review::before {content: "\e147"; font-family: Icons-regular;}
 i.icon.reviewed::before {content: "\f06e"; font-family: Icons-light;}
 i.icon.send::before {content: "\f064"; font-family: Icons-solid;}
 i.icon.diffs.show.unreviewed::before {content: "\f05b"; font-family: Icons-light;}
 i.icon.checks.status::before {content: "\f21e"; font-family: Icons-regular;}
+i.icon.free.trial::before {content: "\e29e"; font-family: Icons-regular;}
 i.icon.unreviewed::before {content: "\f070"; font-family: Icons-light;}
 i.icon.base.upload::before {content: "\f03e"; font-family: Icons-solid;}
 i.icon.cover.upload::before {content: "\f03e"; font-family: Icons-regular;}
