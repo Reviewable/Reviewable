@@ -294,63 +294,75 @@ i.icon {
 */
 
 @font-face {
-    font-family: Icons-duotone;
-    src: url('/fonts/Icons-duotone.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 900;
-    font-display: block;
+  font-family: Icons-thin;
+  src: url('/fonts/Icons-thin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 100;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-brands;
-    src: url('/fonts/Icons-brands.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 400;
-    font-display: block;
+  font-family: Icons-duotone;
+  src: url('/fonts/Icons-duotone.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 900;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-light;
-    src: url('/fonts/Icons-light.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 300;
-    font-display: block;
+  font-family: Icons-brands;
+  src: url('/fonts/Icons-brands.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 400;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-regular;
-    src: url('/fonts/Icons-regular.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 400;
-    font-display: block;
+  font-family: Icons-light;
+  src: url('/fonts/Icons-light.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 300;
+  font-display: block;
 }
 
 @font-face {
-    font-family: Icons-solid;
-    src: url('/fonts/Icons-solid.woff2') format('woff2');
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-decoration: inherit;
-    text-transform: none;
-    font-weight: 900;
-    font-display: block;
+  font-family: Icons-regular;
+  src: url('/fonts/Icons-regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: Icons-solid;
+  src: url('/fonts/Icons-solid.woff2') format('woff2');
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  font-weight: 900;
+  font-display: block;
 }
 
 i.icon.announcement::before {content: "\f0a1"; font-family: Icons-solid;}
@@ -375,30 +387,35 @@ i.icon.no.signal::before {content: "\f695"; font-family: Icons-regular;}
 i.icon.search::before {content: "\f002"; font-family: Icons-solid;}
 i.icon.settings::before {content: "\f013"; font-family: Icons-solid;}
 i.icon.spinner::before {content: "\f110"; font-family: Icons-solid;}
+i.icon.tip::before {content: "\f672"; font-family: Icons-regular;}
 i.icon.undo::before {content: "\f2ea"; font-family: Icons-regular;}
 i.icon.up::before {content: "\f062"; font-family: Icons-solid;}
 i.icon.valid::before {content: "\f00c"; font-family: Icons-regular;}
 i.icon.circle.warning::before {content: "\f06a"; font-family: Icons-solid;}
 i.icon.sign.warning::before {content: "\f071"; font-family: Icons-solid;}
 i.icon.warning::before {content: "\21"; font-family: Icons-solid;}
+i.icon.internal-link::before {content: "\f0c1"; font-family: Icons-regular;}
 i.icon.all.organizations::before {content: "\f57d"; font-family: Icons-regular;}
 i.icon.all.repositories::before {content: "\f5db"; font-family: Icons-regular;}
 i.icon.authorize::before {content: "\f13e"; font-family: Icons-solid;}
 i.icon.github::before {content: "\f09b"; font-family: Icons-brands;}
 i.icon.milestone::before {content: "\f277"; font-family: Icons-solid;}
+i.icon.mouse::before {content: "\f8cc"; font-family: Icons-solid;}
+i.icon.mystery::before {content: "\f059"; font-family: Icons-solid;}
 i.icon.private::before {content: "\f30d"; font-family: Icons-solid;}
-i.icon.approved.sanction::before {content: "\f164"; font-family: Icons-solid; color: #5BBD72;}
-i.icon.blocked.sanction::before {content: "\f256"; font-family: Icons-solid; color: #FFA22E;}
+i.icon.approved.sanction::before {content: "\f164"; font-family: Icons-solid; color: var(--green-2);}
+i.icon.blocked.sanction::before {content: "\f256"; font-family: Icons-solid; color: var(--orange-2);}
 i.icon.commented.sanction::before {content: "\f075"; font-family: Icons-solid;}
-i.icon.dismissed.sanction::before {content: "\e378"; font-family: Icons-solid; color: #777777;}
-i.icon.check.error.status::before {content: "\f071"; font-family: Icons-solid; color: #D95C5C;}
-i.icon.check.failure.status::before {content: "\e59b"; font-family: Icons-regular; color: #D95C5C;}
+i.icon.dismissed.sanction::before {content: "\e378"; font-family: Icons-solid; color: var(--grey-3);}
+i.icon.check.error.status::before {content: "\f071"; font-family: Icons-solid; color: var(--red-4);}
+i.icon.check.failure.status::before {content: "\e59b"; font-family: Icons-regular; color: var(--red-4);}
 i.icon.check.inprogress.status::before {content: "\f828"; font-family: Icons-regular;}
 i.icon.check.missing.status::before {content: "\f251"; font-family: Icons-regular;}
 i.icon.check.pending.status::before {content: "\f254"; font-family: Icons-regular;}
-i.icon.check.status.success::before {content: "\f00c"; font-family: Icons-solid; color: #5BBD72;}
+i.icon.check.status.success::before {content: "\f00c"; font-family: Icons-solid; color: var(--green-2);}
+i.icon.team::before {content: "\f500"; font-family: Icons-solid;}
 i.icon.timeout.trial::before {content: "\e0d2"; font-family: Icons-regular;}
-i.icon.twitter::before {content: "\f099"; font-family: Icons-brands;}
+i.icon.twitter::before {content: "\e61b"; font-family: Icons-brands;}
 i.icon.on.waiting::before {content: "\f0a4"; font-family: Icons-regular;}
 i.icon.active::before {content: "\f5f8"; font-family: Icons-solid;}
 i.icon.assignee.left::before {content: "\f105"; font-family: Icons-regular;}
@@ -412,36 +429,24 @@ i.icon.passive::after {content: "\10f21b"; font-family: Icons-duotone;}
 i.icon.requested.review::before {content: "\e4bf"; font-family: Icons-regular;}
 i.icon.reviewer::before {content: "\f06e"; font-family: Icons-regular;}
 i.icon.sort::before {content: "\e0ae"; font-family: Icons-regular;}
-i.icon.blog::before {content: "\f09e"; font-family: Icons-light;}
-i.icon.careers::before {content: "\f5fc"; font-family: Icons-light;}
-i.icon.changelog::before {content: "\f1da"; font-family: Icons-light;}
-i.icon.chatroom::before {content: "\e1e7"; font-family: Icons-light;}
-i.icon.email.us::before {content: "\f0e0"; font-family: Icons-light;}
-i.icon.help::before {content: "\f059"; font-family: Icons-light;}
-i.icon.issues::before {content: "\e490"; font-family: Icons-light;}
-i.icon.keyboard.shortcuts::before {content: "\f11c"; font-family: Icons-light;}
-i.icon.legal::before {content: "\f24e"; font-family: Icons-light;}
-i.icon.licenses::before {content: "\f70e"; font-family: Icons-light;}
-i.icon.privacy::before {content: "\f06c"; font-family: Icons-light;}
-i.icon.dashboard.repositories::before {content: "\f6b8"; font-family: Icons-light;}
-i.icon.dashboard.reviews::before {content: "\e147"; font-family: Icons-light;}
-i.icon.in.sign::before {content: "\f2f6"; font-family: Icons-solid;}
-i.icon.out.sign::before {content: "\f2f5"; font-family: Icons-solid;}
-i.icon.support::before {content: "\e492"; font-family: Icons-light;}
-i.icon.guide.user::before {content: "\f7e7"; font-family: Icons-light;}
-i.icon.amex.card::before {content: "\f1f3"; font-family: Icons-brands;}
-i.icon.card.club.diners::before {content: "\f24c"; font-family: Icons-brands;}
-i.icon.card.discover::before {content: "\f1f2"; font-family: Icons-brands;}
-i.icon.card.expiry::before {content: "\f133"; font-family: Icons-regular;}
+i.icon.blog::before {content: "\f09e"; font-family: Icons-thin;}
+i.icon.careers::before {content: "\f5fc"; font-family: Icons-thin;}
+i.icon.changelog::before {content: "\f1da"; font-family: Icons-thin;}
+i.icon.chatroom::before {content: "\e1e7"; font-family: Icons-thin;}
+i.icon.email.us::before {content: "\f0e0"; font-family: Icons-thin;}
+i.icon.help::before {content: "\f059"; font-family: Icons-thin;}
+i.icon.issues::before {content: "\e490"; font-family: Icons-thin;}
+i.icon.keyboard.shortcuts::before {content: "\f11c"; font-family: Icons-thin;}
+i.icon.legal::before {content: "\f24e"; font-family: Icons-thin;}
+i.icon.licenses::before {content: "\f70e"; font-family: Icons-thin;}
+i.icon.privacy::before {content: "\f06c"; font-family: Icons-thin;}
+i.icon.dashboard.repositories::before {content: "\f6b8"; font-family: Icons-thin;}
+i.icon.dashboard.reviews::before {content: "\e147"; font-family: Icons-thin;}
+i.icon.in.sign::before {content: "\f2f6"; font-family: Icons-light;}
+i.icon.out.sign::before {content: "\f2f5"; font-family: Icons-light;}
+i.icon.support::before {content: "\e492"; font-family: Icons-thin;}
+i.icon.guide.user::before {content: "\f7e7"; font-family: Icons-thin;}
 i.icon.card.generic::before {content: "\f09d"; font-family: Icons-light;}
-i.icon.card.jcb::before {content: "\f24b"; font-family: Icons-brands;}
-i.icon.card.mastercard::before {content: "\f1f1"; font-family: Icons-brands;}
-i.icon.card.visa::before {content: "\f1f0"; font-family: Icons-brands;}
-i.icon.disallowed::before {content: "\f05e"; font-family: Icons-regular;}
-i.icon.address.email::before {content: "\f0e0"; font-family: Icons-regular;}
-i.icon.memo.personal::before {content: "\e1d8"; font-family: Icons-regular;}
-i.icon.receipt::before {content: "\f543"; font-family: Icons-regular;}
-i.icon.code.security::before {content: "\f023"; font-family: Icons-regular;}
 i.icon.down.pointing::before {content: "\f0a7"; font-family: Icons-regular;}
 i.icon.panel.settings::before {content: "\f085"; font-family: Icons-solid;}
 i.icon.branch.pull.request::before {content: "\f387"; font-family: Icons-light;}
@@ -451,10 +456,10 @@ i.icon.counter.discussions::before {content: "\f086"; font-family: Icons-light;}
 i.icon.counter.drafts::before {content: "\e212"; font-family: Icons-light;}
 i.icon.counter.files::before {content: "\e178"; font-family: Icons-light;}
 i.icon.checks.counter.status::before {content: "\f21e"; font-family: Icons-light;}
-i.icon.create.review::before {content: "\f4b2"; font-family: Icons-solid; color: #5C6166;}
+i.icon.create.review::before {content: "\f4b2"; font-family: Icons-solid; color: var(--grey-2);}
 i.icon.default.query.set::before {content: "\f058"; font-family: Icons-light;}
 i.icon.more::before {content: "\f141"; font-family: Icons-solid;}
-i.icon.participating::before {content: "\f04c"; font-family: Icons-solid;}
+i.icon.participating::before {content: "\e122"; font-family: Icons-regular;}
 i.icon.stalled::before {content: "\f272"; font-family: Icons-regular;}
 i.icon.off.starred::before {content: "\f005"; font-family: Icons-regular;}
 i.icon.on.starred::before {content: "\f005"; font-family: Icons-solid;}
@@ -479,12 +484,18 @@ i.icon.codeblock.create::before {content: "\f121"; font-family: Icons-solid;}
 i.icon.deferred::before {content: "\f845"; font-family: Icons-duotone; position: absolute;}
 i.icon.deferred::after {content: "\10f845"; font-family: Icons-duotone;}
 i.icon.delete.draft::before {content: "\f1f8"; font-family: Icons-regular;}
+i.icon.designation.you::before {content: "\e27f"; font-family: Icons-solid;}
+i.icon.anyone.designation::before {content: "\f0c8"; font-family: Icons-regular;}
+i.icon.designation.others::before {content: "\e26e"; font-family: Icons-regular;}
+i.icon.designation.done::before {content: "\f14a"; font-family: Icons-regular;}
+i.icon.designation.preparing::before {content: "\f0c8"; font-family: Icons-solid;}
 i.icon.diff::before {content: "\e177"; font-family: Icons-regular;}
 i.icon.discussion.main::before {content: "\e487"; font-family: Icons-regular;}
 i.icon.discussion.new::before {content: "\e14b"; font-family: Icons-regular;}
 i.icon.discussion.nonblocking::before {content: "\f086"; font-family: Icons-regular;}
 i.icon.discussion.ongoing::before {content: "\e14e"; font-family: Icons-regular;}
 i.icon.discussion.resolved::before {content: "\e14f"; font-family: Icons-regular;}
+i.icon.discussion.scope::before {content: "\e59f"; font-family: Icons-regular;}
 i.icon.discussions::before {content: "\f086"; font-family: Icons-regular;}
 i.icon.dismiss::before {content: "\f05e"; font-family: Icons-regular;}
 i.icon.blocking.disposition::before {content: "\f5ec"; font-family: Icons-solid;}
@@ -513,31 +524,40 @@ i.icon.files::before {content: "\e178"; font-family: Icons-regular;}
 i.icon.closed.group::before {content: "\f0da"; font-family: Icons-solid;}
 i.icon.group.open::before {content: "\f0d7"; font-family: Icons-solid;}
 i.icon.issue::before {content: "\f2f8"; font-family: Icons-regular;}
+i.icon.closed.issue::before {content: "\f058"; font-family: Icons-regular;}
+i.icon.dropped.issue::before {content: "\f056"; font-family: Icons-regular;}
 i.icon.labels::before {content: "\f02c"; font-family: Icons-regular;}
 i.icon.last.reviewed::before {content: "\f06e"; font-family: Icons-regular;}
 i.icon.last.update::before {content: "\e367"; font-family: Icons-regular;}
 i.icon.line.marker::before {content: "\f3c5"; font-family: Icons-solid;}
 i.icon.markdown::before {content: "\f60f"; font-family: Icons-brands;}
 i.icon.merge::before {content: "\f387"; font-family: Icons-regular;}
+i.icon.message.read::before {content: "\f2b6"; font-family: Icons-light;}
+i.icon.message.unread::before {content: "\f0e0"; font-family: Icons-light;}
 i.icon.file.next::before {content: "\f0a9"; font-family: Icons-solid;}
 i.icon.diffs.no::before {content: "\e481"; font-family: Icons-light;}
 i.icon.overflow::before {content: "\f626"; font-family: Icons-duotone; position: absolute;}
 i.icon.overflow::after {content: "\10f626"; font-family: Icons-duotone;}
+i.icon.pen::before {content: "\f304"; font-family: Icons-solid;}
 i.icon.github.provenance::before {content: "\f113"; font-family: Icons-brands;}
 i.icon.mail.provenance::before {content: "\f0e0"; font-family: Icons-regular;}
 i.icon.provenance.synthetic::before {content: "\f30f"; font-family: Icons-solid;}
 i.icon.publish::before {content: "\f367"; font-family: Icons-solid;}
 i.icon.pull.request::before {content: "\e13c"; font-family: Icons-regular;}
+i.icon.closed.pull.request::before {content: "\f387"; font-family: Icons-regular;}
+i.icon.dropped.pull.request::before {content: "\e3f9"; font-family: Icons-regular;}
+i.icon.quote::before {content: "\f10e"; font-family: Icons-solid;}
 i.icon.recover::before {content: "\f895"; font-family: Icons-solid;}
 i.icon.renamed::before {content: "\f074"; font-family: Icons-regular;}
 i.icon.required::before {content: "\2a"; font-family: Icons-solid;}
-i.icon.ball.published.review.summary.tennis::before {content: "\f45e"; font-family: Icons-regular; color: #5BBD72;}
+i.icon.ball.published.review.summary.tennis::before {content: "\f45e"; font-family: Icons-regular; color: var(--green-2);}
 i.icon.published.racquet.review.summary.tennis::before {content: "\f45a"; font-family: Icons-regular;}
 i.icon.review::before {content: "\e147"; font-family: Icons-regular;}
 i.icon.reviewed::before {content: "\f06e"; font-family: Icons-light;}
 i.icon.send::before {content: "\f064"; font-family: Icons-solid;}
 i.icon.diffs.show.unreviewed::before {content: "\f05b"; font-family: Icons-light;}
 i.icon.checks.status::before {content: "\f21e"; font-family: Icons-regular;}
+i.icon.free.trial::before {content: "\e29e"; font-family: Icons-regular;}
 i.icon.unreviewed::before {content: "\f070"; font-family: Icons-light;}
 i.icon.base.upload::before {content: "\f03e"; font-family: Icons-solid;}
 i.icon.cover.upload::before {content: "\f03e"; font-family: Icons-regular;}
@@ -545,3 +565,235 @@ i.icon.video::before {content: "\f03d"; font-family: Icons-regular;}
 i.icon.around.wrapped::before {content: "\f2f9"; font-family: Icons-regular;}
 i.icon.box.checkmark::before {content: "\f14a"; font-family: Icons-regular;}
 i.icon.outline.square::before {content: "\f0c8"; font-family: Icons-regular;}
+
+
+/*
+  The following is copied from Reviewable/reviewable-client/src/colors.css (excluding the bottom
+  part that sets selection colors and overrides SemanticUI button states), and should be updated
+  whenever colors are tweaked.
+*/
+
+:root,
+::selection {
+    /* Controls HSL values for text coloration in Semantic */
+    /* Make sure to wrap these in hsl() */
+    --bg-base-hsl: 0, 0%, 100%;
+    --fg-base-hsl: 0, 0%, 0%;
+
+    /* Text Colors */
+    --text-color-normal: var(--black-1);
+    --text-color-inverted: var(--white-4);
+
+    /* Background Colors */
+    --bg-1: var(--white-4);
+    --bg-2: var(--white-1);
+
+    /* Selections */
+    --selection-handles-color: hsl(244.04deg, 81.25%, 74.9%);
+    --selection-bg-color: hsl(216deg, 100%, 83%, 0.5);
+    --selection-bg-color: color-mix(in oklab, var(--blue-6), transparent 50%);
+    /*
+    Used to automatically achieve adapted selection color in code-editor.vue.
+    Update hue angle as appropriate when theming. This color should be set using values that
+    result in the target adapted values (--selection-bg-color-adapted) when mixed with the
+    original selection background color above but before being mixed with transparency,
+    which sets the target alpha. https://codepen.io/web-dot-dev/pen/JjBZLrm is very helpful here.
+  */
+    --selection-color-adapter: hsl(216deg, 100%, 50%);
+
+    /* Diff Related Colors --------------------------------------------------- */
+    /* Make sure to wrap diff-remove/add in hsl() */
+    --diff-remove: ;
+    /* backward compat - see user-item.vue */
+    --diff-remove-color-hsl: 0deg, 83.15%, 65.1%;
+    /* default red */
+    --diff-remove-color-devtools-hsl: hsl(0deg, 83.15%, 65.1%);
+    /* just for devtools */
+
+    --diff-add: ;
+    /* backward compat - see user-item.vue */
+    --diff-add-color-hsl: 130.7deg, 64.82%, 60.98%;
+    /* default green */
+    --diff-add-color-devtools-hsl: hsl(130.7deg, 64.82%, 60.98%);
+    /* just for devtools */
+
+    --diff-hover-color-highlight: hsl(246.74deg, 39.21%, 55.49%, 0.05);
+
+    --revision-color-added: var(--green-7);
+    --revision-color-modified: var(--yellow-5);
+    --revision-color-removed: var(--red-8);
+
+    --coverage-bar-color-full: hsl(207.89deg, 73.2%, 80.98%);
+    --coverage-bar-color-partial: hsl(208deg, 81.82%, 89.22%);
+    --coverage-bar-color-none: hsl(31.4deg, 100%, 83.14%);
+    --line-content-color-base: var(--grey-2);
+
+    /* One-off Transparents */
+    --participant-cell-color-trans: hsl(195.79deg, 61.29%, 93.92%, 0.5);
+    /* used in participants panel */
+    --message-bottom-color-trans: hsl(270deg, 1.12%, 34.9%, 0.95);
+    /* used in message bottom in review component */
+
+    /* Reviewable Color Palette ---------------------------------------------- */
+    /* To use color-mix, make sure to provide the fallback HSL value here and the progressive enhancement below ↓*/
+
+    /* Primary color shades */
+    --black: var(--black-1);
+    --grey: var(--grey-3);
+    --white: var(--white-4);
+    --green: var(--green-2);
+    --red: var(--red-4);
+    --orange: var(--orange-2);
+    --yellow: var(--yellow-2);
+    --blue: var(--blue-4);
+    --purple: var(--purple-4);
+
+    /* Black Colors */
+    --black-1: hsl(var(--fg-base-hsl));
+    --black-2: hsl(0deg, 0%, 20%);
+    --black-3: hsl(0deg, 0%, 25%);
+
+    /* Grey Colors */
+    --grey-1: hsl(270deg, 1.12%, 34.9%);
+    --grey-2: hsl(0deg, 0%, 40%);
+    --grey-3: hsl(0deg, 0%, 50.2%);
+    --grey-4: hsl(0deg, 0%, 59%);
+    --grey-5: hsl(0deg, 0%, 66.67%);
+    --grey-6: hsl(0deg, 0%, 79.61%);
+    --grey-7: hsl(0deg, 0%, 86.67%);
+    --grey-8: hsl(0deg, 0%, 90.98%);
+
+    /* White Colors */
+    --white-1: hsl(0deg, 0%, 94.9%);
+    --white-2: hsl(0deg, 0%, 97.25%);
+    --white-3: hsl(240deg, 11.11%, 98.24%);
+    --white-4: hsl(var(--bg-base-hsl));
+
+    /* Green Colors */
+    --green-1: hsl(121.38deg, 34.66%, 49.22%);
+    --green-2: hsl(134.08deg, 42.61%, 54.9%);
+    --green-3: hsl(134.09deg, 52.51%, 57.06%);
+    --green-4: hsl(85.79deg, 52.71%, 60.2%);
+    --green-5: hsl(133.71deg, 41.67%, 67.06%);
+    --green-6: hsl(106.15deg, 86.67%, 91.18%);
+    --green-7: hsl(132deg, 41.67%, 95.29%);
+
+    /* Red Colors */
+    --red-1: hsl(0deg, 34.66%, 49.22%);
+    --red-2: hsl(359.56deg, 60%, 55.88%);
+    --red-3: hsl(8.65deg, 100%, 56.47%);
+    --red-4: hsl(0deg, 62.19%, 60.59%);
+    --red-5: hsl(359.58deg, 74.87%, 62.55%);
+    --red-6: hsl(0deg, 100%, 86.27%);
+    --red-7: hsl(0deg, 48.15%, 89.41%);
+    --red-8: hsl(0deg, 61.9%, 95.88%);
+    --red-9: hsl(0deg, 29.41%, 96.67%);
+
+    /* Orange Colors */
+    --orange-1: hsl(16.81deg, 80.53%, 55.69%);
+    --orange-2: hsl(33.3deg, 100%, 59.02%);
+    --orange-3: hsl(16.88deg, 100%, 60.98%);
+    --orange-4: hsl(31.67deg, 100%, 71.76%);
+
+    /* Yellow Colors */
+    --yellow-1: hsl(55.07deg, 32.16%, 44.51%);
+    --yellow-2: hsl(47.37deg, 100%, 51.57%);
+    --yellow-3: hsl(54.55deg, 64.71%, 90%);
+    --yellow-4: hsl(58deg, 94%, 93%);
+    --yellow-5: hsl(45deg, 62.5%, 93.73%);
+
+    /* Blue Colors */
+    --blue-1: hsl(192.33deg, 32.16%, 44.51%);
+    --blue-2: hsl(196.34deg, 91.42%, 45.69%);
+    --blue-3: hsl(196.31deg, 90.04%, 52.75%);
+    --blue-4: hsl(196.89deg, 87.1%, 69.61%);
+    --blue-5: hsl(195.48deg, 54.39%, 77.65%);
+    --blue-6: hsl(216deg, 100%, 83%);
+    --blue-7: hsl(195.79deg, 61.29%, 93.92%);
+
+    /* Purple Colors */
+    --purple-1: hsl(257.42deg, 19.5%, 31.18%);
+    --purple-2: hsl(256.22deg, 18.78%, 38.63%);
+    --purple-3: hsl(256.36deg, 17.74%, 48.63%);
+    --purple-4: hsl(256deg, 25.21%, 53.33%);
+    --purple-5: hsl(255.85deg, 26.37%, 60.59%);
+    --purple-6: hsl(255.56deg, 26.73%, 80.2%);
+
+    /* Semantic UI Color Palette Overrides ------------------------------------- */
+    --sui-text-inverted: var(--text-color-inverted);
+
+    --sui-lofi-white-d-1: var(--white-2);
+    --sui-lofi-white-l-1: var(--white-4);
+
+    --sui-lofi-black-d-1: var(--black-1);
+    --sui-lofi-black-l-1: var(--black-2);
+
+    --sui-lofi-grey-d-1: var(--grey-1);
+    --sui-lofi-grey-d-2: var(--grey-3);
+    --sui-lofi-grey-d-3: var(--grey-5);
+    --sui-lofi-grey-l-1: var(--grey-6);
+    --sui-lofi-grey-l-2: var(--grey-7);
+    --sui-lofi-grey-l-3: var(--grey-8);
+
+    --sui-lofi-green-d-1: var(--green-1);
+    --sui-lofi-green-d-2: var(--green-2);
+    --sui-lofi-green-d-3: var(--green-3);
+    --sui-lofi-green-l-1: var(--green-4);
+    --sui-lofi-green-l-2: var(--green-6);
+    --sui-lofi-green-l-3: var(--green-7);
+
+    --sui-lofi-red-d-1: var(--red-1);
+    --sui-lofi-red-d-2: var(--red-2);
+    --sui-lofi-red-d-3: var(--red-3);
+    --sui-lofi-red-d-4: var(--red-4);
+    --sui-lofi-red-l-1: var(--red-5);
+    --sui-lofi-red-l-2: var(--red-6);
+    --sui-lofi-red-l-3: var(--red-7);
+    --sui-lofi-red-l-4: var(--red-9);
+
+    --sui-lofi-orange-d-1: var(--orange-1);
+    --sui-lofi-orange-l-1: var(--orange-3);
+
+    --sui-lofi-yellow-d-1: var(--yellow-1);
+    --sui-lofi-yellow-d-2: var(--yellow-2);
+    --sui-lofi-yellow-l-1: var(--yellow-3);
+    --sui-lofi-yellow-l-2: var(--yellow-5);
+
+    --sui-lofi-blue-d-1: var(--blue-1);
+    --sui-lofi-blue-d-2: var(--blue-2);
+    --sui-lofi-blue-d-3: var(--blue-3);
+    --sui-lofi-blue-l-1: var(--blue-4);
+    --sui-lofi-blue-l-2: var(--blue-7);
+    --sui-lofi-blue-l-3: var(--white-3);
+
+    --sui-lofi-purple-d-1: var(--purple-1);
+    --sui-lofi-purple-d-2: var(--purple-2);
+    --sui-lofi-purple-l-1: var(--purple-4);
+
+    --sui-bg-base-hsl: var(--bg-base-hsl);
+    --sui-fg-base-hsl: var(--fg-base-hsl);
+
+    /* Progressive Enhancement */
+    --black-2: color-mix(in srgb, var(--black-1), var(--white-4) 20%);
+    --black-3: color-mix(in srgb, var(--black-1), var(--white-4) 25%);
+
+    --grey-1: color-mix(in srgb, var(--black-1), var(--white-4) 34.9%);
+    --grey-2: color-mix(in srgb, var(--black-1), var(--white-4) 40%);
+    --grey-3: color-mix(in srgb, var(--black-1), var(--white-4) 50.2%);
+    --grey-4: color-mix(in srgb, var(--black-1), var(--white-4) 59%);
+    --grey-5: color-mix(in srgb, var(--black-1), var(--white-4) 66.67%);
+    --grey-6: color-mix(in srgb, var(--black-1), var(--white-4) 79.61%);
+    --grey-7: color-mix(in srgb, var(--black-1), var(--white-4) 86.67%);
+    --grey-8: color-mix(in srgb, var(--black-1), var(--white-4) 90.98%);
+
+    --white-1: color-mix(in srgb, var(--black-1), var(--white-4) 94.9%);
+    --white-2: color-mix(in srgb, var(--black-1), var(--white-4) 97.25%);
+    --white-3: color-mix(in srgb, var(--black-1), var(--white-4) 98.24%);
+
+    --green-5: color-mix(in oklab, var(--green-2), white 26%);
+    --green-7: color-mix(in oklab, var(--green-5), white 84%);
+
+    --red-8: color-mix(in oklab, hsl(var(--diff-remove-color-hsl)), white 90%);
+
+    --purple-6: color-mix(in oklab, var(--purple-5), white 50%);
+}
