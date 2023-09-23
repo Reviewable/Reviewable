@@ -7,8 +7,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
 - Fix: remove a lookbehind regular expression that breaks in Safari <16.4.
+- Fix: avoid icon render errors after state changes in participants panel.
+
 #### Release 4055.6359 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-09-14
 - Upd: modernize the client's color system.  There should be no user-visible effect though the eagle-eyed may notice some slight changes in color here and there.  The new system should be compatible with existing stylesheet customizations.
 - Upd: render Markdown-style links in coverage errors.
