@@ -15,7 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against some rare cases of elements not existing due to timing.
 - Fix: don't lose diff delta highlights in some very old browsers. (Regression introduced in v4055.6359.)
 - Fix: correctly highlight prior revision arcs in file headers for contextual help.
-- Fix: correctly highlight prior revision arcs in dynamically positioned file header.
+- Fix: correctly position contextual help highlights in pinned file headers.
 - Fix: guard against crash when user logs out in the middle of a dashboard query.
 
 #### Release 4055.6359 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-09-14
