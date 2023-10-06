@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
+- Upd: Unmappable inline comments are now linked to the original comment on GitHub.
 - Fix: remove a lookbehind regular expression that breaks in Safari <16.4.
 - Fix: avoid icon render errors after state changes in participants panel.
 - Fix: be more tolerant about using valid repo admin authorizations even when a repo's connection is broken.
@@ -17,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly highlight prior revision arcs in file headers for contextual help.
 - Fix: correctly position contextual help highlights in pinned file headers.
 - Fix: guard against crash when user logs out in the middle of a dashboard query.
+- Fix: deduplicate check names (e.g., by the workflow that spawned them) to avoid inadvertently dropping checks from the list in the UI.
 
 #### Release 4055.6359 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-09-14
 - Upd: modernize the client's color system.  There should be no user-visible effect though the eagle-eyed may notice some slight changes in color here and there.  The new system should be compatible with existing stylesheet customizations.
