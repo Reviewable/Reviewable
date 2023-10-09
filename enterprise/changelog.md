@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
 - Upd: Unmappable inline comments are now linked to the original comment on GitHub.
+- Upd: update the tooltip system; no user-visible changes expected.
 - Fix: remove a lookbehind regular expression that breaks in Safari <16.4.
 - Fix: avoid icon render errors after state changes in participants panel.
 - Fix: be more tolerant about using valid repo admin authorizations even when a repo's connection is broken.
