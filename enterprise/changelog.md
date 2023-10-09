@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
-- Upd: Unmappable inline comments are now linked to the original comment on GitHub.
+- Upd: unmappable GitHub inline comments are now linked to the original comment on GitHub.
 - Upd: update the tooltip system; no user-visible changes expected.
 - Fix: remove a lookbehind regular expression that breaks in Safari <16.4.
 - Fix: avoid icon render errors after state changes in participants panel.
