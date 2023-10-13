@@ -21,6 +21,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against crash when user logs out in the middle of a dashboard query.
 - Fix: deduplicate check names (e.g., by the workflow that spawned them) to avoid inadvertently dropping checks from the list in the UI.
 - Fix: if a pull request isn't eligible to be turned into a review due to contributor team constraints applied to the license or subscription, stop processing its events earlier.  This should significantly reduce unnecessary processing load and GitHub API quota usage in cases where the contributor team is small compared to the number of other contributors in a connected repository.
+- Fix: accept clicks in file header dropdown when jumping from file matrix.
+- Fix: stop treating `.bmp`, `.dib`, and `.xbm` as image files.  These are truly ancient formats that are almost never used and may conflict with more modern uses of the filename extensions.
 
 #### Release 4055.6359 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-09-14
 - Upd: modernize the client's color system.  There should be no user-visible effect though the eagle-eyed may notice some slight changes in color here and there.  The new system should be compatible with existing stylesheet customizations.
