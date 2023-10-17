@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
 - Upd: unmappable GitHub inline comments are now linked to the original comment on GitHub.
