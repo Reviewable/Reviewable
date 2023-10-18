@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
 - Fix: don't fail with a permission denied error when publishing a draft for a discussion where new comments were posted (and not acknowledged by the user) in more than the previous 10 seconds.
+- Fix: insert badge link into pull request even if review starts out broken.
+- Fix: detect when multiple reviews share the same head commit and set a special error status in GitHub.  Otherwise, it was possible for the reviews to get into a feedback loop when updating the status and quickly exhaust GitHub's limit of 1000 statuses per commit.
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
