@@ -163,6 +163,7 @@ Some features, such as [custom review completion rules](https://docs.reviewable.
 
 Basic UI customization.
 
+* `REVIEWABLE_CHAT_URL`:  The URL of a chatroom page that you'd like the "Chat" support option to link to, such as a Slack channel that you're sharing with us.  If missing, the option will activate the built-in chat that connects directly to our support team.  If set to the special value `off` the "Chat" option won't be listed in the support menu at all.
 * `REVIEWABLE_TERMS_URL`: The URL for the Terms link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_PRIVACY_URL`: The URL for the Privacy link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_DISABLED_CONNECTIONS`: A comma-separated list of fully qualified repository names that will not be allowed to connect to this Reviewable instance.
