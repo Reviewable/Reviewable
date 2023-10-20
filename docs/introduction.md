@@ -36,16 +36,16 @@ If at any point you notice a typo or mistake, please don't hesitate to jump in a
 
 Help is available through many channels:
 
-* Press `F1` or `h`, or click **Support > Help**, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, or click on the grey background to get back to the app.
+* X-Ray: Press `F1` or `h`, or click **Support > Help**, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, press Esc, or click on the grey background to get back to the app.
 
 {:.tip}
 On tablets and other touch devices with no convenient keyboard, tap the question mark icon in the bottom-right corner of the screen instead.
 
-* Click **Support > Issues** to report a bug, or make a feature request. To potentially get an answer faster and help reduce triaging overhead, please check existing issues for duplicates first.
+* Chat: Click **Support > Chat** to chat with our team. We don't have access to what you're seeing unless you send us a screenshot.
 
-* Click **Support > Chatroom** to ask other questions in a public forum.
+* Bug reports or feature requests: Click **Support > Issues** to report a bug, or make a feature request. To potentially get an answer faster and help reduce triaging overhead, please check existing issues for duplicates first.
 
-* [Send us an email](mailto:support@reviewable.io) for questions that should stay private, or engage in private chat through [Gitter](https://gitter.im/).
+* [Send us an email](mailto:support@reviewable.io) for questions that should stay private. If you're an Enterprise user, you can chat with us in our shared chat channel (Slack, Teams, etc).
 
 ## Staying up to date
 
