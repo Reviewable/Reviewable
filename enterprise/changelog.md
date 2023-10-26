@@ -18,6 +18,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't sync requested reviewers when sending ad-hoc comments, even if the option is checked in the publish options.
 - Fix: eliminate some duplicate background rendering of draft comments.
 - Fix: render avatars smoothly (regression introduced in v3424.5210).
+- Fix: address visual regression where file matrix table striping was lost.
+- Fix: handle some occasional bad data coming from GitHub's API more gracefully.
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
