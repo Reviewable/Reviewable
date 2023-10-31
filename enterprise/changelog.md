@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: render avatars smoothly (regression introduced in v3424.5210).
 - Fix: address visual regression where file matrix table striping was lost.
 - Fix: handle some occasional bad data coming from GitHub's API more gracefully.
+- Fix: always paint the checks donut correctly after animating changing check states.
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
