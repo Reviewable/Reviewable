@@ -7,7 +7,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
 - Upd: speed up publish, publish preview, and ad-hoc comment send functions.  Note that this will increase the number of evaluations of custom review completion conditions.
 - Fix: don't fail with a permission denied error when publishing a draft for a discussion where new comments were posted (and not acknowledged by the user) in more than the previous 10 seconds.
@@ -18,9 +17,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't sync requested reviewers when sending ad-hoc comments, even if the option is checked in the publish options.
 - Fix: eliminate some duplicate background rendering of draft comments.
 - Fix: render avatars smoothly (regression introduced in v3424.5210).
-- Fix: address visual regression where file matrix table striping was lost.
+- Fix: restore file matrix table striping (regression introduced in v4055.6359).
 - Fix: handle some occasional bad data coming from GitHub's API more gracefully.
 - Fix: always paint the checks donut correctly after animating changing check states.
+
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
 - Upd: improve the merge button arming animation to be clearer.
