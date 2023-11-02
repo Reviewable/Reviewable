@@ -20,6 +20,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: restore file matrix table striping (regression introduced in v4055.6359).
 - Fix: handle some occasional bad data coming from GitHub's API more gracefully.
 - Fix: always paint the checks donut correctly after animating changing check states.
+- Fix: avoid some UI jitter when starting to type a review summary draft at the bottom of the page, or when deleting one from same.
+- Fix: avoid a cumulative slowdown after deleting many drafts.
 
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
