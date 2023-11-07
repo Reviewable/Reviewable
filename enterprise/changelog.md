@@ -9,6 +9,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
 - Upd: speed up publish, publish preview, and ad-hoc comment send functions.  Note that this will increase the number of evaluations of custom review completion conditions.
+- Upd: clean up and simplify the review summary unreviewed files and unreplied discussions counters, and make it clear when publishing will defer the review.
+- Upd: consistently remove the "new comment" ribbon when acknowledging or replying to a discussion.
 - Fix: don't fail with a permission denied error when publishing a draft for a discussion where new comments were posted (and not acknowledged by the user) in more than the previous 10 seconds.
 - Fix: insert badge link into pull request even if review starts out broken.
 - Fix: detect when multiple reviews share the same head commit and set a special error status in GitHub.  Otherwise, it was possible for the reviews to get into a feedback loop when updating the status and quickly exhaust GitHub's limit of 1000 statuses per commit.
@@ -22,6 +24,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: always paint the checks donut correctly after animating changing check states.
 - Fix: avoid some UI jitter when starting to type a review summary draft at the bottom of the page, or when deleting one from same.
 - Fix: avoid a cumulative slowdown after deleting many drafts.
+- Fix: ensure the review summary publishing bunny always animates when it should.
+- Fix: prevent some (very) minor elements from animating when animations are turned off in the user's settings.
 
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
