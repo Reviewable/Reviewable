@@ -30,6 +30,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent some (very) minor elements from animating when animations are turned off in the user's settings.
 - Fix: slice off tail quotes from GitHub-originated messages only if they were sent over email. Comments written in GitHub's UI rarely use tail quoting, but do sometimes have actual quotes at the end.
 - Fix: tighten up the layout of filename headers — they had accumulated a bunch of unnecessary whitespace over time.
+- Fix: avoid logging bogus "Function already exist" errors in the Lambda executor.
 
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
