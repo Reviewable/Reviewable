@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: clean up and simplify the review summary unreviewed files and unreplied discussions counters, and make it clear when publishing will defer the review.
 - Upd: consistently remove the "new comment" ribbon when acknowledging or replying to a discussion.
 - Upd: verify required `CODEOWNERS` in the pull request approval check, and list any that are missing.
+- Upd: include team memberships for users in completion condition input.
 - Fix: don't fail with a permission denied error when publishing a draft for a discussion where new comments were posted (and not acknowledged by the user) in more than the previous 10 seconds.
 - Fix: insert badge link into pull request even if review starts out broken.
 - Fix: detect when multiple reviews share the same head commit and set a special error status in GitHub.  Otherwise, it was possible for the reviews to get into a feedback loop when updating the status and quickly exhaust GitHub's limit of 1000 statuses per commit.
