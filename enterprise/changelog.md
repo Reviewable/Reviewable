@@ -33,6 +33,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: tighten up the layout of filename headers — they had accumulated a bunch of unnecessary whitespace over time.
 - Fix: avoid logging bogus "Function already exist" errors in the Lambda executor.
 - Fix: don't crash in edge cases when the file you're focused on in single-file mode gets renamed and deleted.
+- Fix: keep magic keyword tooltip from becoming detached in the UI after updating the keyword.
+- Fix: use consistent tooltip theme for magic keyword explanations (regression introduced in v4088.6442).
+- Fix: don't crash in some situations when the user refuses to login or authorize scopes.
 
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
