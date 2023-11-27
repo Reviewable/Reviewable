@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: consistently remove the "new comment" ribbon when acknowledging or replying to a discussion.
 - Upd: verify required `CODEOWNERS` in the pull request approval check, and list any that are missing.
 - Upd: include team memberships for users in completion condition input.
+- Upd: don't try to use the demo review structure as a sample completion condition input in the settings editor if no review can be found in the target repository.  This was causing too many problems and wasn't particularly useful.
 - Fix: don't fail with a permission denied error when publishing a draft for a discussion where new comments were posted (and not acknowledged by the user) in more than the previous 10 seconds.
 - Fix: insert badge link into pull request even if review starts out broken.
 - Fix: detect when multiple reviews share the same head commit and set a special error status in GitHub.  Otherwise, it was possible for the reviews to get into a feedback loop when updating the status and quickly exhaust GitHub's limit of 1000 statuses per commit.
@@ -36,6 +37,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: keep magic keyword tooltip from becoming detached in the UI after updating the keyword.
 - Fix: use consistent tooltip theme for magic keyword explanations (regression introduced in v4088.6442).
 - Fix: don't crash in some situations when the user refuses to login or authorize scopes.
+- Fix: when using the `vm2` or `azurefns` executors, correctly catch completion condition errors instead of failing out of the task.
 
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
