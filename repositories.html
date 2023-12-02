@@ -454,7 +454,9 @@ Each invocation of your code must return a result within three seconds.</p>
     number: 44,
     state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
-    author: {username: 'pkaminski'},
+    // All users are annotated with a full list of teams they're members of; if the property is
+    // undefined then Reviewable wasn't able to fetch this list.
+    author: {username: 'pkaminski', teams: ['reviewable/developers']},
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
     draft: false,
     assignees: [
@@ -498,7 +500,7 @@ Each invocation of your code must return a result within three seconds.</p>
     }
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
-    {username: 'pkaminski'}
+    {username: 'pkaminski', teams: ['reviewable/developers']}
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
   // by default unless your completion condition accesses pendingReviewers or deferringReviewers
@@ -520,7 +522,7 @@ Each invocation of your code must return a result within three seconds.</p>
     'Comments only in Reviewable'
   ],
   sentiments: [  // List of sentiments (currently just emojis) extracted from comments
-    {username: 'pkaminski', emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
+    {username: 'pkaminski', teams: ['reviewable/developers'], emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
   ],
   discussions: [  // List of the discussions in the review (metadata only)
     {
@@ -528,7 +530,7 @@ Each invocation of your code must return a result within three seconds.</p>
       resolved: false,  // Whether the overall discussion is resolved
       participants: [
         {
-          username: 'pkaminski',
+          username: 'pkaminski', teams: ['reviewable/developers'],
           disposition: 'discussing',  // Participant's current disposition
           resolved: true,  // False if this participant is blocking resolution
           read: true,  // False if this participant has unread messages in this discussion
@@ -554,6 +556,10 @@ Each invocation of your code must return a result within three seconds.</p>
             {username: 'somebody', timestamp: 1436828040000}  // timestamp could be null for legacy marks
           ]
         }
+      ],
+      designatedReviewers: [  // Designations inferred from CODEOWNERS
+        {team: 'reviewable/legal'},
+        {builtin: 'anyone'}
       ]
     }
   ],
@@ -593,7 +599,42 @@ Each invocation of your code must return a result within three seconds.</p>
 <li>To <a href="files.html#file-list">group files in the file matrix</a>, set an optional <code>group</code> property on each file with any name you'd like; all files with the same <code>group</code> value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.</li>
 <li>To mark files as vendored, set an optional <code>vendored</code> property to <code>true</code> on any such file.  These files will default to a special Vendored group, won't participate in file rename matching, and won't display a diff by default.  Reviewable has hardcoded path-based heuristics for vendored files as well, which you can override by setting <code>vendored</code> to <code>false</code> on any files you'd like to exempt.</li>
 <li>To override whether a file has been reviewed at a revision set a <code>reviewed</code> boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.</li>
+<li>To <a href="files.html#file-review-state">designate specific people for review</a>, set a <code>designatedReviewers</code> property on the file as detailed below.</li>
 </ul>
+<p>{:tip}
+If you want to set these properties for system files (such as the Commits file), you'll need to add them to your <code>files</code> array explicitly as they're part of <code>review.systemFiles</code> rather than <code>review.files</code>.</p>
+<h5><a class="header" href="#designated-reviewers" id="designated-reviewers">Designated reviewers</a></h5>
+<p>Designated reviewers are a list of individuals and teams who have been requested to review a given file.  They are grouped into &quot;scopes&quot;, which you can use to indicate the focus of the requested review (e.g., &quot;security&quot;), hint at multiplicity requirements (e.g., &quot;one lead or two devs&quot;), or provide any other context for a group of designations that you'd like.  There's an implicit and unnamed default scope; you can mix named scopes with the default one but this can result in confusing UX so it's best avoided.</p>
+<p>The per-file <code>designatedReviewers</code> property should be an array of any of the following:</p>
+<ul>
+<li>A specific user identified by their username: <code>{username: 'pkaminski'}</code>.</li>
+<li>A team identified by their team slug: <code>{team: 'reviewable/security-team'}</code>.</li>
+<li>A special marker to indicate that anyone is welcome to review the file: <code>{builtin: 'anyone'}</code>.  This marker cannot be scoped, but it's fine to mix with scoped designations as it gets special treatment in the UI.  Leaving it out won't actually prevent undesignated users from reviewing the file, just make it clear that their review isn't needed.</li>
+<li>A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: <code>{builtin: 'fulfilled', scope: 'security'}</code>.  It must be qualified with a scope, and differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.</li>
+</ul>
+<p>Unless otherwise stated, each entry in the array can be modified with any combination of the following:</p>
+<ul>
+<li>A <code>scope</code> property to group it into the given scope, e.g., <code>{username: 'pkaminski', scope: 'security'}</code>.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.</li>
+<li>An <code>omitBaseChanges</code> flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., <code>{username: 'pkaminski', omitBaseChanges: true}</code>.</li>
+</ul>
+<p>{:important}
+The contents of <code>designatedReviewers</code> are <em>only</em> used to compute the <a href="files#file-review-state">file review state</a> and will <em>not</em> affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js">sample script</a> that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.</p>
+<p>Here's an example of a <code>designatedReviewers</code> property:</p>
+<pre><code>file.designatedReviewers = [
+  // fahhem to review at the latest revision
+  {username: 'fahhem'},
+  // pkaminski to review at the latest revision as well, though reviews at earlier
+  // revisions will be accepted if all later revisions are `baseChangesOnly: true`
+  {username: 'pkaminski', omitBaseChanges: true},
+  // also need a review from security-team, focused on security
+  {team: 'reviewable/security-team', scope: 'security'},
+  // and anyone else is welcome to review as well!
+  {builtin: 'anyone'}
+];
+</code></pre>
+<p>If <code>designatedReviewers</code> is not set it's treated as if it consisted only of <code>{builtin: 'anyone'}</code>.  Reviewable will also automatically create scopes for designations inferred from <code>CODEOWNERS</code> files (<code>code owners</code>), unsolicited reviewers if <code>{builtin: 'anyone'}</code> is missing (<code>unsolicited</code>), and the author of the pull request if they mark a file as reviewed against recommendations (<code>author</code>).</p>
+<p>{:tip}
+If you have a <code>CODEOWNERS</code> file in the repository, the <code>review.files</code> input structure will have precomputed <code>designatedReviewers</code> properties inferred from the code owners.  You can leave these as-is, tweak them (e.g., by removing <code>{builtin: 'anyone'}</code> from the array), or overwrite them altogether.  Note that if you leave <code>designatedReviewers</code> unset for a file it'll fall back to the code owners default instead of <code>{builtin: 'anyone'}</code>.</p>
 <h4><a class="header" href="#refreshtimestamp" id="refreshtimestamp"><code>refreshTimestamp</code></a></h4>
 <p>A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via <code>Date.getTime()</code>.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous <code>refreshTimestamp</code>s.</p>
 <h4><a class="header" href="#webhook" id="webhook"><code>webhook</code></a></h4>

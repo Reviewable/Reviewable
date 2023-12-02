@@ -290,6 +290,7 @@
 <p>This chapter explains in detail how you manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.</p>
 <h2><a class="header" href="#revision-cells" id="revision-cells">Revision cells</a></h2>
 <p>A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.</p>
+<!-- TODO: update screenshot to remove "last revisions reviewed by others -->
 <p><img src="images/filematrix_9.png" alt="reviewable file matrix status" /></p>
 <p>The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.</p>
 <p><img src="images/filematrix_8.png" alt="reviewable file matrix diff bounds" /></p>
@@ -305,13 +306,29 @@
 <tr><td align="center"><img src="images/filematrix_5.png" alt="reviewable file matrix current state" title=":size=25" /></td><td>Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.</td></tr>
 </tbody></table>
 <p>Review marks remain in a draft state and are only visible to you until <a href="reviews.html#publish">published</a>.  Recissions are publicized immediately however.</p>
+<h2><a class="header" href="#file-review-state" id="file-review-state">File review state</a></h2>
+<p>While the review button above indicates your personal state for the file at the current right diff bound, the square &quot;review chip&quot; shows the file's overall state at the latest revision.  The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your <a href="reviews#file-review-type">review overlap strategy</a> to personally review all files.</p>
+<p>The various possible states are:</p>
+<table><thead><tr><th align="center">State</th><th>Meaning</th></tr></thead><tbody>
+<tr><td align="center"><i class="red designation you icon"></i></td><td>Your review of this file has been requested, either directly or due to team membership, and you have not yet reviewed it at the latest revision.</td></tr>
+<tr><td align="center"><i class="red designation anyone icon"></i></td><td>Anyone is welcome to review this file, including you.</td></tr>
+<tr><td align="center"><i class="designation anyone icon"></i></td><td>Anyone is welcome to review this file, but you've either already done so or are not a reviewer.</td></tr>
+<tr><td align="center"><i class="green designation anyone icon"></i></td><td>Anyone will be welcome to review this file after you've published your review.</td></tr>
+<tr><td align="center"><i class="designation others icon"></i></td><td>Specific other people have been requested to review this file, but you either already did so or your review was not requested.</td></tr>
+<tr><td align="center"><i class="green designation others icon"></i></td><td>Specific other people will still need to review this file after you've published your review.</td></tr>
+<tr><td align="center"><i class="designation done icon"></i></td><td>The file has been sufficiently reviewed.</td></tr>
+<tr><td align="center"><i class="green designation done icon"></i></td><td>The file will be sufficiently reviewed once you've published your review.</td></tr>
+</tbody></table>
+<p>Clicking on the state icon will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.</p>
+<p><img src="images/designated_reviewers_details.png" alt="file review state details" /></p>
+<p>By default, Reviewable can only tell who has reviewed a file and infer some basic information about who should review it from a <code>CODEOWNERS</code> file, if present.  To unlock the full power of this feature — including indicating the scope (e.g., &quot;security&quot; or &quot;accessibility&quot;) of each requested review, when a scope has been satisfied, or whether only specific people's reviews are needed — you'll need to <a href="repositories#designated-reviewers">create designated reviewers</a> in the custom review completion condition.</p>
 <h2><a class="header" href="#file-matrix" id="file-matrix">File matrix</a></h2>
 <p>Click the toggle to display a history matrix showing all files and revisions. Here, you can:</p>
 <ul>
 <li>View a summary of the PR's change history for each file.</li>
 <li>Set diff bounds for any and all files.</li>
 <li>Mark files as reviewed.</li>
-<li>View the most recent reviewers of each file.</li>
+<li>View the latest review state of each file.</li>
 <li>Jump to a file's diff.</li>
 <li>See delta stats for a diff and all diffs.</li>
 </ul>
@@ -321,7 +338,7 @@
 <p>Click the file path to move directly to the diff for that file. Hold down the <code>⌘</code>, <code>Ctrl</code> or <code>⇧</code> key (as appropriate for your browser) when clicking to open the file diff in a new browser tab.  To open every file in a new tab at once, hold down the modifier key and click the <strong>All</strong> button that appears in the header of the file matrix.</p>
 <p>File paths in italics indicate that the file is currently elided from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.</p>
 <p>To the left of the file path there's a button to <a href="#mark-reviewed">mark the file as reviewed</a>.</p>
-<p>To the right of the file path is a list of the last published reviewers for the file.  It may be that those people did not review the latest revision, and other people may have reviewed previous revisions.  Hover over an avatar for details about the user.</p>
+<p>To the right of the file path is the <a href="#file-review-state">file review state</a> chip that you can click on for full details.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.</p>
 <p>Off the right side of the matrix are delta stats for the current diffs, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.</p>
 <p>Files can also be grouped, like for the <strong>Tests</strong> group in the screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on <a href="repositories.html#condition-output">custom review completion conditions</a> for instructions on how to make custom file groups in your repository.</p>
 <h3><a class="header" href="#column-headings" id="column-headings">Column headings</a></h3>
@@ -337,10 +354,11 @@
 <h2><a class="header" href="#file-contents" id="file-contents">File contents</a></h2>
 <p>Below the <a href="discussions.html">top-level discussions</a> you'll find the file contents.</p>
 <h3><a class="header" href="#file-header" id="file-header">File header</a></h3>
-<p>At the top of each file diff panel there's a file path. Hold down <code>⌘</code>, <code>Ctrl</code>, or <code>⇧</code> (as appropriate for your browser) to open it in a new tab.  If the file paths are too long some may be collapsed in places with an …; hover over the path or swipe to expand and see the full path.  You can also double-click on or near the path to select it — even when collapsed — for easy copying.</p>
-<p>The header holds the standard <a href="#mark-reviewed">mark as reviewed</a> button and <a href="#revision-cells">revision cells</a> for adjusting diff bounds.</p>
+<p>At the top of each file diff panel there's a file path.  If the file paths are too long some may be collapsed in places with an …; hover over the path or swipe to expand and see the full path.  You can click on the path to activate a dropdown menu with relevant actions, such as opening the file in your editor, copying the file path, or starting a new file-level discussion.</p>
+<p>The header holds the standard <a href="#mark-reviewed">mark as reviewed</a> button, a <a href="#file-review-state">review state chip</a>, and <a href="#revision-cells">revision cells</a> for adjusting diff bounds.</p>
 <p>To the right of the cells you'll see the delta stats for the current diff, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.</p>
-<p><img src="images/filediffs_1.png" alt="reviewable fill diffs" /></p>
+<p>If you've set up a <a href="repositories#code-coverage">code coverage</a> feed you may also see an umbrella in the header with a coverage percentage, and a dropdown menu that has further details.  The diffs will then also show coverage bars; you can <a href="tips#code-coverage-bars">customize the colors</a> if desired.</p>
+<p><img src="images/filediffs_1.png" alt="reviewable file diffs" /></p>
 <div class="tip">
 <p>Any special messages will appear immediately underneath the header.  These include rename sequence details, explanations for why a diff isn't showing, etc.</p>
 </div>
