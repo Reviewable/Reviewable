@@ -7,6 +7,7 @@ This chapter explains in detail how you manage and review files in Reviewable.  
 
 A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.
 
+<!-- TODO: update screenshot to remove "last revisions reviewed by others -->
 ![reviewable file matrix status](images/filematrix_9.png)
 
 The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
@@ -32,6 +33,29 @@ Color | Meaning
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
+## File review state
+
+While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" shows the file's overall state at the latest revision.  The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
+
+The various possible states are:
+
+State | Meaning
+:----:|---------
+<i class="red designation you icon"></i> | Your review of this file has been requested, either directly or due to team membership, and you have not yet reviewed it at the latest revision.
+<i class="red designation anyone icon"></i> | Anyone is welcome to review this file, including you.
+<i class="designation anyone icon"></i> | Anyone is welcome to review this file, but you've either already done so or are not a reviewer.
+<i class="green designation anyone icon"></i> | Anyone will be welcome to review this file after you've published your review.
+<i class="designation others icon"></i> | Specific other people have been requested to review this file, but you either already did so or your review was not requested.
+<i class="green designation others icon"></i> | Specific other people will still need to review this file after you've published your review.
+<i class="designation done icon"></i> | The file has been sufficiently reviewed.
+<i class="green designation done icon"></i> | The file will be sufficiently reviewed once you've published your review.
+
+Clicking on the state icon will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.
+
+![file review state details](images/designated_reviewers_details.png)
+
+By default, Reviewable can only tell who has reviewed a file and infer some basic information about who should review it from a `CODEOWNERS` file, if present.  To unlock the full power of this feature — including indicating the scope (e.g., "security" or "accessibility") of each requested review, when a scope has been satisfied, or whether only specific people's reviews are needed — you'll need to [create designated reviewers](repositories#designated-reviewers) in the custom review completion condition.
+
 ## File matrix
 
 Click the toggle to display a history matrix showing all files and revisions. Here, you can:
@@ -39,7 +63,7 @@ Click the toggle to display a history matrix showing all files and revisions. He
 - View a summary of the PR's change history for each file.
 - Set diff bounds for any and all files.
 - Mark files as reviewed.
-- View the most recent reviewers of each file.
+- View the latest review state of each file.
 - Jump to a file's diff.
 - See delta stats for a diff and all diffs.
 
@@ -55,7 +79,7 @@ File paths in italics indicate that the file is currently elided from the file c
 
 To the left of the file path there's a button to [mark the file as reviewed](#mark-reviewed).
 
-To the right of the file path is a list of the last published reviewers for the file.  It may be that those people did not review the latest revision, and other people may have reviewed previous revisions.  Hover over an avatar for details about the user.
+To the right of the file path is the [file review state](#file-review-state) chip that you can click on for full details.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
 
 Off the right side of the matrix are delta stats for the current diffs, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.
 
@@ -82,13 +106,15 @@ Below the [top-level discussions](discussions.md) you'll find the file contents.
 
 ### File header
 
-At the top of each file diff panel there's a file path. Hold down `⌘`, `Ctrl`, or `⇧` (as appropriate for your browser) to open it in a new tab.  If the file paths are too long some may be collapsed in places with an &hellip;; hover over the path or swipe to expand and see the full path.  You can also double-click on or near the path to select it — even when collapsed — for easy copying.
+At the top of each file diff panel there's a file path.  If the file paths are too long some may be collapsed in places with an &hellip;; hover over the path or swipe to expand and see the full path.  You can click on the path to activate a dropdown menu with relevant actions, such as opening the file in your editor, copying the file path, or starting a new file-level discussion.
 
-The header holds the standard [mark as reviewed](#mark-reviewed) button and [revision cells](#revision-cells) for adjusting diff bounds.
+The header holds the standard [mark as reviewed](#mark-reviewed) button, a [review state chip](#file-review-state), and [revision cells](#revision-cells) for adjusting diff bounds.
 
 To the right of the cells you'll see the delta stats for the current diff, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.
 
-![reviewable fill diffs](images/filediffs_1.png)
+If you've set up a [code coverage](repositories#code-coverage) feed you may also see an umbrella in the header with a coverage percentage, and a dropdown menu that has further details.  The diffs will then also show coverage bars; you can [customize the colors](tips#code-coverage-bars) if desired.
+
+![reviewable file diffs](images/filediffs_1.png)
 
 {:.tip}
 Any special messages will appear immediately underneath the header.  These include rename sequence details, explanations for why a diff isn't showing, etc.
