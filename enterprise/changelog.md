@@ -7,7 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-- New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  (TODO: add links to docs here once ready.)
+- New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  See [docs](https://docs.reviewable.io/files.html#file-review-state) for details.
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
 - Upd: speed up publish, publish preview, and ad-hoc comment send functions.  Note that this will increase the number of evaluations of custom review completion conditions.
 - Upd: clean up and simplify the review summary unreviewed files and unreplied discussions counters, and make it clear when publishing will defer the review.
