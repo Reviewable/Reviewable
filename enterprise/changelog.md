@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4186.6596 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-12-04
 - New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  See [docs](https://docs.reviewable.io/files.html#file-review-state) for details.
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
 - Upd: speed up publish, publish preview, and ad-hoc comment send functions.  Note that this will increase the number of evaluations of custom review completion conditions.
@@ -16,7 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: include team memberships for users in completion condition input.
 - Upd: don't try to use the demo review structure as a sample completion condition input in the settings editor if no review can be found in the target repository.  This was causing too many problems and wasn't particularly useful.
 - Fix: don't fail with a permission denied error when publishing a draft for a discussion where new comments were posted (and not acknowledged by the user) in more than the previous 10 seconds.
-- Fix: insert badge link into pull request even if review starts out broken.
+- Fix: insert badge link into pull request even if the review starts out broken.
 - Fix: detect when multiple reviews share the same head commit and set a special error status in GitHub.  Otherwise, it was possible for the reviews to get into a feedback loop when updating the status and quickly exhaust GitHub's limit of 1000 statuses per commit.
 - Fix: correctly coalesce and display groups of trivial files ("files hidden because...") in every situation, and hide the "+N more" link after it's been clicked.
 - Fix: if navigating to a hidden file causes the page to switch into single-file mode, then display that file rather than the previously selected one.
@@ -30,7 +32,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid a cumulative slowdown after deleting many drafts.
 - Fix: ensure the review summary publishing bunny always animates when it should.
 - Fix: prevent some (very) minor elements from animating when animations are turned off in the user's settings.
-- Fix: slice off tail quotes from GitHub-originated messages only if they were sent over email. Comments written in GitHub's UI rarely use tail quoting, but do sometimes have actual quotes at the end.
+- Fix: slice off tail quotes from GitHub-originated messages only if they were sent over email. Comments written in GitHub's UI rarely use tail quoting, but do sometimes have actual useful quotes at the end.
 - Fix: tighten up the layout of filename headers — they had accumulated a bunch of unnecessary whitespace over time.
 - Fix: avoid logging bogus "Function already exist" errors in the Lambda executor.
 - Fix: don't crash in edge cases when the file you're focused on in single-file mode gets renamed and deleted.
