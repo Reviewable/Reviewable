@@ -40,6 +40,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: use consistent tooltip theme for magic keyword explanations (regression introduced in v4088.6442).
 - Fix: don't crash in some situations when the user refuses to login or authorize scopes.
 - Fix: when using the `vm2` or `azurefns` executors, correctly catch completion condition errors instead of failing out of the task.
+- Fix: don't crash on startup if unable to access local storage.
+- Fix: prevent crash when dropdown is opened and closed too quickly.
 
 #### Release 4088.6442 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-10-16
 - Upd: expose a `merge()` command for binding to a keyboard shortcut.
