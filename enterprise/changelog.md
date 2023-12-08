@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- Upd: margin notch is updated via manual or keyboard input and not dragging.
+- Upd: main review flow layout is updated to pave the way for the sidebar feature.
 - Fix: render :shipit: emoji properly.
 - Fix: fix rendering of GitHub line links in comments to have the right link to the underlying commit.
 #### Release 4186.6596 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-12-04
