@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: main review flow layout is updated to pave the way for the sidebar feature.
 - Fix: render :shipit: emoji properly.
 - Fix: fix rendering of GitHub line links in comments to have the right link to the underlying commit.
+- Fix: don't believe GitHub when it says that issues can't be fetched when syncing.
 #### Release 4186.6596 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-12-04
 - New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  See [docs](https://docs.reviewable.io/files.html#file-review-state) for details.
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
