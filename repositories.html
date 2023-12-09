@@ -601,8 +601,9 @@ Each invocation of your code must return a result within three seconds.</p>
 <li>To override whether a file has been reviewed at a revision set a <code>reviewed</code> boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.</li>
 <li>To <a href="files.html#file-review-state">designate specific people for review</a>, set a <code>designatedReviewers</code> property on the file as detailed below.</li>
 </ul>
-<p>{:tip}
-If you want to set these properties for system files (such as the Commits file), you'll need to add them to your <code>files</code> array explicitly as they're part of <code>review.systemFiles</code> rather than <code>review.files</code>.</p>
+<div class="tip">
+<p>If you want to set these properties for system files (such as the Commits file), you'll need to add them to your <code>files</code> array explicitly as they're part of <code>review.systemFiles</code> rather than <code>review.files</code>.</p>
+</div>
 <h5><a class="header" href="#designated-reviewers" id="designated-reviewers">Designated reviewers</a></h5>
 <p>Designated reviewers are a list of individuals and teams who have been requested to review a given file.  They are grouped into &quot;scopes&quot;, which you can use to indicate the focus of the requested review (e.g., &quot;security&quot;), hint at multiplicity requirements (e.g., &quot;one lead or two devs&quot;), or provide any other context for a group of designations that you'd like.  There's an implicit and unnamed default scope; you can mix named scopes with the default one but this can result in confusing UX so it's best avoided.</p>
 <p>The per-file <code>designatedReviewers</code> property should be an array of any of the following:</p>
@@ -617,8 +618,9 @@ If you want to set these properties for system files (such as the Commits file),
 <li>A <code>scope</code> property to group it into the given scope, e.g., <code>{username: 'pkaminski', scope: 'security'}</code>.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.</li>
 <li>An <code>omitBaseChanges</code> flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., <code>{username: 'pkaminski', omitBaseChanges: true}</code>.</li>
 </ul>
-<p>{:important}
-The contents of <code>designatedReviewers</code> are <em>only</em> used to compute the <a href="files#file-review-state">file review state</a> and will <em>not</em> affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js">sample script</a> that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.</p>
+<div class="important">
+<p>The contents of <code>designatedReviewers</code> are <em>only</em> used to compute the <a href="files#file-review-state">file review state</a> and will <em>not</em> affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js">sample script</a> that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.</p>
+</div>
 <p>Here's an example of a <code>designatedReviewers</code> property:</p>
 <pre><code>file.designatedReviewers = [
   // fahhem to review at the latest revision
@@ -633,8 +635,9 @@ The contents of <code>designatedReviewers</code> are <em>only</em> used to compu
 ];
 </code></pre>
 <p>If <code>designatedReviewers</code> is not set it's treated as if it consisted only of <code>{builtin: 'anyone'}</code>.  Reviewable will also automatically create scopes for designations inferred from <code>CODEOWNERS</code> files (<code>code owners</code>), unsolicited reviewers if <code>{builtin: 'anyone'}</code> is missing (<code>unsolicited</code>), and the author of the pull request if they mark a file as reviewed against recommendations (<code>author</code>).</p>
-<p>{:tip}
-If you have a <code>CODEOWNERS</code> file in the repository, the <code>review.files</code> input structure will have precomputed <code>designatedReviewers</code> properties inferred from the code owners.  You can leave these as-is, tweak them (e.g., by removing <code>{builtin: 'anyone'}</code> from the array), or overwrite them altogether.  Note that if you leave <code>designatedReviewers</code> unset for a file it'll fall back to the code owners default instead of <code>{builtin: 'anyone'}</code>.</p>
+<div class="tip">
+<p>If you have a <code>CODEOWNERS</code> file in the repository, the <code>review.files</code> input structure will have precomputed <code>designatedReviewers</code> properties inferred from the code owners.  You can leave these as-is, tweak them (e.g., by removing <code>{builtin: 'anyone'}</code> from the array), or overwrite them altogether.  Note that if you leave <code>designatedReviewers</code> unset for a file it'll fall back to the code owners default instead of <code>{builtin: 'anyone'}</code>.</p>
+</div>
 <h4><a class="header" href="#refreshtimestamp" id="refreshtimestamp"><code>refreshTimestamp</code></a></h4>
 <p>A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via <code>Date.getTime()</code>.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous <code>refreshTimestamp</code>s.</p>
 <h4><a class="header" href="#webhook" id="webhook"><code>webhook</code></a></h4>
