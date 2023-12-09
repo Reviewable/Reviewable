@@ -58,6 +58,15 @@ We do not allow content or activity on Reviewable that:
 - directly supports [unlawful active attack or malware campaigns](https://docs.github.com/en/site-policy/acceptable-use-policies/github-active-malware-or-exploits) that are causing technical harms — such as using our platform to deliver malicious executables or as attack infrastructure, for example by organizing denial of service attacks or managing command and control servers — with no implicit or explicit dual-use purpose prior to the abuse occurring; or
 - uses our servers to disrupt or to attempt to disrupt, or to gain or to attempt to gain unauthorized access to, any service, device, data, account or network. Please note, activities permitted under bug bounty programs are not considered “unauthorized,” but must only affect the organization whose bug bounty program authorized the activity.
 
+Additionally, you agree not to:
+- Use the Service in any manner that could disable, overburden, damage, or impair the site or interfere with any other party’s use of the Service, including their ability to engage in real time activities through the Service.
+- Use any robot, spider or other automatic device, process or means to access the Service for any purpose, including monitoring or copying any of the material on the Service.
+- Use any manual process to monitor or copy any of the material on the Service, or for any other purpose not expressly authorized in these Terms of Use, without our prior written consent.
+- Use any device, software or routine that interferes with the proper working of the Service.
+- Introduce any viruses, trojan horses, worms, logic bombs or other material which is malicious or technologically harmful.
+- Attempt to gain unauthorized access to, interfere with, damage or disrupt any parts of the Service, the server on which the Service is stored, or any server, computer or database connected to the Service.
+- Attack the Service via a denial-of-service attack or a distributed denial-of-service attack.
+- Otherwise attempt to interfere with the proper working of the Service.
 
 ## 6. Services Usage Limits
 You will not reproduce, duplicate, copy, sell, resell or exploit any portion of the Service, use of the Service, or access to the Service without our express written permission.
@@ -83,7 +92,7 @@ Any person, entity, or service collecting data from the Service must comply with
 The Service's bandwidth limitations vary based on the features you use. If we determine your bandwidth usage to be significantly excessive in relation to other users of similar features, we reserve the right to suspend your Account, throttle your file hosting, or otherwise limit your activity until you can reduce your bandwidth consumption. We also reserve the right — after providing advance notice — to disconnect repositories that we determine to be placing undue strain on our infrastructure.
 
 ## 10. Advertising on Reviewable
-You may not advertise to, or solicit, any User to buy or sell any products or services, or use any information obtained from the Service to contact, advertise to, solicit, or sell to any user without the user’s prior explicit consent.
+You may not advertise to, or solicit, any User to buy or sell any products or services, or use any information obtained from the Service to contact, advertise to, solicit, or sell to any User without the User’s prior written consent.
 
 You may not promote or distribute content or activity that is illegal or otherwise prohibited by our [Terms of Service](terms.md) or these Acceptable Use Policies, including excessive automated bulk activity (for example, spamming), get-rich-quick schemes, and misrepresentation or deception related to your promotion.
 
