@@ -377,7 +377,7 @@ An array of objects that look like `{path: 'full/path/to/file', group: 'Some Gro
   - To override whether a file has been reviewed at a revision set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.
   - To [designate specific people for review](files.md#file-review-state), set a `designatedReviewers` property on the file as detailed below.
 
-{:tip}
+{:.tip}
 If you want to set these properties for system files (such as the Commits file), you'll need to add them to your `files` array explicitly as they're part of `review.systemFiles` rather than `review.files`.
 
 ##### Designated reviewers
@@ -393,7 +393,7 @@ Unless otherwise stated, each entry in the array can be modified with any combin
   - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
   - An `omitBaseChanges` flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., `{username: 'pkaminski', omitBaseChanges: true}`.
 
-{:important}
+{:.important}
 The contents of `designatedReviewers` are _only_ used to compute the [file review state](files#file-review-state) and will _not_ affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a [sample script](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.
 
 Here's an example of a `designatedReviewers` property:
@@ -414,7 +414,7 @@ file.designatedReviewers = [
 
 If `designatedReviewers` is not set it's treated as if it consisted only of `{builtin: 'anyone'}`.  Reviewable will also automatically create scopes for designations inferred from `CODEOWNERS` files (`code owners`), unsolicited reviewers if `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as reviewed against recommendations (`author`).
 
-{:tip}
+{:.tip}
 If you have a `CODEOWNERS` file in the repository, the `review.files` input structure will have precomputed `designatedReviewers` properties inferred from the code owners.  You can leave these as-is, tweak them (e.g., by removing `{builtin: 'anyone'}` from the array), or overwrite them altogether.  Note that if you leave `designatedReviewers` unset for a file it'll fall back to the code owners default instead of `{builtin: 'anyone'}`.
 
 #### `refreshTimestamp`
