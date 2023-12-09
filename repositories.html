@@ -475,11 +475,12 @@ Each invocation of your code must return a result within three seconds.</p>
     requestedTeams: [
       {slug: 'developers'}
     ],
-    approvals: {
-      // Maps usernames to their current PR approval status, if any.  The status is one of
-      // 'approved', 'changes_requested', 'commented', or 'dismissed'.
-      'pkaminski-test': 'changes_requested'
-    },
+    sanctions: [
+      // Lists pull request reviews by user along with the latest state (one of 'approved',
+      // 'changes_requested', 'commented', or 'dismissed').  Like other user lists it'll also
+      // include each user's team memberships.
+      {username: 'pkaminski-state', state: 'changes_requested'}
+    ],
     numCommits: 3,
     target: {
       owner: 'pkaminski', repo: 'sample', branch: 'work',
