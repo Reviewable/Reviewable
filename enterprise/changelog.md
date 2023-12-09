@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
 - Upd: main review flow layout is updated to pave the way for the sidebar feature.
+- Upd: add `review.pullRequest.sanctions` to completion condition input data.  This replaces the previous `approvals` proprety (which will continue to be supported, don't worry) with a richer data structure that includes user teams.
 - Fix: render :shipit: emoji properly.
 - Fix: fix rendering of GitHub line links in comments to have the right link to the underlying commit.
 - Fix: don't believe GitHub when it says that issues can't be fetched when syncing.
