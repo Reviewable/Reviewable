@@ -1,207 +1,310 @@
-<h1 class="ui center aligned header">TERMS OF USE</h1>
+Thank you for using Reviewable! We're happy you're here. Please read this Terms of Service agreement carefully before accessing or using Reviewable. Because it is such an important contract between us and our users, we have tried to make it as clear as possible. For your convenience, we have presented these terms in a short non-binding summary followed by the full legal terms.
 
-<h3 class="ui center aligned header">Effective Date:  November 22, 2014</h3>
+## Summary
 
-<p>Welcome to Reviewable, a service for conducting reviews on code hosted on GitHub. The service described herein (&ldquo;Service&rdquo;) is provided by Ideanest LLC, a California Limited Liability Company.</p>
+| Section | What can you find there? |
+| --- | --- |
+| [A. Definitions](#a-definitions) | Some basic terms, defined in a way that will help you understand this agreement. Refer back up to this section for clarification. |
+| [B. Account Terms](#b-account-terms) | These are the basic requirements of having an Account on Reviewable.  |
+| [C. Acceptable Use](#c-acceptable-use)| These are the basic rules you must follow when using your Reviewable Account. |
+| [D. User-Generated Content](#d-user-generated-content) | You own the content you post on Reviewable. However, you have some responsibilities regarding it, and we ask you to grant us some rights so we can provide services to you. |
+| [E. Private Repositories](#e-private-repositories) | This section talks about how Reviewable will treat content you post in private repositories. |
+| [F. Copyright & DMCA Policy](#f-copyright-infringement-and-dmca-policy) | This section talks about how Reviewable will respond if you believe someone is infringing your copyrights on Reviewable. |
+| [G. Intellectual Property Notice](#g-intellectual-property-notice) | This describes Reviewable's rights in the website and service. |
+| [H. Additional Product Terms](#h-github-additional-product-terms) | We have a few specific rules for Reviewable's features and products. |
+| [I. Beta Previews](#i-beta-previews) | These are some of the additional terms that apply to Reviewable's features that are still in development. |
+| [J. Payment](#j-payment) | You are responsible for payment. We are responsible for billing you accurately. |
+| [K. Cancellation and Termination](#k-cancellation-and-termination) | You may cancel this agreement and close your Account at any time. |
+| [L. Communications with Reviewable](#l-communications-with-github) | We only use email and other electronic means to stay in touch with our users. We do not provide phone support. |
+| [M. Disclaimer of Warranties](#m-disclaimer-of-warranties) | We provide our service as is, and we make no promises or guarantees about this service. **Please read this section carefully; you should understand what to expect.** |
+| [N. Limitation of Liability](#n-limitation-of-liability) | We will not be liable for damages or losses arising from your use or inability to use the service or otherwise arising under this agreement. **Please read this section carefully; it limits our obligations to you.** |
+| [O. Release and Indemnification](#o-release-and-indemnification) | You are fully responsible for your use of the service. |
+| [P. Limitation of Time to File Claims](#p-limitation-of-time-to-file-claims) | If you believe you have a claim against us, you must file it within one year. **Please read this section carefully; it limits how long you have to file a claim against us.** |
+| [Q. Changes to these Terms of Service](#q-changes-to-these-terms) | We may modify this agreement, but we will give you 30 days' notice of material changes. |
+| [R. Miscellaneous](#r-miscellaneous) | Please see this section for legal details including our choice of law. |
 
-<p>These Terms of Use are a legally binding agreement made between You (&ldquo;You,&rdquo; &ldquo;Your,&rdquo; or &ldquo;Yourself&rdquo;) and Ideanest (&ldquo;Ideanest&rdquo;, &ldquo;We,&rdquo; &ldquo;Us&rdquo; or &ldquo;Our&rdquo;), and set forth the applicable terms and conditions governing the use of Our Service, so please review them carefully. By creating a Service account with Us, You also accept and agree to be subject to and abide by Our <a class="link" href="/privacy">Privacy Policy</a>, which is incorporated herein by reference.</p>
+## The Reviewable Terms of Service
+Effective date: January 1, 2024
 
-<p>We may choose to update these Terms of Use at any time by providing you 30 days advance notice of such change. We encourage You to review these Terms of Use periodically, as Your continued use of the Service will mean You accept those changes, whether You have read them or not. In addition, we shall both be subject to any posted guidelines or rules applicable to the Service, which may be posted from time to time.</p>
+These terms of service are entered into by and between you and Ideanest LLC (doing business as Reviewable) (“Reviewable,” “we,” “our,” or “us”). They, together with any documents they expressly incorporate by reference, govern your access to and use of our Service (defined below), including any content, functionality and services offered on or through our Service, whether as a guest or a registered user.
 
-<p>All contact with Us should be made via <a class="link" href="mailto:legal@reviewable.io">email</a> in reference to any questions or comments concerning these Terms of Use or Privacy Policy.</p>
+Please read the Terms of Service carefully before you start to use the Service. **By using the Service or by clicking to accept or agree to the Terms of Service when this option is made available to you, you accept and agree to be bound and abide by these Terms of Service, our [Privacy Policy](./privacy.md), our [Acceptable Use Policies](./acceptable_use.md), and our [Additional Product Terms](./additional_product_terms.md), incorporated herein by reference.** If you do not want to agree to these Terms of Service, you must not access or use the Website.
 
-<h3>1. Description of Service</h3>
+**THE SECTION BELOW TITLED “ARBITRATION AND WAIVER OF CLASS REMEDIES” CONTAINS A BINDING ARBITRATION AGREEMENT. IT AFFECTS YOUR LEGAL RIGHTS. PLEASE READ IT.**
 
-<p>Reviewable is a code review service for GitHub pull requests.  Our Service provides improved diffs across all kinds of branch histories, batched comments, comment tracking across revisions until resolution, coordination of multi-party reviews, customization of the user interface and operation of the Service, and various other features.  Our Service is provided exclusively in a hosted form at the <a class="link" href="https://reviewable.io">https://reviewable.io</a> web site and connects directly with Your GitHub account and repositories.  A GitHub account is required to use Our Service and Our Service respects all the constraints and permissions applied to Your account and repositories in GitHub.</p>
 
-<p>Please note that if You lose access to Your GitHub account for any reason, You will lose access to our data and information on Our Service as well.</p>
+## A. Definitions
+**Short version:** *We use these basic terms throughout the agreement, and they have specific meanings. You should know what we mean when we use each of the terms. There’s not going to be a test on it, but it’s still useful information.*
 
-<h3>2. Registration</h3>
+1. An “Account” represents your legal relationship with Reviewable. A “Personal Account” represents an individual User’s authorization to log in to and use the Service and serves as a User’s identity on Reviewable. “Organizations” are shared workspaces that may be associated with a single entity or with one or more Users where multiple Users can collaborate across many projects at once. A Personal Account can be a member of any number of Organizations.
+2. The “Agreement” refers, collectively, to all the terms, conditions, notices contained or referenced in this document (the “Terms of Service” or the “Terms”) and all other operating rules, policies (including the Reviewable [Privacy Policy](privacy.md)) and procedures that we may publish from time to time on the Website. Most of our site policies are available in our [public repository](https://github.com/Reviewable/Reviewable/tree/master/legal).
+3. “Beta Previews” mean software, services, or features identified as alpha, beta, preview, early access, or evaluation, or words or phrases with similar meanings.
+4. “Content” refers to content featured or displayed through the Website, including without limitation code, text, data, articles, images, photographs, graphics, software, applications, packages, designs, features, and other materials that are available on the Website or otherwise available through the Service. “Content” also includes Services. “User-Generated Content” is Content, written or otherwise, created or uploaded by our Users. “Your Content” is Content that you create or own.
+5. “Reviewable,” “We,” and “Us” refer to Ideanest LLC, as well as our affiliates, directors, subsidiaries, contractors, licensors, officers, agents, and employees.
+6. The “Service” refers to the applications, software, products, and services provided by Reviewable, including the Website and any Beta Previews.
+7. “The User,” “You,” and “Your” refer to the individual person, company, or organization that has visited or is using the Website or Service; that accesses or uses any part of the Account; or that directs the use of the Account in the performance of its functions. A User must be over 16 years of age.
+8. The “Website” refers to Reviewable’s website located at [reviewable.io](https://reviewable.io/), and all content, services, and products provided by Reviewable at or through the Website. It also refers to Reviewable-owned subdomains of reviewable.io, such as [blog.reviewable.io](https://blog.reviewable.io/) and [docs.reviewable.io](https://docs.reviewable.io/), and other related sites such as reviewableusercontent.io.  Occasionally, websites owned by Reviewable may provide different or additional terms of service. If those additional terms conflict with this Agreement, the more specific terms apply to the relevant page or service.
 
-<p>Generally, as a condition of using the Service, You are required to create an account with GitHub.  Note however, that You may use Our Service in read-only mode for public data without creating a GitHub account or registering for Our Service.  After creating your GitHub account, You can register with Our Service by authorizing Us to access your GitHub account in your name, and You control the scope of the authority granted to Us. Initially, you only share your account number and public information associated with it. As you make use of more of Our Service, you will be asked to grant access to other information, such as your email address, repositories, etc.</p>
+## B. Account Terms
+**Short version:** *You need to use a GitHub account to access Reviewable; you grant us permission to access GitHub in your name; you must be over 16 years of age; and you may not have more than one Account. You alone are responsible for your Account and anything that happens while you are signed in to or using your Account. You are responsible for keeping your Account secure. We may disclose that an Organization uses Reviewable.*
 
-<p>To sign up for Our Service you must be at least thirteen (13) years of age.  Your login may only be used by one person&mdash;a single login shared by multiple people is not permitted. You may create separate logins for as many people as you wish. One person or legal entity may not maintain more than one account.</p>
+### 1. Account Registration
+Generally, as a condition of using Reviewable's Service, you are required to create an account with GitHub. Note however, that you may use Reviewable's Service in read-only mode for public data without creating a GitHub account or registering for Reviewable. After creating a GitHub account, you can register with Reviewable by authorizing us to access your GitHub account in your name, and you control the scope of the authority granted to us.  If you lose access to Your GitHub account for any reason, you will lose access to your data and information in Reviewable as well.
 
-<p>The registration information You provide must be accurate, complete, and current at all times. Failure to do so constitutes a breach of these Terms of Use, which may result in immediate termination of Your account. You may not use the name of another person or entity that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity without receiving appropriate authorization, or a name that is offensive, vulgar, or obscene.</p>
+### 2. GitHub Access
+You represent that you are entitled to grant us access to your GitHub Account, without breach by you of any of the terms and conditions that govern your use of the applicable GitHub Account and without obligating us to pay any fees or making us subject to any usage limitations imposed by such third party service providers. By granting us access to your GitHub account, you understand and agree that we may access and make available any Content that you have provided to your GitHub account (the “Third Party Content”) so that it is available on and through the Service via your account, and we may submit and receive additional information to and from your GitHub account as indicated herein. Unless otherwise specified in this Agreement, all Third Party Content shall be considered to be your Content for purposes of this Agreement. Depending on the privacy settings that you have set in your GitHub account, personal information (as defined in the [Privacy Policy](privacy.md)) that you post to your GitHub account may be available on and through the Service.
 
-<h3>3. Price</h3>
+### 3. Required Information
+Initially, you are only required to share with us your Github account number and the public information associated with it. As you make use of more of Reviewable, you will be required to grant access to other information, such as your email address, repositories, etc.  You can revoke previously granted access at any time in GitHub's [application integration settings](https://github.com/settings/connections/applications/7da38b6fb966259af6d5).
 
-<p>Certain Service plans are provided for a monthly subscription fee. If You elect to use paid Service plans, You agree to the pricing and payment terms in the plans specified on Our Site. We may add new services for additional fees, or amend fees and charges for existing services, at any time in Our sole discretion. Any pricing changes or new payment terms shall become effective in the billing cycle following notice of such change to You as provided in these Terms of Use.</p>
+### 4. Account Requirements
+We have a few simple rules for Personal Accounts on Reviewable's Service.
+- One person or legal entity may maintain no more than one Account.
+- You must be over 16 years of age. While we are thrilled to see brilliant young coders get excited by learning to program, we must comply with United States law. Reviewable does not target our Service to children aged 16 or under, and we do not permit any Users aged 16 or under on our Service. If we learn of any User aged 16 or under, we will [terminate that User’s Account immediately](#k-cancellation-and-termination). If you are a resident of a country outside the United States, your country’s minimum age may be older; in such a case, you are responsible for complying with your country’s laws.
+- Your login may only be used by one person — i.e., a single login may not be shared by multiple people. A paid Organization may only provide access to as many Personal Accounts as your subscription allows.
+- You may not use Reviewable in violation of export control or sanctions laws of the United States or any other applicable jurisdiction. You may not use Reviewable if you are or are working on behalf of a [Specially Designated National (SDN)](https://www.treasury.gov/resource-center/sanctions/SDN-List/Pages/default.aspx) or a person subject to similar blocking or denied party prohibitions administered by a U.S. government agency.
 
-<p>We accept credit cards and debit cards and will automatically charge Your payment account during the applicable subscription period. If any fee is not paid in a timely manner, or We are unable to process Your transaction using the payment information provided, We reserve the right to suspend or revoke access to Your account.</p>
+### 5. Account Security
+You are responsible for keeping your Account secure while you use our Service.
+- You are responsible for all content posted and activity that occurs under your Account.
+- You are responsible for maintaining the security of your Account. Reviewable cannot and will not be liable for any loss or damage from your failure to comply with this security obligation.
+- You will promptly [notify Reviewable](mailto:legal@reviewable.io) if you become aware of any unauthorized use of, or access to, our Service through your Account, including any unauthorized use of your authorization token or Account.
 
-<p>If You want to use a different payment method or if there is a change in Your payment account validity or expiration date, You may edit Your information by accessing Your account page. If Your payment account reaches its expiration date, Your continued use of the Service constitutes Your authorization for us to continue billing that payment account and You remain responsible for any uncollected amounts. It is Your responsibility to keep Your contact information and payment information current and updated.</p>
+### 6. Publicity
+We may disclose the fact that an Organization is a User of Reviewable, and include its name and trademarks in various promotional materials, such as web pages, social media, and private communications. In connection with the foregoing, you hereby grant Reviewable a limited, non-exclusive, worldwide, perpetual right to use your Organization’s logos and trademarks in any of our marketing and promotional materials solely for the purpose of identifying you as a customer and promoting our business, including but not limited to on our Service.
 
-<p>If You upgrade from the free plan to any paying plan, We will immediately bill you. For monthly payment plans, the Service is billed in advance on a monthly basis. When changing from a monthly billing cycle to a yearly billing cycle, We will bill for a full year at the next monthly billing date. There will be no refunds or credits for partial months of service, upgrade/downgrade refunds, or refunds for months unused with an open account; however, refunds for annual plans will be made on a pro-rata basis. Unless You notify Us before the end of the applicable subscription period that You want to cancel, Your subscription will automatically renew for the period specified in Your plan and You authorize us to collect the then-applicable annual or monthly subscription fee using any payment mechanism We have on record for You. Your subscription can be canceled at any time in Your account dashboard.</p>
+### 7. Additional Terms
+In some situations, third parties' terms may apply to your use of Reviewable. For example, you may be a member of an organization on Reviewable with its own terms or license agreements; or you may download an application that integrates with Reviewable. Please be aware that while these Terms are our full agreement with you, other parties' terms govern their relationships with you.
 
-<p>All fees are exclusive of all taxes, levies, or duties imposed by taxing authorities, and You shall be responsible for payment of all such taxes, levies, or duties, excluding only United States (federal or state) taxes.</p>
+## C. Acceptable Use
+**Short version:** *Reviewable hosts a wide variety of code reviews from all over the world, and that collaboration only works when our users are able to work together in good faith. While using the service, you must follow the terms of this section, which include some restrictions on content you can post, conduct on the service, and other limitations. In short, be excellent to each other.*
 
-<h3>4.  Your Content</h3>
+Your use of the Website and Service must not violate any applicable laws, including copyright or trademark laws, export control or sanctions laws, or other laws in your jurisdiction. You are responsible for making sure that your use of the Service is in compliance with laws and any applicable regulations.
 
-<p>We allow You to upload content on the Service, including comments, messages, data, tags, text, photographs, graphics, location information, likes, suggestions or other feedback (“Content”). Please read this section carefully before posting, uploading, or otherwise making available any Content on the Service.</p>
+You agree that you will not under any circumstances violate our [Acceptable Use Policies](acceptable_use.md).
 
-<p>You may share Your Content with other users via the Service. You may also have the ability to share Content that has been shared with You from other users of the Service. It must be emphasized that We cannot prevent users from taking screen shots or captures or from downloading Your Content and subsequently making Your Content publicly available. We  and Other users may retain and continue to use, host, display, store, cache, reproduce, publish, transmit, modify, re-format, re-arrange, distribute, and create derivative works of any of Your Content that You have posted to the Service. If the potential for public dissemination of Your Content concerns You, please do not share that Content. Please note that recipients of Content are not allowed to download or maintain a copy of such shared Content.</p>
+## D. User-Generated Content
+**Short version:** *You own content you create, but you allow us certain rights to it, so that we can display and share the content you post. You still have control over your content, and responsibility for it, and the rights you grant us are limited to those we need to provide the service. We have the right to remove content or close Accounts if we need to.*
 
-<p>We do not assert any ownership over Your Content; subject to the rights granted to Us in these Terms of Use, You retain full ownership of all of Your Content and any Intellectual Property Rights or other proprietary rights associated with Your Content. &ldquo;Intellectual Property Rights&rdquo; means all patent rights, copyright rights, moral rights, rights of publicity, trademark, trade dress and service mark rights (and all associated goodwill), trade secret rights, and all other intellectual property and proprietary rights as may now exist or hereafter come into existence, and all applications for any of these rights and registrations, renewals and extensions of any of these rights, in each case under the laws of any state, country, territory or other jurisdiction. You, and not Us, are entirely responsible for all Content that You upload, post, transmit or otherwise make available via the Service.  Under no circumstances will We be liable in any way for any Content, including, but not limited to, any errors or omissions in any Content, or any loss or damage of any kind incurred as a result of the use of any Content posted, transmitted or otherwise made available via the Service.</p>
+### 1. Responsibility for User-Generated Content
+You may create or upload User-Generated Content while using the Service. You are solely responsible for the content of, and for any harm resulting from, any User-Generated Content that you post, upload, link to or otherwise make available via the Service, regardless of the form of that Content. We are not responsible for any public display or misuse of your User-Generated Content.
 
-<p>We make no effort to review any of Your Content for any purpose, including but not limited to, for accuracy, legality or non-infringement. You warrant and represent to Us that You have the right to enable the Service to use Your Content without violating any rights You might have in such Content or any third party rights in such Content.</p>
+### 2. Reviewable May Remove Content
+We have the right to refuse or remove any User-Generated Content that, in our sole discretion, violates any laws or Reviewable terms or policies.
 
-<p>Other users of the Service may post copyrighted information which has copyright protection whether or not it is identified as copyrighted. We reserve the right, but have no obligation, to monitor such Content, and, as such, We do not control or guarantee the accuracy, integrity or quality of user Content.  You acknowledge that by using the Service, You may be exposed to user Content that is offensive, indecent or objectionable.</p>
+### 3. Ownership of Content, Right to Post, and License Grants
+You retain ownership of and responsibility for Your Content. If you're posting anything you did not create yourself or do not own the rights to, you agree that you are responsible for any Content you post; that you will only submit Content that you have the right to post; and that you will fully comply with any third party licenses relating to Content you post.
 
-<p>By making Your Content available to Our Service, You are granting Us a non-exclusive, royalty-free, worldwide license to use, host, display, store, cache, transmit, modify, re-format, re-arrange, and adapt (including, without limitation, in order to conform it to the requirements of any networks, devices, services, or media through which the Service is available), and create derivative works of Your Content. The rights You grant to Us are for the limited purpose of operating and providing the Service, improving the Service, and allowing Us to develop new services. The reference in this license to &ldquo;derivative works&rdquo; is not intended to give Us a right to make substantive changes or derivations to Your Content, but does enable other users to redistribute Your Content by means of their own accounts in a manner that allows users to, for example, add captions, text, commentary, filters, photo-editing, or other Content in connection with Your Content.</p>
+Because you retain ownership of and responsibility for Your Content, we need you to grant us — and other Reviewable Users — certain legal permissions, listed in Sections D.4 — D.6. These license grants apply to Your Content. If you upload Content that already comes with a license granting Reviewable the permissions we need to run our Service, no additional license is required. You understand that you will not receive any payment for any of the rights granted in Sections D.4 — D.6. The licenses you grant to us will end when you remove Your Content from our servers.
 
-<p>Opinions, advice, statements, offers, or other information or content made available through the Service, but not directly by Us, are those of their respective authors, and should not necessarily be relied upon. Such authors are solely responsible for such content. We do not guarantee the accuracy, completeness, or usefulness of any information on the Service. We also do not adopt or endorse, nor are We responsible for the accuracy or reliability of any opinion, advice, or statement made by parties other than Us. Under no circumstances will We be responsible for any loss or damage resulting from anyone's reliance on information or other Content posted on the Service, or transmitted to users.</p>
+### 4. License Grant to Us
+We need the legal right to do things like host Your Content, publish it, and share it. You grant us and our legal successors the right to store, archive, parse, and display Your Content, and make incidental copies, as necessary to provide the Service, including improving the Service over time. This license includes the right to do things like copy it to our database and make backups; show it to you and other users; parse it into a search index or otherwise analyze it on our servers; share it with other users; and perform it, in case Your Content is something like music or video.
 
-<h3>5. Removal of Content</h3>
+This license does not grant Reviewable the right to sell Your Content. It also does not grant Reviewable the right to otherwise distribute or use Your Content outside of our provision of the Service.
 
-<p>We may remove any Content at any time for any reason, including, but not limited to, upon receipt of claims or allegations from third parties or authorities relating to such Content.  We may also impose limits on certain features and services or restrict Your access to parts or all of the Service, or any Content, without notice or liability.</p>
+### 5. License Grant to Other Users
+Any User-Generated Content you post publicly, including comments, may be viewed by others.
 
-<h3>6. Your Confidential Information</h3>
+If you set your pages and repositories to be viewed publicly, you grant each User of Reviewable a nonexclusive, worldwide license to use, display, and perform Your Content through the Reviewable Service and to reproduce Your Content solely on Reviewable as permitted through Reviewable's functionality. If you are uploading Content you did not create or own, you are responsible for ensuring that the Content you upload is licensed under terms that grant these permissions to other Reviewable Users.
 
-<p>We will never look at your private repository contents, never store such content, and will not let anyone see such content who is not already authorized by GitHub to do so, without Your express written permission for a specific, agreed-upon purpose. For other, private non-repository data and metadata, We reserve the right to review such information to improve Our Service, but will not disclose such private information to any third party not authorized by GitHub.</p>
+### 6. Moral Rights
+You retain all moral rights to Your Content that you upload, publish, or submit to any part of the Service, including the rights of integrity and attribution. However, you waive these rights and agree not to assert them against us, to enable us to reasonably exercise the rights granted in Section D.4, but not otherwise.
 
-<p>In addition, We will not disclose any financial, strategic and other proprietary and confidential information relating to Your business or operations you share with Us to any third party. And We will protect your personal information to the fullest extent possible in accordance with Our <a class="link" href="/privacy">Privacy Policy</a>, the terms of which are a part of this Agreement.</p>
+To the extent this agreement is not enforceable by applicable law, you grant Reviewable the rights we need to use Your Content without attribution and to make reasonable adaptations of Your Content as necessary to render the Website and provide the Service.
 
-<h3>7. Third Party Sites</h3>
+## E. Private Repositories
+**Short version:** *We treat the content of private repositories as confidential, and we only access it with your consent or to comply with our legal obligations.*
 
-<p>As mentioned in Section 2 above, You must register with GitHub before You can register with Our Service. You represent that You are entitled to disclose Your GitHub account login information to Us and/or grant Us access to Your GitHub Account (including, but not limited to, for use for the purposes described herein), without breach by You of any of the terms and conditions that govern Your use of the applicable GitHub Account and without obligating Us to pay any fees or making Us subject to any usage limitations imposed by such third party service providers. By granting Us access to your GitHub account, You understand and agree that We may access, make available  any Content that You have provided to Your GitHub account (the “Third Party Content”) so that it is available on and through the Service via Your account, and We may submit and receive additional information to and from Your GitHub account as indicated herein. Unless otherwise specified in these Terms of Use, all Third Party Content shall be considered to be Your Content for purposes of these Terms of Use. Depending on the privacy settings that You have set in your   GitHub account, personal information (as defined in the Privacy Policy) that You post to Your GitHub account may be available on and through the Service. Please note that if Your GitHub account becomes unavailable or the access to Your GitHub account is terminated, then Third Party Content may no longer be available on and through the Service.</p>
+### 1. Control of Private Repositories
+Some Accounts may have private repositories, which allow the User to control access to Content.
 
-<p>Links to third party websites appearing on Our Service, are not endorsements or referrals of any products, services or information contained in such websites.  Information provided and opinions expressed by others do not necessarily represent Our opinions. We expressly disclaim any and all liability resulting from reliance on such information or opinions.  Some products, manufacturers and service providers may be mentioned in or on the Service.  Mention of these products, manufacturers or service providers does not constitute an endorsement by Us. We shall have the right, at our sole discretion, to remove links and images attached to such links, if such links are flagged by users as offensive.</p>
+### 2. Confidentiality of Private Repositories
+Reviewable considers the contents of private repositories to be confidential to you. Reviewable will protect the contents of private repositories from unauthorized use, access, or disclosure in the same manner that we would use to protect our own confidential information of a similar nature and in no event with less than a reasonable degree of care.
 
-<h3>8. Use Restrictions</h3>
+### 3. Access
+Reviewable personnel may only access the content of your private repositories with your express written permission or to comply with our legal obligations. For other private, non-repository data and metadata, we reserve the right to review such information to improve Reviewable.
 
-<p>You represent and warrant that You will not use the Service to:</p>
+You may choose to enable additional access to your private repositories. For example, you may enable various Reviewable services or features that require additional rights to Your Content in private repositories. These rights may vary depending on the service or feature, but Reviewable will continue to treat your private repository Content as confidential. If those services or features require rights in addition to those we need to provide the Reviewable Service, we will provide an explanation of those rights.
 
-<ul>
-<li>Upload, post, email, transmit or otherwise make available any Content that is unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable.</li>
-<li>Abuse, harass, threaten, impersonate, stalk or intimidate other users.</li>
-<li>Express or imply that any statements You make are endorsed by Us, without Our specific prior written consent.</li>
-<li>Use any robot, spider, site search/retrieval application, or other manual or automatic device or process to retrieve, index, &ldquo;data mine&rdquo;, or in any way reproduce or circumvent the presentation of the Service.</li>
-<li>Interfere with or disrupt the Service, or the servers or networks connected to the Service.</li>
-<li>Forge headers or otherwise manipulate identifiers to disguise the origin of any Content transmitted through the Service, or attempt to impersonate another user, person or entity.</li>
-<li>Download lists of other users of the Service and use their information for Your own business reasons. </li>
-<li>&ldquo;Frame&rdquo; or &ldquo;mirror&rdquo; any part of the Service, or use meta tags or code or other devices containing any reference to Us or the Service in order to direct any person to any other websites for any purpose.</li>
-<li>Modify, adapt, sublicense, translate, sell, reverse engineer, decipher, decompile or otherwise disassemble any portion of the Service, or cause others to do so.</li>
-<li>Upload, post, email, transmit or otherwise make available any Content that You do not have a right to make available under any law or under contractual or fiduciary relationships (such as inside information, proprietary and confidential information learned or disclosed as part of employment relationships or under nondisclosure agreements).</li>
-<li>Provide false, inaccurate or misleading information on the Service (directly or by omission or failure to update information).</li>
-<li>Post or transmit, or cause to be posted or transmitted, any communication or solicitation designed or intended to obtain password, account, or private information from any user.</li>
-<li>Create or send unsolicited messages or other electronic communications.</li>
-<li>Upload, post, email, transmit or otherwise make available any Content that infringes any patent, trademark, trade secret, copyright or other proprietary rights of any party.</li>
-<li>Upload, post, email, transmit or otherwise make available any material that contains software viruses Trojan horses, worms, time bombs, cancelbots, easter eggs or any other computer code, files or programs designed to interrupt, destroy, detrimentally interfere with or limit the functionality of any computer software or hardware or telecommunications equipment or intercept or expropriate any system, data or personal information.</li>
-<li>Submit stories or comments linking to affiliate programs, multi-level marketing schemes, or websites/blogs repurposing existing stories (source hops).</li>
-<li>Advertise to, or solicit, any user to buy or sell any products or services, or use any information obtained from the Service to contact, advertise to, solicit, or sell to any user without the user’s prior explicit consent.</li>
-<li>Intentionally or unintentionally violate any applicable local, state, national or international law.</li>
-</ul>
+Additionally, we may be compelled by law to disclose the contents of your private repositories.
 
-<p>Additionally, You will not take any action that imposes, or may impose, in Our sole determination, an unreasonable or disproportionately large load on Our infrastructure, or bypass any measures We may use to prevent or restrict access to the Service.</p>
+Reviewable will provide notice regarding our access to private repository content, unless for legal disclosure, to comply with our legal obligations, or where otherwise bound by requirements under law, or if in response to a security threat or other risk to security.
 
-<p>We reserve the right, but are not obligated to, investigate and terminate Your participation in the Service if You have misused the Service, or violated any of the restrictions above.</p>
+## F. Copyright Infringement and DMCA Policy
+If you believe that content on our website violates your copyright, please [contact us](mailto:legal@reviewable.io) and make sure to include the following:
 
-<h3>9. No Warranties</h3>
+- a physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;
+- identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Service are covered by a single notification, a representative list of such works;
+- a description of the material that is claimed to be infringing or to be the subject of infringing activity, and information reasonably sufficient to permit Us to locate the material, including a URL address;
+- Your address, telephone number, and, email address;
+- a statement by You that You have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and
+- a statement made under penalty of perjury by You that the information in the notification is accurate, and that You are authorized to act on behalf of the owner of the copyright involved.
 
-<p>WE PROVIDE THE SERVICE ON AN &ldquo;AS IS&rdquo; BASIS AND WITHOUT ANY WARRANTY OR CONDITION, EXPRESS, IMPLIED OR STATUTORY. WE DO NOT GUARANTEE AND DO NOT PROMISE ANY SPECIFIC RESULTS FROM USE OF THE SERVICE. WE, OUR SUBSIDIARIES, MEMBERS, DIRECTORS, EMPLOYEES AND SUPPLIERS SPECIFICALLY DISCLAIM ANY IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. SOME STATES DO NOT ALLOW THE DISCLAIMER OF IMPLIED WARRANTIES, SO THE FOREGOING DISCLAIMER MAY NOT APPLY TO YOU. YOU MAY ALSO HAVE OTHER LEGAL RIGHTS THAT VARY FROM STATE TO STATE.</p>
+Please note that in order to facilitate resolution of the dispute, We may provide Your contact information to the user or entity that posted the Content that You are reporting; or in the event that You are the alleged infringer and provide a counter-notice, to the user or entity that filed the original claim. There may be legal consequences for sending a false or frivolous takedown notice. Before sending a takedown request, you must consider legal uses such as fair use and licensed uses.
 
-<p>We do not warrant that Your use of the Service will be accurate, complete, reliable, current, secure, uninterrupted, always available, or error-free, or will meet Your requirements, that any defects in the Service will be corrected, or that the Service is free of viruses or other harmful components. We disclaim all liability for, and no warranty is made with respect to, connectivity and availability. We do not accept responsibility or liability for any Content, communication or other use or access of the Service by anyone in violation of these Terms of Use. We are not responsible or liable in any manner for any Content posted on the Service, or for any of the equipment or programming associated with or utilized in the Service. We do not control and are not responsible for what users post, transmit or share on the Service and are not responsible for any offensive, inappropriate, obscene, unlawful or otherwise objectionable Content You may encounter while using the Service. It also is possible for others to obtain personal information about You due to Your use of the Service, and that the recipient may use such information to harass or injure You. We are not responsible for the use of any personal information that You disclose on the Service.</p>
+Please be aware that if you knowingly materially misrepresent that material or activity on the Website is infringing your copyright, you may be held liable for damages (including costs and attorneys’ fees) under Section 512(f) of the Online Copyright Infringement Liability Limitation Act of the DMCA (17 U.S.C. § 512).
 
-<p>The Service may be temporarily unavailable from time to time for maintenance or other reasons. We are not responsible for any technical malfunction or other problems of any telephone network or service, computer systems, servers or providers, computer or mobile phone equipment, software, failure of text messaging on account of technical problems or traffic congestion on the Internet, on the Service, on any website or any combination thereof, including injury or damage to Your mobile device or other hardware or software, related to or resulting from using or downloading materials in connection with the Service.</p>
+We will terminate the Accounts of repeat infringers of this policy.
 
-<p>No oral or written information or advice provided by Us, its resellers, agents or employees shall create a warranty in any way.</p>
+## G. Intellectual Property Notice
+**Short version:** *We own the service and all of our content. In order for you to use our content, we give you certain rights to it, but you may only use our content in the way we have allowed.*
 
-<h3>10. Indemnity</h3>
+### 1. Reviewable's Rights to Content
+Reviewable and our licensors, vendors, agents, and/or our content providers retain ownership of all intellectual property rights of any kind related to the Website and Service and the entire contents, features and functionality (including but not limited to all information, software, text, displays, images, video and audio, and the design, selection and arrangement thereof) therein. We reserve all rights that are not expressly granted to you under this Agreement or by law. The look and feel of the Website and Service is copyright © Ideanest LLC. All rights reserved. You may not duplicate, copy, or reuse any portion of the HTML/CSS, Javascript, or visual design elements or concepts without express written permission from Reviewable.
 
-<p>You agree to fully exonerate, indemnify, defend and save harmless Ideanest, its directors, officers, employees or agents, from and against any and all suits, actions, claims, demands, liens, losses, damages, fines, judgments or decrees, and any expenses in connection with such, including, without limitation, reasonable attorneys’ fees, based upon or arising out of loss, damage or injury (including death) arising  from: (i) the violation of any statute, ordinance or regulation by you or any of your employees, agents, contractors or subcontractors;  and (ii) the violation of any of your obligations under these Terms of Use, including but not limited to the failure to procure necessary licensing rights and/or pay applicable royalties for such rights.</p>
+### 2. Reviewable Trademarks and Logos
+Our name, our logo, and all related names, logos, product and service names, designs and slogans are trademarks of Reviewable or its affiliates or licensors. If you’d like to use Reviewable’s trademarks, you must [get in touch with us](mailto:legal@reviewable.io) first to obtain permission. All other names, logos, product and service names, designs and slogans on this Website are the trademarks of their respective owners.
 
-<h3>11. Limitation of Liability</h3>
+### 3. License to Reviewable Policies
+This Agreement is licensed under this [Creative Commons Zero license](https://creativecommons.org/publicdomain/zero/1.0/).
 
-<p>WE WILL BE RESPONSIBLE AND LIABLE FOR LOSS OF YOUR DATA, INFORMATION, CONTENT OR OTHER INFORMATION IN CONNECTION WITH THE USE OF SERVICE CAUSED BY OUR EMPLOYEES’ OR AGENTS’ NEGLIGENCE, GROSS NEGLIGENCE, OR WILFUL MISCONDUCT. EXCEPT IN THE EVENT OF SUCH NEGLIGENCE GROSS NEGLIGENCE, OR WILFUL MISCONDUCT, IN NO EVENT SHALL WE BE LIABLE TO YOU, OR ANY THIRD PARTY, FOR ANY DAMAGES ARISING FROM YOUR USE OF, OR ANY THIRD PARTY’S USE OF, OR INABILITY TO USE, THE SERVICE (WHETHER SUCH DAMAGES ARE DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL, AND ARISING FROM ANY CAUSE WHATSOEVER, WHETHER IN CONTRACT OR TORT, INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUE, OR DATA) EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+## H. Reviewable Additional Product Terms
+**Short version:** *You need to follow certain specific terms and conditions for Reviewable's various features and products, and you agree to the Reviewable Additional Product Terms when you agree to this Agreement.*
 
-<h3>12. Term and Termination</h3>
+Some Service features may be subject to additional terms specific to that feature or product as set forth in the Reviewable Additional Product Terms. By accessing or using the Services, you also agree to the [Reviewable Additional Product Terms](additional_product_terms.md).
 
-<p>These Terms of Use are effective until terminated. We may terminate these Terms of Use immediately if You breach any provision of these Terms of Use. We reserve the right at any time to modify or discontinue, temporarily or permanently, the Service (or any part thereof).</p>
+## I. Beta Previews and Feedback
+**Short version:** *Beta Previews may not be supported or may change at any time. You may receive confidential information through those programs that must remain confidential while the program is private. We'd love your feedback to make our Beta Previews better.*
 
-<p>You are solely responsible for properly canceling your account. An email or phone request to cancel your account is not considered cancellation. You can cancel your account at any time via your GitHub account settings (Applications section), by clicking &ldquo;Revoke&rdquo; on the authorization granted to Us.</p>
+### 1. Subject to Change
 
-<h3>13. Audit Rights</h3>
+Beta Previews may not be supported and may be changed at any time without notice. In addition, Beta Previews are not subject to the same security measures and auditing to which the Service has been and is subject. **By using a Beta Preview, you use it at your own risk.**
 
-<p>You agree that We may audit Your use of the Service for compliance with these Terms of Use at any time. In the event that such audit reveals any use of the Service by You other than in full compliance with these Terms of Use, You shall reimburse Us for all reasonable expenses related to such audit in addition to any other liabilities to which You may be subject as a result of such non-compliance. You acknowledge that We shall have the right to enforce the provisions of these Terms of Use directly against You and Our remedies for any breaches may include, without limitation, damages or injunctive or other equitable remedies.</p>
+### 2. Confidentiality
 
-<h3>14. Intellectual Property Rights</h3>
+As a user of Beta Previews, you may get access to special information that isn’t available to the rest of the world. Due to the sensitive nature of this information, it’s important for us to make sure that you keep that information secret.
 
-<p>All Intellectual Property Rights in and to the Service shall be owned by Us absolutely and in their entirety. These rights include, but are not limited to, database rights, copyright, design rights (whether registered or unregistered), trademarks (whether registered or unregistered) and other similar rights wherever existing in the world together with the right to apply for protection of the same. All other trademarks, logos, service marks, company or product names set forth in the Service are the property of their respective owners. You may not remove or alter any trademark, trade names, service mark, product names, logo, copyright or other proprietary notices, legends, symbols or labels featured on the Service.  You acknowledge and agree that any questions, comments, suggestions, ideas, feedback or other information about the Service (&ldquo;Submissions&rdquo;), provided by You to Us are non-confidential and shall become the sole property of Us. We shall own exclusive rights, including all Intellectual Property Rights, in these Submissions, and shall be entitled to the unrestricted use and dissemination of these Submissions for any purpose, commercial or otherwise, without acknowledgment or compensation to You.</p>
+**Confidentiality Obligations.** You agree that any non-public Beta Preview information we give you, such as information about a private Beta Preview, will be considered Reviewable’s confidential information (collectively, “Confidential Information”), regardless of whether it is marked or identified as such. You agree to only use such Confidential Information for the express purpose of testing and evaluating the Beta Preview (the “Purpose”), and not for any other purpose. You should use the same degree of care as you would with your own confidential information, but no less than reasonable precautions to prevent any unauthorized use, disclosure, publication, or dissemination of our Confidential Information. You promise not to disclose, publish, or disseminate any Confidential Information to any third party, unless we don’t otherwise prohibit or restrict such disclosure (for example, you might be part of a Reviewable-organized group discussion about a private Beta Preview feature).
 
-<p>You acknowledge and agree that that Your use of the Service does not grant You any ownership interest in the Service or any exclusive rights to its use, and that these Terms of Use do not grant You any claims to patents, trademarks or other rights pertaining to the Service. You furthermore agree and acknowledge that the Service and the material accompanying it are proprietary, confidential, and trade secrets of Our company and that You will undertake all necessary steps and efforts to prevent unlawful or illegal distribution of such proprietary, confidential and trade secret information.</p>
+**Exceptions.** Confidential Information will not include information that is: (a) or becomes publicly available without breach of this Agreement through no act or inaction on your part (such as when a private Beta Preview becomes a public Beta Preview); (b) known to you before we disclose it to you, as demonstrated by documentary evidence; (c) independently developed by you without breach of any confidentiality obligation to us or any third party; or (d) disclosed with permission from Reviewable. You will not violate the terms of this Agreement if you are required to disclose Confidential Information pursuant to operation of law, provided Reviewable has been given reasonable advance written notice to object, unless prohibited by law.
 
-<h3>15. E-mail Communications</h3>
+### 3. Feedback
 
-<p>E-mail communications sent from Us to You are designed to make Your experience more efficient and enjoyable. You specifically agree to accept and consent to receiving e-mail communications through your GitHub account and directly from Us. If You do not wish to receive any of Our or GitHub e-mail communications, You shall have the opportunity to opt out of receiving such communications (excluding messages targeted directly at You about matters regarding the state of Your account, billing, or Your continued use of the Service).</p>
+We’re always trying to improve our products and services, and your feedback will help us do that. If you choose to give us any ideas, know-how, algorithms, code contributions, suggestions, enhancement requests, recommendations or any other feedback for our products or services (collectively, “Feedback”), you acknowledge and agree that Reviewable will have a royalty-free, fully paid-up, worldwide, transferable, sub-licensable, irrevocable and perpetual license to reproduce, prepare derivative works of, distribute, implement, use, modify, commercially exploit and/or incorporate the Feedback into our products, services, and documentation.
 
-<h3>16. Surveys and Feedback</h3>
+## J. Payment
+**Short version:** *You are responsible for any fees associated with your use of Reviewable. We are responsible for communicating those fees to you clearly and accurately, and letting you know well in advance if those prices change.*
 
-<p>We may periodically present You with surveys or solicit Your opinion about the Service. You acknowledge that Your participation in these types of programs is completely voluntary.  By submitting opinions, suggestions, testimonials, feedback, images, documents, and/or proposals to us through these surveys, any suggestion or feedback webpages,  through any other communication with You,  or through any medium, You acknowledge and agree that: (a) the suggestions, testimonials or feedback You provide will not contain confidential or proprietary information; (b) We are not under any obligation of confidentiality, express or implied, with respect to the suggestions, testimonials and feedback You provide; (c) We shall be entitled to use or disclose (or choose not to use or disclose) the suggestions, testimonials and feedback You provide for any purpose, in any way, in any media worldwide (without disclosing Your identity); (d) We may have similar ideas to the suggestions and feedback You provide already under consideration or in development; (e) the suggestions, testimonials and feedback You provide will automatically become Our property without any obligation to You; and (f) You are not entitled to any compensation or reimbursement of any kind from us under any circumstances.</p>
+### 1. Pricing
+Our pricing and payment terms are available at [reviewable.io/pricing](https://reviewable.io/pricing). If you agree to a subscription price, that will remain your price for the duration of the payment term; however, prices are subject to change at the end of a payment term.
 
-<h3>17. DMCA, Copyright and Other Complaints</h3>
+### 2. Upgrades, Downgrades, and Changes
+- We will immediately bill you when you upgrade from the free plan to any paying plan.
+- If you change from a monthly billing plan to a yearly billing plan or vice-versa, or upgrade to a higher level of service, we will bill you for your new plan immediately.  However, we will credit any unused funds from your previous plan towards your new plan.
+- You may change your level of service at any time by going into your Account's subscription settings. If you choose to downgrade your Account, you may lose access to Content, features, or capacity of your Account. Please see our section on [Cancellation](#k-cancellation-and-termination) for information on getting a copy of that Content.
 
-<p>We promote respect for the Intellectual Property Rights of others in all of Our business endeavors and strictly prohibit users from uploading infringing Content to the Service.  We may, in Our sole discretion, remove Content that appears to infringe on the Intellectual Property Rights of others. It is Our policy to respond to and investigate claims of copyright and other Intellectual Property Rights infringement.   We have a policy of terminating the access of users who are repeat infringers in appropriate circumstances.</p>
+### 3. Billing Schedule; No Refunds
+**Payment Based on Plan** For monthly or yearly payment plans, the Service is billed in advance on a monthly or yearly basis respectively and is non-refundable. There will be no refunds for partial months of service, downgrade refunds, or refunds for months unused with an open Account; however, the service will remain active for the length of the paid billing period. In order to treat everyone equally, no exceptions will be made.
 
-<h3>18. DMCA Notification</h3>
+**Payment Based on Usage** Some Service features are billed based on your usage. A limited quantity of these Service features may be included in your plan for a limited term without additional charge. If you choose to purchase paid Service features beyond the quantity included in your plan, you pay for those Service features based on your actual usage in the preceding month. Monthly payment for these purchases will be charged on a periodic basis in arrears. See [Reviewable Additional Product Terms for Details](additional_product_terms.md).
 
-<p>You may notify Us of alleged copyright infringement in accordance with the Digital Millennium Copyright Act (the “DMCA”). We will respond expeditiously to notices of alleged infringement sent pursuant to the DMCA.</p>
+**Invoicing** For invoiced Users, User agrees to pay the fees in full, up front without deduction or setoff of any kind, in U.S. Dollars. User must pay the fees within thirty (30) days of the Reviewable invoice date. Amounts payable under this Agreement are non-refundable, except as otherwise provided in this Agreement. If User fails to pay any fees on time, Reviewable reserves the right, in addition to taking any other action at law or equity, to (i) charge interest on past due amounts at 1.0% per month or the highest interest rate allowed by law, whichever is less, and to charge all expenses of recovery, and (ii) terminate the applicable order form. User is solely responsible for all taxes, fees, duties and governmental assessments (except for taxes based on Reviewable's net income) that are imposed or become due in connection with this Agreement.
 
-<p>In order to notify Us of a copyright infringement claim pursuant to the DMCA, You must include:</p>
+### 4. Authorization
+By agreeing to these Terms, you are giving us permission to charge your on-file credit card, PayPal account, or other approved methods of payment for fees that you authorize for Reviewable.
 
-<ul>
-<li>a physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
-<li>identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works on the Service are covered by a single notification, a representative list of such works;</li>
-<li>a description of the material that is claimed to be infringing or to be the subject of infringing activity, and information reasonably sufficient to permit Us to locate the material, including a URL address;</li>
-<li>Your address, telephone number, and, email address;</li>
-<li>a statement by You that You have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and</li>
-<li>a statement made under penalty of perjury by You that the information in the notification is accurate, and that You are authorized to act on behalf of the owner of the copyright involved.</li>
-</ul>
+### 5. Responsibility for Payment
+You are responsible for all fees, including taxes, associated with your use of the Service. By using the Service, you agree to pay Reviewable any charge incurred in connection with your use of the Service.  If you dispute the matter, contact [Reviewable Support](mailto:support@reviewable.io). You are responsible for providing us with a valid means of payment for paid Accounts. Free Accounts are not required to provide payment information.
 
-<p>The notice described above should be sent to Us via email using the address: <a class="link" href="mailto:legal@reviewable.io">legal@reviewable.io</a>.</p>
+## K. Cancellation and Termination
+**Short version:** *You may close your Account at any time. If you do, we'll treat your information responsibly.*
 
-<p>Please note that in order to facilitate resolution of the dispute, We may provide Your contact information to the user or entity that posted the Content that You are reporting; or in the event that You are the alleged infringer and provide a counter-notice, to the user or entity that filed the original claim.  Please also note that You may be liable for damages (including costs and attorneys' fees) if You knowingly and materially misrepresent that material or an activity is infringing Your copyright.</p>
+### 1. Account Cancellation
+It is your responsibility to properly cancel your Account with Reviewable. You can cancel your Account at any time by revoking Reviewable's access in GitHub's [application integration settings](https://github.com/settings/connections/applications/7da38b6fb966259af6d5). We are not able to cancel Accounts in response to an email or phone request.
 
-<h3>19. Other Complaints</h3>
+### 2. Upon Cancellation
+We will retain and use your information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements, but barring legal requirements, we will delete your full profile within 90 days of cancellation or termination (though some information may remain in encrypted backups). This information can not be recovered once your Account is canceled.
 
-<p>If You reasonably believe that Content made available through the Service infringes Your rights, please email Us at <a class="link" href="mailto:legal@reviewable.io">legal@reviewable.io</a>.</p>
+We will not delete Content that you have contributed to other Users' repositories.
 
-<h3>20. Alpha and Beta Release Versions</h3>
+Upon request, we will make a reasonable effort to provide an Account owner with a copy of your lawful, non-infringing Account contents after Account cancellation, termination, or downgrade. You must make this request within 90 days of cancellation, termination, or downgrade.
 
-<p>In the event that all or any portion of the Service is identified as an alpha or beta release version (&ldquo;Alpha Version&rdquo; or &ldquo;Beta Version&rdquo;), the terms of this paragraph will apply in addition to the other terms of these Terms of Use. The Alpha Version or Beta Version may contain more, fewer, or different features than are contained in the commercial release corresponding to the Alpha Version or Beta Version that We intend to or do distribute. We reserve the right at any time not to release a commercial version corresponding to the Alpha Version or Beta Version, or if We do release such a commercial version, to alter features, specifications, capabilities, functions, licensing terms, release dates, general availability, or other characteristics of such commercial release. You acknowledge and understand that the Alpha Version and Beta Version may contain errors impacting its proper operation and is provided to You AS IS. A primary purpose of an Alpha Version or Beta Version is to obtain feedback on the Product’s performance and the identification of defects.</p>
+### 3. Reviewable May Terminate
+Reviewable has the right to suspend or terminate your access to all or any part of the Website at any time, with or without cause, with or without notice, effective immediately. Reviewable reserves the right to refuse service to anyone for any reason at any time.
 
-<h3>21. Independent Contractors</h3>
+### 4. Survival
+All provisions of this Agreement which, by their nature, should survive termination *will* survive termination — including, without limitation: ownership provisions, warranty disclaimers, indemnity, and limitations of liability.
 
-<p>No agency, partnership, joint venture, or employment relationship is created between us as a result of these Terms of Use and You do not have any authority of any kind to bind Us in any respect whatsoever.</p>
+## L. Communications with Reviewable
+**Short version:** *We use email and other electronic means to stay in touch with our users.*
 
-<h3>22. Non-Waiver</h3>
+### 1. Electronic Communication Required
+For contractual purposes, you (1) consent to receive communications from us in an electronic form via the email address you have submitted or via the Service; and (2) agree that all Terms of Service, agreements, notices, disclosures, and other communications that we provide to you electronically satisfy any legal requirement that those communications would satisfy if they were on paper. This section does not affect your non-waivable rights.
 
-<p>The failure of either party to exercise in any respect any right provided for herein shall not be deemed a waiver of any further rights hereunder.</p>
+### 2. Legal Notice to Reviewable Must Be in Writing
+Communications made through email or Reviewable Support's messaging system will not constitute legal notice to Reviewable or any of its officers, employees, agents or representatives in any situation where notice to Reviewable is required by contract or any law or regulation. Legal notice to Reviewable must be in writing and served to our current corporate address.
 
-<h3>23. Force Majeure</h3>
+### 3. No Phone Support
+Reviewable only offers support via email, in-Service communications, and electronic messages. We do not offer telephone support.
 
-<p>We shall not be liable for any failure to perform Our obligations hereunder where such failure results from any cause beyond Our reasonable control, including, without limitation, mechanical, electronic or communications failure or degradation (including &ldquo;line-noise&rdquo; interference).</p>
+## M. Disclaimer of Warranties
+**Short version:** *We provide our service as is, and we make no promises or guarantees about this service. Please read this section carefully; you should understand what to expect.*
 
-<h3>24. Severability</h3>
+**Reviewable provides the Website and the Service “as is” and “as available,” without warranty of any kind. Without limiting this, we expressly disclaim all warranties, whether express, implied or statutory, regarding the Website and the Service including without limitation any warranty of merchantability, fitness for a particular purpose, title, security, accuracy and non-infringement.**
 
-<p>If any provision of these Terms of Use is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that these Terms of Use shall otherwise remain in full force and effect and enforceable.</p>
+**Reviewable does not warrant that the Service will meet your requirements; that the Service will be uninterrupted, timely, secure, or error-free; that the information provided through the Service is accurate, reliable or correct; that any defects or errors will be corrected; that the Service will be available at any particular time or location; or that the Service is free of viruses or other harmful components. You assume full responsibility and risk of loss resulting from your downloading and/or use of files, information, content or other material obtained from the Service.**
 
-<h3>25. Assignment</h3>
+**The foregoing does not affect any warranties which cannot be excluded or limited under applicable law.**
 
-<p>These Terms of Use are not assignable, transferable or sub-licensable by You except with Our prior written consent.  We may transfer, assign or delegate these Terms of Use and their rights and obligations without consent.</p>
+## N. Limitation of Liability
+**Short version:** *We will not be liable for damages or losses arising from your use or inability to use the service or otherwise arising under this agreement. Please read this section carefully; it limits our obligations to you.*
 
-<h3>26. Governing Law</h3>
+**To the fullest extent provided by law, you understand and agree that we will not be liable to you or any third party for any loss of profits, use, goodwill, or data, or for any incidental, indirect, special, consequential or exemplary damages, however arising, that result from:**
 
-<p>By using the Service, You agree that these Terms of Use shall be governed by and construed in accordance with the laws of the State of California, United States of America, without regards to its conflict of law rules.</p>
+**- the use, disclosure, or display of your User-Generated Content;**
+**- your use or inability to use the Service;**
+**- any modification, price change, suspension or discontinuance of the Service;**
+**- the Service generally or the software or systems that make the Service available;**
+**- unauthorized access to or alterations of your transmissions or data;**
+**- statements or conduct of any third party on the Service;**
+**- any other user interactions that you input or receive through your use of the Service;**
+**- any distributed denial-of-service attack, viruses or other technologically harmful material that may infect your computer equipment, computer programs, data or other proprietary material due to your use of the Website or Service or items obtained through the Website or the Service or to your downloading of any material posted on them, or on any website linked to them; or**
+**- any other matter relating to the Service.**
 
-<h3>27. Arbitration Agreement and Waiver of Class Remedies</h3>
+**Our liability is limited whether or not we have been informed of the possibility of such damages, and even if a remedy set forth in this Agreement is found to have failed of its essential purpose. We will have no liability for any failure or delay due to matters beyond our reasonable control.**
 
-<p>All disputes arising under or relating to these Terms of Use shall be resolved exclusively through arbitration in Santa Clara County, California, United States of America, before a single arbitrator.  The arbitrator, and not any federal, state or local court or agency, shall have the exclusive authority to resolve any dispute arising under or relating to the interpretation, applicability, enforceability, or formation of these Terms of Use, including, but not limited to, any claim that all of any part of these Terms of Use is void or voidable. You further agree that You may only bring claims in Your individual capacity and not as a plaintiff or class member in any purported class or representative proceeding.</p>
+## O. Release and Indemnification
+**Short version:** *You are responsible for your use of the service. If you harm someone else or get into a dispute with someone else, we will not be involved.*
 
-<h3>28. Entire Agreement</h3>
+If you have a dispute with one or more Users, you agree to release Reviewable from any and all claims, demands and damages (actual and consequential) of every kind and nature, known and unknown, arising out of or in any way connected with such disputes.
 
-<p>These Terms of Use supersede all prior and contemporaneous agreements, representations and warranties and understandings, whether oral or written, with respect to the Service, and any Content.  We reserve the right, at our sole discretion, to modify or replace these Terms of Use at any time. If the alterations constitute a material change to these Terms, We will notify You by posting an announcement on the Service. What constitutes a material change will be determined by Us in Our sole discretion. However, it is Your responsibility to read and become familiar with any modifications that We may make. Using the Service following notification of a material change to these Terms of Use shall constitute Your acceptance of the Terms of Use as modified.</p>
+You agree to indemnify us, defend us, and hold us and our affiliates, licensors and service providers, and our and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors and assigns harmless from and against any and all claims, liabilities, damages, judgments, awards, losses, costs, expenses or fees, including attorneys’ fees (collectively, "Losses"), arising out of or relating to your use of the Website and the Service, including but not limited to your violation of this Agreement, your User Contributions, any use of the Website’s content, services, or products other than as expressly authorized in these Terms of Service, or your use of any information obtained from the Website, provided that Reviewable (1) gives you written notice within 90 days after obtaining knowledge of any Losses or discovery of facts on which we intend to base a request for indemnification; and (2) provides to you all reasonable assistance, at your expense. You agree to give Reviewable prompt written notice of any proposed settlement of a claim that is indemnifiable under this Section O, and you may not, without Reviewable's prior written consent, settle or compromise any claim or consent to the entry of any judgment regarding which indemnification is being sought.
 
-<h3>29. Export Control</h3>
+## P. Limitation of Time to File Claims
+**Short version:** _If you believe you have a claim against us, you must file it within one year._
 
-<p>You shall comply with all export laws and restrictions and regulations of the United States Department of Commerce or any other United States or foreign agency or authority, and agree not to export, or allow the export or re-export of any Content in violation of any such restrictions, laws or regulations or unless and until all required licenses and authorizations are obtained to the countries specified in the applicable U.S. Export Administration Regulations (or any successor supplement or regulations). By using the Service, You are agreeing to the foregoing and You are representing and warranting that You are not located in, under the control of, or a national or resident of any restricted country or on any such list.</p>
+**Any cause of action or claim you may have arising out of or relating to these Terms of Service must be commenced within one (1) year after the cause of action accrues; otherwise, such cause of action or claim is permanently barred.**
+
+## Q. Changes to These Terms
+**Short version:** *We want our users to be informed of important changes to our terms, but some changes aren't that important — we don't want to bother you every time we fix a typo. So while we may modify this agreement at any time, we will notify users of any material changes and give you time to adjust to them.*
+
+We reserve the right, at our sole discretion, to amend these Terms of Service at any time and will update these Terms of Service in the event of any such amendments. We will notify our Users of material changes to this Agreement, such as price increases, at least 30 days prior to the change taking effect by posting a notice on our Website or sending email to the primary email address specified in your Reviewable account. Customer's continued use of the Service after those 30 days constitutes agreement to those revisions of this Agreement. For any other modifications, your continued use of the Website constitutes agreement to our revisions of these Terms of Service. You can view all changes to these Terms in our [legal policies](https://github.com/Reviewable/Reviewable/tree/master/legal) directory.
+
+We reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently, the Website (or any part of it) with or without notice.
+
+## R. Miscellaneous
+
+### 1. Governing Law
+Except to the extent applicable law provides otherwise, this Agreement between you and Reviewable and any access to or use of the Website or the Service are governed by the federal laws of the United States of America and the laws of the State of California, without regard to conflict of law provisions. You and Reviewable agree to submit to the exclusive jurisdiction and venue of the courts located in Santa Clara County, California.
+
+### 2. Non-Assignability
+Reviewable may assign or delegate these Terms of Service and/or the [Reviewable Privacy Policy](privacy.md), in whole or in part, to any person or entity at any time with or without your consent, including the license grant in Section D.4. You may not assign or delegate any rights or obligations under the Terms of Service or Privacy Policy without our prior written consent, and any unauthorized assignment and delegation by you is void.
+
+### 3. Section Headings and Summaries
+Throughout this Agreement, each section includes titles and brief summaries of the following terms and conditions. These section titles and brief summaries are not legally binding.
+
+### 4. Severability, No Waiver, and Survival
+If any part of this Agreement is held invalid or unenforceable, that portion of the Agreement will be construed to reflect the parties’ original intent. The remaining portions will remain in full force and effect. Any failure on the part of Reviewable to enforce any provision of this Agreement will not be considered a waiver of our right to enforce such provision. Our rights under this Agreement will survive any termination of this Agreement.
+
+### 5. Informal Negotiations
+
+To expedite resolution and control the cost of any dispute, controversy, or claim related to this Agreement brought by either you or us, the parties agree to first attempt to negotiate any dispute informally for at least 30 days before initiating arbitration. Such informal negotiations commence upon written notice from you to us or from us to you.
+
+### 6. Arbitration and Waiver of Class Remedies
+All disputes arising under or relating to this Agreement shall be resolved exclusively through arbitration in Santa Clara County, California, United States of America, before a single arbitrator. The arbitrator, and not any federal, state or local court or agency, shall have the exclusive authority to resolve any dispute arising under or relating to the interpretation, applicability, enforceability, or formation of this Agreement, including, but not limited to, any claim that all of any part of this Agreement is void or voidable. You further agree that you may only bring claims in your individual capacity and not as a plaintiff or class member in any purported class or representative proceeding.
+
+### 7. Amendments; Complete Agreement
+This Agreement may only be modified by a written amendment signed by an authorized representative of Reviewable, or by the posting by Reviewable of a revised version in accordance with [Section P. Changes to These Terms](#p-changes-to-these-terms). These Terms of Service, together with the Reviewable Privacy Policy, represent the complete and exclusive statement of the agreement between you and us. This Agreement supersedes any proposal or prior agreement oral or written, and any other communications between you and Reviewable relating to the subject matter of these terms including any confidentiality or nondisclosure agreements.
+
+### 8. Questions
+Questions about the Terms of Service? [Contact us](mailto:legal@reviewable.io).
