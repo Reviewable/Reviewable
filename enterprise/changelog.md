@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show correct background color for code snippets in file-level discussions.
 - Fix: don't ignore some normally spurious errors reported through the global error hook if they appear to originate from Reviewable.
 - Fix: work around invalid GitHub image proxy links in comments.
+- Fix: avoid a memory / CPU leak when switching between reviews without closing the tab.
 #### Release 4186.6596 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-12-04
 - New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  See [docs](https://docs.reviewable.io/files.html#file-review-state) for details.
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
