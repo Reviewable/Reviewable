@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: Add an API to query information about seats and their occupants.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
 - Upd: main review flow layout is updated to pave the way for the sidebar feature.
 - Upd: add `review.pullRequest.sanctions` to completion condition input data.  This replaces the previous `approvals` proprety (which will continue to be supported, don't worry) with a richer data structure that includes user teams.
