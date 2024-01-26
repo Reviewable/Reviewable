@@ -7,10 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
-- New: Add an API to query information about seats and their occupants.
+- New: Add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
-- Upd: main review flow layout is updated to pave the way for the sidebar feature.
 - Upd: add `review.pullRequest.sanctions` to completion condition input data.  This replaces the previous `approvals` proprety (which will continue to be supported, don't worry) with a richer data structure that includes user teams.
 - Upd: highlight Cairo files as Rust.
 - Upd: Remove support for `azurefns` (Azure Functions) from REVIEWABLE_CODE_EXECUTOR setting.
@@ -25,6 +23,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: drain requests before exiting server.
 - Fix: a link to a discussion within a review scrolls to that discussion when followed.
 - Fix: corrected ribbon label positioning when showing new dispositions in a discussion.
+
 #### Release 4186.6596 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-12-04
 - New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  See [docs](https://docs.reviewable.io/files.html#file-review-state) for details.
 - Upd: replace the Gitter chatroom link in the support menu with a built-in popup chat.  You can substitute your own link instead by setting REVIEWABLE_CHAT_URL to a URL of your choice (for example a Slack channel you're sharing with us!), or remove the menu item entirely by setting the environment variable to `off`.
