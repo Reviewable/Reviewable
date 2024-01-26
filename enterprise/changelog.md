@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
 - New: Add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
 - Upd: add `review.pullRequest.sanctions` to completion condition input data.  This replaces the previous `approvals` proprety (which will continue to be supported, don't worry) with a richer data structure that includes user teams.
@@ -21,8 +23,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: work around invalid GitHub image proxy links in comments.
 - Fix: avoid a memory / CPU leak when switching between reviews without closing the tab.
 - Fix: drain requests before exiting server.
-- Fix: a link to a discussion within a review scrolls to that discussion when followed.
-- Fix: corrected ribbon label positioning when showing new dispositions in a discussion.
+- Fix: when following a link to a discussion within a review, scroll to that discussion.
+- Fix: correct ribbon label positioning when showing new dispositions in a discussion.
 
 #### Release 4186.6596 (min 3991.6302 GHE 2.19+ or 3.0+) 2023-12-04
 - New: allow the custom review completion condition to designate per-file reviewers, display the review state of each file with a small icon, and provide full details of who reviewed / needs to review the file in a dropdown.  See [docs](https://docs.reviewable.io/files.html#file-review-state) for details.
