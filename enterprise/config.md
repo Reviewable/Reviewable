@@ -76,6 +76,7 @@ Optional settings that enable extra security mechanisms.
 * `REVIEWABLE_PRIVATE_MODE`: When set to any non-empty value, turns on Reviewable's equivalent of GHE's private mode by prohibiting all unauthenticated access (except to the home page) and ensuring that no secrets are passed to the browser until the user is authenticated.
 * `REVIEWABLE_STRICT_TRANSPORT_SECURITY`: The value of the `Strict-Transport-Security` header in all responses.  For example, set to `max-age=31536000` to enforce secure connections to `REVIEWABLE_HOST_URL` for at least a year.
 * `NODE_EXTRA_CA_CERTS`: The absolute path to a cert file in PEM format; this might be your GHE instance's SSL cert, or the root cert for your organization.  Useful if your GitHub installation uses a self-signed (or otherwise non-validating) certificate, as otherwise Reviewable will refuse to connect to the API with errors like "unable to get local issuer certificate".  This environment variable **must be set directly**, not via the `REVIEWABLE_CONFIG_FILE` file.
+* `REVIEWABLE_API_SECRET`: A secret token (ASCII only) used to authenticate requests to the [REST API](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md). If unset the REST API will be disabled.
 
 ##### Monitoring
 
