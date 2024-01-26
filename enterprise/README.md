@@ -1,6 +1,6 @@
 ### Reviewable Enterprise
 
-There's a version of Reviewable that runs on your own premises and can connect to your instance of GitHub Enterprise (GHE).  Note that it has a somewhat atypical architecture that requires the use of external cloud services &mdash; please see the [security overview](https://github.com/Reviewable/Reviewable/blob/master/enterprise/security.md) for details.  (There's also an Enterprise Cloud variant which is like the SaaS offering, but includes a negotiable contract, SLAs, etc.)
+There's a version of Reviewable that runs on your own premises and can connect to your instance of GitHub Enterprise (GHE).  Note that it has a somewhat atypical architecture that requires the use of external cloud services &mdash; please see the [security overview](https://github.com/Reviewable/Reviewable/blob/master/enterprise/security.md) for details.  (There's also a Managed Enterprise variant where we take care of running the dedicated instance for you.  See a comparison of all the options [here](https://www.reviewable.io/blog/reviewable-ghe-options/).)
 
 If you're interested in a free trial, please [get in touch!](mailto:support@reviewable.io?subject=Enterprise%20edition)  To issue a temporary license key we'll need a few pieces of information from you first:
 1. A [`hub.docker.com`](https://hub.docker.com/) username to be granted access to the image.
@@ -16,6 +16,8 @@ If you already have a license, you'll want to explore the links below.
 ##### [Ops playbook](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md)
 
 ##### [Analytics events dictionary](https://github.com/Reviewable/Reviewable/blob/master/enterprise/analytics.md)
+
+##### [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md)
 
 ##### [Changelog](https://github.com/Reviewable/Reviewable/blob/master/enterprise/changelog.md)
 
