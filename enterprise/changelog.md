@@ -10,7 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - Fix: react immediately to custom font family and size being deleted in the settings dialog, instead of requiring a page reload.
 #### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
-- New: Add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
+- New: add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
 - Upd: add `review.pullRequest.sanctions` to completion condition input data.  This replaces the previous `approvals` proprety (which will continue to be supported, don't worry) with a richer data structure that includes user teams.
 - Upd: highlight Cairo files as Rust.
