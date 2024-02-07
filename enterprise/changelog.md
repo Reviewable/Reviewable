@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - Fix: react immediately to custom font family and size being deleted in the settings dialog, instead of requiring a page reload.
 - Fix: recognize blocked repositories when attempting to auto-connect.
+- Fix: avoid spinning forever on "Resuming session" in Safari 17 and up.
 #### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
 - New: add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
