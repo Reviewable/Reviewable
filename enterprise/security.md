@@ -16,9 +16,13 @@ Reviewable relies entirely on GitHub Enterprise (GHE) for authentication, via th
 
 When a user signs in, Reviewable obtains and stores an OAuth token that lets it impersonate the user within the scopes that were granted.  Reviewable needs some very broad scopes to function (including `repo`) so to a first approximation you can assume that it inherits each user's full power.  We're not aware of any way to distinguish Reviewable's impersonated actions from the user's in GHE or otherwise independently audit Reviewable's use of the tokens.
 
+Please see [here](auth.md#reviewable-authentication-flow) for full details on the authentication flow.
+
 ## Authorization
 
-Authorizations in Reviewable are inferred from the permissions granted to users in GHE, i.e. repository read/write/admin and organization owner.  There are no separate roles or authorizations maintained within Reviewable (with one small exception, detailed below).  Permission checks against GHE are cached and revalidated at least every 30 minutes.
+Authorizations in Reviewable are inferred from the permissions granted to users in GHE, i.e. repository read/write/admin and organization owner.  There are no separate roles or authorizations maintained within Reviewable (with one small exception, detailed below).  Permission checks against GHE are cached and revalidated every 15 to 120 minutes depending on their sensitivity.
+
+Please see [here](auth.md#reviewable-authorization-flow) for full details on the authorization flow.
 
 Reviewable has an additional role of "license administrator" that can check the license details and manage some license-level settings.  All GHE installation owners (i.e., instance admins) are considered to be license administrators, and you can also explicitly designate one additional user as such (encoded in the license key).
 
