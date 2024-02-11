@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
 - Upd: don't split revisions when the commit author changes, and indicate each commit's author in the virtual Commits file if necessary instead.
 - Upd: expose `Reviewable.showAllComments()` and `Reviewable.hideAllComments()` functions in the console.
+- Upd: report queue and cron job health to Sentry's cron monitoring feature at regular intervals (if a Sentry DSN was configured).  The monitors will be configured automatically as the servers are running though it might take up to a month before all the jobs show up.  Note that Sentry charges an extra fee for cron monitoring but it's pretty minimal.
 - Fix: react immediately to custom font family and size being deleted in the settings dialog, instead of requiring a page reload.
 - Fix: recognize blocked repositories when attempting to auto-connect.
 - Fix: avoid spinning forever on "Resuming session" in Safari 17 and up.
