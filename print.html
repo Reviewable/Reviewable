@@ -1378,6 +1378,7 @@ Each invocation of your code must return a result within three seconds.</p>
 <p>Second, the <code>baseChangesOnly</code> flag is computed relative to its revision's <em>prior revision</em>, which is not necessarily the immediately preceding one.  This becomes important when rebasing multiple commits in a review following &quot;review each commit&quot; style, as Reviewable will do its best to match up each &quot;new&quot; commit to its semantic antecedent.  We don't surface these details in the data structure above but our algorithm is fairly robust and biased towards needing strong evidence for a match, so false positive <code>baseChangesOnly</code> flags should be extremely rare.</p>
 <h3><a class="header" href="#condition-output" id="condition-output">Condition output</a></h3>
 <p>Your code must return an object with some or all of the following properties.  Any missing properties (at the top level) will be filled in by using the built-in default condition.  This means that you can safely return, e.g., just the <code>disableGitHubApprovals</code> flag and the rest will be defaulted for you.</p>
+<p>If your condition code is asynchronous, you should not return any value synchronously and instead call <code>done({...})</code> with your return value once it's ready.</p>
 <h4><a class="header" href="#completed" id="completed"><code>completed</code></a></h4>
 <p>A boolean indicating whether the review is complete or not.</p>
 <h4><a class="header" href="#description" id="description"><code>description</code></a></h4>
