@@ -357,6 +357,8 @@ Second, the `baseChangesOnly` flag is computed relative to its revision's *prior
 
 Your code must return an object with some or all of the following properties.  Any missing properties (at the top level) will be filled in by using the built-in default condition.  This means that you can safely return, e.g., just the `disableGitHubApprovals` flag and the rest will be defaulted for you.
 
+If your condition code is asynchronous, you should not return any value synchronously and instead call `done({...})` with your return value once it's ready.
+
 #### `completed`
 A boolean indicating whether the review is complete or not.
 
