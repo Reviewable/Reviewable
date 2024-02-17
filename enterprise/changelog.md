@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: recognize blocked repositories when attempting to auto-connect.
 - Fix: avoid spinning forever on "Resuming session" in Safari 17 and up.
 - Fix: don't escape code as Markdown when pasting into a fenced code block in a draft comment.
+- Fix: automatically switch to in-process worker if unable to resume session via the shared one.
 #### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
 - New: add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
