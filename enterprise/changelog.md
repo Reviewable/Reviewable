@@ -7,7 +7,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
 - Upd: don't split revisions when the commit author changes, and indicate each commit's author in the virtual Commits file if necessary instead.
 - Upd: expose `Reviewable.showAllComments()` and `Reviewable.hideAllComments()` functions in the console.
@@ -17,6 +16,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid spinning forever on "Resuming session" in Safari 17 and up.
 - Fix: don't escape code as Markdown when pasting into a fenced code block in a draft comment.
 - Fix: automatically switch to in-process worker if unable to resume session via the shared one.
+- Fix: detect changed usernames when looking for personal repositories or personal pull requests to auto-connect.
+- Fix: prevent tasks polling for new personal repositories or pull requests from overrunning their lease time.
+
 #### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
 - New: add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
 - Upd: margin notch is updated via manual or keyboard input and not dragging.
