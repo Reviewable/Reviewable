@@ -21,6 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: report errors encountered when auto-connecting a new repository.
 - Fix: report broken repository connections in Reviewable's GitHub status check instead of leaving it empty or set to its last normal value.
 - Fix: update Reviewable's GitHub status checks when reconnecting a repository, so they're not stuck on "repo disconnected" until something else forces an update.
+- Fix: reinstate toggles for My PRs / All repos in connections panel.
 
 #### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
 - New: add an API to query information about seats and their occupants.  See the new [API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md) for details.
