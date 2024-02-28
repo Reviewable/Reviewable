@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4302.6774 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-02-27
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
 - Upd: don't split revisions when the commit author changes, and indicate each commit's author in the virtual Commits file if necessary instead.
 - Upd: expose `Reviewable.showAllComments()` and `Reviewable.hideAllComments()` functions in the console.
@@ -17,12 +19,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't escape code as Markdown when pasting into a fenced code block in a draft comment.
 - Fix: automatically switch to in-process worker if unable to resume session via the shared one.
 - Fix: detect changed usernames when looking for personal repositories or personal pull requests to auto-connect.
-- Fix: prevent tasks polling for new personal repositories or pull requests from overrunning their lease time.
+- Fix: prevent tasks polling for new personal repositories or pull requests from exceeding their lease time.
 - Fix: report errors encountered when auto-connecting a new repository.
 - Fix: report broken repository connections in Reviewable's GitHub status check instead of leaving it empty or set to its last normal value.
 - Fix: update Reviewable's GitHub status checks when reconnecting a repository, so they're not stuck on "repo disconnected" until something else forces an update.
 - Fix: reinstate toggles for My PRs / All repos in connections panel.
-- Fix: don't misparse team mentions as user mentions in comments.
+- Fix: don't misparse team mentions as user mentions in comments.  This could cause the completion condition to fail with a bogus "...is a member of over 100 teams" error message.
 - Fix: guard against rare crash when trying to publish while the review page is still loading.
 
 #### Release 4247.6681 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-01-25
