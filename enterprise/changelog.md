@@ -8,6 +8,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- Upd: adjust pull request links in comments to point to the corresponding review instead, if it exists.
+- Upd: add support for `linguist-generated` and `linguist-language` attributes in `.gitattributes` files.
+- Fix: don't repeatedly try to get anonymous permissions for a private repository.
+- Fix: immediately clear private data from memory when signing out.
 #### Release 4302.6774 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-02-27
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
 - Upd: don't split revisions when the commit author changes, and indicate each commit's author in the virtual Commits file if necessary instead.
