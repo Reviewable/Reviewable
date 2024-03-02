@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: adjust pull request links in comments to point to the corresponding review instead, if it exists.
 - Upd: add support for `linguist-generated` and `linguist-language` attributes in `.gitattributes` files.
+- Upd: support syntax highlighting for the `jsonc` "language".
 - Fix: don't repeatedly try to get anonymous permissions for a private repository.
 - Fix: immediately clear private data from memory when signing out.
 - Fix: reject Firebase tokens with no expiry date.  Some were accidentally issued a couple years ago and got grandfathered in for a while to avoid disruption, but it's long past time to stop accepting them.
