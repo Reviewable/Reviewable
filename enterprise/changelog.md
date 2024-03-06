@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: immediately clear private data from memory when signing out.
 - Fix: reject Firebase tokens with no expiry date.  Some were accidentally issued a couple years ago and got grandfathered in for a while to avoid disruption, but it's long past time to stop accepting them.
 - Fix: guard against crash when exiting review page while it's scrolling.
+- Fix: prevent crash when permissions time out while on a review page.
 
 #### Release 4302.6774 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-02-27
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
