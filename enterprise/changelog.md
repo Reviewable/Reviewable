@@ -10,11 +10,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: adjust pull request links in comments to point to the corresponding review instead, if it exists.
 - Upd: add support for `linguist-generated` and `linguist-language` attributes in `.gitattributes` files.
 - Upd: support syntax highlighting for the `jsonc` "language".
+- Upd: add syntax highlighting for VBA files.
 - Fix: don't repeatedly try to get anonymous permissions for a private repository.
 - Fix: immediately clear private data from memory when signing out.
 - Fix: reject Firebase tokens with no expiry date.  Some were accidentally issued a couple years ago and got grandfathered in for a while to avoid disruption, but it's long past time to stop accepting them.
 - Fix: guard against crash when exiting review page while it's scrolling.
 - Fix: prevent crash when permissions time out while on a review page.
+- Fix: don't crash when license admin or instance owner visits the repositories page more than once without reloading the page.
 
 #### Release 4302.6774 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-02-27
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
