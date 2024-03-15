@@ -7,10 +7,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+- New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
 - Upd: adjust pull request links in comments to point to the corresponding review instead, if it exists.
 - Upd: add support for `linguist-generated` and `linguist-language` attributes in `.gitattributes` files.
 - Upd: support syntax highlighting for the `jsonc` "language".
 - Upd: add syntax highlighting for VBA files.
+- Upd: enabled support for merge queues in GHE 3.12+.
 - Fix: don't repeatedly try to get anonymous permissions for a private repository.
 - Fix: immediately clear private data from memory when signing out.
 - Fix: reject Firebase tokens with no expiry date.  Some were accidentally issued a couple years ago and got grandfathered in for a while to avoid disruption, but it's long past time to stop accepting them.
