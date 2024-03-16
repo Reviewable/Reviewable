@@ -10,6 +10,7 @@ Organizations are shown below your personal repos on the Repositories page, and 
 - **Start a 30 day trial** will start a trial for that organization.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
 - **Subscribe** will open a panel showing the various plans, where you can compare features, select the desired number of contributors, and click **Subscribe** again to start the checkout process.
 - **Manage subscription** will open the subscription portal where you can adjust or cancel your subscription, update your card, or view past invoices.
+- **Edit settings** will show some options to *[manage the scope of the subscription](#managing-the-scope-of-your-subscription)*, and (un)assign a *[billing manager](#billing-manager)*, see below.
 
 {:.important}
 OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
@@ -17,14 +18,14 @@ OAuth app restrictions may entirely block Reviewable from an organization. Learn
 
 ### Selecting a plan
 
-In the subscription panel you can select a plan for your organization.  Each plan has a maximum number of monthly contributors. Rather than forcing you to maintain yet another user list, we count each distinct PR author during a billing cycle as a contributor, at the time a review is created and linked to the PR. Once a review has been created, any number of people can view it and participate.  You should select a plan that will cover the expected number of contributors on your team.
+In the subscription panel you can select a plan for your organization, and the number of constributors to purchase the plan for.  We count each distinct PR author during a billing cycle as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
 
-If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email. If you have chosen a subscription plan that has a flexible overage, Reviewable will permit all additional contributors if you did not exceed your maximum in the previous billing cycle. This flexibility provides you additional time to upgrade your subscription without disruption. If you are confident that the overage will not continue into the next month, you can simply ignore it. If your plan doesn't have the flexible overage feature, or you exceeded the maximum in the prior month, Reviewable won't create the review until you upgrade your subscription — or the contributor count resets on your next billing date.
+If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets on your next billing date.
 
 {:.tip}
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 
-If you change your plan in the middle of a billing cycle, the new plan takes effect immediately and fees are not prorated (up or down).  You'll be charged the new price on your next billing date.
+You can upgrade, downgrade, or cancel the plan any time.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds.
 
 ### Managing the scope of your subscription
 
@@ -37,26 +38,15 @@ On the other hand, if your company's repos are distributed over multiple GitHub 
 {:.tip}
 Restricting an organization to a team and extending it to other organizations are mutually exclusive.
 
-### Payments
-
-You will need to specify a card to use for payments.  This can be a credit or debit card — most anything with a major payment network logo on it should work. Reviewable uses Stripe to process payments and store your credit card information, so you can have full confidence that your financial information is secure.
-
-{:.tip}
-At this time, each user can only specify one card for all their subscriptions.
-
-Under the card information, you can reveal extra fields that let you specify a custom memo to include on the monthly receipts (accountants love these!), and a different email address to send the receipts to.
-
 ### Canceling a subscription
 
 To cancel a subscription, click the **Edit subscription** button and switch to the free plan — don't forget to click **Confirm**!  Only the user who originally created the subscription can do this.  If this is not possible or convenient, please get in touch with [support](mailto:support@reviewable.io) and we'll help you out.
 
 You can change or cancel a subscription at any time with immediate effect, but there will be no refunds or proration of fees. If you cancel, previously created reviews will continue to be accessible and synchronized with GitHub. However, you'll no longer have the ability to create new reviews.
 
-### Subscription ownership
+### Billing manager
 
-Any organization member can start a subscription and they'll be able to manage it as long as they remain a member of the organization.  Any organization owner is also allowed to manage the subscription but cannot delegate this privilege at the moment.  Other members will be informed that a subscription exists with an “Organizational subscription active” message next to the organization name but will be unable to affect it in any way.
-
-An organization may not have multiple concurrent subscriptions.
+Any organization member can start a subscription and by doing so they become the organization's billing manager until they either leave the organization or a different billing manager is assigned.  Any organization owner is also allowed to manage the subscription.
 
 ## Licenses
 
