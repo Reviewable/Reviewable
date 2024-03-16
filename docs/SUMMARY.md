@@ -9,6 +9,6 @@
 * [Reviews dashboard](dashboard.md)
 * [Account settings](accountsettings.md)
 * [Repositories](repositories.md)
-* [Subscriptions](subscriptions.md)
+* [Subscriptions and licenses](subscriptions.md)
 * [Abnormal conditions](abnormal.md)
 * [Tips and Tricks](tips.md)

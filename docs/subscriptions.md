@@ -1,27 +1,33 @@
-# Subscriptions
+# Subscriptions and licenses
 
-All public repositories and personal private repositories can use Reviewable free of charge forever.  A subscription is required for private organizational repositories.
+All public repositories and personal private repositories can use Reviewable free of charge forever.  A subscription or license is required for private organizational repositories.  Subscriptions are used on `reviewable.io`, while licenses are needed for managed or self-hosted enterprise instances.
 
-Every subscription gets a 30-day free trial, which requires no credit card up front. If you don't explicitly start a subscription, an automatic trial subscription will begin when you create the first review.
+## Subscriptions
 
-Organizations are shown below your personal repos on the Repositories page, and appear whether you are an owner or a contributor.  You can open the subscription panel by clicking on the **Subscribe** or **Edit subscription** button next to the organization name.  Any organization member can start a subscription, not just organization owners.
+Every organization gets a 30 day free trial, which requires no credit card. You can start a trial from any private review page, or from an organization entry on the Repositories page.
+
+Organizations are shown below your personal repos on the Repositories page, and appear whether you are an owner or a contributor.  One or more of the buttons below will show up next to the organization name:
+- **Start a 30 day trial** will start a trial for that organization.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
+- **Subscribe** will open a panel showing the various plans, where you can compare features, select the desired number of contributors, and click **Subscribe** again to start the checkout process.
+- **Manage subscription** will open the subscription portal where you can adjust or cancel your subscription, update your card, or view past invoices.
+- **Edit settings** will show some options to *[manage the scope of the subscription](#managing-the-scope-of-your-subscription)*, and (un)assign a *[billing manager](#billing-manager)*.
 
 {:.important}
 OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
 
 
-## Selecting a plan
+### Selecting a plan
 
-In the subscription panel you can select a plan for your organization.  Each plan has a maximum number of monthly contributors. Rather than forcing you to maintain yet another user list, we count each distinct PR author during a billing cycle as a contributor, at the time a review is created and linked to the PR. Once a review has been created, any number of people can view it and participate.  You should select a plan that will cover the expected number of contributors on your team.
+In the subscription panel you can select a plan for your organization, and the number of contributors to purchase the plan for.  We count each distinct PR author during a billing cycle as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
 
-If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email. If you have chosen a subscription plan that has a flexible overage, Reviewable will permit all additional contributors if you did not exceed your maximum in the previous billing cycle. This flexibility provides you additional time to upgrade your subscription without disruption. If you are confident that the overage will not continue into the next month, you can simply ignore it. If your plan doesn't have the flexible overage feature, or you exceeded the maximum in the prior month, Reviewable won't create the review until you upgrade your subscription — or the contributor count resets on your next billing date.
+If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets on your next billing date.
 
 {:.tip}
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 
-If you change your plan in the middle of a billing cycle, the new plan takes effect immediately and fees are not prorated (up or down).  You'll be charged the new price on your next billing date.
+You can upgrade, downgrade, or cancel the plan any time.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds.
 
-## Managing the scope of your subscription
+### Managing the scope of your subscription
 
 By default, a subscription covers all reviews in a single organization. Optionally, you can restrict or expand this scope.
 
@@ -32,23 +38,29 @@ On the other hand, if your company's repos are distributed over multiple GitHub 
 {:.tip}
 Restricting an organization to a team and extending it to other organizations are mutually exclusive.
 
-## Payments
-
-You will need to specify a card to use for payments.  This can be a credit or debit card — most anything with a major payment network logo on it should work. Reviewable uses Stripe to process payments and store your credit card information, so you can have full confidence that your financial information is secure.
-
-{:.tip}
-At this time, each user can only specify one card for all their subscriptions.
-
-Under the card information, you can reveal extra fields that let you specify a custom memo to include on the monthly receipts (accountants love these!), and a different email address to send the receipts to.
-
-## Canceling a subscription
+### Canceling a subscription
 
 To cancel a subscription, click the **Edit subscription** button and switch to the free plan — don't forget to click **Confirm**!  Only the user who originally created the subscription can do this.  If this is not possible or convenient, please get in touch with [support](mailto:support@reviewable.io) and we'll help you out.
 
 You can change or cancel a subscription at any time with immediate effect, but there will be no refunds or proration of fees. If you cancel, previously created reviews will continue to be accessible and synchronized with GitHub. However, you'll no longer have the ability to create new reviews.
 
-## Subscription ownership
+### Billing manager
 
-Any organization member can start a subscription and they'll be able to manage it as long as they remain a member of the organization.  Any organization owner is also allowed to manage the subscription but cannot delegate this privilege at the moment.  Other members will be informed that a subscription exists with an “Organizational subscription active” message next to the organization name but will be unable to affect it in any way.
+Any organization member can start a subscription and by doing so they become the organization's billing manager until they either leave the organization or a different billing manager is assigned.  Any organization owner is also allowed to manage the subscription.
 
-An organization may not have multiple concurrent subscriptions.
+## Licenses
+
+On an enterprise instance, the license administrator you selected when signing up and any GitHub Enterprise Server instance administrators will be able to check the license details in a panel at the top of the Repositories page.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.  You can also view a list of users who are currently allocated licensed or guest seats.
+
+### Team constraints
+
+If desired, you can additionally limit the users who will be able to obtain seats on your instance.  This can be useful in larger organizations where Reviewable is only intended for use by a specific team or department, and you don't want other employees accidentally taking up seats that are needed for the intended users.  (By default, any GitHub user can sign in and occupy a seat, or, for an organization-constrained license, any member of said organizations.)
+
+To turn on team constraints you enter one or more fully-qualified team slugs in the panel's field; only users who are a member of at least one of these teams will be able to obtain a seat.  Users with currently assigned seats will _not_ be evicted even if they're not a team member, but won't be able to renew their seat once it expires.
+
+{:.tip}
+The designated license administrator is always allowed to grab a seat so they can't accidentally lock themselves out.
+
+If team constraints are on and a user signing in is not a member (but otherwise a valid user for the license), they'll be given a full-access guest pass instead.  A guest pass lasts for two weeks and doesn't take up a license seat, but once it runs out the user will be signed out and unable to sign back in until they're a team member or eligible for a guest pass again (every 90 days).  While on a guest pass, every page will display a banner encouraging the user to request access to a licensed seat:
+
+> You've been allocated a temporary guest seat that will expire in N days. Please contact your organization administrator to obtain a permanent one.
