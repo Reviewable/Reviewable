@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against crash when exiting review page while it's scrolling.
 - Fix: prevent crash when permissions time out while on a review page.
 - Fix: don't crash when license admin or instance owner visits the repositories page more than once without reloading the page.
+- Fix: disallow time-based refreshing of a custom review completion condition if the pull request is merged or closed.  Condition output is rarely needed for non-open pull requests, and naïve conditions could end up looping this way forever.  Worse, if a pull request was closed and a new one opened on the same commit, the fix in v4186.6596 would be ineffective and a feedback loop that exhausts GitHub's per-commit status limit was likely to occur.
 
 #### Release 4302.6774 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-02-27
 - Upd: ensure that the last revision always represents the pull request's current head, in case the branch was moved back to an earlier commit.  Before, it was possible for an obsolete revision to be last instead, which could be confusing and made some completion condition code more complicated.  It could also result in the revision being considered reviewed when that may not have been the reviewer's intention; we now carry forward review marks only when it is safe to do so.
