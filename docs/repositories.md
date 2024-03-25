@@ -25,6 +25,23 @@ The access token remains encrypted at rest with a key known only to Reviewable s
 
 Reviewable does need write permissions for your repos.  See the [GitHub authorizations](registration.md#github-authorizations) section for a full explanation.
 
+Reviewable sends “commit statuses” to GitHub to communicate whether review as
+a&nbsp;whole is resolved or in progress. Currently the name of the status is
+`code-review/reviewable`. Commit statuses might be configured as part of branch
+protection rules, i.e. GitHub repo owner might specify that Reviewable's review
+(identified by the abovementioned name) passes before a&nbsp;PR is merged to the
+protected branch. However, because Reviewable's GitHub connection is currently
+an&nbsp;OAuth App (not “GitHub Application” proper), it is not possible for
+repository admins to require that `code-review/reviewable` status is sent by
+Reviewable (and not by any other authorized app). For this reason, *third party
+applications* claiming write access to commit statuses, approved by *any user
+with write capabilities* to the repository are themselves capable of bypassing
+branch protection rule that requires Reviewable's review to pass, by sending
+subsequent `code-review/reviewable` commit status with arbitrary result.
+We advise discretion when approving write access to repositories for
+collaborators, and we advise anyone with write access to carefuly consider which
+third party applications they are approving.
+
 And of course under no circumstances will we disclose any of your private information to other parties beyond what's needed to provide our service — please see our [terms of service](https://github.com/Reviewable/Reviewable/blob/master/legal/terms.md) and [privacy policy](https://github.com/Reviewable/Reviewable/blob/master/legal/privacy.md) for the legal details.
 
 If you need more details about our security architecture or have any other concerns we can address, please contact us at [support@reviewable.io](mailto:support@reviewable.io).
