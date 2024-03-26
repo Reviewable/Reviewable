@@ -25,6 +25,8 @@ The access token remains encrypted at rest with a key known only to Reviewable s
 
 Reviewable does need write permissions for your repos.  See the [GitHub authorizations](registration.md#github-authorizations) section for a full explanation.
 
+Because Reviewable is an OAuth app, the [commit statuses](#review-status-in-github-pr) it posts on pull requests cannot be authenticated and could be posted by any user or app with status write permissions under the same context.  This could let someone bypass branch protection settings by faking a "review complete" status.  If this is a concern in your environment, you may wish to exercise discretion in granting such permissions to users or apps, or institute an audit process that checks whether the statuses' author is the same user who connected the repository to Reviewable.
+
 And of course under no circumstances will we disclose any of your private information to other parties beyond what's needed to provide our service — please see our [terms of service](https://github.com/Reviewable/Reviewable/blob/master/legal/terms.md) and [privacy policy](https://github.com/Reviewable/Reviewable/blob/master/legal/privacy.md) for the legal details.
 
 If you need more details about our security architecture or have any other concerns we can address, please contact us at [support@reviewable.io](mailto:support@reviewable.io).
@@ -146,7 +148,7 @@ This setting controls what permissions a user needs to have to be able to [dismi
 
 ### Review status in GitHub PR
 
-This setting determines whether or not to post the current completion status of the review as a status check on GitHub. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
+This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
 ### Code coverage
 
