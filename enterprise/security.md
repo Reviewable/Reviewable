@@ -6,6 +6,7 @@ Everything on this page applies to both self-hosted and managed Enterprise insta
 - Reviewable Servers and image storage run in GCS.
 - Completion conditions execute on AWS Lambda, with per-repository isolation.
 - Firebase is set up with security rules and encryption (2048 bit RSA-OAEP for tokens, 512 bit AES-SIV for other data).
+- All secrets are stored in GCS Secret Manager, with audit trails enabled.
 
 ## Architecture
 
