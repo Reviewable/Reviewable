@@ -2,6 +2,11 @@
 
 This page offers an overview of Reviewable's security-related features.  Note that while there are many ways to configure Reviewable we'll only discuss the most secure (and recommended!) configuration here.
 
+Everything on this page applies to both self-hosted and managed Enterprise instances.  A managed instance is just a self-hosted instance that we run for you (outside your VPN), configured as follows:
+- Reviewable Servers and image storage run on GCP.
+- Completion conditions execute on AWS Lambda.
+- Firebase is set up with security rules and encryption.
+
 ## Architecture
 
 Reviewable is somewhat unusual for on-premises software in that it needs to be connected to cloud services to function.  This architecture diagram summarizes the various pieces and how they communicate:
