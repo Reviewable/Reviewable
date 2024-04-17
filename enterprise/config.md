@@ -167,6 +167,23 @@ Basic UI customization.
 * `REVIEWABLE_TERMS_URL`: The URL for the Terms link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_PRIVACY_URL`: The URL for the Privacy link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_DISABLED_CONNECTIONS`: A comma-separated list of fully qualified repository names that will not be allowed to connect to this Reviewable instance.
+* `REVIEWABLE_GITHUB_STATUS_URL`:  The URL of an API that reports the status of your GitHub Enterprise Server instance.  It will be checked by clients every minute and should return a JSON structure that follows this schema:
+    ```typescript
+    {
+      page: {
+        url: string;
+      }
+      status: {
+        indicator?: 'minor' | 'maintenance' | 'major' | 'critical';
+        description?: string;
+      }
+      incidents?: Array<{
+        name: string;
+        incident_updates?: Array<{body: string}>;
+        updated_at: string;  // ISO timestamp
+      }>
+    }
+    ```
 
 ##### Container configuration
 
