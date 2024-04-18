@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
 - New: allow a local GHE Server status API implementation to be tied into Reviewable's GitHub status reporting UI via `REVIEWABLE_GITHUB_STATUS_URL`.
 - Upd: adjust pull request links in comments to point to the corresponding review instead, if it exists.
