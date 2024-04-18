@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
+- New: allow a local GHE Server status API implementation to be tied into Reviewable's GitHub status reporting UI via `REVIEWABLE_GITHUB_STATUS_URL`.
 - Upd: adjust pull request links in comments to point to the corresponding review instead, if it exists.
 - Upd: add support for `linguist-generated` and `linguist-language` attributes in `.gitattributes` files.
 - Upd: support syntax highlighting for the `jsonc` "language".
