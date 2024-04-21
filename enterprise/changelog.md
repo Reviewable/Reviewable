@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- Upd: treat `skipped` commit checks as successful.
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
 - New: allow a local GHE Server status API implementation to be tied into Reviewable's GitHub status reporting UI via `REVIEWABLE_GITHUB_STATUS_URL`.
