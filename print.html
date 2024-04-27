@@ -1245,12 +1245,16 @@ Each invocation of your code must return a result within three seconds.</p>
   },
   pullRequest: {
     title: 'Work work work',
+    repository: {name: 'Reviewable'},
     number: 44,
     state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
     // All users are annotated with a full list of teams they're members of; if the property is
     // undefined then Reviewable wasn't able to fetch this list.
     author: {username: 'pkaminski', teams: ['reviewable/developers']},
+    coauthors: [
+      {username: 'pkaminski-test', teams: ['reviewable/semi-developers'], participating: true}
+    ],
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
     draft: false,
     assignees: [
@@ -1489,6 +1493,8 @@ Each invocation of your code must return a result within three seconds.</p>
 <p>A boolean that, if true, will disable the “Approve” and “Request changes” options when publishing via Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.</p>
 <h4><a class="header" href="#syncrequestedreviewers" id="syncrequestedreviewers"><code>syncRequestedReviewers</code></a></h4>
 <p>A boolean that, if true, will force synchronization of GitHub requested reviewers from <code>pendingReviewers</code>.  (You should only set it if the repository is connected to Reviewable.)  This can be useful to standardize the workflow (e.g., to make metrics provided by another tool more reliable), but note that users will still be able to manually request and unrequest reviewers anyway.  When set to <code>true</code>, the server will automatically update requested reviewers whenever <code>pendingReviewers</code> changes (including when the PR is first created) using any repo admin account.  The client will also force enable (<code>true</code>) or disable (<code>false</code>) the <a href="reviews.html#sync-requested-reviewers">&quot;Sync requested reviewers&quot;</a> option when publishing via Reviewable.</p>
+<h4><a class="header" href="#requestedteams" id="requestedteams"><code>requestedTeams</code></a></h4>
+<p>A list of teams whose review should be requested for this pull request.  The elements of the list are in the same format as <code>review.pullRequest.requestedTeams</code>, i.e. <code>{slug: 'org/team-slug'}</code>.  The pull request's requested teams will be adjusted so they end up matching the list given here, adding or removing teams as necessary.</p>
 <h4><a class="header" href="#disablebranchupdates" id="disablebranchupdates"><code>disableBranchUpdates</code></a></h4>
 <p>A boolean that, if true, will disable the ability to merge the target (base) branch into the source (head) branch in Reviewable's UI.  This is to avoid misclicks in workflows where developers are expected to rebase rather than merge.  (It's not possible to trigger a rebase through Reviewable's UI unfortunately.)</p>
 <h4><a class="header" href="#mergestyle" id="mergestyle"><code>mergeStyle</code></a></h4>
