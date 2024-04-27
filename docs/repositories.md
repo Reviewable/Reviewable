@@ -220,12 +220,16 @@ The current state of the review is accessible to your code via the `review` vari
   },
   pullRequest: {
     title: 'Work work work',
+    repository: {name: 'Reviewable'},
     number: 44,
     state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
     // All users are annotated with a full list of teams they're members of; if the property is
     // undefined then Reviewable wasn't able to fetch this list.
     author: {username: 'pkaminski', teams: ['reviewable/developers']},
+    coauthors: [
+      {username: 'pkaminski-test', teams: ['reviewable/semi-developers'], participating: true}
+    ],
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
     draft: false,
     assignees: [
@@ -482,6 +486,9 @@ A boolean that, if true, will disable the “Approve” and “Request changes�
 
 #### `syncRequestedReviewers`
 A boolean that, if true, will force synchronization of GitHub requested reviewers from `pendingReviewers`.  (You should only set it if the repository is connected to Reviewable.)  This can be useful to standardize the workflow (e.g., to make metrics provided by another tool more reliable), but note that users will still be able to manually request and unrequest reviewers anyway.  When set to `true`, the server will automatically update requested reviewers whenever `pendingReviewers` changes (including when the PR is first created) using any repo admin account.  The client will also force enable (`true`) or disable (`false`) the ["Sync requested reviewers"](reviews.md#sync-requested-reviewers) option when publishing via Reviewable.
+
+#### `requestedTeams`
+A list of teams whose review should be requested for this pull request.  The elements of the list are in the same format as `review.pullRequest.requestedTeams`, i.e. `{slug: 'org/team-slug'}`.  The pull request's requested teams will be adjusted so they end up matching the list given here, adding or removing teams as necessary.
 
 #### `disableBranchUpdates`
 A boolean that, if true, will disable the ability to merge the target (base) branch into the source (head) branch in Reviewable's UI.  This is to avoid misclicks in workflows where developers are expected to rebase rather than merge.  (It's not possible to trigger a rebase through Reviewable's UI unfortunately.)
