@@ -47,7 +47,7 @@ const pendingReviewers = _(fileBlockers)
   .value();
 
 if (_.isEmpty(pendingReviewers) && !hasUnclaimedItems) {
-  pendingReviewers.push(review.pullRequest.author);
+  pendingReviewers.push({...info.pullRequest.author, fallback: true});
 }
 
 return {
