@@ -9,7 +9,7 @@ const discussionBlockers = _(review.discussions)
   .filter({resolved: false})
   .flatMap('participants')
   .filter({resolved: false})
-  .map(user => _.pick(user, 'username'))
+  .map(user => _.pick(user, 'username', 'teams'))
   .value();
 
 const lastReviewedRevisionsOfUnreviewedFiles = _(review.files)
@@ -41,13 +41,13 @@ const deferringReviewers = _.map(review.deferringReviewers, 'username');
 const pendingReviewers = _(fileBlockers)
   .concat(discussionBlockers)
   .concat(missingReviewers)
-  .map(user => _.pick(user, 'username'))
+  .map(user => _.pick(user, 'username', 'teams'))
   .uniqBy('username')
   .reject(reviewer => _.includes(deferringReviewers, reviewer.username))
   .value();
 
 if (_.isEmpty(pendingReviewers) && !hasUnclaimedItems) {
-  pendingReviewers.push(review.pullRequest.author);
+  pendingReviewers.push({...review.pullRequest.author, fallback: true});
 }
 
 return {

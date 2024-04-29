@@ -9,6 +9,7 @@
 let reasons = [];  // pieces of the status description
 let shortReasons = [];  // pieces of the short status desc.
 const summary = review.summary;  // shortcut to review summary
+const pr = review.pullRequest;  // short to review pull request
 
 // The commits file is a system file Reviewable synthesizes for reviewing commit messages.
 const commitsFileReviewed = summary.commitsFileReviewed;
@@ -37,10 +38,20 @@ if (completed) {
   shortDescription = shortReasons.join(', ') + ' left';
 }
 
+const reviewStarted = !pr.draft && (
+  pr.requestedReviewers.length || pr.requestedTeams.length || pr.sanctions.length ||
+  pr.reviewers.length
+);
+const stage =
+  completed ? '3. Completed' :
+  reviewStarted ? '2. In progress' :
+  '1. Preparing';
+
 return {
   completed,
   description: reasons.join(', '),
   shortDescription,
+  stage,
   pendingReviewers: review.pendingReviewers
 };
 
