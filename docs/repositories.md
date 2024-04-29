@@ -271,6 +271,7 @@ The current state of the review is accessible to your code via the `review` vari
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
     {username: 'pkaminski', teams: ['reviewable/developers']}
+    // If the pull request author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
   // by default unless your completion condition accesses pendingReviewers or deferringReviewers
@@ -288,6 +289,7 @@ The current state of the review is accessible to your code via the `review` vari
       ]
     }
   ],
+  stage: '2. In progress',  // The latest review stage set by the completion condition
   labels: [  // List of all labels applied to the pull request
     'Comments only in Reviewable'
   ],
@@ -370,6 +372,9 @@ A string describing the current status of the review, such as `2 of 5 files revi
 #### `shortDescription`
 A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the `description` instead.
 
+#### `stage`
+A short string desribing the stage in some process that this review has reached so far.  This value will be saved and returned to the completion condition when it next executes, so it can be used to store a bit of state.  It's not currently surfaced in the UI but may be in the future, in which case it's likely that values will be sorted alphabetically so you may want to number your stages.
+
 #### `pendingReviewers`
 An array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own `pendingReviewers` from scratch, Reviewable will remove any users who are [deferring](reviews.md#deferring-a-review) from the list of `pendingReviewers`, unless your code accesses `review.deferringReviewers`.
 
@@ -392,7 +397,7 @@ The per-file `designatedReviewers` property should be an array of any of the fol
   - A specific user identified by their username: `{username: 'pkaminski'}`.
   - A team identified by their team slug: `{team: 'reviewable/security-team'}`.
   - A special marker to indicate that anyone is welcome to review the file: `{builtin: 'anyone'}`.  This marker cannot be scoped, but it's fine to mix with scoped designations as it gets special treatment in the UI.  Leaving it out won't actually prevent undesignated users from reviewing the file, just make it clear that their review isn't needed.
-  - A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: `{builtin: 'fulfilled', scope: 'security'}`.  It must be qualified with a scope, and differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.
+  - A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: `{builtin: 'fulfilled', scope: 'security'}`.  If used without a `scope` it indicates that the default scope (which includes `{builtin: 'anyone'}`) is fulfilled.  It differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.
 
 Unless otherwise stated, each entry in the array can be modified with any combination of the following:
   - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
