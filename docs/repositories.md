@@ -271,6 +271,7 @@ The current state of the review is accessible to your code via the `review` vari
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
     {username: 'pkaminski', teams: ['reviewable/developers']}
+    // If the pull request author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
   // by default unless your completion condition accesses pendingReviewers or deferringReviewers
@@ -392,7 +393,7 @@ The per-file `designatedReviewers` property should be an array of any of the fol
   - A specific user identified by their username: `{username: 'pkaminski'}`.
   - A team identified by their team slug: `{team: 'reviewable/security-team'}`.
   - A special marker to indicate that anyone is welcome to review the file: `{builtin: 'anyone'}`.  This marker cannot be scoped, but it's fine to mix with scoped designations as it gets special treatment in the UI.  Leaving it out won't actually prevent undesignated users from reviewing the file, just make it clear that their review isn't needed.
-  - A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: `{builtin: 'fulfilled', scope: 'security'}`.  It must be qualified with a scope, and differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.
+  - A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: `{builtin: 'fulfilled', scope: 'security'}`.  If used without a `scope` it indicates that the default scope (which includes `{builtin: 'anyone'}`) is fulfilled.  It differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.
 
 Unless otherwise stated, each entry in the array can be modified with any combination of the following:
   - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
