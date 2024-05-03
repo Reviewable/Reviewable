@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: restore support for GHE 3.8 and older, broken in v4320.6839.
 - Fix: tolerate broken GitHub GraphQL status check responses.
 - Fix: guard against a very rare crash when renamed files are present in the review.
+- Fix: restore `copyHeadBranch` and `editBaseBranch` keyboard binding commands.
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.9+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
 - New: allow a local GHE Server status API implementation to be tied into Reviewable's GitHub status reporting UI via `REVIEWABLE_GITHUB_STATUS_URL`.
