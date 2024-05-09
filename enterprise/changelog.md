@@ -7,7 +7,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
+- New: add a completion condition [example](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pull_approve.js) that shows how to codify a complex, multi-stage approval process similar to what's possible with Pull Approve.
 - Upd: treat `skipped` commit checks as successful.
 - Upd: add `repository` and `coauthors` to `review.pullRequest` for completion condition input, and support `requestedTeams` in the output to adjusted the teams from whom a review is requested.
 - Upd: add a `fallback: true` flag to `review.pendingReviewers` users selected solely due to having no reviewers pending due to organic causes.
@@ -23,6 +23,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly infer review status on a file when `omitBaseChanges: true` is specified on a designation and the file has revisions with no changes.
 - Fix: fail more gracefully if repository not accessible when processing user request on the backend.
 - Fix: include the `teams` property in all user objects that are part of the completion condition input structure.
+
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.9+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
 - New: allow a local GHE Server status API implementation to be tied into Reviewable's GitHub status reporting UI via `REVIEWABLE_GITHUB_STATUS_URL`.
