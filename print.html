@@ -1300,6 +1300,7 @@ Each invocation of your code must return a result within three seconds.</p>
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
     {username: 'pkaminski', teams: ['reviewable/developers']}
+    // If the pull request author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
   // by default unless your completion condition accesses pendingReviewers or deferringReviewers
@@ -1317,6 +1318,7 @@ Each invocation of your code must return a result within three seconds.</p>
       ]
     }
   ],
+  stage: '2. In progress',  // The latest review stage set by the completion condition
   labels: [  // List of all labels applied to the pull request
     'Comments only in Reviewable'
   ],
@@ -1390,6 +1392,8 @@ Each invocation of your code must return a result within three seconds.</p>
 <p>A string describing the current status of the review, such as <code>2 of 5 files reviewed, 4 unresolved discussions</code>.</p>
 <h4><a class="header" href="#shortdescription" id="shortdescription"><code>shortDescription</code></a></h4>
 <p>A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the <code>description</code> instead.</p>
+<h4><a class="header" href="#stage" id="stage"><code>stage</code></a></h4>
+<p>A short string describing the stage in some process that this review has reached so far.  This value will be saved and returned to the completion condition when it next executes, so it can be used to store a bit of state.  It's not currently surfaced in the UI but may be in the future, in which case it's likely that values will be sorted alphabetically so you may want to number your stages.  If no value is returned by the condition, Reviewable will automatically assign one of <code>1. Preparing</code>, <code>2. In progress</code>, or <code>3. Completed</code>.</p>
 <h4><a class="header" href="#pendingreviewers" id="pendingreviewers"><code>pendingReviewers</code></a></h4>
 <p>An array of objects with a <code>username</code> property listing the users whose attention is needed to advance the review, like <code>[{username: 'pkaminski'}]</code>.  The contents of this list will be automatically formatted and appended to the <code>description</code> and <code>shortDescription</code>.  You can either compute this value from scratch, or crib from the <code>review.pendingReviewers</code> input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own <code>pendingReviewers</code> from scratch, Reviewable will remove any users who are <a href="reviews.html#deferring-a-review">deferring</a> from the list of <code>pendingReviewers</code>, unless your code accesses <code>review.deferringReviewers</code>.</p>
 <p>You can read a description of the <a href="reviews.html#waiting-on">default pending reviewers logic</a> and take a look at the <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js">code</a> that computes the default value.</p>
@@ -1411,7 +1415,7 @@ Each invocation of your code must return a result within three seconds.</p>
 <li>A specific user identified by their username: <code>{username: 'pkaminski'}</code>.</li>
 <li>A team identified by their team slug: <code>{team: 'reviewable/security-team'}</code>.</li>
 <li>A special marker to indicate that anyone is welcome to review the file: <code>{builtin: 'anyone'}</code>.  This marker cannot be scoped, but it's fine to mix with scoped designations as it gets special treatment in the UI.  Leaving it out won't actually prevent undesignated users from reviewing the file, just make it clear that their review isn't needed.</li>
-<li>A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: <code>{builtin: 'fulfilled', scope: 'security'}</code>.  It must be qualified with a scope, and differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.</li>
+<li>A special marker to indicate that a given scope has been fulfilled and no further reviewers are needed for it: <code>{builtin: 'fulfilled', scope: 'security'}</code>.  If used without a <code>scope</code> it indicates that the default scope (which includes <code>{builtin: 'anyone'}</code>) is fulfilled.  It differs from just removing designations targeting that scope altogether as the scope will still be used to group reviewers and indicate that its review requirements have been fulfilled.</li>
 </ul>
 <p>Unless otherwise stated, each entry in the array can be modified with any combination of the following:</p>
 <ul>
