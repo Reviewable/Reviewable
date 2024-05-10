@@ -64,6 +64,7 @@ These are required unless stated otherwise.
 * `REVIEWABLE_GITHUB_CLIENT_ID`: The hex client ID assigned to the GitHub application you created above.
 * `REVIEWABLE_GITHUB_CLIENT_SECRET`: The hex client secret assigned to the GitHub application you created above.
 * `REVIEWABLE_HOST_INACCESSIBLE`: (optional) Set to a non-empty value if your `REVIEWABLE_HOST_URL` is not reachable from `REVIEWABLE_GITHUB_URL`.  This will redirect incoming requests from GitHub either directly to your Firebase (for webhooks) or to `reviewable.io` (for images).
+* `REVIEWABLE_REFS_DELETION_DELAY`: (optional but recommended) Set to a [human-readable](https://github.com/vercel/ms) duration (e.g., `3y`) to have Reviewable clean up the refs it creates in your repository to prevent revision commits from being garbage collected, even if they were force-pushed aside.  The refs for any pull requests that have been closed or merged for at least this long and that don't have a `Retain all Reviewable commits` (exact spelling!) will be eventually cleared.  If there are no other references to those commits then they may be garbage collected by `git` and you won't be able to diff the corresponding revisions in the review any more, but any discussions will remain (though might not be placed on the right line).
 
 ##### Security
 
@@ -197,4 +198,5 @@ Extra configuration for optimizing the server runtime.
 
 Reviewable doesn't require any special configuration of your GitHub Enterprise instance; it'll happily work with any organizations and repositories you have set up.  If you have GHE set up in private mode make sure to set `REVIEWABLE_PRIVATE_MODE` also, as documented above.
 
-One other thing to be aware of is that Reviewable uses `refs/reviewable` to pin commits in case they get force-pushed out of the way.  This is usually transparent and all but invisible, but something to take into account if you're adding a pre-receive hook to your installation.
+One other thing to be aware of is that Reviewable uses `refs/reviewable` to pin commits in case they get force-pushed out of the way.  This is usually transparent and all but invisible, but something to take into account if you're adding a pre-receive hook to your installation.  To keep the number of these refs under control you should set `REVIEWABLE_REFS_DELETION_DELAY` as documented above, otherwise you may find your syncs getting bogged down as `git` transmits all known refs.
+
