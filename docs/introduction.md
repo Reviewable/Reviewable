@@ -49,4 +49,4 @@ On tablets and other touch devices with no convenient keyboard, tap the question
 
 ## Staying up to date
 
-Follow us on Twitter at [@reviewableio](https://twitter.com/reviewableio) for service status updates, changelog notifications, and occasional discussions and votes on potential features.  For the truly dedicated, you can watch the [Reviewable/Reviewable](https://github.com/reviewable/reviewable) repo for new issues and updates to these docs, or hang out in the [Gitter channel](https://gitter.im/Reviewable/Reviewable) to help out other users when we're not around.  (Thanks!)
+Follow us on Twitter at [@reviewableio](https://twitter.com/reviewableio) for service status updates, changelog notifications, and occasional discussions and votes on potential features.  For the truly dedicated, you can watch the [Reviewable/Reviewable](https://github.com/reviewable/reviewable) repo for new issues and updates to these docs. We retired our Gitter channel now that we have the integrated chat widget, but for the beyond dedictated it is here: [Gitter channel](https://gitter.im/Reviewable/Reviewable) .  (Thanks!)
