@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add a `fallback: true` flag to `review.pendingReviewers` users selected solely due to having no reviewers pending due to organic causes.
 - Upd: track a per-review `stage` property and allow the completion condition to set it.
 - Upd: allow no-scope uses of the `{builtin: 'fulfilled'}` designation to indicate that the default scope has been fulfilled.
+- Upd: allow uploads of SVG images into comments.
 - Fix: restore support for GHE 3.8 and older, broken in v4320.6839.
 - Fix: tolerate broken GitHub GraphQL status check responses.
 - Fix: guard against a very rare crash when renamed files are present in the review.
