@@ -8,7 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - New: add a completion condition [example](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pull_approve.js) that shows how to codify a complex, multi-stage approval process similar to what's possible with Pull Approve.
-- New: added a new configuration option `REVIEWABLE_REFS_DELETION_DELAY` to clean up potentially unneeded `git` refs.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#core-configuration) for details.
+- New: added a new configuration option `REVIEWABLE_REFS_DELETION_DELAY` to clean up potentially unneeded `git` refs.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#core-configuration) for details.  If you've been using Reviewable at scale for a while, you might want to control the rate at which refs are cleaned up by starting with a high delay and ratcheting it down towards the desired value month by month.  Note also that the ref wipes can cause branch deletion notifications to be emitted by GitHub even though they're not branches.
+- Upd: refresh the styling of panels on review pages and update the page header layout.  This may not look like much but it includes a lot of cleanup and upgrades under the hood, setting us up to make more impactful UI changes in the near future!
 - Upd: treat `skipped` commit checks as successful.
 - Upd: add `repository` and `coauthors` to `review.pullRequest` for completion condition input, and support `requestedTeams` in the output to adjusted the teams from whom a review is requested.
 - Upd: add a `fallback: true` flag to `review.pendingReviewers` users selected solely due to having no reviewers pending due to organic causes.
