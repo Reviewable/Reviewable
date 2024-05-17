@@ -15,6 +15,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: track a per-review `stage` property and allow the completion condition to set it.
 - Upd: allow no-scope uses of the `{builtin: 'fulfilled'}` designation to indicate that the default scope has been fulfilled.
 - Upd: allow uploads of SVG images into comments.
+- Upd: margin notch is updated via manual or keyboard input and not dragging.
+- Upd: main review flow layout is updated to pave the way for the sidebar feature.
+- Upd: move file mode change indicator from file header to a dedicated message.
 - Fix: restore support for GHE 3.8 and older, broken in v4320.6839.
 - Fix: tolerate broken GitHub GraphQL status check responses.
 - Fix: guard against a very rare crash when renamed files are present in the review.
@@ -25,6 +28,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly infer review status on a file when `omitBaseChanges: true` is specified on a designation and the file has revisions with no changes.
 - Fix: fail more gracefully if repository not accessible when processing user request on the backend.
 - Fix: include the `teams` property in all user objects that are part of the completion condition input structure.
+- Fix: Avoid logging clipboard errors in production.
 
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.9+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
