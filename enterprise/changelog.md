@@ -29,6 +29,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: fail more gracefully if repository not accessible when processing user request on the backend.
 - Fix: include the `teams` property in all user objects that are part of the completion condition input structure.
 - Fix: Avoid logging clipboard errors in production.
+- Fix: make sure to show mark reviewed/next file buttons.
+- Fix: scroll to correct location when using nextUnreviewedFile shortcut and other page scrolling actions.
+- Fix: guard against missing context error.
 
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.9+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
