@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: allow uploads of SVG images into comments.
 - Upd: replace dragging of the margin notch with keyboard input of the desired number of columns.
 - Upd: move file mode change indicator from file header to a dedicated message.
+- Upd: Center all review panels in the available space.
 - Fix: restore support for GHE 3.8 and older, broken in v4320.6839.
 - Fix: tolerate broken GitHub GraphQL status check responses.
 - Fix: guard against a very rare crash when renamed files are present in the review.
