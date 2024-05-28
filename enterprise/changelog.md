@@ -33,6 +33,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make sure to show mark reviewed/next file buttons.
 - Fix: scroll to correct location when using nextUnreviewedFile shortcut and other page scrolling actions.
 - Fix: guard against missing context error.
+- Fix: don't crash when encountering more than one invalid directive.
+- Fix: guard against very rare crash when clicking inside a draft.
 
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.9+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
