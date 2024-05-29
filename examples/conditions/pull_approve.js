@@ -333,14 +333,29 @@ function reviewed({
       if (satisfied) {
         file.designatedReviewers.push(
           ..._.map(team, (unused, key) => ({builtin: 'fulfilled', scope})));
-        if (unrequest) unrequestedTeams.push(..._.keys(team));
-      } else {
-        requiredTeams.push(..._.keys(team));
-        if (request && !_.some(file.revisions, 'reviewed')) requestedTeams.push(..._.keys(team));
       }
     } else {
       file.designatedReviewers.push({builtin: 'anyone', omitBaseChanges});
       if (satisfied) file.designatedReviewers.push({builtin: 'fulfilled'});
+    }
+  }
+
+  if (team) {
+    if (allSatisfied) {
+      if (unrequest) unrequestedTeams.push(..._.keys(team));
+    } else {
+      requiredTeams.push(..._.keys(team));
+      const engagedReviewersScore = _(pr.reviewers)
+        .concat(author ? pr.author : [])
+        .reject(reviewer => !coauthors && _.some(pr.coauthors, {username: reviewer.username}))
+        .uniqBy('username')
+        .map(reviewer => findMaxTeamScore(reviewer.teams, team))
+        .sum();
+      if (engagedReviewersScore >= targetScore) {
+        if (unrequest) unrequestedTeams.push(..._.keys(team));
+      } else {
+        if (request) requestedTeams.push(..._.keys(team));
+      }
     }
   }
 
