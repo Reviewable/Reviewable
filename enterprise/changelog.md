@@ -18,7 +18,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: allow uploads of SVG images into comments.
 - Upd: replace dragging of the margin notch with keyboard input of the desired number of columns.
 - Upd: move file mode change indicator from file header to a dedicated message.
-- Upd: Center all review panels in the available space.
 - Fix: restore support for GHE 3.8 and older, broken in v4320.6839.
 - Fix: tolerate broken GitHub GraphQL status check responses.
 - Fix: guard against a very rare crash when renamed files are present in the review.
@@ -29,12 +28,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: correctly infer review status on a file when `omitBaseChanges: true` is specified on a designation and the file has revisions with no changes.
 - Fix: fail more gracefully if repository not accessible when processing user request on the backend.
 - Fix: include the `teams` property in all user objects that are part of the completion condition input structure.
-- Fix: Avoid logging clipboard errors in production.
-- Fix: make sure to show mark reviewed/next file buttons.
-- Fix: scroll to correct location when using nextUnreviewedFile shortcut and other page scrolling actions.
+- Fix: avoid logging clipboard errors.
 - Fix: guard against missing context error.
 - Fix: don't crash when encountering more than one invalid directive.
 - Fix: guard against very rare crash when clicking inside a draft.
+- Fix: address minor inconsistencies in file header styling when transitioning to the statusbar.
 
 #### Release 4320.6839 (min 3991.6302 GHE 2.19+ or 3.9+) 2024-04-17
 - New: allow instances running against GHEC to limit sign-ins to a given EMU username suffix.
