@@ -14,6 +14,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve safeguards against buggy pull request query results occasionally returned by GitHub.
 - Fix: guard against rare crash caused by a race condition in accessing `isLocked`.
 - Fix: guard against bogus API return values when sweeping old refs.
+- Fix: consistently fully render the checks donut on page load.
+- Fix: don't crash when first webhook callback for a repository fails.
 #### Release 4370.6910 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-05-30
 - New: add a completion condition [example](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pull_approve.js) that shows how to codify a complex, multi-stage approval process similar to what's possible with Pull Approve.
 - New: added a new configuration option `REVIEWABLE_REFS_DELETION_DELAY` to clean up potentially unneeded `git` refs.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#core-configuration) for details.  If you've been using Reviewable at scale for a while, you might want to control the rate at which refs are cleaned up by starting with a high delay and ratcheting it down towards the desired value month by month.  Note also that the ref wipes can cause branch deletion notifications to be emitted by GitHub even though they're not branches.
