@@ -88,7 +88,7 @@ You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewabl
 Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:
 
 1. [Suppress diffs](files.md#diff-suppression-and-file-type) for vendored files via `.gitattributes`.
-2. Use a custom review completion condition to [group vendored files](repositories.md#files) in the file matrix, which will allow you to mark them all as reviewed and flag them as "vendored" with one click.
+2. Use a custom review completion condition to [identify files as vendored](repositories.md#files) in the file matrix, which will allow you to mark them all as reviewed with one click.
 3. Use a custom review completion condition to preemptively [treat all such files as reviewed](repositories.md#files).  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.
 
 ## Ignore comments by bots
