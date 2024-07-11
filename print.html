@@ -1693,11 +1693,11 @@ div[data-line-number]:not([data-line-number=&quot;0&quot;]) div.hljs {
 }
 </code></pre>
 <p>You can also use this link: <code>https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/6e35f21b6fa3d3978a4ae5f8ba0f23e2d5d6a475/no-wave.css</code></p>
-<h2><a class="header" href="#skipping-reviews-of-vendored-dependencies" id="skipping-reviews-of-vendored-dependencies">Skipping reviews of vendored dependencies</a></h2>
-<p>Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable offers a few helpful features for this situation, from least to most invasive:</p>
+<h2><a class="header" href="#skipping-vendored-dependencies" id="skipping-vendored-dependencies">Skipping vendored dependencies</a></h2>
+<p>Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:</p>
 <ol>
 <li><a href="files.html#diff-suppression-and-file-type">Suppress diffs</a> for vendored files via <code>.gitattributes</code>.</li>
-<li>Use a custom review completion condition to <a href="repositories.html#files">group vendored files</a> in the file matrix, which will allow you to mark them all as reviewed with one click.</li>
+<li>Use a custom review completion condition to <a href="https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/identify_vendored_files.js">identify files as vendored</a> in the file matrix, which will allow you to mark them all as reviewed with one click.</li>
 <li>Use a custom review completion condition to preemptively <a href="repositories.html#files">treat all such files as reviewed</a>.  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.</li>
 </ol>
 <h2><a class="header" href="#ignore-comments-by-bots" id="ignore-comments-by-bots">Ignore comments by bots</a></h2>
