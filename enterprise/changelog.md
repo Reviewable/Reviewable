@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - Upd: tweak presentation of GitHub-related actions in the file and discussion dropdown menus, and offer separate actions for "view diff" vs "open file".
 - Upd: inactive window text selection color set for all major browsers (only partial support before).
+- Upd: improve renamed file notifications.  These messages are now specific to the selected diff, highlight the deltas between the old and new filenames, and add a warning if the renamed file was recreated later on.  Recreated files also get a warning as this is often accidental.
 - Fix: guard against missing scroll context/margin counter reference errors.
 - Fix: encrypt owner, repo, and ref values in ref cleanup queue.
 - Fix: improve safeguards against buggy pull request query results occasionally returned by GitHub.
@@ -23,6 +24,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: maintain delta alignment when page is zoomed.
 - Fix: avoid rare crash when creating a code block.
 - Fix: guard against rare crash when selecting text in review.
+- Fix: correctly identify renamed revisions if a file was renamed, recreated, then renamed again.
+- Fix: don't be overeager about marking some no-change revisions of a renamed file as "base changes only".
 #### Release 4370.6910 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-05-30
 - New: add a completion condition [example](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pull_approve.js) that shows how to codify a complex, multi-stage approval process similar to what's possible with Pull Approve.
 - New: added a new configuration option `REVIEWABLE_REFS_DELETION_DELAY` to clean up potentially unneeded `git` refs.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#core-configuration) for details.  If you've been using Reviewable at scale for a while, you might want to control the rate at which refs are cleaned up by starting with a high delay and ratcheting it down towards the desired value month by month.  Note also that the ref wipes can cause branch deletion notifications to be emitted by GitHub even though they're not branches.
