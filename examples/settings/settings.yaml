@@ -1,0 +1,36 @@
+# This example `settings.yaml` file contains all settings available
+# for configuring Reviewable. Options are subject to change.
+# 
+# The options below are top-level options for the current repository, 
+# or all repositories in your organization when using the master 
+# settings.yaml file. These settings can be modified for individual
+# repositories in the "overrides" section below. 
+badge:
+  - location: description-bottom
+  - when: location
+default-review-style: one-per-commit
+default-review-overlap-strategy: unclaimed
+approval-text: ":lgtm:"
+discussion-dismissal-restriction: maintain
+github-status-updates: always
+coverage:
+  - url: https://example.com/coverage
+# the overrides parameter will allow you to set different options for any 
+# repositiory matching the patterns in the `repositories` parameter.
+overrides:
+  - repositories:
+    - dev
+    - util-*
+    - vendor
+  settings:
+    # these settings will override all of the top-level settings in this file
+    badge:
+      - location: description-bottom
+      - when: location
+    default-review-style: one-per-commit
+    default-review-overlap-strategy: unclaimed
+    approval-text: ":lgtm:"
+    discussion-dismissal-restriction: maintain
+    github-status-updates: always
+    coverage:
+      - url: https://example.com/coverage
