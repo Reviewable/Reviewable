@@ -8,11 +8,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+#### Release 4424.6998 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-07-16
 - New: dark mode at long last! Also respects system (OS/browser) settings.
 - Upd: tweak presentation of GitHub-related actions in the file and discussion dropdown menus, and offer separate actions for "view diff" vs "open file".
 - Upd: inactive window text selection color set for all major browsers (only partial support before).
 - Upd: improve renamed file notifications.  These messages are now specific to the selected diff, highlight the deltas between the old and new filenames, and add a warning if the renamed file was recreated later on.  Recreated files also get a warning as this is often accidental.
-- Upd: make sure contextual help button is visible when chat button is shown.
 - Upd: use most up to date GitHub styling in rendered markdown.
 - Upd: remove "more content" indicator.
 - Fix: guard against missing scroll context/margin counter reference errors.
@@ -32,6 +32,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't be overeager about marking some no-change revisions of a renamed file as "base changes only".
 - Fix: ensure that guide overlays are interactive on non-review pages.
 - Fix: keep PR labels from flickering on hover.
+- Fix: make sure contextual help button is visible when chat button is shown.
+
 #### Release 4370.6910 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-05-30
 - New: add a completion condition [example](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pull_approve.js) that shows how to codify a complex, multi-stage approval process similar to what's possible with Pull Approve.
 - New: added a new configuration option `REVIEWABLE_REFS_DELETION_DELAY` to clean up potentially unneeded `git` refs.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#core-configuration) for details.  If you've been using Reviewable at scale for a while, you might want to control the rate at which refs are cleaned up by starting with a high delay and ratcheting it down towards the desired value month by month.  Note also that the ref wipes can cause branch deletion notifications to be emitted by GitHub even though they're not branches.
