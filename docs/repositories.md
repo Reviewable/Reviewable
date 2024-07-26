@@ -205,7 +205,8 @@ The `location` setting determines the location of the Reviewable badge in the pu
 
 The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
 
-Note: setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, the reviewable will use the default `description-bottom` setting.
+{t.tip}
+Setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, then Reviewable will use the default `description-bottom` setting.
 
 #### `default-review-style`
 
