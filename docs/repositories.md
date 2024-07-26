@@ -239,7 +239,7 @@ overrides:
   - repositories:
     - dev*
   settings:
-    # all repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting
+    # All repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting.
     default-review-style: combined-commits
 ```
 
