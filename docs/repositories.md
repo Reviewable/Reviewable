@@ -181,7 +181,7 @@ The `.reviewable` settings directory will allow you to customize your review set
 When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
 
 {:.important}
-An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continuue using the last settings that were synced with your repository.
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last settings that were synced with your repository.
 
 ### The `settings.yaml` file
 
