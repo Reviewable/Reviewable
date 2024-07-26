@@ -196,13 +196,13 @@ The coverage reports must be in a format that Reviewable understands.  Currently
 
 ### Using the `.reviewable` Directory
 
-The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory should contain a `settings.yaml` file and one or more optional custom completion scripts. 
+The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory should contain a `settings.yaml` file and one or more optional custom completion scripts.
 
 {:.tip}
-When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file. 
+When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
 
 {:.important}
-An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continuue using the last settings that were synced with your repository. 
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continuue using the last settings that were synced with your repository.
 
 ### The `settings.yaml` file
 
@@ -224,33 +224,33 @@ github-status-updates: never
 
 The `location` setting determines the location of the Reviewable badge in the pull request. The `location` parameter may include one of the following options: `description-bottom` (default), `description-top`, `comment`, or `none`.
 
-The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters. 
+The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
 
-Note: setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, the reviewable will use the default `description-bottom` setting. 
+Note: setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, the reviewable will use the default `description-bottom` setting.
 
-#### `default-review-style` 
+#### `default-review-style`
 
 This setting allows you to choose how your reviews are displayed in Reviewable. Valid options for this parameter include `combined-commits` (default) or `one-per-commit`.
 
-#### `default-review-overlap-strategy` 
+#### `default-review-overlap-strategy`
 
-The `default-review-overlap-strategy` setting lets you determine the order in which reviews are conducted. `user-default` will apply the users default settings for review. This default can be overridden by individual repositiory settings, however a user may override these settings on a per-review basis, `unclaimed` to review files that have not been selected by other members of your team, `unreviewed` to combine efforts and review any file that requires attention, and `personally-unreviewed` to ensure that you review all files. The default option for this setting is `user-default`. 
+The `default-review-overlap-strategy` setting lets you determine the order in which reviews are conducted. `user-default` will apply the users default settings for review. This default can be overridden by individual repositiory settings, however a user may override these settings on a per-review basis, `unclaimed` to review files that have not been selected by other members of your team, `unreviewed` to combine efforts and review any file that requires attention, and `personally-unreviewed` to ensure that you review all files. The default option for this setting is `user-default`.
 
-#### `approval-text` 
+#### `approval-text`
 
 `approval-text` will allow you to customize the text that is left as a comment when clicking the "Approve" button. The default is `:lgtm:`
 
-#### `discussion-dismissal-restriction` 
+#### `discussion-dismissal-restriction`
 
 The `discussion-dismissal-restriction` setting tells Reviewable who is able to dismiss participants from a discussion about a pull request. Dismissing a participant can resolve the discussion and complete a review. Options for this setting include `push` (default), `maintain`, or `admin`.
 
-#### `github-status-updates` 
+#### `github-status-updates`
 
 This option lets you control when to update the pull request on GitHub with comments from Reviewable. Options for this setting include `accessed` (default), `always`, or `never`.
 
-#### `coverage` 
+#### `coverage`
 
-`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please visit the [Code coverage section of the Reviewable docs](https://github.com/Reviewable/Reviewable/blob/master/docs/repositories.md#code-coverage). 
+`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please visit the [Code coverage section of the Reviewable docs](https://github.com/Reviewable/Reviewable/blob/master/docs/repositories.md#code-coverage).
 
 #### Overrides
 
@@ -272,7 +272,7 @@ overrides:
 The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file. These completion files must be included in the same `.reviewable` directory as your `settings.yaml` file. Below is an example `settings.yaml` file that specifies a default completion condition for all repositories listed in the `overrides` object:
 
 ```yaml
-overrides: 
+overrides:
   - repositories:
     - reviewable-*
     - fire*
