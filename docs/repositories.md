@@ -175,7 +175,7 @@ The coverage reports must be in a format that Reviewable understands.  Currently
 
 ### Using the `.reviewable` directory
 
-The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory should contain a `settings.yaml` file and one or more optional custom completion scripts.
+The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a completion script (or more than one in case you're using repository-specific [overrides](#overrides)).
 
 {:.tip}
 When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
@@ -185,7 +185,7 @@ An error is displayed if your `settings.yaml` file contains any options that are
 
 ### The `settings.yaml` file
 
-The `settings.yaml` file will allow you to update your reviewable settings for each repository. You may also create a master configuration file that will update settings for all repositories that are accessible via Reviewable. This master settings file will apply its settings to all repositories, regardless when they were created. You may add a local settings file in an individual repository to override settings from the master settings file.
+The `settings.yaml` file will allow you to update your Reviewable settings for each repository. You may also create a master configuration file that will update settings for all repositories that are accessible via Reviewable. This master settings file will apply its settings to all repositories, regardless when they were created. You may add a local settings file in an individual repository to override settings from the master settings file.
 
 The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository. While a master settings file will determine the default settings for all repositories, this file can override its own default settings by using overrides. Additionally, any repository can override master settings by using a local settings file.
 
@@ -235,7 +235,7 @@ The `overrides` property has two children. The `repositories` object is a list o
 ```yaml
 default-review-style: one-per-commit
 overrides:
-  - repositories: 
+  - repositories:
     - dev*
   settings:
     # all repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting
