@@ -187,9 +187,9 @@ An error is displayed if your `settings.yaml` file contains any options that are
 
 The `settings.yaml` file will allow you to update your reviewable settings for each repository. You may also create a master configuration file that will update settings for all repositories that are accessible via Reviewable. This master settings file will apply its settings to all repositories, regardless when they were created. You may add a local settings file in an individual repository to override settings from the master settings file.
 
-The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed in the top-level of this file are used as the default settings for the current repository. While a master settings file will determine the default settings for all repositories, this file can override its own default settings by using overrides. Additionally, any repository can override master settings by using a local settings file.
+The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository. While a master settings file will determine the default settings for all repositories, this file can override its own default settings by using overrides. Additionally, any repository can override master settings by using a local settings file.
 
-Below is an example of a few top-level settings in the `settings.yaml` file:
+Below is an example of a few top level settings in the `settings.yaml` file:
 
 ```yaml
 default-review-overlap-strategy: unclaimed
