@@ -173,7 +173,7 @@ There's a button to let you easily set the report source to [Codecov](https://co
 
 The coverage reports must be in a format that Reviewable understands.  Currently, we only support the Codecov native API format (both v1 and v2) and Codecov's generic [inbound report format](https://docs.codecov.com/docs/codecov-custom-coverage-format).  Additionally, if the report has a top-level `error` string property we'll report that through the UI (and ignore any other data), and render any Markdown-style links it contains.  If you need support for a different format please [let us know](mailto:support@reviewable.io) and we'll consider it, but in general we're biased towards fetching normalized reports from aggregators.
 
-### Using the `.reviewable` Directory
+### Using the `.reviewable` directory
 
 The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory should contain a `settings.yaml` file and one or more optional custom completion scripts.
 
@@ -240,13 +240,14 @@ The `overrides` property has two children. The `repositories` object is a list o
 ```yaml
 default-review-style: one-per-commit
 overrides:
-  - repositories: dev*
+  - repositories: 
+    - dev*
   settings:
     # all repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting
     default-review-style: combined-commits
 ```
 
-### Completion Condition Files
+### Completion condition files
 
 The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file. These completion files must be included in the same `.reviewable` directory as your `settings.yaml` file. Below is an example `settings.yaml` file that specifies a default completion condition for all repositories listed in the `overrides` object:
 
