@@ -189,13 +189,7 @@ The `settings.yaml` file will allow you to update your reviewable settings for e
 
 The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository. While a master settings file will determine the default settings for all repositories, this file can override its own default settings by using overrides. Additionally, any repository can override master settings by using a local settings file.
 
-Below is an example of a few top level settings in the `settings.yaml` file:
-
-```yaml
-default-review-overlap-strategy: unclaimed
-discussion-dismissal-restriction: admin
-github-status-updates: never
-```
+[View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
 
 ### Options for the `settings.yaml` file
 
