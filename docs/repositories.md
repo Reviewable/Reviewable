@@ -108,9 +108,6 @@ If you make any changes to the settings, click the **Apply** button at the top o
 
 ### Prototype settings for new repos
 
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using a [master `settings.yaml` file](#the-settingsyaml-file)
-
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
 {:.tip}
@@ -128,9 +125,6 @@ If you would like to see if there is or is not a current prototype repository, a
 
 ### Reviewable badge
 
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using the [`badge` configuration option](#badge).
-
 Choose where the Reviewable badge is to be inserted on the GitHub website:
 
 * **Description** — at the top or bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
@@ -142,38 +136,23 @@ Changes here are retroactive (except that an existing description badge won’t 
 
 ### Default review style
 
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using the [`default-review-style` configuration option](#default-review-style).
-
 Choose the default [review style](reviews.md#changes-commits) for all reviews in this repo. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  Please follow a link for a full explanation of the two options.
 
 This setting can be overridden on a particular review by any user with push permissions.
 
 ### Approve button output
 
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using the [`approval-text` configuration option](#approval-text).
-
 You can customize the function of the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to **Approved**.
 
 ### Discussion participant dismissers
-
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using the [`default-review-overlap-strategy` configuration option](#default-review-overlap-strategy).
 
 This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
 ### Review status in GitHub PR
 
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using the [`github-status-updates` configuration option](#github-status-updates).
-
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
 ### Code coverage
-
-{:.tip}
-If you are using the `.reviewable` settings directory, please visit the docs for using the [`coverage` configuration option](#coverage).
 
 You can configure Reviewable to display code coverage information next to diffs by letting it know where to fetch code coverage reports from.  You'll need to enter a URL template that Reviewable can instantiate to grab a report for all the files at a given commit.  The template can make use of these variables:
 
