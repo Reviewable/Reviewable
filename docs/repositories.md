@@ -229,7 +229,7 @@ This option lets you control when to update the pull request on GitHub with comm
 
 #### `coverage`
 
-`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please visit the [Code coverage section of the Reviewable docs](https://github.com/Reviewable/Reviewable/blob/master/docs/repositories.md#code-coverage).
+`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please visit the [Code coverage section of the Reviewable docs](repositories.md#code-coverage).
 
 #### Overrides
 
