@@ -187,7 +187,8 @@ An error is displayed if your `settings.yaml` file contains any options that are
 
 The `settings.yaml` file will allow you to update your Reviewable settings for each repository. You may also create a master configuration file that will update settings for all repositories in your organization that are accessible via Reviewable. This master settings file will apply its settings to all repositories, regardless when they were created. You may add a local settings file in an individual repository to override settings from the master settings file.
 
-The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository. While a master settings file will determine the default settings for all repositories, this file can override its own default settings by using overrides. Additionally, any repository can override master settings by using a local settings file.
+The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository. When a repository is designated as the master, its settings file will be used as the basis for all repositories in the organization. A master settings file can also provide
+specialized settings for repositories via targeted in-file overrides.
 
 [View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
 
