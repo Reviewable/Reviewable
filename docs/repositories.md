@@ -95,8 +95,8 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 <a id="repo-settings"></a>
 
 ## Repository settings
-`
-You may use using the GUI or by using the `.reviewable` directory in your project root. Please vist the [documentation for the `.reviewable` directory and `settings.yaml` file](#using-the-reviewable-directory) for more information.
+
+You may use the GUI or by using the `.reviewable` directory in your project root. For more information on the latter option, please see the [documentation for the `.reviewable` directory and `settings.yaml` file](#using-the-reviewable-directory).
 
 Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.
 
@@ -225,7 +225,7 @@ This option lets you control when to update the pull request on GitHub with comm
 
 #### `coverage`
 
-`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please visit the [Code coverage section of the Reviewable docs](repositories.md#code-coverage).
+`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please see the [Code coverage section of the Reviewable docs](repositories.md#code-coverage).
 
 #### Overrides
 
