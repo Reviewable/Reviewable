@@ -52,15 +52,13 @@ overrides:
     - dev
     - util-*
     - vendor
-    # These settings will override all of the top-level settings in this file.
+    # These settings will override all of the top-level settings in this file
+    # for the repositories listed above, except where the repository contains
+    # a local settings file.
     settings:
       badge:
-        location: description-bottom
-        when: location
-      default-review-style: one-per-commit
-      default-review-overlap-strategy: unclaimed
-      approval-text: ":lgtm:"
+        location: comment
+        when: published
+      default-review-style: combined-commits
+      default-review-overlap-strategy: user-default
       discussion-dismissal-restriction: maintain
-      github-status-updates: always
-      coverage:
-        - url: https://example.com/coverage
