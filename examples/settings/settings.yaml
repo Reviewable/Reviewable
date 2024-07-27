@@ -1,29 +1,57 @@
 # This example `settings.yaml` file contains all settings available
 # for configuring Reviewable. Options are subject to change.
 #
+# For more information about these options, see
+# https://docs.reviewable.io/repositories.html#repository-settings
+#
 # The options below are top-level options for the current repository,
 # or all repositories in your organization when using the master
 # settings.yaml file. These settings can be modified for individual
 # repositories in the "overrides" section below.
+#
+# https://docs.reviewable.io/repositories.html#reviewable-badge
 badge:
+  # `location` determines the location of the Reviewable badge in the pull request
+  # Valid options include: `description-bottom` (default), `description-top`, `comment`, or `none`.
   location: description-bottom
-  when: location
+  # `when` optionally allows you to specify when to inject the Reviewable badge into the pull request.
+  #  Valid options include: `accessed` and `published`.
+  when: accesed
+# `default-review-style` allows you to choose how reviews are displayed.
+# Valid options include: `combined-commits` (default) or `one-per-commit`.
+# https://docs.reviewable.io/repositories.html#default-review-style
 default-review-style: one-per-commit
+# `default-review-overlap-strategy` lets you determine the order in which reviews are conducted.
+# Valid options include: `user-default` (default), `unclaimed`, `unreviewed`, and `personally-unreviewed`.
+# https://docs.reviewable.io/repositories.html#default-review-style
 default-review-overlap-strategy: unclaimed
+# `approval-text` will allow you to customize the text that is left as a comment when clicking the "Approve" button.
+# The default for this option is `:lgtm:`.
+# https://docs.reviewable.io/repositories.html#the-approval-button-output
 approval-text: ":lgtm:"
+# `discussion-dismissal-restriction` determines who is able to dismiss participants from a discussion about a pull request.
+# Valid options include: `push` (default), `maintain`, or `admin`.
+# https://docs.reviewable.io/repositories.html#the-discussion-participant-dismissers
 discussion-dismissal-restriction: maintain
+# `github-status-updates` lets you control when to update the pull request on GitHub with comments from Reviewable.
+# Valid options include: `accessed` (default), `always`, or `never`.
+# https://docs.reviewable.io/repositories.html#review-status-in-github-pr
 github-status-updates: always
+# `coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports.
+# https://docs.reviewable.io/repositories.html#code-coverage
 coverage:
+  # `url` allows you specify a template for code coverage reports.
   url: https://example.com/coverage
-# the overrides parameter will allow you to set different options for any
+# The overrides parameter will allow you to set different options for any
 # repositiory matching the patterns in the `repositories` parameter.
+# https://docs.reviewable.io/repositories.html#overrides
 overrides:
   - repositories:
     - dev
     - util-*
     - vendor
     settings:
-    # these settings will override all of the top-level settings in this file
+    # These settings will override all of the top-level settings in this file.
     badge:
       location: description-bottom
       when: location
