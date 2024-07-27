@@ -52,7 +52,7 @@ overrides:
     - dev
     - util-*
     - vendor
-    # These settings will override all of the top-level settings in this file
+    # These settings will override all other settings in this file
     # for the repositories listed above, except where the repository contains
     # a local settings file.
     settings:
