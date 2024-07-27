@@ -52,8 +52,8 @@ overrides:
     - dev
     - util-*
     - vendor
+    # These settings will override all of the top-level settings in this file.
     settings:
-      # These settings will override all of the top-level settings in this file.
       badge:
         location: description-bottom
         when: location
