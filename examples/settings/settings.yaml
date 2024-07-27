@@ -4,7 +4,7 @@
 # For more information about these options, see
 # https://docs.reviewable.io/repositories.html#repository-settings
 #
-# The options below are top-level options for the current repository,
+# Below are top-level options for the current repository,
 # or all repositories in your organization when using the master
 # settings.yaml file. These settings can be modified for individual
 # repositories in the "overrides" section below.
