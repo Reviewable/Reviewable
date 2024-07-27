@@ -96,7 +96,7 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Repository settings
 
-You may use the GUI or by using the `.reviewable` directory in your project root. For more information on the latter option, please see the [documentation for the `.reviewable` directory and `settings.yaml` file](#using-the-reviewable-directory).
+To configure settings for Reviewable you may use the GUI or the `.reviewable` directory in your project root. For more information on the latter option, please see the [documentation for the `.reviewable` directory and `settings.yaml` file](#using-the-reviewable-directory).
 
 Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.
 
