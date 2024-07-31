@@ -59,9 +59,7 @@ overrides:
     - dev
     - util-*
     - vendor
-    # These settings will override all other settings in this file
-    # for the repositories listed above, except where the repository contains
-    # a local settings file.
+    # These settings will override corresponding settings earlier in this file for the repositories listed above, and can in turn be overridden by a local settings file in a target repository.
     settings:
       badge:
         location: comment
