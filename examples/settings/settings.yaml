@@ -54,7 +54,7 @@ coverage:
 # https://docs.reviewable.io/repositories.html#overrides
 overrides:
   # `repositories` is a list of repositories that will apply the settings specified in the yaml file.
-  # The list of repositories may be a list of strings or `fnmatch`(glob) patterns.
+  # The list of repositories may be a list of strings or `fnmatch` (glob) patterns.
   - repositories:
     - dev
     - util-*
