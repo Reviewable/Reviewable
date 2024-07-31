@@ -200,7 +200,7 @@ The `location` setting determines the location of the Reviewable badge in the pu
 
 The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
 
-{t.tip}
+{.tip}
 Setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, then Reviewable will use the default `description-bottom` setting.
 
 #### `default-review-style`
@@ -238,6 +238,7 @@ default-review-style: one-per-commit
 overrides:
   - repositories:
     - dev*
+    - fire*
   settings:
     # All repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting.
     default-review-style: combined-commits
@@ -251,12 +252,10 @@ Below is an example `settings.yaml` file that specifies a default completion con
 
 ```yaml
 overrides:
-  - repositories:
-    - reviewable-*
+  - repositories: reviewable-*
     settings:
       completion-file: reviewable-completion.js
-  - repositories:
-    - hubkit
+  - repositories: hubkit
     settings:
       completion-file: hubkit-completion.js
 ```
