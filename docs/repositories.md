@@ -129,7 +129,7 @@ An error is displayed if your `settings.yaml` file contains any options that are
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
 {:.tip}
-This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future).
+This feature is particularly useful if you chose to connect [all current and future repos](#connect-all-current-and-future-repos).
 
 If you would like to see if there is or is not a current prototype repository, and which repository it is, simply hover over the link. A tooltip will come up with one of the following texts:
 
