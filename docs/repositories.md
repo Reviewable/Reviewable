@@ -96,7 +96,9 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Repository settings
 
-To configure settings for Reviewable you may use the GUI ([reviewable.io/repositories](https://reviewable.io/repositories)) or the `.reviewable` directory in your project root. For more information on the latter option, please see the [documentation for the `.reviewable` directory and `settings.yaml` file](#using-the-reviewable-directory).
+You may use the GUI or by using the `.reviewable` directory in your project root. Each description below will include setting options using the GUI ([reviewable.io/repositories](https://reviewable.io/repositories)) or by using the `settings.yaml` file in your `.reviewable` directory.
+
+### Accessing repository settings with the GUI
 
 Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.
 
@@ -104,9 +106,25 @@ Click on a repository name to access the repo settings panel.  This works whethe
 
 If you make any changes to the settings, click the **Apply** button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (_all_ the settings, not just your current changes).  Click **Cancel** to discard any change to the settings.
 
+### Store repository settings using the `.reviewable` directory
+
+The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
+
+The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
+
+[View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
+
+{:.tip}
+When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
+
+{:.important}
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the default value for that option.
+
 <a id="prototype-repo"></a>
 
 ### Prototype settings for new repos
+
+#### Using the GUI
 
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
@@ -123,6 +141,32 @@ If you would like to see if there is or is not a current prototype repository, a
 * "This is the current prototype repository."
 * "The current prototype repository is ____.".
 
+### Applying a `settings.yaml` file to multiple repositories
+
+Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization that are accessible via Reviewable (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless when they were created.
+
+{:.tip}
+You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
+
+When a repository is designated as the master, its settings file will be used as the basis for all repositories in the organization. A master settings file can also provide specialized settings for repositories via targeted in-file overrides.
+
+#### Overrides
+
+When you have one or more repositories with individual `settings.yaml` files, you may use a master repository that will determine default settings for all repositories that belong to an organization. These settings can be overriden in the `overrides` object of the master `settings.yaml` file.
+
+The `overrides` property has two children. The `repositories` object is a list of repositories that will apply the settings specified in the yaml file. The list of repositories may be a list of strings or `fnmatch` (glob) patterns. For example, if you would like to apply default settings for any repository whose name begins with `dev`, you may use the following setting in your master `settings.yaml` file:
+
+```yaml
+default-review-style: one-per-commit
+overrides:
+  - repositories:
+    - dev*
+    - fire*
+  settings:
+    # All repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting.
+    default-review-style: combined-commits
+```
+
 ### Reviewable badge
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
@@ -134,23 +178,54 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
 
+#### The `badge` option in `settings.yaml`
+
+The `location` setting determines the location of the Reviewable badge in the pull request. The `location` parameter may include one of the following options: `description-bottom` (default), `description-top`, `comment`, or `none`.
+
+The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
+
+{t.tip}
+Setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, then Reviewable will use the default `description-bottom` setting.
+
 ### Default review style
 
 Choose the default [review style](reviews.md#changes-commits) for all reviews in this repo. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  Please follow a link for a full explanation of the two options.
 
 This setting can be overridden on a particular review by any user with push permissions.
 
+#### The `default-review-style` option in `settings.yaml`
+
+Valid options for this parameter include `combined-commits` (default) or `one-per-commit`.
+
+#### `default-review-overlap-strategy` option in `settings.yaml`
+
+The `default-review-overlap-strategy` setting lets you determine the order in which reviews are conducted. `user-default` will apply the users default settings for review. This default can be overridden by individual repositiory settings, however a user may override these settings on a per-review basis, `unclaimed` to review files that have not been selected by other members of your team, `unreviewed` to combine efforts and review any file that requires attention, and `personally-unreviewed` to ensure that you review all files.
+
+The default option for this setting is `user-default`.
+
 ### Approve button output
 
 You can customize the function of the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to **Approved**.
+
+#### The `approval-text` option in `settings.yaml`
+
+`approval-text` will allow you to customize the text that is left as a comment when clicking the "Approve" button. The default is `:lgtm:`.
 
 ### Discussion participant dismissers
 
 This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
+#### The `discussion-dismissal-restriction` option in `settings.yaml`
+
+Options for this setting include `push` (default), `maintain`, or `admin`.
+
 ### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
+
+#### The `github-status-updates` option in `settings.yaml`
+
+Options for this setting include `accessed` (default), `always`, or `never`.
 
 ### Code coverage
 
@@ -173,78 +248,11 @@ There's a button to let you easily set the report source to [Codecov](https://co
 
 The coverage reports must be in a format that Reviewable understands.  Currently, we only support the Codecov native API format (both v1 and v2) and Codecov's generic [inbound report format](https://docs.codecov.com/docs/codecov-custom-coverage-format).  Additionally, if the report has a top-level `error` string property we'll report that through the UI (and ignore any other data), and render any Markdown-style links it contains.  If you need support for a different format please [let us know](mailto:support@reviewable.io) and we'll consider it, but in general we're biased towards fetching normalized reports from aggregators.
 
-### Using the `.reviewable` directory
+#### The `coverage` option in `settings.yaml`
 
-The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a completion script (or more than one in case you're using repository-specific [overrides](#overrides)).
+`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review.
 
-{:.tip}
-When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
-
-{:.important}
-An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the default value for that option.
-
-### The `settings.yaml` file
-
-The `settings.yaml` file will allow you to update your Reviewable settings for each repository. You may also create a master configuration file that will update settings for all repositories in your organization that are accessible via Reviewable. This master settings file will apply its settings to all repositories, regardless when they were created. You may add a local settings file in an individual repository to override settings from the master settings file.
-
-The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository. When a repository is designated as the master, its settings file will be used as the basis for all repositories in the organization. A master settings file can also provide
-specialized settings for repositories via targeted in-file overrides.
-
-[View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
-
-### Options for the `settings.yaml` file
-
-#### `badge`
-
-The `location` setting determines the location of the Reviewable badge in the pull request. The `location` parameter may include one of the following options: `description-bottom` (default), `description-top`, `comment`, or `none`.
-
-The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
-
-{:.tip}
-Setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, then Reviewable will use the default `description-bottom` setting.
-
-#### `default-review-style`
-
-This setting allows you to choose how your reviews are displayed in Reviewable. Valid options for this parameter include `combined-commits` (default) or `one-per-commit`.
-
-#### `default-review-overlap-strategy`
-
-The `default-review-overlap-strategy` setting lets you determine the order in which reviews are conducted. `user-default` will apply the users default settings for review. This default can be overridden by individual repositiory settings, however a user may override these settings on a per-review basis, `unclaimed` to review files that have not been selected by other members of your team, `unreviewed` to combine efforts and review any file that requires attention, and `personally-unreviewed` to ensure that you review all files. The default option for this setting is `user-default`.
-
-#### `approval-text`
-
-`approval-text` will allow you to customize the text that is left as a comment when clicking the "Approve" button. The default is `:lgtm:`
-
-#### `discussion-dismissal-restriction`
-
-The `discussion-dismissal-restriction` setting tells Reviewable who is able to dismiss participants from a discussion about a pull request. Dismissing a participant can resolve the discussion and complete a review. Options for this setting include `push` (default), `maintain`, or `admin`.
-
-#### `github-status-updates`
-
-This option lets you control when to update the pull request on GitHub with comments from Reviewable. Options for this setting include `accessed` (default), `always`, or `never`.
-
-#### `coverage`
-
-`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review. For more information about code coverage in Reviewable, please see the [Code coverage section of the Reviewable docs](repositories.md#code-coverage).
-
-#### Overrides
-
-When you have one or more repositories with individual `settings.yaml` files, you may use a master repository that will determine default settings for all repositories that belong to an organization. These settings can be overriden in the `overrides` object of the master `settings.yaml` file.
-
-The `overrides` property has two children. The `repositories` object is a list of repositories that will apply the settings specified in the yaml file. The list of repositories may be a list of strings or `fnmatch` (glob) patterns. For example, if you would like to apply default settings for any repository whose name begins with `dev`, you may use the following setting in your master `settings.yaml` file:
-
-```yaml
-default-review-style: one-per-commit
-overrides:
-  - repositories:
-    - dev*
-    - fire*
-  settings:
-    # All repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting.
-    default-review-style: combined-commits
-```
-
-### Completion condition files
+### Completion condition script
 
 The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file. These completion files must be included in the same `.reviewable` directory as your `settings.yaml` file.  Reviewable will use a file named `completion.js` by default if it exists and no override specified a different completion file to use.
 
