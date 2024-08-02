@@ -9,10 +9,13 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
 - Upd: make more panels collapsible on the review page.
+- Upd: add shortcut button for the file matrix to the toolbar.
 - Fix: don't cut off panel drop shadow when expanding/collapsing.
 - Fix: if all files are hidden but the review is updated, offer to show proposed diffs instead of full diffs in the diffs panel.
 - Fix: keep close button in top right corner when a collapsed file matrix is popped up in a dialog and scrolled horizontally.
 - Fix: guard against rare crash when rendering comment list.
+- Fix: wrap diffs at correct column even if last character is a space.
+- Fix: make sure bunny button is covered by contextual help overlay.
 #### Release 4424.6998 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-07-16
 - New: dark mode at long last! Also respects system (OS/browser) settings.
 - Upd: tweak presentation of GitHub-related actions in the file and discussion dropdown menus, and offer separate actions for "view diff" vs "open file".
