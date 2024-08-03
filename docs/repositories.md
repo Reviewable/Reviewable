@@ -263,7 +263,7 @@ The coverage reports must be in a format that Reviewable understands.  Currently
 
 The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file. These completion files must be included in the same `.reviewable` directory as your `settings.yaml` file.  Reviewable will use a file named `completion.js` by default if it exists and no override specified a different completion file to use.
 
-Below is an example `settings.yaml` file that specifies a default completion conditions for repositories listed in the `overrides` object.
+Below is an example `settings.yaml` file that specifies a default completion conditions for repositories listed in the [`overrides`](#overrides) object.
 
 ```yaml
 overrides:
