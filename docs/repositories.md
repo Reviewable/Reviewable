@@ -141,7 +141,7 @@ If you would like to see if there is or is not a current prototype repository, a
 
 ### Applying a `settings.yaml` file to multiple repositories
 
-Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization that are accessible via Reviewable (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless when they were created.
+Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization that are accessible via Reviewable (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless of when they were created.
 
 {:.tip}
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
