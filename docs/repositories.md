@@ -195,6 +195,15 @@ This setting can be overridden on a particular review by any user with push perm
 
 Valid options for this parameter include `combined-commits` (default) or `one-per-commit`.
 
+### Default review overlap strategy
+
+Determine the order in which reviews are conducted:
+
+* **Defer to user default**  - Leave the review strategy up to the users preference.
+* **Skip files claimed by others** - Skip any file claimed by another team member in an earlier revision.
+* **Review any unreviewed files** - Review any file that requires attention.
+* **Review all files personally** - Ensure that you review every file yourself, ignoring other reviewers.
+
 #### `default-review-overlap-strategy` option in `settings.yaml`
 
 The `default-review-overlap-strategy` setting lets you determine the order in which reviews are conducted. `user-default` will apply the users default settings for review. This default can be overridden by individual repositiory settings, however a user may override these settings on a per-review basis, `unclaimed` to review files that have not been selected by other members of your team, `unreviewed` to combine efforts and review any file that requires attention, and `personally-unreviewed` to ensure that you review all files.
