@@ -152,7 +152,7 @@ When a repository is designated as the master, its settings file will be used as
 
 When you have one or more repositories with individual `settings.yaml` files, you may use a master repository that will determine default settings for all repositories that belong to an organization. These settings can be overriden in the `overrides` object of the master `settings.yaml` file.
 
-The `overrides` property has two children. The `repositories` object is a list of repositories that will apply the settings specified in the yaml file. The list of repositories may be a list of strings or `fnmatch` (glob) patterns. For example, if you would like to apply default settings for any repository whose name begins with `dev`, you may use the following setting in your master `settings.yaml` file:
+The `overrides` property has two children. The `repositories` object is a list of repositories that will apply the settings specified in the `settings` property of this override. The list of repositories may be a list of strings or `fnmatch` (glob) patterns. For example, if you would like to apply default settings for any repository whose name begins with `dev` or `fire`, you may use the following setting in your master `settings.yaml` file:
 
 ```yaml
 default-review-style: one-per-commit
@@ -161,7 +161,7 @@ overrides:
     - dev*
     - fire*
   settings:
-    # All repositories with names that start with `dev` will use "combined commits" for the `default-review-style` setting.
+    # All repositories with names that start with `dev` or `fire` will use "combined commits" for the `default-review-style` setting.
     default-review-style: combined-commits
 ```
 
