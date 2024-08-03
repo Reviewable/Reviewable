@@ -176,11 +176,15 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
 
-#### The `badge` option in `settings.yaml`
+```txt
+# settings.yaml
 
-The `location` setting determines the location of the Reviewable badge in the pull request. The `location` parameter may include one of the following options: `description-bottom` (default), `description-top`, `comment`, or `none`.
-
-The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
+badge:
+  # The default setting for `location` is `description-bottom`.
+  location: description-bottom | description-top | comment | none
+  # `when` is optional.
+  when: accessed | published
+```
 
 ### Default review style
 
@@ -188,9 +192,12 @@ Choose the default [review style](reviews.md#changes-commits) for all reviews in
 
 This setting can be overridden on a particular review by any user with push permissions.
 
-#### The `default-review-style` option in `settings.yaml`
+```txt
+# settings.yaml
 
-Valid options for this parameter include `combined-commits` (default) or `one-per-commit`.
+# The default setting is `combined-commits`.
+default-review-style: combined-commits | one-per-commit
+```
 
 ### Default review overlap strategy
 
@@ -201,35 +208,46 @@ Determine the order in which reviews are conducted:
 * **Review any unreviewed files** - Review any file that requires attention.
 * **Review all files personally** - Ensure that you review every file yourself, ignoring other reviewers.
 
-#### `default-review-overlap-strategy` option in `settings.yaml`
+```txt
+# settings.yaml
 
-The `default-review-overlap-strategy` setting lets you determine the order in which reviews are conducted. `user-default` will apply the users default settings for review. This default can be overridden by individual repositiory settings, however a user may override these settings on a per-review basis, `unclaimed` to review files that have not been selected by other members of your team, `unreviewed` to combine efforts and review any file that requires attention, and `personally-unreviewed` to ensure that you review all files.
-
-The default option for this setting is `user-default`.
+# The default setting is `user-default`
+default-review-overlap-strategy: user-default | unclaimed | unreviewed | personally-unreviewed
+```
 
 ### Approve button output
 
 You can customize the function of the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to **Approved**.
 
-#### The `approval-text` option in `settings.yaml`
+```txt
+# settings.yaml
 
-`approval-text` will allow you to customize the text that is left as a comment when clicking the "Approve" button. The default is `:lgtm:`.
+# The `approval-text` option accepts any text.
+# The default setting is `:lgtm:`.
+approval-text: ":lgtm:" | *
+```
 
 ### Discussion participant dismissers
 
 This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
-#### The `discussion-dismissal-restriction` option in `settings.yaml`
+```txt
+# settings.yaml
 
-Options for this setting include `push` (default), `maintain`, or `admin`.
+# The default setting is `push`
+discussion-dismissal-restriction: push | maintain | admin
+```
 
 ### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
-#### The `github-status-updates` option in `settings.yaml`
+```txt
+# settings.yaml
 
-Options for this setting include `accessed` (default), `always`, or `never`.
+# The default setting is `accessed`
+github-status-updates: accessed | always | never
+```
 
 ### Code coverage
 
@@ -252,9 +270,13 @@ There's a button to let you easily set the report source to [Codecov](https://co
 
 The coverage reports must be in a format that Reviewable understands.  Currently, we only support the Codecov native API format (both v1 and v2) and Codecov's generic [inbound report format](https://docs.codecov.com/docs/codecov-custom-coverage-format).  Additionally, if the report has a top-level `error` string property we'll report that through the UI (and ignore any other data), and render any Markdown-style links it contains.  If you need support for a different format please [let us know](mailto:support@reviewable.io) and we'll consider it, but in general we're biased towards fetching normalized reports from aggregators.
 
-#### The `coverage` option in `settings.yaml`
+```txt
+# settings.yaml
 
-`coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports. Code coverage information is displayed next to each diff in your review.
+coverage:
+  # The `url` option allows you to proved a url template for code coverage reports.
+  url: *
+```
 
 ### Completion condition script
 
