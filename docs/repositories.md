@@ -182,9 +182,6 @@ The `location` setting determines the location of the Reviewable badge in the pu
 
 The `when` setting optionally allows you to specify when to inject the Reviewable badge into the pull request. This option will accept `accessed` or `published` as parameters.
 
-{t.tip}
-Setting the `location` property to `none` requires a subscription or trial. If you are not subscribed to Reviewable or using a trial, then Reviewable will use the default `description-bottom` setting.
-
 ### Default review style
 
 Choose the default [review style](reviews.md#changes-commits) for all reviews in this repo. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  Please follow a link for a full explanation of the two options.
