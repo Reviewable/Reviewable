@@ -176,6 +176,13 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 * **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 * **None** — no badges will be created (private repos only).
 
+You may optionally choose when to show the Reviewable badge:
+
+* **Started** - show the badge when the review has been started.
+* **Only if started**
+* **Accessed**
+* **Published**
+
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
 
