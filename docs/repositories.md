@@ -121,7 +121,7 @@ The `settings.yaml` file provides several options used to configure the settings
 When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
 
 {:.important}
-An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the default value for that option.
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings, with the exception of the [completion condition script](#custom-review-completion-condition) which cannot be synced and will not be used if your settings file is invalid. Local settings will override any invalid master settings.
 
 <a id="prototype-repo"></a>
 
