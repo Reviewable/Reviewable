@@ -176,12 +176,10 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 * **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 * **None** — no badges will be created (private repos only).
 
-You may optionally choose when to show the Reviewable badge:
+If you have a current Reviewable subscription, you may optionally choose when to show the badge:
 
-* **Started** - show the badge when the review has been started.
-* **Only if started**
-* **Accessed**
-* **Published**
+* **Visited** - show the badge when the review has been accessed for the first time.
+* **Started** - only show the badge when the review has been published.
 
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
@@ -211,12 +209,15 @@ default-review-style: combined-commits | one-per-commit
 
 ### Default review overlap strategy
 
-Determine the order in which reviews are conducted:
+Use the current review status of each file to determine how they are presented to a user for review:
 
 * **Defer to user default**  - Leave the review strategy up to the users preference.
 * **Skip files claimed by others** - Skip any file claimed by another team member in an earlier revision.
 * **Review any unreviewed files** - Review any file that requires attention.
 * **Review all files personally** - Ensure that you review every file yourself, ignoring other reviewers.
+
+{:.tip}
+These settings can be overridden by anyone, but will only apply to the individual user.
 
 ```txt
 # settings.yaml
