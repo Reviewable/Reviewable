@@ -96,7 +96,7 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Repository settings
 
-To configure Reviewable repository settings you may use the [GUI](https://reviewable.io/repositories))or the `.reviewable` directory in your project root. Each description below will include setting options using the GUI or by using the `settings.yaml` file in your `.reviewable` directory.
+To configure Reviewable repository settings you may use the [GUI](https://reviewable.io/repositories) or the `.reviewable` directory in your project root. Each description below will include setting options using the GUI or by using the `settings.yaml` file in your `.reviewable` directory.
 
 {:.tip}
 You can move your review settings from the GUI to the `.reviewable` directory by clicking "Store settings in repo?" link and following the instructions for setting up Reviewable configuration in the repository for your project.
