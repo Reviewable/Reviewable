@@ -85,3 +85,33 @@ its seats and their occupants.
     }
   ]
 }
+```
+
+#### Retrieving seats team constraints
+
+*Added in server build #xxxx*
+
+The `team_constraints` API endpoint provides a list of teams that this
+Reviewable instance is restricted to in the format `<org name>/<team slug>`.
+If the list is empty Reviewable will serve all teams.
+
+##### cURL example
+
+    curl https://your-reviewable-host/api/v1/team_constraints -H "Authorization: admin secret"
+
+##### Example response
+
+```js
+["Reviewable/developers", "Reviewable/release-managers"]
+```
+
+#### Updating seats team constraints
+
+*Added in server build #xxxx*
+
+The `team_constraints` API endpoint accepts `PUT` requests to set a new list of teams
+in the format `<org name>/<team slug>` to restrict this Reviewable instance to.
+
+##### cURL example
+
+    curl https://your-reviewable-host/api/v1/team_constraints?teams=Reviewable/developers,Reviewable/release-managers -X PUT -H "Authorization: admin secret"
