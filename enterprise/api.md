@@ -21,7 +21,8 @@ e.g. `?expand=occupants.details`. You can specify multiple properties separated 
 
 #### Retrieve license information
 
-The `license` API endpoint provides information about your Reviewable Enterprise license,
+The `license` API endpoint provides information about your
+[Reviewable Enterprise license](https://docs.reviewable.io/subscriptions.html#licenses),
 its seats and their occupants.
 
 ##### The license object
@@ -85,3 +86,36 @@ its seats and their occupants.
     }
   ]
 }
+```
+
+#### Retrieving team constraints
+
+*Added in server build #xxxx*
+
+The `team_constraints` API endpoint provides the
+[team constraints](https://docs.reviewable.io/subscriptions.html#team-constraints)
+as an array of strings in the format `<org name>/<team slug>`.
+If no team constraints are in effect, an empty array is retrieved.
+
+##### cURL example
+
+    curl https://your-reviewable-host/api/v1/team_constraints -H "Authorization: admin secret"
+
+##### Example response
+
+```js
+["Reviewable/developers", "Reviewable/release-managers"]
+```
+
+#### Updating team constraints
+
+*Added in server build #xxxx*
+
+The `team_constraints` API endpoint accepts `PUT` requests for setting the
+[team constraints](https://docs.reviewable.io/subscriptions.html#team-constraints)
+to a comma separated list of teams in the format `<org name>/<team slug>` via
+the `teams` query parameter. In order to disable team constraints use an empty string.
+
+##### cURL example
+
+    curl https://your-reviewable-host/api/v1/team_constraints?teams=Reviewable/developers,Reviewable/release-managers -X PUT -H "Authorization: admin secret"
