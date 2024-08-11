@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: Add an API for managing Enterprise team constraints.
 - Upd: make more panels collapsible on the review page.
 - Upd: add shortcut button for the file matrix to the toolbar.
 - Fix: don't cut off panel drop shadow when expanding/collapsing.
