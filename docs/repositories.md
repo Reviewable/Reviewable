@@ -178,8 +178,8 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 
 If you have a current Reviewable subscription, you may optionally choose when to show the badge:
 
-* **Visited** - show the badge when the review has been accessed for the first time.
-* **Started** - only show the badge when the review has been published.
+* **Visited** - show the badge once a review has been accessed for the first time.
+* **Started** - only show the badge once a review has been published.
 
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
