@@ -17,6 +17,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against rare crash when rendering comment list.
 - Fix: wrap diffs at correct column even if last character is a space.
 - Fix: make sure bunny button is covered by contextual help overlay.
+- Fix: include just-published discussion in unresolved discussions navigation loop.
+- Fix: make sure account settings open when editor link needs attention.
+- Fix: always link to account settings from discussion level actions even when the editor link is bad.
+- Fix: ensure bunny graphics in the Conclusion panel don't get cut off.
 #### Release 4424.6998 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-07-16
 - New: dark mode at long last! Also respects system (OS/browser) settings.
 - Upd: tweak presentation of GitHub-related actions in the file and discussion dropdown menus, and offer separate actions for "view diff" vs "open file".
