@@ -2,7 +2,7 @@
 
 When signed in, click your username in the upper-right corner to view the account settings dropdown.  Here, you can manage your global settings, and customize your Reviewable environment.
 
-![reviewable account settings](images/accountsettings_1.png)
+![reviewable account settings](images/accountsettings_3.png)
 
 ## Custom diff font
 
