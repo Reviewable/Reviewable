@@ -97,6 +97,10 @@ Click the **Animated transitions** toggle to turn animated transitions on and of
 
 Use the **Contrast** slider to adjust the UI contrast. Currently this only affects the red and green diff highlighting in reviews, but may be used for other UI elements in the future as well.
 
+### Color scheme
+
+You can switch between dark mode, light mode, or match your operating system's default display theme with the radio buttons within the **Color scheme** options. By default, Reviewable will match your operating system's light or dark mode setting. Changing the color scheme in any Reviewable tab will immediately update it in all other instances of Reviewable for your user across any tabs or windows.
+
 ## GitHub authorizations granted
 
 This is a read-only list of all the GitHub OAuth scopes you've granted to Reviewable so far.  It can be useful to confirm the extent of permissions granted or when debugging GitHub API issues.
