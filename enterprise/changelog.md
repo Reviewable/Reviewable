@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: make more panels collapsible on the review page.
 - Upd: add shortcut button for the file matrix to the toolbar.
 - Upd: Add "TODO" as magic keyword for "working" disposition
+- Upd: replace `memory.ghSocketsCreated` and `memory.ghRequestsIssued` in the logs with a more informative `memory.ghRequests` object, and add `github.sockets.free` and `github.sockets.busy` gauges to `statsd` stats.
 - Fix: don't cut off panel drop shadow when expanding/collapsing.
 - Fix: if all files are hidden but the review is updated, offer to show proposed diffs instead of full diffs in the diffs panel.
 - Fix: keep close button in top right corner when a collapsed file matrix is popped up in a dialog and scrolled horizontally.
