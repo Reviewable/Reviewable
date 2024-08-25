@@ -336,6 +336,9 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png ':size=1138')
 
+{:.tip}
+If you would like to test a completion condition before applying the change to your repository, you may use the [completion condition playground](https://reviewable.io/playground). The completion condition playground allows you to test a completion script against a pull request or review specified by url. The playground does not allow you to save the completion condition.
+
 ### Review state input
 
 The current state of the review is accessible to your code via the `review` variable.  The sample review state below explains the various properties. All timestamp values indicate milliseconds since the epoch, and all lists are ordered chronologically (when appropriate). If you find that you'd like more data please ask and we'll see what we can do.
