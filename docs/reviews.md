@@ -122,6 +122,10 @@ At the top of every review page you’ll find a floating toolbar with some core 
 
 At the end of the toolbar you'll always find either a **Publish** or **Merge** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.
 
+![revieable top toolbar left](images/toptoolbar_left.png)
+
+
+
 We'll now look at the functionality of the different features moving from left to right along the toolbar.
 
 ### Checks
