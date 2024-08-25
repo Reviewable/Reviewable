@@ -124,7 +124,9 @@ At the right end of the toolbar you'll always find either a **Publish** or **Mer
 
 ![revieable top toolbar left](images/toptoolbar_left.png)
 
+On the left end of the toolbar you will see a bunny shortcut menu icon. Click this icon to display shortcuts to **Reviews**, **Repositories**, **Support**, and your user settings.
 
+![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 
 We'll now look at the functionality of the different features moving from left to right along the toolbar.
 
