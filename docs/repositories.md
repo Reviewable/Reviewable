@@ -96,11 +96,32 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Repository settings
 
+To configure Reviewable repository settings you may use the [GUI](https://reviewable.io/repositories) or the `.reviewable` directory in your project root. Each description below will include setting options using the GUI or by using the `settings.yaml` file in your `.reviewable` directory.
+
+{:.tip}
+You can move your review settings from the GUI to the `.reviewable` directory by clicking "Store settings in repo?" link and following the instructions for setting up Reviewable configuration in the repository for your project.
+
+### Accessing repository settings with the GUI
+
 Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.
 
 ![reviewable repo settings](images/repositories_6.png)
 
 If you make any changes to the settings, click the **Apply** button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (_all_ the settings, not just your current changes).  Click **Cancel** to discard any change to the settings.
+
+### Store repository settings using the `.reviewable` directory
+
+The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
+
+The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
+
+[View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
+
+{:.tip}
+When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
+
+{:.important}
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings, with the exception of the [completion condition script](#custom-review-completion-condition) which cannot be synced and will not be used if your settings file is invalid. Local settings will override any invalid master settings.
 
 <a id="prototype-repo"></a>
 
@@ -109,7 +130,7 @@ If you make any changes to the settings, click the **Apply** button at the top o
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
 {:.tip}
-This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future).
+This feature is particularly useful if you chose to connect [all current and future repos](#connect-all-current-and-future-repos). If you would like more flexibility configuring your connected repositories, you can [use a master `settings.yaml` file.](#applying-a-settingsyaml-file-to-multiple-repositories).
 
 If you would like to see if there is or is not a current prototype repository, and which repository it is, simply hover over the link. A tooltip will come up with one of the following texts:
 
@@ -121,6 +142,32 @@ If you would like to see if there is or is not a current prototype repository, a
 * "This is the current prototype repository."
 * "The current prototype repository is ____.".
 
+### Applying a `settings.yaml` file to multiple repositories
+
+Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless of when they were created.
+
+{:.tip}
+You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
+
+When a repository is designated as the master, its settings file will be used as the basis for all repositories in the organization. A master settings file can also provide specialized settings for repositories via targeted in-file overrides.
+
+#### Overrides
+
+When you have one or more repositories with individual `settings.yaml` files, you may use a master repository that will determine default settings for all repositories that belong to an organization. These settings can be overriden in the `overrides` object of the master `settings.yaml` file.
+
+The `overrides` property has two children. The `repositories` object is a list of repositories that will apply the settings specified in the `settings` property of this override. The list of repositories may be a list of strings or `fnmatch` (glob) patterns. For example, if you would like to apply default settings for any repository whose name begins with `dev` or `fire`, you may use the following setting in your master `settings.yaml` file:
+
+```yaml
+default-review-style: one-per-commit
+overrides:
+  - repositories:
+    - dev*
+    - fire*
+  settings:
+    # All repositories with names that start with `dev` or `fire` will use "combined commits" for the `default-review-style` setting.
+    default-review-style: combined-commits
+```
+
 ### Reviewable badge
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
@@ -129,8 +176,23 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 * **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 * **None** — no badges will be created (private repos only).
 
+If you have a current Reviewable subscription, you may optionally choose when to show the badge:
+
+* **Visited** - show the badge once a review has been accessed for the first time.
+* **Started** - only show the badge once a review has been published.
+
 {:.tip}
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
+
+```txt
+# settings.yaml
+
+badge:
+  # The default setting for `location` is `description-bottom`.
+  location: description-bottom | description-top | comment | none
+  # `when` is optional.
+  when: accessed | published
+```
 
 ### Default review style
 
@@ -138,17 +200,65 @@ Choose the default [review style](reviews.md#changes-commits) for all reviews in
 
 This setting can be overridden on a particular review by any user with push permissions.
 
+```txt
+# settings.yaml
+
+# The default setting is `combined-commits`.
+default-review-style: combined-commits | one-per-commit
+```
+
+### Default review overlap strategy
+
+Use the current review status of each file to determine how they are presented to a user for review:
+
+* **Defer to user default**  - Leave the review strategy up to the users preference.
+* **Skip files claimed by others** - Skip any file claimed by another team member in an earlier revision.
+* **Review any unreviewed files** - Review any file that requires attention.
+* **Review all files personally** - Ensure that you review every file yourself, ignoring other reviewers.
+
+{:.tip}
+These settings can be overridden by anyone, but will only apply to the individual user.
+
+```txt
+# settings.yaml
+
+# The default setting is `user-default`
+default-review-overlap-strategy: user-default | unclaimed | unreviewed | personally-unreviewed
+```
+
 ### Approve button output
 
 You can customize the function of the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to **Approved**.
+
+```txt
+# settings.yaml
+
+# The `approval-text` option accepts any text.
+# The default setting is `:lgtm:`.
+approval-text: ":lgtm:" | *
+```
 
 ### Discussion participant dismissers
 
 This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
+```txt
+# settings.yaml
+
+# The default setting is `push`
+discussion-dismissal-restriction: push | maintain | admin
+```
+
 ### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
+
+```txt
+# settings.yaml
+
+# The default setting is `accessed`
+github-status-updates: accessed | always | never
+```
 
 ### Code coverage
 
@@ -171,6 +281,29 @@ There's a button to let you easily set the report source to [Codecov](https://co
 
 The coverage reports must be in a format that Reviewable understands.  Currently, we only support the Codecov native API format (both v1 and v2) and Codecov's generic [inbound report format](https://docs.codecov.com/docs/codecov-custom-coverage-format).  Additionally, if the report has a top-level `error` string property we'll report that through the UI (and ignore any other data), and render any Markdown-style links it contains.  If you need support for a different format please [let us know](mailto:support@reviewable.io) and we'll consider it, but in general we're biased towards fetching normalized reports from aggregators.
 
+```txt
+# settings.yaml
+
+coverage:
+  # The `url` option allows you to proved a url template for code coverage reports.
+  url: *
+```
+
+### Completion condition script
+
+The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file. These completion files must be included in the same `.reviewable` directory as your `settings.yaml` file.  Reviewable will use a file named `completion.js` by default if it exists and no override specified a different completion file to use.
+
+Below is an example `settings.yaml` file that specifies a default completion conditions for repositories listed in the [`overrides`](#overrides) object.
+
+```yaml
+overrides:
+  - repositories: reviewable-*
+    settings:
+      completion-file: reviewable-completion.js
+  - repositories: hubkit
+    settings:
+      completion-file: hubkit-completion.js
+```
 
 <a id="completion-condition"></a>
 
@@ -202,6 +335,9 @@ For testing, your code will be continuously evaluated against the **Review state
 The results of your code will appear in the **Evaluation result** pane at the bottom of the settings page.  They must follow a specific structure described in the [condition ouput](#condition-output) section below.
 
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png ':size=1138')
+
+{:.tip}
+If you would like to test a completion condition before applying the change to your repository, you may use the [completion condition playground](https://reviewable.io/playground). The completion condition playground allows you to test a completion script against a pull request or review specified by url. The playground does not allow you to save the completion condition.
 
 ### Review state input
 
