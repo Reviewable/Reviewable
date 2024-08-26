@@ -119,6 +119,8 @@ If you've set up a [code coverage](repositories#code-coverage) feed you may also
 {:.tip}
 Any special messages will appear immediately underneath the header.  These include rename sequence details, explanations for why a diff isn't showing, etc.
 
+![reviewable file diff rename message](images/filediffrename_1.png)
+
 ### File diff
 
 In the File Diff panel, you can see the diff between the two revisions of the file currently set as the diff bounds.  Deletions are indicated with a red highlight and additions with a green one.  You can [adjust the contrast](accountsettings.md#adjust-contrast) in the account settings panel.
