@@ -113,6 +113,9 @@ If you make any changes to the settings, click the **Apply** button at the top o
 
 The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
 
+{:.important}
+In order to use the `.reviewable` settings directory, the repository needs to be [connected](#connecting-repositories). Otherwise, the `.reviewable` directory will be ignored.
+
 The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
 
 [View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
@@ -121,7 +124,7 @@ The `settings.yaml` file provides several options used to configure the settings
 When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
 
 {:.important}
-An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings, with the exception of the [completion condition script](#custom-review-completion-condition) which cannot be synced and will not be used if your settings file is invalid. Local settings will override any invalid master settings.
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the [completion condition script](#custom-review-completion-condition) if any. Local settings will override any invalid master settings.
 
 <a id="prototype-repo"></a>
 
