@@ -109,20 +109,6 @@ Click on a repository name to access the repo settings panel.  This works whethe
 
 If you make any changes to the settings, click the **Apply** button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (_all_ the settings, not just your current changes).  Click **Cancel** to discard any change to the settings.
 
-### Store repository settings using the `.reviewable` directory
-
-The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
-
-The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
-
-[View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
-
-{:.tip}
-When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
-
-{:.important}
-An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings, with the exception of the [completion condition script](#custom-review-completion-condition) which cannot be synced and will not be used if your settings file is invalid. Local settings will override any invalid master settings.
-
 <a id="prototype-repo"></a>
 
 ### Prototype settings for new repos
@@ -141,6 +127,23 @@ If you would like to see if there is or is not a current prototype repository, a
 * "No prototype repository set."
 * "This is the current prototype repository."
 * "The current prototype repository is ____.".
+
+### Store repository settings using the `.reviewable` directory
+
+The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
+
+{:.important}
+In order to use the `.reviewable` settings directory, the repository needs to be [connected](#connecting-repositories). Otherwise, the `.reviewable` directory will be ignored.
+
+The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
+
+[View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
+
+{:.tip}
+When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
+
+{:.important}
+An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the [completion condition script](#custom-review-completion-condition) if any. Local settings will override any invalid master settings.
 
 ### Applying a `settings.yaml` file to multiple repositories
 
