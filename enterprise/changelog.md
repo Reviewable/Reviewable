@@ -25,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure bunny graphics in the Conclusion panel don't get cut off.
 - Fix: don't fetch bot information via GitHub's users API, as that appears to have stopped working at some point and will prevent PRs from syncing.
 - Fix: guard against very rare permission denied error when marking all files as reviewed.
+- Fix: avoid a rare crash when signing out.
 #### Release 4424.6998 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-07-16
 - New: dark mode at long last! Also respects system (OS/browser) settings.
 - Upd: tweak presentation of GitHub-related actions in the file and discussion dropdown menus, and offer separate actions for "view diff" vs "open file".
