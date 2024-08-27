@@ -7,11 +7,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
-- New: Add an API for managing Enterprise team constraints.
+- New: add an API for managing Enterprise team constraints.  ([API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md))
+- New: support reading settings from a `.reviewable` directory in the repository and inheriting from a master settings file.  See the [announcement](https://www.reviewable.io/blog/announcing-the-reviewable-settings-directory/) for more details.
 - Upd: make more panels collapsible on the review page.
 - Upd: add shortcut button for the file matrix to the toolbar.
-- Upd: Add "TODO" as magic keyword for "working" disposition
+- Upd: add "TODO" as magic keyword for "working" disposition
 - Upd: replace `memory.ghSocketsCreated` and `memory.ghRequestsIssued` in the logs with a more informative `memory.ghRequests` object, and add `github.sockets.free` and `github.sockets.busy` gauges to `statsd` stats.
 - Fix: don't cut off panel drop shadow when expanding/collapsing.
 - Fix: if all files are hidden but the review is updated, offer to show proposed diffs instead of full diffs in the diffs panel.
@@ -26,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't fetch bot information via GitHub's users API, as that appears to have stopped working at some point and will prevent PRs from syncing.
 - Fix: guard against very rare permission denied error when marking all files as reviewed.
 - Fix: avoid a rare crash when signing out.
+
 #### Release 4424.6998 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-07-16
 - New: dark mode at long last! Also respects system (OS/browser) settings.
 - Upd: tweak presentation of GitHub-related actions in the file and discussion dropdown menus, and offer separate actions for "view diff" vs "open file".
