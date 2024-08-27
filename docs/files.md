@@ -117,7 +117,7 @@ If you've set up a [code coverage](repositories#code-coverage) feed you may also
 ![reviewable file diffs](images/filediffs_1.png)
 
 {:.tip}
-Any special messages will appear immediately underneath the header.  These include rename sequence details, explanations for why a diff isn't showing, etc.
+Any special messages will appear immediately underneath the header.  These include notices of renamed files, explanations for why a diff isn't showing, etc.
 
 ![reviewable file diff rename message](images/filediffrename_1.png)
 
