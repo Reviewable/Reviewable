@@ -1159,16 +1159,6 @@
 <p>Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.</p>
 <p><img src="images/repositories_6.png" alt="reviewable repo settings" /></p>
 <p>If you make any changes to the settings, click the <strong>Apply</strong> button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (<em>all</em> the settings, not just your current changes).  Click <strong>Cancel</strong> to discard any change to the settings.</p>
-<h3><a class="header" href="#store-repository-settings-using-the-reviewable-directory" id="store-repository-settings-using-the-reviewable-directory">Store repository settings using the <code>.reviewable</code> directory</a></h3>
-<p>The <code>.reviewable</code> settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The <code>.reviewable</code> directory can contain a <code>settings.yaml</code> file and/or a <a href="repositories.html#completion-condition-script">completion condition script</a> (or more than one in case you're using repository-specific <a href="repositories.html#overrides">overrides</a>).</p>
-<p>The <code>settings.yaml</code> file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.</p>
-<p><a href="https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml">View an example <code>settings.yaml</code> file here</a>.</p>
-<div class="tip">
-<p>When the <code>settings.yaml</code> file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the <code>settings.yaml</code> file.</p>
-</div>
-<div class="important">
-<p>An error is displayed if your <code>settings.yaml</code> file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings, with the exception of the <a href="repositories.html#custom-review-completion-condition">completion condition script</a> which cannot be synced and will not be used if your settings file is invalid. Local settings will override any invalid master settings.</p>
-</div>
 <p><a id="prototype-repo"></a></p>
 <h3><a class="header" href="#prototype-settings-for-new-repos" id="prototype-settings-for-new-repos">Prototype settings for new repos</a></h3>
 <p>If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the <strong>Set as prototype for new repos</strong> button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.</p>
@@ -1191,6 +1181,19 @@
 <li>&quot;This is the current prototype repository.&quot;</li>
 <li>&quot;The current prototype repository is ____.&quot;.</li>
 </ul>
+<h3><a class="header" href="#store-repository-settings-using-the-reviewable-directory" id="store-repository-settings-using-the-reviewable-directory">Store repository settings using the <code>.reviewable</code> directory</a></h3>
+<p>The <code>.reviewable</code> settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The <code>.reviewable</code> directory can contain a <code>settings.yaml</code> file and/or a <a href="repositories.html#completion-condition-script">completion condition script</a> (or more than one in case you're using repository-specific <a href="repositories.html#overrides">overrides</a>).</p>
+<div class="important">
+<p>In order to use the <code>.reviewable</code> settings directory, the repository needs to be <a href="repositories.html#connecting-repositories">connected</a>. Otherwise, the <code>.reviewable</code> directory will be ignored.</p>
+</div>
+<p>The <code>settings.yaml</code> file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.</p>
+<p><a href="https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml">View an example <code>settings.yaml</code> file here</a>.</p>
+<div class="tip">
+<p>When the <code>settings.yaml</code> file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the <code>settings.yaml</code> file.</p>
+</div>
+<div class="important">
+<p>An error is displayed if your <code>settings.yaml</code> file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the <a href="repositories.html#custom-review-completion-condition">completion condition script</a> if any. Local settings will override any invalid master settings.</p>
+</div>
 <h3><a class="header" href="#applying-a-settingsyaml-file-to-multiple-repositories" id="applying-a-settingsyaml-file-to-multiple-repositories">Applying a <code>settings.yaml</code> file to multiple repositories</a></h3>
 <p>Designate a master repository to store your <code>settings.yaml</code> file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization (with the exception of <a href="repositories.html#overrides">overrides</a>). This master settings file will apply its settings to all repositories, regardless of when they were created.</p>
 <div class="tip">
