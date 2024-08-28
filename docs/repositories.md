@@ -135,6 +135,9 @@ The `.reviewable` settings directory will allow you to customize your review set
 {:.important}
 In order to use the `.reviewable` settings directory, the repository needs to be [connected](#connecting-repositories). Otherwise, the `.reviewable` directory will be ignored.
 
+{:.important}
+Reviewable reads the contents of the `.reviewable` directory from the repository's default branch; this is your `main` or `master` branch unless changed on GitHub. The contents of other branches don't affect the repository settings until they get merged into the default branch.
+
 The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
 
 [View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
