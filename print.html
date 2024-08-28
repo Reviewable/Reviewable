@@ -1187,6 +1187,9 @@
 <div class="important">
 <p>In order to use the <code>.reviewable</code> settings directory, the repository needs to be <a href="repositories.html#connecting-repositories">connected</a>. Otherwise, the <code>.reviewable</code> directory will be ignored.</p>
 </div>
+<div class="important">
+<p>Reviewable reads the contents of the <code>.reviewable</code> directory from the repository's default branch; this is your <code>main</code> or <code>master</code> branch unless changed on GitHub. The contents of other branches don't affect the repository settings until they get merged into the default branch.</p>
+</div>
 <p>The <code>settings.yaml</code> file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.</p>
 <p><a href="https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml">View an example <code>settings.yaml</code> file here</a>.</p>
 <div class="tip">
