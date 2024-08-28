@@ -12,19 +12,19 @@
 # https://docs.reviewable.io/repositories.html#reviewable-badge
 badge:
   # `location` determines the location of the Reviewable badge in the pull request
-  # Valid options include: `description-bottom` (default), `description-top`, `comment`, or `none`.
+  # Valid options include: `description-bottom` (default), `description-top`, `comment` and `none`.
   location: description-bottom
   # `when` optionally allows you to specify when to inject the Reviewable badge into the pull request.
-  #  Valid options include: `accessed` and `published`.
+  #  Valid options include: `accessed` (default), `published` and `requested`.
   when: accesed
 
 # `default-review-style` allows you to choose how reviews are displayed.
-# Valid options include: `combined-commits` (default) or `one-per-commit`.
+# Valid options include: `combined-commits` (default) and `one-per-commit`.
 # https://docs.reviewable.io/repositories.html#default-review-style
 default-review-style: one-per-commit
 
 # `default-review-overlap-strategy` lets you determine the order in which reviews are conducted.
-# Valid options include: `user-default` (default), `unclaimed`, `unreviewed`, and `personally-unreviewed`.
+# Valid options include: `user-default` (default), `unclaimed`, `unreviewed` and `personally-unreviewed`.
 # https://docs.reviewable.io/repositories.html#default-review-style
 default-review-overlap-strategy: unclaimed
 
