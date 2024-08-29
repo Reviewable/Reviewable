@@ -174,6 +174,10 @@ overrides:
     default-review-style: combined-commits
 ```
 
+#### Finalizing master settings
+
+If you wish to manage all repo settings in one central place without allowing the master settings to be overridden by local settings, you can set `final: true` in the master settings which in turn causes any local settings to be ignored.
+
 ### Reviewable badge
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
