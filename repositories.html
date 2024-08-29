@@ -426,10 +426,11 @@ overrides:
 <li><strong>Comment</strong> — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.</li>
 <li><strong>None</strong> — no badges will be created (private repos only).</li>
 </ul>
-<p>If you have a current Reviewable subscription, you may optionally choose when to show the badge:</p>
+<p>If you have a current Reviewable subscription or trial, you may optionally choose when to show the badge:</p>
 <ul>
 <li><strong>Visited</strong> - show the badge once a review has been accessed for the first time.</li>
 <li><strong>Started</strong> - only show the badge once a review has been published.</li>
+<li><strong>Requested</strong> - only show the badge once a review has been requested. This excludes any PR that never left the draft status, since no review is requested for draft PRs.</li>
 </ul>
 <div class="tip">
 <p>Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.</p>
@@ -440,7 +441,7 @@ badge:
   # The default setting for `location` is `description-bottom`.
   location: description-bottom | description-top | comment | none
   # `when` is optional.
-  when: accessed | published
+  when: accessed | published | requested
 </code></pre>
 <h3><a class="header" href="#default-review-style" id="default-review-style">Default review style</a></h3>
 <p>Choose the default <a href="reviews.html#changes-commits">review style</a> for all reviews in this repo. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  Please follow a link for a full explanation of the two options.</p>
