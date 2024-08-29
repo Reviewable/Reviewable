@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add shortcut button for the file matrix to the toolbar.
 - Upd: add "TODO" as magic keyword for "working" disposition
 - Upd: replace `memory.ghSocketsCreated` and `memory.ghRequestsIssued` in the logs with a more informative `memory.ghRequests` object, and add `github.sockets.free` and `github.sockets.busy` gauges to `statsd` stats.
+- Upd: Add new option to show badge only if the review has been requested.
 - Fix: don't cut off panel drop shadow when expanding/collapsing.
 - Fix: if all files are hidden but the review is updated, offer to show proposed diffs instead of full diffs in the diffs panel.
 - Fix: keep close button in top right corner when a collapsed file matrix is popped up in a dialog and scrolled horizontally.
@@ -26,6 +27,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't fetch bot information via GitHub's users API, as that appears to have stopped working at some point and will prevent PRs from syncing.
 - Fix: guard against very rare permission denied error when marking all files as reviewed.
 - Fix: avoid a rare crash when signing out.
+- Fix: avoid rare crash due to a race condition in the UI.
 
 #### Release 4424.6998 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-07-16
 - New: dark mode at long last! Also respects system (OS/browser) settings.
