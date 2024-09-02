@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4479.7067 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-01
 - New: add an API for managing Enterprise team constraints.  ([API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md))
 - New: support reading settings from a `.reviewable` directory in the repository and inheriting from a master settings file.  See the [announcement](https://www.reviewable.io/blog/announcing-the-reviewable-settings-directory/) for more details.
 - Upd: make more panels collapsible on the review page.
