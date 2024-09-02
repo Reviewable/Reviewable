@@ -1,5 +1,7 @@
 ### REST API
 
+*Added in Reviewable Enterprise 4247.6681*
+
 Setting the `REVIEWABLE_API_SECRET` environment variable
 (see the [configuration docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#security))
 enables the REST API located at `{REVIEWABLE_HOST_URL}/api/v1/{endpoint}`.
@@ -21,7 +23,8 @@ e.g. `?expand=occupants.details`. You can specify multiple properties separated 
 
 #### Retrieve license information
 
-The `license` API endpoint provides information about your Reviewable Enterprise license,
+The `license` API endpoint provides information about your
+[Reviewable Enterprise license](https://docs.reviewable.io/subscriptions.html#licenses),
 its seats and their occupants.
 
 ##### The license object
@@ -85,3 +88,39 @@ its seats and their occupants.
     }
   ]
 }
+```
+
+#### Retrieving team constraints
+
+*Added in Reviewable Enterprise 4479.7067*
+
+The `team_constraints` API endpoint provides the
+[team constraints](https://docs.reviewable.io/subscriptions.html#team-constraints)
+as an array of strings in the format `<org name>/<team slug>`.
+If no team constraints are in effect, an empty array is retrieved.
+
+##### cURL example
+
+    curl https://your-reviewable-host/api/v1/team_constraints -H "Authorization: admin secret"
+
+##### Example response
+
+```js
+["Reviewable/developers", "Reviewable/release-managers"]
+```
+
+#### Updating team constraints
+
+*Added in Reviewable Enterprise 4479.7067*
+
+The `team_constraints` API endpoint accepts `PUT` requests for setting the
+[team constraints](https://docs.reviewable.io/subscriptions.html#team-constraints).
+The request body is expected to be a JSON-encoded array of strings in the format `<org name>/<team slug>`.
+In order to disable team constraints set it to an empty array.
+
+##### cURL example
+
+    curl https://your-reviewable-host/api/v1/team_constraints -X PUT \
+      -H "Authorization: admin secret" \
+      -H "Content-Type: application/json" \
+      -d '["Reviewable/developers", "Reviewable/release-managers"]'
