@@ -70,6 +70,14 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
 .victory.decor {display: none}
 // ANCHOR_END: no-merge-bunny
 
+// ANCHOR: diff-accessible-colors
+// DEPRECATE: accountsettings.html#accessibility
+:root {
+  --diff-add: 33, 150, 243;
+  --diff-remove: 255, 235, 59;
+}
+// ANCHOR_END: diff-accessible-colors
+
 // ANCHOR: no-collapsed-region-wavy-lines
 .review-page .file.root .file .wavy.edge {
   background-image: none;
