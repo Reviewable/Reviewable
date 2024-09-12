@@ -8,8 +8,12 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
+- New: add colorblind accessibility settings.
 - Upd: Show repo errors to admins at bottom of reviews
 - Fix: turn off Sentry breadcrumbs in server events, as they are useless and can leak auth tokens into Sentry.
+- Fix: make sure conclusions panel never obscures dispositions dropdown
+- Fix: attempt a workaround for Safari occasionally getting stuck while resuming the session.
 #### Release 4479.7067 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-01
 - New: add an API for managing Enterprise team constraints.  ([API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md))
 - New: support reading settings from a `.reviewable` directory in the repository and inheriting from a master settings file.  See the [announcement](https://www.reviewable.io/blog/announcing-the-reviewable-settings-directory/) for more details.
