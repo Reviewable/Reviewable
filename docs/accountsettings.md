@@ -101,6 +101,21 @@ Use the **Contrast** slider to adjust the UI contrast. Currently this only affec
 
 You can switch between dark mode, light mode, or match your operating system's default display theme with the radio buttons within the **Color scheme** options. By default, Reviewable will match your operating system's light or dark mode setting. Changing the color scheme in any Reviewable tab will immediately update it in all other instances of Reviewable for your user across any tabs or windows.
 
+### Accessibility
+
+You can enable **color replacement** (colorblind) mode to replace all shades of red and green across the app, making it easier to distinguish between the two, which is especially important when looking at diffs. In single column layouts (unidiff), you will also notice that plus and minus icons are used to further differentiate between changes.
+
+To use colorblind mode:
+
+  - Turn on color replacement.
+  - Click the left swatch to replace red, and the right swatch to replace green.
+  - The default colors are optimized for users with deuteranopia. However, you can customize the colors to suit your needs.
+
+To reset any custom colors back to the default red or green, click the "x" that appears after setting each custom color.
+
+{:.tip}
+When setting replacement colors, don't forget that you have the <a href="#adjust-contrast">contrast slider</a> at your disposal too. This primarily controls diff colors (and differentiation icons) and can help achieve a balanced UI when setting custom red/green replacements.
+
 ## GitHub authorizations granted
 
 This is a read-only list of all the GitHub OAuth scopes you've granted to Reviewable so far.  It can be useful to confirm the extent of permissions granted or when debugging GitHub API issues.
