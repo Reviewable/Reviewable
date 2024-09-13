@@ -9,7 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
 - New: add colorblind accessibility settings.
-- Upd: Show repository errors to admins at bottom of reviews.
+- Upd: show repository errors to admins at bottom of reviews.
 - Fix: turn off Sentry breadcrumbs in server events, as they are useless and can leak auth tokens into Sentry.
 - Fix: make sure conclusions panel never obscures dispositions dropdown.
 - Fix: attempt a workaround for Safari occasionally getting stuck while resuming the session.
