@@ -1,0 +1,229 @@
+:root {
+  --vp-nav-logo-height: 1.8rem;
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --vp-font-family-mono: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  --vp-sidebar-bg-color: var(--vp-c-bg-alt);
+  --vp-code-bg: var(--vp-code-block-bg);
+  --vp-code-color: var(--vp-c-text-2);
+  --vp-c-brand-1: var(--purple);
+  --vp-c-brand-2: var(--purple-5);
+  --vp-c-brand-3: var(--purple);
+  --vp-custom-block-font-size: 0.9rem;
+  --c-info: var(--blue);
+  --c-tip: var(--green);
+  --c-warning: var(--orange);
+  --c-danger: var(--red);
+}
+
+code {
+  font-size: 0.85em;
+}
+
+header .title {
+  font-size: 1.3rem !important;
+}
+
+.VPNavBarMenuLink {
+  line-height: 1.2em !important;
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-text-1) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--vp-c-brand-1);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.VPLocalNav .menu-text {
+  display: none;
+}
+
+.VPLocalNav .menu::after {
+  content: "Table of contents";
+}
+
+.VPSidebarItem .text {
+  line-height: 1.4em;
+}
+
+.VPSidebarItem.is-link > .item > .link:hover .text,
+.VPSidebarItem.is-active > .item > .link > .text,
+.VPSidebarItem.has-active > .item > .link > .text {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.VPSidebarItem.level-0 .text {
+  font-size: 1rem;
+  font-weight: 500 !important;
+  color: var(--vp-c-text-2) !important;
+}
+
+.VPSidebarItem.level-1 .text,
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text,
+.VPSidebarItem.level-4 .text,
+.VPSidebarItem.level-5 .text {
+  font-size: 0.9rem;
+  font-weight: normal !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.vp-doc a {
+  text-decoration: none;
+}
+
+.vp-doc a:hover {
+  text-decoration: underline;
+}
+
+.pager-link {
+  border: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  transition: none !important;
+}
+
+.pager-link:hover {
+  color: var(--vp-c-brand-2);
+}
+
+.vp-doc div[class*='language-']+div[class*='language-'],
+.vp-doc div[class$='-api']+div[class*='language-'],
+.vp-doc div[class*='language-']+div[class$='-api']>div[class*='language-'] {
+  margin-top: 0;
+}
+
+.custom-block-title {
+  display: none;
+}
+
+.custom-block {
+  background-color: hsl(197, 37%, 96%) !important;
+  color: var(--c-text) !important;
+  position: relative;
+  border: none;
+  border-radius: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left: 4px black solid;
+  padding: 8px 16px;
+  overflow-x: visible !important;
+}
+
+.dark .custom-block {
+  background-color: hsl(197, 37%, 8%) !important;
+}
+
+.custom-block a {
+  color: var(--vp-c-brand-1) !important;
+}
+
+.custom-block a:hover {
+  color: var(--vp-c-brand-2) !important;
+  text-decoration: underline;
+}
+
+.custom-block code {
+  color: var(--vp-code-color) !important;
+  background-color: var(--vp-code-bg) !important;
+}
+
+.custom-block::before {
+  border-radius: 100%;
+  color: #fff;
+  font-size: 14px;
+  left: -12px;
+  line-height: 20px;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  top: 14px;
+}
+
+.custom-block.info {
+  border-color: var(--c-info);
+}
+
+.custom-block.info::before {
+  background-color: var(--c-info);
+  content: "i";
+  font-weight: 700;
+}
+
+.custom-block.tip {
+  border-color: var(--c-tip);
+}
+
+.custom-block.tip::before {
+  background-color: var(--c-tip);
+  content: "?";
+  font-weight: 700;
+}
+
+.custom-block.warning {
+  border-color: var(--c-warning);
+}
+
+.custom-block.warning::before {
+  background-color: var(--c-warning);
+  content: "▲";
+  font-weight: 700;
+}
+
+.custom-block.danger {
+  border-color: var(--c-danger);
+}
+.custom-block.danger::before {
+  background-color: var(--c-danger);
+  content: "!";
+  font-weight: 700;
+}
+
+
+.label {
+  padding: 1px 3px;
+  color: var(--text-color-inverted);
+  border-radius: 2px;
+}
+
+.red.label {
+  background-color: var(--red);
+}
+
+.green.label {
+  background-color: var(--green);
+}
+
+.grey.label {
+  background-color: var(--grey);
+}
+
+.grey.label.deferred {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--grey),
+    var(--grey) 33.3%,
+    var(--red) 33.3%,
+    var(--red) 66.6%
+  );
+}
+
+i.icon {
+  font-style: normal;
+  position: relative;
+  opacity: 0.7;
+}
+
+.circular.no.data::after {
+  content: "\f05e";
+  font-family: Icons-regular;
+  color: var(--red);
+  position: absolute;
+  left: -3px;
+  top: -2px;
+  font-size: 1.7em;
+  opacity: 0.6;
+}

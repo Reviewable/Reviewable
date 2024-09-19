@@ -24,9 +24,7 @@ Reviewable doesn't have a lot of settings exposed in the UI to customize how thi
 
 Reviewable doesn't show line numbers in the diff for a number of reasons &mdash; there's a long discussion in [issue #147](https://github.com/Reviewable/Reviewable/issues/147).  The snippet below overrides this.  It's not perfect but it should work in the vast majority of cases:
 
-```css
-{{#include tweaks.css:show-line-numbers}}
-```
+<<< @/tweaks.css#show-line-numbers{css}
 
 If you don't need to tweak these styles, just paste `https://gist.githack.com/pkaminski/4fd7c7b9014856de32bb43f84a396772/raw/line_numbers.css` into the custom stylesheet field.
 
@@ -36,9 +34,7 @@ If you don't need to tweak these styles, just paste `https://gist.githack.com/pk
 
 When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mdash; just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:
 
-```css
-{{#include tweaks.css:highlight-whole-diff-line}}
-```
+<<< @/tweaks.css#highlight-whole-diff-line{css}
 
 Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/highlight_lines_in_two_columns.css`.
 
@@ -46,30 +42,24 @@ Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/h
 
 If you have Reviewable set up to [show code coverage bars](repositories.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet.
 
-```css
-{{#include tweaks.css:code-coverage-default}}
-```
+<<< @/tweaks.css#code-coverage-default{css}
 
 A darker example:
-```css
-{{#include tweaks.css:code-coverage-darker}}
-```
+
+<<< @/tweaks.css#code-coverage-darker{css}
 
 ### Victory bunny
 
 Don't like the merge bunny?  Turn it off like this:
 
-```css
-{{#include tweaks.css:no-merge-bunny}}
-```
+<<< @/tweaks.css#no-merge-bunny{css}
 
 ### Removing wavy lines on collapsed regions
 
 Want to turn the wavy lines off to simplify how collapsed diff regions look? This snippet will do the trick:
 
-```css
-{{#include tweaks.css:no-collapsed-region-wavy-lines}}
-```
+<<< @/tweaks.css#no-collapsed-region-wavy-lines{css}
+
 You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/6e35f21b6fa3d3978a4ae5f8ba0f23e2d5d6a475/no-wave.css`
 
 ## Skipping vendored dependencies
@@ -119,8 +109,9 @@ The ids `prId` and `revisionId` are available by inspection on the reviewable.io
 
 ![crop from review page showing prId of 756 and revisionId of 6](images/tips_1_prId.png)
 
-{:.tip}
+::: tip
 You can also just explore the references using the git client, by typing a reference name partially, as in `git fetch origin refs/reviewable/`, and then use tab completion to get your options.
+:::
 
 #### 2. Use the revision reference
 

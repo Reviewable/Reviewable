@@ -12,8 +12,9 @@ Organizations are shown below your personal repos on the Repositories page, and 
 - **Manage subscription** will open the subscription portal where you can adjust or cancel your subscription, update your card, or view past invoices.
 - **Edit settings** will show some options to *[manage the scope of the subscription](#managing-the-scope-of-your-subscription)*, and (un)assign a *[billing manager](#billing-manager)*.
 
-{:.important}
+::: danger
 OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
+:::
 
 
 ### Selecting a plan
@@ -22,8 +23,9 @@ In the subscription panel you can select a plan for your organization, and the n
 
 If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets on your next billing date.
 
-{:.tip}
+::: tip
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
+:::
 
 You can upgrade, downgrade, or cancel the plan any time.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds.
 
@@ -35,8 +37,9 @@ To restrict access to your Reviewable subscription, simply designate a contribut
 
 On the other hand, if your company's repos are distributed over multiple GitHub organizations (as is sometimes the case for consulting companies), you can specify extra organizations to be covered if your plan allows it. In this situation, a person who creates reviews in any of the subscription's organizations counts as a single contributor — so this may be a less expensive alternative to maintaining separate subscriptions.
 
-{:.tip}
+::: tip
 Restricting an organization to a team and extending it to other organizations are mutually exclusive.
+:::
 
 ### Canceling a subscription
 
@@ -58,8 +61,9 @@ If desired, you can additionally limit the users who will be able to obtain seat
 
 To turn on team constraints you enter one or more fully-qualified team slugs in the panel's field; only users who are a member of at least one of these teams will be able to obtain a seat.  Users with currently assigned seats will _not_ be evicted even if they're not a team member, but won't be able to renew their seat once it expires.
 
-{:.tip}
+::: tip
 The designated license administrator is always allowed to grab a seat so they can't accidentally lock themselves out.
+:::
 
 If team constraints are on and a user signing in is not a member (but otherwise a valid user for the license), they'll be given a full-access guest pass instead.  A guest pass lasts for two weeks and doesn't take up a license seat, but once it runs out the user will be signed out and unable to sign back in until they're a team member or eligible for a guest pass again (every 90 days).  While on a guest pass, every page will display a banner encouraging the user to request access to a licensed seat:
 

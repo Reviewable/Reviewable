@@ -1,0 +1,29 @@
+name: Generate docs and send to GitHub Pages.
+on:
+  push:
+    branches:
+      - master
+jobs:
+  ebook:
+    name: Build and upload docs
+    runs-on: ubuntu-latest
+    steps:
+      # Book generation
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install VitePress
+        working-directory: docs
+        run: yarn install --frozen-lockfile
+
+      - name: Generate docs
+        working-directory: docs
+        run: yarn docs:build
+
+      # HTML publication as GitHub Pages
+      - name: Publish HTML
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.vitepress/dist
+          publish_branch: gh-pages

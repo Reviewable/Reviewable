@@ -3,8 +3,9 @@
 
 Click the **Reviews** button at the very top of the page to display the reviews list. Here, you'll find all open pull requests in which you are a participant. As a participant, these PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to).  Reviewable automatically updates this list at least once per minute (and data held in Reviewable is updated in real time), so there's no need to reload the page.
 
-{:.tip}
+::: tip
 If PRs appear to be missing from the list, try clicking the **Include stalled pull requests/reviews** link at the bottom of the panel. You may also want to click the green **Also show team reviews** or **Also show private reviews** buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.
+:::
 
 ![reviewable reviews list](images/reviews_4.png)
 
@@ -12,26 +13,27 @@ PRs are sorted into groups ordered from most to least relevant. Within each grou
 
 You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md), or by entering the full repository name and clicking on the "Go to dashboard for..." link under the query field.
 
-{:.tip}
+::: tip
 Loading the list of reviews for a single organization or repository will be much faster than doing so for all your repositories.
+:::
 
 You can further modify the view with the various toggles and filters on this page.  If a specific pull request isn't showing in the list, you can simply paste its URL into the filter field to access it directly.
 
 The time since the list of PRs was last updated is displayed under the header.  The list refreshes automatically at regular intervals, but you can also force an immediate refresh by reloading the page.
 
-{:.tip}
+::: tip
 Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  To show older closed PRs click **Show more concluded reviews** at the bottom of the panel, repeating as necessary.
-
+:::
 
 ## Review state
 
-Each review in the listing indicates the state of the review, in more-or-less real time.  People whose attention the review currently needs are show to the right of the <i class="fa fa-hand-o-right" style="color: #7D8084"></i>, while other participants follow the <i class="fa fa-circle-o" style="color: #7D8084"></i>.  Each avatar is decorated with the participant's current most important status, including PR authorship, GitHub approval (<i class="fa fa-thumbs-o-up" style="color: #5BBD72"></i> approved or <i class="fa fa-hand-paper-o" style="color: #FFA22E"></i> changes requested), discussion blocker, and LGTM. The rest of the line shows the pull request summary, current milestone, and labels (if any).
+Each review in the listing indicates the state of the review, in more-or-less real time.  People whose attention the review currently needs are show to the right of the <i class="waiting on icon"/>, while other participants follow the <i class="participating icon"/>.  Each avatar is decorated with the participant's current most important status, including PR authorship, GitHub approval (<i class="sanction approved icon"/>&nbsp;approved or <i class="sanction blocked icon"/>&nbsp;changes requested), discussion blocker, and LGTM. The rest of the line shows the pull request summary, current milestone, and labels (if any).
 
 ![reviews list](images/reviews_10.png)
 
-The <i class="fa fa-chain-broken" style="color: #7D8084"></i> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [Repository page](repositories.md).
+The <i class="unconnected icon"/> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [Repository page](repositories.md).
 
-A <i class="fa fa-calendar-minus-o" style="color: #7D8084"></i> icon indicates a stalled review that has not been updated in over two weeks.
+A <i class="stalled icon"/> icon indicates a stalled review that has not been updated in over two weeks.
 
 Counters reflect the same information as you'll see on the review page:
 
@@ -41,11 +43,9 @@ If a PR is ready for merging, the status checks are successful, and all the coun
 
 Other possible states include **Merged**, **Closed**, and **Archived** (automatically, for old reviews — just open to unarchive). No state appears for any PR not yet connected to a review.
 
-<a id="open-review"></a>
+## Open a review {#open-review}
 
-## Open a review
-
-Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="fa fa-plus-circle" style="color: #7D8084"></i> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="fa fa-lock" style="color: #7D8084"></i> is also shown, this may begin a free trial.
+Click on a PR to open the review, or hold down the appropriate modifier key to open it in a new tab.  If a <i class="create review icon"/> is shown, clicking on the listing will open a new review and insert a link into the description for the PR. If <i class="grey private icon"/> is also shown, this may begin a free trial.
 
 Click the link on the right end of a listing to access the pull request on GitHub.
 
@@ -87,8 +87,9 @@ Filter | Meaning
 <code>±by:<i>username</i></code> | PRs authored by given user
 <code>±with:<i>username</i></code> | PRs involving given user (or team)
 
-{:.tip}
+::: tip
 Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
+:::
 
 ![reviewable filter field](images/reviews_6.png)
 
@@ -102,7 +103,7 @@ At the bottom of the Reviews page, you’ll find two toggle buttons:
 
 **Show pull request not yet connected to Reviewable**
 
-If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with the <i class="fa fa-plus-circle" style="color: #85C88B"></i>, and clicking that PR will connect that PR to a review and insert a link into the PR description.
+If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with a <i class="create review icon"/>, and clicking that PR will connect that PR to a review and insert a link into the PR description.
 
 You may want to turn off this toggle if you only want to see PRs from connected repositories.
 
