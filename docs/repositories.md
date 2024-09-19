@@ -40,29 +40,30 @@ The indicator next to each repository name shows the connection state for this r
 The toggle's color reflects the state of the connection:
 
 * **Black** — The repo is disconnected. Reviewable will not automatically create reviews for this repo, but it is possible to initiate a review from the [Reviews dashboard](dashboard.md#open-review).
-* **Green** — The repo is connected and healthy. Reviewable will automatically create and update reviews for all open PRs and insert a link to the review into the description for each PR.  (You can customize this latter behavior in the [settings](#repo-settings), but must do so _before_ connecting the repo!)
-* **Red** — The repo was connected, but the connection is now broken. Look for the error message on this page. Though some reviews may be created under this condition, it is necessary to fix the problem to ensure all reviews function properly.
+* **<span class="text-green">Green</span>** — The repo is connected and healthy. Reviewable will automatically create and update reviews for all open PRs and insert a link to the review into the description for each PR.  (You can customize this latter behavior in the [settings](#repo-settings), but must do so _before_ connecting the repo!)
+* **<span class="text-red">Red</span>** — The repo was connected, but the connection is now broken. Look for the error message on this page. Though some reviews may be created under this condition, it is necessary to fix the problem to ensure all reviews function properly.
 
 You must have repo admin permissions to connect or disconnect a repo. Connecting to a private organizational repo may cause you to automatically begin the 30-day free trial.
 
 It is entirely safe to connect or disconnect a repo at any time without risk of data loss. After a review is created, it will not be affected by this toggle.
 
-{:.tip}
+::: tip
 If you previously connected repos, but later revoked the authorization for Reviewable, you will need to re-authorize access to maintain the connection. You will see messages at the top of the repo page that prompt you to take action.
+:::
 
-{:.important}
+::: danger
 If a user has connected a repo but later leaves an organization, it will be necessary for another admin to toggle the repo off and then on to assume control of the connection.  (Reviewable will send a warning email to the original connector if it detects this situation.)
+:::
 
 Each connected repository will have an "N open reviews" link under it that will take you to a repository-specific [reviews dashboard](dashboard.md).
 
-<a id="current-and-future"></a>
-
-### Connect all current and future repos
+### Connect all current and future repos {#current-and-future}
 
 There's also a special **All current and future repos** toggle.  When turned on by an organization owner, Reviewable will connect all current _and future_ repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.
 
-{:.important}
+::: danger
 You may wish to confirm the [settings](#repo-settings) of current repos and designate a [prototype repo](#prototype-repo) for future ones before you turn on this feature.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
+:::
 
 ### Create reviews for your own PRs
 
@@ -72,8 +73,9 @@ You can also get Reviewable to create reviews for all PRs that you author, acros
 
 The same applies to private PRs for the **My PRs in any private repo** toggle, which gives you the flexibility to have only a subset of users in a private repo use Reviewable.
 
-{:.important}
+::: danger
 This last is a legacy feature that may get removed in the future, since it was mainly used to constrain the set of contributors to avoid going over quota, and this can now be specified directly in a subscription's configuration.  It will only work if the relevant repo has an active subscription at the time the PR is created and won't backfill if a subscription is created later.
+:::
 
 ### Reviews in connected vs unconnected repos
 
@@ -89,17 +91,17 @@ By contrast, Reviewable doesn't get write access to the repo if you individually
 
 Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.
 
-{:.tip}
+::: tip
 You may find it impractical to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
+:::
 
-<a id="repo-settings"></a>
-
-## Repository settings
+## Repository settings {#repo-settings}
 
 To configure Reviewable repository settings you may use the [GUI](https://reviewable.io/repositories) or the `.reviewable` directory in your project root. Each description below will include setting options using the GUI or by using the `settings.yaml` file in your `.reviewable` directory.
 
-{:.tip}
+::: tip
 You can move your review settings from the GUI to the `.reviewable` directory by clicking "Store settings in repo?" link and following the instructions for setting up Reviewable configuration in the repository for your project.
+:::
 
 ### Accessing repository settings with the GUI
 
@@ -109,14 +111,13 @@ Click on a repository name to access the repo settings panel.  This works whethe
 
 If you make any changes to the settings, click the **Apply** button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (_all_ the settings, not just your current changes).  Click **Cancel** to discard any change to the settings.
 
-<a id="prototype-repo"></a>
-
-### Prototype settings for new repos
+### Prototype settings for new repos {#prototype-repo}
 
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
-{:.tip}
+::: tip
 This feature is particularly useful if you chose to connect [all current and future repos](#connect-all-current-and-future-repos). If you would like more flexibility configuring your connected repositories, you can [use a master `settings.yaml` file.](#applying-a-settingsyaml-file-to-multiple-repositories).
+:::
 
 If you would like to see if there is or is not a current prototype repository, and which repository it is, simply hover over the link. A tooltip will come up with one of the following texts:
 
@@ -132,28 +133,33 @@ If you would like to see if there is or is not a current prototype repository, a
 
 The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
 
-{:.important}
+::: danger
 In order to use the `.reviewable` settings directory, the repository needs to be [connected](#connecting-repositories). Otherwise, the `.reviewable` directory will be ignored.
+:::
 
-{:.important}
+::: danger
 Reviewable reads the contents of the `.reviewable` directory from the repository's default branch; this is your `main` or `master` branch unless changed on GitHub. The contents of other branches don't affect the repository settings until they get merged into the default branch.
+:::
 
 The `settings.yaml` file provides several options used to configure the settings for one or more of your repositories. Settings listed at the top level of this file are used as the default settings for the current repository.
 
 [View an example `settings.yaml` file here](https://github.com/Reviewable/Reviewable/tree/master/examples/settings/settings.yaml).
 
-{:.tip}
+::: tip
 When the `settings.yaml` file is used for your repositories, the settings UI in the repositories section of the Reviewable user interface is hidden and a message will be displayed informing you that the settings for that particular repository are managed via the `settings.yaml` file.
+:::
 
-{:.important}
+::: danger
 An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the [completion condition script](#custom-review-completion-condition) if any. Local settings will override any invalid master settings.
+:::
 
 ### Applying a `settings.yaml` file to multiple repositories
 
 Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless of when they were created.
 
-{:.tip}
+::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
+:::
 
 When a repository is designated as the master, its settings file will be used as the basis for all repositories in the organization. A master settings file can also provide specialized settings for repositories via targeted in-file overrides.
 
@@ -178,7 +184,11 @@ overrides:
 
 If you wish to manage all repository settings in one central place without allowing the master settings to be overridden by local settings, you can set `final: true` in the master settings which in turn causes any local settings files and completion condition scripts to be ignored.
 
-### Reviewable badge
+### Available settings
+
+A list of available settings follows, with each describing the available options and how they appear in a `settings.yaml` file.
+
+#### Reviewable badge
 
 Choose where the Reviewable badge is to be inserted on the GitHub website:
 
@@ -192,12 +202,11 @@ If you have a current Reviewable subscription or trial, you may optionally choos
 * **Started** - only show the badge once a review has been published.
 * **Requested** - only show the badge once a review has been requested. This excludes any PR that never left the draft status, since no review is requested for draft PRs.
 
-{:.tip}
+::: tip
 Changes here are retroactive (except that an existing description badge won’t be moved to a comment), but will be applied lazily as reviews are visited.
+:::
 
-```txt
-# settings.yaml
-
+```yaml
 badge:
   # The default setting for `location` is `description-bottom`.
   location: description-bottom | description-top | comment | none
@@ -205,20 +214,18 @@ badge:
   when: accessed | published | requested
 ```
 
-### Default review style
+#### Default review style
 
 Choose the default [review style](reviews.md#changes-commits) for all reviews in this repo. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  Please follow a link for a full explanation of the two options.
 
 This setting can be overridden on a particular review by any user with push permissions.
 
-```txt
-# settings.yaml
-
+```yaml
 # The default setting is `combined-commits`.
 default-review-style: combined-commits | one-per-commit
 ```
 
-### Default review overlap strategy
+#### Default review overlap strategy
 
 Use the current review status of each file to determine how they are presented to a user for review:
 
@@ -227,51 +234,44 @@ Use the current review status of each file to determine how they are presented t
 * **Review any unreviewed files** - Review any file that requires attention.
 * **Review all files personally** - Ensure that you review every file yourself, ignoring other reviewers.
 
-{:.tip}
+::: tip
 These settings can be overridden by anyone, but will only apply to the individual user.
+:::
 
-```txt
-# settings.yaml
-
+```yaml
 # The default setting is `user-default`
 default-review-overlap-strategy: user-default | unclaimed | unreviewed | personally-unreviewed
 ```
 
-### Approve button output
+#### Approve button output
 
 You can customize the function of the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right. You can customize what will be inserted into the draft when you click it. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji. But, some teams customize it to insert a form, or a different approval message. The button also always sets the publication status to **Approved**.
 
-```txt
-# settings.yaml
-
+```yaml
 # The `approval-text` option accepts any text.
 # The default setting is `:lgtm:`.
 approval-text: ":lgtm:" | *
 ```
 
-### Discussion participant dismissers
+#### Discussion participant dismissers
 
 This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
-```txt
-# settings.yaml
-
+```yaml
 # The default setting is `push`
 discussion-dismissal-restriction: push | maintain | admin
 ```
 
-### Review status in GitHub PR
+#### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
-```txt
-# settings.yaml
-
+```yaml
 # The default setting is `accessed`
 github-status-updates: accessed | always | never
 ```
 
-### Code coverage
+#### Code coverage
 
 You can configure Reviewable to display code coverage information next to diffs by letting it know where to fetch code coverage reports from.  You'll need to enter a URL template that Reviewable can instantiate to grab a report for all the files at a given commit.  The template can make use of these variables:
 
@@ -282,25 +282,25 @@ You can configure Reviewable to display code coverage information next to diffs 
 
 If needed, you can also specify one additional header to send with the request.  This will typically be an `Authorization` header that passes some kind of access token to enable access to private coverage reports.
 
-{:.important}
+::: danger
 The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the headers instead.
+:::
 
-{:.tip}
+::: tip
 If you added a header we will proxy the request through our server to keep the header's value a secret.  However, we have a short list of domains that we're willing to proxy for.  If your URL isn't on it you'll get an error and need to get in touch with us to get it whitelisted.
+:::
 
 There's a button to let you easily set the report source to [Codecov](https://codecov.io), a popular code coverage report aggregation service.  For private repos, you can generate an API access token under your account Settings > Access, and paste it as the value of the `Authorization` header.  If you're using a self-hosted instance of Codecov Enterprise then you'll need to set the URL to something like this instead:  `https://LOCAL_CODECOV_HOSTNAME/api/ghe/{{owner}}/{{repo}}/commits/{{commitSha}}?src=extension`, with `LOCAL_CODECOV_HOSTNAME` replaced by the name of the host where you're running Codecov.
 
 The coverage reports must be in a format that Reviewable understands.  Currently, we only support the Codecov native API format (both v1 and v2) and Codecov's generic [inbound report format](https://docs.codecov.com/docs/codecov-custom-coverage-format).  Additionally, if the report has a top-level `error` string property we'll report that through the UI (and ignore any other data), and render any Markdown-style links it contains.  If you need support for a different format please [let us know](mailto:support@reviewable.io) and we'll consider it, but in general we're biased towards fetching normalized reports from aggregators.
 
-```txt
-# settings.yaml
-
+```yaml
 coverage:
   # The `url` option allows you to proved a url template for code coverage reports.
   url: *
 ```
 
-### Completion condition script
+#### Completion condition script
 
 The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file. These completion files must be included in the same `.reviewable` directory as your `settings.yaml` file.  Reviewable will use a file named `completion.js` by default if it exists and no override specified a different completion file to use.
 
@@ -316,9 +316,7 @@ overrides:
       completion-file: hubkit-completion.js
 ```
 
-<a id="completion-condition"></a>
-
-## Custom review completion condition
+## Custom review completion condition {#completion-condition}
 
 Reviewable allows you to write custom code that determines when a review is complete and controls other details of a review's progress.  Typically, you'll use this to customize the number of reviewers required, or switch from the GitHub approval system to a more flexible one based on explicit LGTMs.  Some people have created more unusual conditions, though, such as:
 
@@ -338,8 +336,9 @@ Note the `lodash` version was updated to `4.x` on _9/9/2021_, so if you have a c
 You can require other built-in Node modules, though some may be disallowed.
 Each invocation of your code must return a result within three seconds.
 
-{:.tip}
+::: tip
 You can update existing conditions to use `lodash` 4.x  by inserting a commmented **dependencies** flag anywhere in your condition code using the following format: ```// dependencies: lodash4```
+:::
 
 For testing, your code will be continuously evaluated against the **Review state** on the right.  It will start off with the current state of some PR in your repo, but you can fill in the state of any PR via the small box above it, or edit the state manually to your liking.  See the [review state input](#review-state-input) section below for an explanation of the state's properties.
 
@@ -347,8 +346,9 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png ':size=1138')
 
-{:.tip}
+::: tip
 If you would like to test a completion condition before applying the change to your repository, you may use the [completion condition playground](https://reviewable.io/playground). The completion condition playground allows you to test a completion script against a pull request or review specified by url. The playground does not allow you to save the completion condition.
+:::
 
 ### Review state input
 
@@ -538,8 +538,9 @@ An array of objects that look like `{path: 'full/path/to/file', group: 'Some Gro
   - To override whether a file has been reviewed at a revision set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.
   - To [designate specific people for review](files.md#file-review-state), set a `designatedReviewers` property on the file as detailed below.
 
-{:.tip}
+::: tip
 If you want to set these properties for system files (such as the Commits file), you'll need to add them to your `files` array explicitly as they're part of `review.systemFiles` rather than `review.files`.
+:::
 
 ##### Designated reviewers
 Designated reviewers are a list of individuals and teams who have been requested to review a given file.  They are grouped into "scopes", which you can use to indicate the focus of the requested review (e.g., "security"), hint at multiplicity requirements (e.g., "one lead or two devs"), or provide any other context for a group of designations that you'd like.  There's an implicit and unnamed default scope; you can mix named scopes with the default one but this can result in confusing UX so it's best avoided.
@@ -554,12 +555,13 @@ Unless otherwise stated, each entry in the array can be modified with any combin
   - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
   - An `omitBaseChanges` flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., `{username: 'pkaminski', omitBaseChanges: true}`.
 
-{:.important}
+::: danger
 The contents of `designatedReviewers` are _only_ used to compute the [file review state](files#file-review-state) and will _not_ affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a [sample script](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.
+:::
 
 Here's an example of a `designatedReviewers` property:
 
-```
+```js
 file.designatedReviewers = [
   // fahhem to review at the latest revision
   {username: 'fahhem'},
@@ -575,8 +577,9 @@ file.designatedReviewers = [
 
 If `designatedReviewers` is not set it's treated as if it consisted only of `{builtin: 'anyone'}`.  Reviewable will also automatically create scopes for designations inferred from `CODEOWNERS` files (`code owners`), unsolicited reviewers if `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as reviewed against recommendations (`author`).
 
-{:.tip}
+::: tip
 If you have a `CODEOWNERS` file in the repository, the `review.files` input structure will have precomputed `designatedReviewers` properties inferred from the code owners.  You can leave these as-is, tweak them (e.g., by removing `{builtin: 'anyone'}` from the array), or overwrite them altogether.  Note that if you leave `designatedReviewers` unset for a file it'll fall back to the code owners default instead of `{builtin: 'anyone'}`.
+:::
 
 #### `refreshTimestamp`
 A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.
