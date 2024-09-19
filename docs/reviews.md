@@ -4,8 +4,9 @@ In Reviewable, each review corresponds to a GitHub pull request. To initiate a c
 
 In general, Reviewable keeps data synchronized between the review and its pull request for all compatible features, such as assignees, comments, and approvals.  However, some features are unique to Reviewable (such as file review marks or discussion dispositions). Other Reviewable features cannot be mapped effectively due to GitHub API limitations, such as line comments that often become top level comments.  Consequently, we don’t recommend mixing use of Reviewable and GitHub reviews on the same pull request as the experience will prove frustrating on both sides.
 
-{:.tip}
+::: tip
 Reviewable can't operate directly on raw commits, since it doesn't actually clone your repo. It depends heavily on GitHub APIs that are only available for pull requests.
+:::
 
 This chapter provides an overview of the review page, but the core features of reviewing files and managing review discussions are addressed separately in subsequent chapters.
 
@@ -19,20 +20,21 @@ Throughout this guide, we'll often refer to users by the role they play in a rev
 
 It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.
 
-<a id="publish"></a>
-
-## Publishing your review
+## Publishing your review {#publish}
 
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
-{:.tip}
-To temporarily keep a draft from being published, switch its disposition to **<i class="fa fa-question-circle"></i> Pondering**.
+::: tip
+To temporarily keep a draft from being published, switch its disposition to **<i class="pondering disposition icon"/>&nbsp;Pondering**.
+:::
 
-{:.tip}
+::: tip
 If you'd like to suppress posting the combined message to Github, e.g. because you want to separate the Reviewable review from the GitHub review process, you can do so on a PR-by-PR basis. Just add the `Comments only in Reviewable` label (exact spelling!) to the PR and neither batch published nor single-send comments will be posted to GitHub.
+:::
 
-{:.important}
+::: danger
 Some Reviewable inline comments won't appear as inline comments in GitHub and vice-versa, because the GitHub model for comment placement is poor and trying to conform to it would invalidate many of the best features in Reviewable. <more> In more detail, it's important to understand that GitHub has two types of inline comments: pull request (PR) comments and commit comments. PR comments are assigned to lines based on the raw git diffs between two commits. Reviewable doesn't use these diffs, making mapping locations hard (see [issue #14](https://github.com/Reviewable/Reviewable/issues/14)), and can place comments on lines that don't appear in the diffs. Also, comments placed on negative delta lines in GitHub don't actually record sufficient information to figure out what line they're really on! Commit comments share most of those limitations, and also disappear from the PR if the branch is rebased. Finally, it's impossible to post commit comments without triggering a notification email for each and every comment, and while PR comments can be batched the API only allows one commit to be targeted per batch and doesn't support threading.</more>
+:::
 
 You can open the dropdown menu off the **Publish** button to set a few extra options. The dropdown also shows you a preview of how your published message will appear on GitHub. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
@@ -48,23 +50,25 @@ Like for GitHub reviews, there are three approval levels you can choose from whe
 
 Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.
 
-{:.tip}
+::: tip
 You may only change the approval level if you have write permissions to the repository and are not the author of the PR.  As a repository admin you can also disable the **Approve** and **Request changes** for everyone via the [custom review completion condition](repositories.md#completion-condition) if they are apt to mess up your team's workflow.
+:::
 
-{:.important}
+::: danger
 If you choose **Comment**, any previous **Approve** or **Request changes** will remain in effect; you cannot rescind your vote, only change it.
+:::
 
-<a id="sync-requested-reviewers"></a>
-
-### Requested reviewers synchronization
+### Requested reviewers synchronization {#sync-requested-reviewers}
 
 Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants summary](#labels-and-participants-summary)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box.  Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
 
-{:.important}
+::: danger
 It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is on Reviewable's list of awaited reviewers.  Only users with push permissions on the repo can request reviewers.
+:::
 
-{:.tip}
-Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools, such as [Pull Reminders](https://pullreminders.com/).
+::: tip
+Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools.
+:::
 
 Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](repositories.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
 
@@ -74,20 +78,19 @@ For your convenience, Reviewable will provide a review summary panel at the end 
 
 ![reviewable summary](images/review_summary.png)
 
-{:.tip}
+::: tip
 The review summary doesn't show up if the review was forced into one file at a time mode, due to too many files showing.
+:::
 
 The draft has an LGTM button that you can use to approve the pull request.  (See the [repository settings](repositories.md#approve-button-output) for information on how to customize this button.)
 
 Below the draft, there are counters of unreviewed files and unresolved discussions.  A <span class="red label">red</span> counter indicates that there's still something for you to do: either review some files, or read / respond to some discussions.  When appropriate, you can hover over a counter to reveal a button underneath that will mark files as reviewed or discussions as read.
 
-{:.tip}
+::: tip
 Grey counters &mdash; even if non-zero &mdash; are just an indication of the review's state, but don't imply that any action is required from you at this time.
+:::
 
-
-<a id="merge"></a>
-
-## Merging a pull request
+## Merging a pull request {#merge}
 
 When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.
 
@@ -109,8 +112,9 @@ You can set merge options and edit the merge commit message via the dropdown att
 
 Here you can select between the usual GitHub merge styles (normal/full, squash, and rebase), and whether Reviewable should automatically delete the source branch for you if the merge is successful.  Your selections are automatically persisted for this review, and the selections you made last will be applied to any new reviews.  A [custom review completion condition](repositories.md#condition-output) can force the merge style to use.
 
-{:.tip}
+::: tip
 When using the rebase merge style, Reviewable will indicate if the merge will be a fast-forward by adding a small annotation under the style radio button.
+:::
 
 If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](repositories.md#condition-output).
 
@@ -161,18 +165,21 @@ This is similar to parts of the [changes summary box](#changes-summary), but als
 
 The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.
 
-{:.tip}
+::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
+:::
 
 The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>.  Click to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often you may want to check the review settings in the [Changes summary box](#changes-summary) or customize your [review completion condition](repositories.md#completion-condition), which also controls the per-file reviewed state.
 
-{:.tip}
+::: tip
 If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
+:::
 
 The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
-{:.tip}
+::: tip
 The main general discussion is always considered resolved.
+:::
 
 The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
 
@@ -198,8 +205,9 @@ To mark files as reviewed individually, click the buttons to the left of the fil
 
 This shows the total number of revisions in the review. Each revision is an automatic, unmodifiable capture of one or more commits. You’ll find the commits assigned to a revision in the Review Discussion box, and also in the Changes drop-down at the very top of the page.
 
-{:.tip}
+::: tip
 The logic for grouping commits into revisions depends on the [review style](#changes-commits), number of commits pushed at the same time, commit authors, etc.  There are also some safety limits for how many revisions Reviewable will create at one time.
+:::
 
 A _provisional revision_ is tentative, since it may still change up to the point at which someone begins reviewing it. The intent behind provisional revisions is to permit the PR author to self-review the changes and push fixes without polluting the revision list.  Provisional revisions are italicized in the file matrix.
 
@@ -207,8 +215,9 @@ An _obsolete revision_ is one that is no longer part of the pull request due to 
 
 The **Show Unreviewed Diffs** button (exact wording varies) in this section will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. When you first load the review page, this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a **combined commits** style review, this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using **review each commit** style, this will be the range between the last fully reviewed commit and the next one. If you're the PR author, this will be the range between the last snapshotted revision and the latest one, so you can review the diffs that you have just pushed.</more>
 
-{:.tip}
+::: tip
 When applicable, you’ll find a small **Show full diff** link beneath the **Show Unreviewed Diffs** button that will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.
+:::
 
 <a id="file-review-type"></a>
 
@@ -218,12 +227,11 @@ When there is more than one reviewer participating in the review, a dropdown wit
 - **Review any unreviewed files** suggests files to review if they have not been reviewed by anyone at the current revision. Select this if you want to combine efforts and review any file that needs reviewing.
 - **Review all files personally** suggests files you have not personally reviewed. Select this if you want to ensure that you review every file yourself, ignoring other reviewers.
 
-{:.tip}
+::: tip
 Regardless of which option you select you will still be able to manually diff and review any file you want.
+:::
 
-<a id="changes-commits"></a>
-
-### Commits
+### Commits {#changes-commits}
 
 This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or change the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.
 
@@ -238,8 +246,9 @@ There are two review styles, and changing the style will require from a few seco
 
 If you're a repo admin, you can also set the default review style for the repo via a small link under the dropdown.
 
-{:.important}
+::: danger
 Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
+:::
 
 ## Labels
 
@@ -249,7 +258,7 @@ Any labels or milestones that have been applied to the PR appear in the Review d
 
 ## Participants
 
-The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i> button. You can sort participants by each category using the <i class="icon sort"></i> button.
+The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"/>&nbsp;button. You can sort participants by each category using the <i class="icon sort"/>&nbsp;button.
 
 ![reviewable review participants panel](images/participants_panel_1.png)
 
@@ -257,29 +266,29 @@ For each participant the following information is provided:
 
 Icon | Participant is:
 :----:|---------
-<i class="icon waiting on"></i> | is **responsible for the next step** of this review.
-<i class="icon waiting on circular no data"></i> | is **not being waited on** in the review.
-<i class="icon sanction approved"></i> | has **approved the pull request**.
-<i class="icon sanction blocked"></i> | has **requested changes** to the pull request.
-<img src="images/lgtm.png" style="max-width: 3em;"/> | says 'Everything **looks good to me**!'
-<i class="icon disposition blocking"></i> | is **blocking a discussion** in the review.
-<i class="icon participant status circular no data"></i> | has **no approval-related status**.
-<i class="icon author"></i> | is an **author of the pull request**.
-<i class="icon reviewer"></i> | is a **reviewer**.
-<i class="icon review requested"></i> | is **a requested reviewer**.
-<i class="icon mentionee"></i> | has only been **@-mentioned** in a discussion.
-<i class="icon passive"></i> | is **not directly participating** in the review.
-<i class="icon assignee left"></i> <i class="icon assignee right"></i> | is **assigned to this pull request**.
-<i class="icon commit"></i> |  has either **authored or submitted a commit** in this pull request.
-<i class="icon commit circular no data"></i> | was **not involved with commits** in this pull request.
-<i class="icon active circular no data"></i> | is **not yet active in the review**.
-<i class="icon drafts"></i> | has **pending comments drafted** that are not yet published.
-<i class="icon drafts circular no data"></i> | has **no pending drafts**.
-<i class="icon comments circular no data"></i> | is **not engaged in any discussions**.
+<i class="icon waiting on"/>&nbsp;| is **responsible for the next step** of this review.
+<i class="icon waiting on circular no data"/>&nbsp;| is **not being waited on** in the review.
+<i class="icon sanction approved"/>&nbsp;| has **approved the pull request**.
+<i class="icon sanction blocked"/>&nbsp;| has **requested changes** to the pull request.
+<img src="./images/lgtm.png" style="max-width: 3em;"/> | says 'Everything **looks good to me**!'
+<i class="icon disposition blocking"/>&nbsp;| is **blocking a discussion** in the review.
+<i class="icon participant status circular no data"/>&nbsp;| has **no approval-related status**.
+<i class="icon author"/>&nbsp;| is an **author of the pull request**.
+<i class="icon reviewer"/>&nbsp;| is a **reviewer**.
+<i class="icon review requested"/>&nbsp;| is **a requested reviewer**.
+<i class="icon mentionee"/>&nbsp;| has only been **@-mentioned** in a discussion.
+<i class="icon passive"/>&nbsp;| is **not directly participating** in the review.
+<i class="icon assignee left"/>&nbsp;<i class="icon assignee right"/>&nbsp;| is **assigned to this pull request**.
+<i class="icon commit"/>&nbsp;|  has either **authored or submitted a commit** in this pull request.
+<i class="icon commit circular no data"/>&nbsp;| was **not involved with commits** in this pull request.
+<i class="icon active circular no data"/>&nbsp;| is **not yet active in the review**.
+<i class="icon drafts"/>&nbsp;| has **pending comments drafted** that are not yet published.
+<i class="icon drafts circular no data"/>&nbsp;| has **no pending drafts**.
+<i class="icon comments circular no data"/>&nbsp;| is **not engaged in any discussions**.
 
 ### Waiting on
 
-Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"></i> pointing hand.  The list is roughly the union of the following:
+Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"/>&nbsp;pointing hand.  The list is roughly the union of the following:
 - All participants involved in unresolved discussions that are [unreplied](discussions.md#unreplied-discussions) for them.
 - All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.
 - All requested reviewers, or if none all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers .
@@ -308,8 +317,9 @@ Note that you can continue manipulating a review as usual while it's deferred, e
 
 ![reviewable deferral changes](images/deferring_changes.png)
 
-{:.tip}
+::: tip
 Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.
+:::
 
 ## Reviewing commit messages
 
@@ -319,8 +329,9 @@ Reviewable composes a system file used for reviewing commit messages.  The **com
 
 ![reviewable commit review](images/commit_review.png)
 
-{:.tip}
+::: tip
 While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
+:::
 
 ## Keyboard shortcuts
 

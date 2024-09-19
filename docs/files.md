@@ -14,9 +14,7 @@ The brackets in a row are the current left and right diff bounds for the file. T
 
 ![reviewable file matrix diff bounds](images/filematrix_8.png)
 
-<a id="mark-reviewed"></a>
-
-## Mark as reviewed
+## Mark as reviewed {#mark-reviewed}
 
 One of Reviewable's core features is letting you track the reviewed state of each file at each revision, for each reviewer.  This enables you to easily remember — and indicate to others — where you left off in the review and easily view only subsequent changes.  Marking a file as reviewed doesn't necessarily mean that you think it's ready for merging, but rather only that you reviewed it at the given revision and added all your comments.
 
@@ -41,14 +39,14 @@ The various possible states are:
 
 State | Meaning
 :----:|---------
-<i class="red designation you icon"></i> | Your review of this file has been requested, either directly or due to team membership, and you have not yet reviewed it at the latest revision.
-<i class="red designation anyone icon"></i> | Anyone is welcome to review this file, including you.
-<i class="designation anyone icon"></i> | Anyone is welcome to review this file, but you've either already done so or are not a reviewer.
-<i class="green designation anyone icon"></i> | Anyone will be welcome to review this file after you've published your review.
-<i class="designation others icon"></i> | Specific other people have been requested to review this file, but you either already did so or your review was not requested.
-<i class="green designation others icon"></i> | Specific other people will still need to review this file after you've published your review.
-<i class="designation done icon"></i> | The file has been sufficiently reviewed.
-<i class="green designation done icon"></i> | The file will be sufficiently reviewed once you've published your review.
+<i class="red designation you icon"/>&nbsp;| Your review of this file has been requested, either directly or due to team membership, and you have not yet reviewed it at the latest revision.
+<i class="red designation anyone icon"/>&nbsp;| Anyone is welcome to review this file, including you.
+<i class="designation anyone icon"/>&nbsp;| Anyone is welcome to review this file, but you've either already done so or are not a reviewer.
+<i class="green designation anyone icon"/>&nbsp;| Anyone will be welcome to review this file after you've published your review.
+<i class="designation others icon"/>&nbsp;| Specific other people have been requested to review this file, but you either already did so or your review was not requested.
+<i class="green designation others icon"/>&nbsp;| Specific other people will still need to review this file after you've published your review.
+<i class="designation done icon"/>&nbsp;| The file has been sufficiently reviewed.
+<i class="green designation done icon"/>&nbsp;| The file will be sufficiently reviewed once you've published your review.
 
 Clicking on the state icon will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.
 
@@ -81,7 +79,7 @@ To the left of the file path there's a button to [mark the file as reviewed](#ma
 
 To the right of the file path is the [file review state](#file-review-state) chip that you can click on for full details.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
 
-Off the right side of the matrix are delta stats for the current diffs, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.
+Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.
 
 Files can also be grouped, like for the **Tests** group in the screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on [custom review completion conditions](repositories.md#condition-output) for instructions on how to make custom file groups in your repository.
 
@@ -93,8 +91,8 @@ Label | Meaning
 :----:|---------
 r1    | An immutable revision (even if the branch is rebased).
 _r1_  | A provisional revision whose commits may still change.
-~r1~  | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.
-<span style="font-size: 1.25em">👁</span> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.
+<s>r1</s> | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.
+<i class="cell reviewed icon"/> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.
 ⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.
 
 You can also drag in the diff header to bulk-select the diff bounds. Doing so in the header will set the diff bounds for all files as close as possible to the new setting. Many reviewers choose to set diff bounds this way instead of file-by-file to see one coherent set of diffs at a time.
@@ -110,14 +108,15 @@ At the top of each file diff panel there's a file path.  If the file paths are t
 
 The header holds the standard [mark as reviewed](#mark-reviewed) button, a [review state chip](#file-review-state), and [revision cells](#revision-cells) for adjusting diff bounds.
 
-To the right of the cells you'll see the delta stats for the current diff, showing lines <span style="color:#cc9900">changed</span>, <span style="color:#5BBD72">added</span>, and <span style="color:#D95C5C">deleted</span>.
+To the right of the cells you'll see the delta stats for the current diff, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.
 
 If you've set up a [code coverage](repositories#code-coverage) feed you may also see an umbrella in the header with a coverage percentage, and a dropdown menu that has further details.  The diffs will then also show coverage bars; you can [customize the colors](tips#code-coverage-bars) if desired.
 
 ![reviewable file diffs](images/filediffs_1.png)
 
-{:.tip}
+::: tip
 Any special messages will appear immediately underneath the header.  These include notices of renamed files, explanations for why a diff isn't showing, etc.
+:::
 
 ![reviewable file diff rename message](images/filediffrename_1.png)
 
@@ -135,10 +134,11 @@ In the gutter (either beside or between the diffs) you may see any of the follow
 :------:|--------
   `⊥`   | This line only has changes in the base branch, between the base commits corresponding to the current diff bounds.
   `␣`   | This line only has whitespace changes.
- <code><i class="fa fa-check-square-o"></i></code> | There are one or more resolved discussions on this line.  Click to reveal.
+ <code><i class="resolved discussion icon"/></code> | There are one or more resolved discussions on this line.  Click to reveal.
 
-{:.tip}
+::: tip
 Reviewable only supports text file diffs at this time.  For images and other file types you'll need to go view the diff on GitHub — a convenient link will usually be provided.  You will still be able to post comments against such files but they won't be attached to a specific line.
+:::
 
 If a file requires your review, you'll see a tab at the bottom of the diff to [mark the file as reviewed](#mark-reviewed) and automatically advanced to the next file to review.
 
@@ -152,8 +152,9 @@ You can override this behavior to shrink or expand the view using the small care
 
 Drag the caret to manually set the number of columns at which to wrap code.  If you do, Reviewable will _always_ use this margin and show a side-by-side diff only if your window is wide enough.  Click **Auto** to revert line wrapping control back to Reviewable. Finally, in either state, you can toggle on **Single** to force a unified diff view even if the window is wide enough to fit two columns.
 
-{:.tip}
+::: tip
 All of these settings are personal but global across all files, PRs, and repos.
+:::
 
 ### Collapsed sections
 
@@ -172,18 +173,17 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 * **No changes** — lines with no changes at all between your current diff bounds.
 * **Whitespace changes** — this is the count of lines in which only the whitespace has changed (marked with a `␣` when expanded).
 * **Base commit changes** — are lines in which only the base branch has changed, likely not due to work on this pull request (marked with a `⊥` when expanded)
-* **Resolved discussion** — are lines with resolved discussions attached (marked with a <code><i class="fa fa-check-square-o"></i></code> when expanded).
+* **Resolved discussion** — are lines with resolved discussions attached (marked with a <code><i class="resolved discussion icon"/></code> when expanded).
 
 4. Click the **Collapsed** drop-down to view options for expanding everything — either for **this file** or **all files**.  The toggle button selects whether to **collapse whitespace changes** in all files in this review.  The setting will also be your default for new reviews.
 
 ![reviewable fill diffs collapsed drop down](images/filediffs_17.png)
 
-{:.tip}
+::: tip
 The only way to collapse expanded diff lines back down is to change the diff bounds.
+:::
 
-<a id="line-discussion"></a>
-
-## Line-specific discussions
+## Line-specific discussions {#line-discussion}
 
 Click on any line in a diff — even one that already has a discussion attached to it or that is far away from any changes — to begin a new discussion.
 
@@ -191,26 +191,29 @@ Click on any line in a diff — even one that already has a discussion attached 
 
 This new discussion will also appear in the diffs of other revisions, at the nearest corresponding line. It won’t disappear until that discussion is resolved or withdrawn, even if the underlying file changes drastically.  Click the small purple dog-ear button to switch the diff to the exact one on which the comment was made.
 
-{:.important}
+::: danger
 If the dog-ear is red, this indicates that the current context may be inaccurate because of significant changes that have been made since the time the comment was made in the original revision. Click the red button to see the discussion in its original context.
+:::
 
 ![reviewable fill diffs switch to original revision](images/filediffs_13.png)
 
 Next to the dog-ear you'll find the line number that this discussion is on (relative to the file contents of the current diff), which links to GitHub's view of the file by default.
 
-{:.tip}
+::: tip
 You can [customize the line link](accountsettings.md#line-link-template) to open your favorite editor on the given line instead.
+:::
 
 For lots more information on discussions, please see the [next chapter](discussions.md).
 
 ### Code Snippets, Quoting Code, and Making Code Suggestions
 
-It's easy to add new code, quote existing code, or make explicit code suggestions that show a diff of your proposed changes all right inside your comment. The most basic way to add a snippet of code to a comment is by clicking the <i class="icon create codeblock"></i> button in the actions menu and typing your code in the codeblock.
+It's easy to add new code, quote existing code, or make explicit code suggestions that show a diff of your proposed changes all right inside your comment. The most basic way to add a snippet of code to a comment is by clicking the <i class="icon create codeblock"/>&nbsp;button in the actions menu and typing your code in the codeblock.
 
 ![reviewable insert codeblock](images/add_codeblock.png)
 
-{:.tip}
+::: tip
 You can add as many codeblocks as you want to your comment!
+:::
 
 You can also insert existing code from the diffs into your codeblock. There are a couple of ways to get the code into the codeblock at your disposal.
 
@@ -221,12 +224,13 @@ Select the line (or lines) of code before making a comment. Once you have made a
 
 #### Adding code to an existing comment
 
-If you have already started writing a comment, you can click the <i class="icon create codeblock"></i> button in the actions menu and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
+If you have already started writing a comment, you can click the <i class="icon create codeblock"/>&nbsp;button in the actions menu and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
 
 ![reviewable code suggestions](images/code_suggestions.png)
 
-{:.tip}
+::: tip
 Double click the 'select diff lines' button to quickly grab the current, single line of code from inside an existing comment.
+:::
 
 Code in the codeblock remains a code quote until you make a change to it inside the codeblock. Once a change is made, the codeblock becomes a suggestion and in preview mode you can preview the diff or turn off the preview by clicking the toggle in the codeblock header.
 
@@ -269,11 +273,13 @@ There are many situations in which a diff won't be produced for a given file —
 
 In such cases, the file will appear together with a message explaining why the diff is missing. Typically, there will also be a button such as **Try Again** or **View on GitHub** by which you can override or bypass the condition.
 
-{:.important}
+::: danger
 Be careful if you’re trying to use `⌘-f` or `ctrl-f` to find something in the diffs when some are not shown.
+:::
 
-{:.tip}
+::: tip
 If diffs that make sense to be shown were omitted for some reason, you'll find a special notice above the first file diff that explains what happened and lets you override the decision.  (See screenshot below.)
+:::
 
 ### Single file mode
 
@@ -293,8 +299,9 @@ Reviewable has extra built-in support for some specific development workflows.
 
 Reviewable gracefully supports rebasing and force-pushing to your branch PR in the middle of a review.  Previous revisions are preserved and marked as obsolete (with a strikethrough), even if the commits they’re composed of have disappeared during the rebase.  You’ll still be able to diff against those revisions, and changes between the old and new base will automatically collapse in the diff so as to avoid distraction from deltas that don’t relate to this PR.
 
-{:.tip}
+::: tip
 To avoid garbage collection, Reviewable pins these commits in your repo using special refs under `refs/reviewable` — as long as the repository is connected.
+:::
 
 Reviewable also uses heuristics to match rebased commits to their ancestors using commit messages.  When successful, this enables Reviewable to suggest minimum-delta revision pairs for diffing in the “review each commit” style even if you reordered the commits.  Arcs that link blocks of revisions above the file matrix show a high-level overview of this mapping.  (We don’t show matches between individual revisions because that can quickly lead to an unreadable diagram.)
 
@@ -311,5 +318,6 @@ Some advanced workflows require overwriting the target branch of a PR with the h
 
 To get the diff that you want, add a `Merge manually by overwriting target` label (exact spelling!) to your PR. This will cause Reviewable to compare files against the current head of the target branch. Now, you'll see upstream changes and any conflicts you resolved during the rebase, while leaving out modifications in your fork that survived unscathed.
 
-{:.tip}
+::: tip
 For best results, add the label to the PR when you first create it.
+:::
