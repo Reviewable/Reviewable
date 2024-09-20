@@ -12,8 +12,9 @@ You can customize the font used in all the diffs. The font must be [monospace](h
 
 You can point to a custom stylesheet that you want to apply to all diffs.  Reviewable uses [highlight.js](https://highlightjs.org/), so you might prefer to use one of those [predefined styles](https://highlightjs.org/static/demo/) that can be found in their [styles directory](https://github.com/isagalaev/highlight.js/tree/master/src/styles). To use the GitHub style, for example, set the URL to `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css`.  You can also create [your own styles](http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html).
 
-{:.important}
+::: danger
 Ensure that the stylesheet is served as text/css. It may be necessary for you to use [https://raw.githack.com](https://raw.githack.com) or another similar service.
+:::
 
 We also have a few extra styles used to highlight tabs, trailing whitespace, and lack of final newline that you can customize:
 
@@ -113,8 +114,9 @@ To use colorblind mode:
 
 To reset any custom colors back to the default red or green, click the "x" that appears after setting each custom color.
 
-{:.tip}
+::: tip
 When setting replacement colors, don't forget that you have the <a href="#adjust-contrast">contrast slider</a> at your disposal too. This primarily controls diff colors (and differentiation icons) and can help achieve a balanced UI when setting custom red/green replacements.
+:::
 
 ## GitHub authorizations granted
 
