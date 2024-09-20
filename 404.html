@@ -1,346 +1,39 @@
-<!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
-    <head>
-        <!-- Book generated using mdBook -->
-        <meta charset="UTF-8">
-        <title></title>
-        
-        
-        <base href="/">
-        
-
-
-        <!-- Custom HTML head -->
-        
-
-
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
-
-        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-196x196.png" sizes="196x196">
-        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-160x160.png" sizes="160x160">
-        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
-
-        
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
-        <link rel="stylesheet" href="fonts/fonts.css">
-        
-
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
-
-        <!-- Custom theme stylesheets -->
-        
-
-        <script>
-            var hash = window.location.hash;
-            if (hash.startsWith("#/")) { // Old SPA style link.  Identify redirect.
-                var hashMap = {
-                    "#/": "introduction.html",
-                    "#/?id=help-on-using-reviewable": "introduction.html#help-on-using-reviewable",
-                    "#/?id=how-to-use-this-guide": "introduction.html#how-to-use-this-guide",
-                    "#/?id=introduction": "introduction.html#introduction",
-                    "#/?id=staying-up-to-date": "introduction.html#staying-up-to-date",
-                    "#/abnormal": "abnormal.html",
-                    "#/abnormal?id=abnormal-conditions": "abnormal.html#abnormal-conditions",
-                    "#/abnormal?id=crash": "abnormal.html#crash",
-                    "#/abnormal?id=firebase-connection-trouble": "abnormal.html#firebase-connection-trouble",
-                    "#/abnormal?id=forced-upgrade": "abnormal.html#forced-upgrade",
-                    "#/abnormal?id=github-status": "abnormal.html#github-status",
-                    "#/accountsettings": "accountsettings.html",
-                    "#/accountsettings?id=account-settings": "accountsettings.html#account-settings",
-                    "#/accountsettings?id=adjust-contrast": "accountsettings.html#adjust-contrast",
-                    "#/accountsettings?id=custom-diff-font": "accountsettings.html#custom-diff-font",
-                    "#/accountsettings?id=custom-key-bindings": "accountsettings.html#custom-key-bindings",
-                    "#/accountsettings?id=custom-stylesheet": "accountsettings.html#custom-stylesheet",
-                    "#/accountsettings?id=github-authorizations-granted": "accountsettings.html#github-authorizations-granted",
-                    "#/accountsettings?id=line-link-template": "accountsettings.html#line-link-template",
-                    "#/dashboard": "dashboard.html",
-                    "#/dashboard?id=filter-reviews": "dashboard.html#filter-reviews",
-                    "#/dashboard?id=open-review": "dashboard.html#open-review",
-                    "#/dashboard?id=other-toggles": "dashboard.html#other-toggles",
-                    "#/dashboard?id=review-state": "dashboard.html#review-state",
-                    "#/dashboard?id=reviews-dashboard": "dashboard.html#reviews-dashboard",
-                    "#/discussions": "discussions.html",
-                    "#/discussions?id=change-disposition": "discussions.html#change-disposition",
-                    "#/discussions?id=checking-and-changing-dispositions": "discussions.html#checking-and-changing-dispositions",
-                    "#/discussions?id=code-review-discussions": "discussions.html#code-review-discussions",
-                    "#/discussions?id=dispositions": "discussions.html#dispositions",
-                    "#/discussions?id=dispositions-and-resolution": "discussions.html#dispositions-and-resolution",
-                    "#/discussions?id=ending-a-discussion": "discussions.html#ending-a-discussion",
-                    "#/discussions?id=inline-directives": "discussions.html#inline-directives",
-                    "#/discussions?id=new-and-old-comments": "discussions.html#new-and-old-comments",
-                    "#/discussions?id=replying-to-a-discussion": "discussions.html#replying-to-a-discussion",
-                    "#/discussions?id=replying-via-email-or-on-github": "discussions.html#replying-via-email-or-on-github",
-                    "#/discussions?id=resolution-workflows": "discussions.html#resolution-workflows",
-                    "#/discussions?id=starting-a-new-discussion": "discussions.html#starting-a-new-discussion",
-                    "#/discussions?id=unreplied-discussions": "discussions.html#unreplied-discussions",
-                    "#/files": "files.html",
-                    "#/files?id=code-review-files": "files.html#code-review-files",
-                    "#/files?id=collapsed-sections": "files.html#collapsed-sections",
-                    "#/files?id=column-headings": "files.html#column-headings",
-                    "#/files?id=diff-customization": "files.html#diff-customization",
-                    "#/files?id=diff-layout": "files.html#diff-layout",
-                    "#/files?id=diff-suppressing-states": "files.html#diff-suppressing-states",
-                    "#/files?id=diff-suppression-and-file-type": "files.html#diff-suppression-and-file-type",
-                    "#/files?id=file-contents": "files.html#file-contents",
-                    "#/files?id=file-diff": "files.html#file-diff",
-                    "#/files?id=file-header": "files.html#file-header",
-                    "#/files?id=file-list": "files.html#file-list",
-                    "#/files?id=file-matrix": "files.html#file-matrix",
-                    "#/files?id=forked-repos-tracking-upstream-changes": "files.html#forked-repos-tracking-upstream-changes",
-                    "#/files?id=generated-files": "files.html#generated-files",
-                    "#/files?id=line-discussion": "files.html#line-discussion",
-                    "#/files?id=mark-reviewed": "files.html#mark-reviewed",
-                    "#/files?id=rebasing": "files.html#rebasing",
-                    "#/files?id=revision-cells": "files.html#revision-cells",
-                    "#/files?id=single-file-mode": "files.html#single-file-mode",
-                    "#/files?id=special-states": "files.html#special-states",
-                    "#/files?id=support-for-specific-workflows": "files.html#support-for-specific-workflows",
-                    "#/registration": "registration.html",
-                    "#/registration?id=authorization-scopes": "registration.html#authorization-scopes",
-                    "#/registration?id=github-authorizations": "registration.html#github-authorizations",
-                    "#/registration?id=oauth-restrictions": "registration.html#oauth-restrictions",
-                    "#/registration?id=registration-and-github-authorization": "registration.html#registration-and-github-authorization",
-                    "#/registration?id=subscribing-organizations-member-sign-up": "registration.html#subscribing-organizations-member-sign-up",
-                    "#/registration?id=subscriptions": "registration.html#subscriptions",
-                    "#/repositories": "repositories.html",
-                    "#/repositories?id=approve-button-output": "repositories.html#approve-button-output",
-                    "#/repositories?id=completion-condition": "repositories.html#completion-condition",
-                    "#/repositories?id=condition-output": "repositories.html#condition-output",
-                    "#/repositories?id=connecting-repositories": "repositories.html#connecting-repositories",
-                    "#/repositories?id=create-reviews-for-your-own-prs": "repositories.html#create-reviews-for-your-own-prs",
-                    "#/repositories?id=current-and-future": "repositories.html#current-and-future",
-                    "#/repositories?id=default-review-style": "repositories.html#default-review-style",
-                    "#/repositories?id=development-environment": "repositories.html#development-environment",
-                    "#/repositories?id=discussion-participant-dismissers": "repositories.html#discussion-participant-dismissers",
-                    "#/repositories?id=prototype-repo": "repositories.html#prototype-repo",
-                    "#/repositories?id=repo-settings": "repositories.html#repo-settings",
-                    "#/repositories?id=repositories": "repositories.html#repositories",
-                    "#/repositories?id=review-state-input": "repositories.html#review-state-input",
-                    "#/repositories?id=review-status-in-github-pr": "repositories.html#review-status-in-github-pr",
-                    "#/repositories?id=reviewable-badge": "repositories.html#reviewable-badge",
-                    "#/repositories?id=reviews-in-connected-vs-unconnected-repos": "repositories.html#reviews-in-connected-vs-unconnected-repos",
-                    "#/repositories?id=security-concerns": "repositories.html#security-concerns",
-                    "#/reviews": "reviews.html",
-                    "#/reviews?id=approval-levels": "reviews.html#approval-levels",
-                    "#/reviews?id=changes": "reviews.html#changes",
-                    "#/reviews?id=changes-commits": "reviews.html#changes-commits",
-                    "#/reviews?id=changes-summary": "reviews.html#changes-summary",
-                    "#/reviews?id=checks": "reviews.html#checks",
-                    "#/reviews?id=code-review": "reviews.html#code-review",
-                    "#/reviews?id=counters": "reviews.html#counters",
-                    "#/reviews?id=files": "reviews.html#files",
-                    "#/reviews?id=keyboard-shortcuts": "reviews.html#keyboard-shortcuts",
-                    "#/reviews?id=labels-and-participants-summary": "reviews.html#labels-and-participants-summary",
-                    "#/reviews?id=merge": "reviews.html#merge",
-                    "#/reviews?id=publish": "reviews.html#publish",
-                    "#/reviews?id=review-toolbar": "reviews.html#review-toolbar",
-                    "#/reviews?id=revisions": "reviews.html#revisions",
-                    "#/reviews?id=sync-requested-reviewers": "reviews.html#sync-requested-reviewers",
-                    "#/reviews?id=user-roles": "reviews.html#user-roles",
-                    "#/subscriptions": "subscriptions.html",
-                    "#/subscriptions?id=canceling-a-subscription": "subscriptions.html#canceling-a-subscription",
-                    "#/subscriptions?id=managing-the-scope-of-your-subscription": "subscriptions.html#managing-the-scope-of-your-subscription",
-                    "#/subscriptions?id=payments": "subscriptions.html#payments",
-                    "#/subscriptions?id=selecting-a-plan": "subscriptions.html#selecting-a-plan",
-                    "#/subscriptions?id=subscription-ownership": "subscriptions.html#subscription-ownership",
-                    "#/subscriptions?id=subscriptions": "subscriptions.html#subscriptions",
-                }
-                var redirect = hashMap[hash];
-                if (redirect) {
-                    window.location.replace(window.location.pathname + redirect);
-                }
-            }
-        </script>
-
-        
-    </head>
-    <body>
-        <!-- Provide site root to javascript -->
-        <script type="text/javascript">
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('no-js')
-            html.classList.remove('light')
-            html.classList.add(theme);
-            html.classList.add('js');
-        </script>
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
-        </script>
-
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="registration.html"><strong aria-hidden="true">1.</strong> Registration and authorization</a></li><li class="chapter-item expanded "><a href="reviews.html"><strong aria-hidden="true">2.</strong> Code review</a></li><li class="chapter-item expanded "><a href="files.html"><strong aria-hidden="true">3.</strong> Code review files</a></li><li class="chapter-item expanded "><a href="discussions.html"><strong aria-hidden="true">4.</strong> Code review discussions</a></li><li class="chapter-item expanded "><a href="dashboard.html"><strong aria-hidden="true">5.</strong> Reviews dashboard</a></li><li class="chapter-item expanded "><a href="accountsettings.html"><strong aria-hidden="true">6.</strong> Account settings</a></li><li class="chapter-item expanded "><a href="repositories.html"><strong aria-hidden="true">7.</strong> Repositories</a></li><li class="chapter-item expanded "><a href="subscriptions.html"><strong aria-hidden="true">8.</strong> Subscriptions and licenses</a></li><li class="chapter-item expanded "><a href="abnormal.html"><strong aria-hidden="true">9.</strong> Abnormal conditions</a></li><li class="chapter-item expanded "><a href="tips.html"><strong aria-hidden="true">10.</strong> Tips and Tricks</a></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-        </nav>
-
-        <div id="page-wrapper" class="page-wrapper">
-
-            <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
-                    <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                        </ul>
-                        
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
-                        
-                    </div>
-
-                    <h1 class="menu-title">Reviewable User Manual</h1>
-
-                    <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
-                        </a>
-                        
-                        <a href="https://github.com/Reviewable/Reviewable" title="Git repository" aria-label="Git repository">
-                            <i id="git-repository-button" class="fa fa-github"></i>
-                        </a>
-                        
-                    </div>
-                </div>
-
-                
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-                
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
-
-                <div id="content" class="content">
-                    <main>
-                        <h1><a class="header" href="#document-not-found-404" id="document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
-
-                    </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-                        
-
-                        
-
-                        <div style="clear: both"></div>
-                    </nav>
-                </div>
-            </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-
-                
-            </nav>
-
-        </div>
-
-        
-
-        
-
-        
-
-        
-        <script type="text/javascript">
-            window.playground_copyable = true;
-        </script>
-        
-
-        
-
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
-
-        <!-- Custom JS scripts -->
-        
-
-        
-
-    </body>
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reviewable — 404</title>
+    <meta name="description" content="Not Found">
+    <meta name="generator" content="VitePress v1.3.4">
+    <link rel="preload stylesheet" href="/assets/style.CPPy93ge.css" as="style">
+    
+    <script type="module" src="/assets/app.DVWvxcCS.js"></script>
+    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="stylesheet" href="https://reviewable.io/common.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://reviewable.io/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://reviewable.io/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://reviewable.io/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://reviewable.io/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://reviewable.io/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://reviewable.io/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://reviewable.io/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://reviewable.io/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="https://reviewable.io/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="https://reviewable.io/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="https://reviewable.io/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://reviewable.io/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://reviewable.io/favicon-32x32.png" sizes="32x32">
+    <meta name="apple-mobile-web-app-title" content="Reviewable">
+    <meta name="msapplication-TileColor" content="#5a5076">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="application-name" content="Reviewable">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"abnormal.md\":\"BwRFZTGT\",\"accountsettings.md\":\"DfbzRFq5\",\"dashboard.md\":\"DTOCZ6SL\",\"discussions.md\":\"CJaJnWPv\",\"files.md\":\"BYTS4mEA\",\"index.md\":\"DJzVafra\",\"registration.md\":\"eAZteFI2\",\"repositories.md\":\"BRdoZ-sZ\",\"reviews.md\":\"BA2ocQs4\",\"subscriptions.md\":\"Df_sMoCF\",\"tips.md\":\"DA61snEc\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"Reviewable\",\"titleTemplate\":\"Reviewable — :title\",\"description\":\"A VitePress site\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"logo\":\"https://reviewable.io/apple-touch-icon-precomposed.png\",\"repo\":\"reviewable/reviewable\",\"editLink\":{\"pattern\":\"https://github.com/reviewable/reviewable/edit/master/docs/:path\",\"text\":\"Edit this page on GitHub\"},\"outline\":false,\"search\":{\"provider\":\"local\"},\"nav\":[{\"text\":\"Docs\",\"link\":\"/\",\"activeMatch\":\"^/\"},{\"text\":\"Examples\",\"link\":\"https://github.com/Reviewable/Reviewable/tree/master/examples\"},{\"text\":\"Support\",\"items\":[{\"text\":\"Blog\",\"link\":\"https://www.reviewable.io/blog/\"},{\"text\":\"Changelog\",\"link\":\"https://changelog.reviewable.io/\"},{\"text\":\"Issues\",\"link\":\"https://github.com/reviewable/reviewable/issues\"},{\"component\":\"missive\"},{\"text\":\"Email us\",\"link\":\"mailto:support@reviewable.io\"}]}],\"sidebar\":[{\"text\":\"Introduction\",\"link\":\"/index#introduction\",\"collapsed\":true,\"items\":[{\"text\":\"How to use this guide\",\"link\":\"/index#how-to-use-this-guide\"},{\"text\":\"Help on using Reviewable\",\"link\":\"/index#help-on-using-reviewable\"},{\"text\":\"Staying up to date\",\"link\":\"/index#staying-up-to-date\"}]},{\"text\":\"Code review\",\"link\":\"/reviews#code-review\",\"collapsed\":true,\"items\":[{\"text\":\"User roles\",\"link\":\"/reviews#user-roles\"},{\"text\":\"Publishing your review\",\"link\":\"/reviews#publish\",\"collapsed\":true,\"items\":[{\"text\":\"Approval levels\",\"link\":\"/reviews#approval-levels\"},{\"text\":\"Requested reviewers synchronization\",\"link\":\"/reviews#sync-requested-reviewers\"},{\"text\":\"Review summary\",\"link\":\"/reviews#review-summary\"}]},{\"text\":\"Merging a pull request\",\"link\":\"/reviews#merge\"},{\"text\":\"Review toolbar\",\"link\":\"/reviews#review-toolbar\",\"collapsed\":true,\"items\":[{\"text\":\"Checks\",\"link\":\"/reviews#checks\"},{\"text\":\"Changes\",\"link\":\"/reviews#changes\"},{\"text\":\"Counters\",\"link\":\"/reviews#counters\"}]},{\"text\":\"Changes summary\",\"link\":\"/reviews#changes-summary\",\"collapsed\":true,\"items\":[{\"text\":\"Files\",\"link\":\"/reviews#files\"},{\"text\":\"Revisions\",\"link\":\"/reviews#revisions\"},{\"text\":\"Commits\",\"link\":\"/reviews#changes-commits\"}]},{\"text\":\"Labels\",\"link\":\"/reviews#labels\"},{\"text\":\"Participants\",\"link\":\"/reviews#participants\",\"collapsed\":true,\"items\":[{\"text\":\"Waiting on\",\"link\":\"/reviews#waiting-on\"},{\"text\":\"Actions\",\"link\":\"/reviews#actions\",\"collapsed\":true,\"items\":[{\"text\":\"Discussions\",\"link\":\"/reviews#discussions\"}]},{\"text\":\"Deferring a review\",\"link\":\"/reviews#deferring-a-review\"},{\"text\":\"Reviewing commit messages\",\"link\":\"/reviews#reviewing-commit-messages\"},{\"text\":\"Keyboard shortcuts\",\"link\":\"/reviews#keyboard-shortcuts\"}]}]},{\"text\":\"Code review files\",\"link\":\"/files#code-review-files\",\"collapsed\":true,\"items\":[{\"text\":\"Revision cells\",\"link\":\"/files#revision-cells\"},{\"text\":\"Mark as reviewed\",\"link\":\"/files#mark-reviewed\"},{\"text\":\"File review state\",\"link\":\"/files#file-review-state\"},{\"text\":\"File matrix\",\"link\":\"/files#file-matrix\",\"collapsed\":true,\"items\":[{\"text\":\"File list\",\"link\":\"/files#file-list\"},{\"text\":\"Column headings\",\"link\":\"/files#column-headings\"}]},{\"text\":\"File contents\",\"link\":\"/files#file-contents\",\"collapsed\":true,\"items\":[{\"text\":\"File header\",\"link\":\"/files#file-header\"},{\"text\":\"File diff\",\"link\":\"/files#file-diff\"},{\"text\":\"Diff layout\",\"link\":\"/files#diff-layout\"},{\"text\":\"Collapsed sections\",\"link\":\"/files#collapsed-sections\"}]},{\"text\":\"Line-specific discussions\",\"link\":\"/files#line-discussion\",\"collapsed\":true,\"items\":[{\"text\":\"Code Snippets, Quoting Code, and Making Code Suggestions\",\"link\":\"/files#code-snippets-quoting-code-and-making-code-suggestions\",\"collapsed\":true,\"items\":[{\"text\":\"Before making a comment\",\"link\":\"/files#before-making-a-comment\"},{\"text\":\"Adding code to an existing comment\",\"link\":\"/files#adding-code-to-an-existing-comment\"}]},{\"text\":\"Diff customization\",\"link\":\"/files#diff-customization\",\"collapsed\":true,\"items\":[{\"text\":\"Generated files\",\"link\":\"/files#generated-files\"},{\"text\":\"Diff suppression and file type\",\"link\":\"/files#diff-suppression-and-file-type\"}]},{\"text\":\"Special states\",\"link\":\"/files#special-states\",\"collapsed\":true,\"items\":[{\"text\":\"Diff-suppressing states\",\"link\":\"/files#diff-suppressing-states\"},{\"text\":\"Single file mode\",\"link\":\"/files#single-file-mode\"}]},{\"text\":\"Support for specific workflows\",\"link\":\"/files#support-for-specific-workflows\",\"collapsed\":true,\"items\":[{\"text\":\"Rebasing\",\"link\":\"/files#rebasing\"},{\"text\":\"Forked repos tracking upstream changes\",\"link\":\"/files#forked-repos-tracking-upstream-changes\"}]}]}]},{\"text\":\"Code review discussions\",\"link\":\"/discussions#code-review-discussions\",\"collapsed\":true,\"items\":[{\"text\":\"Starting a new discussion\",\"link\":\"/discussions#starting-a-new-discussion\"},{\"text\":\"Replying to a discussion\",\"link\":\"/discussions#replying-to-a-discussion\",\"collapsed\":true,\"items\":[{\"text\":\"Inline directives\",\"link\":\"/discussions#inline-directives\"},{\"text\":\"Replying via email or on GitHub\",\"link\":\"/discussions#replying-via-email-or-on-github\"}]},{\"text\":\"Ending a discussion\",\"link\":\"/discussions#ending-a-discussion\"},{\"text\":\"Unreplied discussions\",\"link\":\"/discussions#unreplied-discussions\",\"collapsed\":true,\"items\":[{\"text\":\"New and old comments\",\"link\":\"/discussions#new-and-old-comments\"}]},{\"text\":\"Dispositions and resolution\",\"link\":\"/discussions#dispositions-and-resolution\",\"collapsed\":true,\"items\":[{\"text\":\"Checking and changing dispositions\",\"link\":\"/discussions#change-disposition\"},{\"text\":\"Resolution workflows\",\"link\":\"/discussions#resolution-workflows\"}]}]},{\"text\":\"Reviews dashboard\",\"link\":\"/dashboard#reviews-dashboard\",\"collapsed\":true,\"items\":[{\"text\":\"Review state\",\"link\":\"/dashboard#review-state\"},{\"text\":\"Open a review\",\"link\":\"/dashboard#open-review\"},{\"text\":\"Filter reviews\",\"link\":\"/dashboard#filter-reviews\"},{\"text\":\"Other toggles\",\"link\":\"/dashboard#other-toggles\"}]},{\"text\":\"Account Settings\",\"link\":\"/accountsettings#account-settings\",\"collapsed\":true,\"items\":[{\"text\":\"Custom diff font\",\"link\":\"/accountsettings#custom-diff-font\"},{\"text\":\"Custom stylesheet\",\"link\":\"/accountsettings#custom-stylesheet\"},{\"text\":\"External editor line link template\",\"link\":\"/accountsettings#external-editor-line-link-template\",\"collapsed\":true,\"items\":[{\"text\":\"Custom line link template\",\"link\":\"/accountsettings#custom-line-link-template\"}]},{\"text\":\"Custom key bindings\",\"link\":\"/accountsettings#custom-key-bindings\"},{\"text\":\"Visual tweaks\",\"link\":\"/accountsettings#visual-tweaks\",\"collapsed\":true,\"items\":[{\"text\":\"Adjust contrast\",\"link\":\"/accountsettings#adjust-contrast\"},{\"text\":\"Color scheme\",\"link\":\"/accountsettings#color-scheme\"},{\"text\":\"Accessibility\",\"link\":\"/accountsettings#accessibility\"}]},{\"text\":\"GitHub authorizations granted\",\"link\":\"/accountsettings#github-authorizations-granted\"}]},{\"text\":\"Repositories\",\"link\":\"/repositories#repositories\",\"collapsed\":true,\"items\":[{\"text\":\"Security concerns\",\"link\":\"/repositories#security-concerns\"},{\"text\":\"Connecting repositories\",\"link\":\"/repositories#connecting-repositories\",\"collapsed\":true,\"items\":[{\"text\":\"Connect all current and future repos\",\"link\":\"/repositories#current-and-future\"},{\"text\":\"Create reviews for your own PRs\",\"link\":\"/repositories#create-reviews-for-your-own-prs\"},{\"text\":\"Reviews in connected vs unconnected repos\",\"link\":\"/repositories#reviews-in-connected-vs-unconnected-repos\"}]},{\"text\":\"Repository settings\",\"link\":\"/repositories#repo-settings\",\"collapsed\":true,\"items\":[{\"text\":\"Accessing repository settings with the GUI\",\"link\":\"/repositories#accessing-repository-settings-with-the-gui\"},{\"text\":\"Prototype settings for new repos\",\"link\":\"/repositories#prototype-repo\"},{\"text\":\"Store repository settings using the <code>.reviewable</code> directory\",\"link\":\"/repositories#store-repository-settings-using-the-code-reviewable-code-directory\"},{\"text\":\"Applying a <code>settings.yaml</code> file to multiple repositories\",\"link\":\"/repositories#applying-a-code-settings-yaml-code-file-to-multiple-repositories\",\"collapsed\":true,\"items\":[{\"text\":\"Overrides\",\"link\":\"/repositories#overrides\"},{\"text\":\"Finalizing master settings\",\"link\":\"/repositories#finalizing-master-settings\"}]},{\"text\":\"Available settings\",\"link\":\"/repositories#available-settings\",\"collapsed\":true,\"items\":[{\"text\":\"Reviewable badge\",\"link\":\"/repositories#reviewable-badge\"},{\"text\":\"Default review style\",\"link\":\"/repositories#default-review-style\"},{\"text\":\"Default review overlap strategy\",\"link\":\"/repositories#default-review-overlap-strategy\"},{\"text\":\"Approve button output\",\"link\":\"/repositories#approve-button-output\"},{\"text\":\"Discussion participant dismissers\",\"link\":\"/repositories#discussion-participant-dismissers\"},{\"text\":\"Review status in GitHub PR\",\"link\":\"/repositories#review-status-in-github-pr\"},{\"text\":\"Code coverage\",\"link\":\"/repositories#code-coverage\"},{\"text\":\"Completion condition script\",\"link\":\"/repositories#completion-condition-script\"}]},{\"text\":\"Custom review completion condition\",\"link\":\"/repositories#completion-condition\",\"collapsed\":true,\"items\":[{\"text\":\"Development environment\",\"link\":\"/repositories#development-environment\"},{\"text\":\"Review state input\",\"link\":\"/repositories#review-state-input\"},{\"text\":\"Condition output\",\"link\":\"/repositories#condition-output\",\"collapsed\":true,\"items\":[{\"text\":\"<code>completed</code>\",\"link\":\"/repositories#code-completed-code-\"},{\"text\":\"<code>description</code>\",\"link\":\"/repositories#code-description-code-\"},{\"text\":\"<code>shortDescription</code>\",\"link\":\"/repositories#code-shortdescription-code-\"},{\"text\":\"<code>stage</code>\",\"link\":\"/repositories#code-stage-code-\"},{\"text\":\"<code>pendingReviewers</code>\",\"link\":\"/repositories#code-pendingreviewers-code-\"},{\"text\":\"<code>files</code>\",\"link\":\"/repositories#code-files-code-\",\"collapsed\":true,\"items\":[{\"text\":\"Designated reviewers\",\"link\":\"/repositories#designated-reviewers\"}]},{\"text\":\"<code>refreshTimestamp</code>\",\"link\":\"/repositories#code-refreshtimestamp-code-\"},{\"text\":\"<code>webhook</code>\",\"link\":\"/repositories#code-webhook-code-\"},{\"text\":\"<code>disableGitHubApprovals</code>\",\"link\":\"/repositories#code-disablegithubapprovals-code-\"},{\"text\":\"<code>syncRequestedReviewers</code>\",\"link\":\"/repositories#code-syncrequestedreviewers-code-\"},{\"text\":\"<code>requestedTeams</code>\",\"link\":\"/repositories#code-requestedteams-code-\"},{\"text\":\"<code>disableBranchUpdates</code>\",\"link\":\"/repositories#code-disablebranchupdates-code-\"},{\"text\":\"<code>mergeStyle</code>\",\"link\":\"/repositories#code-mergestyle-code-\"},{\"text\":\"<code>defaultMergeCommitMessage</code>\",\"link\":\"/repositories#code-defaultmergecommitmessage-code-\"},{\"text\":\"<code>defaultSquashCommitMessage</code>\",\"link\":\"/repositories#code-defaultsquashcommitmessage-code-\"},{\"text\":\"<code>debug</code>\",\"link\":\"/repositories#code-debug-code-\"}]}]}]}]},{\"text\":\"Subscriptions and licenses\",\"link\":\"/subscriptions#subscriptions-and-licenses\",\"collapsed\":true,\"items\":[{\"text\":\"Subscriptions\",\"link\":\"/subscriptions#subscriptions\",\"collapsed\":true,\"items\":[{\"text\":\"Selecting a plan\",\"link\":\"/subscriptions#selecting-a-plan\"},{\"text\":\"Managing the scope of your subscription\",\"link\":\"/subscriptions#managing-the-scope-of-your-subscription\"},{\"text\":\"Canceling a subscription\",\"link\":\"/subscriptions#canceling-a-subscription\"},{\"text\":\"Billing manager\",\"link\":\"/subscriptions#billing-manager\"}]},{\"text\":\"Licenses\",\"link\":\"/subscriptions#licenses\",\"collapsed\":true,\"items\":[{\"text\":\"Team constraints\",\"link\":\"/subscriptions#team-constraints\"},{\"text\":\"API\",\"link\":\"/subscriptions#api\"}]}]},{\"text\":\"Abnormal conditions\",\"link\":\"/abnormal#abnormal-conditions\",\"collapsed\":true,\"items\":[{\"text\":\"GitHub status\",\"link\":\"/abnormal#github-status\"},{\"text\":\"Firebase connection trouble\",\"link\":\"/abnormal#firebase-connection-trouble\"},{\"text\":\"Forced upgrade\",\"link\":\"/abnormal#forced-upgrade\"},{\"text\":\"Crash\",\"link\":\"/abnormal#crash\"}]},{\"text\":\"Tips and Tricks\",\"link\":\"/tips#tips-and-tricks\",\"collapsed\":true,\"items\":[{\"text\":\"Videos\",\"link\":\"/tips#videos\"},{\"text\":\"Articles\",\"link\":\"/tips#articles\"},{\"text\":\"Visual tweaks\",\"link\":\"/tips#visual-tweaks\",\"collapsed\":true,\"items\":[{\"text\":\"Line numbers\",\"link\":\"/tips#line-numbers\"},{\"text\":\"Diff line background\",\"link\":\"/tips#diff-line-background\"},{\"text\":\"Code Coverage Bars\",\"link\":\"/tips#code-coverage-bars\"},{\"text\":\"Victory bunny\",\"link\":\"/tips#victory-bunny\"},{\"text\":\"Removing wavy lines on collapsed regions\",\"link\":\"/tips#removing-wavy-lines-on-collapsed-regions\"}]},{\"text\":\"Skipping vendored dependencies\",\"link\":\"/tips#skipping-vendored-dependencies\"},{\"text\":\"Ignore comments by bots\",\"link\":\"/tips#ignore-comments-by-bots\"},{\"text\":\"Easy local revision checkout\",\"link\":\"/tips#easy-local-revision-checkout\",\"collapsed\":true,\"items\":[{\"text\":\"TLDR\",\"link\":\"/tips#tldr\"},{\"text\":\"Explanation\",\"link\":\"/tips#explanation\",\"collapsed\":true,\"items\":[{\"text\":\"1. Get the revision reference\",\"link\":\"/tips#1-get-the-revision-reference\"},{\"text\":\"2. Use the revision reference\",\"link\":\"/tips#2-use-the-revision-reference\"}]}]}]}]},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}");</script>
+    
+  </body>
 </html>
-
