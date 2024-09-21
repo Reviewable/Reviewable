@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show Conclusion panel when the user clicks "mark reviewed and go to conclusion" in single file mode.
 - Fix: consistenly display master repository name and indicator on the repositories page, if the user has permission to see them.
 - Fix: guard against very rare crash due to missing locator in the Conclusion panel.
+- Fix: don't crash with "Encryption not setup" error on page load when Reviewable is running in private mode and the user isn't signed in.  (Regression likely introduced in v3935.6189.)
 
 #### Release 4479.7067 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-01
 - New: add an API for managing Enterprise team constraints.  ([API docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md))
