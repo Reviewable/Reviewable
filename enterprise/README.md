@@ -6,7 +6,7 @@ If you're interested in a free trial, please [get in touch!](mailto:support@revi
 1. The GHE username of the designated Reviewable license admin account; this account doesn't need to be a GHE admin or have any special permissions.  If you're running GHE in _private mode_, we'll need the raw numeric user ID for the account instead.  Here's [how to find these](https://github.com/Reviewable/Reviewable/blob/master/enterprise/userid.md). [^1]
 2. If you'll be running Reviewable against `github.com` rather than a private GHE deployment, we'll also need the name of your GitHub organization so that your instance and ours don't step on each other's toes.
 
-Note that Reviewable ships with cryptographic technology that results in a BIS commodity classifiation of 5D992.c.
+Note that Reviewable ships with cryptographic technology that results in a BIS commodity classification of 5D992.c.
 
 If you already have a license, you'll want to explore the links below.
 
