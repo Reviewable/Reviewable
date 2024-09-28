@@ -19,7 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: be more efficient and thorough when checking whether an @-mention is valid, but also block @-mentions that we can't verify (e.g., due to timeouts) instead of letting them through.  (@-decorators in unquoted code often result in such mentions and could display bogus participants in the review, even though those "participants" had no access and weren't notified.)
 - Fix: enable Publish button when all drafts are bare suggestions.
 - Fix: show Conclusion panel when the user clicks "mark reviewed and go to conclusion" in single file mode.
-- Fix: consistenly display master repository name and indicator on the repositories page, if the user has permission to see them.
+- Fix: consistently display master repository name and indicator on the repositories page, if the user has permission to see them.
 - Fix: guard against very rare crash due to missing locator in the Conclusion panel.
 - Fix: don't crash with "Encryption not setup" error on page load when Reviewable is running in private mode and the user isn't signed in.  (Regression likely introduced in v3935.6189.)
 
