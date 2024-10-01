@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- Fix: stop failing with bogus "review state must be an object" messages in the completion condition playground.
 #### Release 4497.7119 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-28
 - New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
 - New: add colorblind accessibility settings.
