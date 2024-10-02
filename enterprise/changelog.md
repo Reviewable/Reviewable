@@ -7,7 +7,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+- Upd: render autolinks in Markdown with an underline.
 - Fix: stop failing with bogus "review state must be an object" messages in the completion condition playground.  (Regression likely introduced in v4479.7067.)
+- Fix: avoid crashing in situations where a renamed file is reverted in a provisional revision while the review page is open.
+- Fix: guard against a rare crash when a provisionally reintroduced file disappears.
 
 #### Release 4497.7119 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-28
 - New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
