@@ -4,6 +4,7 @@ import {readFileSync} from 'fs';
 export default defineConfig({
   title: 'Reviewable',
   titleTemplate: 'Reviewable — :title',
+  description: 'Reviewable user manual',
   cleanUrls: true,
   lastUpdated: true,
 
