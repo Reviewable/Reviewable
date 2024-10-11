@@ -9,10 +9,15 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
+- Upd: improve dark mode colors for some warning messages.
+- Upd: pop up a toast when a warning indicator appears in the lower right corner.
+- Upd: warn the user when a navigation cycle (e.g., "next unresolved discussion") would skip over some items because they're not currently displayed, and offer to show them all.
+- Upd: add syntax highlighting for ERB files.
 - Fix: stop failing with bogus "review state must be an object" messages in the completion condition playground.  (Regression likely introduced in v4479.7067.)
 - Fix: avoid crashing in situations where a renamed file is reverted in a provisional revision while the review page is open.
 - Fix: guard against a rare crash when a provisionally reintroduced file disappears.
 - Fix: clean up the animation when expanding a fully collapsed discussion.
+- Fix: make sure header toggle always works on review pages.
 
 #### Release 4497.7119 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-28
 - New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
