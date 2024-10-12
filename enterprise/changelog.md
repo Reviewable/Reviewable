@@ -13,6 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: pop up a toast when a warning indicator appears in the lower right corner.
 - Upd: warn the user when a navigation cycle (e.g., "next unresolved discussion") would skip over some items because they're not currently displayed, and offer to show them all.
 - Upd: add syntax highlighting for ERB files.
+- Upd: add options for VSCode over SSH and VSCode via WSL to the external editor link template dropdown in the account settings.
+- Upd: change the default diff font to Liberation Mono, as it has much better glyph coverage compared to Droid Sans Mono, and add font weight and height controls to the settings.
 - Fix: stop failing with bogus "review state must be an object" messages in the completion condition playground.  (Regression likely introduced in v4479.7067.)
 - Fix: avoid crashing in situations where a renamed file is reverted in a provisional revision while the review page is open.
 - Fix: guard against a rare crash when a provisionally reintroduced file disappears.
