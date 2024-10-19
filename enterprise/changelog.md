@@ -20,6 +20,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: guard against a rare crash when a provisionally reintroduced file disappears.
 - Fix: clean up the animation when expanding a fully collapsed discussion.
 - Fix: make sure header toggle always works on review pages.
+- Fix: guard against a crash when navigating to a file and immediately leaving the review page.
+- Fix: don't crash if `IndexedDB` is disabled in Safari (!?).
 
 #### Release 4497.7119 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-28
 - New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
