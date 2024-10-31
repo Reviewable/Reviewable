@@ -16,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add options for VSCode over SSH and VSCode via WSL to the external editor link template dropdown in the account settings.
 - Upd: change the default diff font to Liberation Mono, as it has much better glyph coverage compared to Droid Sans Mono, and add font weight and height controls to the settings.
 - Upd: improve overall app performance in reviews with that have both a lot of files and dozens of revisions.
+- Upd: improve overall performance in large reviews, and improve instrumentation to capture more potential causes of slowness.
 - Fix: stop failing with bogus "review state must be an object" messages in the completion condition playground.  (Regression likely introduced in v4479.7067.)
 - Fix: avoid crashing in situations where a renamed file is reverted in a provisional revision while the review page is open.
 - Fix: guard against a rare crash when a provisionally reintroduced file disappears.
@@ -26,6 +27,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid rare crash due to an undefined `comments` property.
 - Fix: avoid unnecessary animations and scrollbars in the participants panel in overlay mode.
 - Fix: ensure the close button in overlays doesn't overlap the scrollbar.
+- Fix: guard against rare client crash caused by a race condition.
 
 #### Release 4497.7119 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-09-28
 - New: add `Reviewable.resetSession()` console API to work around "resuming session" issues.
