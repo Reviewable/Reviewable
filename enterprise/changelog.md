@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add syntax highlighting for ERB files.
 - Upd: add options for VSCode over SSH and VSCode via WSL to the external editor link template dropdown in the account settings.
 - Upd: change the default diff font to Liberation Mono, as it has much better glyph coverage compared to Droid Sans Mono, and add font weight and height controls to the settings.
+- Upd: improve overall app performance in reviews with that have both a lot of files and dozens of revisions.
 - Fix: stop failing with bogus "review state must be an object" messages in the completion condition playground.  (Regression likely introduced in v4479.7067.)
 - Fix: avoid crashing in situations where a renamed file is reverted in a provisional revision while the review page is open.
 - Fix: guard against a rare crash when a provisionally reintroduced file disappears.
