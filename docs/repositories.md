@@ -97,13 +97,17 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Repository settings {#repo-settings}
 
+Reviewable inherits as many repository settings from GitHub as possible, but needs some custom settings for its more advanced features.
+
+### Settings configuration strategies
+
 To configure Reviewable repository settings you may use the [GUI](https://reviewable.io/repositories) or the `.reviewable` directory in your project root. Each description below will include setting options using the GUI or by using the `settings.yaml` file in your `.reviewable` directory.
 
 ::: tip
 You can move your review settings from the GUI to the `.reviewable` directory by clicking "Store settings in repo?" link and following the instructions for setting up Reviewable configuration in the repository for your project.
 :::
 
-### Accessing repository settings with the GUI
+#### Accessing repository settings with the GUI
 
 Click on a repository name to access the repo settings panel.  This works whether the repo is connected or not.
 
@@ -111,7 +115,7 @@ Click on a repository name to access the repo settings panel.  This works whethe
 
 If you make any changes to the settings, click the **Apply** button at the top of the page to commit your changes for the repo you originally chose. Click the adjacent dropdown button to view a panel for specifying additional repos to which these settings will be applied (_all_ the settings, not just your current changes).  Click **Cancel** to discard any change to the settings.
 
-### Prototype settings for new repos {#prototype-repo}
+#### Prototype settings for new repos {#prototype-repo}
 
 If you are an organization owner, you can set a repo as the settings prototype for any repos not yet accessed or created.  Simply click the **Set as prototype for new repos** button and new repos will get a copy of the prototype's settings the first time Reviewable accesses them.
 
@@ -129,7 +133,7 @@ If you would like to see if there is or is not a current prototype repository, a
 * "This is the current prototype repository."
 * "The current prototype repository is ____.".
 
-### Store repository settings using the `.reviewable` directory
+#### Store repository settings using the `.reviewable` directory
 
 The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
 
@@ -153,7 +157,7 @@ When the `settings.yaml` file is used for your repositories, the settings UI in 
 An error is displayed if your `settings.yaml` file contains any options that are not valid, however Reviewable will continue using the last synced value for that option. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the [completion condition script](#custom-review-completion-condition) if any. Local settings will override any invalid master settings.
 :::
 
-### Applying a `settings.yaml` file to multiple repositories
+#### Applying a `settings.yaml` file to multiple repositories
 
 Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless of when they were created.
 
@@ -163,7 +167,7 @@ You may add a local `settings.yaml` file in an individual repository to override
 
 When a repository is designated as the master, its settings file will be used as the basis for all repositories in the organization. A master settings file can also provide specialized settings for repositories via targeted in-file overrides.
 
-#### Overrides
+##### Overrides
 
 When you have one or more repositories with individual `settings.yaml` files, you may use a master repository that will determine default settings for all repositories that belong to an organization. These settings can be overriden in the `overrides` object of the master `settings.yaml` file.
 
@@ -180,7 +184,7 @@ overrides:
     default-review-style: combined-commits
 ```
 
-#### Finalizing master settings
+##### Finalizing master settings
 
 If you wish to manage all repository settings in one central place without allowing the master settings to be overridden by local settings, you can set `final: true` in the master settings which in turn causes any local settings files and completion condition scripts to be ignored.
 

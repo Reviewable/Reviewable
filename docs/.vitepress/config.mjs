@@ -90,12 +90,7 @@ function page(path) {
       match[3] ||
       match[2].toLowerCase().replace(/[^a-z0-9\-]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/, '');
     const item = {text: title, link: `/${path}#${slug}`};
-    if (level === currentLevel) {
-      itemStack.pop();
-    } else if (level < currentLevel) {
-      itemStack.pop();
-      itemStack.pop();
-    }
+    for (let i = currentLevel; i >= level; i--) itemStack.pop();
     const lastItem = itemStack.length ? itemStack[itemStack.length - 1] : null;
     if (lastItem) {
       lastItem.collapsed = true;
