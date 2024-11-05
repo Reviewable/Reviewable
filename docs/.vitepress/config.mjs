@@ -88,7 +88,7 @@ function page(path) {
     const title = match[2].replace(/`(.*?)`/g, '<code>$1</code>');
     const slug =
       match[3] ||
-      title.toLowerCase().replace(/[^a-z0-9\-]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/, '');
+      match[2].toLowerCase().replace(/[^a-z0-9\-]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/, '');
     const item = {text: title, link: `/${path}#${slug}`};
     if (level === currentLevel) {
       itemStack.pop();
