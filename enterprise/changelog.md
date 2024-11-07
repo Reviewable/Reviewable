@@ -8,12 +8,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: Replies posted to discussion threads that were started on GitHub are now synced to GitHub as replies in the respective thread.
 - Upd: move the checks dropdown into a panel in the main flow.
 - Upd: give the option of rebasing to update the pull request branch (on `github.com` and GHE 3.11+ only).
 - Upd: make the pull request branch update button harder to trigger accidentally.
 - Upd: remove list of waited-on participants from the checks panel; use the participants panel instead.
 - Fix: guard against crash when quickly visiting and leaving a review page.
 - Fix: fix animation when expanding and collapsing panels.
+- Fix: guard against crash when quickly visiting and leaving the repositories page.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
