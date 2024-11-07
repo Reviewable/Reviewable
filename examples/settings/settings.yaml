@@ -16,7 +16,7 @@ badge:
   location: description-bottom
   # `when` optionally allows you to specify when to inject the Reviewable badge into the pull request.
   #  Valid options include: `accessed` (default), `published` and `requested`.
-  when: accesed
+  when: accessed
 
 # `default-review-style` allows you to choose how reviews are displayed.
 # Valid options include: `combined-commits` (default) and `one-per-commit`.
