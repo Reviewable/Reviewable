@@ -17,6 +17,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: fix animation when expanding and collapsing panels.
 - Fix: guard against crash when quickly visiting and leaving the repositories page.
 - Fix: consider requests for changes if branch protection requires a pull request for merging, even if it doesn't require actual approvals.
+- Fix: restart server in case of an uncaught top-level exception, which otherwise could get it stuck in a "healthy" state but not doing any work.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
