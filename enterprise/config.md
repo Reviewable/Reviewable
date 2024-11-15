@@ -8,7 +8,7 @@ You'll need to decide the URL at which your Reviewable instance will operate, ca
 
 ##### GitHub application
 
-Next, on your GitHub instance, find the settings section of your preferred organization — any one will do.  In the OAuth applications subsection click the "New OAuth app" button:
+Next, on your GitHub instance, find the settings section of your preferred organization — any one will do.  In the Developer settings > OAuth apps subsection click the "New OAuth app" button:
 ![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/register_github_app.png)
 Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
