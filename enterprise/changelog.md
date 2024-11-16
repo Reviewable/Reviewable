@@ -19,6 +19,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: consider requests for changes if branch protection requires a pull request for merging, even if it doesn't require actual approvals.
 - Fix: restart server in case of an uncaught top-level exception, which otherwise could get it stuck in a "healthy" state but not doing any work.
 - Fix: make sure to use proper GitHub formatting for pasted permalinks in comments.
+- Fix: adjust all doc links to new URL schema.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
