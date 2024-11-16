@@ -313,7 +313,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Release 3955.6217 (min 3619.5594 GHE 2.19+ or 3.0+ but not 3.10) 2023-07-04
 - New: allow repository admins to override Reviewable's status check for broken reviews.
-- New: add option to start a file-level discussion to the file dropdown menu. 
+- New: add option to start a file-level discussion to the file dropdown menu.
 - New: let users bow out of a discussion to void their resolution vote and avoid becoming awaited whenever new comments are posted.  This is equivalent to dismissing yourself but bypasses the permission constraint.
 - Upd: include author, state and title when rendering issue and pull request references in comments.  Distinguish between completed/dropped and merged/closed states.  At the same time, align state icons and colors with GitHub, including in issue autocompletion popup.
 - Upd: show pull requests merged with `spr` as merged rather than closed in references and autocompletion popup.  (Going forward only -- no backfill.)
@@ -1110,7 +1110,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: prevent clicks on a merge button in the pull requests list from navigating to the review.
 
 #### Release 2071.3450 (min 1992.2986 GHE 2.12 - 2.20) 2019-03-11
-- New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/#/repositories?id=condition-output) and [how it looks in the UI](https://docs.reviewable.io/#/files?id=file-list) for details.
+- New: allow grouping (and reordering) files in a review via new `group` property for files in the custom review completion condition.  See the docs on [setting it up](https://docs.reviewable.io/repositories#files) and [how it looks in the UI](https://docs.reviewable.io/files#file-list) for details.
 - Upd: lay out the file matrix as a directory tree rather than a flat list of files.
 - Fix: **HOTFIX** avoid a crash when loading Reviewable on an encrypted instance in private mode while already signed in with the error "Encryption not set up".  This regression was introduced in the previous release, v2066.3418.
 - Fix: correctly display and expand/contract long paths in file headers.
@@ -1135,7 +1135,7 @@ This version is broken on some older GHE versions, it's strongly recommended tha
 - Fix: don't request reviewer twice if user is self-requesting.  This is a no-op but looks ugly in GitHub's timeline.
 
 #### Release 2056.3350 (min 1992.2986 GHE 2.12 - 2.20) 2019-02-07
-- New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/#/reviews?id=sync-requested-reviewers) for details.  Great for integration with [Pull Reminders](https://pullreminders.com) if you use Slack!
+- New: give option to sync GitHub's requested reviewers from Reviewable's awaited reviewers when publishing.  See [docs](https://docs.reviewable.io/reviews#sync-requested-reviewers) for details.  Great for integration with [Pull Reminders](https://pullreminders.com) if you use Slack!
 - Fix: allow users to login in multiple browsers / profiles without forcing all but the latest one offline.  This was a regression introduced in 2033.3283.  Note that this is a temporary fix that reintroduces the auth ugprade race condition handled by the broken fix.  A better permanent fix will come in the next release, after a whole lot of testing.
 - Fix: remedy race condition when triggering completion condition evaluation in response to PR review events. Previously, it was possible for the condition to be triggered before the review state correctly reflected the new approvals.
 - Fix: improve forced logout on page load when session is close to expiring to be less likely to cause spurious errors.

@@ -46,6 +46,7 @@ export default defineConfig({
 
     sidebar: [
       page('index'),
+      page('registration'),
       page('reviews'),
       page('files'),
       page('discussions'),
@@ -88,7 +89,7 @@ function page(path) {
     const title = match[2].replace(/`(.*?)`/g, '<code>$1</code>');
     const slug =
       match[3] ||
-      match[2].toLowerCase().replace(/[^a-z0-9\-]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/, '');
+      match[2].toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
     const item = {text: title, link: `/${path}#${slug}`};
     for (let i = currentLevel; i >= level; i--) itemStack.pop();
     const lastItem = itemStack.length ? itemStack[itemStack.length - 1] : null;

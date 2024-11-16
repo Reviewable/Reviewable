@@ -115,7 +115,7 @@ Destination for file attachments in comments.  The file types and sizes will be 
 
 ##### User code execution
 
-Some features, such as [custom review completion rules](https://docs.reviewable.io/#/repositories?id=completion-condition), require Reviewable to execute user-provided code.  You can configure where and how such code should be executed.
+Some features, such as [custom review completion rules](https://docs.reviewable.io/repositories#completion-condition), require Reviewable to execute user-provided code.  You can configure where and how such code should be executed.
 
 * `REVIEWABLE_CODE_EXECUTOR`: One of the following values, or leave empty to disable features that require code execution.
   * `vm2`: Execute code on the server itself, in a [separate sandboxed process](https://github.com/patriksimek/vm2).  While this will mostly prevent accidental interference with the server, it's likely that an attacker would be able to break out of the sandbox or at least perform a denial of service attack.  Use this option only if all users with access to Reviewable can be trusted.
