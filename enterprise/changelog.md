@@ -13,6 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: give the option of rebasing to update the pull request branch (on `github.com` and GHE 3.11+ only).
 - Upd: make the pull request branch update button harder to trigger accidentally.
 - Upd: remove list of waited-on participants from the checks panel; use the participants panel instead.
+- Upd: make review panels more mobile friendly, among other minor mobile improvements.
+- Upd: make participants panel usable on mobile, make alignment more consistent, and show its top-level guide.
 - Fix: guard against crash when quickly visiting and leaving a review page.
 - Fix: fix animation when expanding and collapsing panels.
 - Fix: guard against crash when quickly visiting and leaving the repositories page.
