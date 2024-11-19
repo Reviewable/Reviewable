@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: remove list of waited-on participants from the checks panel; use the participants panel instead.
 - Upd: make review panels more mobile friendly, among other minor mobile improvements.
 - Upd: make participants panel usable on mobile, make alignment more consistent, and show its top-level guide.
+- Upd: add bindings for file and discussion dropdown menu commands.
 - Fix: guard against crash when quickly visiting and leaving a review page.
 - Fix: fix animation when expanding and collapsing panels.
 - Fix: guard against crash when quickly visiting and leaving the repositories page.
@@ -22,6 +23,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: restart server in case of an uncaught top-level exception, which otherwise could get it stuck in a "healthy" state but not doing any work.
 - Fix: make sure to use proper GitHub formatting for pasted permalinks in comments.
 - Fix: adjust all doc links to new URL schema.
+- Fix: show correct unreviewed file count on the dashboard when a user hasn't visited the review yet.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
