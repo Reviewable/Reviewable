@@ -185,6 +185,15 @@ Basic UI customization.
       }>
     }
     ```
+* `REVIEWABLE_DISPOSITION_DEFAULTS`: A JSON object that specifies default disposition values to use in various situations when a user hasn't set their own defaults.  It must follow the following schema or the server will fail to boot and report an error.  Any omitted properties will take on built-in default values.
+    ```typescript
+    {
+      defaultNewDiscussionRole?: 'informing' | 'discussing' | 'blocking' /* default */ | 'working' | 'pondering',
+      defaultNewAsAuthorDiscussionRole?: 'informing' | 'discussing' /* default */ | 'blocking' | 'working' | 'pondering',
+      defaultJoinedDiscussionRole?: 'satisfied' | 'discussing' /* default */ | 'blocking' | 'working' | 'pondering',
+      defaultJoinedAsAuthorDiscussionRole?: 'satisfied' | 'discussing' /* default */ | 'blocking' | 'working' | 'pondering'
+    }
+    ```
 
 ##### Container configuration
 
