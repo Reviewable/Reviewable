@@ -25,6 +25,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: adjust all doc links to new URL schema.
 - Fix: show correct unreviewed file count on the dashboard when a user hasn't visited the review yet.
 - Fix: reliably publish non-comment drafts (e.g., review marks) when no draft comments are pending. There was a race condition that caused publishing to silently abort in such cases if some background requests hadn't completed yet.
+- Fix: maintain continuity of toast borders at arrow.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
