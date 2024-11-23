@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
 - New: Replies posted to discussion threads that were started on GitHub are now synced to GitHub as replies in the respective thread.
+- New: introduce a `REVIEWABLE_DISPOSITION_DEFAULTS` configuration that allows you to specify disposition defaults for users in various scenarios.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) for details.
 - Upd: move the checks dropdown into a panel in the main flow.
 - Upd: give the option of rebasing to update the pull request branch (on `github.com` and GHE 3.11+ only).
 - Upd: make the pull request branch update button harder to trigger accidentally.
