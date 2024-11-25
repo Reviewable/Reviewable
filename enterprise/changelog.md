@@ -29,6 +29,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: maintain continuity of toast borders at arrow.
 - Fix: improve indentation in the code block editor when breaking a line in the middle of an indent.
 - Fix: include a final newline when copying a suggestion.
+- Fix: guard against rare crash when picking labels from autocomplete popup.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
