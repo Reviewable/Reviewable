@@ -17,6 +17,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: make review panels more mobile friendly, among other minor mobile improvements.
 - Upd: make participants panel usable on mobile, make alignment more consistent, and show its top-level guide.
 - Upd: add bindings for file and discussion dropdown menu commands.
+- Upd: fetch organization and repository data on the server throttled to at most once every 15 minutes.  The data is used for autocomplete functionality when editing drafts and for validating drafts about to be published.  It's cached both on the server and the client, which should make for a more lightweight, faster experience, at the expense of extra update latency when the data changes.
+- Upd: use a hard-coded table of emojis rather than fetching it from GitHub at every page load.
 - Fix: guard against crash when quickly visiting and leaving a review page.
 - Fix: fix animation when expanding and collapsing panels.
 - Fix: guard against crash when quickly visiting and leaving the repositories page.
@@ -30,6 +32,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve indentation in the code block editor when breaking a line in the middle of an indent.
 - Fix: include a final newline when copying a suggestion.
 - Fix: guard against rare crash when picking labels from autocomplete popup.
+- Fix: allow users with `triage` (but not `write`) permissions to request reviewers.
+- Fix: guard against very rare crash when leaving a review page with renamed files.
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
