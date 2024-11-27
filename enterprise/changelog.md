@@ -20,6 +20,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: fetch organization and repository data on the server throttled to at most once every 15 minutes.  The data is used for autocomplete functionality when editing drafts and for validating drafts about to be published.  It's cached both on the server and the client, which should make for a more lightweight, faster experience, at the expense of extra update latency when the data changes.
 - Upd: use a hard-coded table of emojis rather than fetching it from GitHub at every page load.
 - Upd: add `REVIEWABLE_DISABLE_MY_PRS_ENROLLMENTS` flag.  When set, "My PRS in any public/private repo" and "All current and future repos" toggles (see [docs](https://docs.reviewable.io/repositories#create-reviews-for-your-own-prs)) will be unavailable for personal repositories, and will no longer be checked if previously turned on.  (Organization-level "All current and future repos" are unaffected.)
+- Upd: cache branch protection rules, listen to a webhook to update them and resync reviews proactively.  This will improve update latency when the rules change and reduce the number of requests to GitHub.  The cache expires after 15 minutes, in case a webhook is missed or the repository is not connected.
 - Fix: guard against crash when quickly visiting and leaving a review page.
 - Fix: fix animation when expanding and collapsing panels.
 - Fix: guard against crash when quickly visiting and leaving the repositories page.
