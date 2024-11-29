@@ -8,6 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- Fix: remove the ability to set the default review style for the repository from the Changes panel, as it's incompatible with file-based repository settings.  It can still be set normally via repository settings (either UI or file-based).
+- Fix: don't show "customize" button in Checks panel if file-based settings are being used.
 #### Release 4586.7295 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-27
 - New: post replies to discussion threads that were started on GitHub as replies in the respective thread.
 - New: introduce a `REVIEWABLE_DISPOSITION_DEFAULTS` configuration that allows you to specify disposition defaults for users in various scenarios.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) for details.
