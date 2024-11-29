@@ -233,17 +233,6 @@ Some repositories with broken connections were automatically reconnected after t
 }
 ```
 
-##### Backfilled
-Some reviews were updated in response to the user setting a repository-wide review style (aggregated commits or commit-by-commit).
-```
-{
-  owner: string,
-  repo: string,
-  filter: 'noRevisionSplitStrategy',
-  numBackfilled: number  // number of reviews where an update was attempted
-}
-```
-
 ##### Reconciled
 Some review statuses were updated in response to the user changing the review completion condition.
 ```
