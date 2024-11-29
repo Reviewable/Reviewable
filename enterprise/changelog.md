@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- Upd: improve GitHub request latency timing to account for paged requests.
 - Fix: remove the ability to set the default review style for the repository from the Changes panel, as it's incompatible with file-based repository settings.  It can still be set normally via repository settings (either UI or file-based).
 - Fix: don't show "customize" button in Checks panel if file-based settings are being used.
 #### Release 4586.7295 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-27
