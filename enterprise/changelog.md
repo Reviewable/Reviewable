@@ -8,7 +8,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
-- New: Replies posted to discussion threads that were started on GitHub are now synced to GitHub as replies in the respective thread.
+#### Release 4586.7295 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-27
+- New: post replies to discussion threads that were started on GitHub as replies in the respective thread.
 - New: introduce a `REVIEWABLE_DISPOSITION_DEFAULTS` configuration that allows you to specify disposition defaults for users in various scenarios.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) for details.
 - Upd: move the checks dropdown into a panel in the main flow.
 - Upd: give the option of rebasing to update the pull request branch (on `github.com` and GHE 3.11+ only).
@@ -17,9 +18,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: make review panels more mobile friendly, among other minor mobile improvements.
 - Upd: make participants panel usable on mobile, make alignment more consistent, and show its top-level guide.
 - Upd: add bindings for file and discussion dropdown menu commands.
-- Upd: fetch organization and repository data on the server throttled to at most once every 15 minutes.  The data is used for autocomplete functionality when editing drafts and for validating drafts about to be published.  It's cached both on the server and the client, which should make for a more lightweight, faster experience, at the expense of extra update latency when the data changes.
+- Upd: fetch organization and repository data on the server throttled to at most once every 15 minutes.  The data is used for autocomplete functionality when editing drafts and for validating drafts about to be published.  It's cached both on the server and the client, which should make for a more lightweight, faster experience, at the expense of extra update latency when the data changes if the repository is not connected.
 - Upd: use a hard-coded table of emojis rather than fetching it from GitHub at every page load.
-- Upd: add `REVIEWABLE_DISABLE_MY_PRS_ENROLLMENTS` flag.  When set, "My PRS in any public/private repo" and "All current and future repos" toggles (see [docs](https://docs.reviewable.io/repositories#create-reviews-for-your-own-prs)) will be unavailable for personal repositories, and will no longer be checked if previously turned on.  (Organization-level "All current and future repos" are unaffected.)
+- Upd: add `REVIEWABLE_DISABLE_MY_PRS_ENROLLMENTS` flag.  When set, "My PRS in any public/private repo" and "All current and future repos" toggles (see [docs](https://docs.reviewable.io/repositories#create-reviews-for-your-own-prs)) will be unavailable for personal repositories, and will no longer be checked if previously turned on.  (Organization-level "All current and future repos" toggles are unaffected.)
 - Upd: cache branch protection rules, listen to a webhook to update them and resync reviews proactively.  This will improve update latency when the rules change and reduce the number of requests to GitHub.  The cache expires after 15 minutes, in case a webhook is missed or the repository is not connected.
 - Fix: guard against crash when quickly visiting and leaving a review page.
 - Fix: fix animation when expanding and collapsing panels.
@@ -37,6 +38,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow users with `triage` (but not `write`) permissions to request reviewers.
 - Fix: guard against very rare crash when leaving a review page with renamed files.
 - Fix: don't request `/rate_limit` when handling a 429 error and GHE rate limiting is turned off.
+
 #### Release 4548.7221 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-02
 - Upd: render autolinks in Markdown with an underline.
 - Upd: show just the last comment when revealing resolved discussions, rather than expanding all comments immediately.
