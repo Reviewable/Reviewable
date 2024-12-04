@@ -14,6 +14,10 @@ badge:
   # `location` determines the location of the Reviewable badge in the pull request
   # Valid options include: `description-bottom` (default), `description-top`, `comment` and `none`.
   location: description-bottom
+  # `commenter` is the author of the comment if `location` is `comment`.
+  # Requires the repository to belong to an organization and the user specified as `commenter`
+  # to be a member of that organization. Defaults to the repo connector or review vistor.
+  commenter: pkaminski
   # `when` optionally allows you to specify when to inject the Reviewable badge into the pull request.
   #  Valid options include: `accessed` (default), `published` and `requested`.
   when: accessed
