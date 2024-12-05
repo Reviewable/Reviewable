@@ -8,14 +8,18 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: Add badge.commenter option in file-based settings
 - Upd: improve GitHub request latency timing to account for paged requests.
 - Upd: highlight HTML tags in comments, as they're likely not intended as such.
 - Upd: accept plural variants of relevant disposition keywords in comments.
+- Upd: reduce number of requests to GitHub when syncing a pull request.
+- Upd: reduce number of ref queries issued when syncing a review, as these can get expensive in large repositories.  Also immediately unpin revisions that were reverted without being replaced.
 - Fix: remove the ability to set the default review style for the repository from the Changes panel, as it's incompatible with file-based repository settings.  It can still be set normally via repository settings (either UI or file-based).
 - Fix: don't show "customize" button in Checks panel if file-based settings are being used.
 - Fix: don't highlight disposition keywords in draft preview mode.
 - Fix: don't crash if a `CODEOWNERS` line has duplicate users/teams.
 - Fix: allow directory paths to overflow the file matrix on hover.
+- Fix: correctly delete refs according to `REVIEWABLE_REFS_DELETION_DELAY`.  (Regression introduced in v4424.6998.)
 #### Release 4586.7295 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-27
 - New: post replies to discussion threads that were started on GitHub as replies in the respective thread.
 - New: introduce a `REVIEWABLE_DISPOSITION_DEFAULTS` configuration that allows you to specify disposition defaults for users in various scenarios.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) for details.
