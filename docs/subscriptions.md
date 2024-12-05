@@ -53,7 +53,9 @@ Any organization member can start a subscription and by doing so they become the
 
 ## Licenses
 
-On an enterprise instance, the license administrator you selected when signing up and any GitHub Enterprise Server instance administrators will be able to check the license details in a panel at the top of the Repositories page.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.  You can also view a list of users who are currently allocated licensed or guest seats.
+On an enterprise instance, the license administrator you selected when signing up and any GitHub Enterprise Server instance administrators will be able to check the license details in a panel at the top of the Repositories page.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.
+
+You can also view a list of users who are currently allocated licensed or guest seats.  Seats are allocated when a user signs in, and released automatically 90 days after a user's last interaction with Reviewable.  You cannot release seats manually.
 
 ### Team constraints
 
