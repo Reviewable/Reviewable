@@ -8,7 +8,8 @@
 # or all repositories in your organization when using the master
 # settings.yaml file. These settings can be modified for individual
 # repositories in the "overrides" section below.
-#
+
+# `badge` lets you control where and when Reviewable will add its badge to the pull request.
 # https://docs.reviewable.io/repositories.html#reviewable-badge
 badge:
   # `location` determines the location of the Reviewable badge in the pull request
@@ -38,10 +39,16 @@ approval-text: ":lgtm:"
 # https://docs.reviewable.io/repositories.html#the-discussion-participant-dismissers
 discussion-dismissal-restriction: maintain
 
-# `github-status-updates` lets you control when to update the pull request on GitHub with comments from Reviewable.
-# Valid options include: `accessed` (default), `always`, or `never`.
+# `github-status` lets you control various aspects of Reviewable's pull request status on GitHub.
 # https://docs.reviewable.io/repositories.html#review-status-in-github-pr
-github-status-updates: always
+github-status:
+  # `updates` specifies when to start posting Reviewable's review completion status.
+  # Valid options include: `accessed` (default), `always`, or `never`.
+  updates: always
+  # `author` is the username of the account used to post the status. Requires the repository to
+  # belong to an organization and the user specified as `commenter` to be a member of that
+  # organization. Defaults to any repository admin.
+  author: pkaminski
 
 # `coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports.
 # https://docs.reviewable.io/repositories.html#code-coverage

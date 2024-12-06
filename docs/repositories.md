@@ -271,8 +271,11 @@ discussion-dismissal-restriction: push | maintain | admin
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
 
 ```yaml
-# The default setting is `accessed`
-github-status-updates: accessed | always | never
+github-status:
+  # The default setting is `accessed`
+  updates: accessed | always | never
+  # Optional username used to post the status; default to any repository admin
+  author: *
 ```
 
 #### Code coverage
