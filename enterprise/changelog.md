@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - New: Add badge.commenter option in file-based settings
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
+- New: show reviewer avatars in file matrix.
 - Upd: improve GitHub request latency timing to account for paged requests.
 - Upd: highlight HTML tags in comments, as they're likely not intended as such.
 - Upd: accept plural variants of relevant disposition keywords in comments.
