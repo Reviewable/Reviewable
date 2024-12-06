@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
 - New: Add badge.commenter option in file-based settings
+- New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - Upd: improve GitHub request latency timing to account for paged requests.
 - Upd: highlight HTML tags in comments, as they're likely not intended as such.
 - Upd: accept plural variants of relevant disposition keywords in comments.
