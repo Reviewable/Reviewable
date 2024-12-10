@@ -21,6 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow directory paths to overflow the file matrix on hover.
 - Fix: correctly delete refs according to `REVIEWABLE_REFS_DELETION_DELAY`.  (Regression introduced in v4424.6998.)
 - Fix: add a `badge.commenter` option in file-based settings
+- Fix: correctly handle pull requests leaving the merge queue.
 
 #### Release 4586.7295 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-27
 - New: post replies to discussion threads that were started on GitHub as replies in the respective thread.
