@@ -7,8 +7,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
-- New: Add badge.commenter option in file-based settings
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
 - Upd: improve GitHub request latency timing to account for paged requests.
@@ -22,6 +20,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash if a `CODEOWNERS` line has duplicate users/teams.
 - Fix: allow directory paths to overflow the file matrix on hover.
 - Fix: correctly delete refs according to `REVIEWABLE_REFS_DELETION_DELAY`.  (Regression introduced in v4424.6998.)
+- Fix: add a `badge.commenter` option in file-based settings
+
 #### Release 4586.7295 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-11-27
 - New: post replies to discussion threads that were started on GitHub as replies in the respective thread.
 - New: introduce a `REVIEWABLE_DISPOSITION_DEFAULTS` configuration that allows you to specify disposition defaults for users in various scenarios.  See the [docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) for details.
