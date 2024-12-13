@@ -214,6 +214,8 @@ Changes here are retroactive (except that an existing description badge won’t 
 badge:
   # The default setting for `location` is `description-bottom`.
   location: description-bottom | description-top | comment | none
+  # `commenter` is optional, and only available if `location` is `comment`.
+  commenter: *
   # `when` is optional.
   when: accessed | published | requested
 ```
