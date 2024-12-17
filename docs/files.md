@@ -77,6 +77,21 @@ File paths in italics indicate that the file is currently elided from the file c
 
 To the left of the file path there's a button to [mark the file as reviewed](#mark-reviewed).
 
+You can optionally show reviewer avatars to the right of the file path by clicking the `show reviewers` toggle found under the matrix.
+
+::: tip
+To only show the reviewer avatars in the panel's full-screen overlay mode, add this custom CSS:
+
+```css
+.file.matrix:not(.overlaid) {
+  td.reviewers .avatars {
+    max-width: 0;
+    padding: 0;
+  }
+}
+```
+:::
+
 To the right of the file path is the [file review state](#file-review-state) chip that you can click on for full details.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
 
 Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.
