@@ -203,10 +203,10 @@ To mark files as reviewed individually, click the buttons to the left of the fil
 
 ### Revisions
 
-This shows the total number of revisions in the review. Each revision is an automatic, unmodifiable capture of one or more commits. You’ll find the commits assigned to a revision in the Review Discussion box, and also in the Changes drop-down at the very top of the page.
+This shows the total number of revisions in the review. Each revision is an automatic, unmodifiable capture of one or more commits. You’ll find the commits assigned to a revision in the [special Commits](#revision-commits) file.
 
 ::: tip
-The logic for grouping commits into revisions depends on the [review style](#changes-commits), number of commits pushed at the same time, commit authors, etc.  There are also some safety limits for how many revisions Reviewable will create at one time.
+The logic for grouping commits into revisions depends on the [review style](#review-style), number of commits pushed at the same time, commit authors, etc.  There are also some safety limits for how many revisions Reviewable will create at one time.
 :::
 
 A _provisional revision_ is tentative, since it may still change up to the point at which someone begins reviewing it. The intent behind provisional revisions is to permit the PR author to self-review the changes and push fixes without polluting the revision list.  Provisional revisions are italicized in the file matrix.
@@ -235,20 +235,7 @@ Regardless of which option you select you will still be able to manually diff an
 
 This shows the current number of commits encompassed by the pull request, along with the source (head) and target (base) branch names. You can easily copy the source branch name (e.g., to check out locally) or change the target branch of the PR if you have the necessary permissions.  Click any of the other links here to open the corresponding GitHub page in the same tab.
 
-The **Review Style** dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.
-
-![reviewable review style](images/summary_2.png)
-
-There are two review styles, and changing the style will require from a few seconds to a minute or so to restructure the provisional revisions in the review.
-
-* **Combine commits for review** — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.
-* **Review each commit separately** — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.
-
-If you're a repo admin, you can also set the default review style for the repo via a small link under the dropdown.
-
-::: danger
-Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
-:::
+The [**Review Style**](#review-style) dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.
 
 ## Labels
 
@@ -321,9 +308,9 @@ Note that you can continue manipulating a review as usual while it's deferred, e
 Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.
 :::
 
-## Reviewing commit messages
+## Revision / commit mapping {#revision-commits}
 
-Reviewable composes a system file used for reviewing commit messages.  The **commit file** is denoted with a special commit icon prepended to its name and will always be listed first in the files list (matrix and review).  This file will contain a list of all *non obsolete* commit messages that precede it, regardless of whether you're reviewing with the **combined commits** or **commit-by-commit** review style.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it *will not* impact your repo or PR in anyway -- it's solely used by Reviewable for reviewing commit messages.
+Each revision in a review is an automatic, unmodifiable capture of one or more commits.  The mapping between commits and revisions is shown in a synthetic **Commits file**.  This virtual file is kept up-to-date automatically by Reviewable and will always be listed first in the files list.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it *will not* impact your repository or pull request in anyway — it's solely used by Reviewable for presenting and reviewing commit messages.
 
 ![reviewable commit matrix](images/commit_matrix.png)
 
@@ -331,6 +318,42 @@ Reviewable composes a system file used for reviewing commit messages.  The **com
 
 ::: tip
 While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
+:::
+
+This special file also provides some additional controls over the mapping between revisions and commits.
+
+![reviewable commit controls](images/commit_controls.png)
+
+### Review style
+
+The **Review Style** dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.
+
+![reviewable review style](images/summary_2.png)
+
+There are two review styles, and changing the style will require from a few seconds to a minute or so to restructure the provisional revisions in the review.
+
+* **Combine commits for review** — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.
+* **Review each commit separately** — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.
+
+If you're a repository administrator, you can also set the default review style for the repository via repository settings.
+
+::: warning
+Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
+:::
+
+### Compacting revisions
+
+Since revisions are immutable, long running reviews can end up with a lot of them, which impacts the performance and usability of the review.  You can have Reviewable reduce the number of revisions for all participants by clicking the **Compact revisions** button if you have write access to the repository.  This will attempt to eliminate and combine redundant revisions but the process is slightly lossy:
+
+* Discussions may be reassigned to an equivalent revision, and you may no longer be able to display the original diff context.
+* Code blocks may be reasigned to an equivalent revision.
+* Only the latest review mark from every reviewer is guaranteed to be retained.
+* Matched prior revisions may be removed for rebased or merged revisions, making diffs less useful.
+
+Access to the review will be blocked until the process completes (typically within 10 to 15 seconds).Revisions that are kept will retain their old numbers, which means that revision numbers may no longer be sequential.
+
+::: danger
+This is an experimental feature and may break the review.  If something goes dreadfully wrong, you can ask admin staff to recover the original review from a backup automatically snapshotted at the start, though this will discard any changes made in the meantime.
 :::
 
 ## Keyboard shortcuts
