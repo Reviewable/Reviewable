@@ -17,6 +17,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: make sure GitHub related file actions are accessible on touch devices.
 - Fix: don't show grey spacer lines in single-column diffs.
 - Fix: reduce incidence of "review not found, likely archived" errors when editing review completion conditions in repository settings.
+- Fix: don't force a line break after an `:lgtm:` emoji.
+- Fix: ensure that reviewers are not requested if publication failed and the "sync requested reviewers" flag was turned off before trying again.
+- Fix: immediately reflect automatically synced requested reviewers in the review after publication.
+- Fix: force "sync requested reviewers" to off if the current user isn't allowed to request reviewers.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
