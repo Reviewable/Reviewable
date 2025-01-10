@@ -200,10 +200,10 @@ Choose where the Reviewable badge is to be inserted on the GitHub website:
 * **Comment** — in a new PR comment. Optionally specify who should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 * **None** — no badges will be created (private repos only).
 
-If you have a current Reviewable subscription or trial, you may optionally choose when to show the badge:
+By default the badge is added when the review is created. If you have a current Reviewable subscription or trial, you may optionally choose when to show the badge:
 
-* **Visited** - show the badge once a review has been accessed for the first time.
-* **Started** - only show the badge once a review has been published.
+* **Visited** (`accessed` in the settings file) - show the badge once a review has been accessed for the first time.
+* **Started** (`published` in the settings file) - only show the badge once a review has been published.
 * **Requested** - only show the badge once a review has been requested. This excludes any PR that never left the draft status, since no review is requested for draft PRs.
 
 ::: tip
@@ -216,8 +216,8 @@ badge:
   location: description-bottom | description-top | comment | none
   # `commenter` is optional, and only available if `location` is `comment`.
   commenter: *
-  # `when` is optional.
-  when: accessed | published | requested
+  # `when` is optional, defaults to 'created'.
+  when: created | accessed | published | requested
 ```
 
 #### Default review style
