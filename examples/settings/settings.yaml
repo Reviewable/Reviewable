@@ -20,7 +20,7 @@ badge:
   # to be a member of that organization. Defaults to the repo connector or review visitor.
   commenter: pkaminski
   # `when` optionally allows you to specify when to inject the Reviewable badge into the pull request.
-  #  Valid options include: `accessed` (default), `published` and `requested`.
+  #  Valid options include: `created` (default), `accessed`, `published` and `requested`.
   when: accessed
 
 # `default-review-style` allows you to choose how reviews are displayed.
