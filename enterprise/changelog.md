@@ -10,6 +10,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 - Upd: render color swatch in comments for color codes in inline code.
 - Upd: move diff overflow warning to an indicator toast.
+- Upd: add link to Conclusion panel to the toolbar.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
 - Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
@@ -23,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: immediately reflect automatically synced requested reviewers in the review after publication.
 - Fix: force "sync requested reviewers" to off if the current user isn't allowed to request reviewers.
 - Fix: don't crash when publishing and quickly navigating to another review before publishing has completed.
+- Fix: align revision cell arcs in file headers.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
