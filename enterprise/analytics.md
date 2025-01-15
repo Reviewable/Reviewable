@@ -117,6 +117,18 @@ The status of a review was updated for some reason.  This event is not user-spec
 }
 ```
 
+##### Compacted Revisions
+The review's revisions have been compacted, by request from a user.
+```
+{
+  owner: string,
+  repo: string,
+  prNumber: number,
+  numOriginalRevisions: number,  // the number of revisions before compaction
+  numCompactedRevisions: number  // the number of revisions after compaction
+}
+```
+
 ##### Listed Open Reviews
 The user listed reviews on the dashboard.  This event reports some size stats regarding the list and can be emitted repeatedly as the dashboard updates the list.  It's sampled at 25% of actual occurrences.
 
