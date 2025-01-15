@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: render color swatch in comments for color codes in inline code.
 - Upd: move diff overflow warning to an indicator toast.
 - Upd: add link to Conclusion panel to the toolbar.
+- Upd: respect the "require linear history" branch protection setting.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
 - Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
