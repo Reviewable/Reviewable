@@ -12,6 +12,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: move diff overflow warning to an indicator toast.
 - Upd: add link to Conclusion panel to the toolbar.
 - Upd: respect the "require linear history" branch protection setting.
+- Upd: stop tracking whether a user can bypass branch protections, as this is much harder to do with rulesets.  Instead, offer a checkbox to everyone to try to bypass them and let GitHub decide.
+- Upd: respect the completion condition's `mergeStyle` output property even if it conflicts with GitHub settings and results in no valid merge styles.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
 - Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
