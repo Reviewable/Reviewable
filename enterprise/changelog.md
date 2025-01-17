@@ -14,6 +14,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: respect the "require linear history" branch protection setting.
 - Upd: stop tracking whether a user can bypass branch protections, as this is much harder to do with rulesets.  Instead, offer a checkbox to everyone to try to bypass them and let GitHub decide.
 - Upd: respect the completion condition's `mergeStyle` output property even if it conflicts with GitHub settings and results in no valid merge styles.
+- Upd: support rulesets as a method of branch protection, including respecting any constraints they impose on merge methods.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
 - Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
@@ -28,6 +29,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: force "sync requested reviewers" to off if the current user isn't allowed to request reviewers.
 - Fix: don't crash when publishing and quickly navigating to another review before publishing has completed.
 - Fix: align revision cell arcs in file headers.
+- Fix: consistently sync branch protection settings; previously, some changes could be accidentally ignored.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
