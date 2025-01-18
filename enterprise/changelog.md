@@ -31,6 +31,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: align revision cell arcs in file headers.
 - Fix: consistently sync branch protection settings; previously, some changes could be accidentally ignored.
 - Fix: don't crash when encountering bogus issue or pull request links in comments.
+- Fix: avoid poor comment line mapping in the virtual commit file in some situations.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
