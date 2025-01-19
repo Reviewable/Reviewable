@@ -8,6 +8,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
 - Upd: move diff overflow warning to an indicator toast.
 - Upd: add link to Conclusion panel to the toolbar.
@@ -15,6 +16,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: stop tracking whether a user can bypass branch protections, as this is much harder to do with rulesets.  Instead, offer a checkbox to everyone to try to bypass them and let GitHub decide.
 - Upd: respect the completion condition's `mergeStyle` output property even if it conflicts with GitHub settings and results in no valid merge styles.
 - Upd: support rulesets as a method of branch protection, including respecting any constraints they impose on merge methods.
+- Upd: move the review style selector to the `Commits` file.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
 - Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
