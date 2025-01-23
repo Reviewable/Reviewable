@@ -37,6 +37,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid poor comment line mapping in the virtual commit file in some situations.
 - Fix: ensure that the last revision is never obsolete in some edge cases.
 - Fix: avoid generating spurious "commits that don't affect files in this pull request..." messages for the Commits file.
+- Fix: recognize missing 2FA GitHub error messages.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
