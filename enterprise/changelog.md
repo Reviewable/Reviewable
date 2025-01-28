@@ -18,6 +18,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: support rulesets as a method of branch protection, including respecting any constraints they impose on merge methods.
 - Upd: move the review style selector to the `Commits` file.
 - Upd: raise default per-push revision limits.
+- Upd: move commits list from changes dropdown to file header.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
 - Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
@@ -38,6 +39,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure that the last revision is never obsolete in some edge cases.
 - Fix: avoid generating spurious "commits that don't affect files in this pull request..." messages for the Commits file.
 - Fix: recognize missing 2FA GitHub error messages.
+- Fix: prevent crash when saving/encrypting repo settings with REVIEWABLE_ENCRYPTION_PRIVATE_KEYS unset.
+- Fix: don't get stuck when attempting to merge a pull request that includes a GitHub workflow file when the user authentication lacks `workflow` scope.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
