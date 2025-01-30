@@ -42,6 +42,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: prevent crash when saving/encrypting repo settings with REVIEWABLE_ENCRYPTION_PRIVATE_KEYS unset.
 - Fix: don't get stuck when attempting to merge a pull request that includes a GitHub workflow file when the user authentication lacks `workflow` scope.
 - Fix: try to refresh "Deleted user" records more frequently in case the user was added (back) to GitHub.
+- Fix: fix unarchiving of some very old reviews.
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
