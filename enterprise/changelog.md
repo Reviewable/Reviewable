@@ -8,9 +8,10 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+#### Release 4668.7429 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
-- Upd: move diff overflow warning to an indicator toast.
+- Upd: move diff overflow warning to a toast.
 - Upd: add link to Conclusion panel to the toolbar.
 - Upd: respect the "require linear history" branch protection setting.
 - Upd: stop tracking whether a user can bypass branch protections, as this is much harder to do with rulesets.  Instead, offer a checkbox to everyone to try to bypass them and let GitHub decide.
@@ -21,9 +22,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: move commits list from changes dropdown to file header.
 - Fix: don't crash when using a keyboard shortcut bound to `markFileReviewedAndAdvance()` with only one file left to review.
 - Fix: fix alignment of send error message.
-- Fix: make sure lgtm is centered in participants panel status (regression introduced in v4548.7221).
-- Fix: Requesting a review by the current user works now as well with ad-hoc comments
-- Fix: ensure that writing and sending comments works correctly even if `IndexedDB` reports an error.
+- Fix: make sure LGTM is centered in participants panel status (regression introduced in v4548.7221).
+- Fix: correctly request a review by the current user when sending an ad-hoc comment.
+- Fix: ensure that writing and sending comments works even if `IndexedDB` reports an error.
 - Fix: make sure GitHub related file actions are accessible on touch devices.
 - Fix: don't show grey spacer lines in single-column diffs.
 - Fix: reduce incidence of "review not found, likely archived" errors when editing review completion conditions in repository settings.
@@ -39,10 +40,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure that the last revision is never obsolete in some edge cases.
 - Fix: avoid generating spurious "commits that don't affect files in this pull request..." messages for the Commits file.
 - Fix: recognize missing 2FA GitHub error messages.
-- Fix: prevent crash when saving/encrypting repo settings with REVIEWABLE_ENCRYPTION_PRIVATE_KEYS unset.
+- Fix: prevent crash when saving repository settings with REVIEWABLE_ENCRYPTION_PRIVATE_KEYS unset.
 - Fix: don't get stuck when attempting to merge a pull request that includes a GitHub workflow file when the user authentication lacks `workflow` scope.
 - Fix: try to refresh "Deleted user" records more frequently in case the user was added (back) to GitHub.
 - Fix: fix unarchiving of some very old reviews.
+
 #### Release 4623.7332 (min 3991.6302 GHE 2.19+ or 3.0+) 2024-12-15
 - New: add a `github-status.creator` setting to force a specific account to post all GitHub review status updates.
 - New: show reviewer avatars in file matrix.
