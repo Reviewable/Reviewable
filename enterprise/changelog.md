@@ -8,7 +8,15 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
+- New: add a Diffs panel that centralizes control over the diff bounds of all files, and adjust the toolbar button to navigate to it instead of opening the Changes dropdown.
+- New: add a way to diff against the last revision reviewed by anyone with one click.
+- Upd: put the "continue review" button into its new place in the top right corner in preparation for removing the Changes panel.
+- Upd: add a Pull Request panel that combines parts of the main discussion and the Changes panel.
+- Upd: remove the Changes panel, as all its functionality has now been moved to other spots.
 - Fix: highlight contextual help hotspots correctly in dialogs.
+- Fix: report the correct last reviewed revision in the file matrix reviewer avatar tooltip.
+- Fix: correctly describe a diff against the user's last reviewed revision(s).
+- Fix: don't rediff all files when expanding or collapsing a group in the file matrix.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
