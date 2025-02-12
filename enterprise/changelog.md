@@ -21,6 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't rediff all files when expanding or collapsing a group in the file matrix.
 - Fix: report the correct participants and number of messages for the `-top` discussion in the completion condition input data structure.  Before this fix some synthetic messages that don't show up in the review on the client were mistakenly included.
 - Fix: always offer the mark all reviewed/read button in the Conclusion panel.
+- Fix: ensure that (potential) changes to a pull request's mergeability status that occur close together aren't missed.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
