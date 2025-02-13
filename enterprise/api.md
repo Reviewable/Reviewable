@@ -16,7 +16,7 @@ Each API request must be authenticated with following request header:
 
 #### Expanding responses
 
-Some data are omitted from the repsonse by default. These are documented as *expandable*.
+Some data are omitted from the response by default. These are documented as *expandable*.
 In order to request expandable data to be included in the repsonse, add the `expand` parameter
 to the request's query string specifying the path to the propery to be expanded,
 e.g. `?expand=occupants.details`. You can specify multiple properties separated by comma.
