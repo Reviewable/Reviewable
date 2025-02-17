@@ -15,6 +15,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: remove the Changes panel, as all its functionality has now been moved to other spots.
 - Upd: redesign the algorithm that determines whether a revision has probably been rebased, and from what corresponding original revision. The new logic is simpler and should do a better job in common situations, but may exhibit a different pattern of false positives and negatives in more complex ones.
 - Upd: group checks into required, optional, and successful sections.
+- Upd: log the clock correction offset we're applying (courtesy of Firebase) at startup, to make clock skew issues easier to debug.  Also check license expiry against the corrected clock.
+- Upd: allow uploads of `webp` images.
 - Fix: highlight contextual help hotspots correctly in dialogs.
 - Fix: report the correct last reviewed revision in the file matrix reviewer avatar tooltip.
 - Fix: correctly describe a diff against the user's last reviewed revision(s).
@@ -25,6 +27,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't unnecessarily retain some files at `r1` when overwriting a provisional revision.  This can lead to nonsensical diffs when using `r1` as the left hand side.  (Regression introduced in v4668.7438.)
 - Fix: don't show an ellipsis at the beginning of every path in the diff panel headers.
 - Fix: clear out some review-specific toasts when leaving a review page.  This can also prevent crashes if the toast offers an action related to the current review.
+- Fix: proactively shut down the server when its license expires.  Previously, a server would refuse to start up with an expired license yet would happily keep running, which was confusing.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
