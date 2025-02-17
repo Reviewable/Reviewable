@@ -24,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: ensure that (potential) changes to a pull request's mergeability status that occur close together aren't missed.
 - Fix: don't unnecessarily retain some files at `r1` when overwriting a provisional revision.  This can lead to nonsensical diffs when using `r1` as the left hand side.  (Regression introduced in v4668.7438.)
 - Fix: don't show an ellipsis at the beginning of every path in the diff panel headers.
+- Fix: clear out some review-specific toasts when leaving a review page.  This can also prevent crashes if the toast offers an action related to the current review.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
