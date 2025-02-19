@@ -28,6 +28,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't show an ellipsis at the beginning of every path in the diff panel headers.
 - Fix: clear out some review-specific toasts when leaving a review page.  This can also prevent crashes if the toast offers an action related to the current review.
 - Fix: proactively shut down the server when its license expires.  Previously, a server would refuse to start up with an expired license yet would happily keep running, which was confusing.
+- Fix: allow organization owners to change settings for all repos, even if not explicitly an admin for them.
+- Fix: don't crash after failing to set review revision mapping style.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
