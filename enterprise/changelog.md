@@ -11,6 +11,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add a Diffs panel that centralizes control over the diff bounds of all files, and adjust the toolbar button to navigate to it instead of opening the Changes dropdown.
 - New: add a way to diff against the last revision reviewed by anyone with one click.
 - New: let the user specify their preferred initial diff bounds and the threshold at which Reviewable switches to showing just one file at a time.
+- New: add a command input bar to the pull request panel.
 - Upd: put the "continue review" button into its new place in the top right corner in preparation for removing the Changes panel.
 - Upd: add a Pull Request panel that combines parts of the main discussion and the Changes panel.
 - Upd: remove the Changes panel, as all its functionality has now been moved to other spots.
@@ -21,6 +22,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: show diff layout and line length preferences in a more discoverable spot.  (The old "margin notch" still works too, though!)
 - Upd: give users the option to show diffs since the last review by a specific reviewer, from both the Diffs panel and the file matrix.
 - Upd: add a new header button to the file matrix that lets users diff since the last review by anyone.
+- Upd: disallow searching in subscription billing manager dropdown.
 - Fix: highlight contextual help hotspots correctly in dialogs.
 - Fix: report the correct last reviewed revision in the file matrix reviewer avatar tooltip.
 - Fix: correctly describe a diff against the user's last reviewed revision(s).
@@ -35,6 +37,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: allow organization owners to change settings for all repos, even if not explicitly an admin for them.
 - Fix: don't crash after failing to set review revision mapping style.
 - Fix: avoid rare crash when loading a review page due to a race condition.
+- Fix: improve multiselect inputs to expand gracefully in all contexts.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
