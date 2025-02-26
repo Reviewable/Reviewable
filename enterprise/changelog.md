@@ -38,6 +38,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash after failing to set review revision mapping style.
 - Fix: avoid rare crash when loading a review page due to a race condition.
 - Fix: improve multiselect inputs to expand gracefully in all contexts.
+- Fix: when reviewing against your last reviewed revision, keep the diff description unchanged even as you mark some files reviewed.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
