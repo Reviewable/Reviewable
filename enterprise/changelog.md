@@ -40,6 +40,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve multiselect inputs to expand gracefully in all contexts.
 - Fix: when reviewing against your last reviewed revision, keep the diff description unchanged even as you mark some files reviewed.
 - Fix: include explicit dependencies line in suggested completion condition file export if needed.
+- Fix: avoid occasional issues when rolling back from a review compaction where users had draft review marks.
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
