@@ -11,9 +11,9 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - New: add a Diffs panel that centralizes control over the diff bounds of all files, and adjust the toolbar button to navigate to it instead of opening the Changes dropdown.
 - New: add a way to diff against the last revision reviewed by anyone with one click.
 - New: let the user specify their preferred initial diff bounds and the threshold at which Reviewable switches to showing just one file at a time.
+- New: add a Pull Request panel that combines parts of the main discussion and the Changes panel.
 - New: add a command input bar to the pull request panel.
 - Upd: put the "continue review" button into its new place in the top right corner in preparation for removing the Changes panel.
-- Upd: add a Pull Request panel that combines parts of the main discussion and the Changes panel.
 - Upd: remove the Changes panel, as all its functionality has now been moved to other spots.
 - Upd: redesign the algorithm that determines whether a revision has probably been rebased, and from what corresponding original revision. The new logic is simpler and should do a better job in common situations, but may exhibit a different pattern of false positives and negatives in more complex ones.
 - Upd: group checks into required, optional, and successful sections.
