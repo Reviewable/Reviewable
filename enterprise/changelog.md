@@ -7,7 +7,6 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
-
 - New: add a Diffs panel that centralizes control over the diff bounds of all files, and adjust the toolbar button to navigate to it instead of opening the Changes dropdown.
 - New: add a way to diff against the last revision reviewed by anyone with one click.
 - New: let the user specify their preferred initial diff bounds and the threshold at which Reviewable switches to showing just one file at a time.
@@ -22,7 +21,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: show diff layout and line length preferences in a more discoverable spot.  (The old "margin notch" still works too, though!)
 - Upd: give users the option to show diffs since the last review by a specific reviewer, from both the Diffs panel and the file matrix.
 - Upd: add a new header button to the file matrix that lets users diff since the last review by anyone.
-- Upd: disallow searching in subscription billing manager dropdown.
+- Upd: start indexing active and broken repository connections, in preparation for a new admin center design.
 - Fix: highlight contextual help hotspots correctly in dialogs.
 - Fix: report the correct last reviewed revision in the file matrix reviewer avatar tooltip.
 - Fix: correctly describe a diff against the user's last reviewed revision(s).
@@ -40,7 +39,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve multiselect inputs to expand gracefully in all contexts.
 - Fix: when reviewing against your last reviewed revision, keep the diff description unchanged even as you mark some files reviewed.
 - Fix: include explicit dependencies line in suggested completion condition file export if needed.
-- Fix: avoid occasional issues when rolling back from a review compaction where users had draft review marks.
+- Fix: disallow searching in subscription billing manager dropdown.
+- Fix: avoid incorrectly syncing valid users as `ghost` when running in an EMU enterprise instance.
+- Fix: guard against connect / disconnect actions racing a repository sweep, which could result in deriving the wrong "does the organization have connected repositories" flag.
+- Fix: fix a number of issues with compacting revisions that could cause compaction to fail, or could cause temporary server panics after restoring a review from backup.  None of the issues compromised review integrity, though.
+
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
 - Upd: render color swatch in comments for color codes in inline code.
