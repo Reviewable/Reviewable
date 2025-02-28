@@ -22,6 +22,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: give users the option to show diffs since the last review by a specific reviewer, from both the Diffs panel and the file matrix.
 - Upd: add a new header button to the file matrix that lets users diff since the last review by anyone.
 - Upd: start indexing active and broken repository connections, in preparation for a new admin center design.
+- Upd: allow linking to a file without entering isolated file mode.
+- Upd: keep commits list open after clicking links.
 - Fix: highlight contextual help hotspots correctly in dialogs.
 - Fix: report the correct last reviewed revision in the file matrix reviewer avatar tooltip.
 - Fix: correctly describe a diff against the user's last reviewed revision(s).
