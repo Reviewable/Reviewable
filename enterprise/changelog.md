@@ -45,6 +45,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: avoid incorrectly syncing valid users as `ghost` when running in an EMU enterprise instance.
 - Fix: guard against connect / disconnect actions racing a repository sweep, which could result in deriving the wrong "does the organization have connected repositories" flag.
 - Fix: fix a number of issues with compacting revisions that could cause compaction to fail, or could cause temporary server panics after restoring a review from backup.  None of the issues compromised review integrity, though.
+- Fix: flag connections as broken due to the connecting user being suspended when GitHub enforces rate limits.
 
 #### Release 4668.7438 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-01-31
 - New: allow users to compact revisions in a review by eliminating and combining redundant ones.
