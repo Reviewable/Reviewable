@@ -133,7 +133,7 @@ If you would like to see if there is or is not a current prototype repository, a
 * "This is the current prototype repository."
 * "The current prototype repository is ____.".
 
-#### Store repository settings using the `.reviewable` directory
+#### Store repository settings using the `.reviewable` directory {#file-based-settings}
 
 The `.reviewable` settings directory will allow you to customize your review settings without manually changing settings using the Reviewable user interface. The `.reviewable` directory can contain a `settings.yaml` file and/or a [completion condition script](#completion-condition-script) (or more than one in case you're using repository-specific [overrides](#overrides)).
 
@@ -353,7 +353,7 @@ For testing, your code will be continuously evaluated against the **Review state
 
 The results of your code will appear in the **Evaluation result** pane at the bottom of the settings page.  They must follow a specific structure described in the [condition ouput](#condition-output) section below.
 
-![reviewable condition code to determine when a review is complete](images/repositories_8.png ':size=1138')
+![reviewable condition code to determine when a review is complete](images/repositories_8.png){width=1138px}
 
 ::: tip
 If you would like to test a completion condition before applying the change to your repository, you may use the [completion condition playground](https://reviewable.io/playground). The completion condition playground allows you to test a completion script against a pull request or review specified by url. The playground does not allow you to save the completion condition.
