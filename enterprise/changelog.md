@@ -15,6 +15,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: reduce false positives when detecting minified files.
 - Fix: remove auto-merge warning icon if the pull request isn't open.
 - Fix: don't crash on load in Safari if strict privacy settings are on.
+- Fix: fix client performance regression in Chrome 134.
 #### Release 4718.7540 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-05
 - New: add a Diffs panel that centralizes control over the diff bounds of all files, and adjust the toolbar button to navigate to it instead of opening the Changes dropdown.
 - New: add a way to diff against the last revision reviewed by anyone with one click.
