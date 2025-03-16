@@ -11,11 +11,14 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: distinguish between active and inactive requested reviewers.
 - Upd: update `highlight.js` to v11.11.1.
 - Upd: retain up to 10 merged/closed pull requests on the dashboard by default.
+- Upd: make directory rows less tall in the file matrix.
+- Upd: improve dark mode default contrast in diffs and gutter icons.
 - Fix: avoid potentially showing duplicate comment time-ago dividers in a discussion where you engaged in back-and-forth without leaving the page.
 - Fix: reduce false positives when detecting minified files.
 - Fix: remove auto-merge warning icon if the pull request isn't open.
 - Fix: don't crash on load in Safari if strict privacy settings are on.
 - Fix: fix client performance regression in Chrome 134.
+- Fix: use proper dark mode colors including in truncated PR description and in selected text in code blocks.
 #### Release 4718.7540 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-05
 - New: add a Diffs panel that centralizes control over the diff bounds of all files, and adjust the toolbar button to navigate to it instead of opening the Changes dropdown.
 - New: add a way to diff against the last revision reviewed by anyone with one click.
