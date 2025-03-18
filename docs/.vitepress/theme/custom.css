@@ -77,15 +77,18 @@ header .title {
   text-decoration: underline;
 }
 
-.pager-link {
+.VPLink {
   border: none !important;
+}
+
+.pager-link {
   padding: 0 !important;
   width: auto !important;
   height: auto !important;
   transition: none !important;
 }
 
-.pager-link:hover {
+.pager-link:hover > .title {
   color: var(--vp-c-brand-2);
 }
 
@@ -193,6 +196,10 @@ header .title {
   background-color: var(--red);
 }
 
+.orange.label {
+  background-color: var(--orange);
+}
+
 .green.label {
   background-color: var(--green);
 }
@@ -217,13 +224,57 @@ i.icon {
   opacity: 0.7;
 }
 
-.circular.no.data::after {
-  content: "\f05e";
-  font-family: Icons-regular;
-  color: var(--red);
-  position: absolute;
-  left: -3px;
-  top: -2px;
-  font-size: 1.7em;
-  opacity: 0.6;
+i.opaque.icon {
+  opacity: 1;
 }
+
+i.red.inverted.icon {
+  color: var(--text-color-inverted) !important;
+  background-color: var(--red-4) !important;
+}
+
+i.green.inverted.icon {
+  color: var(--text-color-inverted) !important;
+  background-color: var(--green-2) !important;
+}
+
+i.circular.red-rim.icon {
+  box-shadow: 0em 0em 0em 0.1em var(--red-4) inset;
+}
+
+i.circular.green-rim.icon {
+  box-shadow: 0em 0em 0em 0.1em var(--green-2) inset;
+}
+
+.circular.no.data.icon {
+  box-shadow: none;
+}
+
+.circular.no.data::after {
+  left: -2px !important;
+  top: -1px !important;
+  font-size: 1.7em !important;
+}
+
+i.icon.review.requested.inactive::after {
+  top: -0.2em !important;
+}
+
+/* styles below copied from SemanticUI */
+
+i.circular.icon {
+  border-radius: 500em !important;
+  display: inline-block;  /* added */
+  padding: 0.5em 0.35em !important;
+  box-shadow: 0em 0em 0em 0.1em rgba(0, 0, 0, 0.1) inset;
+  line-height: 1 !important;
+  width: 2em !important;
+  height: 2em !important;
+}
+
+i.circular.inverted.icon {
+  border: none;
+  box-shadow: none;
+}
+
+/* end copied from SemanticUI */

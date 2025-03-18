@@ -7,8 +7,7 @@ This chapter explains in detail how you manage and review files in Reviewable.  
 
 A file's evolution over the course of the pull request is summarized in both the file matrix and the file areas by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.  Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.
 
-<!-- TODO: update screenshot to remove "last revisions reviewed by others -->
-![reviewable file matrix status](images/filematrix_9.png)
+![reviewable file matrix status](images/filematrix_9.png){width=300px}
 
 The brackets in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
 
@@ -24,10 +23,10 @@ The small button to the left of the file path indicates your current reviewed st
 
 Color | Meaning
 :----:|---------
-![reviewable file matrix current state](images/filematrix_2.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed.
-![reviewable file matrix current state](images/filematrix_3.png ':size=25') | Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.
-![reviewable file matrix current state](images/filematrix_4.png ':size=25') | The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, the review is <a href="reviews.md#deferring-a-review">deferred</a>, or you are the author of the PR.
-![reviewable file matrix current state](images/filematrix_5.png ':size=25') | Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.
+<i class="opaque circular inverted red unreviewed icon"></i> | The file has not yet been reviewed at or after the right diff bound. Click to mark the file as reviewed.
+<i class="opaque circular inverted green reviewed icon"></i> | Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.
+<i class="opaque circular red-rim unreviewed icon"></i> | The file has not yet been reviewed at or after the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff, the review is <a href="reviews.md#deferring-a-review">deferred</a>, or you are the author of the PR.
+<i class="opaque circular green-rim unreviewed icon"></i> | Reviewed by you or someone else at or after the right diff bound. Click to mark as reviewed but it's probably redundant.
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
@@ -56,7 +55,7 @@ By default, Reviewable can only tell who has reviewed a file and infer some basi
 
 ## File matrix
 
-Click the toggle to display a history matrix showing all files and revisions. Here, you can:
+The Files panel displays a history matrix showing all files and revisions. Here, you can:
 
 - View a summary of the PR's change history for each file.
 - Set diff bounds for any and all files.
@@ -65,36 +64,29 @@ Click the toggle to display a history matrix showing all files and revisions. He
 - Jump to a file's diff.
 - See delta stats for a diff and all diffs.
 
-![reviewable file matrix](images/filematrix_1.png ':size=1144')
+![reviewable file matrix](images/filematrix_1.png){width=1144px}
 
 ### File list
 
 The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are hidden by default, but can be revealed with a switch in the [Changes summary box](reviews.md#changes-summary).
 
-Click the file path to move directly to the diff for that file. Hold down the `⌘`, `Ctrl` or `⇧` key (as appropriate for your browser) when clicking to open the file diff in a new browser tab.  To open every file in a new tab at once, hold down the modifier key and click the **All** button that appears in the header of the file matrix.
-
-File paths in italics indicate that the file is currently elided from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.
-
-To the left of the file path there's a button to [mark the file as reviewed](#mark-reviewed).
-
-You can optionally show reviewer avatars to the right of the file path by clicking the `show reviewers` toggle found under the matrix.
+Click the file path to move directly to the diff for that file. Hold down `⌘`, `Ctrl`, `Alt` or `⇧` key (or combinations thereof) when clicking to open the file diff in a new browser tab, on GitHub, or [in your editor](accountsettings#external-editor-line-link-template).  To open every file at once, do the same on the "N files" indicator in the matrix header.
 
 ::: tip
-To only show the reviewer avatars in the panel's full-screen overlay mode, add this custom CSS:
-
-```css
-.file.matrix:not(.overlaid) {
-  td.reviewers .avatars {
-    max-width: 0;
-    padding: 0;
-  }
-}
-```
+File paths in italics indicate that the file is currently elided from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.
 :::
 
-To the right of the file path is the [file review state](#file-review-state) chip that you can click on for full details.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
+To the left of the file path there's a button to [mark the file as reviewed](#mark-reviewed).  The header has a corresponding button to mark all files as reviewed (if certain conditions hold — otherwise, a tooltip will tell you why it's disabled), with an option to undo the action immediately afterwards.
 
-Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.
+To the right of the file path you can optionally see reviewer avatars that provide a quick overview of a file's reviewers.  The avatars get progressively more faded out as a user's review becomes less recent.  You can hover over an avatar for details, or click on it to show the diff between that user's last reviewed revision (for each file) and the latest revision.
+
+Further to the right is the [file review state](#file-review-state) chip that you can click on for full details regarding who has reviewed a file and whether anyone still needs to review it.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
+
+Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, in the lower-right corner of the Changes summary.  Other information you may find here includes test coverage statistics and a dropdown with a list of commits included in the current diff bounds.
+
+The elements above can be turned on or off via a small menu below the file matrix.  You can also force all elements to appear when the file matrix is opened as a modal dialog.
+
+![reviewable file matrix options](images/filematrix_11.png)
 
 Files can also be grouped, like for the **Tests** group in the screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on [custom review completion conditions](repositories.md#condition-output) for instructions on how to make custom file groups in your repository.
 
@@ -108,18 +100,111 @@ r1    | An immutable revision (even if the branch is rebased).
 _r1_  | A provisional revision whose commits may still change.
 <s>r1</s> | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.
 <i class="cell reviewed icon"/> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.
+<i class="cell participants on icon"/> | A (virtual) last revision that anyone marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last revision reviewed by anyone and the latest revision for each file, or drag-select to any other revision of your choice.
 ⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.
 
 You can also drag in the diff header to bulk-select the diff bounds. Doing so in the header will set the diff bounds for all files as close as possible to the new setting. Many reviewers choose to set diff bounds this way instead of file-by-file to see one coherent set of diffs at a time.
+
+## Diff controls
+
+Where the file matrix gives you fine-grained manual control over the diff bounds, the Diffs panel allows you to tweak the diffs that Reviewable automatically selects for you and make other coarse-grained adjustments.
+
+![reviewable diff controls](images/diffs_1.png)
+
+At the top of the panel you'll find an informational description of your current diff bounds.
+
+### Show default diffs to review
+
+The large purple **Show Diffs to Review** button immediately below (exact wording varies) will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. By default, when you first load the review page this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a **combined commits** style review, this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using **review each commit** style, this will be the range between the last fully reviewed commit and the next one. If you're the PR author, this will be the range between the last snapshotted revision and the latest one, so you can review the diffs that you have just pushed.</more>
+
+Next to the button there's a dropdown with three **review overlap strategy** options. This setting changes which file diffs are suggested for the user to review when there are multiple participating reviewers and implicitly sets the default for any future reviews.
+
+- **Skip files claimed by others** suggests files that have been previously reviewed by you, or that nobody has reviewed yet. Select this if you want to divide work by skipping files already reviewed by someone at an earlier version.
+- **Review any unreviewed files** suggests files to review if they have not been reviewed by anyone at the current revision. Select this if you want to combine efforts and review any file that needs reviewing.
+- **Review all files personally** suggests files you have not personally reviewed. Select this if you want to ensure that you review every file yourself, ignoring other reviewers.
+
+::: tip
+Regardless of which option you select you will still be able to manually diff and review any file you want.
+:::
+
+### Show other diffs
+
+Next you'll find a row of buttons that let you set other frequently used diff bounds.
+
+![reviewable diff controls](images/diffs_2.png){width=375px}
+
+- **All changes** will show the full diffs between the base and the latest revision for each file.  This will show you exactly the full deltas that will be applied if the PR is merged.
+- **Unreviewed by...** will show the changes that have not yet been reviewed by a specific person (either you or another reviewer), or that have not yet been reviewed by anyone at all.  (If a reviewer doesn't show up in this list then they haven't marked any files as reviewed yet.)
+
+### Preferences
+
+Below these primary diff controls you can expand a section that lets you set diff-related preferences.  All settings are personal to you and apply to all organizations and repositories.
+
+![reviewable diff controls](images/diffs_3.png)
+
+The **initial diff bounds** dropdown allows you to select the diff bounds that will be applied automatically when you load a review page from among the options available for manual use above.  In essence, you'll be telling Reviewable which button to automatically click for you when a review loads.  The selection for when you're a reviewer vs a pull request author are tracked separately.
+
+**Max diffs displayed** lets you customize when a review will switch into [single file mode](#single-file-mode).  You might want to set it higher if you have a powerful machine and don't mind trading off page loading time against faster access once it's loaded.  Conversely, you may want to set it lower if you find that reviews with many files are having a noticeable impact on performance.  Set it to `1` to force all reviews into single file mode.
+
+The **diff layout** and **line length** options replicate the more compact [diff layout](#diff-layout) controls available on every file panel.
+
+
+## Virtual commits file {#revision-commits}
+
+Each revision in a review is an automatic, unmodifiable capture of one or more commits.  The mapping between commits and revisions is shown in a synthetic **Commits file**.  This virtual file is kept up-to-date automatically by Reviewable and will always be listed first in the files list.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it *will not* impact your repository or pull request in anyway — it's solely used by Reviewable for presenting and reviewing commit messages.
+
+![reviewable commit matrix](images/commit_matrix.png)
+
+![reviewable commit review](images/commit_review.png)
+
+::: tip
+While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
+:::
+
+This special file also provides some additional controls over the mapping between revisions and commits.
+
+![reviewable commit controls](images/commit_controls.png)
+
+### Review style
+
+The **Review Style** dropdown lets you choose the style of this review, affecting how commits are grouped into revisions and the suggested sequence of diffs to review.
+
+![reviewable review style](images/summary_2.png)
+
+There are two review styles, and changing the style will require from a few seconds to a minute or so to restructure the provisional revisions in the review.
+
+* **Combine commits for review** — review commits that are grouped together according to the time at which they were pushed and a few other factors. Keep in mind that some commits might not be accessible for diffing.
+* **Review each commit separately** — a revision is created for each commit, even if a successive commit wrote over previous changes. We recommend choosing this review style only if the commits have been carefully organized. Keep in mind that there are some built-in limits on how many revisions can be created together. This means that commits may get aggregated if those limits are exceeded.  Please contact support to discuss raising the limits for your repos if you feel this would be useful.
+
+If you're a repository administrator, you can also set the default review style for the repository via repository settings.
+
+::: warning
+Snapshotted revisions won’t get restructured, so you may encounter surprising results if you switch the review style after beginning the review.  An exception to this is the case in which a revision was snapshotted only because somebody other than the PR author looked at it, in which case it appears snapshotted but is OK for restructuring. The purpose of this is to enable a reviewer to switch the review style, since just loading the page will show the diff and snapshot the revisions.
+:::
+
+### Compacting revisions
+
+Since revisions are immutable, long running reviews can end up with a lot of them, which impacts the performance and usability of the review.  You can have Reviewable reduce the number of revisions for all participants by clicking the **Compact revisions** button if you have write access to the repository.  This will attempt to eliminate and combine redundant revisions but the process is slightly lossy:
+
+* Discussions may be reassigned to an equivalent revision, and you may no longer be able to display the original diff context.
+* Code blocks may be reassigned to an equivalent revision.
+* Only the latest review mark from every reviewer is guaranteed to be retained.
+* Matched prior revisions may be removed for rebased or merged revisions, making diffs less useful.
+
+Access to the review will be blocked until the process completes (typically within 10 to 15 seconds).  Revisions that are kept will retain their old numbers, which means that revision numbers may no longer be sequential.
+
+::: danger
+This is an experimental feature and may break the review.  If something goes dreadfully wrong, you can ask admin staff to recover the original review from a backup automatically snapshotted at the start, though this will discard any changes made in the meantime.
+:::
+
 
 ## File contents
 
 Below the [top-level discussions](discussions.md) you'll find the file contents.
 
-
 ### File header
 
-At the top of each file diff panel there's a file path.  If the file paths are too long some may be collapsed in places with an &hellip;; hover over the path or swipe to expand and see the full path.  You can click on the path to activate a dropdown menu with relevant actions, such as opening the file in your editor, copying the file path, or starting a new file-level discussion.
+At the top of each file diff panel there's a file path.  If the file paths are too long some may be collapsed in places with a &hellip;; hover over the path or swipe to expand and see the full path.  You can click on the path to activate a dropdown menu with relevant actions, such as opening the file in your editor, copying the file path, or starting a new file-level discussion.
 
 The header holds the standard [mark as reviewed](#mark-reviewed) button, a [review state chip](#file-review-state), and [revision cells](#revision-cells) for adjusting diff bounds.
 
@@ -298,13 +383,13 @@ If diffs that make sense to be shown were omitted for some reason, you'll find a
 
 ### Single file mode
 
-Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (25 files as of this writing). In this mode, only one file will appear at a time. You'll also see a summary explanation just above the first (and only) file diff, together with a button which you can click to force all files to appear anyway until you leave the page.
+Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (configurable in the [diff preferences panel](#diff-controls)). In this mode, only one file will appear at a time. You'll also see a summary explanation in a toast, together with a button which you can click to force all files to appear anyway until you leave the page.
 
 ![reviewable fill diffs some diffs not shown](images/filediffs_11.png)
 
 Single-file mode is similar — but not identical — to the mode that you enter when you `⌘`, `Ctrl`, or `⇧` click a file open into a separate tab.
 
-This panel will also appear if any diffs were throttled or big diffs were elided from display. However, in those cases the page will remain in multi-file mode. The text in the panel will also reflect the specific conditions.
+This toast will also appear if any diffs were throttled or big diffs were elided from display. However, in those cases the page will remain in multi-file mode. The text in the toast will also reflect the specific conditions.
 
 ## Support for specific workflows
 
