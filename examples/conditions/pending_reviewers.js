@@ -27,7 +27,9 @@ const hasUnclaimedItems =
   _(review.discussions)
     .filter({resolved: false})
     .map('participants')
-    .some(participants => _.every(participants, {resolved: true}));
+    .some(participants =>
+      _.every(participants, {resolved: true}) &&
+      !_.some(participants, {disposition: 'mentioned'}));
 
 let missingReviewers = review.pullRequest.requestedReviewers;
 if (_.isEmpty(missingReviewers)) {
@@ -36,10 +38,17 @@ if (_.isEmpty(missingReviewers)) {
   if (!hasUnclaimedItems) missingReviewers = _.filter(missingReviewers, {participating: false});
 }
 
+const unresolvedMentions = _(review.discussions)
+  .filter({resolved: false})
+  .flatMap('participants')
+  .filter({disposition: 'mentioned'})
+  .value();
+
 const deferringReviewers = _.map(review.deferringReviewers, 'username');
 
 const pendingReviewers = _(fileBlockers)
   .concat(discussionBlockers)
+  .concat(unresolvedMentions)
   .concat(missingReviewers)
   .map(user => _.pick(user, 'username', 'teams'))
   .uniqBy('username')
