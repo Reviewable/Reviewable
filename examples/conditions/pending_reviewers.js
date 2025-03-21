@@ -6,9 +6,9 @@
 if (review.pullRequest.state !== 'open') return {pendingReviewers: []};
 
 const discussionBlockers = _(review.discussions)
-  .filter({resolved: false})
+  .reject('resolved')
   .flatMap('participants')
-  .filter({resolved: false})
+  .reject('resolved')
   .map(user => _.pick(user, 'username', 'teams'))
   .value();
 
@@ -25,21 +25,30 @@ const fileBlockers = _(lastReviewedRevisionsOfUnreviewedFiles)
 const hasUnclaimedItems =
   _.some(lastReviewedRevisionsOfUnreviewedFiles, rev => !rev) ||
   _(review.discussions)
-    .filter({resolved: false})
+    .reject('resolved')
     .map('participants')
-    .some(participants => _.every(participants, {resolved: true}));
+    .some(participants =>
+      _.every(participants, 'resolved') &&
+      !_.some(participants, {disposition: 'mentioned'}));
 
 let missingReviewers = review.pullRequest.requestedReviewers;
 if (_.isEmpty(missingReviewers)) {
   missingReviewers = review.pullRequest.assignees;
   if (_.isEmpty(missingReviewers)) missingReviewers = review.pullRequest.reviewers;
-  if (!hasUnclaimedItems) missingReviewers = _.filter(missingReviewers, {participating: false});
+  if (!hasUnclaimedItems) missingReviewers = _.reject(missingReviewers, 'participating');
 }
+
+const unresolvedMentions = _(review.discussions)
+  .reject('resolved')
+  .flatMap('participants')
+  .filter({disposition: 'mentioned'})
+  .value();
 
 const deferringReviewers = _.map(review.deferringReviewers, 'username');
 
 const pendingReviewers = _(fileBlockers)
   .concat(discussionBlockers)
+  .concat(unresolvedMentions)
   .concat(missingReviewers)
   .map(user => _.pick(user, 'username', 'teams'))
   .uniqBy('username')
