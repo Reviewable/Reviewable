@@ -13,6 +13,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: update review status promptly when publishing a review (or sending a message) with a mention.
 - Fix: guard against very rare crash when loading review page.
 - Fix: improve client rendering performance.
+- Fix: fix rendering of the "more participants" (ellipsis) tooltip on the dashboard.
+- Fix: don't crash when sending a command while the review is deferred.
 
 #### Release 4719.7563 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-17
 - Upd: distinguish between active and inactive requested reviewers.
