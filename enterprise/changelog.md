@@ -9,6 +9,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 - Upd: add `?scopes=...` option to explicitly request authorization of extra scopes for the current user.  This can help work around some GitHub API bugs in specific circumstances.
 - Upd: change the default review completion condition to treat mentioned users as waited-on.
+- Upd: respect `binary` macros in `.gitattributes`.
 - Fix: put the review into an error state when GitHub refuses to fetch pull request data due to "too many changed files".
 - Fix: update review status promptly when publishing a review (or sending a message) with a mention.
 - Fix: guard against very rare crash when loading review page.
