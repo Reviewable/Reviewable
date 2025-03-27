@@ -16,6 +16,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: improve client rendering performance.
 - Fix: fix rendering of the "more participants" (ellipsis) tooltip on the dashboard.
 - Fix: don't crash when sending a command while the review is deferred.
+- Fix: don't include authors from obsolete commits in the completion condition's `review.pullRequest.coauthors` input property.
+- Fix: create a new revision when the target (base) branch of a pull request is changed. Before this fix, files would continue to be diffed against the old base branch's commit until a new commit was pushed to the pull request branch.
 
 #### Release 4719.7563 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-17
 - Upd: distinguish between active and inactive requested reviewers.
