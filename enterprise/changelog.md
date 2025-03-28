@@ -10,6 +10,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: add `?scopes=...` option to explicitly request authorization of extra scopes for the current user.  This can help work around some GitHub API bugs in specific circumstances.
 - Upd: change the default review completion condition to treat mentioned users as waited-on.
 - Upd: respect `binary` macros in `.gitattributes`.
+- Upd: move pull request address and link to the top of the pull request panel to make it easier to find.
+- Upd: include specific completion condition evaluation error in the toast that shows up.
 - Fix: put the review into an error state when GitHub refuses to fetch pull request data due to "too many changed files".
 - Fix: update review status promptly when publishing a review (or sending a message) with a mention.
 - Fix: guard against very rare crash when loading review page.
@@ -18,6 +20,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: don't crash when sending a command while the review is deferred.
 - Fix: don't include authors from obsolete commits in the completion condition's `review.pullRequest.coauthors` input property.
 - Fix: create a new revision when the target (base) branch of a pull request is changed. Before this fix, files would continue to be diffed against the old base branch's commit until a new commit was pushed to the pull request branch.
+- Fix: show the GitHub icon in the right spot when hovering over a branch name that wrapped in the pull request panel.
+- Fix: smooth out animations when creating a new discussion or changing diff bounds.
 
 #### Release 4719.7563 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-17
 - Upd: distinguish between active and inactive requested reviewers.
