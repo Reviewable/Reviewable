@@ -92,15 +92,17 @@ Below the publish button there may appear <span class="red label">red</span> cou
 
 ### Deferring a review
 
-When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a red stripe and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.
+When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.
 
 ![reviewable deferral dashboard](images/deferring_dashboard.png)
 
+![reviewable deferral changes](images/deferring_changes.png){width=600}
+
 A review will remain deferred until either a new revision of a file becomes available for you to review or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
 
-Note that you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can also reactivate a deferred review manually by clicking the **continue review** button on the toolbar.
+Note that you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can also reactivate a deferred review manually by marking a file as reviewed or via the dropdown menu in the participants panel.
 
-![reviewable deferral changes](images/deferring_changes.png)
+![reviewable deferral changes](images/deferral_cancel.png){width=350}
 
 ::: tip
 Sending an individual comment (via its dedicated send button) doesn't affect deferrals either way: it will neither defer a review, nor cause a deferred review to become active again.
