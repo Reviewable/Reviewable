@@ -22,6 +22,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: create a new revision when the target (base) branch of a pull request is changed. Before this fix, files would continue to be diffed against the old base branch's commit until a new commit was pushed to the pull request branch.
 - Fix: show the GitHub icon in the right spot when hovering over a branch name that wrapped in the pull request panel.
 - Fix: smooth out animations when creating a new discussion or changing diff bounds.
+- Fix: work around a GitHub API bug that consistently returns 500 when attempting to pin refs in specific pull requests if the token lacks `workflow` scope.  After retrying a few times Reviewable will give up and capture a message in Sentry (if configured, otherwise log to the console) that looks like `Repeatedly failed to POST /repos/:owner/:repo/git/refs` (with the actual owner and repo substituted).  If you see this message you should have the connecting admin authorize the `workflow` scope by visiting Reviewable with `?scope=workflow` appended to the URL.
 
 #### Release 4719.7563 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-17
 - Upd: distinguish between active and inactive requested reviewers.
