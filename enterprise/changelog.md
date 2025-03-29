@@ -13,6 +13,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: move pull request address and link to the top of the pull request panel to make it easier to find.
 - Upd: include specific completion condition evaluation error in the toast that shows up.
 - Upd: offer the option to apply directives from the pull request panel's command field without sending a comment.
+- Upd: Always sync comments from bots with Discussing disposition
 - Fix: put the review into an error state when GitHub refuses to fetch pull request data due to "too many changed files".
 - Fix: update review status promptly when publishing a review (or sending a message) with a mention.
 - Fix: guard against very rare crash when loading review page.
