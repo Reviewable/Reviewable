@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: respect `binary` macros in `.gitattributes`.
 - Upd: move pull request address and link to the top of the pull request panel to make it easier to find.
 - Upd: include specific completion condition evaluation error in the toast that shows up.
+- Upd: offer the option to apply directives from the pull request panel's command field without sending a comment.
 - Fix: put the review into an error state when GitHub refuses to fetch pull request data due to "too many changed files".
 - Fix: update review status promptly when publishing a review (or sending a message) with a mention.
 - Fix: guard against very rare crash when loading review page.
@@ -23,6 +24,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: show the GitHub icon in the right spot when hovering over a branch name that wrapped in the pull request panel.
 - Fix: smooth out animations when creating a new discussion or changing diff bounds.
 - Fix: work around a GitHub API bug that consistently returns 500 when attempting to pin refs in specific pull requests if the token lacks `workflow` scope.  After retrying a few times Reviewable will give up and capture a message in Sentry (if configured, otherwise log to the console) that looks like `Repeatedly failed to POST /repos/:owner/:repo/git/refs` (with the actual owner and repo substituted).  If you see this message you should have the connecting admin authorize the `workflow` scope by visiting Reviewable with `?scope=workflow` appended to the URL.
+- Fix: restore the "mark all files as reviewed" keyboard shortcut, and have it undo the marks if used twice in a row. (Regression introduced in v4718.7540.)
 
 #### Release 4719.7563 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-17
 - Upd: distinguish between active and inactive requested reviewers.
