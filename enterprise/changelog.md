@@ -26,6 +26,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Fix: smooth out animations when creating a new discussion or changing diff bounds.
 - Fix: work around a GitHub API bug that consistently returns 500 when attempting to pin refs in specific pull requests if the token lacks `workflow` scope.  After retrying a few times Reviewable will give up and capture a message in Sentry (if configured, otherwise log to the console) that looks like `Repeatedly failed to POST /repos/:owner/:repo/git/refs` (with the actual owner and repo substituted).  If you see this message you should have the connecting admin authorize the `workflow` scope by visiting Reviewable with `?scope=workflow` appended to the URL.
 - Fix: restore the "mark all files as reviewed" keyboard shortcut, and have it undo the marks if used twice in a row. (Regression introduced in v4718.7540.)
+- Fix: reflect unreviewed file state forced by the completion condition in later revisions with no changes.
 
 #### Release 4719.7563 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-03-17
 - Upd: distinguish between active and inactive requested reviewers.
