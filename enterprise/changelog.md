@@ -14,6 +14,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: include specific completion condition evaluation error in the toast that shows up.
 - Upd: offer the option to apply directives from the pull request panel's command field without sending a comment.
 - Upd: Always sync comments from bots with Discussing disposition
+- Upd: remove the green "continue review" button and add a "cancel deferral" item to the user's action menu in the participants panel.
+- Upd: always show the main review discussion, even if there are no comments yet.
 - Fix: put the review into an error state when GitHub refuses to fetch pull request data due to "too many changed files".
 - Fix: update review status promptly when publishing a review (or sending a message) with a mention.
 - Fix: guard against very rare crash when loading review page.
