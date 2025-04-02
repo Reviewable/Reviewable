@@ -7,6 +7,8 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - See also the public [list of bugs](https://github.com/Reviewable/Reviewable/labels/bug) for Reviewable.
 
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
+
+#### Release 4743.7616 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-04-02
 - Upd: add `?scopes=...` option to explicitly request authorization of extra scopes for the current user.  This can help work around some GitHub API bugs in specific circumstances.
 - Upd: change the default review completion condition to treat mentioned users as waited-on.
 - Upd: respect `binary` macros in `.gitattributes`.
