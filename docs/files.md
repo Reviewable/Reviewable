@@ -194,7 +194,7 @@ Since revisions are immutable, long running reviews can end up with a lot of the
 Access to the review will be blocked until the process completes (typically within 10 to 15 seconds).  Revisions that are kept will retain their old numbers, which means that revision numbers may no longer be sequential.
 
 ::: danger
-This is an experimental feature and may break the review.  If something goes dreadfully wrong, you can ask admin staff to recover the original review from a backup automatically snapshotted at the start, though this will discard any changes made in the meantime.
+If something goes dreadfully wrong, you can ask admin staff to recover the original review from a backup automatically snapshotted at the start, though this will discard any changes made in the meantime.
 :::
 
 
