@@ -9,7 +9,11 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 #### Upcoming changes (min 3991.6302 GHE 2.19+ or 3.0+)
 
 - Upd: avoid unnecessarily fetching refs when syncing a newly created pull request, as this can get expensive in some environments.
+- Upd: indicate the currently focused file in the file matrix.
+- Upd: show most recent previous reviewers separately from older ones in the file state information popup.  This can make it easier to find the right person to nag for a re-review.
 - Fix: avoid occasionally crashing with an "Encryption not set up" error when the user signs out from an instance running in private mode.
+- Fix: show correct bunny animation in conclusion panel on publish.
+- Fix: always treat `.pbtxt` files as text.
 #### Release 4743.7616 (min 3991.6302 GHE 2.19+ or 3.0+) 2025-04-02
 - Upd: add `?scopes=...` option to explicitly request authorization of extra scopes for the current user.  This can help work around some GitHub API bugs in specific circumstances.
 - Upd: change the default review completion condition to treat mentioned users as waited-on.
