@@ -13,8 +13,13 @@ Also, if you have `REVIEWABLE_PING_URL` set up, then pings won't be emitted whil
 To turn on maintenance mode, run the following command:
 
 ```bash
+# if database is not encrypted
 $ curl https://$REVIEWABLE_FIREBASE_URL/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH \
        -X PUT -d '{"switch": true, "message": "An HTML message to your users."}'
+
+# if database is encrypted, install reviewable-enterprise-tools then:
+$ echo '{"switch": true, "message": "An HTML message to your users."}' >maintenance.json
+$ node write.js -p system/maintenance -f maintenance.json
 ```
 
 The switch itself is public and will be publicly visible to anyone who cares to check.  You may also specify a private message that will be displayed in the browser's modal overlay only for users who are signed in.  The message is in HTML, so you can embed links to internal status pages and such.  You can repeat this command as often as necessary to update the message.
@@ -32,6 +37,9 @@ To exit maintenance, run the following command:
 ```bash
 $ curl https://$REVIEWABLE_FIREBASE_URL/system/maintenance.json?auth=$REVIEWABLE_FIREBASE_AUTH \
        -X DELETE
+#   or
+$ echo 'null' >null.json
+$ node write.js -p system/maintenance -f null.json
 ```
 
 ### AES encryption key rotation
