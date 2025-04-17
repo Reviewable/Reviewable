@@ -67,7 +67,9 @@ To turn on team constraints you enter one or more fully-qualified team slugs in 
 The designated license administrator is always allowed to grab a seat so they can't accidentally lock themselves out.
 :::
 
-If team constraints are on and a user signing in is not a member (but otherwise a valid user for the license), they'll be given a full-access guest pass instead.  A guest pass lasts for two weeks and doesn't take up a license seat, but once it runs out the user will be signed out and unable to sign back in until they're a team member or eligible for a guest pass again (every 90 days).  While on a guest pass, every page will display a banner encouraging the user to request access to a licensed seat:
+### Guest passes
+
+If the license is out of available seats, or team constraints are on and a user signing in is not a member (but otherwise a valid user for the license), they'll be given a full-access guest pass instead.  A guest pass lasts for two weeks and doesn't take up a license seat, but once it runs out the user will be signed out and unable to sign back in until a seat becomes available / they're a team member or eligible for a guest pass again (every 90 days).  While on a guest pass, every page will display a banner encouraging the user to request access to a licensed seat:
 
 > You've been allocated a temporary guest seat that will expire in N days. Please contact your organization administrator to obtain a permanent one.
 

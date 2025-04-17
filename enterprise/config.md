@@ -169,6 +169,7 @@ Basic UI customization.
 * `REVIEWABLE_PRIVACY_URL`: The URL for the Privacy link in the footer of every Reviewable page.  If missing, the link won't be shown in the footer.
 * `REVIEWABLE_DISABLED_CONNECTIONS`: A comma-separated list of fully qualified repository names that will not be allowed to connect to this Reviewable instance.
 * `REVIEWABLE_DISABLE_MY_PRS_ENROLLMENTS`: When set to a non-empty value, "My PRS in any public/private repo" and "All current and future repos" toggles (see [docs](https://docs.reviewable.io/repositories#create-reviews-for-your-own-prs)) will be unavailable for personal repositories, and will no longer be checked if previously turned on. (Organization-level "All current and future repos" are unaffected.)
+* `REVIEWABLE_DISABLE_GUEST_PASSES`: When set to a non-empty value, the [guest passes](https://docs.reviewable.io/subscriptions#guest-passes) feature will be unavailable and users won't be able to obtain guest passes.  Any previously allocated guest passes will be allowed to run their course.
 * `REVIEWABLE_GITHUB_STATUS_URL`:  The URL of an API that reports the status of your GitHub Enterprise Server instance.  It will be checked by clients every minute and should return a JSON structure that follows this schema:
     ```typescript
     {
