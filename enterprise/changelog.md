@@ -12,6 +12,7 @@ New releases are announced on the [reviewable-enterprise-announce mailing list](
 - Upd: show most recent previous reviewers separately from older ones in the file state information popup.  This can make it easier to find the right person to nag for a re-review.
 - Upd: make the pull request link in the pull request panel a bit more prominent.
 - Upd: display the pull request's creation and merge/close date.
+- Upd: add `REVIEWABLE_DISABLE_GUEST_PASSES` flag to turn off guest passes.
 - Fix: avoid occasionally crashing with an "Encryption not set up" error when the user signs out from an instance running in private mode.
 - Fix: show correct bunny animation in conclusion panel on publish.
 - Fix: always treat `.pbtxt` files as text.
