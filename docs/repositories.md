@@ -382,9 +382,9 @@ The current state of the review is accessible to your code via the `review` vari
     body: 'There is so much work to be done, and this PR does it all.',
     // All users are annotated with a full list of teams they're members of; if the property is
     // undefined then Reviewable wasn't able to fetch this list.
-    author: {username: 'pkaminski', teams: ['reviewable/developers']},
+    author: {username: 'pkaminski', teams: ['reviewable/developers'], bot: false},
     coauthors: [
-      {username: 'pkaminski-test', teams: ['reviewable/semi-developers'], participating: true}
+      {username: 'pkaminski-test', teams: ['reviewable/semi-developers'], bot: false, participating: true}
     ],
     creationTimestamp: 1436825000000,  // added recently, it could be missing for older reviews
     draft: false,
@@ -430,7 +430,7 @@ The current state of the review is accessible to your code via the `review` vari
     }
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
-    {username: 'pkaminski', teams: ['reviewable/developers']}
+    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false}
     // If the pull request author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
@@ -454,7 +454,7 @@ The current state of the review is accessible to your code via the `review` vari
     'Comments only in Reviewable'
   ],
   sentiments: [  // List of sentiments (currently just emojis) extracted from comments
-    {username: 'pkaminski', teams: ['reviewable/developers'], emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
+    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
   ],
   discussions: [  // List of the discussions in the review (metadata only)
     {
@@ -462,7 +462,9 @@ The current state of the review is accessible to your code via the `review` vari
       resolved: false,  // Whether the overall discussion is resolved
       participants: [
         {
-          username: 'pkaminski', teams: ['reviewable/developers'],
+          username: 'pkaminski',
+          teams: ['reviewable/developers'],
+          bot: false,
           disposition: 'discussing',  // Participant's current disposition
           resolved: true,  // False if this participant is not in favor of resolving and it's their turn to follow up
           read: true,  // False if this participant has unread messages in this discussion
