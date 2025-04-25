@@ -76,6 +76,14 @@ Keeping requested reviewers up-to-date (rather than just requesting the initial 
 
 Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](repositories.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
 
+### Publish on Push
+
+If the repository is connected, by default, when a pull request's author submits their drafts (including comments, dispositions, and review marks), Reviewable schedules the drafts to be published next time the author pushes a new revision to the pull request's source branch. That is if a push is happening within 30 minutes, otherwise the publication gets cancelled but don't worry the drafts won't be deleted but just remain unpublished until the author triggers another publication.
+
+You can opt-out of this feature, and have your drafts always published as soon as you submit them as a pull request author by unchecking the **Publish on push** box. This setting persists globally for the logged in user.
+
+This feature is only available to pull request authors, while reviewers will always have their drafts published instantly on submission.
+
 ### Conclusion
 
 For your convenience, Reviewable will provide a Conclusion panel at the end of the review so you don't have to scroll back to the top of the page to leave a comment in the top-level review discussion.
