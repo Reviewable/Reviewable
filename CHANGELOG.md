@@ -5,7 +5,10 @@
 - <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client -->
 - <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client -->
 - <kbd>Fix:</kbd> re-enable contextual help in dropdowns. <!-- client -->
-- <kbd>New:</kbd> Add option to publish on next push to publish options for authors <!-- client -->
+- <kbd>New:</kbd> Introduce [publish on push](https://docs.reviewable.io/reviews#publish-on-push) workflow.  <!-- client -->
+  > If the repository is connected, by default, Reviewable will now schedule pull request author's review updates to be published next time they push a new revision to the pull request's branch. This helps sync your feedback with code updates, making reviews more coherent and easier to follow.
+  >
+  > Prefer the old behavior? No problem — just uncheck the *Publish on push* setting in the publish options to have your drafts published immediately instead. This setting is saved globally for your account.
 
 <sub>2025 - 04 (and earlier)</sub>
 
