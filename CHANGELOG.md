@@ -1,8 +1,8 @@
 <sub>2025 - 04</sub>
 
-- <kbd>Adm:</kbd> migrate to an integrated SaaS/Enterprise changelog.
+- <kbd>Adm:</kbd> migrate to an integrated SaaS/Enterprise changelog. <!-- server 4749 -->
 - <kbd>Upd:</kbd> avoid unnecessarily fetching refs when syncing a newly created pull request, as this can get expensive in some environments.
-- <kbd>Upd:</kbd> indicate the currently focused file in the file matrix.
+- <kbd>Upd:</kbd> indicate the currently focused file in the file matrix. <!-- client 7640 -->
 - <kbd>Upd:</kbd> show most recent previous reviewers separately from older ones in the file state information popup.  This can make it easier to find the right person to nag for a re-review.
 - <kbd>Upd:</kbd> make the pull request link in the pull request panel a bit more prominent.
 - <kbd>Upd:</kbd> display the pull request's creation and merge/close date.
