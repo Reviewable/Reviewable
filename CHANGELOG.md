@@ -1,6 +1,6 @@
 <sub>2025 - 04</sub>
 
-- Upd: Don't consider bots as pending reviewers. <!-- server 4750 -->
+- <kbd>Upd:</kbd> Don't consider bots as pending reviewers. <!-- server 4750 -->
 - <kbd>Adm:</kbd> migrate to an integrated SaaS/Enterprise changelog. <!-- server 4749 -->
 - <kbd>Upd:</kbd> avoid unnecessarily fetching refs when syncing a newly created pull request, as this can get expensive in some environments. <!-- server 4749 -->
 - <kbd>Upd:</kbd> indicate the currently focused file in the file matrix. <!-- client 7640 -->
