@@ -1,4 +1,4 @@
-<sub>2025 - 04</sub>
+<sub>2025 - 04 (and earlier)</sub>
 
 - <kbd>Upd:</kbd> Don't consider bots as pending reviewers. <!-- server 4750 -->
 - <kbd>Adm:</kbd> migrate to an integrated SaaS/Enterprise changelog. <!-- server 4749 -->
