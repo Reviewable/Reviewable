@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> Add option to publish on next push to publish options for authors <!-- client -->
+
 <sub>2025 - 04 (and earlier)</sub>
 
 <sub>**Enterprise release 4750.7641** (min 3340.5125 GHE ^2.19 || ^3) 2025-04-29 <!-- enterprise 4750.7641 --></sub>
