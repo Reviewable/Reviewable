@@ -1,3 +1,7 @@
+<sub>2025 - 04</sub>
+
+<sub>**Enterprise release 4750.7641** (min 3340.5125 GHE ^2.19 || ^3) 2025-04-29 <!-- enterprise 4750.7641 --></sub>
+
 <sub>2025 - 04 (and earlier)</sub>
 
 - <kbd>Upd:</kbd> Don't consider bots as pending reviewers. <!-- server 4750 -->
