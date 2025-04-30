@@ -10,8 +10,6 @@ Reviewable is a very small, bootstrapped business that sells our code review sof
 
 <p align="center">Unfortunately, we do not have any open roles at this time...</p>
 
-<p>That's all for now...</p>
-
 <hr/>
 
-<sup>...but if you're feeling inspired, we do accept PRs against this repo! 😉</sup>
+<sup>If you don't see any relevant roles above but would love to work with us anyway, please <a href="mailto:piotr@reviewable.io">get in touch</a>! 🥰</sup>
