@@ -1,5 +1,8 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client -->
+- <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client -->
+- <kbd>Fix:</kbd> re-enable contextual help in dropdowns. <!-- client -->
 - <kbd>New:</kbd> Add option to publish on next push to publish options for authors <!-- client -->
 
 <sub>2025 - 04 (and earlier)</sub>
