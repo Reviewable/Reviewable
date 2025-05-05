@@ -90,7 +90,8 @@ function page(path) {
     const slug =
       match[3] ||
       match[2].toLowerCase().replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    const item = {text: title, link: `/${path}#${slug}`};
+    if (path === 'index') path = '';
+    const item = {text: title, link: level === 1 ? `/${path}` : `/${path}#${slug}`};
     for (let i = currentLevel; i >= level; i--) itemStack.pop();
     const lastItem = itemStack.length ? itemStack[itemStack.length - 1] : null;
     if (lastItem) {
