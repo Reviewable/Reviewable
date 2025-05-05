@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent a rare crash related to `nearestUnkeptRaw`. <!-- client -->
 - <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client -->
 - <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client -->
 - <kbd>Fix:</kbd> re-enable contextual help in dropdowns. <!-- client -->
