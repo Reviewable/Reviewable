@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> make completion condition output selectable. <!-- client -->
 - <kbd>Fix:</kbd> prevent a rare crash related to `nearestUnkeptRaw`. <!-- client -->
 - <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client -->
 - <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client -->
