@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> show an icon in the Publish button if you'll be blocking a discussion after publishing, and aren't either approving the pull request or requesting changes. <!-- client -->
 - <kbd>Fix:</kbd> make completion condition output selectable. <!-- client -->
 - <kbd>Fix:</kbd> prevent a rare crash related to `nearestUnkeptRaw`. <!-- client -->
 - <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client -->
