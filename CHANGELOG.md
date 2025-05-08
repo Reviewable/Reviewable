@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> make autocomplete popups work properly in some panels. <!-- client -->
 - <kbd>Fix:</kbd> recover gracefully when GitHub changes its mind about what commits belong to a PR for a given head/base pair. <!-- server -->
 - <kbd>Upd:</kbd> show an icon in the Publish button if you'll be blocking a discussion after publishing, and aren't either approving the pull request or requesting changes. <!-- client -->
 - <kbd>Fix:</kbd> make completion condition output selectable. <!-- client -->
