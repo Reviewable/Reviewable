@@ -88,6 +88,7 @@ By contrast, Reviewable doesn't get write access to the repo if you individually
 * Review status checks won't post to the PR, since Reviewable isn't subscribed to repo events and unable to make timely updates.
 * Reviewable may not be able to reliably detect and apply your branch protection settings in its UI. (The branch protection settings will be enforced by GitHub no matter what, though, so this is safe but potentially confusing.)
 * It may not be possible for Reviewable to pin revision commits, so if you use `git rebase` and `git push --force`, some of them may get garbage collected and will no longer be accessible in the review. They'll usually get pinned when the reviewer (with push authority) accesses the review.
+* [Publish on push](reviews.md#publish-on-push) will be unavailable.
 
 Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.
 
