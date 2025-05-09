@@ -5,7 +5,6 @@
 - <kbd>New:</kbd> display updates made to Reviewable inside the app. <!-- client -->
   > Over the years we tried various kinds of changelogs but none stuck.  We think this in-app one will be both more convenient for you to check and for us to update — win-win!
 - <kbd>Fix:</kbd> make autocomplete popups work properly in some panels. <!-- client -->
-- <kbd>Fix:</kbd> recover gracefully when GitHub changes its mind about what commits belong to a PR for a given head/base pair. <!-- server -->
 - <kbd>Upd:</kbd> show an icon in the Publish button if you'll be blocking a discussion after publishing, and aren't either approving the pull request or requesting changes. <!-- client -->
   > This can be helpful to let you know that you'll (still) be blocking the review in workflows that use discussion resolution rather than GitHub approvals.
 - <kbd>Fix:</kbd> make completion condition output selectable. <!-- client -->
@@ -14,6 +13,10 @@
 - <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client -->
 - <kbd>Fix:</kbd> re-enable contextual help in dropdowns. <!-- client -->
 - <kbd>New:</kbd> Add option to publish on next push to publish options for authors <!-- client -->
+
+<sub>2025 - 05</sub>
+
+- <kbd>Fix:</kbd> recover gracefully when GitHub changes its mind about what commits belong to a PR for a given head/base pair. <!-- server 4751 -->
 
 <sub>2025 - 04 (and earlier)</sub>
 
