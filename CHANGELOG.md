@@ -711,7 +711,7 @@
 
 <sub>**Enterprise release 3657.5690** (min 3619.5594 GHE 2.19+ or 3.0+) 2022-11-04 <!-- enterprise 3657.5690 --></sub>
 
-- <kbd>New:</kbd> track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://headwayapp.co/reviewable-changes/base-changes-only-247444) for details.
+- <kbd>New:</kbd> track which apparently modified file revisions only have base changes, and make this information available to custom completion conditions.  See the [announcement](https://www.reviewable.io/blog/base-changes-only/) for details.
 - <kbd>Upd:</kbd> update the discussion interface for showing/hiding old comments in the current discussion, current file, and across all files in a review.  Add a convenient control for showing just one more older comment while at it.
 - <kbd>Upd:</kbd> allow image files to be drag-and-dropped directly onto a "Reply..." or "Follow up..." field, creating a draft automatically.
 - <kbd>Upd:</kbd> add ability to double click a draft preview to return to write mode.
@@ -798,7 +798,7 @@
 <sub>**Enterprise release 3550.5439** (min 3340.5125 GHE 2.19+ or 3.0+) 2022-08-15 <!-- enterprise 3550.5439 --></sub>
 
 - <kbd>New:</kbd> add the ability to write a review summary and publish the review from the bottom of the page. For more information, see [the docs](https://docs.reviewable.io/reviews.html#publishing-your-review).
-- <kbd>New:</kbd> detect vendored files (based on simple path heuristics) and give them special treatment:  put them into a group that's collapsed by default, and exclude them from renamed file matching.  See [announcement](https://headwayapp.co/reviewable-changes/vendored-files-support-240076).
+- <kbd>New:</kbd> detect vendored files (based on simple path heuristics) and give them special treatment:  put them into a group that's collapsed by default, and exclude them from renamed file matching.  See [announcement](https://www.reviewable.io/blog/identifying-vendored-files-using-custom-completion-conditions/).
 - <kbd>Upd:</kbd> add a badge condition setting to limit the circumstances under which a Reviewable badge will be added to the PR, even in a connected repository.
 - <kbd>Upd:</kbd> display a message in the diff when a file has been reverted to base at its last revision.
 - <kbd>Upd:</kbd> add an icon to the approve / block specifier that shows in the Publish button.
@@ -863,7 +863,7 @@
 
 <sub>**Enterprise release 3477.5231** (min 3340.5125 GHE 2.19+ or 3.0+) 2022-04-17 <!-- enterprise 3477.5231 --></sub>
 
-- <kbd>New:</kbd> add support for tracking `spr` stacked pull requests. Please see [the announcement](https://headwayapp.co/reviewable-changes/support-for-git-spr-(stacked-pull-requests)-228260) for more details.
+- <kbd>New:</kbd> add support for tracking `spr` stacked pull requests. Please see [the announcement](https://www.reviewable.io/blog/support-for-git-spr-stacked-pull-requests/) for more details.
 - <kbd>Upd:</kbd> be more aggressive about hiding files that the user doesn't need to review.
 - <kbd>Upd:</kbd> use `reviewed` flags set by custom completion condition when computing default result values, including `completed` and `pendingReviewers`.
 - <kbd>Upd:</kbd> switch to CSS-native hyphenation, which should be more reliable nowadays than the JS module we've been using so far.
@@ -930,7 +930,7 @@
 
 <sub>**Enterprise release 3359.5145** (min 3340.5125 GHE 2.19+ or 3.0+) 2021-12-22 <!-- enterprise 3359.5145 --></sub>
 
-- <kbd>New:</kbd> let reviewers suggest code changes, with a mini code editor to make writing them easier and a mini diff to show what changed.  Please see [the announcement](https://headwayapp.co/reviewable-changes/code-suggestions-216787) for more details.
+- <kbd>New:</kbd> let reviewers suggest code changes, with a mini code editor to make writing them easier and a mini diff to show what changed.  Please see [the announcement](https://www.reviewable.io/blog/code-suggestions/) for more details.
 - <kbd>Upd:</kbd> omit pull requests in archived repositories from the reviews dashboard.
 - <kbd>Upd:</kbd> show a "go to next file" button at the bottom of previously reviewed diffs when operating in "too many files" mode.  This lets you easily page through a long review even after you've marked everything reviewed.
 - <kbd>Upd:</kbd> use a more efficient GraphQL query for finding pull requests matching a commit SHA when processing status events.
@@ -986,7 +986,7 @@
 <sub>**Enterprise release 3256.5037** (min 3107.4890 GHE 2.17+ or 3.0+) 2021-10-02 <!-- enterprise 3256.5037 --></sub>
 
 - <kbd>Upd:</kbd> upgrade to Node 16.
-- <kbd>Upd:</kbd> support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module. See [announcement post](https://headwayapp.co/reviewable-changes/lodash-4-x-support-206733) for details.
+- <kbd>Upd:</kbd> support Lodash 4.x in custom completion conditions.  Note: please don't advertise Lodash 4.x support until you're confident you won't need to roll back to avoid conditions running against the older 3.x module. See [announcement post](https://www.reviewable.io/blog/lodash-4-x-support/) for details.
 - <kbd>Upd:</kbd> move completion condition examples out of the app and into a repository, replacing the examples dropdown with a link.  This will make them easier to reference and maintain.
 - <kbd>Upd:</kbd> allow multiple Reviewable instances (e.g., production and staging) to use the same AWS Lambda instance for condition execution without stepping on each other's toes.
 - <kbd>Upd:</kbd> increase timeout and improve stagger logic for permission-checking requests to GHE.  This should help avoid spurious permission check failures if your GHE instance is overloaded an unable to reliably respond within 3 seconds.
@@ -1013,7 +1013,7 @@
 
 <sub>**Enterprise release 3179.4975** (min 3107.4890 GHE 2.17+ or 3.0+) 2021-08-29 <!-- enterprise 3179.4975 --></sub>
 
-- <kbd>New:</kbd> support commit message reviewing (only in reviews created after this release is installed).  See [changelog](https://headwayapp.co/reviewable-changes) for more details.
+- <kbd>New:</kbd> support commit message reviewing (only in reviews created after this release is installed).  See [changelog](https://www.reviewable.io/blog/commit-message-reviewing/) for more details.
 - <kbd>Upd:</kbd> render code blocks in PR titles.
 - <kbd>Upd:</kbd> support `mp4` and `mov` video uploads in comments, with a maximum upload size of 100MB.
 - <kbd>Upd:</kbd> expose `participant.read` flag for discussions in custom review completion condition input.
@@ -1029,7 +1029,7 @@
 
 <sub>**Enterprise release 3107.4890** (min 1992.2986 GHE 2.17+ or 3.0+) 2021-07-15 <!-- enterprise 3107.4890 --></sub>
 
-- <kbd>New:</kbd> automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://headwayapp.co/reviewable-changes/deferred-reviews-199866) for details.
+- <kbd>New:</kbd> automatically defer further action on a review when publishing with red counters remaining.  See the [announcement post](https://www.reviewable.io/blog/deferred-reviews/) for details.
 - <kbd>Upd:</kbd> improve heuristics for matching rebased revisions to their priors and make use of Gerrit-style `Change-Id` headers in commit messages.
 - <kbd>Upd:</kbd> tweak user activity status icons in the main review discussion footer.
 - <kbd>Upd:</kbd> track an `Updated Review Status` event in analytics.  You can use this to analyze a review's state changes over time, including who was being waited on.
@@ -1077,7 +1077,7 @@
 
 <sub>**Enterprise release 3024.4796** (min 1992.2986 GHE 2.17+ or 3.0+) 2021-05-19 <!-- enterprise 3024.4796 --></sub>
 
-- <kbd>New:</kbd> add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://headwayapp.co/reviewable-changes/new-overlap-strategy-193348) for details.
+- <kbd>New:</kbd> add an option to review every file personally, replacing the previous "Include changes in files previously reviewed only by others" checkbox with a three-option dropdown.  See [this post](https://www.reviewable.io/blog/default-review-overlap-strategy/) for details.
 - <kbd>Upd:</kbd> add a placeholder graphic to make it clear when the "Awaiting my action" section of the dashboard is empty, rather than leaving out the section altogether.
 - <kbd>Upd:</kbd> open up the option of limiting review creation to PRs with authors on a given team to Enterprise installations.  This gets encoded into the license key (for legacy reasons) so please get in touch with us if you'd like to take advantage of this feature.  It's probably only useful when doing a phased rollout of Reviewable, though.
 - <kbd>Fix:</kbd> reinstate compatibility with GHE 2.x; this was accidentally broken in v2963.4700.
@@ -1088,8 +1088,8 @@
 <sub>**Enterprise release 2997.4729** (min 1992.2986 GHE 3.0+) 2021-04-15 <!-- enterprise 2997.4729 --></sub>
 
 - <kbd>New:</kbd> add support for `vm2` sandboxed environment to safely run user code by setting `REVIEWABLE_CODE_EXECUTOR` environment variable to `vm2`.  **The `sandcastle` executor is DEPRECATED** and will be removed in a future release.
-- <kbd>Upd:</kbd> don't hide reverted files in the client until they've been reviewed.  See [this post](https://headwayapp.co/reviewable-changes/improvements-to-reverted-and-rebased-files-191026) for some details.
-- <kbd>Upd:</kbd> feed all files into the custom review completion condition, no longer leaving out reverted ones, to align with the new client logic above.  See [this post](https://headwayapp.co/reviewable-changes/reverted-files-in-custom-review-completion-conditions-191987), which also explains how to fix some broken code you might have inherited from old examples, and take advantage of more recent changes to completion condition semantics.
+- <kbd>Upd:</kbd> don't hide reverted files in the client until they've been reviewed.  See [this post](https://www.reviewable.io/blog/improvements-to-reverted-and-rebased-files/) for some details.
+- <kbd>Upd:</kbd> feed all files into the custom review completion condition, no longer leaving out reverted ones, to align with the new client logic above.  See [this post](https://www.reviewable.io/blog/reverted-files-in-custom-review-completion-conditions/), which also explains how to fix some broken code you might have inherited from old examples, and take advantage of more recent changes to completion condition semantics.
 - <kbd>Upd:</kbd> display an inner status color in rebased revision cells relative to the matched revision, which might not be the preceding one. See the [docs](https://docs.reviewable.io/files.html#rebasing) for details.
 - <kbd>Upd:</kbd> display a `reverted` icon in the cell when a file revision has been altered back to base.
 - <kbd>Upd:</kbd> autocomplete markdown list syntax for bullets, numbers, and tasks when hitting `enter`.
@@ -1102,7 +1102,7 @@
 
 <sub>**Enterprise release 2963.4700** (min 1992.2986 GHE 3.0+) 2021-04-01 <!-- enterprise 2963.4700 --></sub>
 
-- <kbd>New:</kbd> add a `webhook` output property for custom review completion conditions, where Reviewable will send notifications of the review status changing (e.g., to Slack).  See the [public post](https://headwayapp.co/reviewable-changes/review-status-notifications-webhook-188778) for details.
+- <kbd>New:</kbd> add a `webhook` output property for custom review completion conditions, where Reviewable will send notifications of the review status changing (e.g., to Slack).  See the [public post](https://www.reviewable.io/blog/review-status-notifications-webhook/) for details.
 - <kbd>Upd:</kbd> show all active reviewers in avatar lists on dashboard, but visually separate blocking from non-blocking ones.  Also improve avatar elision logic when running in a small window.
 - <kbd>Upd:</kbd> group concluded PRs in their own section near the bottom of the list on the dashboard.
 - <kbd>Upd:</kbd> optimize GitHub API requests issued when processing a status or check update.
@@ -1557,8 +1557,8 @@
 
 <sub>**Enterprise release 1844.2857** (min 1831.2835 GHE 2.12 - 2.20) 2018-07-14 <!-- enterprise 1844.2857 --></sub>
 
-- <kbd>New:</kbd> integrate with GitHub's review approval system.  When publishing from Reviewable you can set whether to approve, request changes, or just comment, with Reviewable picking a default state based on your discussion dispositions and file review marks.  This state gets published to GitHub and will be used by the branch protection system's required reviews option.  Reviewers' current effective state is also reflected in Reviewable (in the reviews list and on the review page) and available for use in custom review completion conditions.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/github-reviews-integration-64906))
-- <kbd>New:</kbd> add "Trust but verify" user setting.  When turned on, discussions where the user is _Discussing_ and that get resolved with no further comment will be treated as unreplied.  The new setting panel can be accessed from any disposition dropdown via a small gear icon.  ([Full changelog entry](https://headwayapp.co/reviewable-changes/trust-but-verify-65292))
+- <kbd>New:</kbd> integrate with GitHub's review approval system.  When publishing from Reviewable you can set whether to approve, request changes, or just comment, with Reviewable picking a default state based on your discussion dispositions and file review marks.  This state gets published to GitHub and will be used by the branch protection system's required reviews option.  Reviewers' current effective state is also reflected in Reviewable (in the reviews list and on the review page) and available for use in custom review completion conditions.  ([Full changelog entry](https://www.reviewable.io/blog/github-reviews-integration/))
+- <kbd>New:</kbd> add "Trust but verify" user setting.  When turned on, discussions where the user is _Discussing_ and that get resolved with no further comment will be treated as unreplied.  The new setting panel can be accessed from any disposition dropdown via a small gear icon.  ([Full changelog entry](https://www.reviewable.io/blog/trust-but-verify/))
 - <kbd>Upd:</kbd> moved time-ago comment dividers ("N days ago", etc.) to be above the corresponding time period, rather than below, in a nod to widespread convention.
 - <kbd>Upd:</kbd> if branch protection is turned on then defer to GitHub's mergeability determination, since we can't accurately duplicate the logic.  Note that this may result in Reviewable offering the option to merge earlier than it used to, if branch protection is set up more loosely than Reviewable's old built-in logic.
 - <kbd>Fix:</kbd> update PR mergeability status in Reviewable on all events that could affect it, and do so in a timely manner.
@@ -1580,7 +1580,7 @@
 
 <sub>**Enterprise release 1801.2799** (min 1785.2755 GHE 2.12 - 2.20) 2018-06-10 <!-- enterprise 1801.2799 --></sub>
 
-- <kbd>New:</kbd> overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://headwayapp.co/reviewable-changes/discussion-semantics-overhaul-61097) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  The most intrusive UX change is that _all_ state changes are created as drafts and must now be published to take effect, including acknowledgements, disposition changes, and dismissals.  Otherwise, I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
+- <kbd>New:</kbd> overhaul discussion semantics, including disposition, resolution, unreplied counts, etc.  See [this post](https://www.reviewable.io/blog/discussion-semantics-overhaul/) for a summary, and [issue #510](https://github.com/Reviewable/Reviewable/issues/510) for details.  The most intrusive UX change is that _all_ state changes are created as drafts and must now be published to take effect, including acknowledgements, disposition changes, and dismissals.  Otherwise, I've done as much as possible to ensure that reviews in progress won't be disrupted and that users with old clients still loaded can collaborate with those who have the new version, but there may still be some minor bumps during the transition.
 - <kbd>Upd:</kbd> added `±am:author`, `±am:assigned`, and `±am:requested` filters to the reviews list.
 - <kbd>Fix:</kbd> correctly calculate number of marks and reviewed files in the presence of renames.
 - <kbd>Fix:</kbd> re-enable rebase merging, got disabled by accident.
@@ -1611,7 +1611,7 @@
 - <kbd>New:</kbd> make requested reviewers available to review completion conditions and update the samples to prefer requested reviewers over assignees when set.  If your users have custom review completion conditions for their repos they may want to tweak them as well.
 - <kbd>New:</kbd> make available a new directive (`±reviewer:@username`) to manage requested reviewers, via any comment (in Reviewable, via GitHub, or via email).
 - <kbd>New:</kbd> display how long ago each participant in a review last interacted with the review, and whether they have any drafts pending.  (Note that clients prior to this version don't report this information, so people who are hoarding an old Reviewable page will appear to be idle and have no pending drafts.)
-- <kbd>New:</kbd> support `Merge manually by overwriting target` label to improve diffs in forked repos being synced with upstream changes; see [this changelog entry](https://headwayapp.co/reviewable-changes/reviews-in-forked-repos-that-track-upstream-changes-57413) for details.
+- <kbd>New:</kbd> support `Merge manually by overwriting target` label to improve diffs in forked repos being synced with upstream changes; see [this changelog entry](https://www.reviewable.io/blog/reviews-in-forked-repos-that-track-upstream-changes/) for details.
 - <kbd>Upd:</kbd> allow filter negation in reviews list and add more filters.
 - <kbd>Upd:</kbd> reduce reviews list request and bandwidth requirements, and show labels and milestones even for unconnected PRs (thanks GraphQL!).
 - <kbd>Upd:</kbd> add "waiting on me" and "being reviewed by me" sections to reviews list, and show blocking users instead of assignees next to the pointing hand.
@@ -1680,7 +1680,7 @@
 
 - <kbd>Fix:</kbd> correctly deal with bot users introduced by the new(ish) GitHub Apps API.
 - <kbd>Fix:</kbd> when collapsing a discussion (e.g., by clicking Acknowledge) whose top is off-screen, prevent the page from seeming to "jump down" to unrelated content.
-- <kbd>Fix:</kbd> mark revisions as `obsolete` in data structure passed to custom review completion conditions.  You'll likely need to [update your condition code](https://headwayapp.co/reviewable-changes/completion-conditions-and-obsolete-revisions-35080), especially if you use force pushes in your workflow.
+- <kbd>Fix:</kbd> mark revisions as `obsolete` in data structure passed to custom review completion conditions.  You'll likely need to [update your condition code](https://www.reviewable.io/blog/completion-conditions-and-obsolete-revisions/), especially if you use force pushes in your workflow.
 
 <sub>**Enterprise release 1619.2237** (min 1549.2198) 2017-08-16 <!-- enterprise 1619.2237 --></sub>
 

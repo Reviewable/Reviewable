@@ -1,4 +1,4 @@
-Please see the **[integrated SaaS/Enterprise changelog](https://github.com/Reviewable/Reviewable/blob/master/CHANGELOG.md)**.
+Please see the **[integrated SaaS/Enterprise changelog](https://changelog.reviewable.io)**.
 
 Each Enterprise release has a two-part version number (_server.client_) with a corresponding tag on the Docker image.  Note that once you've deployed a given release you'll only be able to deploy releases with version components at least equal to its _min_ version number, which may constrain your rollbacks.
 
