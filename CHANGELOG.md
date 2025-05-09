@@ -1,21 +1,18 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> move publish preview to conclusions panel. <!-- client -->
-- <kbd>Fix:</kbd> smooth out file visit animations triggered from within an overlay. <!-- client -->
-- <kbd>New:</kbd> display updates made to Reviewable inside the app. <!-- client -->
-  > Over the years we tried various kinds of changelogs but none stuck.  We think this in-app one will be both more convenient for you to check and for us to update — win-win!
-- <kbd>Fix:</kbd> make autocomplete popups work properly in some panels. <!-- client -->
-- <kbd>Upd:</kbd> show an icon in the Publish button if you'll be blocking a discussion after publishing, and aren't either approving the pull request or requesting changes. <!-- client -->
-  > This can be helpful to let you know that you'll (still) be blocking the review in workflows that use discussion resolution rather than GitHub approvals.
-- <kbd>Fix:</kbd> make completion condition output selectable. <!-- client -->
-- <kbd>Fix:</kbd> prevent a rare crash related to `nearestUnkeptRaw`. <!-- client -->
-- <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client -->
-- <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client -->
-- <kbd>Fix:</kbd> re-enable contextual help in dropdowns. <!-- client -->
-- <kbd>New:</kbd> Add option to publish on next push to publish options for authors <!-- client -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Upd:</kbd> move publish preview to conclusions panel. <!-- client 7642 -->
+- <kbd>Fix:</kbd> smooth out file visit animations triggered from within an overlay. <!-- client 7642 -->
+- <kbd>New:</kbd> display updates made to Reviewable inside the app. <!-- client 7642 -->
+  > Over the years we tried various kinds of changelogs but none stuck.  We think this in-app one will be both more convenient for you to check and for us to update — win-win!
+- <kbd>Fix:</kbd> make autocomplete popups work properly in some panels. <!-- client 7642 -->
+- <kbd>Upd:</kbd> show an icon in the Publish button if you'll be blocking a discussion after publishing, and aren't either approving the pull request or requesting changes. <!-- client 7642 -->
+  > This can be helpful to let you know that you'll (still) be blocking the review in workflows that use discussion resolution rather than GitHub approvals.
+- <kbd>Fix:</kbd> make completion condition output selectable. <!-- client 7642 -->
+- <kbd>Fix:</kbd> prevent a rare crash related to `nearestUnkeptRaw`. <!-- client 7642 -->
+- <kbd>Fix:</kbd> improve interaction latency on large pages. <!-- client 7642 -->
+- <kbd>Fix:</kbd> fix minor visual discrepancies related to dropdowns. <!-- client 7642 -->
+- <kbd>Fix:</kbd> re-enable contextual help in dropdowns. <!-- client 7642 -->
+- <kbd>New:</kbd> Add option to publish on next push to publish options for authors <!-- client 7642 -->
 - <kbd>Fix:</kbd> recover gracefully when GitHub changes its mind about what commits belong to a PR for a given head/base pair. <!-- server 4751 -->
 
 <sub>2025 - 04 (and earlier)</sub>
