@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> move publish preview to conclusions panel. <!-- client -->
+- <kbd>Fix:</kbd> smooth out file visit animations triggered from within an overlay. <!-- client -->
 - <kbd>New:</kbd> display updates made to Reviewable inside the app. <!-- client -->
   > Over the years we tried various kinds of changelogs but none stuck.  We think this in-app one will be both more convenient for you to check and for us to update — win-win!
 - <kbd>Fix:</kbd> make autocomplete popups work properly in some panels. <!-- client -->
