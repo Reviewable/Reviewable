@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> avoid locking up and spinning the CPU when trying to report certain errors on the client. <!-- client -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Fix:</kbd> avoid locking up and spinning the CPU when trying to report certain errors on the client. <!-- client 7644 -->
 - <kbd>Upd:</kbd> move publish preview to conclusions panel. <!-- client 7642 -->
 - <kbd>Fix:</kbd> smooth out file visit animations triggered from within an overlay. <!-- client 7642 -->
 - <kbd>New:</kbd> display updates made to Reviewable inside the app. <!-- client 7642 -->
