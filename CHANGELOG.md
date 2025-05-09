@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid locking up and spinning the CPU when trying to report certain errors on the client. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Upd:</kbd> move publish preview to conclusions panel. <!-- client 7642 -->
