@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't create revisions with no commits listed. <!-- server -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix:</kbd> avoid locking up and spinning the CPU when trying to report certain errors on the client. <!-- client 7644 -->
