@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> don't create revisions with no commits listed. <!-- server -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't create revisions with no commits listed. <!-- server 4758 -->
 - <kbd>Fix:</kbd> avoid locking up and spinning the CPU when trying to report certain errors on the client. <!-- client 7644 -->
 - <kbd>Upd:</kbd> move publish preview to conclusions panel. <!-- client 7642 -->
 - <kbd>Fix:</kbd> smooth out file visit animations triggered from within an overlay. <!-- client 7642 -->
