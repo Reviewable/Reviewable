@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> inlude sanction timestamps in custom review completion condition input. <!-- server -->
 - <kbd>Upd:</kbd> include pull request labels in the webhook's payload. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client -->
 
