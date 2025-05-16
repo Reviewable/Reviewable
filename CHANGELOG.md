@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> include pull request labels in the webhook's payload. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client -->
 
 <sub>2025 - 05</sub>
