@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> send an individual message immediately rather than waiting for the next push as pull request author. <!-- client 7647 -->
