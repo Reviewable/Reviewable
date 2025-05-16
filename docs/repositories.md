@@ -409,7 +409,7 @@ The current state of the review is accessible to your code via the `review` vari
       // Lists pull request reviews by user along with the latest state (one of 'approved',
       // 'changes_requested', 'commented', or 'dismissed').  Like other user lists it'll also
       // include each user's team memberships.
-      {username: 'pkaminski-state', state: 'changes_requested'}
+      {username: 'pkaminski-state', state: 'changes_requested', timestamp: 1436828040000}
     ],
     numCommits: 3,
     target: {
@@ -629,7 +629,8 @@ A URL string that Reviewable will send review status update notifications to.  Y
       "owner": "Reviewable",
       "repository": "Reviewable",
       "number": 1,
-      "state": "open"
+      "state": "open",
+      "labels": ["bug"]
     },
     "review": {
       "url": "https://reviewable.io/reviews/Reviewable/demo/1",
