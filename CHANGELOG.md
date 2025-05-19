@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> trigger recomputation of completion for all reviews when a master completion condition file is edited. <!-- server -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client 7649 -->
