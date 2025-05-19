@@ -1,11 +1,11 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> inlude sanction timestamps in custom review completion condition input. <!-- server -->
-- <kbd>Upd:</kbd> include pull request labels in the webhook's payload. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client -->
 
 <sub>2025 - 05</sub>
 
+- <kbd>Upd:</kbd> inlude sanction timestamps in custom review completion condition input. <!-- server 4762 -->
+- <kbd>Upd:</kbd> include pull request labels in the webhook's payload. <!-- server 4762 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> send an individual message immediately rather than waiting for the next push as pull request author. <!-- client 7647 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't create revisions with no commits listed. <!-- server 4758 -->
 - <kbd>Fix:</kbd> avoid locking up and spinning the CPU when trying to report certain errors on the client. <!-- client 7644 -->
