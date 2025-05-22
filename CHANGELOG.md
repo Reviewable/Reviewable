@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> make the button that marks all discussions as read and files as reviewed bigger and clearer in the Conclusion panel. Also make it clear what will happen if you don't click it. <!-- client -->
+- <kbd>Fix:</kbd> avoid layout shift when opening panel overlays. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix:</kbd> trigger recomputation of completion for all reviews when a master completion condition file is edited. <!-- server 4763 -->
