@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to location quickly. <!-- client -->
-- <kbd>Upd:</kbd> make the button that marks all discussions as read and files as reviewed bigger and clearer in the Conclusion panel. Also make it clear what will happen if you don't click it. <!-- client -->
-- <kbd>Fix:</kbd> avoid layout shift when opening panel overlays. <!-- client -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to location quickly. <!-- client 7651 -->
+- <kbd>Upd:</kbd> make the button that marks all discussions as read and files as reviewed bigger and clearer in the Conclusion panel. Also make it clear what will happen if you don't click it. <!-- client 7651 -->
+- <kbd>Fix:</kbd> avoid layout shift when opening panel overlays. <!-- client 7651 -->
 - <kbd>Fix:</kbd> trigger recomputation of completion for all reviews when a master completion condition file is edited. <!-- server 4763 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client 7649 -->
 - <kbd>Upd:</kbd> inlude sanction timestamps in custom review completion condition input. <!-- server 4762 -->
