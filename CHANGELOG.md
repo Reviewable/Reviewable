@@ -1,6 +1,6 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> Restrict publish on push to open pull requests. <!-- client -->
+- <kbd>Fix(saas):</kbd> Restrict publish on push to open pull requests. <!-- client -->
 - <kbd>Fix:</kbd> include command field in drafts navigation cycle. <!-- client -->
 
 <sub>2025 - 05</sub>
