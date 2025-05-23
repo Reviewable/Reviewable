@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> make changelog notifier clickable on non-review pages. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to locate quickly. <!-- client 7651 -->
