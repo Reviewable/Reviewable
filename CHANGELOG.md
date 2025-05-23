@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> include command field in drafts navigation cycle. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> make changelog notifier clickable on non-review pages. <!-- client 7652 -->
