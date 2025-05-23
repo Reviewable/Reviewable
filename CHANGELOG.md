@@ -12,7 +12,7 @@
 - <kbd>Fix:</kbd> avoid layout shift when opening panel overlays. <!-- client 7651 -->
 - <kbd>Fix:</kbd> trigger recomputation of completion for all reviews when a master completion condition file is edited. <!-- server 4763 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid crashing on signout when showing publish options. <!-- client 7649 -->
-- <kbd>Upd:</kbd> inlude sanction timestamps in custom review completion condition input. <!-- server 4762 -->
+- <kbd>Upd:</kbd> include sanction timestamps in custom review completion condition input. <!-- server 4762 -->
 - <kbd>Upd:</kbd> include pull request labels in the webhook's payload. <!-- server 4762 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> send an individual message immediately rather than waiting for the next push as pull request author. <!-- client 7647 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't create revisions with no commits listed. <!-- server 4758 -->
