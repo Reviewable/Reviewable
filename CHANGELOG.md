@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix(saas):</kbd> Restrict publish on push to open pull requests. <!-- client -->
-- <kbd>Fix:</kbd> include command field in drafts navigation cycle. <!-- client -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> Restrict publish on push to open pull requests. <!-- client 7653 -->
+- <kbd>Fix:</kbd> include command field in drafts navigation cycle. <!-- client 7653 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> make changelog notifier clickable on non-review pages. <!-- client 7652 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> respect "apply directives without sending comment" command setting for pull request authors.
 - <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to locate quickly. <!-- client 7651 -->
