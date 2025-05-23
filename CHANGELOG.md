@@ -1,6 +1,6 @@
 <sub>2025 - 05</sub>
 
-- <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to location quickly. <!-- client 7651 -->
+- <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to locate quickly. <!-- client 7651 -->
 - <kbd>Upd:</kbd> make the button that marks all discussions as read and files as reviewed bigger and clearer in the Conclusion panel. Also make it clear what will happen if you don't click it. <!-- client 7651 -->
 - <kbd>Fix:</kbd> avoid layout shift when opening panel overlays. <!-- client 7651 -->
 - <kbd>Fix:</kbd> trigger recomputation of completion for all reviews when a master completion condition file is edited. <!-- server 4763 -->
