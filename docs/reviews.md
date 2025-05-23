@@ -82,7 +82,11 @@ If the repository is connected, by default, when a pull request's author submits
 
 You can opt-out of this feature, and have your drafts always published as soon as you submit them as a pull request author by unchecking the **Publish on push** box. This setting persists globally for the logged in user.
 
-This feature is only available to pull request authors, while reviewers will always have their drafts published instantly on submission.
+If *Publish on Push* isn't available, it could be due to one of the following reasons:
+
+1. **You're not the author of the pull request.** Reviewers will always have their drafts published instantly on submission.
+2. **The repository isn't connected.** The repository needs to be connected for Reviewable to detect when new code is pushed.
+3. **The pull request has already been merged or closed.** *Publish on Push* is only available for open pull requests.
 
 ### Conclusion
 
