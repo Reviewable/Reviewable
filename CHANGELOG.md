@@ -4,6 +4,7 @@
 
 <sub>2025 - 05</sub>
 
+- Fix(saas): respect "apply directives without sending comment" command setting for pull request authors.
 - <kbd>Upd:</kbd> move the pull request description below the metadata lines, as it can get quite long and make the branch and label information hard to locate quickly. <!-- client 7651 -->
 - <kbd>Upd:</kbd> make the button that marks all discussions as read and files as reviewed bigger and clearer in the Conclusion panel. Also make it clear what will happen if you don't click it. <!-- client 7651 -->
 - <kbd>Fix:</kbd> avoid layout shift when opening panel overlays. <!-- client 7651 -->
