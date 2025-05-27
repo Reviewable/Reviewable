@@ -30,6 +30,7 @@
   > If the repository is connected, by default, Reviewable will now schedule pull request author's review updates to be published next time they push a new revision to the pull request's branch. This helps sync your feedback with code updates, making reviews more coherent and easier to follow.
   >
   > Prefer the old behavior? No problem — just uncheck the *Publish on push* setting in the publish options to have your drafts published immediately instead. This setting is saved globally for your account.
+  > Check out the [announcement post](https://www.reviewable.io/blog/publish-on-next-push-is-finally-here/) for more details.
 - <kbd>Fix:</kbd> recover gracefully when GitHub changes its mind about what commits belong to a PR for a given head/base pair. <!-- server 4751 -->
 
 <sub>2025 - 04 (and earlier)</sub>
