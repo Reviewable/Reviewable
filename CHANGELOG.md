@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> fix minor layout issues in the pull request panel. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> Restrict publish on push to open pull requests. <!-- client 7653 -->
