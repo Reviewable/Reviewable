@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't close dialog when a mouse drag ends outside. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> fix minor layout issues in the pull request panel. <!-- client -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Fix:</kbd> don't close dialog when a mouse drag ends outside. <!-- client 7654 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> fix minor layout issues in the pull request panel. <!-- client 7654 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Restrict publish on push to open pull requests. <!-- client 7653 -->
 - <kbd>Fix:</kbd> include command field in drafts navigation cycle. <!-- client 7653 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> make changelog notifier clickable on non-review pages. <!-- client 7652 -->
