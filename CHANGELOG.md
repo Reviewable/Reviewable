@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't close dialog when a mouse drag ends outside. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> fix minor layout issues in the pull request panel. <!-- client -->
 
 <sub>2025 - 05</sub>
