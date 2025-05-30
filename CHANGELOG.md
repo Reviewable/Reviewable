@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't include command field in unresolved discussions navigation cycle. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix:</kbd> don't close dialog when a mouse drag ends outside. <!-- client 7654 -->
