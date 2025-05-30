@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> improve quoting of formatted comments, especially tables. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> don't include command field in unresolved discussions navigation cycle. <!-- client -->
-
 <sub>2025 - 05</sub>
 
+- <kbd>Fix:</kbd> improve quoting of formatted comments, especially tables. <!-- client 7655 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't include command field in unresolved discussions navigation cycle. <!-- client 7655 -->
 - <kbd>Fix:</kbd> don't close dialog when a mouse drag ends outside. <!-- client 7654 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> fix minor layout issues in the pull request panel. <!-- client 7654 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Restrict publish on push to open pull requests. <!-- client 7653 -->
