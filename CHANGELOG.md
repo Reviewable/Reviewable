@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> improve quoting of formatted comments, especially tables. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't include command field in unresolved discussions navigation cycle. <!-- client -->
 
 <sub>2025 - 05</sub>
