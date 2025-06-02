@@ -2,6 +2,10 @@
 
 - <kbd>Fix:</kbd> don't crash when setting the review style fails. <!-- client -->
 
+<sub>2025 - 06</sub>
+
+<sub>**Enterprise release 4765.7655** (min 3340.5125 GHE ^2.19 || ^3) 2025-06-02 <!-- enterprise 4765.7655 --></sub>
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix:</kbd> improve quoting of formatted comments, especially tables. <!-- client 7655 -->
