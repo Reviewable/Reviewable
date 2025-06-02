@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't crash when setting the review style fails. <!-- client -->
+
 <sub>2025 - 05</sub>
 
 - <kbd>Fix:</kbd> improve quoting of formatted comments, especially tables. <!-- client 7655 -->
