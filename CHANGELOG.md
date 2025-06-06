@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Handle when publish on push task no longer exists when being canceled <!-- client -->
 - <kbd>Fix:</kbd> don't crash when setting the review style fails. <!-- client -->
 
 <sub>2025 - 06</sub>
