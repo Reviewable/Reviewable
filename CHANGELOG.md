@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client -->
 - <kbd>Fix:</kbd> prevent very rare crash after opening contextual help. <!-- client -->
 - <kbd>Fix:</kbd> fix occasional crash when loading review page. <!-- client -->
 - <kbd>Fix:</kbd> Handle when publish on push task no longer exists when being canceled <!-- client -->
