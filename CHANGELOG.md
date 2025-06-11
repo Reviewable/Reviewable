@@ -1,12 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client -->
-- <kbd>Fix:</kbd> prevent very rare crash after opening contextual help. <!-- client -->
-- <kbd>Fix:</kbd> fix occasional crash when loading review page. <!-- client -->
-- <kbd>Fix:</kbd> Handle when publish on push task no longer exists when being canceled <!-- client -->
-- <kbd>Fix:</kbd> don't crash when setting the review style fails. <!-- client -->
-
 <sub>2025 - 06</sub>
+
+- <kbd>Upd:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client 7656 -->
+- <kbd>Fix:</kbd> prevent very rare crash after opening contextual help. <!-- client 7656 -->
+- <kbd>Fix:</kbd> fix occasional crash when loading review page. <!-- client 7656 -->
+- <kbd>Fix:</kbd> Handle when publish on push task no longer exists when being canceled <!-- client 7656 -->
+- <kbd>Fix:</kbd> don't crash when setting the review style fails. <!-- client 7656 -->
 
 <sub>**Enterprise release 4765.7655** (min 3340.5125 GHE ^2.19 || ^3) 2025-06-02 <!-- enterprise 4765.7655 --></sub>
 
