@@ -78,7 +78,7 @@ Repository admins can customize the list of awaited reviewers and, if desired, o
 
 ### Publish on Push
 
-If the repository is connected, by default, when a pull request's author submits their drafts (including comments, dispositions, and review marks), Reviewable schedules the drafts to be published next time the author pushes a new revision to the pull request's source branch. That is if a push is happening within 30 minutes, otherwise the publication gets cancelled but don't worry the drafts won't be deleted but just remain unpublished until the author triggers another publication.
+By default, except in the scenarios listed below, when a pull request's author submits their drafts (including comments, dispositions, and review marks), Reviewable schedules the drafts to be published next time the author pushes a new revision to the pull request's source branch. That is if a push is happening within 30 minutes, otherwise the publication gets cancelled but don't worry the drafts won't be deleted but just remain unpublished until the author triggers another publication.
 
 You can opt-out of this feature, and have your drafts always published as soon as you submit them as a pull request author by unchecking the **Publish on push** box. This setting persists globally for the logged in user.
 
@@ -87,6 +87,7 @@ If *Publish on Push* isn't available, it could be due to one of the following re
 1. **You're not the author of the pull request.** Reviewers will always have their drafts published instantly on submission.
 2. **The repository isn't connected.** The repository needs to be connected for Reviewable to detect when new code is pushed.
 3. **The pull request has already been merged or closed.** *Publish on Push* is only available for open pull requests.
+4. **There are no review comments yet.** *Publish on Push* is only available when there are already any comments to address, not counting comments by bots or by the author themselves.
 
 ### Conclusion
 
