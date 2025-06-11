@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> avoid possible crash when opening merge options too quickly after the review page was loaded. <!-- client -->
-- <kbd>Fix:</kbd> don't shift things up/down when editing the merge commit message with the pull request panel open as a dialog. <!-- client -->
-- <kbd>Fix:</kbd> display placeholders for all files when no diffs showing at all. <!-- client -->
-
 <sub>2025 - 06</sub>
 
+- <kbd>Fix:</kbd> avoid possible crash when opening merge options too quickly after the review page was loaded. <!-- client 7657 -->
+- <kbd>Fix:</kbd> don't shift things up/down when editing the merge commit message with the pull request panel open as a dialog. <!-- client 7657 -->
+- <kbd>Fix:</kbd> display placeholders for all files when no diffs showing at all. <!-- client 7657 -->
 - <kbd>Adm:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client 7656 -->
 - <kbd>Fix:</kbd> prevent very rare crash after opening contextual help. <!-- client 7656 -->
 - <kbd>Fix:</kbd> fix occasional crash when loading review page. <!-- client 7656 -->
