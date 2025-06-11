@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> display placeholders for all files when no diffs showing at all. <!-- client -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Upd:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client 7656 -->
