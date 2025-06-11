@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Restrict publish on push to reviews with active non-bot reviewer participants <!-- client -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Fix:</kbd> avoid possible crash when opening merge options too quickly after the review page was loaded. <!-- client 7657 -->
