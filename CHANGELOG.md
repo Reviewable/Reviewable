@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> Restrict publish on push to reviews with active non-bot reviewer participants <!-- client -->
-
 <sub>2025 - 06</sub>
 
+- <kbd>Upd:</kbd> Restrict publish on push to reviews with active non-bot reviewer participants <!-- client 7658 -->
 - <kbd>Fix:</kbd> avoid possible crash when opening merge options too quickly after the review page was loaded. <!-- client 7657 -->
 - <kbd>Fix:</kbd> don't shift things up/down when editing the merge commit message with the pull request panel open as a dialog. <!-- client 7657 -->
 - <kbd>Fix:</kbd> display placeholders for all files when no diffs showing at all. <!-- client 7657 -->
