@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> correctly match required check names to checks when their names are not unique. <!-- server -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Upd:</kbd> Restrict publish on push to reviews with active non-bot reviewer participants <!-- client 7658 -->
