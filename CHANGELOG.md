@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> clarify UI when waiting on push to publish drafts. <!-- client -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Fix:</kbd> correctly match required check names to checks when their names are not unique. <!-- server 4766 -->
