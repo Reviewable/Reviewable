@@ -160,7 +160,7 @@ An error is displayed if your `settings.yaml` file contains any options that are
 
 #### Applying a `settings.yaml` file to multiple repositories
 
-Designate a master repository to store your `settings.yaml` file and any completion condition scripts. The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless of when they were created.
+You can designate a master repository to store your `settings.yaml` file and any completion condition scripts. To do so, ensure the repository contains a `.reviewable/settings.yaml` file, open its settings on the Repositories page, and click **Set as master repository**.  The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)). This master settings file will apply its settings to all repositories, regardless of when they were created.
 
 ::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
