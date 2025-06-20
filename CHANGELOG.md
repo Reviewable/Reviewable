@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> always select nearest non-blank line when initiating code suggestion. <!-- client -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Fix:</kbd> clarify UI when waiting on push to publish drafts. <!-- client 7662 -->
