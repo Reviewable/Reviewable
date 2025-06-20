@@ -59,6 +59,11 @@ coverage:
   # `url` allows you specify a template for code coverage reports.
   url: https://example.com/coverage
 
+# `completion-file` gives the path to the custom review completion condition script, relative to the
+# settings file.
+# https://docs.reviewable.io/repositories#completion-condition-script
+completion-file: completion.js
+
 # The overrides parameter will allow you to set different options for any
 # repositiory matching the patterns in the `repositories` parameter.
 # https://docs.reviewable.io/repositories.html#overrides
