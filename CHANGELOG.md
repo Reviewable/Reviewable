@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> always select nearest non-blank line when initiating code suggestion. <!-- client -->
-
 <sub>2025 - 06</sub>
 
+- <kbd>Fix:</kbd> always select nearest non-blank line when initiating code suggestion. <!-- client 7663 -->
 - <kbd>Fix:</kbd> clarify UI when waiting on push to publish drafts. <!-- client 7662 -->
 - <kbd>Fix:</kbd> correctly match required check names to checks when their names are not unique. <!-- server 4766 -->
 - <kbd>Upd:</kbd> Restrict publish on push to reviews with active non-bot reviewer participants <!-- client 7658 -->
