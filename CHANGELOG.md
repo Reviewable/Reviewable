@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> include the workflow name when displaying checks more often, while still omitting it when clearly redundant. <!-- server -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Fix:</kbd> always select nearest non-blank line when initiating code suggestion. <!-- client 7663 -->
