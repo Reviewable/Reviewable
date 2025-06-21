@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server -->
 - <kbd>Upd:</kbd> include the workflow name when displaying checks more often, while still omitting it when clearly redundant. <!-- server -->
 
 <sub>2025 - 06</sub>
