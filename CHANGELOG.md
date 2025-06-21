@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> correctly interpret `.gitattributes` patterns that don't start with a `/`.  Previously these would fail to match as expected. <!-- client -->
 - <kbd>Adm:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server -->
 - <kbd>Upd:</kbd> include the workflow name when displaying checks more often, while still omitting it when clearly redundant. <!-- server -->
 
