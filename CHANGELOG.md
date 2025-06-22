@@ -1,6 +1,6 @@
 <sub>2025 - 06</sub>
 
-- <kbd>Adm:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server 4768 -->
+- <kbd>Fix:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server 4768 -->
 - <kbd>Upd:</kbd> include the workflow name when displaying checks more often, while still omitting it when clearly redundant. <!-- server 4768 -->
 - <kbd>Fix:</kbd> correctly interpret `.gitattributes` patterns that don't start with a `/`.  Previously these would fail to match as expected. <!-- client 7664 -->
 - <kbd>Fix:</kbd> always select nearest non-blank line when initiating code suggestion. <!-- client 7663 -->
@@ -10,7 +10,7 @@
 - <kbd>Fix:</kbd> avoid possible crash when opening merge options too quickly after the review page was loaded. <!-- client 7657 -->
 - <kbd>Fix:</kbd> don't shift things up/down when editing the merge commit message with the pull request panel open as a dialog. <!-- client 7657 -->
 - <kbd>Fix:</kbd> display placeholders for all files when no diffs showing at all. <!-- client 7657 -->
-- <kbd>Adm:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client 7656 -->
+- <kbd>Upd:</kbd> support a `pending` code coverage error level, which will be indicated with an hourglass icon. <!-- client 7656 -->
 - <kbd>Fix:</kbd> prevent very rare crash after opening contextual help. <!-- client 7656 -->
 - <kbd>Fix:</kbd> fix occasional crash when loading review page. <!-- client 7656 -->
 - <kbd>Fix:</kbd> Handle when publish on push task no longer exists when being canceled <!-- client 7656 -->
