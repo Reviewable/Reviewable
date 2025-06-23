@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't enter an endless retry loop when a completion condition returns a bogus username in some contexts. <!-- server -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Fix:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server 4768 -->
