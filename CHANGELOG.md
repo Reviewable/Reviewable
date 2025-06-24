@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't enter an endless retry loop when a completion condition returns a bogus username in some contexts. <!-- server -->
-
 <sub>2025 - 06</sub>
 
+- <kbd>Fix:</kbd> don't enter an endless retry loop when a completion condition returns a bogus username in some contexts. <!-- server 4769 -->
 - <kbd>Fix:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server 4768 -->
 - <kbd>Upd:</kbd> include the workflow name when displaying checks more often, while still omitting it when clearly redundant. <!-- server 4768 -->
 - <kbd>Fix:</kbd> correctly interpret `.gitattributes` patterns that don't start with a `/`.  Previously these would fail to match as expected. <!-- client 7664 -->
