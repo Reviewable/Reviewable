@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep diff expand button under mouse pointer when expanding. <!-- client -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Fix:</kbd> don't enter an endless retry loop when a completion condition returns a bogus username in some contexts. <!-- server 4769 -->
