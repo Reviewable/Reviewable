@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Reviewable can now send custom headers (e.g. `Authorization`) when fetching [code coverage reports](https://docs.reviewable.io/reviews#code-coverage) configured via file-based settings using the `coverage.headers` option.
+
 <sub>2025 - 06</sub>
 
 - <kbd>Upd:</kbd> focus main scroll context to immediately enable Page Up/Down keys <!-- client 7666 -->
