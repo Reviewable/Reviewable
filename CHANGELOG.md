@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> focus main scroll context to immediately enable Page Up/Down keys <!-- client -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Upd:</kbd> let users cap how much of their GitHub API quota will use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client 7665 -->
