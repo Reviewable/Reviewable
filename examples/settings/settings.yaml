@@ -53,11 +53,16 @@ github-status:
   # an organization and the user be a member of that organization. Defaults to any repository admin.
   creator: pkaminski
 
-# `coverage` has a single option named `url` that allows you to fetch a URL template for code coverage reports.
+# `coverage` lets you configure code coverage reports.
 # https://docs.reviewable.io/repositories.html#code-coverage
 coverage:
-  # `url` allows you specify a template for code coverage reports.
+  # `url` allows you to specify a template for code coverage reports.
   url: https://example.com/coverage
+  # `headers` allows specifying custom headers to include when sending requests fetching
+  # code coverage reports. As this is mostly useful for authorizing access in private repos,
+  # the header values can be encrypted via https://reviewable.io/encrypt.
+  headers:
+    Authorization: encrypted/rsa2:ObXundPmnmNRmJvPz20Y8+7egxnt5A3XjO5hSYxZGMNmFel2i5tNei8bZ/Uqd9WmcNNR37XodqyC7YR69h6PGQ==
 
 # `completion-file` gives the path to the custom review completion condition script, relative to the
 # settings file.
