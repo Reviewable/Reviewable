@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> [Code coverage reports](https://docs.reviewable.io/reviews#code-coverage) configured via file-based settings can send custom headers (e.g. `Authorization`) via `coverage.headers` now.
+
 <sub>2025 - 06</sub>
 
 - <kbd>Upd:</kbd> let users cap how much of their GitHub API quota will use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client 7665 -->

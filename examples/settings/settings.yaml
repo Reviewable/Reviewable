@@ -58,6 +58,11 @@ github-status:
 coverage:
   # `url` allows you specify a template for code coverage reports.
   url: https://example.com/coverage
+  # `headers` allows spcifying custom headers to include when sending requests fetching
+  # code coverage reports. As this is mostly useful for authorizing access to private repos,
+  # the header values can be encrypted via https://reviewable.io/encrypt.
+  headers:
+    Authorization: encrypted/rsa2:810u2vAl/29gSF7WROFAOU4hKU9Go4AKMRQ7nY3thRe7eiVRjja8XB5uUfu7OW3Ai+GzLbfDNJ6R5RcqI94BtcEmF9N3bO3ivNcO36tXcGLcLFFFGvQK4b9AlzHZlTEyCmx42EggxpMQeOOrQzSFgXxZQOurzZ81ja5pv1tJX9kfu8CyJgyIno7NEQFJw7+itam68ugcTR/wMeWP2jSjgV+ECq3cl/KYwks/MKBYQyXXdHbAjge5lHMV8rW8Md3tsvnjv6H6auJWz0FJNXWKBOzEo8Fz/JzXGH5tGYrbneyiR+5Vm+wqBb3sIbfoWzmM1mMf/mh3BEwWNOJl+p16pA==
 
 # `completion-file` gives the path to the custom review completion condition script, relative to the
 # settings file.
