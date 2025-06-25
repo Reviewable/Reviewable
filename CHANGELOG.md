@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> let users cap how much of their GitHub API quota will use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client -->
 - <kbd>Fix:</kbd> keep diff expand button under mouse pointer when expanding. <!-- client -->
 
 <sub>2025 - 06</sub>
