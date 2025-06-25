@@ -306,8 +306,12 @@ The coverage reports must be in a format that Reviewable understands.  Currently
 
 ```yaml
 coverage:
-  # The `url` option allows you to proved a url template for code coverage reports.
+  # The `url` option allows you to provide a url template for code coverage reports.
   url: *
+  headers:
+    # Optional, the `Authorization` header for private repos, encrypted via https://reviewable.io/encrypt.
+    # You can specify other headers as well (either encrypted or in plain text).
+    Authorization: encrypted/rsa2:*
 ```
 
 #### Completion condition script
