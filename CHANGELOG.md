@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> let users cap how much of their GitHub API quota will use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client -->
-- <kbd>Fix:</kbd> keep diff expand button under mouse pointer when expanding. <!-- client -->
-
 <sub>2025 - 06</sub>
 
+- <kbd>Upd:</kbd> let users cap how much of their GitHub API quota will use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client 7665 -->
+- <kbd>Fix:</kbd> keep diff expand button under mouse pointer when expanding. <!-- client 7665 -->
 - <kbd>Fix:</kbd> don't enter an endless retry loop when a completion condition returns a bogus username in some contexts. <!-- server 4769 -->
 - <kbd>Fix:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server 4768 -->
 - <kbd>Upd:</kbd> include the workflow name when displaying checks more often, while still omitting it when clearly redundant. <!-- server 4768 -->
