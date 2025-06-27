@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> correctly report whether pull request approvals can be bypassed by admins. <!-- server -->
+
 <sub>2025 - 06</sub>
 
 - <kbd>Upd:</kbd> include `stage` in webhook data, and ensure that the webhook fires if labels or stage change (even if the review state's description doesn't). <!-- server 4773 -->
