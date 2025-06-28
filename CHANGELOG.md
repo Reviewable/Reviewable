@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> address font scaling issues that break diff layout in mobile browsers. <!-- client -->
 - <kbd>Fix:</kbd> correctly report whether pull request approvals can be bypassed by admins. <!-- server -->
 
 <sub>2025 - 06</sub>
