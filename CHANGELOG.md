@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> address font scaling issues that break diff layout in mobile browsers. <!-- client -->
-- <kbd>Fix:</kbd> correctly report whether pull request approvals can be bypassed by admins. <!-- server -->
 
 <sub>2025 - 06</sub>
 
+- <kbd>Fix:</kbd> correctly report whether pull request approvals can be bypassed by admins. <!-- server 4775 -->
 - <kbd>Upd:</kbd> include `stage` in webhook data, and ensure that the webhook fires if labels or stage change (even if the review state's description doesn't). <!-- server 4773 -->
 - <kbd>Fix:</kbd> don't report an internal error when trying to apply bogus directives. <!-- client 7667 -->
 - <kbd>Upd:</kbd> Reviewable can now send custom headers (e.g. `Authorization`) when fetching [code coverage reports](https://docs.reviewable.io/reviews#code-coverage) configured via file-based settings using the `coverage.headers` option. <!-- server 4771 -->
