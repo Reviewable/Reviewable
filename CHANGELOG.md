@@ -9,7 +9,7 @@
 - <kbd>Fix:</kbd> don't report an internal error when trying to apply bogus directives. <!-- client 7667 -->
 - <kbd>Upd:</kbd> Reviewable can now send custom headers (e.g. `Authorization`) when fetching [code coverage reports](https://docs.reviewable.io/reviews#code-coverage) configured via file-based settings using the `coverage.headers` option. <!-- server 4771 -->
 - <kbd>Upd:</kbd> focus main scroll context to immediately enable Page Up/Down keys. <!-- client 7666 -->
-- <kbd>Upd:</kbd> let users cap how much of their GitHub API quota will use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client 7665 -->
+- <kbd>Upd:</kbd> let users cap how much of their GitHub API quota Reviewablewill use for background requests.  This is particularly useful if you're a member of an organization subscribed to GitHub Enterprise Cloud and also use personal access tokens. <!-- client 7665 -->
 - <kbd>Fix:</kbd> keep diff expand button under mouse pointer when expanding. <!-- client 7665 -->
 - <kbd>Fix:</kbd> don't enter an endless retry loop when a completion condition returns a bogus username in some contexts. <!-- server 4769 -->
 - <kbd>Fix:</kbd> avoid duplicated teams in completion condition input if a user is a member of a team both directly and indirectly. <!-- server 4768 -->
