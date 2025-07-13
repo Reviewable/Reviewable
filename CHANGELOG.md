@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> add support for GitHub's merge queue. <!-- client -->
+
 <sub>2025 - 07</sub>
 
 <sub>**Enterprise release 4776.7669** (min 3340.5125 GHE ^2.19 || ^3) 2025-07-01 <!-- enterprise 4776.7669 --></sub>
