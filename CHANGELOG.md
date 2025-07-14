@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> detect and work around `ERR_HTTP2_PROTOCOL_ERROR` errors that GitHub sometimes triggers in response to a dashboard query.  These used to result in a "list of reviews may be incomplete" warning message and potentially a lot of missing reviews. <!-- client -->
-
 <sub>2025 - 07</sub>
 
+- <kbd>Fix:</kbd> detect and work around `ERR_HTTP2_PROTOCOL_ERROR` errors that GitHub sometimes triggers in response to a dashboard query.  These used to result in a "list of reviews may be incomplete" warning message and potentially a lot of missing reviews. <!-- client 7672 -->
 - <kbd>New:</kbd> add support for GitHub's merge queue. <!-- client 7671 -->
 
 <sub>**Enterprise release 4776.7669** (min 3340.5125 GHE ^2.19 || ^3) 2025-07-01 <!-- enterprise 4776.7669 --></sub>
