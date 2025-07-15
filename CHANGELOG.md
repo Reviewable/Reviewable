@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> when adding the Reviewable badge to a pull request description, default to using the account of the user who connected the repository (even if an alternative admin was selected to handle the event). <!-- server -->
+- <kbd>Upd:</kbd> use the designated commenter (or repository connector) when updating badge comments too, not just when creating them. <!-- server -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Fix:</kbd> detect and work around `ERR_HTTP2_PROTOCOL_ERROR` errors that GitHub sometimes triggers in response to a dashboard query.  These used to result in a "list of reviews may be incomplete" warning message and potentially a lot of missing reviews. <!-- client 7672 -->
