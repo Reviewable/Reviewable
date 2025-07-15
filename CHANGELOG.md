@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> if a `github-status.creator` is specified for a repository, also use this account when applying `requestedTeams` from a custom review completion condition. <!-- server -->
 - <kbd>Upd:</kbd> when adding the Reviewable badge to a pull request description, default to using the account of the user who connected the repository (even if an alternative admin was selected to handle the event). <!-- server -->
 - <kbd>Upd:</kbd> use the designated commenter (or repository connector) when updating badge comments too, not just when creating them. <!-- server -->
 
