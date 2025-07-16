@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> hide tooltip as soon as the mouse moves off a participant cell. <!-- client -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Upd:</kbd> if a `github-status.creator` is specified for a repository, also use this account when applying `requestedTeams` from a custom review completion condition. <!-- server 4779 -->
