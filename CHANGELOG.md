@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> support shift+click to mark file reviewed and retreat to previous unreviewed file. <!-- client -->
 - <kbd>Fix:</kbd> hide tooltip as soon as the mouse moves off a participant cell. <!-- client -->
 
 <sub>2025 - 07</sub>
