@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent rare crash in publish preview when draft data is unavailable. <!-- client -->
 - <kbd>Upd:</kbd> support shift+click to mark file reviewed and retreat to previous unreviewed file. <!-- client -->
 - <kbd>Fix:</kbd> hide tooltip as soon as the mouse moves off a participant cell. <!-- client -->
 
