@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent rare crash in publish preview when draft data is unavailable. <!-- client -->
-- <kbd>Upd:</kbd> support shift+click to mark file reviewed and retreat to previous unreviewed file. <!-- client -->
-- <kbd>Fix:</kbd> hide tooltip as soon as the mouse moves off a participant cell. <!-- client -->
-
 <sub>2025 - 07</sub>
 
+- <kbd>Fix:</kbd> prevent rare crash in publish preview when draft data is unavailable. <!-- client 7673 -->
+- <kbd>Upd:</kbd> support shift+click to mark file reviewed and retreat to previous unreviewed file. <!-- client 7673 -->
+- <kbd>Fix:</kbd> hide tooltip as soon as the mouse moves off a participant cell. <!-- client 7673 -->
 - <kbd>Upd:</kbd> if a `github-status.creator` is specified for a repository, also use this account when applying `requestedTeams` from a custom review completion condition. <!-- server 4779 -->
 - <kbd>Upd:</kbd> when adding the Reviewable badge to a pull request description, default to using the account of the user who connected the repository (even if an alternative admin was selected to handle the event). <!-- server 4779 -->
 - <kbd>Upd:</kbd> use the designated commenter (or repository connector) when updating badge comments too, not just when creating them. <!-- server 4779 -->
