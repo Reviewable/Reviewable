@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> fill the completion condition's `review.sentiments` with the right emoji names, even if a comment contains raw emoji characters. <!-- client -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Fix:</kbd> prevent rare crash in publish preview when draft data is unavailable. <!-- client 7673 -->
