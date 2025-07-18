@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> make single character diffs more visible in two column mode. <!-- client -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Fix:</kbd> fill the completion condition's `review.sentiments` with the right emoji names, even if a comment contains raw emoji characters. <!-- client 7674 -->
