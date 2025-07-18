@@ -1,5 +1,6 @@
 <sub>2025 - 07</sub>
 
+- <kbd>Fix:</kbd> avoid posting duplicate messages to GitHub in some rare partial failure cases when using publish on push. <!-- client 7675 -->
 - <kbd>Upd:</kbd> inject `.gitattributes` maps into the custom review completion condition input data structure, normalized and matched to each file. <!-- server 4783 -->
 - <kbd>Upd:</kbd> make single character diffs more visible in two column mode. <!-- client 7675 -->
 - <kbd>Fix:</kbd> fill the completion condition's `review.sentiments` with the right emoji names, even if a comment contains raw emoji characters. <!-- client 7674 -->
