@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> inject `.gitattributes` maps into the custom review completion condition input data structure, normalized and matched to each file. <!-- server -->
 - <kbd>Upd:</kbd> make single character diffs more visible in two column mode. <!-- client -->
 
 <sub>2025 - 07</sub>
