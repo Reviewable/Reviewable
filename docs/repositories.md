@@ -89,8 +89,9 @@ By contrast, Reviewable doesn't get write access to the repo if you individually
 * Reviewable may not be able to reliably detect and apply your branch protection settings in its UI. (The branch protection settings will be enforced by GitHub no matter what, though, so this is safe but potentially confusing.)
 * It may not be possible for Reviewable to pin revision commits, so if you use `git rebase` and `git push --force`, some of them may get garbage collected and will no longer be accessible in the review. They'll usually get pinned when the reviewer (with push authority) accesses the review.
 * [Publish on push](reviews.md#publish-on-push) will be unavailable.
+* `.gitattributes` properties injection into the custom review completion condition may not be available.
 
-Though the differences above may be minor, it's much more convenient and reliable to connect a repo directly.
+Though the differences above may seem minor, it's much more convenient and reliable to connect a repo directly.
 
 ::: tip
 You may find it impractical to use Reviewable for all PRs, especially for small changes. While every pull request from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
@@ -500,6 +501,9 @@ The current state of the review is accessible to your code via the `review` vari
           ]
         }
       ],
+      gitAttributes: {  // All .gitattributes properties from base that apply to this file
+        diff: 'false'   // Values are normalized and will always be strings
+      },
       designatedReviewers: [  // Designations inferred from CODEOWNERS
         {team: 'reviewable/legal'},
         {builtin: 'anyone'}
