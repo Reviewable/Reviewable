@@ -96,8 +96,30 @@ The user successfully merged the PR's branch from within Reviewable.  This will 
 {
   owner: string,
   repo: string,
+  pullRequest: number,
   deleted: boolean,  // whether the head branch was deleted after the merge, by Reviewable or GHE
   flavor: 'merge' | 'squash' | 'rebase' | 'fastForward'  // which flavor of merge was used
+}
+```
+
+##### Queued Merge
+The user successfully added the PR to the merge queue.  This will not track merges done in GHE.
+```
+{
+  owner: string,
+  repo: string,
+  pullRequest: number,
+  jump: boolean  // whether the user requested to jump the PR to the front of the queue
+}
+```
+
+##### Canceled Queued Merge
+The user successfully removed the PR from the merge queue.  This will not track removals done in GHE.
+```
+{
+  owner: string,
+  repo: string,
+  pullRequest: number
 }
 ```
 
