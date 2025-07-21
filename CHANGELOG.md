@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> guard against crash when animation finishes after draft is removed. <!-- client -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Fix:</kbd> avoid posting duplicate messages to GitHub in some rare partial failure cases when using publish on push. <!-- client 7675 -->
