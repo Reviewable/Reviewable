@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> allow selective logging of server-side GitHub request latencies for specific users. <!-- server -->
 - <kbd>Fix:</kbd> guard against crash when animation finishes after draft is removed. <!-- client -->
 
 <sub>2025 - 07</sub>
