@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> include line stats for deleted files. <!-- client -->
 - <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server -->
 
 <sub>2025 - 07</sub>
