@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Fix:</kbd> guard against crash when animation finishes after draft is removed. <!-- client 7676 -->
