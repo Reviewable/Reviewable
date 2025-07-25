@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show completions on `+assignee:@` and `-assignee:@`. <!-- client -->
 - <kbd>Fix:</kbd> avoid crash when clicking on LGTM too soon after a review loaded. <!-- client -->
 - <kbd>Upd:</kbd> include line stats for deleted files. <!-- client -->
 - <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server -->
