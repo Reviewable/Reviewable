@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server -->
-
 <sub>2025 - 07</sub>
 
+- <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server 4787 -->
 - <kbd>Fix:</kbd> show completions on `+assignee:@` and `-assignee:@`. <!-- client 7677 -->
 - <kbd>Fix:</kbd> avoid crash when clicking on LGTM too soon after a review loaded. <!-- client 7677 -->
 - <kbd>Upd:</kbd> include line stats for deleted files. <!-- client 7677 -->
