@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> show completions on `+assignee:@` and `-assignee:@`. <!-- client -->
-- <kbd>Fix:</kbd> avoid crash when clicking on LGTM too soon after a review loaded. <!-- client -->
-- <kbd>Upd:</kbd> include line stats for deleted files. <!-- client -->
 - <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server -->
 
 <sub>2025 - 07</sub>
 
+- <kbd>Fix:</kbd> show completions on `+assignee:@` and `-assignee:@`. <!-- client 7677 -->
+- <kbd>Fix:</kbd> avoid crash when clicking on LGTM too soon after a review loaded. <!-- client 7677 -->
+- <kbd>Upd:</kbd> include line stats for deleted files. <!-- client 7677 -->
 - <kbd>Fix:</kbd> guard against crash when animation finishes after draft is removed. <!-- client 7676 -->
 - <kbd>Adm:</kbd> allow selective logging of server-side GitHub request latencies for specific users. <!-- server 4784 -->
 - <kbd>Fix:</kbd> avoid posting duplicate messages to GitHub in some rare partial failure cases when using publish on push. <!-- client 7675 -->
