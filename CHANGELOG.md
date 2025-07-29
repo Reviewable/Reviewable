@@ -1,3 +1,10 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> switch to the advanced search API for populating the dashboard, resulting in significantly lower quota usage and slightly better performance. <!-- client -->
+  > The results should be exactly the same as before, but if you suspect otherwise you can force usage of the old search API by appending `?debug=dashboardLegacySearch` to the URL.
+>
+  > Note that this feature will be automatically enabled in GitHub Enterprise Server once the advanced API is supported, likely in release 3.18 or later.
+
 <sub>2025 - 07</sub>
 
 - <kbd>Fix:</kbd> stagger condition executions when resyncing the whole repository. <!-- server 4787 -->
