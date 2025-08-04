@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> ensure the account settings dropdown works well on small screens. <!-- client -->
+
 <sub>2025 - 07</sub>
 
 - <kbd>Upd:</kbd> switch to the advanced search API for populating the dashboard, resulting in significantly lower quota usage and slightly better performance. <!-- client 7679 -->
