@@ -1,7 +1,7 @@
-<sub>Upcoming</sub>
+<sub>2025 - 08</sub>
 
-- <kbd>Fix:</kbd> allow copying the pull request description. <!-- client -->
-- <kbd>Fix:</kbd> ensure the account settings dropdown works well on small screens. <!-- client -->
+- <kbd>Fix:</kbd> allow copying the pull request description. <!-- client 7681 -->
+- <kbd>Fix:</kbd> ensure the account settings dropdown works well on small screens. <!-- client 7681 -->
 
 <sub>2025 - 07</sub>
 
