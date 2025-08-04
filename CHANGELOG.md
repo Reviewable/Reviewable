@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> allow copying the pull request description. <!-- client -->
 - <kbd>Fix:</kbd> ensure the account settings dropdown works well on small screens. <!-- client -->
 
 <sub>2025 - 07</sub>
