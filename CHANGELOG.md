@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> When publishing fails any pending pull request review that was created in the process is now automatically deleted. <!-- client -->
+
 <sub>2025 - 08</sub>
 
 <sub>**Enterprise release 4787.7681** (min 3340.5125 GHE ^2.19 || ^3) 2025-08-06 <!-- enterprise 4787.7681 --></sub>
