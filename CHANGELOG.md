@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> guard against rare race condition crash on the dashboard. <!-- client -->
-- <kbd>Fix:</kbd> avoid triggering a false positive "API access suspended" error that disconnects the repository when GitHub's `rate_limit` API returns a bogus response. <!-- server -->
 
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> avoid triggering a false positive "API access suspended" error that disconnects the repository when GitHub's `rate_limit` API returns a bogus response. <!-- server 4790 -->
 - <kbd>Fix:</kbd> Prevent more than 60 inline replies to avoid exceeding GitHub API limits. <!-- client 7682 -->
 - <kbd>Fix:</kbd> When publishing fails any pending pull request review that was created in the process is now automatically deleted. <!-- client 7682 -->
 
