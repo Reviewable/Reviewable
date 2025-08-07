@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid triggering a false positive "API access suspended" error that disconnects the repository when GitHub's `rate_limit` API returns a bogus response. <!-- server -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Fix:</kbd> Prevent more than 60 inline replies to avoid exceeding GitHub API limits. <!-- client 7682 -->
