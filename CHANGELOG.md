@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> make sure revision arcs in file headers are visible in dark mode. <!-- client -->
 - <kbd>Upd:</kbd> improve file matrix performance on mouse enter / mouse leave when there's a large number of files. <!-- client -->
 - <kbd>Fix:</kbd> guard against rare race condition crash on the dashboard. <!-- client -->
 
