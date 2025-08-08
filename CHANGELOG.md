@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> improve file matrix performance on mouse enter / mouse leave when there's a large number of files. <!-- client -->
 - <kbd>Fix:</kbd> guard against rare race condition crash on the dashboard. <!-- client -->
 
 <sub>2025 - 08</sub>
