@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> when suggesting changes to a line with no deltas in single column diff mode, place the draft comment on the right line. <!-- client -->
 - <kbd>Fix:</kbd> make sure revision arcs in file headers are visible in dark mode. <!-- client -->
 - <kbd>Upd:</kbd> improve file matrix performance on mouse enter / mouse leave when there's a large number of files. <!-- client -->
 - <kbd>Fix:</kbd> guard against rare race condition crash on the dashboard. <!-- client -->
