@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> when suggesting changes to a line with no deltas in single column diff mode, place the draft comment on the right line. <!-- client -->
-- <kbd>Fix:</kbd> make sure revision arcs in file headers are visible in dark mode. <!-- client -->
-- <kbd>Upd:</kbd> improve file matrix performance on mouse enter / mouse leave when there's a large number of files. <!-- client -->
-- <kbd>Fix:</kbd> guard against rare race condition crash on the dashboard. <!-- client -->
-
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> when suggesting changes to a line with no deltas in single column diff mode, place the draft comment on the right line. <!-- client 7683 -->
+- <kbd>Fix:</kbd> make sure revision arcs in file headers are visible in dark mode. <!-- client 7683 -->
+- <kbd>Upd:</kbd> improve file matrix performance on mouse enter / mouse leave when there's a large number of files. <!-- client 7683 -->
+- <kbd>Fix:</kbd> guard against rare race condition crash on the dashboard. <!-- client 7683 -->
 - <kbd>Fix:</kbd> avoid triggering a false positive "API access suspended" error that disconnects the repository when GitHub's `rate_limit` API returns a bogus response. <!-- server 4790 -->
 - <kbd>Fix:</kbd> Prevent more than 60 inline replies to avoid exceeding GitHub API limits. <!-- client 7682 -->
 - <kbd>Fix:</kbd> When publishing fails any pending pull request review that was created in the process is now automatically deleted. <!-- client 7682 -->
