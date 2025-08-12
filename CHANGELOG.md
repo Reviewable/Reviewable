@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> request `repo:org` GitHub authorization scope if it's missing when trying to open repository settings instead of spinning forever. <!-- client -->
-
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> request `repo:org` GitHub authorization scope if it's missing when trying to open repository settings instead of spinning forever. <!-- client 7685 -->
 - <kbd>Adm:</kbd> validate duration-valued environment variables at startup. <!-- server 4794 -->
 - <kbd>Fix:</kbd> when suggesting changes to a line with no deltas in single column diff mode, place the draft comment on the right line. <!-- client 7683 -->
 - <kbd>Fix:</kbd> make sure revision arcs in file headers are visible in dark mode. <!-- client 7683 -->
