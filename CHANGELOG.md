@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> validate duration-valued environment variables at startup. <!-- server -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Fix:</kbd> when suggesting changes to a line with no deltas in single column diff mode, place the draft comment on the right line. <!-- client 7683 -->
