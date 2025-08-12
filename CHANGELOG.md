@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> request `repo:org` GitHub authorization scope if it's missing when trying to open repository settings instead of spinning forever. <!-- client -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Adm:</kbd> validate duration-valued environment variables at startup. <!-- server 4794 -->
