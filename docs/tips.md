@@ -62,6 +62,21 @@ Want to turn the wavy lines off to simplify how collapsed diff regions look? Thi
 
 You can also use this link: `https://rawcdn.githack.com/earlAchromatic/reviewable-custom-styles/6e35f21b6fa3d3978a4ae5f8ba0f23e2d5d6a475/no-wave.css`
 
+### Watermarks
+
+You can make the watermarks that show up in the background of the pull request panel and some comments more prominent.  For example, to make the draft pull request watermark easier to spot:
+
+<<< @/tweaks.css#prominent-draft-pull-request-watermark{css}
+
+The available watermark classes are:
+```
+.pull.request.draft.watermark
+.pull.request.queued.watermark
+.pull.request.merged.watermark
+.pull.request.closed.watermark
+.draft.comment.watermark
+```
+
 ## Skipping vendored dependencies
 
 Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:

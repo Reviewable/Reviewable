@@ -96,3 +96,10 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
   padding-top: 1em;
 }
 // #endregion no-collapsed-region-wavy-lines
+
+// #region prominent-draft-pull-request-watermark
+.pull.request.draft.watermark {
+  background-color: var(--red);
+  opacity: 0.2;
+}
+// #endregion draft-pr-watermark
