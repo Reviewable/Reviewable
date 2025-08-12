@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> validate duration-valued environment variables at startup. <!-- server -->
-
 <sub>2025 - 08</sub>
 
+- <kbd>Adm:</kbd> validate duration-valued environment variables at startup. <!-- server 4794 -->
 - <kbd>Fix:</kbd> when suggesting changes to a line with no deltas in single column diff mode, place the draft comment on the right line. <!-- client 7683 -->
 - <kbd>Fix:</kbd> make sure revision arcs in file headers are visible in dark mode. <!-- client 7683 -->
 - <kbd>Upd:</kbd> improve file matrix performance on mouse enter / mouse leave when there's a large number of files. <!-- client 7683 -->
