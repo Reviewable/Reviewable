@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't highlight HTML tags in drafts when they're inside code fences. <!-- client -->
-
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> don't highlight HTML tags in drafts when they're inside code fences. <!-- client 7686 -->
 - <kbd>Fix:</kbd> skip over inline comments when parsing `CODEOWNERS` files. <!-- server 4795 -->
 - <kbd>Fix:</kbd> request `repo:org` GitHub authorization scope if it's missing when trying to open repository settings instead of spinning forever. <!-- client 7685 -->
 - <kbd>Adm:</kbd> validate duration-valued environment variables at startup. <!-- server 4794 -->
