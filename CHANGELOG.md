@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't highlight HTML tags in drafts when they're inside code fences. <!-- client -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Fix:</kbd> skip over inline comments when parsing `CODEOWNERS` files. <!-- server 4795 -->
