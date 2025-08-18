@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> include username as sentence subject when summarizing review actions. <!-- client -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Fix:</kbd> don't highlight HTML tags in drafts when they're inside code fences. <!-- client 7686 -->
