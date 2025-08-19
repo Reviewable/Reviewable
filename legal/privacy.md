@@ -84,6 +84,8 @@ We collect personal information that you voluntarily provide to us when you regi
 - debit/credit card numbers
 - billing addresses
 
+Some of this information (such as your name, username and email) is required in order to create and maintain your account. Other information is optional and may be provided at your discretion.
+
 You also may provide information to be published or displayed (hereinafter, "posted") on public areas of our Services (for example, by posting comments, contributions, or other content to the Services), or to be transmitted to other users of the Services or third parties (collectively, "User Contributions"). Your User Contributions are posted on and transmitted to others at your own risk. Although we limit access to certain pages, please be aware that no security measures are perfect or impenetrable.
 Additionally, we cannot control the actions of other users of the Services with whom you may choose to share your User Contributions. Therefore, we cannot and do not guarantee that your User Contributions will not be viewed by unauthorized persons.
 
@@ -193,7 +195,7 @@ In some exceptional cases, we may be legally permitted under applicable law to p
 
 **Short version:** _We may share information in specific situations described in this section and/or with the following categories of third parties._
 
-**Vendors, Consultants, and Other Third-Party Service Providers.** We may share your data with third-party vendors, service providers, contractors, or agents ("third parties") who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties, which are designed to help safeguard your personal information. This means that they cannot do anything with your personal information unless we have instructed them to do it. They will also not share your personal information with any organization apart from us. They also commit to protect the data they hold on our behalf and to retain it for the period we instruct. The categories of third parties we may share personal information with are as follows:
+**Vendors, Consultants, and Other Third-Party Service Providers.** We may share your data with third-party vendors, service providers, contractors, or agents ("third parties") who perform services for us or on our behalf and require access to such information to do that work. We have contracts in place with our third parties to safeguard your personal information. Where required, we also enter into Data Processing Agreements (DPAs) with our subprocessors, which incorporate the European Commission’s Standard Contractual Clauses (SCCs) for international transfers. A current list of our subprocessors is available on request. This means that they cannot do anything with your personal information unless we have instructed them to do it. They will also not share your personal information with any organization apart from us. They also commit to protect the data they hold on our behalf and to retain it for the period we instruct. The categories of third parties we may share personal information with are as follows:
 
 - Cloud Computing Services
 - Communication & Collaboration Tools
@@ -238,7 +240,7 @@ We will use the information we receive only for the purposes that are described 
 
 Our servers are located in the United States. If you are accessing our Services from outside the United States, please be aware that your information may be transferred to, stored, and processed by us in our facilities and by those third parties with whom we may share your personal information (see "[When and With Whom Do We Share Your Personal Information?](#whoshare)" above), in the United States, and other countries.
 
-If you are a resident in the European Economic Area (EEA), United Kingdom (UK), or Switzerland, then these countries may not necessarily have data protection laws or other similar laws as comprehensive as those in your country. However, we will take all necessary measures to protect your personal information in accordance with this privacy notice and applicable law.
+For users in the European Economic Area (EEA), United Kingdom (UK), or Switzerland: when we transfer your personal information outside your home jurisdiction, we rely on safeguards such as the Standard Contractual Clauses (SCCs) incorporated into the data protection agreements of our subprocessors (e.g., hosting, payment, and communication providers). These safeguards are designed to ensure that your information receives a level of protection essentially equivalent to that under EU/UK law.
 
 
 ## 8. How Long Do We Keep Your Information?
@@ -292,24 +294,27 @@ Upon your request to terminate your account, we will deactivate or delete your a
 
 If you have questions or comments about your privacy rights, you may email us at [legal@reviewable.io](mailto:legal@reviewable.io).
 
+## 12. Automated Decision-Making
 
-## 12. Controls for Do-Not-Track Features
+We do not use your personal information for automated decision-making, including profiling, that produces legal or similarly significant effects on you.
+
+## 13. Controls for Do-Not-Track Features
 
 Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.
 
 
-## 13. Do We Make Updates to This Notice?
+## 14. Do We Make Updates to This Notice?
 
 **Short version:** _Yes, we will update this notice as necessary to stay compliant with relevant laws._
 
 We may update this privacy notice from time to time. The updated version will be indicated by an updated "Effective" date. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.
 
 
-## 14. How Can You Contact Us About This Notice?
+## 15. How Can You Contact Us About This Notice?
 
 If you have questions or comments about this notice, you may email us at [legal@reviewable.io](mailto:legal@reviewable.io).
 
 
-## 15. How Can You Review, Update, or Delete The Data We Collect from You?
+## 16. How Can You Review, Update, or Delete The Data We Collect from You?
 
 Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please contact us at [legal@reviewable.io](mailto:legal@reviewable.io).
