@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> detect if an attempt was made to queue a pull request for merge when it was already queued (but Reviewable wasn't aware of this yet) and suppress the error. <!-- client -->
 - <kbd>Fix:</kbd> prevent the Merge Options subpanel from spinning forever when expanded while the pull request isn't ready to merge. <!-- client -->
 - <kbd>Fix:</kbd> show the merge commit message field in the Merge Options subpanel even when the pull request isn't yet ready to merge. <!-- client -->
 - <kbd>Upd:</kbd> enable custom styling of watermarks (see [docs](https://docs.reviewable.io/tips#watermarks)). <!-- client -->
