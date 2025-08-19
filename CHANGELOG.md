@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> detect if an attempt was made to queue a pull request for merge when it was already queued (but Reviewable wasn't aware of this yet) and suppress the error. <!-- client -->
-- <kbd>Fix:</kbd> prevent the Merge Options subpanel from spinning forever when expanded while the pull request isn't ready to merge. <!-- client -->
-- <kbd>Fix:</kbd> show the merge commit message field in the Merge Options subpanel even when the pull request isn't yet ready to merge. <!-- client -->
-- <kbd>Upd:</kbd> enable custom styling of watermarks (see [docs](https://docs.reviewable.io/tips#watermarks)). <!-- client -->
-- <kbd>Upd:</kbd> include username as sentence subject when summarizing review actions. <!-- client -->
-
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> detect if an attempt was made to queue a pull request for merge when it was already queued (but Reviewable wasn't aware of this yet) and suppress the error. <!-- client 7687 -->
+- <kbd>Fix:</kbd> prevent the Merge Options subpanel from spinning forever when expanded while the pull request isn't ready to merge. <!-- client 7687 -->
+- <kbd>Fix:</kbd> show the merge commit message field in the Merge Options subpanel even when the pull request isn't yet ready to merge. <!-- client 7687 -->
+- <kbd>Upd:</kbd> enable custom styling of watermarks (see [docs](https://docs.reviewable.io/tips#watermarks)). <!-- client 7687 -->
+- <kbd>Upd:</kbd> include username as sentence subject when summarizing review actions. <!-- client 7687 -->
 - <kbd>Fix:</kbd> don't highlight HTML tags in drafts when they're inside code fences. <!-- client 7686 -->
 - <kbd>Fix:</kbd> skip over inline comments when parsing `CODEOWNERS` files. <!-- server 4795 -->
 - <kbd>Fix:</kbd> request `repo:org` GitHub authorization scope if it's missing when trying to open repository settings instead of spinning forever. <!-- client 7685 -->
