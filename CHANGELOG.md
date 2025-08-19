@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent the Merge Options subpanel from spinning forever when expanded while the pull request isn't ready to merge. <!-- client -->
+- <kbd>Fix:</kbd> show the merge commit message field in the Merge Options subpanel even when the pull request isn't yet ready to merge. <!-- client -->
 - <kbd>Upd:</kbd> enable custom styling of watermarks (see [docs](https://docs.reviewable.io/tips#watermarks)). <!-- client -->
 - <kbd>Upd:</kbd> include username as sentence subject when summarizing review actions. <!-- client -->
 
