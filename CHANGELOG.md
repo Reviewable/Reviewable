@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> enable custom styling of watermarks (see [docs](https://docs.reviewable.io/tips#watermarks)). <!-- client -->
 - <kbd>Upd:</kbd> include username as sentence subject when summarizing review actions. <!-- client -->
 
 <sub>2025 - 08</sub>
