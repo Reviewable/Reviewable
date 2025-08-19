@@ -28,7 +28,7 @@ We will assist you in responding to data subject requests to exercise rights und
 
 ## 6. Security Measures
 
-We implement appropriate technical and organizational measures to protect personal data, as described in our Privacy Policy.
+We implement appropriate technical and organizational measures to protect personal data, as described in our [Privacy Policy](./privacy.md).
 
 ## 7. Term and Termination
 
