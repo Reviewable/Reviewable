@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> improve performance throughout the frontend, including making some previously O(n^2) computations O(n) instead.  The effects will be particularly noticeable in large reviews with hundreds or thousands of files. <!-- client -->
-  > The improvements are due to better ordering of implicitly dependent computations.  The optimum order is continually inferred and applied dynamically at the platform level, so things in this layer should stay snappy going forward with no further effort needed on our part as we continue building out Reviewable.  Yay!
-- <kbd>Fix:</kbd> keep header and account settings open when guide overlay is showing. <!-- client -->
 - <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
 
 <sub>2025 - 08</sub>
 
+- <kbd>Upd:</kbd> improve performance throughout the frontend, including making some previously O(n^2) computations O(n) instead.  The effects will be particularly noticeable in large reviews with hundreds or thousands of files. <!-- client 7688 -->
+  > The improvements are due to better ordering of implicitly dependent computations.  The optimum order is continually inferred and applied dynamically at the platform level, so things in this layer should stay snappy going forward with no further effort needed on our part as we continue building out Reviewable.  Yay!
+- <kbd>Fix:</kbd> keep header and account settings open when guide overlay is showing. <!-- client 7688 -->
 - <kbd>Fix:</kbd> detect if an attempt was made to queue a pull request for merge when it was already queued (but Reviewable wasn't aware of this yet) and suppress the error. <!-- client 7687 -->
 - <kbd>Fix:</kbd> prevent the Merge Options subpanel from spinning forever when expanded while the pull request isn't ready to merge. <!-- client 7687 -->
 - <kbd>Fix:</kbd> show the merge commit message field in the Merge Options subpanel even when the pull request isn't yet ready to merge. <!-- client 7687 -->
