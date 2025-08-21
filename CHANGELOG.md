@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Fix:</kbd> detect if an attempt was made to queue a pull request for merge when it was already queued (but Reviewable wasn't aware of this yet) and suppress the error. <!-- client 7687 -->
