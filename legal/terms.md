@@ -24,7 +24,7 @@ Thank you for using Reviewable! We're happy you're here. Please read this Terms 
 | [R. Miscellaneous](#r-miscellaneous) | Please see this section for legal details including our choice of law. |
 
 ## The Reviewable Terms of Service
-Effective date: January 1, 2024
+Effective date: August 20, 2025 (full version history available in our GitHub repository)
 
 These terms of service are entered into by and between you and Ideanest LLC (doing business as Reviewable) (“Reviewable,” “we,” “our,” or “us”). They, together with any documents they expressly incorporate by reference, govern your access to and use of our Service (defined below), including any content, functionality and services offered on or through our Service, whether as a guest or a registered user.
 
