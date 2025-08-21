@@ -1,5 +1,5 @@
 ## Privacy Policy
-Effective date: January 1, 2024
+Effective date: August 20, 2025 (full version history available in our GitHub repository)
 
 This privacy notice for Ideanest LLC (doing business as Reviewable) ("we," "us," or "our"), describes how and why we might collect, store, use, and/or share ("process") your information when you use our services ("Services") or otherwise, such as when you:
 
