@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> restore clicking in participant cell dropdowns while still hiding them when mouse leaves the cell. <!-- client -->
 - <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
 
 <sub>2025 - 08</sub>
