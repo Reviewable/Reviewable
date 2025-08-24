@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> correctly apply the "max diffs displayed" preference when a review has many files but a smaller number are actually diffed. <!-- client -->
 - <kbd>Fix:</kbd> restore clicking in participant cell dropdowns while still hiding them when mouse leaves the cell. <!-- client -->
 - <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
 
