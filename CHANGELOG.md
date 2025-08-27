@@ -1,13 +1,13 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> correctly apply the "max diffs displayed" preference when a review has many files but a smaller number are actually diffed. <!-- client -->
-- <kbd>Fix:</kbd> restore clicking in participant cell dropdowns while still hiding them when mouse leaves the cell. <!-- client -->
 - <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
-- <kbd>Fix:</kbd> address app wide style recalculation when diff width changes. <!-- client -->
-  > Margin changes and sidebar (beta) drags are now over 95% faster, with up to 99% fewer elements recalculated for smoother, more responsive reviews.
 
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> correctly apply the "max diffs displayed" preference when a review has many files but a smaller number are actually diffed. <!-- client 7689 -->
+- <kbd>Fix:</kbd> restore clicking in participant cell dropdowns while still hiding them when mouse leaves the cell. <!-- client 7689 -->
+- <kbd>Fix:</kbd> address app wide style recalculation when diff width changes. <!-- client 7689 -->
+  > Margin changes and sidebar (beta) drags are now over 95% faster, with up to 99% fewer elements recalculated for smoother, more responsive reviews.
 - <kbd>Upd:</kbd> improve performance throughout the frontend, including making some previously O(n^2) computations O(n) instead.  The effects will be particularly noticeable in large reviews with hundreds or thousands of files. <!-- client 7688 -->
   > The improvements are due to better ordering of implicitly dependent computations.  The optimum order is continually inferred and applied dynamically at the platform level, so things in this layer should stay snappy going forward with no further effort needed on our part as we continue building out Reviewable.  Yay!
 - <kbd>Fix:</kbd> keep header and account settings open when guide overlay is showing. <!-- client 7688 -->
