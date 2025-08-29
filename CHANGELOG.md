@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> improve `Multiple PRs on commit` status error message to include instructions for resolving. <!-- server -->
-- <kbd>Fix:</kbd> load more than 100 status checks from GitHub. <!-- server -->
-- <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
-
 <sub>2025 - 08</sub>
 
+- <kbd>Fix:</kbd> improve `Multiple PRs on commit` status error message to include instructions for resolving. <!-- server 4796 -->
+- <kbd>Fix:</kbd> load more than 100 status checks from GitHub. <!-- server 4796 -->
+- <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server 4796 -->
 - <kbd>Fix:</kbd> correctly apply the "max diffs displayed" preference when a review has many files but a smaller number are actually diffed. <!-- client 7689 -->
 - <kbd>Fix:</kbd> restore clicking in participant cell dropdowns while still hiding them when mouse leaves the cell. <!-- client 7689 -->
 - <kbd>Fix:</kbd> address app wide style recalculation when diff width changes. <!-- client 7689 -->
