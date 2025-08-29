@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> improve `Multiple PRs on commit` status error message to include instructions for resolving. <!-- server -->
 - <kbd>Fix:</kbd> load more than 100 status checks from GitHub. <!-- server -->
 - <kbd>Fix:</kbd> always let the license admin sign in, even if all seats are full. <!-- server -->
 
