@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when loading certain reviews with rate limiting disabled in GHES.  (Regression introduced in v4787.7681.) <!-- client -->
+
 <sub>2025 - 08</sub>
 
 - <kbd>Fix:</kbd> improve `Multiple PRs on commit` status error message to include instructions for resolving. <!-- server 4796 -->
