@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid rare crash when visiting review page and leaving right away. <!-- client -->
 - <kbd>Fix:</kbd> don't crash if you leave the page right after requesting a "preview publish". <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when loading certain reviews with rate limiting disabled in GHES.  (Regression introduced in v4787.7681.) <!-- client -->
 
