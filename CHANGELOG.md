@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> set off pull request metadata with a bit of background shading, to make it easier to visually jump to the description below. <!-- client -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Upd:</kbd> set off pull request metadata with a bit of background shading, to make it easier to visually jump to the description below. <!-- client 7691 -->
 - <kbd>Fix:</kbd> avoid rare crash when visiting review page and leaving right away. <!-- client 7690 -->
 - <kbd>Fix:</kbd> don't crash if you leave the page right after requesting a "preview publish". <!-- client 7690 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when loading certain reviews with rate limiting disabled in GHES.  (Regression introduced in v4787.7681.) <!-- client 7690 -->
