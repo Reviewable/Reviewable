@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> set off pull request metadata with a bit of background shading, to make it easier to visually jump to the description below. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> avoid rare crash when visiting review page and leaving right away. <!-- client 7690 -->
