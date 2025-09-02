@@ -495,7 +495,7 @@ The current state of the review is accessible to your code via the `review` vari
           action: 'modified',  // one of 'added', 'modified', 'removed', or 'renamed' (without changes)
           obsolete: false,
           reverted: false,  // true if this revision of the file is the same as base
-          baseChangesOnly: false,  // true if all changes can be attributed to the base branch
+          baseChangesOnly: false,  // true if all changes can be attributed to the base branch, undefined if not yet known
           reviewers: [  // List of users who marked file as reviewed at this revision
             {username: 'somebody', timestamp: 1436828040000}  // timestamp null for legacy or inferred reviews
           ]
