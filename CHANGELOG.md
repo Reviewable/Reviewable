@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent a repository's file-based settings from being reset if a change to the settings races a pull request sync. <!-- server -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> prevent a repository's file-based settings from being reset if a change to the settings races a pull request sync. <!-- server 4798 -->
 - <kbd>Upd:</kbd> set off pull request metadata with a bit of background shading, to make it easier to visually jump to the description below. <!-- client 7691 -->
 - <kbd>Fix:</kbd> avoid rare crash when visiting review page and leaving right away. <!-- client 7690 -->
 - <kbd>Fix:</kbd> don't crash if you leave the page right after requesting a "preview publish". <!-- client 7690 -->
