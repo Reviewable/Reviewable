@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> show Participants panel contents even if there are no reviewers yet, so the author's action menu is accessible. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> prevent a repository's file-based settings from being reset if a change to the settings races a pull request sync. <!-- server 4798 -->
