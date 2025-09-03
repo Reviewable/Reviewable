@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent a repository's file-based settings from being reset if a change to the settings races a pull request sync. <!-- server -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Upd:</kbd> set off pull request metadata with a bit of background shading, to make it easier to visually jump to the description below. <!-- client 7691 -->
