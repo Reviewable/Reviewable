@@ -270,6 +270,23 @@ This setting controls what permissions a user needs to have to be able to [dismi
 discussion-dismissal-restriction: push | maintain | admin
 ```
 
+#### Merge mechanism
+
+This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.  The options are:
+- `github`: GitHub's built-in default merge functionality, whether immediate or via a merge queue.  Reviewable will present the appropriate flavor of merge button and check GitHub's opinion on mergeability in the background.
+- `label:NAME`: A special label on the pull request triggers a custom merge queue.  Replace `NAME` with the exact name of your label, correctly capitalized.  Reviewable will present a merge button that adds the label and treat pull requests with the label as queued.  It won't check GitHub's opinion on mergeability.
+- `external`: The merge process is separate and cannot be integrated.  Reviewable will hide the merge button and skip all mergeability checks.
+
+::: tip
+If you have a different merge process that you'd like to integrate with Reviewable please get in touch and we'll see what we can do!
+:::
+
+```yaml
+merge:
+  # The default setting is `github`.
+  mechanism: github | label:* | external
+```
+
 #### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
