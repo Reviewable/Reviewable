@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when leaving review page while merge victory bunny is animating out. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> show Participants panel contents even if there are no reviewers yet, so the author's action menu is accessible. <!-- client 7692 -->
