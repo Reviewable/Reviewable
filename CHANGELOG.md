@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid another very rare crash when loading a review page. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when leaving review page while merge victory bunny is animating out. <!-- client -->
 
 <sub>2025 - 09</sub>
