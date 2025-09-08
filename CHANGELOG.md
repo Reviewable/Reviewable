@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> correctly place delta symbols shown in accessibility mode. <!-- client -->
-- <kbd>Fix:</kbd> avoid extremely rare crash when loading a review. <!-- client -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> correctly place delta symbols shown in accessibility mode. <!-- client 7694 -->
+- <kbd>Fix:</kbd> avoid extremely rare crash when loading a review. <!-- client 7694 -->
 - <kbd>Fix:</kbd> avoid another very rare crash when loading a review page. <!-- client 7693 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when leaving review page while merge victory bunny is animating out. <!-- client 7693 -->
 - <kbd>Fix:</kbd> show Participants panel contents even if there are no reviewers yet, so the author's action menu is accessible. <!-- client 7692 -->
