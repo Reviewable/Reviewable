@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when trying to display upcoming changes in the changelog. <!-- client -->
 - <kbd>Adm:</kbd> log "review too large" errors instead of sending them to Sentry. <!-- server -->
 
 <sub>2025 - 09</sub>
