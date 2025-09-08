@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> avoid another very rare crash when loading a review page. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when leaving review page while merge victory bunny is animating out. <!-- client -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> avoid another very rare crash when loading a review page. <!-- client 7693 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when leaving review page while merge victory bunny is animating out. <!-- client 7693 -->
 - <kbd>Fix:</kbd> show Participants panel contents even if there are no reviewers yet, so the author's action menu is accessible. <!-- client 7692 -->
 - <kbd>Fix:</kbd> prevent a repository's file-based settings from being reset if a change to the settings races a pull request sync. <!-- server 4798 -->
 - <kbd>Upd:</kbd> set off pull request metadata with a bit of background shading, to make it easier to visually jump to the description below. <!-- client 7691 -->
