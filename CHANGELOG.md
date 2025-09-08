@@ -4,6 +4,8 @@
 
 <sub>2025 - 09</sub>
 
+<sub>**Enterprise release 4799.7695** (min 3340.5125 GHE ^2.19 || ^3) 2025-09-08 <!-- enterprise 4799.7695 --></sub>
+
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when trying to display upcoming changes in the changelog. <!-- client 7695 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> correctly place delta symbols shown in accessibility mode. <!-- client 7694 -->
 - <kbd>Fix:</kbd> avoid extremely rare crash when loading a review. <!-- client 7694 -->
