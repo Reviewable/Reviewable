@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> log "review too large" errors instead of sending them to Sentry. <!-- server -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> correctly place delta symbols shown in accessibility mode. <!-- client 7694 -->
