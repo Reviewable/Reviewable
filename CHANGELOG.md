@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when trying to display upcoming changes in the changelog. <!-- client -->
 - <kbd>Adm:</kbd> log "review too large" errors instead of sending them to Sentry. <!-- server -->
 
 <sub>2025 - 09</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash when trying to display upcoming changes in the changelog. <!-- client 7695 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> correctly place delta symbols shown in accessibility mode. <!-- client 7694 -->
 - <kbd>Fix:</kbd> avoid extremely rare crash when loading a review. <!-- client 7694 -->
 - <kbd>Fix:</kbd> avoid another very rare crash when loading a review page. <!-- client 7693 -->
