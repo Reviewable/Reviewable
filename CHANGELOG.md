@@ -1,10 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> deal correctly with users being a member of more than 100 teams when executing a custom review completion condition or checking code owners. <!-- server -->
-- <kbd>Fix:</kbd> don't mix up a user's team memberships between organizations. <!-- server -->
-- <kbd>Adm:</kbd> log "review too large" errors instead of sending them to Sentry. <!-- server -->
-
 <sub>2025 - 09</sub>
+
+- <kbd>Fix:</kbd> deal correctly with users being a member of more than 100 teams when executing a custom review completion condition or checking code owners. <!-- server 4800 -->
+- <kbd>Fix:</kbd> don't mix up a user's team memberships between organizations. <!-- server 4800 -->
+- <kbd>Adm:</kbd> log "review too large" errors instead of sending them to Sentry. <!-- server 4800 -->
 
 <sub>**Enterprise release 4799.7695** (min 3340.5125 GHE ^2.19 || ^3) 2025-09-08 <!-- enterprise 4799.7695 --></sub>
 
