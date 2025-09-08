@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> correctly place delta symbols shown in accessibility mode. <!-- client -->
 - <kbd>Fix:</kbd> avoid extremely rare crash when loading a review. <!-- client -->
 
 <sub>2025 - 09</sub>
