@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid extremely rare crash when loading a review. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> avoid another very rare crash when loading a review page. <!-- client 7693 -->
