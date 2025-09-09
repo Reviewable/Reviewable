@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show the pull request title and description when there's odd whitespace characters in the title. <!-- client -->
 - <kbd>Fix:</kbd> ensure that the user's teams are resolved correctly when switching quickly between the review page and the dashboard (or vice-versa) on page load. <!-- client -->
 
 <sub>2025 - 09</sub>
