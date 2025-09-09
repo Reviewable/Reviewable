@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> ensure that the user's teams are resolved correctly when switching quickly between the review page and the dashboard (or vice-versa) on page load. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> deal correctly with users being a member of more than 100 teams when executing a custom review completion condition or checking code owners. <!-- server 4800 -->
