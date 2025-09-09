@@ -56,7 +56,7 @@ By using the Services, you agree that this DPA applies where we process personal
 
 2.1.2 not Process Company Personal Data other than on the relevant Company’s documented instructions.
 
-2.2 The Company instructs Processor to process Company Personal Data.
+2.2 The Company instructs Processor to process Company Personal Data for the purposes of providing the Services.
 
 ### 3. Processor Personnel
 
@@ -70,9 +70,13 @@ Processor shall take reasonable steps to ensure the reliability of any employee,
 
 ### 5. Subprocessing
 
-5.1 Processor may engage Subprocessors to support the Services. Processor shall impose data protection obligations on Subprocessors by written contract. Company may reasonably object to a new Subprocessor; if unresolved, Company may terminate the affected Services as its sole remedy.
+5.1 Processor may engage Subprocessors to support the Services. Processor shall impose data protection obligations on Subprocessors by written contract. The Processor shall notify the Company about new Subprocessors within reasonable time.  Company may reasonably object to a new Subprocessor; if unresolved, Company may terminate the affected Services as its sole remedy.
 
 5.2 The currently engaged Subprocessors are GitHub, GCP, AWS, Stripe, Postmark, Google, Missive, Slack and Make.
+
+5.3 The Processor shall ensure that Subprocessors do not process personal data covered by the DPA in any way other than what is necessary to provide the service, and that personal data is not given to others for processing without this being in accordance with the DPA or agreed in advance in writing with the Company.
+
+5.4 The Processor shall ensure that any agreement with a Subprocessor contains the necessary provisions regarding the processing of personal data in accordance with Article 28 of the GDPR.  The Processor is responsible for the Subprocessor processing personal data in accordance with the requirements of the GDPR.
 
 ### 6. Data Subject Rights
 
@@ -96,7 +100,7 @@ Processor shall take reasonable steps to ensure the reliability of any employee,
 
 ### 9. Deletion or return of Company Personal Data
 
-9.1 If Company ceases use of the Services, Processor will not automatically delete Personal Data linked to end users’ GitHub identities. Processor will delete or anonymize Personal Data it controls that is not visible to other users (e.g., email address and other non-public account data) within ninety (90) days after the applicable end user revokes the Reviewable GitHub App authorization, or as otherwise described in the Privacy Policy. User-generated content (including comments) necessary to preserve the integrity of review discussions may be retained and, where feasible, disassociated from profile information. Billing and payment records may be retained for as long as necessary to comply with tax, accounting, and anti-fraud obligations.
+9.1 If Company ceases use of the Services, Processor will not automatically delete Personal Data linked to end users’ GitHub identities. Processor will delete or anonymize Personal Data it controls that is not visible to other users (e.g., email address and other non-public account data) within ninety (90) days after the applicable end user revokes the Reviewable GitHub App authorization, or as otherwise described in the Privacy Policy. User-generated content (including comments) necessary to preserve the integrity of review discussions may be retained and, where feasible, disassociated from profile information. Billing and payment records may be retained for as long as necessary to comply with tax, accounting, and anti-fraud obligations.  For all other Company Personal Data, the Processor shall immediately cease processing on behalf of the Company.  Upon instruction from the Company, the Processor shall return or delete all Company Personal Data in the Processor's possession in connection with processing under this DPA.
 
 ### 10. Audit rights
 
@@ -110,7 +114,7 @@ Processor shall take reasonable steps to ensure the reliability of any employee,
 
 ### 11. Data Transfer
 
-11.1 Processor is located in the United States. Transfers of Personal Data outside the EEA, the United Kingdom, or Switzerland will be made under appropriate safeguards.
+11.1 Processor is located in the United States. Transfers of Personal Data outside the EEA, the United Kingdom, or Switzerland will be made under appropriate safeguards and in accordance with the GDPR.
 
 11.2 To the extent Company transfers Personal Data to Processor in a third country not recognized as adequate under applicable Data Protection Law, the Parties agree that the Standard Contractual Clauses adopted by the European Commission (Module Two: Controller to Processor) are incorporated into this DPA by reference. For these purposes, the parties agree that: (a) Company is the “data exporter” and Processor is the “data importer”; (b) the nature and purpose of processing, categories of data subjects and personal data, and retention are as described in the Agreement and this DPA; (c) the optional docking clause (Clause 7) shall apply; (d) the governing law shall be the law of Ireland; (e) the competent supervisory authority shall be the Irish Data Protection Commission; and (f) the technical and organizational measures implemented by Processor include industry-standard safeguards such as encryption of data in transit and at rest, access controls, least-privilege policies, regular backups, and monitoring, designed to maintain ongoing confidentiality, integrity, and availability.
 
