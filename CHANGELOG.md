@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> if a provisional revision is rolled back, remove it from the review rather than just marking it as obsolete.  This could have caused the last revision in a review to not be the current one. <!-- server -->
 - <kbd>Fix:</kbd> hide the file rename message when switching the diff from a clean rename to a preceding unchanged revision. <!-- client -->
 - <kbd>Fix:</kbd> show the pull request title and description when there's odd whitespace characters in the title. <!-- client -->
 - <kbd>Fix:</kbd> ensure that the user's teams are resolved correctly when switching quickly between the review page and the dashboard (or vice-versa) on page load. <!-- client -->
