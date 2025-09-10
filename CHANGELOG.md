@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> remove extra gap between merge/publish buttons and window edge. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> ensure that the last revision is never obsolete.  Previously this may have required an extra review sync to settle into the right state. <!-- server 4801 -->
