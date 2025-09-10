@@ -19,9 +19,9 @@ OAuth app restrictions may entirely block Reviewable from an organization. Learn
 
 ### Selecting a plan
 
-In the subscription panel you can select a plan for your organization, and the number of contributors to purchase the plan for.  We count each distinct PR author during a billing cycle as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
+In the subscription panel you can select a plan for your organization, and the number of contributors to purchase the plan for.  We count each distinct PR author during a calendar month as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
 
-If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets on your next billing date.
+If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets at the beginning of the next month.
 
 ::: tip
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
