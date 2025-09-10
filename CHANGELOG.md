@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> wait until all items are ready before displaying the list on the dashboard. <!-- client -->
 - <kbd>Fix:</kbd> remove extra gap between merge/publish buttons and window edge. <!-- client -->
 
 <sub>2025 - 09</sub>
