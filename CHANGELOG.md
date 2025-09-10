@@ -1,14 +1,14 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> when copy/pasting an enhanced issue link from a comment, paste it as just the issue number. <!-- client -->
 - <kbd>Fix:</kbd> ensure that the last revision is never obsolete.  Previously this may have required an extra review sync to settle into the right state. <!-- server -->
 - <kbd>Fix:</kbd> if a provisional revision is rolled back, remove it from the review rather than just marking it as obsolete.  This could have caused the last revision in a review to not be the current one. <!-- server -->
-- <kbd>Fix:</kbd> hide the file rename message when switching the diff from a clean rename to a preceding unchanged revision. <!-- client -->
-- <kbd>Fix:</kbd> show the pull request title and description when there's odd whitespace characters in the title. <!-- client -->
-- <kbd>Fix:</kbd> ensure that the user's teams are resolved correctly when switching quickly between the review page and the dashboard (or vice-versa) on page load. <!-- client -->
 
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> when copy/pasting an enhanced issue link from a comment, paste it as just the issue number. <!-- client 7696 -->
+- <kbd>Fix:</kbd> hide the file rename message when switching the diff from a clean rename to a preceding unchanged revision. <!-- client 7696 -->
+- <kbd>Fix:</kbd> show the pull request title and description when there's odd whitespace characters in the title. <!-- client 7696 -->
+- <kbd>Fix:</kbd> ensure that the user's teams are resolved correctly when switching quickly between the review page and the dashboard (or vice-versa) on page load. <!-- client 7696 -->
 - <kbd>Fix:</kbd> deal correctly with users being a member of more than 100 teams when executing a custom review completion condition or checking code owners. <!-- server 4800 -->
 - <kbd>Fix:</kbd> don't mix up a user's team memberships between organizations. <!-- server 4800 -->
 - <kbd>Adm:</kbd> log "review too large" errors instead of sending them to Sentry. <!-- server 4800 -->
