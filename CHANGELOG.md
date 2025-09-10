@@ -1,5 +1,8 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> add a `merge.mechanism` repository setting that directs Reviewable to adapt to an off-GitHub merge process. <!-- server -->
+- <kbd>Upd:</kbd> add an `inputs` pragma for completion conditions that lets you declare that certain properties are unused, which Reviewable can take advantage of to curtail upstream processing early. <!-- server -->
+- <kbd>Fix:</kbd> run the completion condition when a pull request's mergeability status or branch protection flag change. <!-- server -->
 - <kbd>Fix:</kbd> wait until all items are ready before displaying the list on the dashboard. <!-- client -->
 - <kbd>Fix:</kbd> remove extra gap between merge/publish buttons and window edge. <!-- client -->
 
