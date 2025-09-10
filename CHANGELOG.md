@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> ensure that the last revision is never obsolete.  Previously this may have required an extra review sync to settle into the right state. <!-- server -->
-- <kbd>Fix:</kbd> if a provisional revision is rolled back, remove it from the review rather than just marking it as obsolete.  This could have caused the last revision in a review to not be the current one. <!-- server -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> ensure that the last revision is never obsolete.  Previously this may have required an extra review sync to settle into the right state. <!-- server 4801 -->
+- <kbd>Fix:</kbd> if a provisional revision is rolled back, remove it from the review rather than just marking it as obsolete.  This could have caused the last revision in a review to not be the current one. <!-- server 4801 -->
 - <kbd>Fix:</kbd> when copy/pasting an enhanced issue link from a comment, paste it as just the issue number. <!-- client 7696 -->
 - <kbd>Fix:</kbd> hide the file rename message when switching the diff from a clean rename to a preceding unchanged revision. <!-- client 7696 -->
 - <kbd>Fix:</kbd> show the pull request title and description when there's odd whitespace characters in the title. <!-- client 7696 -->
