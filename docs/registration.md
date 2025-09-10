@@ -1,6 +1,6 @@
 # Registration and GitHub Authorization
 
-It is necessary to have a GitHub account to sign-in to Reviewable. Simply click the **Sign In** button in the upper-right corner of the page, and then enter your GitHub credentials in the popup window. If necessary, you can create a GitHub account from there.
+It is necessary to have a GitHub account to sign-in to Reviewable. Simply click the **Sign in** button in the upper-right corner of the page, and then enter your GitHub credentials in the popup window. If necessary, you can create a GitHub account from there.
 
 ![reviewable registration](images/registration_1.png)
 
