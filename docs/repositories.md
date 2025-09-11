@@ -270,6 +270,27 @@ This setting controls what permissions a user needs to have to be able to [dismi
 discussion-dismissal-restriction: push | maintain | admin
 ```
 
+#### Merge mechanism
+
+This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.  The options are:
+- `github`: GitHub's built-in default merge functionality, whether immediate or via a merge queue.  Reviewable will present the appropriate flavor of merge button.
+- `label:NAME`: A special label on the pull request triggers a custom merge queue.  Replace `NAME` with the exact name of your label, correctly capitalized.  Reviewable will present a merge button that adds the label and treat pull requests with the label as queued.
+- `external`: The merge process is separate and cannot be integrated.  Reviewable will hide the merge button altogether.
+
+::: danger
+Any option other than `github` will cause Reviewable to stop checking GitHub's opinion on mergeability.  This means that the mergeability "check" will no longer be shown on the review page, nor the attendant button that lets you update or rebase your head branch.  Furthermore, if you have branch protection configured, Reviewable won't know if any condition outside a small built-in set is preventing the branch from merging.  Finally, mergeability-related flags will not be passed into your [custom review completion condition](#completion-condition).
+:::
+
+::: tip
+If you have a different merge process that you'd like to integrate with Reviewable please get in touch and we'll see what we can do!
+:::
+
+```yaml
+merge:
+  # The default setting is `github`.
+  mechanism: github | label:* | external
+```
+
 #### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`. Choose **On for visited reviews** to post only after a review has been visited at least once in Reviewable.
@@ -353,14 +374,11 @@ The **Review completion condition** section of the repository settings helps you
 
 In the **Condition Code** panel, you can edit the code that determines when a review is complete and otherwise tweaks low-level review data.  Simple things are pretty easy to accomplish but you have the power to implement arbitrarily complex logic if you need to.  You can find [a number of examples](https://github.com/Reviewable/Reviewable/tree/master/examples/conditions) in our repository to get you started, and full details follow below.
 
-The condition code will run in an isolated NodeJS 18.x environment, which gets updated regularly.
-The environment includes the 4.x `lodash` module available through the customary `_`.
-Note the `lodash` version was updated to `4.x` on _9/9/2021_, so if you have a condition written before the update it will still use the `lodash` 3.x module.
-You can require other built-in Node modules, though some may be disallowed.
-Each invocation of your code must return a result within three seconds.
+The condition code will run in an isolated NodeJS 20.x environment, which gets updated regularly.
+The environment includes the 4.x `lodash` module available through the customary `_`. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
 
 ::: tip
-You can update existing conditions to use `lodash` 4.x  by inserting a commmented **dependencies** flag anywhere in your condition code using the following format: ```// dependencies: lodash4```
+`lodash` 4.x became the default on _9/9/2021_.  You can use a [pragma](#pragmas) to control the `lodash` version made available to your code.
 :::
 
 For testing, your code will be continuously evaluated against the **Review state** on the right.  It will start off with the current state of some PR in your repo, but you can fill in the state of any PR via the small box above it, or edit the state manually to your liking.  See the [review state input](#review-state-input) section below for an explanation of the state's properties.
@@ -370,8 +388,19 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png){width=1138px}
 
 ::: tip
-If you would like to test a completion condition before applying the change to your repository, you may use the [completion condition playground](https://reviewable.io/playground). The completion condition playground allows you to test a completion script against a pull request or review specified by url. The playground does not allow you to save the completion condition.
+If you would like to test a completion condition before applying the change to your repository, you may use the [completion condition playground](https://reviewable.io/playground). The completion condition playground allows you to test a completion script against a pull request or review specified by url, but doesn't let you to save the completion condition.
 :::
+
+### Pragmas
+
+You can control certain aspects of completion condition execution with special comments (aka "pragmas").  You can have at most one of each kind of pragma, and each must appear alone on a line with no indent.
+
+The available pragmas are:
+- **// dependencies:** lists implicit dependencies for your code.  Available values are `lodash3` and `lodash4`.
+- **// inputs:** controls what information is supplied as part of the `review` input (separate multiple values with spaces).  Turning properties on and off has knock-on effects on upstream processing.
+  - `-review.pullRequest.target.headCommitSha` turns off this property, and skips invoking the completion condition for each push to the base branch.
+  - `-review.pullRequest.target.branchProtected` turns off this property, and skips invoking the completion condition when branch protection is turned on or off.
+  - `-review.pullRequest.mergeability` turns off this property, and skips invoking the completion condition when a pull request's mergeability status changes.
 
 ### Review state input
 
