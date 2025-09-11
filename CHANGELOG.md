@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> make `ctrl+backspace` work correctly in code snippet editors. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Upd:</kbd> add a `merge.mechanism` repository setting that directs Reviewable to adapt to an off-GitHub merge process. <!-- server 4802 -->
