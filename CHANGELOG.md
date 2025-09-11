@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> make `ctrl+backspace` work correctly in code snippet editors. <!-- client -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> make `ctrl+backspace` work correctly in code snippet editors. <!-- client 7698 -->
 - <kbd>Upd:</kbd> add a `merge.mechanism` repository setting that directs Reviewable to adapt to an off-GitHub merge process. <!-- server 4802 -->
 - <kbd>Upd:</kbd> add an `inputs` pragma for completion conditions that lets you declare that certain properties are unused, which Reviewable can take advantage of to curtail upstream processing early. <!-- server 4802 -->
 - <kbd>Fix:</kbd> run the completion condition when a pull request's mergeability status or branch protection flag change. <!-- server 4802 -->
