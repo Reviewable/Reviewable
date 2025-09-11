@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> add a `merge.mechanism` repository setting that directs Reviewable to adapt to an off-GitHub merge process. <!-- server -->
-- <kbd>Upd:</kbd> add an `inputs` pragma for completion conditions that lets you declare that certain properties are unused, which Reviewable can take advantage of to curtail upstream processing early. <!-- server -->
-- <kbd>Fix:</kbd> run the completion condition when a pull request's mergeability status or branch protection flag change. <!-- server -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Upd:</kbd> add a `merge.mechanism` repository setting that directs Reviewable to adapt to an off-GitHub merge process. <!-- server 4802 -->
+- <kbd>Upd:</kbd> add an `inputs` pragma for completion conditions that lets you declare that certain properties are unused, which Reviewable can take advantage of to curtail upstream processing early. <!-- server 4802 -->
+- <kbd>Fix:</kbd> run the completion condition when a pull request's mergeability status or branch protection flag change. <!-- server 4802 -->
 - <kbd>Fix:</kbd> wait until all items are ready before displaying the list on the dashboard. <!-- client 7697 -->
 - <kbd>Fix:</kbd> remove extra gap between merge/publish buttons and window edge. <!-- client 7697 -->
 - <kbd>Fix:</kbd> ensure that the last revision is never obsolete.  Previously this may have required an extra review sync to settle into the right state. <!-- server 4801 -->
