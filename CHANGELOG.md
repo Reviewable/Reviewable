@@ -1,5 +1,9 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid marking a file revision as unchanged if only the base changed and file wasn't reverted. <!-- server -->
+  > This could result in a file being mistakenly added to the Reverted group and the file revision not being included in the completion condition input.
+- <kbd>Upd:</kbd> set `baseChangesOnly` to `undefined` in the custom review completion condition input data structure if we don't know for sure yet whether it's true or false. <!-- server -->
+  > This is broadly backwards-compatible with previous behavior (previously it would've been set to `false`, and `undefined` is also falsy) but lets you detect the situation and handle it differently.  For example, if your condition depends on this value, you could make the author pending and request (via the status description) that they visit the review so that the matter will be settled one way or the other.
 - <kbd>New:</kbd> detect base changes between file revisions and distinguish between cleanly integrated ones (green), cleanly integrated with extra unrelated edits (grey), and potentially badly integrated (orange). <!-- client -->
   > Until now we used to only mark cleanly integrated revisions with a small grey ⊥ corner but failed to distinguish between the other two scenarios or no base changes at all.  This changes the old symbol to green and adds two more cases that should help you review rebased revisions with confidence!
 - <kbd>Fix:</kbd> consider file mode when determining whether base changes were cleanly integrated or not. <!-- client -->
