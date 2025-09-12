@@ -1,3 +1,9 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> detect base changes between file revisions and distinguish between cleanly integrated ones (green), cleanly integrated with extra unrelated edits (grey), and potentially badly integrated (orange). <!-- client -->
+  > Until now we used to only mark cleanly integrated revisions with a small grey ⊥ corner but failed to distinguish between the other two scenarios or no base changes at all.  This changes the old symbol to green and adds two more cases that should help you review rebased revisions with confidence!
+- <kbd>Fix:</kbd> consider file mode when determining whether base changes were cleanly integrated or not. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> make `ctrl+backspace` work correctly in code snippet editors. <!-- client 7698 -->
