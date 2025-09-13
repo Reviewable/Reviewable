@@ -4,12 +4,12 @@
   > This could result in a file being mistakenly added to the Reverted group and the file revision not being included in the completion condition input.
 - <kbd>Upd:</kbd> set `baseChangesOnly` to `undefined` in the custom review completion condition input data structure if we don't know for sure yet whether it's true or false. <!-- server -->
   > This is broadly backwards-compatible with previous behavior (previously it would've been set to `false`, and `undefined` is also falsy) but lets you detect the situation and handle it differently.  For example, if your condition depends on this value, you could make the author pending and request (via the status description) that they visit the review so that the matter will be settled one way or the other.
-- <kbd>New:</kbd> detect base changes between file revisions and distinguish between cleanly integrated ones (green), cleanly integrated with extra unrelated edits (grey), and potentially badly integrated (orange). <!-- client -->
-  > Until now we used to only mark cleanly integrated revisions with a small grey ⊥ corner but failed to distinguish between the other two scenarios or no base changes at all.  This changes the old symbol to green and adds two more cases that should help you review rebased revisions with confidence!
-- <kbd>Fix:</kbd> consider file mode when determining whether base changes were cleanly integrated or not. <!-- client -->
 
 <sub>2025 - 09</sub>
 
+- <kbd>New:</kbd> detect base changes between file revisions and distinguish between cleanly integrated ones (green), cleanly integrated with extra unrelated edits (grey), and potentially badly integrated (orange). <!-- client 7700 -->
+  > Until now we used to only mark cleanly integrated revisions with a small grey ⊥ corner but failed to distinguish between the other two scenarios or no base changes at all.  This changes the old symbol to green and adds two more cases that should help you review rebased revisions with confidence!
+- <kbd>Fix:</kbd> consider file mode when determining whether base changes were cleanly integrated or not. <!-- client 7700 -->
 - <kbd>Fix:</kbd> make `ctrl+backspace` work correctly in code snippet editors. <!-- client 7698 -->
 - <kbd>Upd:</kbd> add a `merge.mechanism` repository setting that directs Reviewable to adapt to an off-GitHub merge process. <!-- server 4802 -->
 - <kbd>Upd:</kbd> add an `inputs` pragma for completion conditions that lets you declare that certain properties are unused, which Reviewable can take advantage of to curtail upstream processing early. <!-- server 4802 -->
