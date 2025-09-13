@@ -36,7 +36,7 @@ If at any point you notice a typo or mistake, please don't hesitate to jump in a
 
 Help is available through many channels:
 
-* X-Ray: Press `F1` or `h`, or click **Support > Help**, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, press Esc, or click on the grey background to get back to the app.
+* Contextual Help: Press `F1` or `h`, or click **Support > Help**, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, press Esc, or click on the grey background to get back to the app.
 
 ::: tip
 On tablets and other touch devices with no convenient keyboard, tap the question mark icon in the bottom-right corner of the screen instead.
