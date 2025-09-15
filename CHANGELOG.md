@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> guard against rare crash on review page after reconnecting to the network. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> avoid marking a file revision as unchanged if only the base changed and file wasn't reverted. <!-- server 4805 -->
