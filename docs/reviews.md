@@ -46,7 +46,7 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 ### Approval levels
 
-You can open the :wrench: **Publish options** dropdown to change approval levels. 
+You can open the :wrench: **Publish options** dropdown on the Conclusion panel to change approval levels. 
 
 ![reviewable set the approval level](images/publish_1.png){width=628px}
 
