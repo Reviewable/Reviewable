@@ -43,6 +43,12 @@ approval-text: ":lgtm:"
 # https://docs.reviewable.io/repositories.html#the-discussion-participant-dismissers
 discussion-dismissal-restriction: maintain
 
+# `merge` gives you control over the merge process exposed in Reviewable.
+merge:
+  # `mechanism` specifies how developers go about merging a pull request.
+  # Valid options include: `github` (default), `label:NAME` and `external`.
+  mechanism: github
+
 # `github-status` lets you control various aspects of Reviewable's pull request status on GitHub.
 # https://docs.reviewable.io/repositories.html#review-status-in-github-pr
 github-status:
