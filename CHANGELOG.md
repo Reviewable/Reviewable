@@ -1,5 +1,11 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> make the `+@username` and `-@username` directive autocompletion menu switchable between add/removing assignees and requesting/unrequesting reviewers, so each user can configure this shortcut to take the action they most frequently need. <!-- client -->
+  > The autocompletion will output either `±a:@username` (for assignees) or `±r:@username` (for reviewers).  You can also type these in manually and the full length `±assignee:@username` and `±reviewer:@username` still work as well.  Watch out, though: if you type in `±@username` manually without using the autocompletion it'll be ignored!
+- <kbd>Fix:</kbd> prevent the pull request author from being requested as reviewer. <!-- client -->
+- <kbd>Fix:</kbd> correctly parse label directives for labels that start with a digit or some symbols. <!-- client -->
+- <kbd>Fix:</kbd> don't highlight stray HTML tags in quoted blocks in drafts. <!-- client -->
+- <kbd>Fix:</kbd> don't hide the autocompletion popup while holding down a modifier key. <!-- client -->
 - <kbd>Fix:</kbd> don't treat some revisions as having base changes only when they weren't actually checked for such. <!-- client -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> make private mode detection more robust. <!-- server -->
 - <kbd>Fix:</kbd> correct text selection in Firefox so both displayed selection and copied diff text are accurate. <!-- client -->
