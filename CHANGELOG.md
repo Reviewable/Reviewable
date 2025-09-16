@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't treat some revisions as having base changes only when they weren't actually checked for such. <!-- client -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> make private mode detection more robust. <!-- server -->
 - <kbd>Fix:</kbd> correct text selection in Firefox so both displayed selection and copied diff text are accurate. <!-- client -->
 - <kbd>Upd:</kbd> warn about unresolved merge conflicts in the diff. <!-- client -->
