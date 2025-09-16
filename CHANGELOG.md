@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> warn about unresolved merge conflicts in the diff. <!-- client -->
 - <kbd>Fix:</kbd> guard against rare crash on review page after reconnecting to the network. <!-- client -->
 
 <sub>2025 - 09</sub>
