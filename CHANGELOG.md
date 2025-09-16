@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent crash when the base mode of a file changed while the head mode remains unchanged, and the modes don't match. <!-- client -->
 - <kbd>Upd:</kbd> make the `+@username` and `-@username` directive autocompletion menu switchable between add/removing assignees and requesting/unrequesting reviewers, so each user can configure this shortcut to take the action they most frequently need. <!-- client -->
   > The autocompletion will output either `±a:@username` (for assignees) or `±r:@username` (for reviewers).  You can also type these in manually and the full length `±assignee:@username` and `±reviewer:@username` still work as well.  Watch out, though: if you type in `±@username` manually without using the autocompletion it'll be ignored!
 - <kbd>Fix:</kbd> prevent the pull request author from being requested as reviewer. <!-- client -->
