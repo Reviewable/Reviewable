@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> Handle error when attempting to cancel publish on push (or "publish now") after the push already happened. <!-- client -->
-- <kbd>Fix:</kbd> show correct emoji for `:+1:` in the autocomplete popup. <!-- client -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> Handle error when attempting to cancel publish on push (or "publish now") after the push already happened. <!-- client 7704 -->
+- <kbd>Fix:</kbd> show correct emoji for `:+1:` in the autocomplete popup. <!-- client 7704 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> make private mode detection more robust. <!-- server 4808 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent crash when the base mode of a file changed while the head mode remains unchanged, and the modes don't match. <!-- client 7703 -->
 - <kbd>Upd:</kbd> make the `+@username` and `-@username` directive autocompletion menu switchable between add/removing assignees and requesting/unrequesting reviewers, so each user can configure this shortcut to take the action they most frequently need. <!-- client 7703 -->
