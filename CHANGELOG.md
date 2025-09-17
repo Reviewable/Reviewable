@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> show correct emoji for `:+1:` in the autocomplete popup. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Adm<i>(enterprise)</i>:</kbd> make private mode detection more robust. <!-- server 4808 -->
