@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Handle error when attempting to cancel publish on push (or "publish now") after the push already happened. <!-- client -->
 - <kbd>Fix:</kbd> show correct emoji for `:+1:` in the autocomplete popup. <!-- client -->
 
 <sub>2025 - 09</sub>
