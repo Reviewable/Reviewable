@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't get stuck syncing a review if its head commit is not present in the pull request's repository. <!-- server -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix:</kbd> don't get stuck syncing a review if its head commit is not present in the pull request's repository. <!-- server 4810 -->
 - <kbd>Fix:</kbd> Handle error when attempting to cancel publish on push (or "publish now") after the push already happened. <!-- client 7704 -->
 - <kbd>Fix:</kbd> show correct emoji for `:+1:` in the autocomplete popup. <!-- client 7704 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> make private mode detection more robust. <!-- server 4808 -->
