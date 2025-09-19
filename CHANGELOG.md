@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> Allow using hotkeys when focused element is a radio or checkbox input. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix:</kbd> don't get stuck syncing a review if its head commit is not present in the pull request's repository. <!-- server 4810 -->
