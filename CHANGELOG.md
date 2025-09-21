@@ -1,5 +1,8 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> improve recovery from Firebase transaction bugs that can cause tasks to get stuck until the server is restarted. <!-- server -->
+  > Servers now ignore the tasks they're stuck on and restart only if no other servers step up and handle those tasks instead.
+  > This improves server uptime and avoids some rare situations where all servers repeatedly and simultaneously restart themselves because Firebase is returning incorrect data for a task.
 - <kbd>Fix:</kbd> Allow using hotkeys when focused element is a radio or checkbox input. <!-- client -->
 
 <sub>2025 - 09</sub>
