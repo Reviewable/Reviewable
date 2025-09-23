@@ -1,6 +1,6 @@
 ## Data Processing Agreement (DPA)
 
-Last updated: 2025-08-19
+Last updated: 2025-09-19
 
 This Data Processing Agreement (“DPA”) forms part of the Terms of Service or other agreement governing your use of the Reviewable services (the “Agreement”) entered into by Ideanest LLC (“Reviewable”, “we”, “us”) and the customer (“Company”) (together as the “Parties”).
 
