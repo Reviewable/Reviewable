@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> highlight all diff lines that have changes with addition or removal bars in two column mode <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Adm:</kbd> improve recovery from Firebase transaction bugs that can cause tasks to get stuck until the server is restarted. <!-- server 4811 -->
