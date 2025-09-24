@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server -->
 - <kbd>New:</kbd> highlight all diff lines that have changes with addition or removal bars in two column mode <!-- client -->
 
 <sub>2025 - 09</sub>
