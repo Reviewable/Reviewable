@@ -20,15 +20,15 @@ With Reviewable, you can:
 * Sign in with GitHub ac­count — no sep­a­rate ac­counts to man­age.
 * Keep all your code on GitHub, not on our servers.
 
-This user guide is a helpful resource for learning all of the details about every Reviewable feature. Soon, you'll be more efficient at eliminating buggy code and helping your team improve their delivery pipeline.
+This user guide is a helpful resource for learning all of the details about every Reviewable feature. Once you understand the basics, you'll be more efficient at eliminating buggy code and helping your team improve their delivery pipeline.
 
 ## How to use this guide
 
-Reviewable is a powerful, feature-rich, and highly configurable tool, so it'll probably take you a while to figure out how to use it to its full potential.  The first steps are fairly straightforward, though:
+Reviewable is a powerful, feature-rich, and highly configurable tool. It's easy to get started, and it's full potential will become clearer as you go. The first steps are fairly straightforward:
 
-1. Everybody should read through the Registration and Authorization section that follows.
-2. Then, if Reviewable is already set up for your favorite repos, you can just keep reading straight into the Reviews section that follows and dip into the other sections as needed.
-3. If, on the other hand, you're an admin setting up Reviewable for the first time, you'll want to jump to the Repositories section first for details on how to connect repos and start a subscription (if necessary).
+1. Everybody should read through the [Registration and GitHub Authorization](registration.md) section that follows.
+2. Then, if Reviewable is already set up for your favorite repos, you can just keep reading straight into the [Code review](reviews.md) section that follows and dip into the other sections as needed.
+3. If, on the other hand, you're an admin setting up Reviewable for the first time, you'll want to jump to the [Repositories](repositories.md) section first for details on how to connect repos and start a subscription (if necessary).
 
 If at any point you notice a typo or mistake, please don't hesitate to jump in and propose an edit via the link in the top right corner of every page.
 
@@ -37,6 +37,8 @@ If at any point you notice a typo or mistake, please don't hesitate to jump in a
 Help is available through many channels:
 
 * Contextual Help: Press `F1` or `h`, or click **Support > Help**, to view the hints for all of the features on a page. If you invoke help while hovering your mouse pointer over a button or feature, specific help for that feature will appear.  Press the same key again, press Esc, or click on the grey background to get back to the app.
+
+![contextual help demo](images/contextual_help.gif)
 
 ::: tip
 On tablets and other touch devices with no convenient keyboard, tap the question mark icon in the bottom-right corner of the screen instead.
