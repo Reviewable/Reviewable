@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server 4812 -->
 - <kbd>New:</kbd> highlight all diff lines that have changes with addition or removal bars in two column mode <!-- client 7706 -->
 - <kbd>Adm:</kbd> improve recovery from Firebase transaction bugs that can cause tasks to get stuck until the server is restarted. <!-- server 4811 -->
   > Servers now ignore the tasks they're stuck on and restart only if no other servers step up and handle those tasks instead.
