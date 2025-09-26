@@ -205,6 +205,20 @@ Extra configuration for optimizing the server runtime.
 * `MEMORY_AVAILABLE`: The amount of memory available to the Node process in MiB.  Defaults to the lower of `/proc/meminfo` `MemTotal` and `/sys/fs/cgroup/memory/memory.stat` `hierarchical_memory_limit`.  If not set accurately, the servers are more likely to run out of memory and start swapping.  A server logs how much memory it thinks it has available when it starts up.
 * `REVIEWABLE_GITHUB_CACHE_SIZE`: The cache size to use for GitHub data, in megabytes.  Defaults to 50MB as of this writing.
 
+##### Slack integration
+
+In order to connect your Reviewable Enterprise instance to your Slack workspace (enabling review updates via Slack, sync handles, etc.), please follow these steps:
+
+1. Go to: https://api.slack.com/apps
+2. Log in with an admin account for your Slack workspace. If you are currently logged in with a different Slack account, click "Sign in to another workspace" at the bottom.
+3. Click "Create New App" → "From a Manifest".
+4. Select your workspace and click "Next".
+5. Open [slack_app_manifest.json](https://raw.githubusercontent.com/Reviewable/Reviewable/refs/heads/master/enterprise/slack_app_manifest.json), copy its contents into the text editor widget on the web page and click "Next".
+6. Click the "Create" button.
+7. Navigate to the "OAuth & Permissions" section.
+8. Under "OAuth Tokens", click the "Install to ..." button and authorize the app.
+9. Copy the "Bot User OAuth Token" and configure it via the `REVIEWABLE_SLACK_BOT_TOKEN` environment variable.
+
 ### GitHub configuration
 
 Reviewable doesn't require any special configuration of your GitHub Enterprise instance; it'll happily work with any organizations and repositories you have set up.  If you have GHES set up in private mode make sure to set `REVIEWABLE_PRIVATE_MODE` also, as documented above.

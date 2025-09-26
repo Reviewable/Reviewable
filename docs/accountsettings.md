@@ -90,6 +90,20 @@ When you're done, point Reviewable to your custom bindings file by entering its 
 
 Your bindings will be loaded and applied right away, and the cheatsheet will update accordingly to reflect them. Be sure to check the browser's console if they don't appear to work, since any errors will appear there. To load any updates to your file, either reload the page or make a no-op edit to the URL field.
 
+## Review notifications via Slack
+
+Click the **Slack DM** toggle to turn review notifications via Slack on and off. When turned on, you have furthermore the option to choose between having notifications delivered **instantly** or **daily** (batched) at a given time.
+
+In order to use Slack notifications the following are required:
+
+* Your organization must be covered by a subscription.
+* Your organization must be connected to a Slack workspace.
+* The URL of your Slack profile from the same workspace must be added to your social links in your GitHub profile.
+
+If not all of the above are given, the **Review notification** settings are unavailable.
+
+An organization owner who is also an admin for the Slack workspace can connect the workspace to the organization by clicking the **Add to Slack** button in the [subscription settings](subscriptions.md#subscriptions).
+
 ## Visual tweaks
 
 Click the **Animated transitions** toggle to turn animated transitions on and off throughout the UI.
