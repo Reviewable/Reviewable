@@ -22,18 +22,12 @@ It's possible for one person to be both the author and a reviewer in a “self-r
 
 ## Publishing your review {#publish}
 
-As you work through a review using the tools at your disposal, Reviewable will automatically save your changes but they won't be visible to others.  To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or on the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub. 
+As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or in the Conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
+
+Alternatively, you can publish individual drafts by clicking the <i class="send icon"/> icon at the bottom-right of the draft window. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch and them all at once instead. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"/>&nbsp;Pondering**.
 
 ::: tip
-To see a preview of how your published message will appear on GitHub, click **Preview Publish** under the text field in the [Conclusion panel](#conclusion). You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
-:::
-
-::: tip
-To temporarily keep a draft from being published, switch its disposition to **<i class="pondering disposition icon"/>&nbsp;Pondering**.
-:::
-
-::: tip
-If the pull request has [auto-merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request) turned on and publishing your review _might_ trigger it, the button will show a <i class="automerge icon"></i> icon and you'll need to click and hold to publish just like with the merge button.
+If the pull request has [auto-merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request) turned on and publishing your review _might_ trigger it, the publish button will show a <i class="automerge icon"></i> icon and you'll need to click and hold to publish just like with the merge button.
 :::
 
 ::: tip
@@ -46,11 +40,11 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 ### Approval levels
 
-You can open the :wrench: **Publish options** dropdown on the Conclusion panel to change approval levels. 
+You can click the <i class="configure icon"/> icon at the top-right of the toolbar or the **<i class="configure icon"/>&nbsp;Publish options** on the Conclusion panel to change approval levels.
 
 ![reviewable set the approval level](images/publish_1.png){width=628px}
 
-There are three different approval levels you can choose from when publishing:
+Like for GitHub reviews, there are three different approval levels you can choose from when publishing:
 
 * **Comment** — Submit general feedback without explicit approval.
 * **Approve** — Submit feedback and approve merging these changes.
@@ -68,7 +62,7 @@ If you choose **Comment**, any previous **Approve** or **Request changes** will 
 
 ### Requested reviewers synchronization {#sync-requested-reviewers}
 
-Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box under :wrench: **Publish options**.  Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
+Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box under **<i class="configure icon"/>&nbsp;Publish options**. Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
 
 ::: danger
 It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is on Reviewable's list of awaited reviewers.  Also, only users with push permissions on the repo can request reviewers.
@@ -95,7 +89,7 @@ If *Publish on Push* isn't available, it could be due to one of the following re
 
 ### Conclusion
 
-For your convenience, Reviewable provides a Conclusion panel at the bottom of the page so you don't have to scroll back up to **Top level discussions** panel to leave a final comment. 
+For your convenience, Reviewable provides a Conclusion panel at the bottom of the page so you don't have to scroll back up to the **<i class="discussions icon"/>&nbsp;Top level discussions** panel to leave a final comment.
 
 ![conclusion](images/review_summary.png)
 
@@ -104,6 +98,8 @@ The conclusion doesn't show up if the review was forced into [single file mode](
 :::
 
 The draft has an LGTM button that you can use to approve the pull request.  (See the [repository settings](repositories.md#approve-button-output) for information on how to customize this button.)
+
+To see a preview of how your published message will appear on GitHub, click **Preview Publish** under the Review summary text field. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
 Below the publish button there may appear <span class="red label">red</span> counters of files to review and discussion to reply.  You can click the mark reviewed button to mark these files as reviewed and the discussions as read, though that might not absolve you of the need to reply to them.  If you publish your review with files or discussions outstanding they'll automatically be [deferred](#deferring-a-review).
 
@@ -127,7 +123,7 @@ Sending an individual comment (via its dedicated send button) doesn't affect def
 
 ## Merging a pull request {#merge}
 
-When a review is complete, a victory graphic appears and you can merge the pull request directly from within Reviewable given sufficient permissions.
+When a review is complete, you can merge the pull request directly from within Reviewable given sufficient permissions.
 
 ![merge victory graphic](images/merge_2.png){width=311px}
 
@@ -141,7 +137,7 @@ A review is considered complete when the first defined condition of the followin
 
 To merge the pull request, click and hold the button for a couple seconds until the arming indicator fills with yellow and starts pulsing, then release.  This procedure is in place to reduce the chances of accidentally merging a pull request without requiring a separate confirmation.
 
-You can set merge options and edit the merge commit message via the wrench icon :wrench: attached to the button:
+You can set merge options and edit the merge commit message by clicking **<i class="configure icon"/>&nbsp;Merge options**:
 
 ![merge options](images/merge_1.png){width=500px}
 
@@ -169,27 +165,33 @@ The main part of the toolbar consists of various status indicators and links to 
 
 We'll now look at the items from left to right.
 
-### Information panel links
+### Information panel links  <i class="pull request icon"/> <i class="participants icon"/> <i class="circle-dot icon"/> (Donut icon)
 
-The first three items link to the corresponding panels: [pull request details](#pull-request-details), [participants](#participants), and [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
+The first three items link to the corresponding panels: <i class="pull request icon"/> [pull request details](#pull-request-details), <i class="participants icon"/> [participants](#participants), and <i class="circle-dot icon"/> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
 
-### Diffs
+### Diffs <i class="diff icon"/>
 
-This item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  The revision label indicates the revision that is the current right diff bound for all files, or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs**, or adjust the diff bounds manually yourself.
+This item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  The revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs**, or adjust the diff bounds manually yourself.
 
-### Counters
+### Counters <span class="grey label">1</span> <span class="red label">2</span> <span class='grey label deferred'>3</span>
 
-The next three items on the toolbar are counters for files, discussions, and drafts.  <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.
+The some of the items on the toolbar have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.
 
 ::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
 :::
 
-The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>.  Click on the files icon to go to the [file matrix](files#file-matrix), or on the counter itself to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](repositories.md#completion-condition), which also controls the per-file reviewed state.
+### Files matrix <i class="files header icon"/>
+
+The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
+
+The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click on the counter itself to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](repositories.md#completion-condition), which also controls the per-file reviewed state.
 
 ::: tip
 If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
 :::
+
+### Discussions <i class="discussions icon"/>
 
 The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
@@ -197,7 +199,8 @@ The **discussions counter** display the number of discussions that are waiting f
 The main review discussion is always considered resolved.
 :::
 
-The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
+### Drafts <i class="drafts icon"/>
+The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon <i class="drafts icon"/> to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
 
 ## Pull request details
 
@@ -219,7 +222,7 @@ Below that you'll see lines listing the _labels_ and _milestone_ for the pull re
 You can enter anything into the command field, not just directives.  This can be particularly useful for sending `/` bot commands as many bots don't correctly parse commands embedded in published reviews.
 :::
 
-Lastly, you'll see the _pull request's description_. You can expand or collapse the description using the arrow to the left of the field.
+Lastly, you’ll see the pull request’s description. If it’s long, it becomes collapsible using the arrow to the left of the field. The same applies to the pull request details and labels section above.
 
 
 ## Participants

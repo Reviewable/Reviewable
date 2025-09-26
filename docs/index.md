@@ -24,7 +24,7 @@ This user guide is a helpful resource for learning all of the details about ever
 
 ## How to use this guide
 
-Reviewable is a powerful, feature-rich, and highly configurable tool. It's easy to get started, and it's full potential will become clearer as you go. The first steps are fairly straightforward:
+Reviewable is a powerful, feature-rich, and highly configurable tool. It's easy to get started, and its full potential will become clearer as you go. The first steps are fairly straightforward:
 
 1. Everybody should read through the [Registration and GitHub Authorization](registration.md) section that follows.
 2. Then, if Reviewable is already set up for your favorite repos, you can just keep reading straight into the [Code review](reviews.md) section that follows and dip into the other sections as needed.
