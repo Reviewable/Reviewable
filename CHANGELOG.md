@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client -->
-- <kbd>Fix:</kbd> avoid rare crash when a renamed revision changes while looking at its diff. <!-- client -->
-
 <sub>2025 - 09</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client 7709 -->
+- <kbd>Fix:</kbd> avoid rare crash when a renamed revision changes while looking at its diff. <!-- client 7709 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server 4812 -->
 - <kbd>New:</kbd> highlight all diff lines that have changes with addition or removal bars in two column mode <!-- client 7706 -->
   > Prevents small deltas from being overlooked, even when they appear alongside large blocks of changes.
