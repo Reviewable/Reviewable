@@ -10,7 +10,7 @@ Organizations are shown below your personal repos on the Repositories page, and 
 - **Start a 30 day trial** will start a trial for that organization.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
 - **Subscribe** will open a panel showing the various plans, where you can compare features, select the desired number of contributors, and click **Subscribe** again to start the checkout process.
 - **Manage subscription** will open the subscription portal where you can adjust or cancel your subscription, update your card, or view past invoices.
-- **Edit settings** will show some options to *[manage the scope of the subscription](#managing-the-scope-of-your-subscription)*, and (un)assign a *[billing manager](#billing-manager)*.
+- **Edit settings** will show some options to *[manage the scope of the subscription](#managing-the-scope-of-your-subscription)*, (un)assign a *[billing manager](#billing-manager)*, and (dis)connect a Slack Workspace.
 
 ::: danger
 OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
