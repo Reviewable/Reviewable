@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client -->
+- <kbd>Fix:</kbd> avoid rare crash when a renamed revision changes while looking at its diff. <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server 4812 -->
