@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Enable publish on push for reviews with only (non-passive) bot reviewers <!-- client -->
+
 <sub>2025 - 09</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client 7709 -->
