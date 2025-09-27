@@ -1,6 +1,6 @@
 ### Analytics
 
-If you set the `REVIEWABLE_ANALYTICS_URL` (see the [configuration docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#monitoring)) Reviewable will POST analytics event to the endpoint for many user- and server-side actions that occur in your instance.
+If you set the `REVIEWABLE_ANALYTICS_URL` (see the [configuration docs](config.md#monitoring)) Reviewable will POST analytics event to the endpoint for many user- and server-side actions that occur in your instance.
 
 The events will be JSON objects that follow the schema documented below, which is pretty similar to the [Segment tracking spec](https://segment.com/docs/spec/track/).  However, you will likely need to implement a custom server or pipeline to gather and interpret these events.  If posting an event fails, both the client and server will log the error to the console (to aid in debugging) but otherwise ignore it &mdash; no retries.
 
