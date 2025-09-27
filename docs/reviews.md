@@ -87,7 +87,7 @@ If *Publish on Push* isn't available, it could be due to one of the following re
 1. **You're not the author of the pull request.** Reviewers will always have their drafts published instantly on submission.
 2. **The repository isn't connected.** The repository needs to be connected for Reviewable to detect when new code is pushed.
 3. **The pull request has already been merged or closed.** *Publish on Push* is only available for open pull requests.
-4. **There are no review comments yet.** *Publish on Push* is only available when there are already comments to address, not counting comments by bots or by the author themselves.
+4. **There are no review comments yet.** *Publish on Push* is only available when there are already comments to address, not counting comments by passive bots or by the author themselves. A bot is considered passive if it didn't author any commits and its participation is limited to the top discussion thread.
 
 ### Conclusion
 
