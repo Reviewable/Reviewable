@@ -1,5 +1,5 @@
 ## Reviewable Authentication Flow
-The user starts out unauthenticated.  We assume that [`REVIEWABLE_PRIVATE_MODE`](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#:~:text=REVIEWABLE_PRIVATE_MODE) is turned on. All random values are generated using crypto APIs.
+The user starts out unauthenticated.  We assume that [`REVIEWABLE_PRIVATE_MODE`](config.md#:~:text=REVIEWABLE_PRIVATE_MODE) is turned on. All random values are generated using crypto APIs.
 
 1. The user loads any Reviewable page and is redirected to the root (sign-in) page.
 2. The user clicks Sign In.

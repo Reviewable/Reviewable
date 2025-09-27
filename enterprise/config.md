@@ -9,7 +9,7 @@ You'll need to decide the URL at which your Reviewable instance will operate, ca
 ##### GitHub application
 
 Next, on your GitHub instance, find the settings section of your preferred organization — any one will do.  In the Developer settings > OAuth apps subsection click the "New OAuth app" button:
-![app registration section](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/register_github_app.png)
+![app registration section](images/register_github_app.png)
 Set the application name, homepage URL, and application description to taste (but preferably not just plain "Reviewable" to avoid confusion).  You can easily update these later so don't sweat it.  Set the authorization callback URL to `<REVIEWABLE_HOST_URL>/auth/callback`.  Take note of the Client ID and Client Secret at the top of the application's dashboard as you'll need to provide these to Reviewable (below).
 
 ##### Firebase database
@@ -22,15 +22,15 @@ When that's done, go to _Build_ → _Authentication_ and click _Get Started_.  R
 
 Finally go to your Project Settings and prepare the following for configuring Reviewable:
 
-![Firebase project settings](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_project_settings.png)
+![Firebase project settings](images/firebase_project_settings.png)
 
 1. On the _General_ tab, locate your Web API Key:
 
-![Firebase Web API Key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_web_api_key.png)
+![Firebase Web API Key](images/firebase_web_api_key.png)
 
 2. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, create a service account, then locate your database name as the first part of the database URL and generate a new private key:
 
-![Firebase service account private key](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/firebase_private_key.png)
+![Firebase service account private key](images/firebase_private_key.png)
 
 ### Runtime expectations
 
@@ -71,13 +71,13 @@ These are required unless stated otherwise.
 Optional settings that enable extra security mechanisms.
 
 * `REVIEWABLE_ENCRYPTION_PRIVATE_KEYS`: A comma-separated list of unencrypted RSA private keys in PEM format (you can use `openssl genrsa -out private.pem 2048` to generate one), optionally with newlines removed but `BEGIN` / `END` fences retained.  These keys will be used to encrypt especially sensitive data in the Firebase datastore that only needs to be read by the server to provide an extra line of defense in case of a breach.  Currently, this includes all GitHub authorization tokens.  The current key should be first in the list, and any number of additional keys can be listed afterwards to assist with key rotation.
-* `REVIEWABLE_ENCRYPTION_AES_KEY`: A random AES-SIV key of either 256, 384, or 512 bits (32, 48, or 64 bytes), encoded as base64 (you can use `openssl rand -base64 64` to generate such a key, for example).  This key will be used to keep all user-provided strings encrypted in the Firebase database.  Note that this is a symmetric key that will be distributed to all clients, so using this option only makes sense if your installation is isolated behind a firewall.  It's best to specify the key on the first run but you can add / change / remove keys later by following the [AES key rotation](https://github.com/Reviewable/Reviewable/blob/master/enterprise/operations.md#aes-encryption-key-rotation) procedure.
+* `REVIEWABLE_ENCRYPTION_AES_KEY`: A random AES-SIV key of either 256, 384, or 512 bits (32, 48, or 64 bytes), encoded as base64 (you can use `openssl rand -base64 64` to generate such a key, for example).  This key will be used to keep all user-provided strings encrypted in the Firebase database.  Note that this is a symmetric key that will be distributed to all clients, so using this option only makes sense if your installation is isolated behind a firewall.  It's best to specify the key on the first run but you can add / change / remove keys later by following the [AES key rotation](operations.md#aes-encryption-key-rotation) procedure.
 * `REVIEWABLE_ENCRYPTION_AES_ENABLED`: If set to a non-empty value and `REVIEWABLE_ENCRYPTION_AES_KEY` is not set, Reviewable servers will fail on startup.  You can use this to ensure that Reviewable doesn't run in unencrypted mode if your deployment script silently fails to fill in the encryption key from a vault.
 * `REVIEWABLE_GITHUB_SECRET_TOKEN`: An arbitrary secret string that will be used to sign GitHub webhook requests to ensure their authenticity.  Set to anything random, robust when transmitted as text, and reasonably long (e.g., 64 hex characters).  You shouldn't change it (or set it) once any repos have been connected as this will cause events to be dropped, though Reviewable will update the webhooks' settings as it notices that they're misconfigured.
 * `REVIEWABLE_PRIVATE_MODE`: When set to any non-empty value, turns on Reviewable's equivalent of GHES's private mode by prohibiting all unauthenticated access (except to the home page) and ensuring that no secrets are passed to the browser until the user is authenticated.
 * `REVIEWABLE_STRICT_TRANSPORT_SECURITY`: The value of the `Strict-Transport-Security` header in all responses.  For example, set to `max-age=31536000` to enforce secure connections to `REVIEWABLE_HOST_URL` for at least a year.
 * `NODE_EXTRA_CA_CERTS`: The absolute path to a cert file in PEM format; this might be your GHES instance's SSL cert, or the root cert for your organization.  Useful if your GitHub installation uses a self-signed (or otherwise non-validating) certificate, as otherwise Reviewable will refuse to connect to the API with errors like "unable to get local issuer certificate".  This environment variable **must be set directly**, not via the `REVIEWABLE_CONFIG_FILE` file.
-* `REVIEWABLE_API_SECRET`: A secret token (ASCII only) used to authenticate requests to the [REST API](https://github.com/Reviewable/Reviewable/blob/master/enterprise/api.md). If unset the REST API will be disabled.
+* `REVIEWABLE_API_SECRET`: A secret token (ASCII only) used to authenticate requests to the [REST API](api.md). If unset the REST API will be disabled.
 
 ##### Monitoring
 
