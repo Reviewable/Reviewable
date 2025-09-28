@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't erroneously mark certain unmodified revisions as needing review. <!-- server -->
 - <kbd>Upd:</kbd> Enable publish on push for reviews with only (non-passive) bot reviewers <!-- client -->
 
 <sub>2025 - 09</sub>
