@@ -5,4 +5,5 @@
 *.woff binary
 *.woff2 binary
 *.pdf binary
+*.gif binary
 bin/** binary
