@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix<i>(saas)</i>:</kbd> don't erroneously mark certain unmodified revisions as needing review. <!-- server -->
 - <kbd>Upd:</kbd> Enable publish on push for reviews with only (non-passive) bot reviewers <!-- client -->
 
 <sub>2025 - 09</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't erroneously mark certain unmodified revisions as needing review. <!-- server 4814 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client 7709 -->
 - <kbd>Fix:</kbd> avoid rare crash when a renamed revision changes while looking at its diff. <!-- client 7709 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server 4812 -->
