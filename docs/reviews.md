@@ -175,7 +175,7 @@ This item summarizes the changes you're currently looking at and links to the [d
 
 ### Counters <span class="grey label">1</span> <span class="red label">2</span> <span class='grey label deferred'>3</span>
 
-The some of the items on the toolbar have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like a <span class='grey label'>grey</span> one.
+Some of the items on the toolbar have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
 
 ::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
