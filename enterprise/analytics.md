@@ -293,14 +293,6 @@ The user clicked the link to the blog.
 }
 ```
 
-##### Opened Twitter
-The user clicked the link to Twitter.
-```
-{
-  from: 'footer' | 'support'
-}
-```
-
 ##### Opened Email Us
 The user clicked the email us link.
 ```
