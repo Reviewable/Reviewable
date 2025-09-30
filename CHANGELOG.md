@@ -4,6 +4,8 @@
 
 <sub>2025 - 09</sub>
 
+<sub>**Enterprise release 4814.7709** (min 3340.5125 GHE ^2.19 || ^3) 2025-09-30 <!-- enterprise 4814.7709 --></sub>
+
 - <kbd>Fix<i>(saas)</i>:</kbd> don't erroneously mark certain unmodified revisions as needing review. <!-- server 4814 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client 7709 -->
 - <kbd>Fix:</kbd> avoid rare crash when a renamed revision changes while looking at its diff. <!-- client 7709 -->
