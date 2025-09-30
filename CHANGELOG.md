@@ -1,9 +1,35 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> guard against rare crash on review page after reconnecting to the network. <!-- client -->
+- <kbd>Upd:</kbd> Enable publish on push for reviews with only (non-passive) bot reviewers <!-- client -->
 
 <sub>2025 - 09</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't erroneously mark certain unmodified revisions as needing review. <!-- server 4814 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash if a unknown language is encountered when diffing (and a few other random cases besides). <!-- client 7709 -->
+- <kbd>Fix:</kbd> avoid rare crash when a renamed revision changes while looking at its diff. <!-- client 7709 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't keep unnecessary revisions around when changing a review's revision mapping. <!-- server 4812 -->
+- <kbd>New:</kbd> highlight all diff lines that have changes with addition or removal bars in two column mode <!-- client 7706 -->
+  > Prevents small deltas from being overlooked, even when they appear alongside large blocks of changes.
+- <kbd>Fix:</kbd> make sure all single character deltas get special highlighting. <!-- client 7706 -->
+- <kbd>Adm:</kbd> improve recovery from Firebase transaction bugs that can cause tasks to get stuck until the server is restarted. <!-- server 4811 -->
+  > Servers now ignore the tasks they're stuck on and restart only if no other servers step up and handle those tasks instead.
+  > This improves server uptime and avoids some rare situations where all servers repeatedly and simultaneously restart themselves because Firebase is returning incorrect data for a task.
+- <kbd>Fix:</kbd> Allow using hotkeys when focused element is a radio or checkbox input. <!-- client 7705 -->
+- <kbd>Fix:</kbd> don't get stuck syncing a review if its head commit is not present in the pull request's repository. <!-- server 4810 -->
+- <kbd>Fix:</kbd> Handle error when attempting to cancel publish on push (or "publish now") after the push already happened. <!-- client 7704 -->
+- <kbd>Fix:</kbd> show correct emoji for `:+1:` in the autocomplete popup. <!-- client 7704 -->
+- <kbd>Adm<i>(enterprise)</i>:</kbd> make private mode detection more robust. <!-- server 4808 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent crash when the base mode of a file changed while the head mode remains unchanged, and the modes don't match. <!-- client 7703 -->
+- <kbd>Upd:</kbd> make the `+@username` and `-@username` directive autocompletion menu switchable between add/removing assignees and requesting/unrequesting reviewers, so each user can configure this shortcut to take the action they most frequently need. <!-- client 7703 -->
+  > The autocompletion will output either `±a:@username` (for assignees) or `±r:@username` (for reviewers).  You can also type these in manually and the full length `±assignee:@username` and `±reviewer:@username` still work as well.  Watch out, though: if you type in `±@username` manually without using the autocompletion it'll be ignored!
+- <kbd>Fix:</kbd> prevent the pull request author from being requested as reviewer. <!-- client 7703 -->
+- <kbd>Fix:</kbd> correctly parse label directives for labels that start with a digit or some symbols. <!-- client 7703 -->
+- <kbd>Fix:</kbd> don't highlight stray HTML tags in quoted blocks in drafts. <!-- client 7703 -->
+- <kbd>Fix:</kbd> don't hide the autocompletion popup while holding down a modifier key. <!-- client 7703 -->
+- <kbd>Fix:</kbd> don't treat some revisions as having base changes only when they weren't actually checked for such. <!-- client 7703 -->
+- <kbd>Fix:</kbd> correct text selection in Firefox so both displayed selection and copied diff text are accurate. <!-- client 7703 -->
+- <kbd>Upd:</kbd> warn about unresolved merge conflicts in the diff. <!-- client 7703 -->
+- <kbd>Fix:</kbd> guard against rare crash on review page after reconnecting to the network. <!-- client 7703 -->
 - <kbd>Fix:</kbd> avoid marking a file revision as unchanged if only the base changed and file wasn't reverted. <!-- server 4805 -->
   > This could result in a file being mistakenly added to the Reverted group and the file revision not being included in the completion condition input.
 - <kbd>Upd:</kbd> set `baseChangesOnly` to `undefined` in the custom review completion condition input data structure if we don't know for sure yet whether it's true or false. <!-- server 4805 -->

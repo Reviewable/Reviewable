@@ -12,7 +12,7 @@ Everything on this page applies to both self-hosted and managed Enterprise insta
 
 Reviewable is somewhat unusual for on-premises software in that it needs to be connected to cloud services to function.  This architecture diagram summarizes the various pieces and how they communicate:
 
-![Architectural diagram](https://github.com/Reviewable/Reviewable/blob/master/enterprise/images/architectural_diagram.svg)
+![Architectural diagram](images/architectural_diagram.svg)
 
 All communication is over channels secured with TLS, and obviously certificate verification is turned on.
 

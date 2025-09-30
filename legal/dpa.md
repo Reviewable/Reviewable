@@ -1,6 +1,6 @@
 ## Data Processing Agreement (DPA)
 
-Last updated: 2025-08-19
+Last updated: 2025-09-19
 
 This Data Processing Agreement (“DPA”) forms part of the Terms of Service or other agreement governing your use of the Reviewable services (the “Agreement”) entered into by Ideanest LLC (“Reviewable”, “we”, “us”) and the customer (“Company”) (together as the “Parties”).
 
@@ -128,6 +128,6 @@ Processor shall take reasonable steps to ensure the reliability of any employee,
 
 ### 13. Governing Law and Jurisdiction
 
-13.1 This DPA, including the SCCs as incorporated herein, is governed by the laws of the State of California, without regard to its conflict-of-laws rules. Where the SCCs require selection of the law of an EU Member State, the laws of Ireland apply solely for purposes of the SCCs.
+13.1 This DPA, including the SCCs as incorporated herein, is governed by the laws of the State of California, without regard to its conflict-of-laws rules. Where the SCCs require selection of the law of an EU Member State, or where any matters relate to the interpretation or enforcement of obligations under the EU General Data Protection Regulation (GDPR) and Company resides in the EU, the laws of Ireland apply solely for such purposes.
 
-13.2 The Parties submit to the exclusive jurisdiction and venue of the state and federal courts located in Santa Clara County, California, for any dispute arising out of or in connection with this DPA, except that where the SCCs require the jurisdiction of the courts of an EU Member State, the courts of Dublin, Ireland shall have jurisdiction solely for disputes under the SCCs.
+13.2 The Parties submit to the exclusive jurisdiction and venue of the state and federal courts located in Santa Clara County, California, for any dispute arising out of or in connection with this DPA. However, where the SCCs require the jurisdiction of the courts of an EU Member State, or where any matters relate to the interpretation or enforcement of obligations under the GDPR and Company resides in the EU, the courts of Dublin, Ireland shall have exclusive jurisdiction solely for such disputes.

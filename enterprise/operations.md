@@ -28,7 +28,7 @@ When maintenance mode is switched on, the servers will log `Entering maintenance
 
 When maintenance mode is switched on, clients will immediately shut off datastore access and show a modal overlay (sample below)  Users will need to manually reload the page once maintenance mode is switched off so you may want to provide an estimated time of completion in the message above.
 
-![Maintenance overlay](https://raw.githubusercontent.com/Reviewable/Reviewable/master/enterprise/images/maintenance.png)
+![Maintenance overlay](images/maintenance.png)
 
 #### Exiting maintenance mode
 

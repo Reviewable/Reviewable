@@ -3,7 +3,7 @@
 *Added in Reviewable Enterprise 4247.6681*
 
 Setting the `REVIEWABLE_API_SECRET` environment variable
-(see the [configuration docs](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#security))
+(see the [configuration docs](config.md#security))
 enables the REST API located at `{REVIEWABLE_HOST_URL}/api/v1/{endpoint}`.
 
 #### Authorization

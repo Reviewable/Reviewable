@@ -12,7 +12,7 @@ Reviewable also continuously monitors the quality of the connection to Firebase,
 ![reviewable firebase connetion trouble](images/otherissues_4.png)
 
 
-If the connection remains poor for a long time, a modal overlay will block access to the app until things have improved, and warn you if there are unconfirmed writes that indicate your recent work may not have been saved.  You might want to check @reviewableio on Twitter for any outage announcements, or see if there are any Realtime Database issues over on the [Firebase Status page](https://status.firebase.google.com/).
+If the connection remains poor for a long time, a modal overlay will block access to the app until things have improved, and warn you if there are unconfirmed writes that indicate your recent work may not have been saved.  You might want to see if there are any Realtime Database issues over on the [Firebase Status page](https://status.firebase.google.com/).
 
 ![reviewable firebase connection trouble](images/otherissues_5.png)
 
