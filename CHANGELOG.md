@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> eliminate duplicate status checks that ran against the same commit, keeping only the latest one. <!-- server -->
+- <kbd>Fix:</kbd> prefix duplicate status check names with the workflow or app name to disambiguate them. <!-- server -->
 - <kbd>Upd:</kbd> Enable publish on push for reviews with only (non-passive) bot reviewers <!-- client -->
 
 <sub>2025 - 09</sub>
