@@ -30,6 +30,7 @@ Here's how we use the [GitHub authorizations](https://developer.github.com/apps/
 
 * `public_repo` — Reviewable will post pull request comments on your behalf, merge pull requests, delete branches on your request, and pin revision commits in the repo so they don't disappear if you rebase.
 * `repo` — Reviewable will list your private repos and organizations, read source code (only in the browser), read pull request metadata and comments, post pull request comments on your behalf, merge pull requests, delete branches on request, and pin revision commits in the repo so they don't disappear if you rebase.
+* `workflow` - Needed to deal with any pull request that include workflow files in `.github/workflows`, including for rebasing, merging, or even just querying whether it satisfies branch protection rules (!).
 * `admin:repo_hook` — Reviewable will add or remove an event hook when connecting or disconnecting a repo, so that Reviewable is notified of relevant events (e.g., pull request updates).
 * `admin:org_hook` — So that Reviewable is notified of relevant events — such as organization membership changes — Reviewable will add or remove an event hook when subscribing to a plan or unsubscribing from a plan.
 * `read:org` — Reviewable will get a list of the organizations of which you’re a member—even if your membership is private. Reviewable will also retrieve a list of all the repos which you can access as an organization member, and a list of your team memberships.
