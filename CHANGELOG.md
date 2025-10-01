@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't cross out bots in the participants panel. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix:</kbd> eliminate duplicate status checks that ran against the same commit, keeping only the latest one. <!-- server 4815 -->
