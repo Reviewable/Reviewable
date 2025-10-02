@@ -6,7 +6,7 @@
 
 <sub>2025 - 10</sub>
 
-- <kbd>Fix:</kbd> don't crash when trying to connect a repo without a `.github/workflows` directory. <!-- client 7715 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when trying to connect a repo without a `.github/workflows` directory. <!-- client 7715 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when navigating to a newly created review that hasn't determined its mergeability state yet. <!-- client 7714 -->
 - <kbd>Fix:</kbd> don't cross out bots in the participants panel. <!-- client 7712 -->
 - <kbd>Fix:</kbd> eliminate duplicate status checks that ran against the same commit, keeping only the latest one. <!-- server 4815 -->
