@@ -181,7 +181,7 @@ Some of the items on the toolbar have counters next to them. <span class="red la
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
 :::
 
-### File matrix <i class="files header icon"/>
+### File matrix <i class="files icon"/>
 
 The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
 
@@ -283,7 +283,7 @@ The specifics contents of the menu depend on the participant's status and your p
 
 ## Checks <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img">
 
-The checks panel tracks he current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.
+The checks panel tracks the current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.
 
 The donut chart icon in the header summarizes the relative proportion of <span class="green label">successful</span>, <span class="grey label">pending</span>, and <span class="orange label">optional</span> or <span class="red label">required</span> error / failure states.
 
