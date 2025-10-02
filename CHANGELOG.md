@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when navigating to a newly created review that hasn't determined its mergeability state yet. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix:</kbd> don't cross out bots in the participants panel. <!-- client 7712 -->
