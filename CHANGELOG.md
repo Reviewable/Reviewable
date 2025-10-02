@@ -1,3 +1,9 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid unnecessarily splitting revisions to accommodate GitHub-originated comments that have already been captured. <!-- server -->
+  > This could sometimes cause multiple revisions to be formed for a batch of commits pushed together, even if the review was set to "combine commits for review" style.
+- <kbd>Fix:</kbd> be more diligent about updating Reviewable's status for pull requests in the merge queue. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when navigating to a newly created review that hasn't determined its mergeability state yet. <!-- client 7714 -->
