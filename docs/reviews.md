@@ -24,7 +24,7 @@ It's possible for one person to be both the author and a reviewer in a “self-r
 
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or in the Conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
-Alternatively, you can publish individual drafts by clicking the <i class="send icon"/> icon at the bottom-right of the draft window. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch and them all at once instead. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"/>&nbsp;Pondering**.
+Alternatively, you can publish individual drafts by clicking the <i class="send icon"/> icon at the bottom-right of the draft panel. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch of drafts and publish them all at once. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"/>&nbsp;Pondering**.
 
 ::: tip
 If the pull request has [auto-merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request) turned on and publishing your review _might_ trigger it, the publish button will show a <i class="automerge icon"></i> icon and you'll need to click and hold to publish just like with the merge button.
@@ -123,7 +123,7 @@ Sending an individual comment (via its dedicated send button) doesn't affect def
 
 ## Merging a pull request {#merge}
 
-When a review is complete, you can merge the pull request directly from within Reviewable given sufficient permissions.
+When a review is complete, you can merge the pull request directly from within Reviewable given sufficient permissions. For larger reviews, you may see a victory graphic appear on the right side of the toolbar in celebration of a job well done.
 
 ![merge victory graphic](images/merge_2.png){width=311px}
 
@@ -165,15 +165,15 @@ The main part of the toolbar consists of various status indicators and links to 
 
 We'll now look at the items from left to right.
 
-### Information panel links  <i class="pull request icon"/> <i class="participants icon"/> <i class="circle-dot icon"/> (Donut icon)
+### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img">
 
-The first three items link to the corresponding panels: <i class="pull request icon"/> [pull request details](#pull-request-details), <i class="participants icon"/> [participants](#participants), and <i class="circle-dot icon"/> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
+The first three items link to the corresponding panels: <i class="pull request icon"/> [pull request details](#pull-request-details), <i class="participants icon"/> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
 
 ### Diffs <i class="diff icon"/>
 
 This item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  The revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs**, or adjust the diff bounds manually yourself.
 
-### Counters <span class="grey label">1</span> <span class="red label">2</span> <span class='grey label deferred'>3</span>
+### Counters <span class="grey label header">1</span> <span class="red label header">2</span> <span class='grey label deferred header'>3</span>
 
 Some of the items on the toolbar have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
 
@@ -181,7 +181,7 @@ Some of the items on the toolbar have counters next to them. <span class="red la
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
 :::
 
-### Files matrix <i class="files header icon"/>
+### File matrix <i class="files header icon"/>
 
 The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
 
@@ -202,7 +202,7 @@ The main review discussion is always considered resolved.
 ### Drafts <i class="drafts icon"/>
 The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon <i class="drafts icon"/> to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
 
-## Pull request details
+## Pull request details <i class="pull request icon"/>
 
 The Pull request panel appears at the very top of the review page. It shows key information about the pull request: 
 
@@ -225,7 +225,7 @@ You can enter anything into the command field, not just directives.  This can be
 Lastly, you’ll see the pull request’s description. If it’s long, it becomes collapsible using the arrow to the left of the field. The same applies to the pull request details and labels section above.
 
 
-## Participants
+## Participants <i class="participants icon"/>
 
 The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"/>&nbsp;button. You can sort participants by each category using the <i class="icon sort"/>&nbsp;button.
 
@@ -281,7 +281,7 @@ The specifics contents of the menu depend on the participant's status and your p
 - A link to the user's GitHub profile.
 - **Dismiss from all discussions**, which will dismiss the participant from all unresolved discussions they are engaged in. You can undo this action until you publish.
 
-## Checks
+## Checks <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img">
 
 The checks panel tracks he current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.
 
