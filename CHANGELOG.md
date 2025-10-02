@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't crash when trying to connect a repo without a `.github/workflows` directory. <!-- client -->
 - <kbd>Fix:</kbd> avoid unnecessarily splitting revisions to accommodate GitHub-originated comments that have already been captured. <!-- server -->
   > This could sometimes cause multiple revisions to be formed for a batch of commits pushed together, even if the review was set to "combine commits for review" style.
 - <kbd>Fix:</kbd> be more diligent about updating Reviewable's status for pull requests in the merge queue. <!-- server -->
