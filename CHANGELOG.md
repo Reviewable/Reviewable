@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> fix a bug that made ref trimming ineffective. Missed refs will be trimmed in the next monthly sweep. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix:</kbd> cache team memberships to significantly reduce GitHub API requests, especially in connected repositories. <!-- server 4817 -->
