@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> fix a bug that made ref trimming ineffective. Missed refs will be trimmed in the next monthly sweep. <!-- server -->
-
 <sub>2025 - 10</sub>
 
+- <kbd>Adm:</kbd> fix a bug that made ref trimming ineffective. Missed refs will be trimmed in the next monthly sweep. <!-- server 4818 -->
 - <kbd>Fix:</kbd> cache team memberships to significantly reduce GitHub API requests, especially in connected repositories. <!-- server 4817 -->
 - <kbd>Fix:</kbd> avoid unnecessarily splitting revisions to accommodate GitHub-originated comments that have already been captured. <!-- server 4817 -->
   > This could sometimes cause multiple revisions to be formed for a batch of commits pushed together, even if the review was set to "combine commits for review" style.
