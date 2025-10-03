@@ -15,6 +15,21 @@
   --c-danger: var(--red);
 }
 
+main img {
+  border-radius: 5px;
+  box-shadow: 0 3px 5px 0 hsl(var(--fg-base-hsl), 0.13);
+}
+
+.icon-img {
+  box-shadow: none !important;
+  border-radius: 0;
+  display: inline-block;
+  height: 1em;
+  vertical-align: text-bottom;
+  position: relative;
+  top: -2px;
+}
+
 code {
   font-size: 0.85em;
 }
@@ -41,6 +56,14 @@ header .title {
 
 .VPLocalNav .menu::after {
   content: "Table of contents";
+}
+
+.dark .VPSidebar nav#VPSidebarNav {
+  border-top: 1px solid rgba(140, 132, 163, .4);
+}
+
+.dark .VPSidebar .group + .group {
+  border-top: 1px solid rgba(140, 132, 163, .4);
 }
 
 .VPSidebarItem .text {
@@ -216,6 +239,15 @@ header .title {
     var(--red) 33.3%,
     var(--red) 66.6%
   );
+}
+
+.header.label {
+  font-size:0.81255em;
+  line-height: 1;
+  border-radius: 0.3em;
+  padding: 1px 0.55em 2.5px;
+  display: inline-block;
+  vertical-align: .09em;
 }
 
 i.icon {
