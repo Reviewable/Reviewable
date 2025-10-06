@@ -24,7 +24,7 @@ It's possible for one person to be both the author and a reviewer in a “self-r
 
 As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or in the Conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
-Alternatively, you can publish individual drafts by clicking the <i class="send icon"/> icon at the bottom-right of the draft panel. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch of drafts and publish them all at once. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"/>&nbsp;Pondering**.
+Alternatively, you can publish individual drafts by clicking the <i class="send icon"></i> icon at the bottom-right of the draft panel. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch of drafts and publish them all at once. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"></i>&nbsp;Pondering**.
 
 ::: tip
 If the pull request has [auto-merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request) turned on and publishing your review _might_ trigger it, the publish button will show a <i class="automerge icon"></i> icon and you'll need to click and hold to publish just like with the merge button.
@@ -40,7 +40,7 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 ### Approval levels
 
-You can click the <i class="configure icon"/> icon at the top-right of the toolbar or the **<i class="configure icon"/>&nbsp;Publish options** on the Conclusion panel to change approval levels.
+You can click the <i class="configure icon"></i> icon at the top-right of the toolbar or the **<i class="configure icon"></i>&nbsp;Publish options** on the Conclusion panel to change approval levels.
 
 ![reviewable set the approval level](images/publish_1.png){width=628px}
 
@@ -62,7 +62,7 @@ If you choose **Comment**, any previous **Approve** or **Request changes** will 
 
 ### Requested reviewers synchronization {#sync-requested-reviewers}
 
-Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box under **<i class="configure icon"/>&nbsp;Publish options**. Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
+Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box under **<i class="configure icon"></i>&nbsp;Publish options**. Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
 
 ::: danger
 It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is on Reviewable's list of awaited reviewers.  Also, only users with push permissions on the repo can request reviewers.
@@ -89,7 +89,7 @@ If *Publish on Push* isn't available, it could be due to one of the following re
 
 ### Conclusion
 
-For your convenience, Reviewable provides a Conclusion panel at the bottom of the page so you don't have to scroll back up to the **<i class="discussions icon"/>&nbsp;Top level discussions** panel to leave a final comment.
+For your convenience, Reviewable provides a Conclusion panel at the bottom of the page so you don't have to scroll back up to the **<i class="discussions icon"></i>&nbsp;Top level discussions** panel to leave a final comment.
 
 ![conclusion](images/review_summary.png)
 
@@ -137,7 +137,7 @@ A review is considered complete when the first defined condition of the followin
 
 To merge the pull request, click and hold the button for a couple seconds until the arming indicator fills with yellow and starts pulsing, then release.  This procedure is in place to reduce the chances of accidentally merging a pull request without requiring a separate confirmation.
 
-You can set merge options and edit the merge commit message by clicking **<i class="configure icon"/>&nbsp;Merge options**:
+You can set merge options and edit the merge commit message by clicking **<i class="configure icon"></i>&nbsp;Merge options**:
 
 ![merge options](images/merge_1.png){width=500px}
 
@@ -167,9 +167,9 @@ We'll now look at the items from left to right.
 
 ### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img">
 
-The first three items link to the corresponding panels: <i class="pull request icon"/> [pull request details](#pull-request-details), <i class="participants icon"/> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
+The first three items link to the corresponding panels: <i class="pull request icon"></i> [pull request details](#pull-request-details), <i class="participants icon"></i> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
 
-### Diffs <i class="diff icon"/>
+### Diffs <i class="diff icon"></i>
 
 This item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  The revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs**, or adjust the diff bounds manually yourself.
 
@@ -181,7 +181,7 @@ Some of the items on the toolbar have counters next to them. <span class="red la
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
 :::
 
-### File matrix <i class="files icon"/>
+### File matrix <i class="files icon"></i>
 
 The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
 
@@ -191,7 +191,7 @@ The **files counter** displays the number of files that remain to be reviewed at
 If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
 :::
 
-### Discussions <i class="discussions icon"/>
+### Discussions <i class="discussions icon"></i>
 
 The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
@@ -199,10 +199,10 @@ The **discussions counter** display the number of discussions that are waiting f
 The main review discussion is always considered resolved.
 :::
 
-### Drafts <i class="drafts icon"/>
-The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon <i class="drafts icon"/> to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
+### Drafts <i class="drafts icon"></i>
+The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon <i class="drafts icon"></i> to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
 
-## Pull request details <i class="pull request icon"/>
+## Pull request details <i class="pull request icon"></i>
 
 The Pull request panel appears at the very top of the review page. It shows key information about the pull request: 
 
@@ -225,9 +225,9 @@ You can enter anything into the command field, not just directives.  This can be
 Lastly, you’ll see the pull request’s description. If it’s long, it becomes collapsible using the arrow to the left of the field. The same applies to the pull request details and labels section above.
 
 
-## Participants <i class="participants icon"/>
+## Participants <i class="participants icon"></i>
 
-The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"/>&nbsp;button. You can sort participants by each category using the <i class="icon sort"/>&nbsp;button.
+The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i>&nbsp;button. You can sort participants by each category using the <i class="icon sort"></i>&nbsp;button.
 
 ![reviewable review participants panel](images/participants_panel_1.png)
 
@@ -235,26 +235,26 @@ For each participant the following information is provided:
 
 Icon | Participant is:
 :----:|---------
-<i class="icon waiting on"/>&nbsp;| is **responsible for the next step** of this review.
-<i class="icon waiting on circular no data"/>&nbsp;| is **not being waited on** in the review.
-<i class="icon sanction approved"/>&nbsp;| has **approved the pull request**.
-<i class="icon sanction blocked"/>&nbsp;| has **requested changes** to the pull request.
+<i class="icon waiting on"></i>&nbsp;| is **responsible for the next step** of this review.
+<i class="icon waiting on circular no data"></i>&nbsp;| is **not being waited on** in the review.
+<i class="icon sanction approved"></i>&nbsp;| has **approved the pull request**.
+<i class="icon sanction blocked"></i>&nbsp;| has **requested changes** to the pull request.
 <img src="./images/lgtm.png" style="max-width: 3em;"/> | says 'Everything **looks good to me**!'
-<i class="icon disposition blocking"/>&nbsp;| is **blocking a discussion** in the review.
-<i class="icon participant status circular no data"/>&nbsp;| has **no approval-related status**.
-<i class="icon author"/>&nbsp;| is an **author of the pull request**.
-<i class="icon reviewer"/>&nbsp;| is a **reviewer**.
-<i class="icon review requested"/>&nbsp;| is a **requested reviewer** active in the review.
-<i class="icon review requested inactive"/>&nbsp;| is a **requested reviewer** not yet active in the review.
-<i class="icon mentionee"/>&nbsp;| has only been **@-mentioned** in a discussion.
-<i class="icon passive"/>&nbsp;| is **not directly participating** in the review.
-<i class="icon assignee left"/>&nbsp;<i class="icon assignee right"/>&nbsp;| is **assigned to this pull request**.
-<i class="icon commit"/>&nbsp;|  has either **authored or submitted a commit** in this pull request.
-<i class="icon commit circular no data"/>&nbsp;| was **not involved with commits** in this pull request.
-<i class="icon active circular no data"/>&nbsp;| is **not yet active in the review**.
-<i class="icon drafts"/>&nbsp;| has **pending comments drafted** that are not yet published.
-<i class="icon drafts circular no data"/>&nbsp;| has **no pending drafts**.
-<i class="icon comments circular no data"/>&nbsp;| is **not engaged in any discussions**.
+<i class="icon disposition blocking"></i>&nbsp;| is **blocking a discussion** in the review.
+<i class="icon participant status circular no data"></i>&nbsp;| has **no approval-related status**.
+<i class="icon author"></i>&nbsp;| is an **author of the pull request**.
+<i class="icon reviewer"></i>&nbsp;| is a **reviewer**.
+<i class="icon review requested"></i>&nbsp;| is a **requested reviewer** active in the review.
+<i class="icon review requested inactive"></i>&nbsp;| is a **requested reviewer** not yet active in the review.
+<i class="icon mentionee"></i>&nbsp;| has only been **@-mentioned** in a discussion.
+<i class="icon passive"></i>&nbsp;| is **not directly participating** in the review.
+<i class="icon assignee left"></i>&nbsp;<i class="icon assignee right"></i>&nbsp;| is **assigned to this pull request**.
+<i class="icon commit"></i>&nbsp;|  has either **authored or submitted a commit** in this pull request.
+<i class="icon commit circular no data"></i>&nbsp;| was **not involved with commits** in this pull request.
+<i class="icon active circular no data"></i>&nbsp;| is **not yet active in the review**.
+<i class="icon drafts"></i>&nbsp;| has **pending comments drafted** that are not yet published.
+<i class="icon drafts circular no data"></i>&nbsp;| has **no pending drafts**.
+<i class="icon comments circular no data"></i>&nbsp;| is **not engaged in any discussions**.
 
 ::: tip
 If a name is _crossed out_ then that user is not a collaborator on the repository and doesn't have access to the review.
@@ -262,7 +262,7 @@ If a name is _crossed out_ then that user is not a collaborator on the repositor
 
 ### Waiting on
 
-Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"/>&nbsp;pointing hand.  The list is roughly the union of the following:
+Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"></i>&nbsp;pointing hand.  The list is roughly the union of the following:
 - All participants involved in unresolved discussions that are [unreplied](discussions.md#unreplied-discussions) for them.
 - All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.
 - All requested reviewers, or if none then all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers.
