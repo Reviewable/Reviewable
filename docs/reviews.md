@@ -165,7 +165,7 @@ The main part of the toolbar consists of various status indicators and links to 
 
 We'll now look at the items from left to right.
 
-### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img">
+### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img">
 
 The first three items link to the corresponding panels: <i class="pull request icon"></i> [pull request details](#pull-request-details), <i class="participants icon"></i> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
 
@@ -281,7 +281,7 @@ The specifics contents of the menu depend on the participant's status and your p
 - A link to the user's GitHub profile.
 - **Dismiss from all discussions**, which will dismiss the participant from all unresolved discussions they are engaged in. You can undo this action until you publish.
 
-## Checks <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img">
+## Checks <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img">
 
 The checks panel tracks the current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.
 
