@@ -165,15 +165,15 @@ The main part of the toolbar consists of various status indicators and links to 
 
 We'll now look at the items from left to right.
 
-### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img">
+### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img"> {#information-panels}
 
 The first three items link to the corresponding panels: <i class="pull request icon"></i> [pull request details](#pull-request-details), <i class="participants icon"></i> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
 
-### Diffs <i class="diff icon"></i>
+### Diffs <i class="diff icon"></i> {#diffs}
 
 This item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  The revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs**, or adjust the diff bounds manually yourself.
 
-### Counters <span class="grey label header">1</span> <span class="red label header">2</span> <span class='grey label deferred header'>3</span>
+### Counters <span class="grey label header">1</span> <span class="red label header">2</span> <span class='grey label deferred header'>3</span> {#counters}
 
 Some of the items on the toolbar have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
 
@@ -181,7 +181,7 @@ Some of the items on the toolbar have counters next to them. <span class="red la
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
 :::
 
-### File matrix <i class="files icon"></i>
+### File matrix <i class="files icon"></i> {#file-matrix}
 
 The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
 
@@ -191,7 +191,7 @@ The **files counter** displays the number of files that remain to be reviewed at
 If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
 :::
 
-### Discussions <i class="discussions icon"></i>
+### Discussions <i class="discussions icon"></i> {#discussions}
 
 The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
@@ -199,10 +199,10 @@ The **discussions counter** display the number of discussions that are waiting f
 The main review discussion is always considered resolved.
 :::
 
-### Drafts <i class="drafts icon"></i>
+### Drafts <i class="drafts icon"></i> {#drafts}
 The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon <i class="drafts icon"></i> to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
 
-## Pull request details <i class="pull request icon"></i>
+## Pull request details <i class="pull request icon"></i> {#pull-request-details}
 
 The Pull request panel appears at the very top of the review page. It shows key information about the pull request: 
 
@@ -225,7 +225,7 @@ You can enter anything into the command field, not just directives.  This can be
 Lastly, you’ll see the pull request’s description. If it’s long, it becomes collapsible using the arrow to the left of the field. The same applies to the pull request details and labels section above.
 
 
-## Participants <i class="participants icon"></i>
+## Participants <i class="participants icon"></i> {#participants}
 
 The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i>&nbsp;button. You can sort participants by each category using the <i class="icon sort"></i>&nbsp;button.
 
@@ -281,7 +281,7 @@ The specifics contents of the menu depend on the participant's status and your p
 - A link to the user's GitHub profile.
 - **Dismiss from all discussions**, which will dismiss the participant from all unresolved discussions they are engaged in. You can undo this action until you publish.
 
-## Checks <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img">
+## Checks <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img"> {#checks}
 
 The checks panel tracks the current condition of GitHub's CI commit statuses and checks, mergeability, and review completion.
 
