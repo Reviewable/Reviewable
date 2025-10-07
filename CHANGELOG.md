@@ -1,3 +1,9 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> process pull request mergeability updates in a timely manner, even if there was a recent push to the base branch. <!-- server -->
+  > While at it, we also tweaked bulk mergeability sync throttling to depend on how recently a review was accessed.
+  > This should allow for faster updates for active reviews without overwhelming GitHub with requests.
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm:</kbd> fix a bug that made ref trimming ineffective. Missed refs will be trimmed in the next monthly sweep. <!-- server 4818 -->
