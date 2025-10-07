@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> process pull request mergeability updates in a timely manner, even if there was a recent push to the base branch. <!-- server -->
-  > While at it, we also tweaked bulk mergeability sync throttling to depend on how recently a review was accessed.
-  > This should allow for faster updates for active reviews without overwhelming GitHub with requests.
-
 <sub>2025 - 10</sub>
 
+- <kbd>Upd:</kbd> process pull request mergeability updates in a timely manner, even if there was a recent push to the base branch. <!-- server 4819 -->
+  > While at it, we also tweaked bulk mergeability sync throttling to depend on how recently a review was accessed.
+  > This should allow for faster updates for active reviews without overwhelming GitHub with requests.
 - <kbd>Adm:</kbd> fix a bug that made ref trimming ineffective. Missed refs will be trimmed in the next monthly sweep. <!-- server 4818 -->
 - <kbd>Fix:</kbd> cache team memberships to significantly reduce GitHub API requests, especially in connected repositories. <!-- server 4817 -->
 - <kbd>Fix:</kbd> avoid unnecessarily splitting revisions to accommodate GitHub-originated comments that have already been captured. <!-- server 4817 -->
