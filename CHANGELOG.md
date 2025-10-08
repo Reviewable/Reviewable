@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't crash when a pull request review lacks an author. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Upd:</kbd> process pull request mergeability updates in a timely manner, even if there was a recent push to the base branch. <!-- server 4819 -->
