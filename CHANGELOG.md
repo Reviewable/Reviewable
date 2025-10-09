@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't crash when a pull request review lacks an author. <!-- client -->
-
 <sub>2025 - 10</sub>
 
+- <kbd>Fix:</kbd> don't crash when a pull request review lacks an author. <!-- client 7718 -->
 - <kbd>Upd:</kbd> process pull request mergeability updates in a timely manner, even if there was a recent push to the base branch. <!-- server 4819 -->
   > While at it, we also tweaked bulk mergeability sync throttling to depend on how recently a review was accessed.
   > This should allow for faster updates for active reviews without overwhelming GitHub with requests.
