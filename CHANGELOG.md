@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> allow `#rM..rN` revision bounds on all review links (not just specific-file ones) and support `base` and `last` as valid bound names. <!-- client -->
-- <kbd>Fix:</kbd> don't crash with an internal error when a file in a provisional revision changes between being reverted and not reverted. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Allow custom completion conditions to run for personal private repositories. <!-- server -->
-- <kbd>Fix:</kbd> collapse file matrix row component and improve render time by roughly 25%. <!-- client -->
 
 <sub>2025 - 10</sub>
 
+- <kbd>Upd:</kbd> allow `#rM..rN` revision bounds on all review links (not just specific-file ones) and support `base` and `last` as valid bound names. <!-- client 7719 -->
+- <kbd>Fix:</kbd> don't crash with an internal error when a file in a provisional revision changes between being reverted and not reverted. <!-- client 7719 -->
+- <kbd>Fix:</kbd> collapse file matrix row component and improve render time by roughly 25%. <!-- client 7719 -->
 - <kbd>Fix:</kbd> don't crash when a pull request review lacks an author. <!-- client 7718 -->
 - <kbd>Upd:</kbd> process pull request mergeability updates in a timely manner, even if there was a recent push to the base branch. <!-- server 4819 -->
   > While at it, we also tweaked bulk mergeability sync throttling to depend on how recently a review was accessed.
