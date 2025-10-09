@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't crash with an internal error when a file in a provisional revision changes between being reverted and not reverted. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Allow custom completion conditions to run for personal private repositories. <!-- server -->
 - <kbd>Fix:</kbd> collapse file matrix row component and improve render time by roughly 25%. <!-- client -->
 
