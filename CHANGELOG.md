@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> Allow custom completion conditions to run for personal private repositories. <!-- server -->
 - <kbd>Fix:</kbd> collapse file matrix row component and improve render time by roughly 25%. <!-- client -->
 
 <sub>2025 - 10</sub>
