@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> ensure that the completion condition is executed if multiple users race when publishing comments. <!-- server -->
-- <kbd>Adm:</kbd> skip bulk mergeability or condition syncs for stale (> 4 weeks) unmergeable reviews.  These are likely abandoned so they're not worth wasting time on.  They'll be refreshed if somebody visits them. <!-- server -->
-- <kbd>Adm:</kbd> reduce burst GitHub API request pressure when automatically archiving reviews. <!-- server -->
-- <kbd>Fix:</kbd> avoid duplicate `[archived]` prefix on archived review status. <!-- server -->
-
 <sub>2025 - 10</sub>
 
+- <kbd>Fix:</kbd> ensure that the completion condition is executed if multiple users race when publishing comments. <!-- server 4823 -->
+- <kbd>Adm:</kbd> skip bulk mergeability or condition syncs for stale (> 4 weeks) unmergeable reviews.  These are likely abandoned so they're not worth wasting time on.  They'll be refreshed if somebody visits them. <!-- server 4823 -->
+- <kbd>Adm:</kbd> reduce burst GitHub API request pressure when automatically archiving reviews. <!-- server 4823 -->
+- <kbd>Fix:</kbd> avoid duplicate `[archived]` prefix on archived review status. <!-- server 4823 -->
 - <kbd>Adm<i>(saas)</i>:</kbd> avoid triggering reconciliation every time we check mergeability. <!-- server 4822 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Allow custom completion conditions to run for personal private repositories. <!-- server 4821 -->
 - <kbd>Upd:</kbd> allow `#rM..rN` revision bounds on all review links (not just specific-file ones) and support `base` and `last` as valid bound names. <!-- client 7719 -->
