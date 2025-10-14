@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> skip bulk mergeability or condition syncs for stale (> 4 weeks) unmergeable reviews.  These are likely abandoned so they're not worth wasting time on.  They'll be refreshed if somebody visits them. <!-- server -->
 - <kbd>Adm:</kbd> reduce burst GitHub API request pressure when automatically archiving reviews. <!-- server -->
 - <kbd>Fix:</kbd> avoid duplicate `[archived]` prefix on archived review status. <!-- server -->
 
