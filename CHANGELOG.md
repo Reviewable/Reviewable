@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid duplicate `[archived]` prefix on archived review status. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm<i>(saas)</i>:</kbd> avoid triggering reconciliation every time we check mergeability. <!-- server 4822 -->
