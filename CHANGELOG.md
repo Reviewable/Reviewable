@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm<i>(saas)</i>:</kbd> avoid triggering reconciliation every time we check mergeability. <!-- server -->
-
 <sub>2025 - 10</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> avoid triggering reconciliation every time we check mergeability. <!-- server 4822 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Allow custom completion conditions to run for personal private repositories. <!-- server 4821 -->
 - <kbd>Upd:</kbd> allow `#rM..rN` revision bounds on all review links (not just specific-file ones) and support `base` and `last` as valid bound names. <!-- client 7719 -->
 - <kbd>Fix:</kbd> don't crash with an internal error when a file in a provisional revision changes between being reverted and not reverted. <!-- client 7719 -->
