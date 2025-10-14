@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm<i>(saas)</i>:</kbd> avoid triggering reconciliation every time we check mergeability. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> Allow custom completion conditions to run for personal private repositories. <!-- server 4821 -->
