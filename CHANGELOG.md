@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> reduce burst GitHub API request pressure when automatically archiving reviews. <!-- server -->
 - <kbd>Fix:</kbd> avoid duplicate `[archived]` prefix on archived review status. <!-- server -->
 
 <sub>2025 - 10</sub>
