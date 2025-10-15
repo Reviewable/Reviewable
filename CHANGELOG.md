@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> set review completion to "Checking review status..." in a timely manner after publishing. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm:</kbd> delete old, corrupted review stubs instead of trying to archive them. <!-- server 4828 -->
