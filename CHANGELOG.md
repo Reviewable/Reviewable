@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> cut off another source of "encryption not set up" errors. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix:</kbd> ensure that the completion condition is executed if multiple users race when publishing comments. <!-- server 4823 -->
