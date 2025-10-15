@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> delete old, corrupted review stubs instead of trying to archive them. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm:</kbd> process status and check updates more efficiently, most of which should now require no GitHub API calls. This new code will only kick in after the first reviews sweep post-deployment (within 30 days). <!-- server 4824 -->
