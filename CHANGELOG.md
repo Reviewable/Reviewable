@@ -2,10 +2,10 @@
 
 - <kbd>Adm:</kbd> process status and check updates more efficiently, most of which should now require no GitHub API calls. This new code will only kick in after the first reviews sweep post-deployment (within 30 days). <!-- server -->
 - <kbd>Fix:</kbd> archive reviews that were always in an error state. <!-- server -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> cut off another source of "encryption not set up" errors. <!-- client -->
 
 <sub>2025 - 10</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> cut off another source of "encryption not set up" errors. <!-- client 7720 -->
 - <kbd>Fix:</kbd> ensure that the completion condition is executed if multiple users race when publishing comments. <!-- server 4823 -->
 - <kbd>Adm:</kbd> skip bulk mergeability or condition syncs for stale (> 4 weeks) unmergeable reviews.  These are likely abandoned so they're not worth wasting time on.  They'll be refreshed if somebody visits them. <!-- server 4823 -->
 - <kbd>Adm:</kbd> reduce burst GitHub API request pressure when automatically archiving reviews. <!-- server 4823 -->
