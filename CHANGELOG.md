@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't retry forever when a `github-status.creator` lacks permission to update Reviewable's GitHub status.  Instead, indicate the error in Reviewable's own Checks panel. <!-- server -->
+- <kbd>Fix:</kbd> execute the completion condition correctly when branch protection or mergeability cannot be determined, or when input pragmas are present. <!-- server -->
 - <kbd>Fix:</kbd> set review completion to "Checking review status..." in a timely manner after publishing. <!-- server -->
 
 <sub>2025 - 10</sub>
