@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't crash on the Repositories page if the user's username was recently changed. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix:</kbd> don't retry forever when a `github-status.creator` lacks permission to update Reviewable's GitHub status.  Instead, indicate the error in Reviewable's own Checks panel. <!-- server 4829 -->
