@@ -100,6 +100,7 @@ Outbound email server configuration, used to send the occasional admin or error 
 * `REVIEWABLE_SMTP_URL`: The URL of an SMTP server to use when sending administrative emails.  (Review notifications are sent via GitHub.)  Use the format `smtp://username:password@smtp.example.com:port/`.  The connection will be automatically secured if the server supports it, but you can append `?requireTLS=true` if you want to force `STARTTLS`, or use `https` for a direct TLS connection on port 465.  If missing, Reviewable will attempt to send emails by connecting directly to the recipient's MX server, but this is not very reliable (no retries, no DKIM/SPF so messages likely to be treated as spam).
 * `REVIEWABLE_SMTP_FROM`: The `From` email address to set on outgoing messages.  Can be either a plain email address or the full `"Sender Name" <sender@example.com>` syntax.  If missing, Reviewable will default to `Reviewable <support@reviewable.io>`.
 * `REVIEWABLE_SMTP_BCC`: A `Bcc` email address to copy each message to, useful for keeping an eye on the emails that Reviewable is sending.  If missing, no copies are sent.
+* `REVIEWABLE_SEATS_WARNING_THRESHOLD`: Reviewable will notify the subscription administrator once the number of remaining seats drops below the configured threshold. Accepts either an absolute seat count (e.g. `3`) or a percentage string (e.g. `5%`) of seats remaining. Defaults to 5% of seats or 3 seats left whichever is reached first.
 
 ##### File uploads
 
@@ -210,4 +211,3 @@ Extra configuration for optimizing the server runtime.
 Reviewable doesn't require any special configuration of your GitHub Enterprise instance; it'll happily work with any organizations and repositories you have set up.  If you have GHES set up in private mode make sure to set `REVIEWABLE_PRIVATE_MODE` also, as documented above.
 
 One other thing to be aware of is that Reviewable uses `refs/reviewable` to pin commits in case they get force-pushed out of the way.  This is usually transparent and all but invisible, but something to take into account if you're adding a pre-receive hook to your installation.  To keep the number of these refs under control you should set `REVIEWABLE_REFS_DELETION_DELAY` as documented above, otherwise you may find your syncs getting bogged down as `git` transmits all known refs.
-

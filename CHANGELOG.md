@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm<i>(enterprise)</i>:</kbd> add support for custom license usage warning thresholds via `REVIEWABLE_SEATS_WARNING_THRESHOLD`.
-
 <sub>2025 - 10</sub>
 
+- <kbd>Adm<i>(enterprise)</i>:</kbd> make seat exhaustion warnings configurable via `REVIEWABLE_SEATS_WARNING_THRESHOLD` environment variable. <!-- server 4832 -->
 - <kbd>Fix:</kbd> avoid a serious (and sometimes fatal) client-side performance degradation in reviews with many revisions, renamed files, and review marks. <!-- client 7723 -->
 - <kbd>Fix:</kbd> ensure the various state watermarks (`DRAFT`, etc.) don't get cut off. <!-- client 7723 -->
 - <kbd>Fix:</kbd> don't crash on the Repositories page if the user's username was recently changed. <!-- client 7723 -->
