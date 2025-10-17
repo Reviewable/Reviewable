@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid a serious (and sometimes fatal) client-side performance degradation in reviews with many revisions, renamed files, and review marks. <!-- client -->
 - <kbd>Fix:</kbd> ensure the various state watermarks (`DRAFT`, etc.) don't get cut off. <!-- client -->
 - <kbd>Fix:</kbd> don't crash on the Repositories page if the user's username was recently changed. <!-- client -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> add support for custom license usage warning thresholds via `REVIEWABLE_SEATS_WARNING_THRESHOLD`.
