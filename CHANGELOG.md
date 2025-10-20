@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep the panel width stable when changing diff bounds in the file matrix in its popup form. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm<i>(enterprise)</i>:</kbd> make seat exhaustion warnings configurable via `REVIEWABLE_SEATS_WARNING_THRESHOLD` environment variable. <!-- server 4832 -->
