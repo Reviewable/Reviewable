@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> populate the dashboard with reviews in GHES 3.17.6 (and possibly other 3.17.x versions too). <!-- client -->
 - <kbd>Fix:</kbd> keep the panel width stable when changing diff bounds in the file matrix in its popup form. <!-- client -->
 
 <sub>2025 - 10</sub>
