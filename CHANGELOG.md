@@ -1,5 +1,7 @@
 <sub>2025 - 10</sub>
 
+<sub>**Enterprise release 4832.7725** (min 3340.5125 GHE ^2.19 || ^3) 2025-10-22 <!-- enterprise 4832.7725 --></sub>
+
 - <kbd>Upd:</kbd> sync bot dispostion to "satisfied" if thread is resolved on GitHub. <!-- server 4833 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> populate the dashboard with reviews in GHES 3.17.6 (and possibly other 3.17.x versions too). <!-- client 7725 -->
 - <kbd>Fix:</kbd> keep the panel width stable when changing diff bounds in the file matrix in its popup form. <!-- client 7725 -->
