@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> Disposition changes via email replies were ignored <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix:</kbd> recover gracefully when a completion condition asks for reviewers to be requested/unrequested and Reviewable's notion of current reviewers differs from GitHub's. <!-- server 4837 -->
