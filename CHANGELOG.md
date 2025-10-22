@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> sync bot dispostion to "satisfied" if thread is resolved on GitHub. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Fix<i>(enterprise)</i>:</kbd> populate the dashboard with reviews in GHES 3.17.6 (and possibly other 3.17.x versions too). <!-- client 7725 -->
