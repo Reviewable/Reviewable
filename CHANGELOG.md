@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> recover gracefully when a completion condition asks for reviewers to be requested/unrequested and Reviewable's notion of current reviewers differs from GitHub's. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Upd:</kbd> sync bot dispostion to "satisfied" if thread is resolved on GitHub. <!-- server 4833 -->
