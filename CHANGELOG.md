@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> limit concurrency when processing a long list of pull requests, to avoid triggering Firebase timeouts. <!-- server -->
 - <kbd>Fix:</kbd> Disposition changes via email replies were ignored <!-- server -->
 
 <sub>2025 - 10</sub>
