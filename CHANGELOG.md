@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> fix the Firebase connection liveness check to work in Enterprise.  While at it, double the frequency to 15s, tighten the timeout to 60s, and bounce the connection instead of restarting the server if it fails. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm:</kbd> limit concurrency when processing a long list of pull requests, to avoid triggering Firebase timeouts. <!-- server 4838 -->
