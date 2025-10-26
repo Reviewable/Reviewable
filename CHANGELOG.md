@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> fix branch protection caching, so it actually reduces GitHub API calls as promised. <!-- server -->
-- <kbd>Adm:</kbd> fix the Firebase connection liveness check to work in Enterprise.  While at it, double the frequency to 15s, tighten the timeout to 60s, and bounce the connection instead of restarting the server if it fails. <!-- server -->
-
 <sub>2025 - 10</sub>
 
+- <kbd>Adm:</kbd> fix branch protection caching, so it actually reduces GitHub API calls as promised. <!-- server 4840 -->
+- <kbd>Adm:</kbd> fix the Firebase connection liveness check to work in Enterprise.  While at it, double the frequency to 15s, tighten the timeout to 60s, and bounce the connection instead of restarting the server if it fails. <!-- server 4840 -->
 - <kbd>Adm:</kbd> limit concurrency when processing a long list of pull requests, to avoid triggering Firebase timeouts. <!-- server 4838 -->
 - <kbd>Fix:</kbd> Disposition changes via email replies were ignored <!-- server 4838 -->
 - <kbd>Upd:</kbd> sync bot dispostion to "satisfied" if thread is resolved on GitHub. <!-- server 4833 -->
