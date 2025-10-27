@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> log more timing details when syncing a pull request. <!-- server -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm:</kbd> fix branch protection caching, so it actually reduces GitHub API calls as promised. <!-- server 4840 -->
