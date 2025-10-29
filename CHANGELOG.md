@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> use a cache when checking membership in a contributor team constraining a subscription.  This should greatly reduce GitHub API quota usage in cases where the contributor team is small compared to the number of other contributors in a connected repository.. <!-- server -->
 - <kbd>Fix:</kbd> center arcs on revision cells in file headers. <!-- client -->
 - <kbd>Upd:</kbd> improve heuristic mapping of prior revisions for interactive rebases with fixups. <!-- server -->
 - <kbd>Fix:</kbd> don't corrupt the review structure when compacting certain reviews with renamed files, and recover from such corruption if it occurred previously. <!-- server -->
