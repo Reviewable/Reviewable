@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> force all files to show when following a review URL with embedded diff bounds. <!-- client -->
 - <kbd>Adm:</kbd> log more timing details when syncing a pull request. <!-- server -->
 
 <sub>2025 - 10</sub>
