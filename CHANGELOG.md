@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm<i>(saas)</i>:</kbd> use a cache when checking membership in a contributor team constraining a subscription.  This should greatly reduce GitHub API quota usage in cases where the contributor team is small compared to the number of other contributors in a connected repository.. <!-- server -->
-- <kbd>Upd:</kbd> improve heuristic mapping of prior revisions for interactive rebases with fixups. <!-- server -->
-- <kbd>Fix:</kbd> don't corrupt the review structure when compacting certain reviews with renamed files, and recover from such corruption if it occurred previously. <!-- server -->
-  > No data was lost in the corrupted reviews but it could cause the completion condition to always crash.
-- <kbd>Adm:</kbd> log more timing details when syncing a pull request. <!-- server -->
-
 <sub>2025 - 10</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> use a cache when checking membership in a contributor team constraining a subscription.  This should greatly reduce GitHub API quota usage in cases where the contributor team is small compared to the number of other contributors in a connected repository.. <!-- server 4841 -->
+- <kbd>Upd:</kbd> improve heuristic mapping of prior revisions for interactive rebases with fixups. <!-- server 4841 -->
+- <kbd>Fix:</kbd> don't corrupt the review structure when compacting certain reviews with renamed files, and recover from such corruption if it occurred previously. <!-- server 4841 -->
+  > No data was lost in the corrupted reviews but it could cause the completion condition to always crash.
+- <kbd>Adm:</kbd> log more timing details when syncing a pull request. <!-- server 4841 -->
 - <kbd>Fix:</kbd> center arcs on revision cells in file headers. <!-- client 7727 -->
 - <kbd>Fix:</kbd> force all files to show when following a review URL with embedded diff bounds. <!-- client 7727 -->
 - <kbd>Adm:</kbd> fix branch protection caching, so it actually reduces GitHub API calls as promised. <!-- server 4840 -->
