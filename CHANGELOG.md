@@ -1,5 +1,8 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> improve heuristic mapping of prior revisions for interactive rebases with fixups. <!-- server -->
+- <kbd>Fix:</kbd> don't corrupt the review structure when compacting certain reviews with renamed files, and recover from such corruption if it occurred previously. <!-- server -->
+  > No data was lost in the corrupted reviews but it could cause the completion condition to always crash.
 - <kbd>Fix:</kbd> force all files to show when following a review URL with embedded diff bounds. <!-- client -->
 - <kbd>Adm:</kbd> log more timing details when syncing a pull request. <!-- server -->
 
