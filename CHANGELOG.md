@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> center arcs on revision cells in file headers. <!-- client -->
 - <kbd>Upd:</kbd> improve heuristic mapping of prior revisions for interactive rebases with fixups. <!-- server -->
 - <kbd>Fix:</kbd> don't corrupt the review structure when compacting certain reviews with renamed files, and recover from such corruption if it occurred previously. <!-- server -->
   > No data was lost in the corrupted reviews but it could cause the completion condition to always crash.
