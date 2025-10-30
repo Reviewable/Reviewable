@@ -263,7 +263,7 @@ approval-text: ":lgtm:" | *
 
 #### Discussion participant dismissers
 
-This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#checking-and-changing-dispositions) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
+This setting controls what permissions a user needs to have to be able to [dismiss](discussions.md#change-disposition) participants from a discussion.  By default, anybody with write permissions can do so but you can limit it to only repo admins if a stricter approach is desired.
 
 ```yaml
 # The default setting is `push`
