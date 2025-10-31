@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Guard against rare overlay crash. <!-- client -->
 - <kbd>Fix:</kbd> improve link contrast in dark mode. <!-- client -->
 - <kbd>Fix:</kbd> tighten up hover target for pull request title links. <!-- client -->
 
