@@ -1,7 +1,7 @@
 
 # Reviews dashboard
 
-Click the **Reviews** button at the very top of the page to display the reviews list. Here, you'll find all open pull requests in which you are a participant. As a participant, these PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to).  Reviewable automatically updates this list at least once per minute (and data held in Reviewable is updated in real time), so there's no need to reload the page.
+Click the **Reviews** button at the very top of the page to display the reviews list. If you're already in a review, click the Reviewable icon in the top left, then click **Reviews**. Here, you'll find all open pull requests in which you are a participant. These PRs have either been created by you, assigned to you, contain comments from you, or mention you (or a team you belong to).  Reviewable automatically updates this list at least once per minute (and data held in Reviewable is updated in real time), so there's no need to reload the page.
 
 ::: tip
 If PRs appear to be missing from the list, try clicking the **Include stalled pull requests/reviews** link at the bottom of the panel. You may also want to click the green **Also show team reviews** or **Also show private reviews** buttons at the bottom if they're showing and you haven't yet granted those permissions. Finally, if PRs are still missing, check whether the relevant organizations have OAuth app access restrictions turned on.
@@ -9,7 +9,7 @@ If PRs appear to be missing from the list, try clicking the **Include stalled pu
 
 ![reviewable reviews list](images/reviews_4.png)
 
-PRs are sorted into groups ordered from most to least relevant. Within each group, PRs are sorted in chronological order. The exception is that in the **Waiting on me** group, the PRs that are only waiting on you appear before others; the logic that determines if a PR is waiting on you is described ([here](reviews.md#waiting-on)). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
+PRs are sorted into groups ordered from most to least relevant.  Within each group, PRs are sorted in chronological order — except for **Awaiting my action**, which shows PRs that are waiting on you first.  The logic that determines if a PR is waiting on you is described ([here](reviews.md#waiting-on)). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
 
 You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md), or by entering the full repository name and clicking on the "Go to dashboard for..." link under the query field.
 
@@ -37,11 +37,15 @@ A <i class="stalled icon"/> icon indicates a stalled review that has not been up
 
 Counters reflect the same information as you'll see on the review page:
 
-![reviewable review state](images/reviews_5.png)
+![reviewable review state](images/reviews_5.png){width=350}
 
-If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs but doesn't give access to merge options — for that, please open the review page.
+If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs, but doesn't give access to merge options — open the review page to access those.
 
-Other possible states include **Merged**, **Closed**, and **Archived** (automatically, for old reviews — just open to unarchive). No state appears for any PR not yet connected to a review.
+Other possible states include **Merged**, **Closed**, and **Archived**, which applies to reviews that were closed more than three days ago. Simply open an archived review to unarchive it.
+
+::: tip
+A PR won’t show a state until it’s linked to a Reviewable review.
+:::
 
 ## Open a review {#open-review}
 
@@ -51,7 +55,7 @@ Click the link on the right end of a listing to access the pull request on GitHu
 
 ## Filter reviews
 
-In the filter field, enter one or more terms to match in the PR summary, repository, number, milestone, labels, author username, or blocking reviewer.  The query is immediately reflected in the URL if you'd like to bookmark it.
+Use the search bar to search or filter by PR summary, repository, number, milestone, labels, author, or blocking reviewer. Results update instantly, and the query appears in the URL so you can easily bookmark or share it.
 
 You can also use the special filters in the table below, adding either a `+` or `-` prefix to the special term (such as `+open`) to require or prohibit the specified condition respectively.
 
@@ -99,16 +103,14 @@ If shown, you can click the **Include stalled pull requests/reviews** link near 
 
 At the bottom of the Reviews page, you’ll find two toggle buttons:
 
-![reviewable reviews list toggles](images/reviews_14.png)
+![reviewable reviews list toggles](images/reviews_14.png){width=620}
 
-**Show pull request not yet connected to Reviewable**
+**Show pull request not yet connected to Reviewable:**
 
-If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with a <i class="create review icon"/>, and clicking that PR will connect that PR to a review and insert a link into the PR description.
+If this toggle is on, the list will include PRs for which a review has not yet been created. Such a PR will be indicated with a <i class="create review icon"/>, and clicking that PR will connect that PR to a review and insert a link into the PR description.  You may want to turn off this toggle if you only want to see PRs from connected repositories.
 
-You may want to turn off this toggle if you only want to see PRs from connected repositories.
-
-**Also show pull request you’re not involved with from all repos to which you can push.**
+**Also show pull request you’re not involved with from all repos to which you can push:**
 
 If this toggle is on, the list includes all open PRs from repos where you have commit privileges, even if you're not a participant.  This is useful if you need to monitor repos for incoming PRs, such as if you're a manager, or an admin on an open source project.
 
-Optionally, you can restrict this set of repos to only those repos connected to Reviewable, or that you watched or starred on GitHub. This can be useful if you have push permissions to a lot of repos and, for example, you don’t want to see random open source repos while at work.
+Optionally, you can restrict this set of repos by clicking the icons/links in the text of the toggle to only show repos that you've <i class="watched off icon"/> watched or <i class="starred off icon"/> starred on GitHub, or <i class="connected off icon"/> connected repos (repos connected to Reviewable). This can be useful if you have push permissions to a lot of repos and you don’t want to see random open source repos while at work.
