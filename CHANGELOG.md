@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> improve link contrast in dark mode. <!-- client -->
+- <kbd>Fix:</kbd> tighten up hover target for pull request title links. <!-- client -->
+
 <sub>2025 - 10</sub>
 
 - <kbd>Adm<i>(saas)</i>:</kbd> use a cache when checking membership in a contributor team constraining a subscription.  This should greatly reduce GitHub API quota usage in cases where the contributor team is small compared to the number of other contributors in a connected repository.. <!-- server 4841 -->
