@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> reduce amount of Firebase bandwidth consumed when syncing status and check updates.  (Regression introduced in v4835.7725.) <!-- server -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm:</kbd> reduce time and GitHub API quota used when syncing a pull request with many comments that didn't originate from Reviewable. <!-- server 4843 -->
