@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> set user's preferred disposition when importing comments from GitHub. <!-- server -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm:</kbd> retry 401 errors for a couple minutes before flagging a repository connection as broken. <!-- server 4845 -->
