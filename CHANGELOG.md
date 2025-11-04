@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> retry 401 errors for a couple minutes before flagging a repository connection as broken. <!-- server -->
 - <kbd>Adm:</kbd> handle pushes to the same branch in quick succession more efficiently. <!-- server -->
 
 <sub>2025 - 11</sub>
