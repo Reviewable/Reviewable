@@ -102,4 +102,4 @@ div[data-line-number]:not([data-line-number="0"]) div.hljs {
   background-color: var(--red);
   opacity: 0.2;
 }
-// #endregion draft-pr-watermark
+// #endregion prominent-draft-pull-request-watermark
