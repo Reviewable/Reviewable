@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> reduce time and GitHub API quota used when syncing a pull request with many comments that didn't originate from Reviewable. <!-- server -->
 - <kbd>Adm:</kbd> don't restart servers too quickly if a `ping` task gets stuck on a queue. <!-- server -->
 - <kbd>Fix:</kbd> Guard against rare overlay crash. <!-- client -->
 - <kbd>Fix:</kbd> improve link contrast in dark mode. <!-- client -->
