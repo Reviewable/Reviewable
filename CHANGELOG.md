@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> handle pushes to the same branch in quick succession more efficiently. <!-- server -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm:</kbd> reduce amount of Firebase bandwidth consumed when syncing status and check updates.  (Regression introduced in v4835.7725.) <!-- server 4844 -->
