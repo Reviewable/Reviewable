@@ -1,11 +1,14 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> tweak position of the thin delta notification lines in two-column diffs so they don't overlap the contents. <!-- client -->
 - <kbd>Adm:</kbd> reduce time and GitHub API quota used when syncing a pull request with many comments that didn't originate from Reviewable. <!-- server -->
 - <kbd>Adm:</kbd> don't restart servers too quickly if a `ping` task gets stuck on a queue. <!-- server -->
-- <kbd>Fix:</kbd> Guard against rare overlay crash. <!-- client -->
-- <kbd>Fix:</kbd> improve link contrast in dark mode. <!-- client -->
-- <kbd>Fix:</kbd> tighten up hover target for pull request title links. <!-- client -->
+
+<sub>2025 - 11</sub>
+
+- <kbd>Fix:</kbd> tweak position of the thin delta notification lines in two-column diffs so they don't overlap the contents. <!-- client 7728 -->
+- <kbd>Fix:</kbd> Guard against rare overlay crash. <!-- client 7728 -->
+- <kbd>Fix:</kbd> improve link contrast in dark mode. <!-- client 7728 -->
+- <kbd>Fix:</kbd> tighten up hover target for pull request title links. <!-- client 7728 -->
 
 <sub>2025 - 10</sub>
 
