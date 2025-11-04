@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> tweak position of the thin delta notification lines in two-column diffs so they don't overlap the contents. <!-- client -->
 - <kbd>Adm:</kbd> reduce time and GitHub API quota used when syncing a pull request with many comments that didn't originate from Reviewable. <!-- server -->
 - <kbd>Adm:</kbd> don't restart servers too quickly if a `ping` task gets stuck on a queue. <!-- server -->
 - <kbd>Fix:</kbd> Guard against rare overlay crash. <!-- client -->
