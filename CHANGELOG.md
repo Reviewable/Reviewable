@@ -4,7 +4,7 @@
 
 <sub>2025 - 11</sub>
 
-- <kbd>Adm:</kbd> retry 401 errors for a couple minutes before flagging a repository connection as broken. <!-- server 4845 -->
+- <kbd>Fix:</kbd> retry 401 errors for a couple minutes before flagging a repository connection as broken. <!-- server 4845 -->
 - <kbd>Adm:</kbd> handle pushes to the same branch in quick succession more efficiently. <!-- server 4845 -->
 - <kbd>Adm:</kbd> reduce amount of Firebase bandwidth consumed when syncing status and check updates.  (Regression introduced in v4835.7725.) <!-- server 4844 -->
 - <kbd>Adm:</kbd> reduce time and GitHub API quota used when syncing a pull request with many comments that didn't originate from Reviewable. <!-- server 4843 -->
