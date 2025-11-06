@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm<i>(enterprise)</i>:</kbd> avoid locking up completion condition execution after a push to base if there are many open pull requests in the repository. <!-- server -->
 - <kbd>Fix:</kbd> set user's preferred disposition when importing comments from GitHub. <!-- server -->
 
 <sub>2025 - 11</sub>
