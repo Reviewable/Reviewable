@@ -41,10 +41,10 @@ Counters reflect the same information as you'll see on the review page:
 
 If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs, but doesn't give access to merge options — open the review page to access those.
 
-Other possible states include **Merged**, **Closed**, and **Archived**, which applies to reviews that were closed more than three days ago. Simply open an archived review to unarchive it.
+Other possible states include **Merged**, **Closed**, and **Archived**, which automatically applies to reviews that have been inactive for some time. Simply open an archived review to unarchive it.
 
 ::: tip
-A PR won’t show a state until it’s linked to a Reviewable review.
+A PR won’t show a state until a corresponding Reviewable review has been created.
 :::
 
 ## Open a review {#open-review}

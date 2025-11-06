@@ -22,7 +22,7 @@ It's possible for one person to be both the author and a reviewer in a “self-r
 
 ## Publishing your review {#publish}
 
-As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or in the Conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
+As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or in the conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
 Alternatively, you can publish individual drafts by clicking the <i class="send icon"></i> icon at the bottom-right of the draft panel. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch of drafts and publish them all at once. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"></i>&nbsp;Pondering**.
 
@@ -40,7 +40,7 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 ### Approval levels
 
-You can click the <i class="configure icon"></i> icon at the top-right of the toolbar or the **<i class="configure icon"></i>&nbsp;Publish options** on the Conclusion panel to change approval levels.
+You can click the <i class="configure icon"></i> icon at the top-right of the toolbar or the **<i class="configure icon"></i>&nbsp;Publish options** on the conclusion panel to change approval levels.
 
 ![reviewable set the approval level](images/publish_1.png){width=628px}
 
@@ -89,7 +89,7 @@ If *Publish on Push* isn't available, it could be due to one of the following re
 
 ### Conclusion
 
-For your convenience, Reviewable provides a Conclusion panel at the bottom of the page so you don't have to scroll back up to the **<i class="discussions icon"></i>&nbsp;Top level discussions** panel to leave a final comment.
+For your convenience, Reviewable provides a conclusion panel at the bottom of the page so you don't have to scroll back up to the **<i class="discussions icon"></i>&nbsp;Top level discussions** panel to leave a final comment.
 
 ![conclusion](images/review_summary.png)
 
@@ -196,7 +196,7 @@ If you can’t get things to work the way you want, have a look at [issue #404](
 The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
 ::: tip
-The main Review discussion <i class= "main discussion icon"/> is always considered resolved.
+The main review discussion <i class= "main discussion icon"/> is always considered resolved.
 :::
 
 ### Drafts <i class="drafts icon"></i> {#drafts}
@@ -204,7 +204,7 @@ The **drafts counter** displays the number of drafts you have pending, and also 
 
 ## Pull request details <i class="pull request icon"></i> {#pull-request-details}
 
-The Pull request panel appears at the very top of the review page. It shows key information about the pull request: 
+The pull request panel appears at the very top of the review page. It shows key information about the pull request:
 
 ![reviewable pull request panel](images/pull_request_1.png)
 
@@ -216,7 +216,7 @@ Next comes a line with some technical details about the pull request:
 - The _target (base) branch name_, which links to the corresponding branch on GitHub.  You can click the adjacent edit button to change the target branch for the pull request, if you have the necessary permissions.
 - A timestamp noting the date and time when the Pull Request was opened. Hover over this to see the full date, time, and timezone. 
 
-Below that you'll see lines listing the _labels_ and _milestone_ for the pull request, if any.  Unlike on GitHub, you cannot edit these directly; instead, you'll need to use [_directives_](discussions#inline-directives) such as `+label` or `-reviewer:@username`.  You can add these directives to any comment but the pull request panel includes a field that lets you do so on the spot. The contents of this field will be automatically appended to your main review comment. You can also send and apply it independently using the adjacent <i class="basic send icon"></i> button.
+Below that you'll see lines listing the _labels_ and _milestone_ for the pull request, if any.  Unlike on GitHub, you cannot edit these directly; instead, you'll need to use [_directives_](discussions#inline-directives) such as `+label` or `-reviewer:@username`.  You can add these directives to any comment, but the pull request panel includes a field (indicated by the <i class="command icon"/>&nbsp;icon) that lets you do so on the spot. The contents of this field will be automatically appended to your main review comment. You can also send and apply it independently using the adjacent <i class="basic send icon"></i> button.
 
 ::: tip
 You can enter anything into the command field, not just directives.  This can be particularly useful for sending `/` bot commands as many bots don't correctly parse commands embedded in published reviews.

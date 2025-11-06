@@ -1,6 +1,6 @@
 # Code review discussions
 
-Reviewable lets participants discuss and resolve every part of a pull request. Each comment thread — whether it’s about the whole review, a specific file, or a single line of code — is called a discussion. This section covers how discussions, dispositions, and resolutions work in Reviewable - including top-level discussions, file discussions, and line-specific comments.
+Reviewable lets participants review and discuss many different parts of a pull request. Each comment thread, whether it’s about the whole review or a single line of code, is called a **discussion**.  As discussions progress, participants may indicate their stance towards a resolution — whether they’re still making changes, happy with the outcome, or simply adding context. These stances are called **dispositions**.  Once everyone’s on the same page about the outcome, the discussion is considered resolved.
 
 Discussions stay visible until everyone involved reaches an agreement and marks them resolved. This state is independent of any file changes that might happen in the PR; even if the code changes, the discussion remains in place until it’s explicitly resolved.
 
@@ -14,23 +14,23 @@ When you publish a review, any draft comments in discussions — along with disp
 
 ## Starting a new discussion
 
-You can start a new discussion by clicking on a diff line, as explained [here](files.md#line-discussion).  File-wide discussions can be started by clicking the file name and selecting **Start a new discussion** from the dropdown.  If no diff is available for a file, then you can start a file-wide discussion by clicking on **Start a new discussion** under the file header instead.
+You can start a new discussion by clicking on a diff line, as explained [here](files.md#line-discussion).  File-wide discussions can be started by clicking the file name and selecting **Start a new discussion** from the dropdown.
 
-For discussions that aren’t tied to a specific file, click **Start a new discussion** at the bottom of the Top-level discussions panel (below the Diffs panel).  Start a top-level discussion when you want to create a separate, file-independent thread to track participants’ dispositions (such as **<i class="blocking disposition icon"/>&nbsp;Blocking** or **<i class="satisfied disposition icon"/>&nbsp;Satisfied**) and the eventual resolution. You can also use it to branch off a topic that deserves its own focused thread.
+For discussions that aren’t tied to a specific file, click **Start a new discussion** at the bottom of the **<i class="discussions icon"></i>&nbsp;Top level discussions** panel (below the diffs panel).  Start a top-level discussion when you want to create a separate, file-independent thread to track participants’ dispositions (such as **<i class="blocking disposition icon"/>&nbsp;Blocking** or **<i class="satisfied disposition icon"/>&nbsp;Satisfied**) and the eventual resolution. You can also use it to branch off a topic that deserves its own focused thread.
 
 ## Replying to a discussion
 
 At the bottom of each discussion box you can write a comment to add to the discussion. The draft comment is saved continuously as you write, but won’t be visible to others until it's [published](reviews.md#publish) or sent (see below).
 
 ::: tip
-While no one can read your drafts, other participants will be able to see that you have unsent drafts pending and how long ago you last touched the review (for example, by editing a draft) via the [Participants panel](reviews#participants).
+While no one can read your drafts, other participants will be able to see that you have unsent drafts pending and how long ago you last touched the review (for example, by editing a draft) via the [participants panel](reviews#participants).
 :::
 
 All comments are formatted as [GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/) — clicking the small Markdown logo <i class="markdown icon"/> in the draft toolbar will open a reference page.  You can also switch to the **Preview** tab at any time to check how your comment will be rendered.
 
 ![reviewable send messages immediately](images/discussions_6.png){width=620}
 
-You can add images to your comment by clicking the upload button <i class="upload cover icon"/>, by dragging an image onto the draft, or by pasting an image from your clipboard (in some browsers). **MP4** and **MOV** video uploads are also supported, with a maximum upload size of 100MB for Enterprise users and 10MB for SaaS users.
+You can add images and videos to your comment by clicking the upload button <i class="upload cover icon"/>, by dragging an image onto the draft, or by pasting an image from your clipboard (in some browsers). **MP4**, **MOV**, and **GIF** formats are also supported, with a maximum upload size of 100MB.  Other file types such as documents, CSVs, or binaries, are not supported.
 
 If desired, you can delete your draft by clicking the small trash icon <i class="delete draft icon"/>. The trashed draft is retrievable by creating another comment in the same spot.
 
@@ -40,7 +40,11 @@ If desired, you can delete your draft by clicking the small trash icon <i class=
 
 You can add inline directives in any comment to quickly manage labels, milestones, assignees, and reviewers. Reviewable keeps this feature text-based (rather than adding extra UI) so you can work entirely from the keyboard, whether you’re using the web app, replying by email, or posting on GitHub. It also leaves a clear, readable record in the comment itself.
 
-While writing a comment, type a `+` sign to open an autocomplete menu of available directives. Use the arrow keys to navigate and `Tab` or `Enter` to select one.
+::: tip
+You can apply directives without publishing comments using the <i class="command icon"/>&nbsp; text field in the [pull request panel](reviews#pull-request-details) <i class="pull request icon"/>.
+:::
+
+While writing a comment, type a `+` sign to open an autocomplete menu of available directives. Use the arrow keys to navigate and `Tab` or `Enter` to select one. You can also use a `-` sign to remove a directive after it's been added.
 
 Supported directives include:
 * **+label**
@@ -48,7 +52,8 @@ Supported directives include:
 * **+@username** (for assignees)
 * **+reviewer:@username** (for requested reviewers)
 
-Reviewable will warn you if you reference invalid assignees or reviewers — either immediately or via email — but not for labels or milestones, since false positives are common there.
+Reviewable will warn you if you reference invalid assignees or reviewers — either immediately or via email — but not for labels or milestones, since false positives are common there.  If you’re referencing code or variables that look like directives (for example, @user or +dependencies), wrap them in backticks to prevent Reviewable from treating them as inline directives.
+
 
 ::: danger
 For email and GitHub comments, if the repository isn’t connected, then directives won’t take effect until someone visits the review in Reviewable. Editing directives in a previously sent message won't work either.
@@ -62,12 +67,12 @@ When replying by email, be sure to use interleaved style — placing your respon
 
 Quoted chunks will be shown in Reviewable if they are woven into your reply, but omitted otherwise (whether the message is top- or bottom-quoted). Any parts of the message that can't be conclusively tied to a specific discussion thread will show up in a top-level discussion instead.
 
-Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "informing", "Working", or "Blocking".
+Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "Informing", "Working", or "Blocking".
 
-When replying by email, be sure to separate your comment and disposition with **two blank lines**, otherwise GitHub may interpret the disposition as part of the comment text.  For example:
+When replying by email, be sure to separate your comment and disposition with **one blank line**, otherwise GitHub may interpret the disposition as part of the comment text.  For example:
 ```
 > This looks great. (this was the last comment on the discussion)
-Here's my new comment.
+Hold up, I found a bug!
 
 Blocking
 ```
@@ -85,8 +90,6 @@ Changes to your disposition must be published to take effect, even if you don’
 Updating your disposition alone does not mark the discussion as read unless it’s part of a reply.
 :::
 
-### Dispositions
-
 These dispositions make you an active participant in a discussion. You can select them directly, though some may not appear in every context.
 
 Disposition | Meaning
@@ -94,8 +97,8 @@ Disposition | Meaning
 **<i class="discussing disposition icon"/>&nbsp;Discussing**| Neutral about resolution — continuing or exploring the topic.
 **<i class="blocking disposition icon"/>&nbsp;Blocking**| Opposed to resolution while waiting on another contributor.
 **<i class="working disposition icon"/>&nbsp;Working**| Keeps the discussion unresolved while you work on a related task. Unlike **<i class="blocking disposition icon"/>&nbsp;Blocking**, you’re responsible for moving the discussion forward, not others.
-**<i class="satisfied disposition icon"/>&nbsp;Satisfied**| Indicates you’re ready to resolve. If you’re the only participant, then the discussion will be resolved.
-**<i class="informing disposition icon"/>&nbsp;Informing**| Discussion is resolved, but left active for others to comment.
+**<i class="satisfied disposition icon"/>&nbsp;Satisfied**| Indicates you’re ready to resolve.  If there are no other participants, then the discussion will be resolved and will not be brought to the attention of others.
+**<i class="informing disposition icon"/>&nbsp;Informing**| Discussion starts out resolved but remains open for others to comment.
 
 Participants who aren’t actively engaged may have other dispositions, such as:
 **<i class="following disposition icon"/>&nbsp;Following**,
@@ -121,7 +124,7 @@ You can also change your disposition while writing a comment using keywords. Bef
 
 Starting your draft with one of these words will switch to the corresponding disposition, letting you keep your hands on the keyboard. However, any manual change to the disposition will permanently override any keyword in the draft text.  If a keyword was accepted, it will be highlighted in yellow; if it was discarded, it will be crossed out.  Either way, you can click on it to view a short explanation of what happened.
 
-![Disposition demo](images/dispositions.gif)
+![reviewable disposition demo](images/dispositions.gif)
 
 ::: tip
 If you find yourself using these words to switch dispositions accidentally, you can disable the feature altogether in the panel accessed via the small <i class="settings icon"/>&nbsp;settings icon in the top-right corner of any of your disposition dropdowns.
@@ -129,9 +132,13 @@ If you find yourself using these words to switch dispositions accidentally, you 
 
 You can also assign disposition changes to [keyboard shortcuts](accountsettings.md#custom-key-bindings) with the `setCurrentDiscussionDisposition` command.
 
-::: tip
-You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click either **Dismiss from this discussion** or **Dismiss from all discussions** at the bottom of the drop-down. Or if the discussion's disposition is satisfied, and you have started a draft, you may dismiss all blocking reviewers by clicking a **dismiss dissenter(s)** link on the top right side of the draft, to the left of the grouped avatars. (By default, anybody with write access to the repo can dismiss another participant, but you can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
-:::
+### Dismissing users from discussions {#dismissing-users}
+
+You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click one of the links at the bottom of the dropdown to dismess them from **this discussion** or **unresolved discussions**.
+
+![reviewable dismissing user](images/discussions_2.png){width=570}
+
+If your disposition is **<i class="satisfied disposition icon"/>&nbsp;Satisfied**, and you have started a draft, you may dismiss all blocking reviewers by clicking a **dismiss dissenter(s)** link on the top right side of the draft to the left of the grouped avatars.  By default, anybody with write access to the repo can dismiss another participant, but admins can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
 
 ## Unreplied discussions
 
@@ -164,7 +171,7 @@ Some older comments may be hidden, as indicated by the purple **N older comments
 
 ## Ending a discussion
 
-When you're finished with a discussion, click the primary action button at the bottom to resolve your part in it. Its label changes depending on your role and the discussion’'s state, but it generally means "I'm all set here".
+When you're finished with a discussion, click the primary action button at the bottom to resolve your part in it. Its label changes depending on your role and the discussion's state, but it generally means "I'm all set here".
 
 ![reviewable send messages immediately](images/discussions_8.png){width=580}
 
@@ -185,10 +192,7 @@ Clicking it marks the discussion as read and usually sets your [disposition](#di
 
 ### Resolution
 
-A discussion is considered resolved when:
-
-* At least one participant is **<i class="satisfied disposition icon"/>&nbsp;Satisfied** or **<i class="informing disposition icon"/>&nbsp;Informing**, and
-* No participants are **<i class="working disposition icon"/>&nbsp;Working** or **<i class="blocking disposition icon"/>&nbsp;Blocking**.
+A discussion is considered resolved when at least one participant is **<i class="satisfied disposition icon"/>&nbsp;Satisfied** or **<i class="informing disposition icon"/>&nbsp;Informing**, and no participants are **<i class="blocking disposition icon"/>&nbsp;Blocking** or **<i class="working disposition icon"/>&nbsp;Working**.
 
 If there are no active participants left, the discussion is also treated as resolved.
 Participants marked **<i class="discussing disposition icon"/>&nbsp;Discussing** are neutral and don’t affect the resolution either way.

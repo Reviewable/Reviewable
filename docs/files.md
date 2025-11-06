@@ -36,7 +36,7 @@ Review marks remain in a draft state and are only visible to you until [publishe
 
 ## File review state
 
-While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="designation done icon"></i> shows the file's overall state at the latest revision.  The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
+While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="designation anyone icon"/> shows the file's overall state at the latest revision.  The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
 
 The various possible states are:
 
@@ -59,7 +59,7 @@ By default, Reviewable can only tell who has reviewed a file and infer some basi
 
 ## File matrix
 
-The Files panel displays a history matrix showing all files and revisions. Here, you can:
+The files panel displays a history matrix showing all files and revisions. Here, you can:
 
 - View a summary of the PR's change history for each file.
 - Set diff bounds for any and all files.
@@ -88,7 +88,7 @@ Further to the right is the [file review state](#file-review-state) chip that yo
 
 ![reviewable file matrix options](images/filematrix_2.png){width=500}
 
-Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>. Further to the right is the commit icon <i class="grey commit icon"/>, which shows the list of commits for the current diff bounds.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header. Other information you may find here includes test coverage statistics and a dropdown with a list of commits included in the current diff bounds.
+Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes test coverage statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
 
 The elements above can be turned on or off via a small menu icon <i class="visual tweaks icon"/> below the file matrix.  You can also force all elements to appear "all in overlay"- when the file matrix is opened in full-screen overlay mode. To enter full-screen mode, click the minimize icon <i class="angle up icon"/> on the top of the File matrix and then click the full-screen icon <i class="maximize icon"/> .
 
@@ -109,11 +109,11 @@ _r1_  | A provisional revision whose commits may still change.
 <i class="cell participants on icon"/> | A (virtual) last revision that anyone marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last revision reviewed by anyone and the latest revision for each file, or drag-select to any other revision of your choice.
 ⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.
 
-You can also drag the column headers (⊥, r1, r2, r3...) to bulk-select diff bounds across all files. This sets the diff bounds for every file as close as possible to the new range. Many reviewers prefer this method over adjusting each file individually because it lets you view one coherent set of diffs at a time.
+You can also drag the column headers (⊥, r1, r2, r3...) to bulk-select diff bounds across all files.  This sets the diff bounds for every file as close as possible to the new range. Many reviewers prefer this method over adjusting each file individually because it lets you view one coherent set of diffs at a time.
 
 ## Diff controls
 
-Where the file matrix gives you fine-grained control over the diff bounds, the Diffs panel allows you to tweak the diffs that Reviewable automatically selects for you and make other coarse-grained adjustments.
+Where the file matrix gives you fine-grained control over the diff bounds, the diffs panel allows you to tweak the diffs that Reviewable automatically selects for you and make other coarse-grained adjustments.
 
 ![reviewable diff controls](images/diffs_1.png){width=615}
 
@@ -121,7 +121,7 @@ At the top of the panel you'll find an informational description of your current
 
 ### Show default diffs to review
 
-The large purple **Show Diffs to Review** button (exact wording varies) will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. By default, when you first load the review page, this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a **combined commits** style review (Commits panel > Revision mapping > "Combine commits for review"), this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using **review each commit** style, this will be the range between the last fully reviewed commit and the next one. If you're the PR author, this will be the range between the last snapshotted revision and the latest one, so you can review the diffs that you have just pushed.</more>
+The large purple **Show Diffs to Review** button (exact wording varies) will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. By default, when you first load the review page, this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a **combined commits** style review (commits panel > revision mapping > "combine commits for review"), this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using **review each commit** style, this will be the range between the last fully reviewed commit and the next one. If you're the PR author, this will be the range between the last snapshotted revision and the latest one, so you can review the diffs that you have just pushed.</more>
 
 Next to the button is a **file selection** dropdown with three **review overlap strategy** options. This setting changes which file diffs are suggested for the user to review when there are multiple participating reviewers. Changing this option in any review will implicitly set the default for any future reviews.
 
@@ -144,7 +144,7 @@ Next you'll find a row of buttons that let you set other frequently used diff bo
 
 ### Preferences
 
-Click the bottom of the Diffs panel <i class="visual tweaks icon"/> to expand your diff-related preferences. These settings are personal to you and apply across all organizations and repositories.
+Click the bottom of the diffs panel <i class="visual tweaks icon"/> to expand your diff-related preferences. These settings are personal to you and apply across all organizations and repositories.
 
 ![reviewable diff controls](images/diffs_3.png){width=650}
 
@@ -161,7 +161,7 @@ Each revision in a review is an automatic, unmodifiable capture of one or more c
 
 ![reviewable commit matrix](images/commit_matrix.png){width=315}
 
-![reviewable commit review](images/commit_review_1.png){width=800}
+![reviewable commit review](images/commit_review_2.png){width=640}
 
 ::: tip
 While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
@@ -224,11 +224,11 @@ If you've set up a [code coverage](repositories#code-coverage) feed then you may
 Any special messages will appear immediately underneath the header.  These include notices of renamed files, explanations for why a diff isn't showing, etc.
 :::
 
-![reviewable file diff rename message](images/filediffrename_1.png){width=530}
+![reviewable file diff rename message](images/filediffrename_1.png){width=560}
 
 ### File diff
 
-In the File Diff panel, you’ll see the differences between the two revisions of the file set as the diff bounds. Removed lines are highlighted in red, and added lines in green.  You can [adjust the contrast](accountsettings.md#adjust-contrast) in the account settings panel.
+In the file diff panel, you’ll see the differences between the two revisions of the file set as the diff bounds. Removed lines are highlighted in red, and added lines in green.  You can [adjust the contrast](accountsettings.md#adjust-contrast) as well as [replace line colors](accountsettings.md#accessibility) in the account settings panel.
 
 Most languages also get automatic syntax highlighting.  If your file isn't getting highlighted, please [open an issue](https://github.com/reviewable/reviewable/issues) so that we can add the right file extension mapping.  If the language is not one of the 190+ that have syntax highlighting in [highlight.js](https://highlightjs.org/), you'll need to open an issue with that project or contribute a language definition module yourself.
 
@@ -252,7 +252,7 @@ If a file requires your review, you'll see a tab at the bottom of the diff to [m
 
 As you decrease the width of the browser window, the diff panels will convert from a side-by-side view to a unified view and vice-versa. Also, the code will automatically be wrapped at a reasonable, round number of columns proportional to the window width.  (Lines that are wrapped get a thick vertical bar on the left side.)
 
-You can override this behavior by clicking the small caret <i class="large dropdown icon"/> in the top right corner of every file diff panel:
+You can override this behavior by clicking the small caret <i class="large dropdown icon"/> in the top right corner of every file diff panel. More diff layout options are available in the [diffs panel preferences](#preferences).
 
 ![reviewable fill diffs width control](images/filediffs_16.png)
 
@@ -313,15 +313,15 @@ For lots more information on discussions, please see the [next chapter](discussi
 
 ### Code Snippets, Quoting Code, and Making Code Suggestions
 
-It's easy to add new code, quote existing code, or suggest changes that display as a diff - all directly within your comment. The simplist way to add a code snippet is to click  the <i class="icon create codeblock"/>&nbsp; button in the actions menu and typing your code in the codeblock.
+It's easy to add new code, quote existing code, or suggest changes that display as a diff — all directly within your comment. The simplest way to add a code snippet is to click  the <i class="icon create codeblock"/>&nbsp; button in the actions menu and typing your code in the code block.
 
 ![reviewable insert codeblock](images/add_codeblock.png)
 
 ::: tip
-You can add as many codeblocks as you want to your comment!
+You can add as many code blocks as you want to your comment!
 :::
 
-You can also insert existing code from the diffs into your codeblock. There are a couple of ways to get the code into the codeblock at your disposal.
+You can also insert existing code from the diffs into your code block. There are a couple of ways to get the code into the code block at your disposal.
 
 #### Before making a comment
 Select the line or lines of code before adding a comment. After making a selection, you can use the command palette to insert a comment at the last selected line, with a code block that includes your selection.
@@ -330,14 +330,14 @@ Select the line or lines of code before adding a comment. After making a selecti
 
 #### Adding code to an existing comment
 
-If you have already started writing a comment, you can click the <i class="icon create codeblock"/>&nbsp;button in the actions menu and an empty codeblock will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the codeblock. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your codeblock.
+If you have already started writing a comment, you can click the <i class="icon create codeblock"/>&nbsp;button in the actions menu and an empty code block will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the code block. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your code block.
 
 ![reviewable code suggestions](images/code_suggestions.png)
 ::: tip
 Double click the 'select diff lines' button to quickly grab the current, single line of code from inside an existing comment.
 :::
 
-Code in the codeblock remains a quote until you edit it. Once a change is made, the codeblock becomes a suggestion. Then, in preview mode, you can view the diff or hide it by clicking the toggle in the codeblock header.
+Code in the code block remains a quote until you edit it. Once a change is made, the code block becomes a suggestion. Then, in preview mode, you can view the diff or hide it by clicking the toggle in the code block header.
 
 ![reviewable codeblock preview diff](images/codeblock_preview_diffs.png){width=470}
 
@@ -383,12 +383,12 @@ Be careful if you’re trying to use `⌘-f` or `ctrl-f` to find something in th
 :::
 
 ::: tip
-If diffs that make sense to be shown were omitted for some reason, you'll find a special notice above the first file diff that explains what happened and lets you override the decision.  (See screenshot below.)
+If diffs that make sense to be shown were omitted for some reason, you'll see a toast message that explains what happened and lets you override the decision.  (See screenshot below.)
 :::
 
 ### Single file mode
 
-Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (configurable in the [diff preferences panel](#diff-controls)). In this mode, only one file will appear at a time. You'll also see a summary explanation in a toast notification, together with a button which you can click to force all files to appear anyway until you leave the page.
+Reviewable automatically enters a single file mode to preserve performance when the number of visible files exceeds a threshold (configurable in the [diffs panel preferences](#preferences)). In this mode, only one file will appear at a time. You'll also see a summary explanation in a toast notification, together with a button which you can click to force all files to appear anyway until you leave the page.
 
 ![reviewable fill diffs some diffs not shown](images/filediffs_11.png){width=420}
 
@@ -414,7 +414,7 @@ By design, Reviewable doesn't track files that haven't deviated from their base 
 
 Symbol | Meaning
 :----: |---------
-![reviewable prior action](images/filematrix_10.png){width=160} | <strong>Inner Disc Color</strong>: File action against matched prior rebased revision. <br/> <strong>Outer Background Color</strong>: File action against immediately preceding revision. <br/> In this example, <i>r6</i> is not modified compared to <i>r4</i>, but is modified compared to <i>r5</i>.
+![reviewable prior action](images/filematrix_10.png){width=200} | <strong>Inner Disc Color</strong>: File action against matched prior rebased revision. <br/> <strong>Outer Background Color</strong>: File action against immediately preceding revision. <br/> In this example, <i>r6</i> is not modified compared to <i>r4</i>, but is modified compared to <i>r5</i>.
 <br/>
 
 ### Forked repos tracking upstream changes
