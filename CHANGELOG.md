@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> guard against rare crash in publish preview. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm<i>(enterprise)</i>:</kbd> avoid locking up completion condition execution after a push to base if there are many open pull requests in the repository. <!-- server 4846 -->
