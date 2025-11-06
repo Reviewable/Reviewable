@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm<i>(enterprise)</i>:</kbd> avoid locking up completion condition execution after a push to base if there are many open pull requests in the repository. <!-- server -->
-- <kbd>Fix:</kbd> set user's preferred disposition when importing comments from GitHub. <!-- server -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Adm<i>(enterprise)</i>:</kbd> avoid locking up completion condition execution after a push to base if there are many open pull requests in the repository. <!-- server 4846 -->
+- <kbd>Fix:</kbd> set user's preferred disposition when importing comments from GitHub. <!-- server 4846 -->
 - <kbd>Fix:</kbd> retry 401 errors for a couple minutes before flagging a repository connection as broken. <!-- server 4845 -->
 - <kbd>Adm:</kbd> handle pushes to the same branch in quick succession more efficiently. <!-- server 4845 -->
 - <kbd>Adm:</kbd> reduce amount of Firebase bandwidth consumed when syncing status and check updates.  (Regression introduced in v4835.7725.) <!-- server 4844 -->
