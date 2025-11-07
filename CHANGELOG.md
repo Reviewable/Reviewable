@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> respect `-text` attributes in `.gitattributes` to indicate that a file is binary. <!-- client -->
 - <kbd>Fix:</kbd> guard against rare crash in publish preview. <!-- client -->
 
 <sub>2025 - 11</sub>
