@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't crash when encountering literal commas in `.gitattributes` patterns. <!-- server -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Fix:</kbd> don't crash when encountering literal commas in `.gitattributes` patterns. <!-- server 4847 -->
 - <kbd>Upd:</kbd> respect `-text` attributes in `.gitattributes` to indicate that a file is binary. <!-- client 7735 -->
 - <kbd>Fix:</kbd> guard against rare crash in publish preview. <!-- client 7735 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> avoid locking up completion condition execution after a push to base if there are many open pull requests in the repository. <!-- server 4846 -->
