@@ -1,5 +1,7 @@
 <sub>2025 - 11</sub>
 
+<sub>**Enterprise release 4848.7746** (min 3340.5125 GHE ^2.19 || ^3) 2025-11-10 <!-- enterprise 4848.7746 --></sub>
+
 - <kbd>Fix:</kbd> don't crash when encountering literal commas in `.gitattributes` patterns. <!-- server 4847 -->
 - <kbd>Upd:</kbd> respect `-text` attributes in `.gitattributes` to indicate that a file is binary. <!-- client 7735 -->
 - <kbd>Fix:</kbd> guard against rare crash in publish preview. <!-- client 7735 -->
