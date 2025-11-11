@@ -1,5 +1,7 @@
 <sub>2025 - 11</sub>
 
+<sub>**Enterprise release 4848.7748** (min 3340.5125 GHE ^2.19 || ^3) 2025-11-11 <!-- enterprise 4848.7748 --></sub>
+
 - <kbd>Upd:</kbd> highlight syntax in `.cu` and `.cuh` files. <!-- client 7747 -->
 
 <sub>**Enterprise release 4848.7746** (min 3340.5125 GHE ^2.19 || ^3) 2025-11-10 <!-- enterprise 4848.7746 --></sub>
