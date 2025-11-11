@@ -1,8 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prioritize `linguist-*` attributes over more generic ones. <!-- client -->
-
 <sub>2025 - 11</sub>
+
+- <kbd>Fix:</kbd> prioritize `linguist-*` attributes over more generic ones. <!-- client 7750 -->
 
 <sub>**Enterprise release 4848.7748** (min 3340.5125 GHE ^2.19 || ^3) 2025-11-11 <!-- enterprise 4848.7748 --></sub>
 
