@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent a rare crash after staying on a review page for a long time. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Fix:</kbd> prioritize `linguist-*` attributes over more generic ones. <!-- client 7750 -->
