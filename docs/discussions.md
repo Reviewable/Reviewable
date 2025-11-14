@@ -1,6 +1,6 @@
 # Code review discussions
 
-Reviewable lets participants review and discuss many different parts of a pull request. Each comment thread, whether it’s about the whole review or a single line of code, is called a **discussion**.  As discussions progress, participants may indicate their stance towards a resolution — whether they’re still making changes, happy with the outcome, or simply adding context. These stances are called **dispositions**.  Once everyone’s on the same page about the outcome, the discussion is considered resolved.
+Reviewable lets participants review and discuss many different parts of a pull request. Each comment thread, whether it’s about the whole review or a single line of code, is called a **discussion**.  As discussions progress, participants may indicate their stance towards a resolution — whether they’re working on a related task, happy with the discussion's outcome, or simply adding context. These stances are called **dispositions**.  Once everyone’s on the same page about the outcome, the discussion is considered resolved.
 
 Discussions stay visible until everyone involved reaches an agreement and marks them resolved. This state is independent of any file changes that might happen in the PR; even if the code changes, the discussion remains in place until it’s explicitly resolved.
 
@@ -61,7 +61,7 @@ For email and GitHub comments, if the repository isn’t connected, then directi
 
 ### Replying via email or on GitHub
 
-Reviewable will do its best to parse incoming messages and match them to their correspondinding discussion threads. This only works well if you leave all the separators and comment links in place - so be sure not to mangle a quoted message too much in your reply.
+Reviewable will do its best to parse incoming messages and match them to their corresponding discussion threads. This only works well if you leave all the separators and comment links in place - so be sure not to mangle a quoted message too much in your reply.
 
 When replying by email, be sure to use interleaved style — placing your responses below the relevant quoted lines (rather than top-posting your entire reply). This helps Reviewable correctly match each comment to its thread.
 
@@ -83,7 +83,9 @@ For information on how to use other shorthands that work in email and in-app com
 
 ## Dispositions
 
-When you publish comments in a discussion, Reviewable tracks your disposition — your stance toward resolving the discussion.  You take on a default disposition when you first join a discussion. As you get more comfortable, you may choose to set your disposition explicitly or customize your defaults for different situations.
+As you interact with a discussion, Reviewable tracks your disposition — your current stance toward resolving it.  You start with a default disposition when you first join a discussion.  As you write comments or use the primary action buttons below a discussion, Reviewable adjusts your disposition to reflect your actions and intent.
+
+While dispositions are handled automatically, you can also set them explicitly or adjust the defaults that Reviewable uses in different situations.  Doing so gives you finer control over how the review progresses.
 
 ::: tip
 Changes to your disposition must be published to take effect, even if you don’t add a comment.
@@ -134,7 +136,7 @@ You can also assign disposition changes to [keyboard shortcuts](accountsettings.
 
 ### Dismissing users from discussions {#dismissing-users}
 
-You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click one of the links at the bottom of the dropdown to dismess them from **this discussion** or **unresolved discussions**.
+You may find it necessary to dismiss a user from a discussion — if, for example, the user isn't responding, has gone on vacation, or has left the organization. If you have the necessary permissions on the repo, you can open the disposition dropdown for another active participant and click one of the links at the bottom of the dropdown to dismiss them from **this discussion** or **unresolved discussions**.
 
 ![reviewable dismissing user](images/discussions_2.png){width=570}
 
@@ -208,6 +210,10 @@ The main Review discussion <i class="main discussion icon"/> has no dispositions
 ### Resolution workflows
 
 By default, a comment that creates a new discussion will set your disposition to **<i class="blocking disposition icon"/>&nbsp;Blocking** if you're a reviewer, or to **<i class="discussing disposition icon"/>&nbsp;Discussing** if you're the pull request's author. Your first reply to an existing discussion will set your disposition to **<i class="discussing disposition icon"/>&nbsp;Discussing** if you're not already an active participant.
+
+::: tip
+For enterprise installs, these defaults can change overridden using the [REVIEWABLE_DISPOSITION_DEFAULTS](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) environment variable.
+:::
 
 You can change your default disposition to match your workflow.  For example, if you're following an informal review process, you might set the default disposition for reviewer-initiated discussions to **<i class="discussing disposition icon"/>&nbsp;Discussing**, which allows the author to resolve those discussions directly.
 

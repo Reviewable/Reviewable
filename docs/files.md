@@ -11,6 +11,8 @@ A file's evolution over the course of the pull request is summarized in both the
 
 The parentheses in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
 
+![revision cells demo](images/revision_cells.gif)
+
 Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks:
 
 ![reviewable file matrix status](images/filematrix_9.png){width=320px}
@@ -159,9 +161,10 @@ The **diff layout** and **line length** options replicate the more compact [diff
 
 Each revision in a review is an automatic, unmodifiable capture of one or more commits.  The mapping between commits and revisions is shown in a synthetic **Commits file**.  This virtual file is kept up-to-date automatically by Reviewable and will always be listed first in the files list.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it *will not* impact your repository or pull request in anyway — it's solely used by Reviewable for presenting and reviewing commit messages.
 
-![reviewable commit matrix](images/commit_matrix.png){width=315}
+![reviewable commit matrix](images/commit_matrix.png){width=515}
 
-![reviewable commit review](images/commit_review_2.png){width=640}
+![reviewable commit review](images/commit_review_1.png){width=610}
+
 
 ::: tip
 While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
