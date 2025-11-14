@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> stop bouncing client requests after a short timeout as it should no longer be needed to make the server notice them. <!-- client -->
-  > This was a workaround for a Firebase bug that we're now dealing with in a different way.
-  > It could also make things worse if the server wasn't prompt enough in answering the request.
-- <kbd>Fix:</kbd> prevent a rare crash after staying on a review page for a long time. <!-- client -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Adm:</kbd> stop bouncing client requests after a short timeout as it should no longer be needed to make the server notice them. <!-- client 7751 -->
+  > This was a workaround for a Firebase bug that we're now dealing with in a different way.
+  > It could also make things worse if the server wasn't prompt enough in answering the request.
+- <kbd>Fix:</kbd> prevent a rare crash after staying on a review page for a long time. <!-- client 7751 -->
 - <kbd>Fix:</kbd> prioritize `linguist-*` attributes over more generic ones. <!-- client 7750 -->
 
 <sub>**Enterprise release 4848.7748** (min 3340.5125 GHE ^2.19 || ^3) 2025-11-11 <!-- enterprise 4848.7748 --></sub>
