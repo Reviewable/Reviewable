@@ -1,3 +1,9 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> further reduce the amount of Firebase bandwidth used when syncing status / check / workflow updates. <!-- server -->
+- <kbd>Fix:</kbd> synchronize check state more reliably in some timing edge cases. <!-- server -->
+- <kbd>Fix:</kbd> remove approval and mergeability virtual checks once a pull request has been merged or closed. <!-- server -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> keep PR panel review branch from wrapping. <!-- client 7752 -->
