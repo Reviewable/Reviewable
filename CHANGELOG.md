@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> keep PR panel review branch from wrapping. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm:</kbd> stop bouncing client requests after a short timeout as it should no longer be needed to make the server notice them. <!-- client 7751 -->
