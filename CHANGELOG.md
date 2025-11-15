@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> keep PR panel review branch from wrapping. <!-- client -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> keep PR panel review branch from wrapping. <!-- client 7752 -->
 - <kbd>Adm:</kbd> stop bouncing client requests after a short timeout as it should no longer be needed to make the server notice them. <!-- client 7751 -->
   > This was a workaround for a Firebase bug that we're now dealing with in a different way.
   > It could also make things worse if the server wasn't prompt enough in answering the request.
