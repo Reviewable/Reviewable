@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> reduce number of GitHub API queries when using publish on push. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm:</kbd> further reduce the amount of Firebase bandwidth used when syncing status / check / workflow updates. <!-- server 4850 -->
