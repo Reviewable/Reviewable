@@ -81,7 +81,7 @@ Blocking
 For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [initial keywords](#change-disposition) further down.
 :::
 
-## Dispositions
+## Dispositions {#dispositions-and-resolution}
 
 As you interact with a discussion, Reviewable tracks your disposition — your current stance toward resolving it.  You start with a default disposition when you first join a discussion.  As you write comments or use the primary action buttons below a discussion, Reviewable adjusts your disposition to reflect your actions and intent.
 
@@ -212,7 +212,7 @@ The main Review discussion <i class="main discussion icon"/> has no dispositions
 By default, a comment that creates a new discussion will set your disposition to **<i class="blocking disposition icon"/>&nbsp;Blocking** if you're a reviewer, or to **<i class="discussing disposition icon"/>&nbsp;Discussing** if you're the pull request's author. Your first reply to an existing discussion will set your disposition to **<i class="discussing disposition icon"/>&nbsp;Discussing** if you're not already an active participant.
 
 ::: tip
-For enterprise installs, these defaults can change overridden using the [REVIEWABLE_DISPOSITION_DEFAULTS](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) environment variable.
+For enterprise installs, these defaults can be overridden using the [REVIEWABLE_DISPOSITION_DEFAULTS](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#ui-customization) environment variable.
 :::
 
 You can change your default disposition to match your workflow.  For example, if you're following an informal review process, you might set the default disposition for reviewer-initiated discussions to **<i class="discussing disposition icon"/>&nbsp;Discussing**, which allows the author to resolve those discussions directly.
