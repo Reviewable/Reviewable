@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> reduce unnecessary pull request syncs. <!-- server -->
+- <kbd>Fix:</kbd> update the review's status (and potentially the badge in the pull request) in a more timely fashion when publishing an approval or request for changes without also changing labels, assignees or reviewers. <!-- server -->
 - <kbd>Adm:</kbd> reduce number of GitHub API queries when using publish on push. <!-- client -->
 
 <sub>2025 - 11</sub>
