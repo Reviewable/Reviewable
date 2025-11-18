@@ -2,10 +2,10 @@
 
 - <kbd>Adm:</kbd> reduce unnecessary pull request syncs. <!-- server -->
 - <kbd>Fix:</kbd> update the review's status (and potentially the badge in the pull request) in a more timely fashion when publishing an approval or request for changes without also changing labels, assignees or reviewers. <!-- server -->
-- <kbd>Adm:</kbd> reduce number of GitHub API queries when using publish on push. <!-- client -->
 
 <sub>2025 - 11</sub>
 
+- <kbd>Adm:</kbd> reduce number of GitHub API queries when using publish on push. <!-- client 7754 -->
 - <kbd>Adm:</kbd> further reduce the amount of Firebase bandwidth used when syncing status / check / workflow updates. <!-- server 4850 -->
 - <kbd>Fix:</kbd> synchronize check state more reliably in some timing edge cases. <!-- server 4850 -->
 - <kbd>Fix:</kbd> remove approval and mergeability virtual checks once a pull request has been merged or closed. <!-- server 4850 -->
