@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> reduce unnecessary pull request syncs. <!-- server -->
-- <kbd>Fix:</kbd> update the review's status (and potentially the badge in the pull request) in a more timely fashion when publishing an approval or request for changes without also changing labels, assignees or reviewers. <!-- server -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Adm:</kbd> reduce unnecessary pull request syncs. <!-- server 4857 -->
+- <kbd>Fix:</kbd> update the review's status (and potentially the badge in the pull request) in a more timely fashion when publishing an approval or request for changes without also changing labels, assignees or reviewers. <!-- server 4857 -->
 - <kbd>Adm:</kbd> reduce number of GitHub API queries when using publish on push. <!-- client 7754 -->
 - <kbd>Adm:</kbd> further reduce the amount of Firebase bandwidth used when syncing status / check / workflow updates. <!-- server 4850 -->
 - <kbd>Fix:</kbd> synchronize check state more reliably in some timing edge cases. <!-- server 4850 -->
