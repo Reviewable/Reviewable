@@ -177,7 +177,7 @@ When you're finished with a discussion, click the primary action button at the b
 
 ![reviewable send messages immediately](images/discussions_8.png){width=580}
 
-Clicking it marks the discussion as read and usually sets your [disposition](#dispositions) to **<i class="satisfied disposition icon"/>&nbsp;Satisfied**:
+Clicking it marks the discussion as read and usually sets your disposition to **<i class="satisfied disposition icon"/>&nbsp;Satisfied**:
 
 
 
