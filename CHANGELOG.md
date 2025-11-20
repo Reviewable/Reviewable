@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> automatically collapse large file matrix to improve initial load times. <!-- client -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Fix:</kbd> automatically collapse large file matrix to improve initial load times. <!-- client 7755 -->
 - <kbd>Adm:</kbd> reduce unnecessary pull request syncs. <!-- server 4857 -->
 - <kbd>Fix:</kbd> update the review's status (and potentially the badge in the pull request) in a more timely fashion when publishing an approval or request for changes without also changing labels, assignees or reviewers. <!-- server 4857 -->
 - <kbd>Adm:</kbd> reduce number of GitHub API queries when using publish on push. <!-- client 7754 -->
