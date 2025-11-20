@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> automatically collapse large file matrix to improve initial load times. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm:</kbd> reduce unnecessary pull request syncs. <!-- server 4857 -->
