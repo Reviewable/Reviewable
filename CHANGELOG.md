@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> improve the low GitHub API quota notification to explain why some admins are not eligible to handle the event. <!-- server -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Fix:</kbd> automatically collapse large file matrix to improve initial load times. <!-- client 7755 -->
