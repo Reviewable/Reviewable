@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> reduce size of Stripe subscription object in Firebase by keeping only the necessary properties. <!-- server -->
 - <kbd>Fix:</kbd> improve the low GitHub API quota notification to explain why some admins are not eligible to handle the event. <!-- server -->
 
 <sub>2025 - 11</sub>
