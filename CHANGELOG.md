@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> guard against some Firebase writes getting stuck forever (especially when publishing).  This seems to only affect a small subset of users though we don't really understand the underlying mechanism yet. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Adm<i>(saas)</i>:</kbd> reduce size of Stripe subscription object in Firebase by keeping only the necessary properties. <!-- server 4860 -->
