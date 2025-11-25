@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> guard against some Firebase writes getting stuck forever (especially when publishing).  This seems to only affect a small subset of users though we don't really understand the underlying mechanism yet. <!-- client -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Fix:</kbd> guard against some Firebase writes getting stuck forever (especially when publishing).  This seems to only affect a small subset of users though we don't really understand the underlying mechanism yet. <!-- client 7756 -->
 - <kbd>Adm<i>(saas)</i>:</kbd> reduce size of Stripe subscription object in Firebase by keeping only the necessary properties. <!-- server 4860 -->
 - <kbd>Fix:</kbd> improve the low GitHub API quota notification to explain why some admins are not eligible to handle the event. <!-- server 4860 -->
 - <kbd>Fix:</kbd> automatically collapse large file matrix to improve initial load times. <!-- client 7755 -->
