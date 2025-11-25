@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent rare crash on the dashboard. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Fix:</kbd> guard against some Firebase writes getting stuck forever, and recover correctly from some varieties of transaction failures. <!-- client 7758 -->
