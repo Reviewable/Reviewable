@@ -1,11 +1,11 @@
 <sub>Upcoming</sub>
 
 - <kbd>Upd:</kbd> infer a conservative [inputs pragma](https://docs.reviewable.io/repositories#pragmas) from the completion condition code if it's not explicitly specified. <!-- server -->
-- <kbd>Fix:</kbd> guard against a rare crash when the file matrix is showing reviewers. <!-- client -->
-- <kbd>Fix:</kbd> prevent rare crash on the dashboard. <!-- client -->
 
 <sub>2025 - 11</sub>
 
+- <kbd>Fix:</kbd> guard against a rare crash when the file matrix is showing reviewers. <!-- client 7759 -->
+- <kbd>Fix:</kbd> prevent rare crash on the dashboard. <!-- client 7759 -->
 - <kbd>Fix:</kbd> guard against some Firebase writes getting stuck forever, and recover correctly from some varieties of transaction failures. <!-- client 7758 -->
 - <kbd>Adm<i>(saas)</i>:</kbd> reduce size of Stripe subscription object in Firebase by keeping only the necessary properties. <!-- server 4860 -->
 - <kbd>Fix:</kbd> improve the low GitHub API quota notification to explain why some admins are not eligible to handle the event. <!-- server 4860 -->
