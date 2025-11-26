@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> infer a conservative [inputs pragma](https://docs.reviewable.io/repositories#pragmas) from the completion condition code if it's not explicitly specified. <!-- server -->
 - <kbd>Fix:</kbd> guard against a rare crash when the file matrix is showing reviewers. <!-- client -->
 - <kbd>Fix:</kbd> prevent rare crash on the dashboard. <!-- client -->
 
