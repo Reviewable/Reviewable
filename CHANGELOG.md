@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> guard against a rare crash when the file matrix is showing reviewers. <!-- client -->
 - <kbd>Fix:</kbd> prevent rare crash on the dashboard. <!-- client -->
 
 <sub>2025 - 11</sub>
