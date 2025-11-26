@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> infer a conservative [inputs pragma](https://docs.reviewable.io/repositories#pragmas) from the completion condition code if it's not explicitly specified. <!-- server -->
-
 <sub>2025 - 11</sub>
 
+- <kbd>Upd:</kbd> infer a conservative [inputs pragma](https://docs.reviewable.io/repositories#pragmas) from the completion condition code if it's not explicitly specified. <!-- server 4861 -->
 - <kbd>Fix:</kbd> guard against a rare crash when the file matrix is showing reviewers. <!-- client 7759 -->
 - <kbd>Fix:</kbd> prevent rare crash on the dashboard. <!-- client 7759 -->
 - <kbd>Fix:</kbd> guard against some Firebase writes getting stuck forever, and recover correctly from some varieties of transaction failures. <!-- client 7758 -->
