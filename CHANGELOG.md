@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> correctly evaluate the consequences of starting a new discussion before it's published. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Upd:</kbd> infer a conservative [inputs pragma](https://docs.reviewable.io/repositories#pragmas) from the completion condition code if it's not explicitly specified. <!-- server 4861 -->
