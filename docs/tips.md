@@ -77,6 +77,10 @@ The available watermark classes are:
 .draft.comment.watermark
 ```
 
+### Accessibility
+
+If you have accessibility needs and don't see a tweak here that helps, please reach out to us at [support@reviewable.io](mailto:support@reviewable.io).
+
 ## Skipping vendored dependencies
 
 Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:
