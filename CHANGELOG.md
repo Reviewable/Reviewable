@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> last selected dashboard organization/repository was not peristed across page loads. <!-- client -->
+
 <sub>2025 - 11</sub>
 
 - <kbd>Fix:</kbd> correctly evaluate the consequences of starting a new discussion before it's published. <!-- client 7763 -->
