@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> guard against rare crash when a review includes workflow files but the user hasn't authorized `workflow` scope. <!-- client -->
 - <kbd>Fix:</kbd> last selected dashboard organization/repository was not peristed across page loads. <!-- client -->
 
 <sub>2025 - 11</sub>
