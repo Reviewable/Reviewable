@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> guard against rare crash when a review includes workflow files but the user hasn't authorized `workflow` scope. <!-- client -->
-- <kbd>Fix:</kbd> last selected dashboard organization/repository was not peristed across page loads. <!-- client -->
-
 <sub>2025 - 12</sub>
 
+- <kbd>Fix:</kbd> guard against rare crash when a review includes workflow files but the user hasn't authorized `workflow` scope. <!-- client 7767 -->
+- <kbd>Fix:</kbd> last selected dashboard organization/repository was not peristed across page loads. <!-- client 7767 -->
 - <kbd>Fix:</kbd> don't assign missing revisions as "rebased from" in compacted reviews. <!-- server 4863 -->
 - <kbd>Upd:</kbd> if `CODEOWNERS` are required by branch protection, don't designate `anyone` to review matching files by default. <!-- server 4863 -->
 - <kbd>Fix:</kbd> don't include virtual Commits file in `CODEOWNERS` checks. <!-- server 4863 -->
