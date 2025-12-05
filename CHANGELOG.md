@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't assign missing revisions as "rebased from" in compacted reviews. <!-- server -->
 - <kbd>Upd:</kbd> if `CODEOWNERS` are required by branch protection, don't designate `anyone` to review matching files by default. <!-- server -->
 - <kbd>Fix:</kbd> don't include virtual Commits file in `CODEOWNERS` checks. <!-- server -->
 - <kbd>Fix:</kbd> guard against rare crash when a review includes workflow files but the user hasn't authorized `workflow` scope. <!-- client -->
