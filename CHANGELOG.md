@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server -->
 - <kbd>Fix:</kbd> don't reload the page when following the "Review list" link in the Conclusion panel. <!-- client -->
 - <kbd>Fix:</kbd> reevaluate the completion condition when publishing on a merged or closed pull request. <!-- client -->
   > While we don't usually care about the review completion state of merge or closed pull requests, this could prevent webhooks from being called, resulting in stale statuses in external systems.
