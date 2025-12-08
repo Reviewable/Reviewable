@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
 - <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server -->
-- <kbd>Fix:</kbd> don't reload the page when following the "Review list" link in the Conclusion panel. <!-- client -->
-- <kbd>Fix:</kbd> reevaluate the completion condition when publishing on a merged or closed pull request. <!-- client -->
-  > While we don't usually care about the review completion state of merge or closed pull requests, this could prevent webhooks from being called, resulting in stale statuses in external systems.
 
 <sub>2025 - 12</sub>
 
+- <kbd>Fix:</kbd> don't reload the page when following the "Review list" link in the Conclusion panel. <!-- client 7768 -->
+- <kbd>Fix:</kbd> reevaluate the completion condition when publishing on a merged or closed pull request. <!-- client 7768 -->
+  > While we don't usually care about the review completion state of merge or closed pull requests, this could prevent webhooks from being called, resulting in stale statuses in external systems.
 - <kbd>Fix:</kbd> guard against rare crash when a review includes workflow files but the user hasn't authorized `workflow` scope. <!-- client 7767 -->
 - <kbd>Fix:</kbd> last selected dashboard organization/repository was not peristed across page loads. <!-- client 7767 -->
 - <kbd>Fix:</kbd> don't assign missing revisions as "rebased from" in compacted reviews. <!-- server 4863 -->
