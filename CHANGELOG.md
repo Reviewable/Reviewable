@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> reevaluate the completion condition when publishing on a merged or closed pull request. <!-- client -->
+  > While we don't usually care about the review completion state of merge or closed pull requests, this could prevent webhooks from being called, resulting in stale statuses in external systems.
+
 <sub>2025 - 12</sub>
 
 - <kbd>Fix:</kbd> guard against rare crash when a review includes workflow files but the user hasn't authorized `workflow` scope. <!-- client 7767 -->
