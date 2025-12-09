@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't keep a spinner on the merge button forever in repositories that were never connected or had custom settings applied. <!-- client -->
 - <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server -->
 
 <sub>2025 - 12</sub>
