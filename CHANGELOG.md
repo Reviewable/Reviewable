@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server -->
-
 <sub>2025 - 12</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server 4865 -->
 - <kbd>Fix:</kbd> don't keep a spinner on the merge button forever in repositories that were never connected or had custom settings applied. <!-- client 7769 -->
 - <kbd>Fix:</kbd> don't reload the page when following the "Review list" link in the Conclusion panel. <!-- client 7768 -->
 - <kbd>Fix:</kbd> reevaluate the completion condition when publishing on a merged or closed pull request. <!-- client 7768 -->
