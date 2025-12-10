@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> persevere past `IndexedDB` errors when using it as a cache. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't filter out the `github.com`-only `web-flow` account from review participants. <!-- client -->
 
 <sub>2025 - 12</sub>
