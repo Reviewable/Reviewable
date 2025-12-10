@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't filter out the `github.com`-only `web-flow` account from review participants. <!-- client -->
+
 <sub>2025 - 12</sub>
 
 - <kbd>Fix:</kbd> consistently recognize various Copilot accounts as a single bot. <!-- server 4866 -->
