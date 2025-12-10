@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> consistently recognize various Copilot accounts as a single bot. <!-- server -->
+  > This helps eliminate apparent duplicates in the participants panel and prevents Copilot from being listed as a pending reviewer, which could trigger misguided attempts by Copilot to "fix" the pull request.
+
 <sub>2025 - 12</sub>
 
 - <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server 4865 -->
