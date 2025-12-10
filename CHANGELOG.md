@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> consistently recognize various Copilot accounts as a single bot. <!-- server -->
-  > This helps eliminate apparent duplicates in the participants panel and prevents Copilot from being listed as a pending reviewer, which could trigger misguided attempts by Copilot to "fix" the pull request.
-
 <sub>2025 - 12</sub>
 
+- <kbd>Fix:</kbd> consistently recognize various Copilot accounts as a single bot. <!-- server 4866 -->
+  > This helps eliminate apparent duplicates in the participants panel and prevents Copilot from being listed as a pending reviewer, which could trigger misguided attempts by Copilot to "fix" the pull request.
 - <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server 4865 -->
 - <kbd>Fix:</kbd> don't keep a spinner on the merge button forever in repositories that were never connected or had custom settings applied. <!-- client 7769 -->
 - <kbd>Fix:</kbd> don't reload the page when following the "Review list" link in the Conclusion panel. <!-- client 7768 -->
