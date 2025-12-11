@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> ensure the Publish button remains busy until it's safe to close the page. <!-- client -->
-- <kbd>Fix:</kbd> Prevent crash when matrix renders before rows are computed. <!-- client -->
-- <kbd>Fix:</kbd> Prevent duplicate-key crash when rendering the file matrix. <!-- client -->
-- <kbd>Fix:</kbd> persevere past `IndexedDB` errors when using it as a cache. <!-- client -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> don't filter out the `github.com`-only `web-flow` account from review participants. <!-- client -->
-
 <sub>2025 - 12</sub>
 
+- <kbd>Fix:</kbd> ensure the Publish button remains busy until it's safe to close the page. <!-- client 7771 -->
+- <kbd>Fix:</kbd> Prevent crash when matrix renders before rows are computed. <!-- client 7771 -->
+- <kbd>Fix:</kbd> Prevent duplicate-key crash when rendering the file matrix. <!-- client 7771 -->
+- <kbd>Fix:</kbd> persevere past `IndexedDB` errors when using it as a cache. <!-- client 7771 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't filter out the `github.com`-only `web-flow` account from review participants. <!-- client 7771 -->
 - <kbd>Fix:</kbd> consistently recognize various Copilot accounts as a single bot. <!-- server 4866 -->
   > This helps eliminate apparent duplicates in the participants panel and prevents Copilot from being listed as a pending reviewer, which could trigger misguided attempts by Copilot to "fix" the pull request.
 - <kbd>Adm<i>(saas)</i>:</kbd> further reduce Firebase storage and bandwidth usage by automatically compressing data. <!-- server 4865 -->
