@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Prevent crash when matrix renders before rows are computed. <!-- client -->
+- <kbd>Fix:</kbd> Prevent duplicate-key crash when rendering the file matrix. <!-- client -->
 - <kbd>Fix:</kbd> persevere past `IndexedDB` errors when using it as a cache. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't filter out the `github.com`-only `web-flow` account from review participants. <!-- client -->
 
