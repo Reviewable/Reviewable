@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> ensure the Publish button remains busy until it's safe to close the page. <!-- client -->
 - <kbd>Fix:</kbd> Prevent crash when matrix renders before rows are computed. <!-- client -->
 - <kbd>Fix:</kbd> Prevent duplicate-key crash when rendering the file matrix. <!-- client -->
 - <kbd>Fix:</kbd> persevere past `IndexedDB` errors when using it as a cache. <!-- client -->
