@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't retain a stale "waiting for mergeability to settle to see whether pull request satisfies branch protection rules" message when a pull request is merged or closed. <!-- server -->
-
 <sub>2025 - 12</sub>
 
+- <kbd>Fix:</kbd> don't retain a stale "waiting for mergeability to settle to see whether pull request satisfies branch protection rules" message when a pull request is merged or closed. <!-- server 4867 -->
 - <kbd>Fix:</kbd> ensure the Publish button remains busy until it's safe to close the page. <!-- client 7771 -->
 - <kbd>Fix:</kbd> Prevent crash when matrix renders before rows are computed. <!-- client 7771 -->
 - <kbd>Fix:</kbd> Prevent duplicate-key crash when rendering the file matrix. <!-- client 7771 -->
