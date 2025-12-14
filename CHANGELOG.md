@@ -1,5 +1,7 @@
 <sub>2025 - 12</sub>
 
+<sub>**Enterprise release 4867.7771** (min 3340.5125 GHE ^2.19 || ^3) 2025-12-14 <!-- enterprise 4867.7771 --></sub>
+
 - <kbd>Fix:</kbd> don't retain a stale "waiting for mergeability to settle to see whether pull request satisfies branch protection rules" message when a pull request is merged or closed. <!-- server 4867 -->
 - <kbd>Fix:</kbd> ensure the Publish button remains busy until it's safe to close the page. <!-- client 7771 -->
 - <kbd>Fix:</kbd> Prevent crash when matrix renders before rows are computed. <!-- client 7771 -->
