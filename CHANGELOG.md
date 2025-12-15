@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> avoid triggering "repeatedly failed to process event" warnings for pull requests whose mergeability GitHub just won't settle. <!-- server -->
 - <kbd>Fix:</kbd> update the algorithm that computes `review.deferringReviewers` for the custom completion condition to match the one used on the client. <!-- server -->
 
 <sub>2025 - 12</sub>
