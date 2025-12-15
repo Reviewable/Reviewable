@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> update the algorithm that computes `review.deferringReviewers` for the custom completion condition to match the one used on the client. <!-- server -->
+
 <sub>2025 - 12</sub>
 
 <sub>**Enterprise release 4867.7771** (min 3340.5125 GHE ^2.19 || ^3) 2025-12-14 <!-- enterprise 4867.7771 --></sub>
