@@ -1,6 +1,8 @@
 # Code review
 
-In Reviewable, each review corresponds to a GitHub pull request. To initiate a code review, you’ll first need to create a pull request as usual and then access the corresponding review. This can be done either (a) through the link to Reviewable inserted into the PR, or (b) by clicking on the PR on your Reviewable dashboard.
+In Reviewable, each code review corresponds to a GitHub pull request. To initiate a code review, create a pull request as usual and then open the corresponding review. You can do this by following the link that Reviewable adds to the top of the PR conversation (shown below) or by selecting the pull request from your Reviewable dashboard.
+
+![reviewable review link](images/reviewable_link.png){width=230}
 
 In general, Reviewable keeps data synchronized between the review and its pull request for all compatible features, such as assignees, comments, and approvals.  However, some features are unique to Reviewable (such as file [review marks](files#mark-reviewed) or [discussion dispositions](discussions#dispositions-and-resolution)). Other Reviewable features cannot be mapped effectively due to GitHub API limitations, such as line comments that often become top level comments.  Consequently, we don’t recommend mixing use of Reviewable and GitHub reviews on the same pull request as the experience will prove frustrating on both sides.
 
@@ -111,7 +113,7 @@ When you publish a review and you have files left to review or discussions left 
 
 ![reviewable deferral changes](images/deferring_changes.png){width=600}
 
-A review will remain deferred until either a new revision of a file becomes available for you to review or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
+A review will remain deferred until either a new revision is pushed or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
 
 Note that you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can reactivate a deferred review manually by marking a file as reviewed or via the dropdown menu in the participants panel.
 
@@ -157,7 +159,7 @@ At the top of every review page you’ll find a floating toolbar with some core 
 
 At the right end of the toolbar you'll always find a **Publish**, **Merge** or **Continue** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.
 
-On the left end of the toolbar you will see a bunny icon.  Click this icon to display shortcuts to **Reviews** and **Repositories**, the **Support** menu, and either your user settings or a button to sign in to Reviewable.
+On the left end of the toolbar you will see a bunny icon.  Click this icon to display shortcuts to **Reviews** and **Repositories**, the **Support** menu, and your account settings (accessible via your profile picture in the upper-right corner) or a button to sign in to Reviewable.
 
 ![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 

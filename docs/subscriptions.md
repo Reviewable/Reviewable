@@ -4,12 +4,12 @@ All public repositories and personal private repositories can use Reviewable fre
 
 ## Subscriptions
 
-Every organization gets a 30 day free trial, which requires no credit card. You can start a trial from any private review page, or from an organization entry on the Repositories page.
+Every organization gets a 30 day free trial of the Business plan, which requires no credit card. You can start a trial from any private review page, or from an organization entry on the Repositories page.
 
-Organizations are shown below your personal repos on the Repositories page, and appear whether you are an owner or a contributor.  One or more of the buttons below will show up next to the organization name:
+Organizations are shown below your personal repos on the **Repositories page**, and appear whether you are an owner or a contributor.  One or more of the buttons below will show up next to the organization name:
 - **Start a 30 day trial** will start a trial for that organization.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
-- **Subscribe** will open a panel showing the various plans, where you can compare features, select the desired number of contributors, and click **Subscribe** again to start the checkout process.
-- **Manage subscription** will open the subscription portal where you can adjust or cancel your subscription, update your card, or view past invoices.
+- **Subscribe** will open a panel showing the various plans, where you can compare features, select the desired number of contributors, and click **Subscribe** again to start the checkout process.  More on this in the [next section](#selecting-a-plan).
+- **Manage subscription** will open the subscription panel where you can adjust or cancel your subscription, update your card, or view past invoices.
 - **Edit settings** will show some options to *[manage the scope of the subscription](#managing-the-scope-of-your-subscription)*, and (un)assign a *[billing manager](#billing-manager)*.
 
 ::: danger
@@ -19,7 +19,7 @@ OAuth app restrictions may entirely block Reviewable from an organization. Learn
 
 ### Selecting a plan
 
-In the subscription panel you can select a plan for your organization, and the number of contributors to purchase the plan for.  We count each distinct PR author during a calendar month as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
+Access the subscription panel by clicking on the **Subscribe** button for an organization on the Repositories page. Here, you can select a plan that best suits your organization as well as the number of contributors to purchase the plan for.  We count each distinct PR author during a calendar month as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
 
 If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets at the beginning of the next month.
 
@@ -49,19 +49,19 @@ You can change or cancel a subscription at any time with immediate effect, but t
 
 ### Billing manager
 
-Any organization member can start a subscription and by doing so they become the organization's billing manager until they either leave the organization or a different billing manager is assigned.  Any organization owner is also allowed to manage the subscription.
+Any organization member can start a new subscription; by doing so, they become the organization's billing manager until they either leave the organization or a different billing manager is assigned.  Any organization owner is also allowed to manage the subscription.
 
 ## Licenses
 
-On an enterprise instance, the license administrator you selected when signing up and any GitHub Enterprise Server instance administrators will be able to check the license details in a panel at the top of the Repositories page.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.
+On an enterprise instance, the license administrator you selected when signing up, as well as any GitHub Enterprise Server instance administrators, will be able to check the license details at the top of the Repositories page.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.
 
-You can also view a list of users who are currently allocated licensed or guest seats.  Seats are allocated when a user signs in, and released automatically 90 days after a user's last interaction with Reviewable.  You cannot release seats manually.
+You can view a list of users who are currently allocated licensed or guest seats in the organization's settings panel via the dropdown underneath the **Contributors history** graph.  Seats are allocated when a user signs in, and released automatically 90 days after a user's last interaction with Reviewable.  You cannot release seats manually.
 
 ### Team constraints
 
-If desired, you can additionally limit the users who will be able to obtain seats on your instance.  This can be useful in larger organizations where Reviewable is only intended for use by a specific team or department, and you don't want other employees accidentally taking up seats that are needed for the intended users.  (By default, any GitHub user can sign in and occupy a seat, or, for an organization-constrained license, any member of said organizations.)
+If desired, you can limit the users who will be able to obtain seats on your instance.  This can be useful in larger organizations where Reviewable is only intended for use by a specific team or department, and you don't want other employees accidentally taking up seats that are needed for the intended users.  (By default, any GitHub user can sign in and occupy a seat, or, for an organization-constrained license, any member of said organizations.)
 
-To turn on team constraints you enter one or more fully-qualified team slugs in the panel's field; only users who are a member of at least one of these teams will be able to obtain a seat.  Users with currently assigned seats will _not_ be evicted even if they're not a team member, but won't be able to renew their seat once it expires.
+To turn on team constraints, enter one or more fully-qualified team slugs in the **Limit contributors to members of this team** field in the organization's settings panel.  Only users who are a member of at least one of these teams will be able to obtain a seat.  Users with currently assigned seats will _not_ be evicted even if they're not a team member, but won't be able to renew their seat once it expires.
 
 ::: tip
 The designated license administrator is always allowed to grab a seat so they can't accidentally lock themselves out.
