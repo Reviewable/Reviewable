@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> ship fallback emoji font for users whose OS doesn't supply one. <!-- client -->
 - <kbd>Upd:</kbd> improve wording of the review actions summary at the top of batched reviews published on GitHub. <!-- client -->
   > The old action summary was confusing for some because it sounded too much like a review status.  The new summary should be clearer and includes more action types.
 - <kbd>Fix:</kbd> correctly count the number of review marks to be published when dealing with renamed files. <!-- client -->
