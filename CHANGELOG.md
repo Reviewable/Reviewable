@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't get stuck in a retry loop if `github-status.creator` is set on an unconnected repository but doesn't have permission to access it. <!-- server -->
 - <kbd>Upd:</kbd> improve wording of the review actions summary at the top of batched reviews published on GitHub. <!-- client -->
   > The old action summary was confusing for some because it sounded too much like a review status.  The new summary should be clearer and includes more action types.
 - <kbd>Fix:</kbd> correctly count the number of review marks to be published when dealing with renamed files. <!-- client -->
