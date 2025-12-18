@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't get stuck on a blank page when signing out and back in on an instance in private mode with encryption enabled. <!-- client -->
+
 <sub>2025 - 12</sub>
 
 - <kbd>Fix:</kbd> ship fallback emoji font for users whose OS doesn't supply one. <!-- client 7774 -->
