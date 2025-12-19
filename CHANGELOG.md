@@ -1,6 +1,6 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> don't get stuck on a blank page when signing out and back in on an instance in private mode with encryption enabled. <!-- client -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't get stuck on a blank page when signing out and back in on an instance in private mode with encryption enabled. <!-- client -->
 
 <sub>2025 - 12</sub>
 
