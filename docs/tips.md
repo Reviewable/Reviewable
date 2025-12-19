@@ -22,6 +22,10 @@ Check out the [Reviewable Blog](https://www.reviewable.io/blog/) for more walkth
 
 To keep things clean and simple, Reviewable doesn't expose many UI customization settings in the UI.  Besides the [visual tweaks](accountsettings.md#visual-tweaks) section in the [account settings](accountsettings.md#account-settings) dropdown, you can also inject a [custom stylesheet](accountsettings.md#custom-stylesheet) to override styling on a wide range of elements.  Below are some commonly requested examples.
 
+::: tip
+The examples below are sourced from https://experiments.reviewable.io, which can generate a stylesheet for selected UI tweaks that you can copy or reference by URL.
+:::
+
 ### Line numbers
 
 Reviewable doesn't show line numbers in the diff for a number of reasons &mdash; there's a long discussion in [issue #147](https://github.com/Reviewable/Reviewable/issues/147).  The snippet below overrides this.  It's not perfect but it should work in the vast majority of cases:
@@ -126,7 +130,7 @@ If your prId were `756` and your desired revision were `6` as in the image above
 git fetch origin refs/reviewable/pr756/r6
 ```
 
-Note that the format of the reviewable reference titles as shown above is `refs/reviewable/pr${prId}/r${revisionId}` .
+Note that the format of the reviewable refs as shown above is `refs/reviewable/pr${prId}/r${revisionId}` .
 
 The ids `prId` and `revisionId` are available by inspection on the reviewable.io. review page:
 

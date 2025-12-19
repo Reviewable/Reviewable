@@ -24,7 +24,7 @@ While we generally support older versions of the client for quite a while, if yo
 
 
 ## Crash
-If Reviewable detects an unexpected error that cannot handle, it will immediately put the application in a safe state, try to save your data, report the error to our exception capture database, and show the modal crash overlay.  We investigate all errors captured this way so you don’t need to report them separately, but if it happens regularly (or you know how to reproduce it) then a tip is always appreciated!
+If Reviewable detects an unexpected error that it cannot handle, it will immediately put the application in a safe state, try to save your data, report the error to our exception capture database, and show the modal crash overlay.  We investigate all errors captured this way so you don’t need to report them separately, but if it happens regularly (or you know how to reproduce it) then a tip is always appreciated!
 
 Note that Reviewable is sensitive to all top-level exceptions, unhandled promise rejections, and other situations that can be caused by badly implemented browser extensions, following the philosophy of “better safe than sorry”.  If you’re having trouble with Reviewable crashing all the time, please try running it with all extensions disabled to confirm where the root cause lies.
 

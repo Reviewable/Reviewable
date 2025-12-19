@@ -22,7 +22,7 @@ You can also write your own custom styles by following the [highlight.js CSS cla
 Make sure that your stylesheet is served as `text/css`. If your host doesn't set a Content-Type header automatically, you can use [https://raw.githack.com](https://raw.githack.com) or another similar service to set the MIME type for you.
 :::
 
-We also have a few extra styles for highlighting tabs, trailing whitespace, and lack of a final newline that be customized:
+There are a few extra styles for highlighting tabs, trailing whitespace, and lack of a final newline that can be customized as well:
 
 ```css
 .tab, .no-newline, .trailing {
@@ -48,9 +48,13 @@ Reviewable lets you open files directly in your preferred external editor. Selec
 
 ![custom line editor links](images/accountsettings_2.png){width=410}
 
-You can open a file by clicking it's name in a [file diff panel header](files.md#file-header) and selecting **Open in editor**&nbsp;<i class="editor icon"/>.  To jump to a specific line, use the <i class="discussion scope icon"/>&nbsp;**line #** dropdown in the upper-right corner of any discussion.
+You can open a file by clicking its name in a [file diff panel header](files.md#file-header) and selecting **Open in editor**&nbsp;<i class="editor icon"/>.  To jump to a specific line, use the <i class="discussion scope icon"/>&nbsp;**line #** dropdown in the upper-right corner of any discussion.  
 
 ![line editor link in discussion](images/line_editor_link.png){width=480}
+
+::: tip
+You can open files in your external editor from the file matrix pane by holding down `⌘` or `Ctrl` + `Alt` or `⇧` when clicking a file name. More on this [here](files.md#file-list). 
+:::
 
 Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also that each repo directory is named the same as its repo.
 
@@ -104,11 +108,11 @@ Use the **Contrast** slider to adjust the UI contrast. Currently this only affec
 
 ### Color scheme
 
-You can switch between dark mode, light mode, or match your operating system's default display theme using the **Color scheme** radio buttons. By default, Reviewable will match your operating system's light or dark mode setting. Changing the color scheme in any Reviewable tab will immediately update it for your user across all tabs and windows.
+You can switch between dark mode, light mode, or match your operating system's default display theme using the **Color scheme** radio buttons. By default, Reviewable will match your operating system's light or dark mode setting. Changing the color scheme in any Reviewable tab will immediately update it across all tabs and windows.
 
 ### Accessibility
 
-You can enable **color replacement** (colorblind mode) to replace all shades of red and green across the app, making it easier to distinguish between the two in diffs. In single column diff layouts, plus and minus icons are used on the right side of the panel to further differentiate between changes. 
+You can enable **color replacement** (colorblind mode) to replace all shades of red and green across the app, making it easier to distinguish between the two in diffs. In single column diff layouts, plus and minus icons are also placed to the right side of the panel to further differentiate between changes. 
 
 To use colorblind mode:
 
