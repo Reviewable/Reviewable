@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> guard against a very rare crash on the review page. <!-- client -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> definitely fix all remaining `Encryption not set up` errors. <!-- client -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> don't get stuck on a blank page when signing out and back in on an instance in private mode with encryption enabled. <!-- client -->
-
 <sub>2025 - 12</sub>
 
+- <kbd>Fix:</kbd> guard against a very rare crash on the review page. <!-- client 7778 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> definitely fix all remaining `Encryption not set up` errors. <!-- client 7778 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't get stuck on a blank page when signing out and back in on an instance in private mode with encryption enabled. <!-- client 7778 -->
 - <kbd>Fix:</kbd> ship fallback emoji font for users whose OS doesn't supply one. <!-- client 7774 -->
 - <kbd>Upd:</kbd> improve wording of the review actions summary at the top of batched reviews published on GitHub. <!-- client 7774 -->
   > The old action summary was confusing for some because it sounded too much like a review status.  The new summary should be clearer and includes more action types.
