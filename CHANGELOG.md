@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> guard against a very rare crash on the review page. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> definitely fix all remaining `Encryption not set up` errors. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't get stuck on a blank page when signing out and back in on an instance in private mode with encryption enabled. <!-- client -->
 
