@@ -16,7 +16,7 @@ Reviewable will never store your source code on its servers. Each session will f
 * The OAuth access token that you authorized (encrypted for extra security).
 * Repo permissions and organization memberships.
 * Settings for all levels: organization, repository, user, and review.
-* Basic subscription information (payment details are stored on Stipe).
+* Basic subscription information (payment details are stored on Stripe).
 * Issue titles, commit messages, and GitHub branch protection settings are cached and flushed regularly.
 
 Access is controlled by a set of standalone security rules that are enforced directly by the database. Access permissions are inherited from GitHub and rechecked every 15 minutes to 2 hours, depending on the permission's power. All data is always transmitted across secure connections.
@@ -52,10 +52,18 @@ If you previously connected repos, but later revoked the authorization for Revie
 :::
 
 ::: danger
-If a user has connected a repo but later leaves an organization, it will be necessary for another admin to toggle the repo off and then on again to assume control of the connection.  (Reviewable will send a warning email to the original connector if it detects this situation.) For this reason, we recommend creating a separate "bot-like" user to assume control over connections.
+If a user has connected a repo but later leaves an organization, another admin will need to toggle the repo off and then on again to assume control of the connection.  Reviewable will send a warning email to the original connector if it detects this situation.  To avoid this, **we recommend creating a dedicated "service account" user to assume control over connections.**
 :::
 
 Each connected repository will have an "N open reviews" link under it that will take you to a repository-specific [reviews dashboard](dashboard.md).
+
+### Connect all current and future repos {#current-and-future}
+
+There's also a special **All current and future repos** toggle.  When turned on by an organization owner, Reviewable will connect all current _and future_ repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.
+
+::: danger
+You may wish to confirm the [settings](#repo-settings) of current repos and designate a [prototype repo](#prototype-repo) for future ones before you turn on this feature.  For more flexibility, [use a master `settings.yaml` file](#applying-a-settings-yaml-file-to-multiple-repositories) instead.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
+:::
 
 ### Create reviews for your own PRs
 
@@ -67,14 +75,6 @@ The same applies to private PRs for the **My PRs in any private repo** toggle, w
 
 ::: danger
 The **My PRs in any private repo** setting is a legacy feature that may get removed in the future, since it was mainly used to constrain the set of contributors to avoid going over quota, and this can now be specified directly in a [subscription's configuration](subscriptions.md#team-constraints).  It will only work if the relevant repo has an active subscription at the time the PR is created and won't backfill if a subscription is created later.
-:::
-
-### Connect all current and future repos {#current-and-future}
-
-There's also a special **All current and future repos** toggle.  When turned on by an organization owner, Reviewable will connect all current _and future_ repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.
-
-::: danger
-You may wish to confirm the [settings](#repo-settings) of current repos and designate a [prototype repo](#prototype-repo) for future ones before you turn on this feature.  For more flexibility, [use a master `settings.yaml` file](#applying-a-settings-yaml-file-to-multiple-repositories) instead.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
 :::
 
 ### Reviews in connected vs unconnected repos
@@ -205,7 +205,7 @@ overrides:
 ```
 
 ::: danger
-Overrides replace entire top-level settings rather than merging nested fields.
+Overrides *replace* entire top-level settings (shallow merge) rather than merging nested fields.
 If a setting contains multiple sub-options, you must specify all desired values in the override, as unspecified sub-fields are not inherited.
 :::
 
@@ -228,7 +228,7 @@ A list of available settings follows, each describing the available options and 
 
 #### Reviewable badge
 
-Choose *where* and *when* the Reviewable badge (link to the review) is inserted on a GitHub pull request.  This setting is listed as **Reviewable badge**"** in the repository settings panel. 
+Choose *where* and *when* the Reviewable badge (link to the review) is inserted on a GitHub pull request.  This setting looks a bit different in the Reviewable repo settings page, though the same logic applies to both. See [contextual help](index.md#help-on-using-reviewable) for an explanation of those options.
 
 ```yaml
 badge:
@@ -241,15 +241,14 @@ badge:
 ```
 
 `location` controls *where* the Reviewable badge appears on a PR. Options include:
-* `description-top` / `description-bottom` — at the top or bottom of the description for the PR.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
+* `description-top` / `description-bottom` — at the top or bottom of the PR's description.  This is convenient since the link will be in a consistent place. However, manual edits to the PR immediately after it's created will race, and might occasionally cause the edits to be lost.
 * `comment` — in a new PR comment. Optionally specify who (`commenter`) should be the author of the comment (organization members with access to the repo only). Otherwise, this defaults to the repo connector or review visitor.
 * `none` — no badges will be created (private repos only).
 
-`when` controls *when* the badge is inserted. 
-By default, the badge is added when the review is created. If you have a current Reviewable subscription or trial, you may optionally choose when to show the badge. Options include:
+`when` controls *when* the badge is inserted.  By default, the badge is added when the review is created. If you have a current Reviewable subscription or trial, you may optionally choose when to show the badge. On the repo settings page, this is controlled via a checkbox and dropdown underneath the badge location setting.  Options include:
 * `created` — show the badge once a PR has been created. 
-* `accessed` — show the badge once a review has been accessed for the first time.
-* `published` — only show the badge once a review has been published.
+* `accessed` — show the badge once a review has been accessed for the first time. *(Appears as "visited" on the repo settings page.)*
+* `published` — only show the badge once a review has been published.  *(Appears as "started" on the repo settings page.)*
 * `requested` — only show the badge once a review has been requested. This excludes any PR that never left the draft status, since no review is requested for draft PRs.
 
 ::: tip
@@ -258,7 +257,7 @@ Changes here are retroactive (except that an existing description badge won’t 
 
 #### Default review style
 
-Choose the default [review style](files.md#review-style) for all reviews in this repo.  This setting is listed as **Default review style** in the repository settings panel. The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  
+Choose the default [review style](files.md#review-style) for all reviews in this repo.  The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  
 
 This setting can be overridden on a particular review by any user with push permissions.
 
@@ -269,7 +268,7 @@ default-review-style: combined-commits | one-per-commit
 
 #### Default review overlap strategy
 
-Use the current review status of each file to determine how they are presented to a user for review.  This setting is listed as **Default review overlap strategy** in the repository settings panel. 
+Use the current review status of each file to determine how they are presented to a user for review.
 
 ```yaml
 # The default setting is `user-default`
@@ -286,7 +285,7 @@ These settings can be overridden by anyone, but will only apply to the individua
 
 #### Approve button output
 
-Customize the text inserted into discussions by the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right.  This setting is listed as **"Approve" button output** in the repository settings panel. By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji.  Some teams customize it to insert a form, or a different approval message. The button always sets the [approval level](reviews.md#approval-levels) to **Approve**.
+Customize the text inserted into discussions by the **Approve** button (aka **LGTM** button), which appears on the general discussion when the conditions are right.  By default it inserts `:lgtm:`, which renders a custom LGTM (Looks Good To Me) emoji.  Some teams customize it to insert a form, or a different approval message. The button always sets the [approval level](reviews.md#approval-levels) to **Approve**.
 
 ```yaml
 # The `approval-text` option accepts any text.
@@ -294,9 +293,9 @@ Customize the text inserted into discussions by the **Approve** button (aka **LG
 approval-text: ":lgtm:" | *
 ```
 
-#### Discussion participant dismissers
+#### Discussion dismissal authority {#discussion-participant-dismissers}
 
-This setting controls the permissions required for a user to be able to [dismiss](discussions.md#dismissing-users) participants from a discussion.  This setting is listed as **Discussion dismissal authority** in the repository settings panel. By default, anybody with write permissions can do so. You can limit it to only repo admins for a stricter approach.
+This setting controls the permission level required to [dismiss](discussions.md#dismissing-users) participants from a discussion.  By default, anybody with write permissions can do so. You can limit it to only repo admins for a stricter approach.
 
 ```yaml
 # The default setting is `push`
@@ -305,7 +304,7 @@ discussion-dismissal-restriction: push | maintain | admin
 
 #### Merge mechanism
 
-This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.  This setting can only be changed using a `settings.yaml` file.  
+This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.  **This setting can only be changed using a `settings.yaml` file.**
 
 ```yaml
 merge:
@@ -328,7 +327,7 @@ If you have a different merge process that you'd like to integrate with Reviewab
 
 #### Review status in GitHub PR
 
-This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`.  This setting is listed as **Review status in GitHub PR** in the repository settings panel.  Choose `accessed` to post only after a review has been visited at least once in Reviewable.
+This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`.  Choose `accessed` to post only after a review has been visited at least once in Reviewable.
 
 ```yaml
 github-status:
@@ -340,7 +339,7 @@ github-status:
 
 #### Code coverage
 
-You can configure Reviewable to display code coverage information next to diffs by letting it know where to fetch code coverage reports from.  This setting is listed as **Code coverage** in the repository settings panel.
+You can configure Reviewable to display code coverage information next to diffs by letting it know where to fetch code coverage reports from.
 
 ```yaml
 coverage:
@@ -359,7 +358,9 @@ coverage:
 * `{{pr}}` — the pull request number.
 * `{{commitSha}}` — the full SHA of the target commit.
 
-`headers`: Optional list of headers, encrypted or in plain text, to send along with the request.  Using a `settings.yaml` file allows for many headers to be set. When using the repository settings panel, the **Header** field can be used to send one additional header. This is typically used as an `Authorization` header for private repos, encrypted via https://reviewable.io/encrypt, though you can specify a different header in this field as well.
+`headers`: Optional list of headers, encrypted or in plain text, to send along with the request.  Using a `settings.yaml` file allows for many headers to be set.
+
+When using the repository settings panel, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos , though you can specify a different header in this field as well. 
 
 ::: danger
 The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the header instead.
@@ -439,8 +440,6 @@ The available pragmas are:
   - `-review.pullRequest.target.headCommitSha` — disables this property and skips invoking the completion condition for each push to the base branch.
   - `-review.pullRequest.target.branchProtected` — disables this property and skips invoking the completion condition when branch protection is turned on or off.
   - `-review.pullRequest.mergeability` — disables this property and skips invoking the completion condition when a PR's mergeability status changes.
-
-When the `inputs` pragma is not specified, Reviewable will attempt to infer unused inputs by running a regex against the condition code in search of property names (the last segment of the flags).
 
 ### Review state input
 
