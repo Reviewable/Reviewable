@@ -346,21 +346,21 @@ coverage:
   # The `url` option allows you to provide a url template for code coverage reports.
   url: *
   headers:
-    # Optional, the `Authorization` header for private repos, encrypted via https://reviewable.io/encrypt.
+    # Optional, the `Authorization` header for private repos.
     # You can specify other headers as well (either encrypted or in plain text).
     Authorization: encrypted/rsa2:*
 ```
 
-`url`: Listed as **Report URL template** in the repository settings panel.  You'll need to enter a URL template that Reviewable can instantiate to grab a report for all the files at a given commit.  The template can make use of these variables:
+`url`: The URL template that Reviewable can use to fetch a report for all files at a given commit.  This setting appears as **Report URL template** in the repository settings panel.  The template can make use of these variables:
 
 * `{{owner}}` — the repo owner (or organization) username.
 * `{{repo}}` — the repo name.
 * `{{pr}}` — the pull request number.
 * `{{commitSha}}` — the full SHA of the target commit.
 
-`headers`: Optional list of headers, encrypted or in plain text, to send along with the request.  Using a `settings.yaml` file allows for many headers to be set.
+`headers`: Optional list of headers to send along with the request.  When using a `settings.yaml` file, you can specify additional headers in plain text or use https://reviewable.io/encrypt to generate encrypted text to use in the file instead. 
 
-When using the repository settings panel, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos , though you can specify a different header in this field as well. 
+When using the repository settings panel, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos, though you can specify a different header in this field as well. 
 
 ::: danger
 The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the header instead.
