@@ -1,11 +1,10 @@
 # Tips and Tricks
 
 ## Videos
-
-We're trying out a new video format where an engineer goes through a real code review while we kibbitz and give them tips on using Reviewable:
+Below is a link to a video where an engineer goes through a real code review while we kibbitz and offer tips on using Reviewable:
 - [Adam Storm from CockroachDB reviews some code](https://www.youtube.com/watch?v=w3cgXBD7ErQ)
 
-There's a growing collection of [tips in screencast format](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/), if that's what you prefer, including:
+There's a collection of [tips in screencast format](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/), if that's what you prefer, including:
 - [What's the fastest way to check out your review code?](https://www.youtube.com/watch?v=JqFGBZa7YGg)
 - [Keyboard shortcuts for efficient reviews](https://www.youtube.com/watch?v=xuJ2PGFprBE)
 - [Customizing keyboard shortcuts](https://www.youtube.com/watch?v=lg2tvhTTQNE)
@@ -15,10 +14,17 @@ There's a growing collection of [tips in screencast format](https://www.youtube.
 
 Here are some articles and blog posts on code reviews that we found worth reading:
 - [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/)
+- [How to use Reviewable's Publish on Push feature](https://www.reviewable.io/blog/publish-on-next-push-is-finally-here/)
+
+Check out the [Reviewable Blog](https://www.reviewable.io/blog/) for more walkthroughs, configuration guides, changelogs, and best practices.
 
 ## Visual tweaks
 
-Reviewable doesn't have a lot of settings exposed in the UI to customize how things look to keep things simple.  However, you can easily inject a [custom stylesheet](accountsettings.md#custom-stylesheet) to override styling on a wide range of elements.  Here are some commonly requested examples.
+To keep things clean and simple, Reviewable doesn't expose many UI customization settings in the UI.  Besides the [visual tweaks](accountsettings.md#visual-tweaks) section in the [account settings](accountsettings.md#account-settings) dropdown, you can also inject a [custom stylesheet](accountsettings.md#custom-stylesheet) to override styling on a wide range of elements.  Below are some commonly requested examples.
+
+::: tip
+The examples below are sourced from https://experiments.reviewable.io, which can generate a stylesheet for selected UI tweaks that you can copy or reference by URL.
+:::
 
 ### Line numbers
 
@@ -28,11 +34,13 @@ Reviewable doesn't show line numbers in the diff for a number of reasons &mdash;
 
 If you don't need to tweak these styles, just paste `https://gist.githack.com/pkaminski/4fd7c7b9014856de32bb43f84a396772/raw/line_numbers.css` into the custom stylesheet field.
 
+::: danger
 **Be careful** though: by changing the layout in this way, Reviewable won't be able to automatically pick a diff width that fits your window so you'll need to [control it manually](files.md#diff-layout).
+:::
 
 ### Diff line background
 
-When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mdash; just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode you can use these styles:
+When in side-by-side diff mode, Reviewable doesn't highlight the whole line &mdash; just the deltas.  If you'd prefer the full line to also be highlighted like in unified diff mode, you can use these styles:
 
 <<< @/tweaks.css#highlight-whole-diff-line{css}
 
@@ -40,7 +48,7 @@ Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/h
 
 ### Code Coverage Bars
 
-If you have Reviewable set up to [show code coverage bars](repositories.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet.
+If you have Reviewable set up to [show code coverage bars](repositories.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet:
 
 <<< @/tweaks.css#code-coverage-default{css}
 
@@ -83,7 +91,7 @@ If you have accessibility needs and don't see a tweak here that helps, please re
 
 ## Skipping vendored dependencies
 
-Depending on your package manager, you sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:
+Depending on your package manager, you may sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:
 
 1. [Suppress diffs](files.md#diff-suppression-and-file-type) for vendored files via `.gitattributes`.
 2. Use a custom review completion condition to [identify files as vendored](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/identify_vendored_files.js) in the file matrix, which will allow you to mark them all as reviewed with one click.
@@ -91,9 +99,9 @@ Depending on your package manager, you sometimes need to commit dependency sourc
 
 ## Ignore comments by bots
 
-When a user posts a comment (whether via Reviewable or GiHub), we automatically snapshot all revisions to ensure that the comment's context is preserved.  This can lead to a mess, though, if you're taking your time pushing commits to a PR before asking for a review and a bot (perhaps CI?) is posting comments as you go.  There can be dozens of snapshotted revisions by the time you invite a reviewer!
+When a user posts a comment (whether via Reviewable or GiHub), we automatically snapshot all revisions to ensure that the comment's context is preserved.  This can get messy if, for example, you push many commits before asking for a review and a bot (such as a CI bot) is posting comments as you go, resulting in dozens of snapshotted revisions by the time you invite a reviewer.
 
-To avoid this situation, Reviewable attempts to detect whether a comment was posted by a bot and avoids snapshotting revisions in that case.  We detect bots by checking whether the username ends with `[bot]` (for GitHub app bots) or `-bot`, or the display name ends with `(bot)`.  If you have a favorite bot account changing its username could be tricky, but it should be easy to append `(bot)` to its name since that oughtn't be referenced anywhere.
+To avoid this situation, Reviewable attempts to detect whether a comment was posted by a bot and avoids snapshotting revisions in that case.  We detect bots by checking whether the username ends with `[bot]` (for GitHub app bots) or `-bot`, or the display name ends with `(bot)`.  Changing a bot's username can be tricky, but it should be easy to append `(bot)` to its name since that oughtn't be referenced anywhere.
 
 ## Easy local revision checkout
 
@@ -122,28 +130,43 @@ If your prId were `756` and your desired revision were `6` as in the image above
 git fetch origin refs/reviewable/pr756/r6
 ```
 
-Note that the form of the reviewable reference titles as shown above is `refs/reviewable/pr${prId}/r${revisionId}` .
+Note that the format of the reviewable refs as shown above is `refs/reviewable/pr${prId}/r${revisionId}` .
 
 The ids `prId` and `revisionId` are available by inspection on the reviewable.io. review page:
 
 ![crop from review page showing prId of 756 and revisionId of 6](images/tips_1_prId.png)
 
 ::: tip
-You can also just explore the references using the git client, by typing a reference name partially, as in `git fetch origin refs/reviewable/`, and then use tab completion to get your options.
+You can also explore the references using the git client, by typing a reference name partially, as in `git fetch origin refs/reviewable/`, and then use tab completion to get your options.
 :::
 
 #### 2. Use the revision reference
 
 After saving the FETCH_HEAD reference as described above, you can use it as you see fit.
 
-For example check out the revision code using
+For example, check out the revision code using:
 
 ```sh
 git checkout FETCH_HEAD
 ```
 
-or glance at the log using
+or glance at the log using:
 
 ```sh
 git log -n 1 --oneline FETCH_HEAD
 ```
+
+## Set diff bounds via the review URL
+
+You can set specific diff bounds when opening a review.  This can be useful when you want reviewers to see all changes across all revisions regardless of prior reviews (for example, during a final review). 
+
+Add `#rMM..rNN` to the end of a review URL to apply those diff bounds across all files on load. For example:
+```text
+https://reviewable.io/reviews/org/repo/123#r3..r5
+```
+
+You can also use the special tokens `base` and `last`. For example, `#base..last` forces a full diff, regardless of the reviewer’s personal preferences.
+
+::: tip
+When diff bounds are specified in the URL, Reviewable temporarily shows all files, regardless of the file's [review state](files.md#file-review-state) or the user's [review strategy](files.md#show-default-diffs-to-review), ensuring the requested diffs are fully visible.  If diff bounds are manually changed, any files that were previously hidden are hidden again, reverting the view to its normal state.
+:::
