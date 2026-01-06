@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> Publishing drafts with a lot of inline replies have to be split into multiple requests. <!-- client -->
+
 <sub>2025 - 12</sub>
 
 - <kbd>Fix:</kbd> guard against a very rare crash on the review page. <!-- client 7778 -->
