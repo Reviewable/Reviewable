@@ -1,6 +1,6 @@
-<sub>Upcoming</sub>
+<sub>2026 - 01</sub>
 
-- <kbd>Fix:</kbd> Publishing drafts with a lot of inline replies have to be split into multiple requests. <!-- client -->
+- <kbd>Fix:</kbd> Publishing drafts with a lot of inline replies have to be split into multiple requests. <!-- client 7780 -->
 
 <sub>2025 - 12</sub>
 
