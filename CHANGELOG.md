@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> Prevent spurious publication failures in the rare cases where Firebase doesn't compensate correctly (or overcompensates) for local clock skew. <!-- client -->
-
 <sub>2026 - 01</sub>
 
+- <kbd>Fix:</kbd> Prevent spurious publication failures in the rare cases where Firebase doesn't compensate correctly (or overcompensates) for local clock skew. <!-- client 7781 -->
 - <kbd>Fix:</kbd> Publishing drafts with a lot of inline replies have to be split into multiple requests. <!-- client 7780 -->
 
 <sub>2025 - 12</sub>
