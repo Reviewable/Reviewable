@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't bring retracted discussions to the pull request author's attention. <!-- client -->
+  > Also don't list the pull request author as a participant in such discussions in the custom review completion condition input data.
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix:</kbd> Prevent spurious publication failures in the rare cases where Firebase doesn't compensate correctly (or overcompensates) for local clock skew. <!-- client 7781 -->
