@@ -506,7 +506,7 @@ The current state of the review is accessible to your code via the `review` vari
     checks: {
       Shippable: {
         state: 'failure',
-        descriptio: 'Builds failed on Shippable',
+        description: 'Builds failed on Shippable',
         timestamp: 1432363555000
       }
     }
