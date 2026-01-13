@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> report an error when GitHub creates an inactive webhook that it claims is "successful" while connecting a repository. <!-- server -->
 - <kbd>Fix:</kbd> don't bring retracted discussions to the pull request author's attention. <!-- client -->
   > Also don't list the pull request author as a participant in such discussions in the custom review completion condition input data.
 
