@@ -1,11 +1,11 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> report an error when GitHub creates an inactive webhook that it claims is "successful" while connecting a repository. <!-- server -->
-- <kbd>Fix:</kbd> don't bring retracted discussions to the pull request author's attention. <!-- client -->
-  > Also don't list the pull request author as a participant in such discussions in the custom review completion condition input data.
 
 <sub>2026 - 01</sub>
 
+- <kbd>Fix:</kbd> don't bring retracted discussions to the pull request author's attention. <!-- client 7782 -->
+  > Also don't list the pull request author as a participant in such discussions in the custom review completion condition input data.
 - <kbd>Fix:</kbd> Prevent spurious publication failures in the rare cases where Firebase doesn't compensate correctly (or overcompensates) for local clock skew. <!-- client 7781 -->
 - <kbd>Fix:</kbd> Publishing drafts with a lot of inline replies have to be split into multiple requests. <!-- client 7780 -->
 
