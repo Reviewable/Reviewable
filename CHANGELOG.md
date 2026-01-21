@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server -->
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix:</kbd> report an error when GitHub creates an inactive webhook that it claims is "successful" while connecting a repository. <!-- server 4872 -->
