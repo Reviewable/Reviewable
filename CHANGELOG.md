@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
-- <kbd>Adm:</kbd> stop using the deprecated `unload` event on the client.  When this event is removed from browsers, using older Reviewable versions may leak resources and Firebase bandwidth. <!-- client -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server -->
 
 <sub>2026 - 01</sub>
 
+- <kbd>Adm:</kbd> stop using the deprecated `unload` event on the client.  When this event is removed from browsers, using older Reviewable versions may leak resources and Firebase bandwidth. <!-- client 7787 -->
 - <kbd>Fix:</kbd> report an error when GitHub creates an inactive webhook that it claims is "successful" while connecting a repository. <!-- server 4872 -->
 - <kbd>Fix:</kbd> don't bring retracted discussions to the pull request author's attention. <!-- client 7782 -->
   > Also don't list the pull request author as a participant in such discussions in the custom review completion condition input data.
