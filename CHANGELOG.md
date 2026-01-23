@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> fix font preloading in browser. <!-- client -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server -->
 
 <sub>2026 - 01</sub>
