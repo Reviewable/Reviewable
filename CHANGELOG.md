@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't update Reviewable's GitHub commit status if the pull request is merged or closed. <!-- server -->
-- <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server -->
-
 <sub>2026 - 01</sub>
 
+- <kbd>Fix:</kbd> don't update Reviewable's GitHub commit status if the pull request is merged or closed. <!-- server 4874 -->
+- <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server 4874 -->
 - <kbd>Adm:</kbd> fix font preloading in browser. <!-- client 7788 -->
 - <kbd>Adm:</kbd> stop using the deprecated `unload` event on the client.  When this event is removed from browsers, using older Reviewable versions may leak resources and Firebase bandwidth. <!-- client 7787 -->
 - <kbd>Fix:</kbd> report an error when GitHub creates an inactive webhook that it claims is "successful" while connecting a repository. <!-- server 4872 -->
