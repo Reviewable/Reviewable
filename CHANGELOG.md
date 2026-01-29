@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> correctly process pushes to branches that include a `%` in their name. <!-- server -->
-
 <sub>2026 - 01</sub>
 
+- <kbd>Fix:</kbd> correctly process pushes to branches that include a `%` in their name. <!-- server 4875 -->
 - <kbd>Fix:</kbd> don't update Reviewable's GitHub commit status if the pull request is merged or closed. <!-- server 4874 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server 4874 -->
 - <kbd>Adm:</kbd> fix font preloading in browser. <!-- client 7788 -->
