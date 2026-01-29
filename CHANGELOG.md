@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> correctly process pushes to branches that include a `%` in their name. <!-- server -->
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix:</kbd> don't update Reviewable's GitHub commit status if the pull request is merged or closed. <!-- server 4874 -->
