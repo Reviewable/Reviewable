@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent `worker terminated` crashes. <!-- client -->
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix:</kbd> use a more reliable method for detecting binary files. <!-- client 7794 -->
