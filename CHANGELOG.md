@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> fix minor visual issues in the file matrix. <!-- client -->
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent `worker terminated` crashes. <!-- client 7795 -->
