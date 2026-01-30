@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> use a more reliable method for detecting binary files. <!-- client -->
+  > The previous heuristic could generate false positives on files with a high proportion of foreign text.
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix:</kbd> correctly process pushes to branches that include a `%` in their name. <!-- server 4875 -->
