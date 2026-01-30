@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> use a more reliable method for detecting binary files. <!-- client -->
-  > The previous heuristic could generate false positives on files with a high proportion of foreign text.
-
 <sub>2026 - 01</sub>
 
+- <kbd>Fix:</kbd> use a more reliable method for detecting binary files. <!-- client 7794 -->
+  > The previous heuristic could generate false positives on files with a high proportion of foreign text.
 - <kbd>Fix:</kbd> correctly process pushes to branches that include a `%` in their name. <!-- server 4875 -->
 - <kbd>Fix:</kbd> don't update Reviewable's GitHub commit status if the pull request is merged or closed. <!-- server 4874 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> add support for `REVIEWABLE_REPORTING_ENDPOINT`, to receive error reports directly from browsers. <!-- server 4874 -->
