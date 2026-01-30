@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> fix minor visual issues in the file matrix. <!-- client -->
-
 <sub>2026 - 01</sub>
 
+- <kbd>Fix:</kbd> fix minor visual issues in the file matrix. <!-- client 7797 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent `worker terminated` crashes. <!-- client 7795 -->
 - <kbd>Fix:</kbd> use a more reliable method for detecting binary files. <!-- client 7794 -->
   > The previous heuristic could generate false positives on files with a high proportion of foreign text.
