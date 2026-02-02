@@ -71,7 +71,8 @@ coverage:
     Authorization: encrypted/rsa2:ObXundPmnmNRmJvPz20Y8+7egxnt5A3XjO5hSYxZGMNmFel2i5tNei8bZ/Uqd9WmcNNR37XodqyC7YR69h6PGQ==
 
 # `completion-file` gives the path to the custom review completion condition script, relative to the
-# settings file.  The script _must_ be in `/.reviewable` or a subdirectory.
+# settings file.  The script _must_ be in `/.reviewable` or a subdirectory.  You can test your script
+# in the Reviewable sandbox: https://reviewable.io/playground
 # https://docs.reviewable.io/repositories#completion-condition-script
 completion-file: completion.js
 
