@@ -1,3 +1,7 @@
+<sub>2026 - 02</sub>
+
+<sub>**Enterprise release 4875.7797** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-04 <!-- enterprise 4875.7797 --></sub>
+
 <sub>2026 - 01</sub>
 
 - <kbd>Fix:</kbd> fix minor visual issues in the file matrix. <!-- client 7797 -->
