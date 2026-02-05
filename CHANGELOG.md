@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid extremely rare crash when leaving a review page at just the wrong time. <!-- client -->
+
 <sub>2026 - 02</sub>
 
 <sub>**Enterprise release 4875.7797** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-04 <!-- enterprise 4875.7797 --></sub>
