@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid getting stuck in a loop mapping renamed files when in a bogus authentication state. <!-- client -->
 - <kbd>Fix:</kbd> don't go into an endless loop if a file lacks the revisions requested in the URL. <!-- client -->
   > This can happen for files introduced in later revisions or for reverted ones, but will
 - <kbd>Fix:</kbd> request the right diff when opening a file diffed against base in a new tab. <!-- client -->
