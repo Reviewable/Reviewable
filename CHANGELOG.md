@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> when the Reviewable status is required and it's the last status to become successful, ensure that a spurious "pull request needs all required checks to pass" message doesn't get left behind in the Checks panel. <!-- server -->
+
 <sub>2026 - 02</sub>
 
 - <kbd>Fix:</kbd> avoid getting stuck in a loop mapping renamed files when in a bogus authentication state. <!-- client 7798 -->
