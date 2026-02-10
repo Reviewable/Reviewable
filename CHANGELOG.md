@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> refresh the visual design of the file matrix. <!-- client -->
+- <kbd>Fix:</kbd> make file state boxes look clickable after they've been disabled then enabled again. <!-- client -->
 - <kbd>Fix:</kbd> when the Reviewable status is required and it's the last status to become successful, ensure that a spurious "pull request needs all required checks to pass" message doesn't get left behind in the Checks panel. <!-- server -->
 
 <sub>2026 - 02</sub>
