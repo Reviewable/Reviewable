@@ -1,12 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> avoid getting stuck in a loop mapping renamed files when in a bogus authentication state. <!-- client -->
-- <kbd>Fix:</kbd> don't go into an endless loop if a file lacks the revisions requested in the URL. <!-- client -->
-  > This can happen for files introduced in later revisions or for reverted ones, but will
-- <kbd>Fix:</kbd> request the right diff when opening a file diffed against base in a new tab. <!-- client -->
-- <kbd>Fix:</kbd> avoid extremely rare crash when leaving a review page at just the wrong time. <!-- client -->
-
 <sub>2026 - 02</sub>
+
+- <kbd>Fix:</kbd> avoid getting stuck in a loop mapping renamed files when in a bogus authentication state. <!-- client 7798 -->
+- <kbd>Fix:</kbd> don't go into an endless loop if a file lacks the revisions requested in the URL. <!-- client 7798 -->
+  > This can happen for files introduced in later revisions or for reverted ones, but will
+- <kbd>Fix:</kbd> request the right diff when opening a file diffed against base in a new tab. <!-- client 7798 -->
+- <kbd>Fix:</kbd> avoid extremely rare crash when leaving a review page at just the wrong time. <!-- client 7798 -->
 
 <sub>**Enterprise release 4875.7797** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-04 <!-- enterprise 4875.7797 --></sub>
 
