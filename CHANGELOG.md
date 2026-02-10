@@ -2,10 +2,10 @@
 
 - <kbd>Upd:</kbd> refresh the visual design of the file matrix. <!-- client -->
 - <kbd>Fix:</kbd> make file state boxes look clickable after they've been disabled then enabled again. <!-- client -->
-- <kbd>Fix:</kbd> when the Reviewable status is required and it's the last status to become successful, ensure that a spurious "pull request needs all required checks to pass" message doesn't get left behind in the Checks panel. <!-- server -->
 
 <sub>2026 - 02</sub>
 
+- <kbd>Fix:</kbd> when the Reviewable status is required and it's the last status to become successful, ensure that a spurious "pull request needs all required checks to pass" message doesn't get left behind in the Checks panel. <!-- server 4876 -->
 - <kbd>Fix:</kbd> avoid getting stuck in a loop mapping renamed files when in a bogus authentication state. <!-- client 7798 -->
 - <kbd>Fix:</kbd> don't go into an endless loop if a file lacks the revisions requested in the URL. <!-- client 7798 -->
   > This can happen for files introduced in later revisions or for reverted ones, but will
