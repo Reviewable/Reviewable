@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid rare crash when navigating to files/discussions. <!-- client -->
+
 <sub>2026 - 02</sub>
 
 - <kbd>Upd:</kbd> refresh the visual design of the file matrix. <!-- client 7799 -->
