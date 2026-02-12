@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(enterprise)</i>:</kbd> prevent the client from going "offline" due to a web worker occasionally entering an infinite loop. <!-- client -->
-- <kbd>Fix:</kbd> re-enable client-side in-memory caching of pull request files. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> make sure file header rev cells have a top border. <!-- client -->
-- <kbd>Fix:</kbd> avoid rare crash when navigating to files/discussions. <!-- client -->
-
 <sub>2026 - 02</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> prevent the client from going "offline" due to a web worker occasionally entering an infinite loop. <!-- client 7800 -->
+- <kbd>Fix:</kbd> re-enable client-side in-memory caching of pull request files. <!-- client 7800 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> make sure file header rev cells have a top border. <!-- client 7800 -->
+- <kbd>Fix:</kbd> avoid rare crash when navigating to files/discussions. <!-- client 7800 -->
 - <kbd>Upd:</kbd> refresh the visual design of the file matrix. <!-- client 7799 -->
 - <kbd>Fix:</kbd> make file state boxes look clickable after they've been disabled then enabled again. <!-- client 7799 -->
 - <kbd>Fix:</kbd> when the Reviewable status is required and it's the last status to become successful, ensure that a spurious "pull request needs all required checks to pass" message doesn't get left behind in the Checks panel. <!-- server 4876 -->
