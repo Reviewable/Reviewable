@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> prevent the client from going "offline" due to a web worker occasionally entering an infinite loop. <!-- client -->
+- <kbd>Fix:</kbd> re-enable client-side in-memory caching of pull request files. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> make sure file header rev cells have a top border. <!-- client -->
 - <kbd>Fix:</kbd> avoid rare crash when navigating to files/discussions. <!-- client -->
 
