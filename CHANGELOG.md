@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> make sure file header rev cells have a top border. <!-- client -->
 - <kbd>Fix:</kbd> avoid rare crash when navigating to files/discussions. <!-- client -->
 
 <sub>2026 - 02</sub>
