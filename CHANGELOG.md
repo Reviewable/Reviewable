@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> upgrade to Node 24. <!-- server -->
-
 <sub>2026 - 02</sub>
 
+- <kbd>Adm:</kbd> upgrade to Node 24. <!-- server 4878 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> prevent the client from going "offline" due to a web worker occasionally entering an infinite loop. <!-- client 7800 -->
 - <kbd>Fix:</kbd> re-enable client-side in-memory caching of pull request files. <!-- client 7800 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> make sure file header rev cells have a top border. <!-- client 7800 -->
