@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> upgrade to Node 24. <!-- server -->
+
 <sub>2026 - 02</sub>
 
 - <kbd>Fix<i>(enterprise)</i>:</kbd> prevent the client from going "offline" due to a web worker occasionally entering an infinite loop. <!-- client 7800 -->
