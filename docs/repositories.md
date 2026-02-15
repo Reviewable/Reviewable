@@ -608,7 +608,7 @@ Second, the `baseChangesOnly` flag is computed relative to its revision's *prior
 
 Your completion condition code must return an object containing any of the following properties.  Any missing properties (at the top level) will be filled in using the built-in [default condition](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/default.js).  This means that you can safely return, e.g., just the `disableGitHubApprovals` flag and the rest will be defaulted for you.
 
-If your condition code is asynchronous, you should not return any value synchronously and instead call `done({...})` with your return value once it's ready.
+If your condition code is asynchronous, you can return a promise or just `await` whatever you're blocking on.  You can also use a callback style where you don't return any value synchronously and instead call `done({...})` with your return value once it's ready, or `fail(new Error('...'))` to signal an error.
 
 #### `completed`
 A boolean indicating whether the review is complete or not.
