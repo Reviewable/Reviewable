@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> support async custom review completion conditions. <!-- server -->
-  > Completion conditions are now `async` functions that can `await` calls and otherwise return a promise.
-  > The traditional approaches of immediately returning a result or returning `undefined` and calling `done` or `fail` later are still supported as well.
-
 <sub>2026 - 02</sub>
 
+- <kbd>Upd:</kbd> support async custom review completion conditions. <!-- server 4879 -->
+  > Completion conditions are now `async` functions that can `await` calls and otherwise return a promise.
+  > The traditional approaches of immediately returning a result or returning `undefined` and calling `done` or `fail` later are still supported as well.
 - <kbd>Adm:</kbd> upgrade to Node 24. <!-- server 4878 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> prevent the client from going "offline" due to a web worker occasionally entering an infinite loop. <!-- client 7800 -->
 - <kbd>Fix:</kbd> re-enable client-side in-memory caching of pull request files. <!-- client 7800 -->
