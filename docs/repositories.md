@@ -103,7 +103,7 @@ Reviewable inherits most repository settings from GitHub, but some advanced feat
 
 ### Settings configuration strategies
 
-Reviewable repository settings can either be managed from the [repository page](https://reviewable.io/repositories) or through a configuration file in the `.reviewable` directory at the root of your repo. 
+Reviewable repository settings can either be managed from the [repository page](https://reviewable.io/repositories) or through a configuration file in the `.reviewable` directory at the root of your repo.
 
 #### Accessing repository settings in Reviewable {#Accessing-repository-settings-with-the-GUI}
 
@@ -115,7 +115,7 @@ Click the **Apply** button at the top-right of the page to commit your changes f
 
 #### Prototype settings for new repos {#prototype-repo}
 
-If you are an organization owner, you can set a repo as the settings prototype for any repos that haven't been accessed or created yet.  Simply click the **Set as prototype for new repos** button near the top of the page, and Reviewable will copy the prototype's settings the first time it accesses a new repository.  The prototype repo will be indicated by a star <i class="master repo icon"/> icon on the Repositories page. 
+If you are an organization owner, you can set a repo as the settings prototype for any repos that haven't been accessed or created yet.  Simply click the **Set as prototype for new repos** button near the top of the page, and Reviewable will copy the prototype's settings the first time it accesses a new repository.  The prototype repo will be indicated by a star <i class="master repo icon"/> icon on the Repositories page.
 
 ::: tip
 This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future). If you would like more flexibility configuring your connected repositories, you can [use a master `settings.yaml` file.](#applying-a-settings-yaml-file-to-multiple-repositories).
@@ -133,7 +133,7 @@ Hovering over the **Set as prototype for new repos** button will display a toolt
 
 #### Storing repository settings using the `.reviewable` directory {#file-based-settings}
 
-The `.reviewable` directory provides a file-based way to manage review settings within your project.  
+The `.reviewable` directory provides a file-based way to manage review settings within your project.
 
 You can move your settings from the Repository settings page to the `.reviewable` directory by clicking the **"Store settings in repo?"** link near the top of the repo settings page and following the provided instructions.
 
@@ -246,7 +246,7 @@ badge:
 * `none` — no badges will be created (private repos only).
 
 `when` controls *when* the badge is inserted.  By default, the badge is added when the review is created. If you have a current Reviewable subscription or trial, you may optionally choose when to show the badge. On the repo settings page, this is controlled via a checkbox and dropdown underneath the badge location setting.  Options include:
-* `created` — show the badge once a PR has been created. 
+* `created` — show the badge once a PR has been created.
 * `accessed` — show the badge once a review has been accessed for the first time. *(Appears as "visited" on the repo settings page.)*
 * `published` — only show the badge once a review has been published.  *(Appears as "started" on the repo settings page.)*
 * `requested` — only show the badge once a review has been requested. This excludes any PR that never left the draft status, since no review is requested for draft PRs.
@@ -257,7 +257,7 @@ Changes here are retroactive (except that an existing description badge won’t 
 
 #### Default review style
 
-Choose the default [review style](files.md#review-style) for all reviews in this repo.  The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.  
+Choose the default [review style](files.md#review-style) for all reviews in this repo.  The choice here affects how commits are grouped into revisions, and the suggested sequence of diffs to review.
 
 This setting can be overridden on a particular review by any user with push permissions.
 
@@ -358,9 +358,9 @@ coverage:
 * `{{pr}}` — the pull request number.
 * `{{commitSha}}` — the full SHA of the target commit.
 
-`headers`: Optional list of headers to send along with the request.  When using a `settings.yaml` file, you can specify additional headers in plain text or use https://reviewable.io/encrypt to generate encrypted text to use in the file instead. 
+`headers`: Optional list of headers to send along with the request.  When using a `settings.yaml` file, you can specify additional headers in plain text or use https://reviewable.io/encrypt to generate encrypted text to use in the file instead.
 
-When using the repository settings panel, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos, though you can specify a different header in this field as well. 
+When using the repository settings panel, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos, though you can specify a different header in this field as well.
 
 ::: danger
 The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the header instead.
@@ -417,7 +417,7 @@ If you would like to test a completion condition independently of a repo, you ca
 
 In the **Condition function** panel on the left, you can edit the code that determines when a review is complete and otherwise tweaks low-level review data.  [Simple things](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/ignore_system_files.js) are pretty easy to accomplish but you have the power to implement arbitrarily [complex logic](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pull_approve.js) if you need to.  You can find [a number of examples](https://github.com/Reviewable/Reviewable/tree/master/examples/conditions) in our repository to get you started.
 
-The condition code will run in an isolated NodeJS 20.x environment, which gets updated regularly.  The environment includes the 4.x `lodash` module available through the customary `_`. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
+The condition code will run in an isolated NodeJS 24.x environment, which gets updated regularly.  The environment includes the 4.x `lodash` module available through the customary `_`. You can require other built-in Node modules, though some may be disallowed. Each invocation of your code must return a result within three seconds.
 
 ::: tip
 `lodash` 4.x became the default on _9/9/2021_.  You can use a [pragma](#pragmas) to control the `lodash` version made available to your code.
