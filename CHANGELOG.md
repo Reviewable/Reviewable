@@ -1,3 +1,9 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> support async custom review completion conditions. <!-- server -->
+  > Completion conditions are now `async` functions that can `await` calls and otherwise return a promise.
+  > The traditional approaches of immediately returning a result or returning `undefined` and calling `done` or `fail` later are still supported as well.
+
 <sub>2026 - 02</sub>
 
 - <kbd>Adm:</kbd> upgrade to Node 24. <!-- server 4878 -->
