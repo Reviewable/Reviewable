@@ -1,3 +1,9 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> omit `@` when listing users being waited on in the review summary that's posted to GitHub. <!-- client -->
+  > The `@` effectively mentioned all the users, generating spurious notifications.  Without it GitHub won't recognize them as usernames.
+  > This doesn't change who's being waited on or how anything works in Reviewable, only how GitHub parses the message.
+
 <sub>2026 - 02</sub>
 
 - <kbd>Upd:</kbd> support async custom review completion conditions. <!-- server 4879 -->
