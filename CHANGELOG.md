@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> clean up styling of the dimmer when sending a command. <!-- client -->
-- <kbd>Upd:</kbd> omit `@` when listing users being waited on in the review summary that's posted to GitHub. <!-- client -->
-  > The `@` effectively mentioned all the users, generating spurious notifications.  Without it GitHub won't recognize them as usernames.
-  > This doesn't change who's being waited on or how anything works in Reviewable, only how GitHub parses the message.
-
 <sub>2026 - 02</sub>
 
+- <kbd>Fix:</kbd> clean up styling of the dimmer when sending a command. <!-- client 7802 -->
+- <kbd>Upd:</kbd> omit `@` when listing users being waited on in the review summary that's posted to GitHub. <!-- client 7802 -->
+  > The `@` effectively mentioned all the users, generating spurious notifications.  Without it GitHub won't recognize them as usernames.
+  > This doesn't change who's being waited on or how anything works in Reviewable, only how GitHub parses the message.
 - <kbd>Upd:</kbd> support async custom review completion conditions. <!-- server 4879 -->
   > Completion conditions are now `async` functions that can `await` calls and otherwise return a promise.
   > The traditional approaches of immediately returning a result or returning `undefined` and calling `done` or `fail` later are still supported as well.
