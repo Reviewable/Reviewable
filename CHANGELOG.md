@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client -->
+
 <sub>2026 - 02</sub>
 
 - <kbd>Fix:</kbd> clean up styling of the dimmer when sending a command. <!-- client 7802 -->
