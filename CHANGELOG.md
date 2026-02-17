@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> custom review completion conditions can now output a list of users who LGTM'd the review. <!-- server -->
+  > While completion conditions have always been able to interpret `:lgtm:` emojis as they see fit,
 - <kbd>Fix:</kbd> don't switch Reviewable's GitHub status to a "disabled by admin" failure after a pull request is merged or closed. <!-- server -->
 - <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client -->
 
