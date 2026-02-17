@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't switch Reviewable's GitHub status to a "disabled by admin" failure after a pull request is merged or closed. <!-- server -->
 - <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client -->
 
 <sub>2026 - 02</sub>
