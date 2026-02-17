@@ -627,6 +627,9 @@ An array of objects with a `username` property listing the users whose attention
 
 You can read a description of the [default pending reviewers logic](reviews.md#waiting-on) and take a look at the [code](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) that computes the default value.
 
+#### `lgtms`
+An array of objects with a `username` property listing the users who have LGTM'd (Looks Good To Me) the review, like `[{username: 'pkaminski'}]`.  Users on this list will be treated as review participants and display an LGTM emoji where appropriate.  This lets you override the [default semantics](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/lgtm.js) that would otherwise be applied on the client but does _not_ impact review completion.
+
 #### `files`
 An array of objects that looks like `{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}`.  (You can augment the `review.files` structure with additional properties and return the whole thing here.)
   - To [group files in the file matrix](files.md#file-list), set an optional `group` property on each file with any name you'd like; all files with the same `group` value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.
