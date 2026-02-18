@@ -3,10 +3,10 @@
 - <kbd>Upd:</kbd> custom review completion conditions can now output a list of users who LGTM'd the review. <!-- server -->
   > While completion conditions have always been able to interpret `:lgtm:` emojis as they see fit,
 - <kbd>Fix:</kbd> don't switch Reviewable's GitHub status to a "disabled by admin" failure after a pull request is merged or closed. <!-- server -->
-- <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client -->
 
 <sub>2026 - 02</sub>
 
+- <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client 7803 -->
 - <kbd>Fix:</kbd> clean up styling of the dimmer when sending a command. <!-- client 7802 -->
 - <kbd>Upd:</kbd> omit `@` when listing users being waited on in the review summary that's posted to GitHub. <!-- client 7802 -->
   > The `@` effectively mentioned all the users, generating spurious notifications.  Without it GitHub won't recognize them as usernames.
