@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't underline image links in comments. <!-- client -->
+
 <sub>2026 - 02</sub>
 
 - <kbd>Upd:</kbd> custom review completion conditions can now output a list of users who LGTM'd the review. <!-- server 4881 -->
