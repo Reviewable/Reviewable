@@ -17,7 +17,7 @@ Learn more in [Subscriptions](#subscriptions).
 [OAuth app access restrictions](https://help.github.com/articles/about-oauth-app-access-restrictions/) can completely block Reviewable from an organization. This often happens inadvertently and is usually undetectable by Reviewable. If some of your PRs/repo/organizations are inexplicably missing, make this one of the the first things that you check.
 
 ::: danger
-Forked repositories inherit the access restrictions of their source organization. If the original organization does not allow Reviewable, then the fork may not appear on the Reviewable Repositories page. In this case, enable Reviewable in the source organization or make a manual copy instead of a fork.
+Forked repositories inherit the access restrictions of their source organization. If the original organization does not allow Reviewable, then the fork may not appear in the Reviewable Admin Center. In this case, enable Reviewable in the source organization or make a manual copy instead of a fork.
 :::
 
 ## GitHub authorizations

@@ -1,10 +1,10 @@
-# Repositories
+# Admin Center {#repositories}
 
-The Repositories page lists all of your repos. From this page, you can connect Reviewable to Github repositories, adjust connection settings, and manage your Reviewable subscriptions (for which, please see the [next chapter](subscriptions.md)).
+The Admin Center lets you manage settings for all of your personal and organizational repositories.  From this page, you can connect Reviewable to GitHub repos, adjust connection settings, manage your Reviewable subscriptions (for which, please see the [next chapter](subscriptions.md)), and connect a Slack workspace to enable review notifications.
 
-![reviewable repositories](images/repositories_5.png)
+![reviewable repositories](images/admincenter_1.png)
 
-The repositories are grouped by owner and listed alphabetically.  If you don't see an organization of which you're a member, ensure that you click **Show all organizations** if it's there.  If the organization is still missing, check whether you need to [request approval for Reviewable](https://help.github.com/articles/requesting-organization-approval-for-oauth-apps/) from your organization owners.
+Repositories are grouped by owner via the **Organization** dropdown at the top of the page.  If you don't see an organization of which you're a member, ensure that you click **Show all organizations** if it's there.  If the organization is still missing, check whether you need to [request approval for Reviewable](https://help.github.com/articles/requesting-organization-approval-for-oauth-apps/) from your organization owners.
 
 ## Security concerns
 
@@ -97,6 +97,22 @@ Though the differences above may seem minor, it's much more convenient and relia
 You may find it impractical to use Reviewable for all PRs, especially for small changes. While every PR from a connected repo will automatically display a button that links it to a Reviewable review, you can simply ignore it and conduct the review in GitHub. Reviewable will close the review when you close the PR.  However, if the PRs are in a private organizational repo, each review will count against your contributor maximum — whether you use it or not.
 :::
 
+## Slack integration
+
+Reviewable can send review notifications to a connected Slack workspace via Direct Messages (DMs).  Reviewable will use the Slack profile listed under your GitHub profile's [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts). 
+
+To connect a Slack workspace to an organization, an organization owner who is also an admin of the Slack workspace must click the **Add to Slack** button in the Admin Center and complete the OAuth setup steps there. 
+
+Click the **Slack DM** toggle in the Account Settings dropdown to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.
+
+::: tip 
+If *review notifications* aren't available, one or more of the following requirements may not be satisfied:
+* Your organization must be covered by a subscription.
+* Your organization must be connected to a Slack workspace per the instructions above.
+* The URL of your Slack profile from the same workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
+:::
+
+
 ## Repository settings {#repo-settings}
 
 Reviewable inherits most repository settings from GitHub, but some advanced features require their own configuration.
@@ -163,7 +179,7 @@ If your `settings.yaml` file contains any invalid options, an error message will
 
 You can designate a master repository to store your `settings.yaml` file and any completion condition scripts.  The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)), including newly created repos.
 
-To set this up, ensure the repository contains a `.reviewable/settings.yaml` file, open its settings on the Repositories page, and click **Set as master repository**.  Reviewable marks the master repository with a star <i class="master repo icon"/> icon on the Repositories page.
+To set this up, ensure the repository contains a `.reviewable/settings.yaml` file, , then type that repository name into the **Master repository** field under Organization settings in the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
 
 ::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.

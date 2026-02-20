@@ -28,7 +28,7 @@ Reviewable is a powerful, feature-rich, and highly configurable tool. It's easy 
 
 1. Everybody should read through the [Registration and GitHub Authorization](registration.md) section that follows.
 2. Then, if Reviewable is already set up for your favorite repos, you can just keep reading straight into the [Code review](reviews.md) section that follows and dip into the other sections as needed.
-3. If, on the other hand, you're an admin setting up Reviewable for the first time, you'll want to jump to the [Repositories](repositories.md) section first for details on how to connect repos and start a subscription (if necessary).
+3. If, on the other hand, you're an admin setting up Reviewable for the first time, you'll want to jump to the [Admin Center](repositories.md) section first for details on how to connect repos and start a subscription (if necessary).
 
 If at any point you notice a typo or mistake, please don't hesitate to jump in and propose an edit via the link in the top right corner of every page.
 
