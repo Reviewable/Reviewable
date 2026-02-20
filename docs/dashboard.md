@@ -11,7 +11,7 @@ If PRs appear to be missing from the list, try clicking the **Include stalled pu
 
 PRs are sorted into groups ordered from most to least relevant.  Within each group, PRs are sorted in chronological order — except for **Awaiting my action**, which shows PRs that are waiting on you first.  The logic that determines if a PR is waiting on you is described ([here](reviews.md#waiting-on)). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
 
-You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links on the [Repository page](repositories.md), or by entering the full repository name and clicking on the "Go to dashboard for..." link under the query field.
+You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links in the [Admin Center](repositories.md), or by entering the full repository name and clicking on the "Go to dashboard for..." link under the query field.
 
 ::: tip
 Loading the list of reviews for a single organization or repository will be much faster than doing so for all your repositories.
@@ -31,7 +31,7 @@ Each review in the listing indicates the state of the review, in more-or-less re
 
 ![reviews list](images/reviews_10.png)
 
-The <i class="unconnected icon"/> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [Repository page](repositories.md).
+The <i class="unconnected icon"/> icon indicates that the repository for this PR is not connected to Reviewable and the review will update on demand only. In such cases, the counters may be out of date. An administrator can connect the repository from the [Admin Center](repositories.md).
 
 A <i class="stalled icon"/> icon indicates a stalled review that has not been updated in over two weeks.
 

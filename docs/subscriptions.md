@@ -4,9 +4,9 @@ All public repositories and personal private repositories can use Reviewable fre
 
 ## Subscriptions
 
-Every organization gets a 30 day free trial of the Business plan, which requires no credit card. You can start a trial from any private review page, or from an organization entry on the Repositories page.
+Every organization gets a 30 day free trial of the Business plan, which requires no credit card. You can start a trial from any private review page, or from an organization entry in the Admin Center.
 
-Organizations are shown below your personal repos on the **Repositories page**, and appear whether you are an owner or a contributor.  One or more of the buttons below will show up next to the organization name:
+Organizations are shown below your personal repos in the **Admin Center**, and appear whether you are an owner or a contributor.  One or more of the buttons below will show up next to the organization name:
 - **Start a 30 day trial** will start a trial for that organization.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
 - **Subscribe** will open a panel showing the various plans, where you can compare features, select the desired number of contributors, and click **Subscribe** again to start the checkout process.  More on this in the [next section](#selecting-a-plan).
 - **Manage subscription** will open the subscription panel where you can adjust or cancel your subscription, update your card, or view past invoices.
@@ -53,7 +53,7 @@ Any organization member can start a new subscription; by doing so, they become t
 
 ## Licenses
 
-On an enterprise instance, the license administrator you selected when signing up and any GitHub Enterprise Server instance administrators will be able to check the license details in a panel at the top of the Repositories page.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.
+On an enterprise instance, the license administrator you selected when signing up and any GitHub Enterprise Server instance administrators will be able to check the license details in a panel at the top of the Admin Center.  The details include the number of licensed seats, how many are currently in use, the organization(s) the license is constrained to (if any), and the license's expiry date.
 
 You can click on the allocated seat count to view the users assigned licensed seats, and guest seats if any are present.  Seats are allocated when a user signs in, and released automatically 90 days after a user's last interaction with Reviewable. You cannot release seats manually.
 
