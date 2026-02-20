@@ -98,6 +98,10 @@ When you're done, point Reviewable to your custom bindings file by entering its 
 
 Your bindings will be loaded and applied right away, and the keyboard shortcuts cheatsheet (type `?` in Reviewable) will automatically update to reflect them. Be sure to check the browser's console if they don't appear to work since any errors will appear there. To load any updates to your file, either reload the page or make a no-op edit to the URL field.
 
+## Review notifications
+
+Click the **Slack DM** toggle to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.  Slack integration can be configured by organization owners in the [Admin Center](repositories.md#slack-integration). 
+
 ## Visual tweaks
 
 Click the **Animated transitions** toggle to turn animated transitions on and off throughout the UI.
