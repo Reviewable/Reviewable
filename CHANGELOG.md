@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> ensure that discussions will always show in the diff, even if due to some other bug they got mapped to a line that's out of range. <!-- client -->
 - <kbd>Fix:</kbd> don't underline image links in comments. <!-- client -->
 
 <sub>2026 - 02</sub>
