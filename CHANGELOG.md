@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> guard against a crash when loading the review page on Safari Mobile. <!-- client -->
-
 <sub>2026 - 02</sub>
 
+- <kbd>Fix:</kbd> guard against a crash when loading the review page on Safari Mobile. <!-- client 7805 -->
 - <kbd>Fix:</kbd> ensure that discussions will always show in the diff, even if due to some other bug they got mapped to a line that's out of range. <!-- client 7804 -->
 - <kbd>Fix:</kbd> don't underline image links in comments. <!-- client 7804 -->
 - <kbd>Upd:</kbd> custom review completion conditions can now output a list of users who LGTM'd the review. <!-- server 4881 -->
