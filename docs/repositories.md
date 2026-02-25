@@ -62,7 +62,7 @@ Each connected repository will have an "N open reviews" link under it that will 
 There's also a special **All current and future repos** toggle.  When turned on by an organization owner, Reviewable will connect all current _and future_ repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.
 
 ::: danger
-You may wish to confirm the [settings](#repo-settings) of current repos and designate a [prototype repo](#prototype-repo) for future ones before you turn on this feature.  For more flexibility, [use a master `settings.yaml` file](#applying-a-settings-yaml-file-to-multiple-repositories) instead.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
+You may wish to confirm the [settings](#repo-settings) of current repos and designate a [master repository](#applying-a-settings-yaml-file-to-multiple-repositories) for future ones before you turn on this feature.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
 :::
 
 ### Create reviews for your own PRs
@@ -119,39 +119,21 @@ Reviewable inherits most repository settings from GitHub, but some advanced feat
 
 ### Settings configuration strategies
 
-Reviewable repository settings can either be managed from the [repository page](https://reviewable.io/repositories) or through a configuration file in the `.reviewable` directory at the root of your repo.
+Reviewable repository settings can either be managed from the [Admin Center](https://reviewable.io/admin) or through a configuration file in the `.reviewable` directory at the root of your repo.
 
-#### Accessing repository settings in Reviewable {#Accessing-repository-settings-with-the-GUI}
+#### Accessing repository settings in Reviewable{#Accessing-repository-settings-with-the-GUI}
 
-From the Repositories page, click on a repository name to access the repo settings page.  This works whether the repo is connected or not.
+From the Admin Center, click on a repository name to access the repository settings page.  This works whether the repo is connected or not.
 
 ![reviewable repo settings](images/repositories_6.png)
 
 Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click the adjacent dropdown button to view a panel for specifying additional repos to apply these settings to (_all_ the settings will be overwritten, not just your current changes).  Click **Cancel** to discard any change to the settings.
 
-#### Prototype settings for new repos {#prototype-repo}
-
-If you are an organization owner, you can set a repo as the settings prototype for any repos that haven't been accessed or created yet.  Simply click the **Set as prototype for new repos** button near the top of the page, and Reviewable will copy the prototype's settings the first time it accesses a new repository.  The prototype repo will be indicated by a star <i class="master repo icon"/> icon on the Repositories page.
-
-::: tip
-This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future). If you would like more flexibility configuring your connected repositories, you can [use a master `settings.yaml` file.](#applying-a-settings-yaml-file-to-multiple-repositories).
-:::
-
-Hovering over the **Set as prototype for new repos** button will display a tooltip with more details about the state of the prototype repo:
-
-* "Checking permissions...", "Loading current state..."
-  * Please wait a few seconds.
-* "Restricted to organization owners."
-  * You cannot view or edit this setting unless you're an organization owner.
-* "No prototype repository set."
-* "This is the current prototype repository."
-* "The current prototype repository is ____.".
-
 #### Storing repository settings using the `.reviewable` directory {#file-based-settings}
 
 The `.reviewable` directory provides a file-based way to manage review settings within your project.
 
-You can move your settings from the Repository settings page to the `.reviewable` directory by clicking the **"Store settings in repo?"** link near the top of the repo settings page and following the provided instructions.
+You can move your settings from the Repository Settings page to the `.reviewable` directory by clicking the **"Store settings in repo?"** link near the top of the repo settings page and following the provided instructions.
 
 ::: danger
 In order to use the `.reviewable` settings directory, the repository needs to be [connected](#connecting-repositories). Otherwise, the `.reviewable` directory will be ignored.
@@ -172,22 +154,29 @@ When the `settings.yaml` file is used for a repository, the repository settings 
 :::
 
 ::: danger
-If your `settings.yaml` file contains any invalid options, an error message will be displayed on the repositories page.  Reviewable will continue using the last synced value for any invalid options. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the [completion condition script](#completion-condition) if any. Local settings will override any invalid master settings.
+If your `settings.yaml` file contains any invalid options, an error message will be displayed in the Admin Center.  Reviewable will continue using the last synced value for any invalid options. If the file itself is invalid, Reviewable will default to the last synced value for all settings and the [completion condition script](#completion-condition) if any. Local settings will override any invalid master settings.
 :::
 
-#### Organization-wide settings using a master `settings.yaml` file {#applying-a-settings-yaml-file-to-multiple-repositories}
+<a id="prototype-repo"></a>
+#### Organization-wide settings using a master repository{#applying-a-settings-yaml-file-to-multiple-repositories}
 
-You can designate a master repository to store your `settings.yaml` file and any completion condition scripts.  The settings in this master repository will be used for all repositories in your organization (with the exception of [overrides](#overrides)), including newly created repos.
+You can designate a master repository to act as a settings template for newly created repos in a given organization.  
 
-To set this up, ensure the repository contains a `.reviewable/settings.yaml` file, , then type that repository name into the **Master repository** field under Organization settings in the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
+Additionally, if the master repository uses [file-based settings](#file-based-settings), then those settings will be used for all repositories in the organization (with the exception of [overrides](#overrides)), including newly created repos.
+
+Choose a master repository by typing the repository name into the **Master repository** field in the Organization settings section of the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
 
 ::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
 :::
 
+::: tip
+This feature is particularly useful if you chose to connect [all current and future repos](#current-and-future).
+:::
+
 ##### Overrides
 
-In addition to organization-wide defaults, you can define more targeted settings using an override in your master `settings.yaml` file. The overrides block applies specific settings to groups of repositories.
+In addition to configuring organization-wide defaults using [master repositories](#applying-a-settings-yaml-file-to-multiple-repositories), you can define more targeted settings using an override in your master `settings.yaml` file. The overrides block applies specific settings to groups of repositories.
 
 The overrides block has two fields:
 * repositories — a list of repository names or fnmatch (glob) patterns.
@@ -225,7 +214,7 @@ Overrides *replace* entire top-level settings (shallow merge) rather than mergin
 If a setting contains multiple sub-options, you must specify all desired values in the override, as unspecified sub-fields are not inherited.
 :::
 
-Overrides in a master `settings.yaml` file take precedence over the master defaults defined elsewhere in the same file. An individual repository’s own `settings.yaml` file takes precedence over all master settings, even without using overrides.
+Overrides in a master repository's `settings.yaml` file take precedence over the defaults defined elsewhere in the same file. An individual repository’s own `settings.yaml` file takes precedence over all master settings, even without using overrides.
 
 Final settings resolve in this order (lowest to highest precedence):
 
@@ -367,7 +356,7 @@ coverage:
     Authorization: encrypted/rsa2:*
 ```
 
-`url`: The URL template that Reviewable can use to fetch a report for all files at a given commit.  This setting appears as **Report URL template** in the repository settings panel.  The template can make use of these variables:
+`url`: The URL template that Reviewable can use to fetch a report for all files at a given commit.  This setting appears as **Report URL template** in the repository settings page.  The template can make use of these variables:
 
 * `{{owner}}` — the repo owner (or organization) username.
 * `{{repo}}` — the repo name.
@@ -376,7 +365,7 @@ coverage:
 
 `headers`: Optional list of headers to send along with the request.  When using a `settings.yaml` file, you can specify additional headers in plain text or use https://reviewable.io/encrypt to generate encrypted text to use in the file instead.
 
-When using the repository settings panel, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos, though you can specify a different header in this field as well.
+When using the repository settings page, the **Header** field can be used to send one additional header that is automatically encrypted via https://reviewable.io/encrypt. This is typically used as an `Authorization` header for private repos, though you can specify a different header in this field as well.
 
 ::: danger
 The URL template will be available to all users with read permissions on this repo, so make sure to put any sensitive secrets in the header instead.
@@ -396,7 +385,7 @@ The coverage reports must be in a format that Reviewable understands.  Currently
 
 #### Completion condition script
 
-The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file.  Note that the Repository settings panel only allows for one completion condition file.  Reviewable will use a file named `completion.js` by default if it exists and no override specifies a different completion file to use.
+The `settings.yaml` file allows you to specify one or more completion condition files for an individual repository, or any repository listed in the `repositories` object of the master `settings.yaml` file.  Note that the Repository settings page only allows for one completion condition file.  Reviewable will use a file named `completion.js` by default if it exists and no override specifies a different completion file to use.
 
 ::: danger
 Completion condition files must be stored in `/.reviewable` or a subdirectory.
