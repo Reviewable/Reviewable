@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server -->
+  > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
+
 <sub>2026 - 02</sub>
 
 - <kbd>Fix:</kbd> guard against a crash when loading the review page on Safari Mobile. <!-- client 7805 -->
