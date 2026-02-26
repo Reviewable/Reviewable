@@ -7,6 +7,8 @@
 
 <sub>2026 - 02</sub>
 
+<sub>**Enterprise release 4881.7805** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-26 <!-- enterprise 4881.7805 --></sub>
+
 - <kbd>Fix:</kbd> guard against a crash when loading the review page on Safari Mobile. <!-- client 7805 -->
 - <kbd>Fix:</kbd> ensure that discussions will always show in the diff, even if due to some other bug they got mapped to a line that's out of range. <!-- client 7804 -->
 - <kbd>Fix:</kbd> don't underline image links in comments. <!-- client 7804 -->
