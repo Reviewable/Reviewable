@@ -1,12 +1,13 @@
 <sub>Upcoming</sub>
 
-- <kbd>Adm<i>(saas)</i>:</kbd> avoid always updating review status when using `lgtms` condition output. <!-- server -->
-- <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server -->
 - <kbd>Fix:</kbd> Setting "Approve button output" (approval-text) to unknown emoji caused button to be rendered empty. <!-- client -->
-- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server -->
-  > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
 
 <sub>2026 - 02</sub>
+
+- <kbd>Adm<i>(saas)</i>:</kbd> avoid always updating review status when using `lgtms` condition output. <!-- server 4882 -->
+- <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server 4882 -->
+- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server 4882 -->
+  > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
 
 <sub>**Enterprise release 4881.7805** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-26 <!-- enterprise 4881.7805 --></sub>
 
