@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> avoid always updating review status when using `lgtms` condition output. <!-- server -->
 - <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server -->
 - <kbd>Fix:</kbd> Setting "Approve button output" (approval-text) to unknown emoji caused button to be rendered empty. <!-- client -->
 - <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server -->
