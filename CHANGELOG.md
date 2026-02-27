@@ -4,15 +4,13 @@
 
 <sub>2026 - 02</sub>
 
+- <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server -->
+- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server -->
+  > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
+
 <sub>**Enterprise release 4882.7805** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-27 <!-- enterprise 4882.7805 --></sub>
 
 - <kbd>Adm<i>(saas)</i>:</kbd> avoid always updating review status when using `lgtms` condition output. <!-- server 4882 -->
-- <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server 4882 -->
-- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server 4882 -->
-  > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
-
-<sub>**Enterprise release 4881.7805** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-26 <!-- enterprise 4881.7805 --></sub>
-
 - <kbd>Fix:</kbd> guard against a crash when loading the review page on Safari Mobile. <!-- client 7805 -->
 - <kbd>Fix:</kbd> ensure that discussions will always show in the diff, even if due to some other bug they got mapped to a line that's out of range. <!-- client 7804 -->
 - <kbd>Fix:</kbd> don't underline image links in comments. <!-- client 7804 -->
