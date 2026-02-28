@@ -2,10 +2,10 @@
 
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server -->
   > The Pondering disposition is not valid for posted comments so we'll fall back to the hard-coded defaults.
-- <kbd>Fix:</kbd> Setting "Approve button output" (approval-text) to unknown emoji caused button to be rendered empty. <!-- client -->
 
 <sub>2026 - 02</sub>
 
+- <kbd>Fix:</kbd> Setting "Approve button output" (approval-text) to unknown emoji caused button to be rendered empty. <!-- client 7806 -->
 - <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server -->
 - <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server -->
   > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
