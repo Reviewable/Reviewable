@@ -1,6 +1,6 @@
-<sub>Upcoming</sub>
+<sub>2026 - 03</sub>
 
-- <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server -->
+- <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
   > The Pondering disposition is not valid for posted comments so we'll fall back to the hard-coded defaults.
 
 <sub>2026 - 02</sub>
