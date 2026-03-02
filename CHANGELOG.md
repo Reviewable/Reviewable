@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
