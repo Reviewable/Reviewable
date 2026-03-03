@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server 4884 -->
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
   > The Pondering disposition is not valid for posted comments so we'll fall back to the hard-coded defaults.
 
