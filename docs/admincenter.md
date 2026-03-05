@@ -99,13 +99,13 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Slack integration
 
-Reviewable can send review notifications to a connected Slack workspace via Direct Messages (DMs).  It can also show participants’ Slack handles and profile links in the participants panel. Reviewable will use the Slack profile listed under your GitHub profile's [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts). 
+Reviewable can send review notifications to a connected Slack workspace via Direct Messages (DMs).  It can also show participants’ Slack handles and profile links in the participants panel. Reviewable will use the Slack profile listed under your GitHub profile's [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts).
 
-To connect a Slack workspace to an organization, an organization owner who is also an admin of the Slack workspace must click the **Add to Slack** button in the Admin Center and complete the OAuth setup steps there. 
+To connect a Slack workspace to an organization, an organization owner who is also an admin of the Slack workspace must click the **Add to Slack** button in the Admin Center and complete the OAuth setup steps there.
 
 Click the **Slack DM** toggle in the Account Settings dropdown to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.
 
-::: tip 
+::: tip
 If *review notifications* aren't available, one or more of the following requirements may not be satisfied:
 * Your organization must be covered by a subscription.
 * Your organization must be connected to a Slack workspace per the instructions above.
@@ -308,9 +308,24 @@ This setting controls the permission level required to [dismiss](discussions.md#
 discussion-dismissal-restriction: push | maintain | admin
 ```
 
+#### Standalone commit types
+
+When a commit doesn't change any files in the pull request (and fulfills some additional criteria) Reviewable will try to add it to an existing revision, even if that revision has been snapshotted.  This helps prevent new "empty" revisions from being created and potentially needing to be reviewed when rebasing or updating the pull request branch.  You'll see a warning message in the Commits file when this happens, but it can still be confusing to observe commits in an existing revision get modified.  If you prefer, you can disable this feature for specific commit types by declaring them as "standalone".
+
+*This setting can only be changed using a `settings.yaml` file.*
+
+```yaml
+# The default setting is an empty list, i.e., no commit types are considered standalone.
+standalone-commit-types:
+  - rebase
+  - merge
+```
+
 #### Merge mechanism
 
-This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.  **This setting can only be changed using a `settings.yaml` file.**
+This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.
+
+*This setting can only be changed using a `settings.yaml` file.*
 
 ```yaml
 merge:
