@@ -43,6 +43,10 @@ approval-text: ":lgtm:"
 # https://docs.reviewable.io/repositories.html#the-discussion-participant-dismissers
 discussion-dismissal-restriction: maintain
 
+# `standalone-commit-types` prevents certain types of no-changes commits from being added to an existing revision.
+# Valid options are a list of zero or more of: `rebase`, `merge`
+standalone-commit-types: []
+
 # `merge` gives you control over the merge process exposed in Reviewable.
 merge:
   # `mechanism` specifies how developers go about merging a pull request.
