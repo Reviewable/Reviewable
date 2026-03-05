@@ -1,6 +1,6 @@
 # Admin Center {#repositories}
 
-The Admin Center lets you manage settings for all of your personal and organizational repositories.  From this page, you can connect Reviewable to GitHub repos, adjust connection settings, manage your Reviewable subscriptions (for which, please see the [next chapter](subscriptions.md)), and connect a Slack workspace to enable review notifications.
+The Admin Center lets you manage settings for all of your personal and organizational repositories.  From this page, you can connect Reviewable to GitHub repos, adjust connection settings, manage your Reviewable subscriptions (for which, please see the [next chapter](subscriptions.md)), and connect a Slack workspace to enable review notifications and sync Slack handles.
 
 ![reviewable repositories](images/admincenter_1.png)
 
@@ -62,7 +62,7 @@ Each connected repository will have an "N open reviews" link under it that will 
 There's also a special **All current and future repos** toggle.  When turned on by an organization owner, Reviewable will connect all current _and future_ repos in this organization and automatically create reviews for those repos. Reviewable will not connect any repos that were previously manually toggled off.
 
 ::: danger
-You may wish to confirm the [settings](#repo-settings) of current repos and designate a [master repository](#applying-a-settings-yaml-file-to-multiple-repositories) for future ones before you turn on this feature.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
+You may wish to confirm the [settings](#repo-settings) of current repos and designate a [master repository](#applying-a-settings-yaml-file-to-multiple-repositories) for organization-wide settings before you turn on this feature.  By default, Reviewable will insert a link into all open PRs in all repos unless you've changed this setting beforehand.
 :::
 
 ### Create reviews for your own PRs
@@ -99,7 +99,7 @@ You may find it impractical to use Reviewable for all PRs, especially for small 
 
 ## Slack integration
 
-Reviewable can send review notifications to a connected Slack workspace via Direct Messages (DMs).  Reviewable will use the Slack profile listed under your GitHub profile's [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts). 
+Reviewable can send review notifications to a connected Slack workspace via Direct Messages (DMs).  It can also show participants’ Slack handles and profile links in the participants panel. Reviewable will use the Slack profile listed under your GitHub profile's [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts). 
 
 To connect a Slack workspace to an organization, an organization owner who is also an admin of the Slack workspace must click the **Add to Slack** button in the Admin Center and complete the OAuth setup steps there. 
 
@@ -121,7 +121,7 @@ Reviewable inherits most repository settings from GitHub, but some advanced feat
 
 Reviewable repository settings can either be managed from the [Admin Center](https://reviewable.io/admin) or through a configuration file in the `.reviewable` directory at the root of your repo.
 
-#### Accessing repository settings in Reviewable{#Accessing-repository-settings-with-the-GUI}
+#### Accessing repository settings in Reviewable {#accessing-repository-settings-with-the-gui}
 
 From the Admin Center, click on a repository name to access the repository settings page.  This works whether the repo is connected or not.
 
@@ -160,11 +160,12 @@ If your `settings.yaml` file contains any invalid options, an error message will
 <a id="prototype-repo"></a>
 #### Organization-wide settings using a master repository{#applying-a-settings-yaml-file-to-multiple-repositories}
 
-You can designate a master repository to act as a settings template for newly created repos in a given organization.  
+You can designate a master repository to provide settings for all repositories in an organization.  Its exact behavior depends on how the master master repository's settings are managed:
 
-Additionally, if the master repository uses [file-based settings](#file-based-settings), then those settings will be used for all repositories in the organization (with the exception of [overrides](#overrides)), including newly created repos.
+* If the master repository’s settings are [managed via the Admin Center](#accessing-repository-settings-with-the-gui), then those settings are used as a template for newly created repositories in the organization.
+* If the master repository uses [file-based settings](#file-based-settings), then those settings apply to all repositories in the organization (with the exception of [overrides](#overrides)), including newly created repositories.
 
-Choose a master repository by typing the repository name into the **Master repository** field in the Organization settings section of the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
+To choose a master repository, type it's name into the **Master repository** field in the **Organization settings** section of the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
 
 ::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
@@ -176,7 +177,7 @@ This feature is particularly useful if you chose to connect [all current and fut
 
 ##### Overrides
 
-In addition to configuring organization-wide defaults using [master repositories](#applying-a-settings-yaml-file-to-multiple-repositories), you can define more targeted settings using an override in your master `settings.yaml` file. The overrides block applies specific settings to groups of repositories.
+In addition to configuring organization-wide settings using [master repositories](#applying-a-settings-yaml-file-to-multiple-repositories), you can define more targeted settings using an override in your master `settings.yaml` file. The overrides block applies specific settings to groups of repositories.
 
 The overrides block has two fields:
 * repositories — a list of repository names or fnmatch (glob) patterns.

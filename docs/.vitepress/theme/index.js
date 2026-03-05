@@ -8,10 +8,11 @@ const normalize = (raw) =>
   raw.replace(/\.html$/i, '').replace(/\/+$/, '') || '/';
 
 const resolveRedirect = (raw) => {
-  const [path, hash = ''] = raw.split('#');
-  const from = normalize(path);
-  const to = redirects[from];
-  return to ? (hash ? `${to}#${hash}` : to) : null;
+  const [, path, extra] = raw.match(/^([^?#]*)(.*)$/);
+  const sourcePath = normalize(path);
+  if (!Object.hasOwn(redirects, sourcePath)) return null;
+  const targetPath = redirects[sourcePath];
+  return `${targetPath}${extra}`;
 };
 
 export default {
