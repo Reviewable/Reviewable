@@ -6,15 +6,19 @@ All public repositories and personal private repositories can use Reviewable fre
 
 The Subscription section of the [Admin Center](https://reviewable.io/admin) displays the current subscription or trial status of the organization selected from the dropdown at the top of the page. 
 
-Every organization gets a 30 day free trial of the Business plan, which requires no credit card. You can start a trial from any private review page, or from the Subscription section in the Admin Center.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
+Every organization gets a 30 day free trial of the Business plan, which requires no credit card. Any organization member can start a trial from any private review page, or from the Subscription section in the Admin Center.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
 
-Available plans will be listed for organizations that do not have a current subscription. You can compare plans, add contributors, and click **subscribe** to begin the checkout process. More on this in the [next section](#selecting-a-plan).
+Any organization member can start a new subscription; by doing so, they will become the organization's [billing manager](#billing-manager).  Available plans will be listed for organizations that do not have a current subscription. You can compare plans, add contributors, and click **subscribe** to begin the checkout process. More on this in the [Selecting a plan](#selecting-a-plan) section.
 
-For organizations that are already subscribed, plan details will be shown along with a **Manage Billing** button. 
+For organizations that are already subscribed, plan details and a **Manage Billing** button will be visible to organization owners and the billing manager. 
 
 ::: danger
 OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
 :::
+
+### Billing manager
+
+For organizations with an active subscription, plan details and a **Manage Billing** button are visible to organization owners and the billing manager. Any organization member can start a subscription, and the member who does so becomes the billing manager until they either leave the organization or the role is reassigned via the **Delegate subscription management to** dropdown. Organization owners can always manage the subscription.
 
 ### Selecting a plan
 
@@ -26,11 +30,7 @@ If a PR causes you to exceed your plan's contributor quota, both the subscriber 
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 :::
 
-You can upgrade, downgrade, or cancel the plan any time.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds.
-
-### Billing manager
-
-Any organization member can start a new subscription; by doing so, they become the organization's billing manager until they either leave the organization or a different billing manager is assigned via the **Delegate subscription management to** dropdown.  Any organization owner is also allowed to manage the subscription.
+You can upgrade, downgrade, or cancel the plan any time by clicking the **Manage billing** button.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
 
 ### Managing the scope of your subscription
 
@@ -47,7 +47,7 @@ Restricting an organization to a team and extending it to other organizations ar
 
 ### Canceling a subscription
 
-To cancel a subscription, click the **Manage Billing** button and switch to the free plan — don't forget to click **Confirm**!  Only the user who originally created the subscription can do this.  If this is not possible or convenient, please get in touch with [support](mailto:support@reviewable.io) and we'll help you out.
+To cancel a subscription, click the **Manage Billing** button to access the Stripe billing portal and then click **Cancel subscription**.  Only organization owners and the [billing manager](#billing-manager) can do this.  If this is not possible or convenient, please get in touch with [support](mailto:support@reviewable.io) and we'll help you out.
 
 You can change or cancel a subscription at any time with immediate effect, but there will be no refunds or proration of fees. If you cancel, previously created reviews will continue to be accessible and synchronized with GitHub. However, you'll no longer have the ability to create new reviews.
 

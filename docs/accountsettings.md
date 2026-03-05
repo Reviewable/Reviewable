@@ -100,7 +100,7 @@ Your bindings will be loaded and applied right away, and the keyboard shortcuts 
 
 ## Review notifications
 
-Click the **Slack DM** toggle to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.  Slack integration can be configured by organization owners in the [Admin Center](repositories.md#slack-integration). 
+Click the **Slack DM** toggle to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.  Slack integration can be set up by organization owners in the [Admin Center](repositories.md#slack-integration). 
 
 ## Visual tweaks
 
