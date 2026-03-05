@@ -302,9 +302,24 @@ This setting controls the permission level required to [dismiss](discussions.md#
 discussion-dismissal-restriction: push | maintain | admin
 ```
 
+#### Standalone commit types
+
+When a commit doesn't change any files in the pull request (and fulfills some additional criteria) Reviewable will try to add it onto an existing revision, even if that revision has been snapshotted.  This helps prevent new "empty" revisions from being created and potentially needing to be reviewed when rebasing or updating the pull request branch.  You'll see a warning message in the Commits file when this happens but even so it can be confusing to observe commits in an existing revision get modified.  If you prefer you can disable this feature for specific commit types by declaring them as "standalone".
+
+*This setting can only be changed using a `settings.yaml` file.*
+
+```yaml
+# The default setting is an empty list, i.e., no commit types are considered standalone.
+standalone-commit-types:
+  - rebase
+  - merge
+```
+
 #### Merge mechanism
 
-This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.  **This setting can only be changed using a `settings.yaml` file.**
+This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.
+
+*This setting can only be changed using a `settings.yaml` file.*
 
 ```yaml
 merge:
