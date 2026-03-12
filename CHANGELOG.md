@@ -11,9 +11,9 @@
 
 <sub>2026 - 02</sub>
 
-- <kbd>Fix:</kbd> Setting "Approve button output" (`approval-text`) to an unknown emoji caused the button to be rendered empty. <!-- client -->
-- <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server -->
-- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server -->
+- <kbd>Fix:</kbd> Setting "Approve button output" (`approval-text`) to an unknown emoji caused the button to be rendered empty. <!-- client 7807 -->
+- <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server 4883 -->
+- <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server 4883 -->
   > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
 
 <sub>**Enterprise release 4882.7806** (min 3340.5125 GHE ^2.19 || ^3) 2026-02-28 <!-- enterprise 4882.7806 --></sub>
@@ -23,8 +23,7 @@
 - <kbd>Fix:</kbd> ensure that discussions will always show in the diff, even if due to some other bug they got mapped to a line that's out of range. <!-- client 7804 -->
 - <kbd>Fix:</kbd> don't underline image links in comments. <!-- client 7804 -->
 - <kbd>Upd:</kbd> custom review completion conditions can now output a list of users who LGTM'd the review. <!-- server 4881 -->
-  > While completion conditions have always been able to interpret `:lgtm:` emojis as they see fit, 
-there was no way to surface these semantics in the browser, where we always applied the [default ones](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/lgtm.js).  The condition can now explicitly specify which review participants will display an LGTM emoji via the `lgtms` output field.
+  > While completion conditions have always been able to interpret `:lgtm:` emojis as they see fit, there was no way to surface these semantics in the browser, where we always applied the [default ones](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/lgtm.js).  The condition can now explicitly specify which review participants will display an LGTM emoji via the `lgtms` output field.
 - <kbd>Fix:</kbd> don't switch Reviewable's GitHub status to a "disabled by admin" failure after a pull request is merged or closed. <!-- server 4881 -->
 - <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client 7803 -->
 - <kbd>Fix:</kbd> clean up styling of the dimmer when sending a command. <!-- client 7802 -->
