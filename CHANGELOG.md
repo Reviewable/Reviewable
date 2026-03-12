@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> introduce admin center, replacing repositories page. <!-- client -->
+- <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server 4884 -->
