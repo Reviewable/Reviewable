@@ -140,7 +140,7 @@ You may find it necessary to dismiss a user from a discussion — if, for exampl
 
 ![reviewable dismissing user](images/discussions_2.png){width=570}
 
-If your disposition is **<i class="satisfied disposition icon"/>&nbsp;Satisfied**, and you have started a draft, you may dismiss all blocking reviewers by clicking a **dismiss dissenter(s)** link on the top right side of the draft to the left of the grouped avatars.  By default, anybody with write access to the repo can dismiss another participant, but admins can change this in the [repo settings](repositories.md#discussion-participant-dismissers).)
+If your disposition is **<i class="satisfied disposition icon"/>&nbsp;Satisfied**, and you have started a draft, you may dismiss all blocking reviewers by clicking a **dismiss dissenter(s)** link on the top right side of the draft to the left of the grouped avatars.  By default, anybody with write access to the repo can dismiss another participant, but admins can change this in the [repo settings](admincenter.md#discussion-participant-dismissers).)
 
 ## Unreplied discussions
 
