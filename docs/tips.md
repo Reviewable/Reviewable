@@ -48,7 +48,7 @@ Or just use this link:  `https://rawgit.com/pkaminski/2922da3d58f76a8ed7bf/raw/h
 
 ### Code Coverage Bars
 
-If you have Reviewable set up to [show code coverage bars](repositories.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet:
+If you have Reviewable set up to [show code coverage bars](admincenter.md#code-coverage) in your diffs, you can customize the bar colors by setting these css properties in your customization stylesheet:
 
 <<< @/tweaks.css#code-coverage-default{css}
 
@@ -95,7 +95,7 @@ Depending on your package manager, you may sometimes need to commit dependency s
 
 1. [Suppress diffs](files.md#diff-suppression-and-file-type) for vendored files via `.gitattributes`.
 2. Use a custom review completion condition to [identify files as vendored](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/identify_vendored_files.js) in the file matrix, which will allow you to mark them all as reviewed with one click.
-3. Use a custom review completion condition to preemptively [treat all such files as reviewed](repositories.md#files).  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.
+3. Use a custom review completion condition to preemptively [treat all such files as reviewed](admincenter.md#files).  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.
 
 ## Ignore comments by bots
 

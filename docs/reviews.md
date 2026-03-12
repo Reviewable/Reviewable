@@ -55,7 +55,7 @@ Like for GitHub reviews, there are three different approval levels you can choos
 Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.
 
 ::: tip
-You may only change the approval level if you have write permissions to the repository and are not the author of the PR.  As a repository admin you can also disable the **Approve** and **Request changes** for everyone via the [custom review completion condition](repositories.md#completion-condition) if they are apt to mess up your team's workflow.
+You may only change the approval level if you have write permissions to the repository and are not the author of the PR.  As a repository admin you can also disable the **Approve** and **Request changes** for everyone via the [custom review completion condition](admincenter.md#completion-condition) if they are apt to mess up your team's workflow.
 :::
 
 ::: danger
@@ -74,7 +74,7 @@ It's not possible to request a review from the pull request's author in GitHub, 
 Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools.
 :::
 
-Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](repositories.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
+Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](admincenter.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
 
 ### Publish on Push
 
@@ -99,7 +99,7 @@ For your convenience, Reviewable provides a conclusion panel at the bottom of th
 The conclusion doesn't show up if the review was forced into [single file mode](files#single-file-mode) due to too many files showing.  You can still pop it up by clicking on <i class="drafts icon"></i> in the toolbar.
 :::
 
-The draft has an LGTM button that you can use to approve the pull request.  (See the [repository settings](repositories.md#approve-button-output) for information on how to customize this button.)
+The draft has an LGTM button that you can use to approve the pull request.  (See the [repository settings](admincenter.md#approve-button-output) for information on how to customize this button.)
 
 To see a preview of how your published message will appear on GitHub, click **Preview Publish** under the Review summary text field. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
@@ -131,7 +131,7 @@ When a review is complete, you can merge the pull request directly from within R
 
 A review is considered complete when the first defined condition of the following is true:
 
-1. You've defined a [custom review completion condition](repositories.md#completion-condition) and it has returned a verdict with `completed: true` (irrespective of any other per-file or per-discussion flags).
+1. You've defined a [custom review completion condition](admincenter.md#completion-condition) and it has returned a verdict with `completed: true` (irrespective of any other per-file or per-discussion flags).
 
 1. You've turned on branch protection for the target branch in this repo in GitHub, and GitHub says that a merge is permitted.
 
@@ -143,13 +143,13 @@ You can set merge options and edit the merge commit message by clicking **<i cla
 
 ![merge options](images/merge_1.png){width=500px}
 
-Here you can select between the usual GitHub merge styles (normal/full, squash, and rebase), and whether Reviewable should automatically delete the source branch for you if the merge is successful.  Your selections are automatically persisted for this review, and the selections you made last will be applied to any new reviews.  A [custom review completion condition](repositories.md#condition-output) can force the merge style to use.
+Here you can select between the usual GitHub merge styles (normal/full, squash, and rebase), and whether Reviewable should automatically delete the source branch for you if the merge is successful.  Your selections are automatically persisted for this review, and the selections you made last will be applied to any new reviews.  A [custom review completion condition](admincenter.md#condition-output) can force the merge style to use.
 
 ::: tip
 When using the rebase merge style, Reviewable will indicate if the merge will be a fast-forward by adding a small annotation under the style radio button.
 :::
 
-If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](repositories.md#condition-output).
+If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](admincenter.md#condition-output).
 
 ## Review toolbar
 
@@ -187,7 +187,7 @@ The counters take into account your unsent drafts, so somebody else may see diff
 
 The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
 
-The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click on the counter itself to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](repositories.md#completion-condition), which also controls the per-file reviewed state.
+The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click on the counter itself to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](admincenter.md#completion-condition), which also controls the per-file reviewed state.
 
 ::: tip
 If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
@@ -271,7 +271,7 @@ Reviewable keeps track of which participants are needed to move a review forward
 
 However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waiting-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)
 
-You can see the algorithm above written out as code [here](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) and [customize it](repositories.md#pendingreviewers) to better fit your workflow.
+You can see the algorithm above written out as code [here](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) and [customize it](admincenter.md#pendingreviewers) to better fit your workflow.
 
 ### Actions
 
@@ -305,8 +305,8 @@ The state icons have the following meanings:
 | <i class="status check error icon"></i> | There was an error running the check |
 
 Two checks have special actions associated with them:
-- If your pull request branch is behind the target branch, you can **merge** the target branch into your pull request or **rebase** onto the target branch using the button, next to the mergeability status.  (Repository administrators can disable this feature in a custom [review completion condition](repositories#condition-output), if desired.)
-- If you are a repository administrator and are not using [file-based repository settings](repositories#file-based-settings),the **customize** button will take you to the [custom review completion condition](repositories#completion-condition) editor in the repository's settings.
+- If your pull request branch is behind the target branch, you can **merge** the target branch into your pull request or **rebase** onto the target branch using the button, next to the mergeability status.  (Repository administrators can disable this feature in a custom [review completion condition](admincenter.md#condition-output), if desired.)
+- If you are a repository administrator and are not using [file-based repository settings](admincenter.md#file-based-settings),the **customize** button will take you to the [custom review completion condition](admincenter.md#completion-condition) editor in the repository's settings.
 
 ## Keyboard shortcuts
 

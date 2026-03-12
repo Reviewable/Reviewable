@@ -57,7 +57,7 @@ Clicking on the state icon <i class="designation done icon"/> will reveal all th
 
 ![file review state details](images/designated_reviewers_details.png){width=520px}
 
-By default, Reviewable can only tell who has reviewed a file and infer some basic information about who should review it from a `CODEOWNERS` file, if present.  To unlock the full power of this feature — including indicating the scope (e.g., "security" or "accessibility") of each requested review, when a scope has been satisfied, or whether only specific people's reviews are needed — you'll need to [create designated reviewers](repositories#designated-reviewers) in the custom review completion condition.
+By default, Reviewable can only tell who has reviewed a file and infer some basic information about who should review it from a `CODEOWNERS` file, if present.  To unlock the full power of this feature — including indicating the scope (e.g., "security" or "accessibility") of each requested review, when a scope has been satisfied, or whether only specific people's reviews are needed — you'll need to [create designated reviewers](admincenter.md#designated-reviewers) in the custom review completion condition.
 
 ## File matrix
 
@@ -96,7 +96,7 @@ The elements above can be turned on or off via a small menu icon <i class="visua
 
 ![reviewable file matrix options](images/filematrix_11.png){width=200}
 
-Files can also be grouped, like for the **Tests** group in the File matrix screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on [custom review completion conditions](repositories.md#condition-output) for instructions on how to make custom file groups in your repository.
+Files can also be grouped, like for the **Tests** group in the File matrix screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on [custom review completion conditions](admincenter.md#condition-output) for instructions on how to make custom file groups in your repository.
 
 ### Column headings
 
@@ -167,7 +167,7 @@ Each revision in a review is an automatic, unmodifiable capture of one or more c
 
 
 ::: tip
-While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](repositories.md#custom-review-completion-condition) for details.
+While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](admincenter.md#custom-review-completion-condition) for details.
 :::
 
 This special file also provides additional controls over the mapping between revisions and commits.
@@ -219,7 +219,7 @@ The header holds the standard [mark as reviewed](#mark-reviewed) button, a [revi
 
 To the right of the cells you'll see the delta stats for the current diff, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.
 
-If you've set up a [code coverage](repositories#code-coverage) feed then you may see an umbrella in the header with a coverage percentage, and a dropdown menu that has further details.  The diffs will then also show coverage bars; you can [customize the colors](tips#code-coverage-bars) if desired.
+If you've set up a [code coverage](admincenter.md#code-coverage) feed then you may see an umbrella in the header with a coverage percentage, and a dropdown menu that has further details.  The diffs will then also show coverage bars; you can [customize the colors](tips#code-coverage-bars) if desired.
 
 ![reviewable file diffs](images/filediffs_1.png)
 
