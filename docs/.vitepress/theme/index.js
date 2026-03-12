@@ -21,10 +21,10 @@ export default {
     app.component('more', More);
     app.component('missive', Missive);
 
-    router.onBeforeRouteChange = (to) => {
+    router.onBeforeRouteChange = async (to) => {
       const target = resolveRedirect(to);
       if (target) {
-        setTimeout(() => router.go(target));
+        await router.go(target);
         return false;
       }
       return true;
