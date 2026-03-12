@@ -1,7 +1,10 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>New:</kbd> introduce admin center, replacing repositories page. <!-- client 7809 -->
-- <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7809 -->
 - <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server 4884 -->
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
   > The Pondering disposition is not valid for posted comments so we'll fall back to the hard-coded defaults.
@@ -20,7 +23,8 @@
 - <kbd>Fix:</kbd> ensure that discussions will always show in the diff, even if due to some other bug they got mapped to a line that's out of range. <!-- client 7804 -->
 - <kbd>Fix:</kbd> don't underline image links in comments. <!-- client 7804 -->
 - <kbd>Upd:</kbd> custom review completion conditions can now output a list of users who LGTM'd the review. <!-- server 4881 -->
-  > While completion conditions have always been able to interpret `:lgtm:` emojis as they see fit,
+  > While completion conditions have always been able to interpret `:lgtm:` emojis as they see fit, 
+there was no way to surface these semantics in the browser, where we always applied the [default ones](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/lgtm.js).  The condition can now explicitly specify which review participants will display an LGTM emoji via the `lgtms` output field.
 - <kbd>Fix:</kbd> don't switch Reviewable's GitHub status to a "disabled by admin" failure after a pull request is merged or closed. <!-- server 4881 -->
 - <kbd>Fix:</kbd> prevent autocomplete from activating inside code blocks. <!-- client 7803 -->
 - <kbd>Fix:</kbd> clean up styling of the dimmer when sending a command. <!-- client 7802 -->
