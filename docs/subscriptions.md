@@ -30,7 +30,7 @@ If a PR causes you to exceed your plan's contributor quota, both the subscriber 
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 :::
 
-You can upgrade, downgrade, or cancel the plan any time by clicking the **Manage billing** button.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
+You can change or cancel your plan at any time through the **Manage billing** button, which takes you to the Stripe billing portal.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
 
 ### Managing the scope of your subscription
 

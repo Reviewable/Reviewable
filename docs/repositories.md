@@ -165,7 +165,7 @@ You can designate a master repository to provide settings for all repositories i
 * If the master repository’s settings are [managed via the Admin Center](#accessing-repository-settings-with-the-gui), then those settings are used as a template for newly created repositories in the organization.
 * If the master repository uses [file-based settings](#file-based-settings), then those settings apply to all repositories in the organization (with the exception of [overrides](#overrides)), including newly created repositories.
 
-To choose a master repository, type it's name into the **Master repository** field in the **Organization settings** section of the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
+To choose a master repository, type its name into the **Master repository** field in the **Organization settings** section of the Admin Center.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
 
 ::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
