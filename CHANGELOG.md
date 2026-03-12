@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>New:</kbd> introduce admin center, replacing repositories page. <!-- client -->
-- <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>New:</kbd> introduce admin center, replacing repositories page. <!-- client 7809 -->
+- <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7809 -->
 - <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server 4884 -->
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
   > The Pondering disposition is not valid for posted comments so we'll fall back to the hard-coded defaults.
