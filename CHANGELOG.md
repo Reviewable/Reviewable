@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> coerce personal enrollment toggle disabled state to a boolean in admin center. <!-- client -->
 - <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client -->
 
 <sub>2026 - 03</sub>
