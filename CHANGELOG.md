@@ -4,11 +4,11 @@
 
 <sub>2026 - 03</sub>
 
-- Upd: introduce a new [repository setting](https://docs.reviewable.io/repositories#standalone-commit-types) that controls whether no-changes rebase and/or merge commits can be added to a snapshotted revision. <!-- server 4885 -->
-> By default Reviewable will try to avoid creating "empty" revisions but you can now override this behavior if it's confusing or doesn't fit your workflow.
-- Fix: don't allow interactive rebases that change the number of commits to replace a snapshotted revision. <!-- server 4885 -->
-- Fix: don't shift all lines in the Commits file when appending a merge commit to a snapshotted revision. <!-- server 4885 -->
-> This could cause discussions to become attached to the wrong lines.
+- <kbd>Upd:</kbd> introduce a new [repository setting](https://docs.reviewable.io/repositories#standalone-commit-types) that controls whether no-changes rebase and/or merge commits can be added to a snapshotted revision. <!-- server 4885 -->
+  > By default Reviewable will try to avoid creating "empty" revisions but you can now override this behavior if it's confusing or doesn't fit your workflow.
+- <kbd>Fix:</kbd> don't allow interactive rebases that change the number of commits to replace a snapshotted revision. <!-- server 4885 -->
+- <kbd>Fix:</kbd> don't shift all lines in the Commits file when appending a merge commit to a snapshotted revision. <!-- server 4885 -->
+  > This could cause discussions to become attached to the wrong lines.
 - <kbd>New:</kbd> introduce admin center, replacing repositories page. <!-- client 7809 -->
 - <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server 4884 -->
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
