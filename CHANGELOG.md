@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> offer a "ready for review" button in the pull request panel if the PR is a draft. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7811 -->
