@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client -->
-- <kbd>New:</kbd> offer a "ready for review" button in the pull request panel if the PR is a draft. <!-- client -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client 7812 -->
+- <kbd>New:</kbd> offer a "ready for review" button in the pull request panel if the PR is a draft. <!-- client 7812 -->
 - <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7811 -->
 - <kbd>Fix:</kbd> avoid repeatedly refetching GitHub branch protection for unprotected branches. <!-- server 4886 -->
 - <kbd>Upd:</kbd> introduce a new [repository setting](https://docs.reviewable.io/repositories#standalone-commit-types) that controls whether no-changes rebase and/or merge commits can be added to a snapshotted revision. <!-- server 4885 -->
