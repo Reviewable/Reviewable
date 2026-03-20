@@ -1,0 +1,13 @@
+name: Codex trigger
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+
+jobs:
+  codex:
+    if: |
+      (github.event.action == 'opened' && github.event.pull_request.draft == false) ||
+      github.event.action == 'ready_for_review'
+    uses: your-org/actions/.github/workflows/codex-trigger.yaml@master
+    secrets: inherit
