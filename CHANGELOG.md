@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> track duration of key scans for background cron jobs in logs, statsd, and Sentry (if it exceeds a set threshold, which you can set using `REVIEWABLE_CRON_CHILDREN_KEYS_WARNING_THRESHOLD`). <!-- server -->
 - <kbd>Adm:</kbd> Slack account links from GitHub profiles are now synced more frequently for members of organizations that have a Slack workspace connected. <!-- server -->
 
 <sub>2026 - 03</sub>
