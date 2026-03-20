@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Slack account links from GitHub profiles are now synced more frequently for members of organizations that have a Slack workspace connected. <!-- server -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client 7812 -->
