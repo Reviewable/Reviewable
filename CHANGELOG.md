@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> restore access to gated features (i.e. Slack and custom completion conditions) for legacy plan subscribers on business trial. <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> feature gating for organizations covered via another organization's subscription. <!-- client -->
 - <kbd>Fix:</kbd> show contextual help when hovering over an element and typing `H` or `F1`. <!-- client -->
 
 <sub>2026 - 03</sub>
