@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> show contextual help when hovering over an element and typing `H` or `F1`. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Adm:</kbd> track duration of key scans for background cron jobs in logs, statsd, and Sentry (if it exceeds a set threshold, which you can set using `REVIEWABLE_CRON_CHILDREN_KEYS_WARNING_THRESHOLD`). <!-- server 4887 -->
