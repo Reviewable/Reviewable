@@ -226,14 +226,11 @@ You can enter anything into the command field, not just directives.  This can be
 
 Lastly, you’ll see the pull request’s description. If it’s long, it becomes collapsible using the arrow to the left of the field. The same applies to the pull request details and labels section above.
 
-
 ## Participants <i class="participants icon"></i> {#participants}
 
 The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. 
 
-You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i>&nbsp;button. If [Slack integration](admincenter#slack-integration) has been configured, you can switch between showing/copying GitHub usernames and Slack handles using the <i class="github icon"></i>&nbsp;GitHub and <i class="slack icon"></i>&nbsp;Slack icons respectively.  Clicking a username will reveal GitHub and Slack organization links.  You can sort participants by each category using the <i class="icon sort"></i>&nbsp;button.
-
-
+You can sort participants by each category using the <i class="icon sort"></i>&nbsp;button.  You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i>&nbsp;button. If [Slack integration](admincenter#slack-integration) has been configured, you can switch between showing/copying GitHub usernames and Slack handles using the <i class="github icon"></i>&nbsp;GitHub and <i class="slack icon"></i>&nbsp;Slack icons respectively.  Clicking a username will reveal GitHub and Slack organization links.
 
 ![reviewable review participants panel](images/participants_panel_1.png)
 

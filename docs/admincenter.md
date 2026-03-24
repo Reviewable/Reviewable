@@ -111,7 +111,7 @@ If *review notifications* aren't available, one or more of the following require
 * The URL of your Slack profile from that workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
 * After both are in place, Slack handles and review notifications can take up to 15 minutes to sync with Reviewable.
 
-If review notifications still aren't working for you or your organization, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
+If *review notifications* still aren't working, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
 :::
 
 ## Repository settings {#repo-settings}
@@ -128,7 +128,7 @@ From the Admin Center, click on a repository name to access the repository setti
 
 ![reviewable repo settings](images/repositories_6.png)
 
-Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click **Cancel** to discard any change to the settings.
+Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click **Cancel** to discard any changes to the settings.
 
 #### Storing repository settings using the `.reviewable` directory {#file-based-settings}
 
