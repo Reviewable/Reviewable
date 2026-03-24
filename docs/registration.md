@@ -22,9 +22,9 @@ Forked repositories inherit the access restrictions of their source organization
 
 ## GitHub authorizations
 
-It is necessary for you to grant authorizations to Reviewable in GitHub. Your current GitHub authorization scopes appear at the bottom of the Account Settings drop-down window:
+It is necessary for you to grant authorizations to Reviewable in GitHub. Your current GitHub authorization scopes appear at the bottom of the [Account Settings](accountsettings#account-settings) drop-down window:
 
-![reviewable github authorizations](images/registration_3.png)
+![reviewable github authorizations](images/registration_3.png){width=420px}
 
 Here's how we use the [GitHub authorizations](https://developer.github.com/apps/building-oauth-apps/scopes-for-oauth-apps/) you grant to Reviewable:
 

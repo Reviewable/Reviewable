@@ -4,7 +4,7 @@ The Admin Center lets you manage settings for all of your personal and organizat
 
 ![reviewable repositories](images/admincenter_1.png)
 
-Repositories are grouped by owner via the **Organization** dropdown at the top of the page.  If you don't see an organization of which you're a member, ensure that you click **Show all organizations** if it's there.  If the organization is still missing, check whether you need to [request approval for Reviewable](https://help.github.com/articles/requesting-organization-approval-for-oauth-apps/) from your organization owners.
+Repositories are grouped by owner via the **Organization** dropdown near the top of the page.  If you don't see an organization of which you're a member, ensure that you click **Show all organizations** if it's there.  If the organization is still missing, check whether you need to [request approval for Reviewable](https://help.github.com/articles/requesting-organization-approval-for-oauth-apps/) from your organization owners.
 
 ## Security concerns
 
@@ -103,15 +103,16 @@ Reviewable can send review notifications to a connected Slack workspace via Dire
 
 To connect a Slack workspace to an organization, an organization owner who is also an admin of the Slack workspace must click the **Add to Slack** button in the Admin Center and complete the OAuth setup steps there.
 
-Click the **Slack DM** toggle in the Account Settings dropdown to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.
+Users in the connected organization can click the [**Slack DM**](accountsettings#review-notifications) toggle in the Account Settings dropdown to turn review notifications on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.
 
 ::: tip
 If *review notifications* aren't available, one or more of the following requirements may not be satisfied:
-* Your organization must be covered by a subscription.
 * Your organization must be connected to a Slack workspace per the instructions above.
-* The URL of your Slack profile from the same workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
-:::
+* The URL of your Slack profile from that workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
+* After both are in place, Slack handles and review notifications can take up to 15 minutes to sync with Reviewable.
 
+If review notifications still aren't working for you or your organization, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
+:::
 
 ## Repository settings {#repo-settings}
 
@@ -127,7 +128,7 @@ From the Admin Center, click on a repository name to access the repository setti
 
 ![reviewable repo settings](images/repositories_6.png)
 
-Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click the adjacent dropdown button to view a panel for specifying additional repos to apply these settings to (_all_ the settings will be overwritten, not just your current changes).  Click **Cancel** to discard any change to the settings.
+Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click **Cancel** to discard any change to the settings.
 
 #### Storing repository settings using the `.reviewable` directory {#file-based-settings}
 
@@ -160,12 +161,12 @@ If your `settings.yaml` file contains any invalid options, an error message will
 <a id="prototype-repo"></a>
 #### Organization-wide settings using a master repository {#applying-a-settings-yaml-file-to-multiple-repositories}
 
-You can designate a master repository to provide settings for all repositories in an organization.  Its exact behavior depends on how the master master repository's settings are managed:
+You can designate a master repository to provide settings for all repositories in an organization (this does not include personal repositories outside of an organization).  Its exact behavior depends on how the master repository's settings are managed:
 
 * If the master repository’s settings are [managed via the Admin Center](#accessing-repository-settings-with-the-gui), then those settings are used as a template for newly created repositories in the organization.
 * If the master repository uses [file-based settings](#file-based-settings), then those settings apply to all repositories in the organization (with the exception of [overrides](#overrides)), including newly created repositories.
 
-To choose a master repository, type its name into the **Master repository** field in the **Organization settings** section of the Admin Center and then click **Apply**.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
+To choose a master repository for an organization, type its name into the **Master repository** field in the **Organization** section of the Admin Center and then click **Apply**.  Reviewable will mark the master repository with a star <i class="master repo icon"/> icon.
 
 ::: tip
 You may add a local `settings.yaml` file in an individual repository to override settings from the master settings file.
@@ -310,9 +311,9 @@ discussion-dismissal-restriction: push | maintain | admin
 
 #### Standalone commit types
 
-When a commit doesn't change any files in the pull request (and fulfills some additional criteria) Reviewable will try to add it to an existing revision, even if that revision has been snapshotted.  This helps prevent new "empty" revisions from being created and potentially needing to be reviewed when rebasing or updating the pull request branch.  You'll see a warning message in the Commits file when this happens, but it can still be confusing to observe commits in an existing revision get modified.  If you prefer, you can disable this feature for specific commit types by declaring them as "standalone".
-
 *This setting can only be changed using a `settings.yaml` file.*
+
+When a commit doesn't change any files in the pull request (and fulfills some additional criteria) Reviewable will try to add it to an existing revision, even if that revision has been snapshotted.  This helps prevent new "empty" revisions from being created and potentially needing to be reviewed when rebasing or updating the pull request branch.  You'll see a warning message in the Commits file when this happens, but it can still be confusing to observe commits in an existing revision get modified.  If you prefer, you can disable this feature for specific commit types by declaring them as "standalone".
 
 ```yaml
 # The default setting is an empty list, i.e., no commit types are considered standalone.
@@ -323,9 +324,9 @@ standalone-commit-types:
 
 #### Merge mechanism
 
-This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.
-
 *This setting can only be changed using a `settings.yaml` file.*
+
+This setting lets Reviewable know how developers are expected to merge pull requests in the repository, so that we can adapt our UI and backend processes accordingly.
 
 ```yaml
 merge:
