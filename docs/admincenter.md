@@ -105,13 +105,13 @@ To connect a Slack workspace to an organization, an organization owner who is al
 
 Users in the connected organization can click the [**Slack DM**](accountsettings#review-notifications) toggle in the Account Settings dropdown to turn review notifications on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.
 
-::: tip
+::: warning
 If *review notifications* aren't available, one or more of the following requirements may not be satisfied:
 * Your organization must be connected to a Slack workspace per the instructions above.
 * The URL of your Slack profile from that workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
-* After both are in place, Slack handles and review notifications can take up to 15 minutes to sync with Reviewable.
+* After both are in place, Slack handles and review notifications can take up to 30 minutes to sync with Reviewable.
 
-If *review notifications* still aren't working, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
+If *review notifications* still aren't available, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
 :::
 
 ## Repository settings {#repo-settings}
@@ -128,7 +128,7 @@ From the Admin Center, click on a repository name to access the repository setti
 
 ![reviewable repo settings](images/repositories_6.png)
 
-Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click **Cancel** to discard any changes to the settings.
+Click the **Apply** button at the top-right of the page to commit your changes for the repo.  Click the adjacent dropdown button to view a panel for specifying additional repos to apply these settings to (_all_ the settings will be overwritten, not just your current changes).  Click **Cancel** to discard any changes to the settings.
 
 #### Storing repository settings using the `.reviewable` directory {#file-based-settings}
 
@@ -161,7 +161,7 @@ If your `settings.yaml` file contains any invalid options, an error message will
 <a id="prototype-repo"></a>
 #### Organization-wide settings using a master repository {#applying-a-settings-yaml-file-to-multiple-repositories}
 
-You can designate a master repository to provide settings for all repositories in an organization (this does not include personal repositories outside of an organization).  Its exact behavior depends on how the master repository's settings are managed:
+You can designate a master repository to provide settings for all repositories in an organization (this does not include personal repositories).  Its exact behavior depends on how the master repository's settings are managed:
 
 * If the master repository’s settings are [managed via the Admin Center](#accessing-repository-settings-with-the-gui), then those settings are used as a template for newly created repositories in the organization.
 * If the master repository uses [file-based settings](#file-based-settings), then those settings apply to all repositories in the organization (with the exception of [overrides](#overrides)), including newly created repositories.

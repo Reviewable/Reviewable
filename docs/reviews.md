@@ -228,7 +228,7 @@ Lastly, you’ll see the pull request’s description. If it’s long, it become
 
 ## Participants <i class="participants icon"></i> {#participants}
 
-The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents. Some cells may also have a dropdown menu with relevant actions that appears on hover. 
+The participants panel lets you quickly track the status of each individual that is involved in the review. Every information cell has contextual help with more details on its contents.
 
 You can sort participants by each category using the <i class="icon sort"></i>&nbsp;button.  You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i>&nbsp;button. If [Slack integration](admincenter#slack-integration) has been configured, you can switch between showing/copying GitHub usernames and Slack handles using the <i class="github icon"></i>&nbsp;GitHub and <i class="slack icon"></i>&nbsp;Slack icons respectively.  Clicking a username will reveal GitHub and Slack organization links.
 
