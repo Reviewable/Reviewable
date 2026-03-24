@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't rewrite PR links that have extra path segments before the owner/repo (e.g. Devin AI URLs). <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> stop showing spinner for subscribe buttons on server error. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> restore access to gated features (i.e. Slack and custom completion conditions) for legacy plan subscribers on business trial. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> feature gating for organizations covered via another organization's subscription. <!-- client -->
-- <kbd>Fix:</kbd> show contextual help when hovering over an element and typing `H` or `F1`. <!-- client -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Fix:</kbd> don't rewrite PR links that have extra path segments before the owner/repo (e.g. Devin AI URLs). <!-- client 7815 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> stop showing spinner for subscribe buttons on server error. <!-- client 7815 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> restore access to gated features (i.e. Slack and custom completion conditions) for legacy plan subscribers on business trial. <!-- client 7815 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> feature gating for organizations covered via another organization's subscription. <!-- client 7815 -->
+- <kbd>Fix:</kbd> show contextual help when hovering over an element and typing `H` or `F1`. <!-- client 7815 -->
 - <kbd>Adm:</kbd> track duration of key scans for background cron jobs in logs, statsd, and Sentry (if it exceeds a set threshold, which you can set using `REVIEWABLE_CRON_CHILDREN_KEYS_WARNING_THRESHOLD`). <!-- server 4887 -->
 - <kbd>Adm:</kbd> Slack account links from GitHub profiles are now synced more frequently for members of organizations that have a Slack workspace connected. <!-- server 4887 -->
 - <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client 7812 -->
