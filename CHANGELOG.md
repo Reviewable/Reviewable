@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> mark a repository connection as broken if pull requests were disabled on GitHub. <!-- server -->
-- <kbd>Fix:</kbd> send connection error messages for personal repositories. <!-- server -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Fix:</kbd> mark a repository connection as broken if pull requests were disabled on GitHub. <!-- server 4890 -->
+- <kbd>Fix:</kbd> send connection error messages for personal repositories. <!-- server 4890 -->
 - <kbd>Fix:</kbd> don't rewrite PR links that have extra path segments before the owner/repo (e.g. Devin AI URLs). <!-- client 7815 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> stop showing spinner for subscribe buttons on server error. <!-- client 7815 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore access to gated features (i.e. Slack and custom completion conditions) for legacy plan subscribers on business trial. <!-- client 7815 -->
