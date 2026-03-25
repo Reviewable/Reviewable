@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> "Apply" button dropdown in repository settings covered by section headers. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Fix:</kbd> mark a repository connection as broken if pull requests were disabled on GitHub. <!-- server 4890 -->
