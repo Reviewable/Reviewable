@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server 4892 -->
 - <kbd>Fix:</kbd> guard against missing coverage when performing feature checks. <!-- client 7819 -->
 - <kbd>Fix:</kbd> error when entering connected non-empty master repo without file-based settings <!-- client 7818 -->
 - <kbd>Fix:</kbd> "Apply" button dropdown in repository settings covered by section headers. <!-- client 7817 -->
