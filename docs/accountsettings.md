@@ -4,7 +4,7 @@ When signed in, click your profile picture in the upper-right corner to view the
 
 Here, you can manage your global settings and customize your Reviewable environment.  This chapter explains each setting from top to bottom. 
 
-![reviewable account settings](images/accountsettings_1.png){width=590}
+![reviewable account settings](images/accountsettings_1.png){width=580}
 
 ## Custom diff font
 
