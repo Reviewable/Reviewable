@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server -->
 - <kbd>Fix:</kbd> error when entering connected non-empty master repo without file-based settings <!-- client -->
 
 <sub>2026 - 03</sub>
