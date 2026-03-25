@@ -109,7 +109,7 @@ Users in the connected organization can click the [**Slack DM**](accountsettings
 If *review notifications* aren't available, one or more of the following requirements may not be satisfied:
 * Your organization must be connected to a Slack workspace per the instructions above.
 * The URL of your Slack profile from that workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
-* After both are in place, Slack handles and review notifications can take up to 30 minutes to sync with Reviewable.
+* Slack handles and review notifications can take a while to sync with Reviewable. If you've just set this up, try waiting 15-30 minutes or so, then load a review in the relevant organization and check again.
 
 If *review notifications* still aren't available, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
 :::
