@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
 - <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server -->
-- <kbd>Fix:</kbd> error when entering connected non-empty master repo without file-based settings <!-- client -->
 
 <sub>2026 - 03</sub>
 
+- <kbd>Fix:</kbd> error when entering connected non-empty master repo without file-based settings <!-- client 7818 -->
 - <kbd>Fix:</kbd> "Apply" button dropdown in repository settings covered by section headers. <!-- client 7817 -->
 - <kbd>Fix:</kbd> mark a repository connection as broken if pull requests were disabled on GitHub. <!-- server 4890 -->
 - <kbd>Fix:</kbd> send connection error messages for personal repositories. <!-- server 4890 -->
