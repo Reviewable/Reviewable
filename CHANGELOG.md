@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> guard against missing coverage when performing feature checks. <!-- client -->
 - <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server -->
 
 <sub>2026 - 03</sub>
