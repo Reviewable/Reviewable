@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> "Apply" button dropdown in repository settings covered by section headers. <!-- client -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Fix:</kbd> "Apply" button dropdown in repository settings covered by section headers. <!-- client 7817 -->
 - <kbd>Fix:</kbd> mark a repository connection as broken if pull requests were disabled on GitHub. <!-- server 4890 -->
 - <kbd>Fix:</kbd> send connection error messages for personal repositories. <!-- server 4890 -->
 - <kbd>Fix:</kbd> don't rewrite PR links that have extra path segments before the owner/repo (e.g. Devin AI URLs). <!-- client 7815 -->
