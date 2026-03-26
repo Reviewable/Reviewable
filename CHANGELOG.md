@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> make repo settings overlay closable by keyboard shorcut <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client -->
 
