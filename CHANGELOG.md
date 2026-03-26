@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client -->
 
 <sub>2026 - 03</sub>
