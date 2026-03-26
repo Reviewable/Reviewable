@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server 4892 -->
