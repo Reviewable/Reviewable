@@ -1,11 +1,11 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> make repo settings overlay closable by keyboard shorcut <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server -->
-- <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client -->
 
 <sub>2026 - 03</sub>
 
+- <kbd>Upd:</kbd> make repo settings overlay closable by keyboard shorcut <!-- client 7820 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client 7820 -->
 - <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server 4892 -->
 - <kbd>Fix:</kbd> guard against missing coverage when performing feature checks. <!-- client 7819 -->
 - <kbd>Fix:</kbd> error when entering connected non-empty master repo without file-based settings <!-- client 7818 -->
