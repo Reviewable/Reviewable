@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> show repo settings load errors in the overlay instead of crashing. <!-- client -->
+- <kbd>Fix:</kbd> don't show settings migration link and apply button wile repo settings are loading. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server 4893 -->
