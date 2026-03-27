@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server -->
-
 <sub>2026 - 03</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server 4893 -->
 - <kbd>Upd:</kbd> make repo settings overlay closable by keyboard shorcut <!-- client 7820 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client 7820 -->
 - <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server 4892 -->
