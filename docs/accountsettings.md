@@ -53,7 +53,7 @@ You can open a file by clicking its name in a [file diff panel header](files.md#
 ![line editor link in discussion](images/line_editor_link.png){width=480}
 
 ::: tip
-You can open files in your external editor from the file matrix pane by holding down `⌘` or `Ctrl` + `Alt` or `⇧` when clicking a file name. More on this [here](files.md#file-list). 
+You can open files in your external editor from the file matrix by holding down `⌘` or `Ctrl` + `Alt` or `⇧` when clicking a file name. More on this [here](files.md#file-list). 
 :::
 
 Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also that each repo directory is named the same as its repo.

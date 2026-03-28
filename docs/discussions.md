@@ -146,6 +146,8 @@ If your disposition is **<i class="satisfied disposition icon"/>&nbsp;Satisfied*
 
 A discussion is unreplied for you when there are comments in the discussion that you haven't acknowledged, replied to, or marked as read. Unreplied discussions will increment your red discussions counter <i class="discussions icon"/> <span class="red label">2</span> for the review. A discussion is also unreplied for you if one of the following rules applies, but _none of the preceding rules apply to anybody else_, even if you're caught up on the comments.
 
+In the discussion matrix, discussions that are unreplied for you appear in the **To reply** group.  Other unresolved discussions appear in **Unresolved**, while resolved ones move to **Resolved**.
+
 1. You are an active participant, or are **<i class="mentioned disposition icon"/>&nbsp;Mentioned**, or you are the PR author, or one of the participants is **<i class="informing disposition icon"/>&nbsp;Informing**, and you have unread comments, or you are **<i class="working disposition icon"/>&nbsp;Working**.
 2. You are the PR author and the discussion has only one active participant (which is not you). This applies even if you have no unread comments; that is, you acknowledged the discussion without replying.
 3. You are not the PR author, the discussion has only the PR author as the active participant, and you have unread comments.
