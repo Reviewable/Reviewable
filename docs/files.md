@@ -61,7 +61,7 @@ By default, Reviewable can only tell who has reviewed a file and infer some basi
 
 ## File matrix
 
-The files panel displays a history matrix showing all files and revisions. Here, you can:
+The file matrix displays a history matrix showing all files and revisions. Here, you can:
 
 - View a summary of the PR's change history for each file.
 - Set diff bounds for any and all files.
@@ -90,9 +90,11 @@ Further to the right is the [file review state](#file-review-state) chip that yo
 
 ![reviewable file matrix options](images/filematrix_2.png){width=500}
 
-Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes test coverage statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
+Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed, no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes test coverage statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
 
-The elements above can be turned on or off via a small menu icon <i class="visual tweaks icon"/> below the file matrix.  You can also force all elements to appear "all in overlay"- when the file matrix is opened in full-screen overlay mode. To enter full-screen mode, click the minimize icon <i class="angle up icon"/> on the top of the File matrix and then click the full-screen icon <i class="maximize icon"/> .
+The elements above can be turned on or off via a small menu icon <i class="visual tweaks icon"/> below the file matrix.  You can also force all elements to appear "all in overlay" when the file matrix is opened in full-screen overlay mode.  If the matrix is wider than the available space, you can scroll it left and right to see all the revisions and these stats.
+
+To enter full-screen mode, click the <i class="maximize icon"></i> icon in the sidebar on the **Files** tab or click the <i class="files icon"></i> File matrix icon when the sidebar is collapsed.
 
 ![reviewable file matrix options](images/filematrix_11.png){width=200}
 
