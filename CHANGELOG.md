@@ -2,39 +2,40 @@
 
 - <kbd>Fix:</kbd> show repo settings load errors in the overlay instead of crashing. <!-- client 7821 -->
 - <kbd>Fix:</kbd> don't show settings migration link and apply button wile repo settings are loading. <!-- client 7821 -->
-- <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription <!-- server 4893 -->
-- <kbd>Fix:</kbd> make repo settings overlay closable by keyboard shorcut <!-- client 7820 -->
-- <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting <!-- client 7820 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription. <!-- server 4893 -->
+- <kbd>Fix:</kbd> make repo settings overlay closable by keyboard shorcut. <!-- client 7820 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> restore file matrix highlighting. <!-- client 7820 -->
 - <kbd>Adm:</kbd> clean up "unable to send notification email" error reporting. <!-- server 4892 -->
-- <kbd>Fix:</kbd> guard against missing coverage when performing feature checks. <!-- client 7819 -->
-- <kbd>Fix:</kbd> error when entering connected non-empty master repo without file-based settings <!-- client 7818 -->
-- <kbd>Fix:</kbd> "Apply" button dropdown in repository settings covered by section headers. <!-- client 7817 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> guard against missing coverage when performing feature checks. <!-- client 7819 -->
+- <kbd>Fix:</kbd> don't crash when entering connected non-empty master repo without file-based settings. <!-- client 7818 -->
+- <kbd>Fix:</kbd> don't let section headers cover the "Apply" button dropdown in repository settings. <!-- client 7817 -->
 - <kbd>Fix:</kbd> mark a repository connection as broken if pull requests were disabled on GitHub. <!-- server 4890 -->
 - <kbd>Fix:</kbd> send connection error messages for personal repositories. <!-- server 4890 -->
 - <kbd>Fix:</kbd> don't rewrite PR links that have extra path segments before the owner/repo (e.g. Devin AI URLs). <!-- client 7815 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> stop showing spinner for subscribe buttons on server error. <!-- client 7815 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore access to gated features (i.e. Slack and custom completion conditions) for legacy plan subscribers on business trial. <!-- client 7815 -->
-- <kbd>Fix<i>(saas)</i>:</kbd> feature gating for organizations covered via another organization's subscription. <!-- client 7815 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> fix feature gating for organizations covered via another organization's subscription. <!-- client 7815 -->
 - <kbd>Fix:</kbd> show contextual help when hovering over an element and typing `H` or `F1`. <!-- client 7815 -->
 - <kbd>Adm:</kbd> track duration of key scans for background cron jobs in logs, statsd, and Sentry (if it exceeds a set threshold, which you can set using `REVIEWABLE_CRON_CHILDREN_KEYS_WARNING_THRESHOLD`). <!-- server 4887 -->
 - <kbd>Adm:</kbd> Slack account links from GitHub profiles are now synced more frequently for members of organizations that have a Slack workspace connected. <!-- server 4887 -->
 - <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client 7812 -->
 - <kbd>New:</kbd> offer a "ready for review" button in the pull request panel if the PR is a draft. <!-- client 7812 -->
 - <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7811 -->
+- <kbd>Adm(enterprise):</kbd> document [how to set up Slack](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#slack-integration) for integration with Reviewable.
 - <kbd>Fix:</kbd> avoid repeatedly refetching GitHub branch protection for unprotected branches. <!-- server 4886 -->
 - <kbd>Upd:</kbd> introduce a new [repository setting](https://docs.reviewable.io/repositories#standalone-commit-types) that controls whether no-changes rebase and/or merge commits can be added to a snapshotted revision. <!-- server 4885 -->
   > By default Reviewable will try to avoid creating "empty" revisions but you can now override this behavior if it's confusing or doesn't fit your workflow.
 - <kbd>Fix:</kbd> don't allow interactive rebases that change the number of commits to replace a snapshotted revision. <!-- server 4885 -->
 - <kbd>Fix:</kbd> don't shift all lines in the Commits file when appending a merge commit to a snapshotted revision. <!-- server 4885 -->
   > This could cause discussions to become attached to the wrong lines.
-- <kbd>New:</kbd> introduce admin center, replacing repositories page. <!-- client 7809 -->
+- <kbd>New:</kbd> introduce admin center, replacing the repositories page. <!-- client 7809 -->
 - <kbd>Fix:</kbd> infer LGTMs if not overridden by the completion condition. <!-- server 4884 -->
 - <kbd>Fix:</kbd> accept comments posted from GitHub even if the user's relevant default disposition is Pondering. <!-- server 4883 -->
   > The Pondering disposition is not valid for posted comments so we'll fall back to the hard-coded defaults.
 
 <sub>2026 - 02</sub>
 
-- <kbd>Fix:</kbd> Setting "Approve button output" (`approval-text`) to an unknown emoji caused the button to be rendered empty. <!-- client 7807 -->
+- <kbd>Fix:</kbd> setting "Approve button output" (`approval-text`) to an unknown emoji caused the button to be rendered empty. <!-- client 7807 -->
 - <kbd>Fix:</kbd> accept check run names and commit status contexts longer than 768 characters. <!-- server 4883 -->
 - <kbd>Adm:</kbd> recover automatically from queues that have grown too long (likely due to Reviewable's servers being offline). <!-- server 4883 -->
   > This would previously cause servers to go into a loop, with the connection to Firebase flapping without being able to do any work.
