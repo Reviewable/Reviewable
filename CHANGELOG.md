@@ -19,7 +19,7 @@
 - <kbd>Fix<i>(saas)</i>:</kbd> fix feature gating for organizations covered via another organization's subscription. <!-- client 7815 -->
 - <kbd>Fix:</kbd> show contextual help when hovering over an element and typing `H` or `F1`. <!-- client 7815 -->
 - <kbd>Adm:</kbd> track duration of key scans for background cron jobs in logs, statsd, and Sentry (if it exceeds a set threshold, which you can set using `REVIEWABLE_CRON_CHILDREN_KEYS_WARNING_THRESHOLD`). <!-- server 4887 -->
-- <kbd>Adm:</kbd> Slack account links from GitHub profiles are now synced more frequently for members of organizations that have a Slack workspace connected. <!-- server 4887 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> Slack account links from GitHub profiles are now synced more frequently for members of organizations that have a Slack workspace connected. <!-- server 4887 -->
 - <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client 7812 -->
 - <kbd>New:</kbd> offer a "ready for review" button in the pull request panel if the PR is a draft. <!-- client 7812 -->
 - <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7811 -->
