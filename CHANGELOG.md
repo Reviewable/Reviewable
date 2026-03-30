@@ -1,5 +1,7 @@
 <sub>2026 - 03</sub>
 
+<sub>**Enterprise release 4894.7821** (min 3340.5125 GHE ^2.19 || ^3) 2026-03-30 <!-- enterprise 4894.7821 --></sub>
+
 - <kbd>Fix:</kbd> show repo settings load errors in the overlay instead of crashing. <!-- client 7821 -->
 - <kbd>Fix:</kbd> don't show settings migration link and apply button wile repo settings are loading. <!-- client 7821 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> renames failed for organizations covered by another organizations's subscription. <!-- server 4893 -->
@@ -21,7 +23,7 @@
 - <kbd>Fix:</kbd> ignore more bogus IndexedDB errors when caching data. <!-- client 7812 -->
 - <kbd>New:</kbd> offer a "ready for review" button in the pull request panel if the PR is a draft. <!-- client 7812 -->
 - <kbd>New:</kbd> add Slack integration with review notifications and handles synchronization. <!-- client 7811 -->
-- <kbd>Adm(enterprise):</kbd> document [how to set up Slack](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#slack-integration) for integration with Reviewable.
+- <kbd>Adm<i>(enterprise)</i>:</kbd> document [how to set up Slack](https://github.com/Reviewable/Reviewable/blob/master/enterprise/config.md#slack-integration) for integration with Reviewable.
 - <kbd>Fix:</kbd> avoid repeatedly refetching GitHub branch protection for unprotected branches. <!-- server 4886 -->
 - <kbd>Upd:</kbd> introduce a new [repository setting](https://docs.reviewable.io/repositories#standalone-commit-types) that controls whether no-changes rebase and/or merge commits can be added to a snapshotted revision. <!-- server 4885 -->
   > By default Reviewable will try to avoid creating "empty" revisions but you can now override this behavior if it's confusing or doesn't fit your workflow.
