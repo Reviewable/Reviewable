@@ -161,9 +161,9 @@ On the top-left of the status bar you'll find the bunny icon.  Click it to displ
 
 ![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 
-At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
+At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state, as well as a **Next** <i class="forward icon"></i> button to take you to the next item needing your attention.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
 
-The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement, and expanded or collapsed state of the sidebar are remembered _across reviews_ so you can set your preferred configuration once and for all.
+The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement, and expanded or collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
 
 ![reviewable disposition demo](images/sidebar.gif)
 
@@ -191,7 +191,7 @@ The counters take into account your unsent drafts, so somebody else may see diff
 
 ### File matrix <i class="files icon"></i> {#file-matrix}
 
-The file matrix displays a history matrix showing all files and revisions.  When the sidebar is collapsed, clicking the <i class="files icon"></i> icon opens it in full-screen mode.  When the sidebar is expanded, the same view is available in the **Files** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.  If the matrix is wider than the available space, you can scroll it left and right (`shift+scroll`) to see all the revisions and the delta stats off to the right.
+The file matrix displays a history matrix showing all files and revisions.  When the sidebar is collapsed, clicking the <i class="files icon"></i> icon opens it in full-screen mode.  When the sidebar is expanded, the same view is available in the **Files** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.  If the matrix is wider than the available space, you can scroll it left and right (`shift+scroll`) or open it in full-screen to see all the revisions and the delta stats off to the right.
 
 The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click the <i class="forward icon"></i> icon to cycle between these files (default keyboard shortcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](admincenter.md#completion-condition), which also controls the per-file reviewed state.
 
@@ -212,7 +212,7 @@ The main review discussion <i class= "main discussion icon"/> is always consider
 :::
 
 ### Drafts <i class="drafts icon"></i> {#drafts}
-The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Hovering over the counter will show you the number of draft comments *excluding* those with a <i class="pondering disposition icon"></i> pondering disposition.  Click on the draft icon <i class="drafts icon"></i> to go to the [conclusion panel](#conclusion), or click the <i class="forward icon"></i> icon underneath to cycle through your draft discussions.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
+The drafts counter displays the total number of drafts you have pending, including those with a <i class="pondering disposition icon"></i> pondering disposition. It also turns red if you have any buffered state changes such as review marks, disposition changes, or acknowledgements. Hovering over the counter shows the number of drafts *excluding* those with a pondering disposition, along with a breakdown of buffered state changes. Click on the draft icon <i class="drafts icon"></i> to go to the conclusion panel, or click the <i class="forward icon"></i> icon underneath to cycle through your draft discussions. You can publish all of your drafts and other buffered changes by clicking the Publish button.
 
 ## Pull request details <i class="pull request icon"></i> {#pull-request-details}
 
