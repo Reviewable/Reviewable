@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> make the draft label visible in the pull request panel. <!-- client -->
+
 <sub>2026 - 03</sub>
 
 <sub>**Enterprise release 4894.7821** (min 3340.5125 GHE ^2.19 || ^3) 2026-03-30 <!-- enterprise 4894.7821 --></sub>
