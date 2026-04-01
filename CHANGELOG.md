@@ -1,6 +1,6 @@
-<sub>Upcoming</sub>
+<sub>2026 - 04</sub>
 
-- <kbd>Fix:</kbd> make the draft label visible in the pull request panel. <!-- client -->
+- <kbd>Fix:</kbd> make the draft label visible in the pull request panel. <!-- client 7823 -->
 
 <sub>2026 - 03</sub>
 
