@@ -163,12 +163,12 @@ On the top-left of the status bar you'll find the bunny icon.  Click it to displ
 
 At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state, as well as a **Next** <i class="forward icon"></i> button to take you to the next item needing your attention.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
 
-The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging or double-clicking its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement, and expanded or collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
+The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging or double-clicking its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement, or collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
 
 ![reviewable disposition demo](images/sidebar.gif)
 
 ::: tip
-If you spend a lot of time in large reviews or have limited screen space, it's often worth setting up [custom key bindings](accountsettings#custom-key-bindings) for a few of the sidebar commands.  Being able to expand, collapse, or rotate the sidebar without moving the mouse can make navigation between files and reviews much easier.
+If you spend a lot of time in large reviews or have limited screen space, it's often worth setting up [custom key bindings](accountsettings#custom-key-bindings) for a few of the sidebar commands.  Being able to expand or rotate the sidebar without moving the mouse can make navigation between files and reviews much easier.
 :::
 
 We'll now look at the sidebar items from top to bottom.
@@ -179,7 +179,7 @@ The first three items link to the corresponding panels: <i class="pull request i
 
 ### Diffs <i class="diff icon"></i> {#diffs}
 
-This sidebar item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  When the sidebar is collapsed, the revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  When the sidebar is expanded, both diff bounds are displayed.  A <i class="no diffs icon"></i> icon is displayed when there are no changes to show.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs** or adjust the diff bounds manually yourself. 
+This sidebar item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  When the sidebar is docked, the revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  When the sidebar is expanded, both diff bounds are displayed.  A <i class="no diffs icon"></i> icon is displayed when there are no changes to show.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs** or adjust the diff bounds manually yourself. 
 
 ### Counters <span class="grey label header">1</span> <span class="red label header">2</span> <span class='grey label deferred header'>3</span> {#counters}
 
@@ -191,7 +191,7 @@ The counters take into account your unsent drafts, so somebody else may see diff
 
 ### File matrix <i class="files icon"></i> {#file-matrix}
 
-The file matrix displays a history matrix showing all files and revisions.  When the sidebar is collapsed, clicking the <i class="files icon"></i> icon opens it in full-screen mode.  When the sidebar is expanded, the same view is available in the **Files** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.  If the matrix is wider than the available space, you can scroll it left and right (`shift+scroll`) or open it in full-screen to see all the revisions and the delta stats off to the right.
+The file matrix displays a history matrix showing all files and revisions.  When the sidebar is docked, clicking the <i class="files icon"></i> icon opens it in full-screen mode.  When the sidebar is expanded, the same view is available in the **Files** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.  If the matrix is wider than the available space, you can scroll it left and right (`shift+scroll`) or open it in full-screen to see all the revisions and the delta stats off to the right.
 
 The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click the <i class="forward icon"></i> icon to cycle between these files (default keyboard shortcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](admincenter.md#completion-condition), which also controls the per-file reviewed state.
 
@@ -201,9 +201,9 @@ If you can’t get things to work the way you want, have a look at [issue #404](
 
 ### Discussion matrix <i class="discussions icon"></i> {#discussions}
 
-The discussion matrix shows the review's discussions grouped by **To reply**, **Unresolved**, and **Resolved**.  Each entry shows the number of comments on the top-left corner and the initial comment of the discussion with a small double-quote icon next to it (or a generated summary with no double-quote icon for Chrome browsers).  The avatar of the first commenter is displayed on the left, and the discussion participants and their current dispositions are shown on the right, making it easy to triage a busy review without losing your place.
+The discussion matrix shows the review's discussions grouped by **To reply**, **Unresolved**, and **Resolved**.  Each entry shows the number of comments on the top-left corner and the initial comment of the discussion with a small double-quote icon next to it (or a locally generated summary with no double-quote icon for browsers that support built-in AI like [Chrome](https://developer.chrome.com/docs/ai/built-in)).  The avatar of the first commenter is displayed on the left, and the discussion participants and their current dispositions are shown on the right, making it easy to triage a busy review without losing your place.
 
-When the sidebar is collapsed, clicking the <i class="discussions icon"></i> icon opens the discussion matrix in full-screen mode.  When the sidebar is expanded, the same view is available in the **Discussions** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.
+When the sidebar is docked, clicking the <i class="discussions icon"></i> icon opens the discussion matrix in full-screen mode.  When the sidebar is expanded, the same view is available in the **Discussions** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.
 
 The **discussions counter** displays the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click the <i class="forward icon"></i> icon underneath the item to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
