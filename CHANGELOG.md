@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't break things when the custom completion condition returns a `debug` property with invalid keys. <!-- server -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> make the draft label visible in the pull request panel. <!-- client 7823 -->
