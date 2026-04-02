@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>New:</kbd> move the various review counters and the file matrix into a sidebar. <!-- client -->
+- <kbd>New:</kbd> add a discussion matrix that lists all discussions in the review. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> fix a race condition that could lead to `Encryption not set up` errors when opening multiple Reviewable tabs when the instance is running in private mode on a shared worker. <!-- client -->
 
 <sub>2026 - 04</sub>
