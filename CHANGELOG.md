@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> Keep from crashing on missing layout reference when init… <!-- client -->
 - <kbd>Fix:</kbd> avoid potentially leaving invalid draft review marks behind when compacting a review. <!-- server -->
 - <kbd>Fix:</kbd> automatically recover from edge cases (likely caused by review compaction) that left invalid draft review marks behind. <!-- client -->
 - <kbd>Fix:</kbd> don't break things when the custom completion condition returns a `debug` property with invalid keys. <!-- server -->
