@@ -1,7 +1,11 @@
 <sub>Upcoming</sub>
 
-- <kbd>New:</kbd> move the various review counters and the file matrix into a sidebar. <!-- client -->
-- <kbd>New:</kbd> add a discussion matrix that lists all discussions in the review. <!-- client -->
+- <kbd>New:</kbd> We built a new [sidebar](https://docs.reviewable.io/reviews#review-toolbar) to house information panels and the File matrix. It's flexible, and it’s here to save you some scrolling time. <!-- client -->
+> Jumping between files and the file matrix on large reviews can make your head spin. The sidebar fixes that. The file matrix and Discussion matrix (see below) now live right next to your code, so you can jump around reviews without breaking your flow.
+> <img width="621" height="422" alt="sidebar_full_mode" src="https://github.com/user-attachments/assets/9126929c-997b-428a-97af-5bf1f53fd024" />
+> It’s been a long time coming, and we packed a lot into it. Read more in our [blog post](https://www.reviewable.io/blog/Introducing-the-long-awaited-sidebar). 
+- <kbd>New:</kbd> We also added a new [Discussion matrix](https://docs.reviewable.io/reviews#discussions), because hunting for comments was getting old. <!-- client -->
+> The new Discussion matrix organizes and provides key details for every discussion, making it easy to triage busy reviews.
 - <kbd>Fix<i>(enterprise)</i>:</kbd> fix a race condition that could lead to `Encryption not set up` errors when opening multiple Reviewable tabs when the instance is running in private mode on a shared worker. <!-- client -->
 
 <sub>2026 - 04</sub>
