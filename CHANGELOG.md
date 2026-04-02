@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> fix a race condition that could lead to `Encryption not set up` errors when opening multiple Reviewable tabs when the instance is running in private mode on a shared worker. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> avoid potentially leaving invalid draft review marks behind when compacting a review. <!-- server 4895 -->
