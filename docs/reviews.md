@@ -24,7 +24,7 @@ It's possible for one person to be both the author and a reviewer in a “self-r
 
 ## Publishing your review {#publish}
 
-As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the toolbar or in the conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
+As you work through a review using the tools at your disposal, Reviewable will automatically save your changes as drafts, but they won't be visible to others. To publish all drafts and other buffered state changes (including review marks, dispositions, and acknowledgements), click the **Publish** button on the top right of the page or in the conclusion panel at the bottom of the page. This action will reveal all of these to other authorized Reviewable users, and also post a single, combined message to the PR on GitHub.
 
 Alternatively, you can publish individual drafts by clicking the <i class="send icon"></i> icon at the bottom-right of the draft panel. Note that other people will receive one notification for each message sent this way, so it’s usually better to write a bunch of drafts and publish them all at once. To temporarily keep a draft from being published, switch its [disposition](discussions.md#change-disposition) to **<i class="pondering disposition icon"></i>&nbsp;Pondering**.
 
@@ -42,7 +42,7 @@ Some Reviewable inline comments won't appear as inline comments in GitHub and vi
 
 ### Approval levels
 
-You can click the <i class="configure icon"></i> icon at the top-right of the toolbar or the **<i class="configure icon"></i>&nbsp;Publish options** on the conclusion panel to change approval levels.
+You can click the <i class="configure icon"></i> icon next to the **Publish** button on the top right of the page or the **<i class="configure icon"></i>&nbsp;Publish options** on the conclusion panel to change approval levels.
 
 ![reviewable set the approval level](images/publish_1.png){width=628px}
 
@@ -96,7 +96,7 @@ For your convenience, Reviewable provides a conclusion panel at the bottom of th
 ![conclusion](images/review_summary.png)
 
 ::: tip
-The conclusion doesn't show up if the review was forced into [single file mode](files#single-file-mode) due to too many files showing.  You can still pop it up by clicking on <i class="drafts icon"></i> in the toolbar.
+The conclusion doesn't show up if the review was forced into [single file mode](files#single-file-mode) due to too many files showing.  You can still pop it up by clicking on <i class="drafts icon"></i> in the sidebar.
 :::
 
 The draft has an LGTM button that you can use to approve the pull request.  (See the [repository settings](admincenter.md#approve-button-output) for information on how to customize this button.)
@@ -107,11 +107,11 @@ Below the publish button there may appear <span class="red label">red</span> cou
 
 ### Deferring a review
 
-When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.
+When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.  These counters are visible in the [review sidebar](#counters) as well as on the [reviews dashboard](dashboard#review-state) as seen bellow.
 
 ![reviewable deferral dashboard](images/deferring_dashboard.png)
 
-![reviewable deferral changes](images/deferring_changes.png){width=600}
+![reviewable deferral changes](images/deferring_changes.png){width=680}
 
 A review will remain deferred until either a new revision is pushed or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
 
@@ -125,7 +125,7 @@ Sending an individual comment (via its dedicated send button) doesn't affect def
 
 ## Merging a pull request {#merge}
 
-When a review is complete, you can merge the pull request directly from within Reviewable given sufficient permissions. For larger reviews, you may see a victory graphic appear on the right side of the toolbar in celebration of a job well done.
+When a review is complete, you can merge the pull request directly from within Reviewable given sufficient permissions. For larger reviews, you may see a victory graphic appear near the **Merge** button on the top right of the page in celebration of a job well done.
 
 ![merge victory graphic](images/merge_2.png){width=311px}
 
@@ -135,7 +135,7 @@ A review is considered complete when the first defined condition of the followin
 
 1. You've turned on branch protection for the target branch in this repo in GitHub, and GitHub says that a merge is permitted.
 
-1. Otherwise, a review is considered complete when GitHub reports that merging the branch won't cause any conflicts, all files have been marked reviewed by at least one person at the most recent revision, and all discussions have been resolved.  (In this case, the toolbar will show a green Checks donut, a grey Changes revision, and grey zero counters in the remaining boxes.)
+1. Otherwise, a review is considered complete when GitHub reports that merging the branch won't cause any conflicts, all files have been marked reviewed by at least one person at the most recent revision, and all discussions have been resolved.  (In this case, the sidebar will show a green Checks donut, a grey Changes revision, and grey zero counters in the remaining boxes.)
 
 To merge the pull request, click and hold the button for a couple seconds until the arming indicator fills with yellow and starts pulsing, then release.  This procedure is in place to reduce the chances of accidentally merging a pull request without requiring a separate confirmation.
 
@@ -151,33 +151,39 @@ When using the rebase merge style, Reviewable will indicate if the merge will be
 
 If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](admincenter.md#condition-output).
 
-## Review toolbar
+## Status bar and sidebar {#review-toolbar}
 
-At the top of every review page you’ll find a floating toolbar with some core state indicators and buttons for common actions.
+The review page has two persistent navigation areas: a status bar across the top, and a sidebar on the right.
 
-![reviewable top toolbar right](images/toptoolbar.png)
+![reviewable top toolbar right](images/top_and_sidebar.png){width=500}
 
-At the right end of the toolbar you'll always find a **Publish**, **Merge** or **Continue** button, depending on the review's state.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.  See the sections above for details on these two operations.
-
-On the left end of the toolbar you will see a bunny icon.  Click this icon to display shortcuts to **Reviews** and **Repositories**, the **Support** menu, and your account settings (accessible via your profile picture in the upper-right corner) or a button to sign in to Reviewable.
+On the top-left of the status bar you'll find the bunny icon.  Click it to display the standard Reviewable header with shortcuts to **Reviews**, **Admin Center**, **Support**, your GitHub username/avatar for accessing the [**Account Settings**](accountsettings#account-settings) dropdown, and a **sign out** button.
 
 ![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 
-The main part of the toolbar consists of various status indicators and links to panels with more details.  Clicking on a panel link will take you to the corresponding panel.  If the panel is expanded, this will scroll your view to the right spot.  If it's collapsed, it will pop up the panel in a modal dialog instead, which can be useful for checking some details without losing your spot in the review.  The last expanded or collapsed state of each panel is remembered _across reviews_ so you can set your preferred configuration once and for all.
+At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state, as well as a **Next** <i class="forward icon"></i> button to take you to the next item needing your attention.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
 
-We'll now look at the items from left to right.
+The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging or double-clicking its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement and collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
+
+![reviewable disposition demo](images/sidebar.gif)
+
+::: tip
+If you spend a lot of time in large reviews or have limited screen space, it's often worth setting up [custom key bindings](accountsettings#custom-key-bindings) for a few of the sidebar commands.  Being able to expand or rotate the sidebar without moving the mouse can make navigation between files and reviews much easier.
+:::
+
+We'll now look at the sidebar items from top to bottom.
 
 ### Information panels <i class="pull request icon"></i> <i class="participants icon"></i> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAjCAYAAAD8BaggAAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH6QkeFTkn8Sr7fQAAAThJREFUWIXVmMsVgyAQRQdOKksDNmAHLu3AfbpIAzRgBxZjBWST50Hi4AwKmrvLj7m8kfEY472nO/HI+VE79qtdvJ8vQ0TknFveb5rGFBeKRUJCmfi1Rk4klBKRADmJWFLoqEiMc87vSdlaMiBubcymUCkZkJL6ESotAzgptmVXsRKqlQ4Rf+KWU1ZLJhRBTQzWlVAuWAyFUhcsvpPavMG9TJNQuCOOeFLP80zdNBARbdbBmlYrI+WbhkEq3TR4TiZE3TJJOoGUerO3OfYQVwlp0snlNgmB/xaqMTyLJpQz29RCpVOyRPrTI5HKFc9uGVewHXuvlTnt5lqifUtCNYaehMvnUByETX1YW4ZoI6GrW7fZshpSXA32GioplVrb7P0dc+bRlmxyVwgcFZMmLhYCZz8MHBYqzQeJRaobgpr7tgAAAABJRU5ErkJggg==" alt="" class="icon-img"> {#information-panels}
 
-The first three items link to the corresponding panels: <i class="pull request icon"></i> [pull request details](#pull-request-details), <i class="participants icon"></i> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.
+The first three items link to the corresponding panels: <i class="pull request icon"></i> [pull request details](#pull-request-details), <i class="participants icon"></i> [participants](#participants), and <img src="/images/donut_chart_icon.png" alt="Donut chart icon" class="icon-img"> [checks](#checks).  The pull request item's icon reflects the current state (draft, open, merged or closed) and will additionally have a "merged" or "closed" stamp next to it if the pull request is no longer open.  The participants icon will show a red pointing hand next to it if the review is waiting on you.  The checks item donut chart conveniently summarizes the current state of status checks on the pull request.  Clicking any of these items will scroll you to the corresponding panel, or open it in full-screen mode if it has been collapsed.
 
 ### Diffs <i class="diff icon"></i> {#diffs}
 
-This item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  The revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs**, or adjust the diff bounds manually yourself.
+This sidebar item summarizes the changes you're currently looking at and links to the [diff controls](files#diff-controls) panel.  When the sidebar is docked, the revision label indicates the revision that is the current right diff bound for all files (<span class="grey label">r3</span> for example), or `r??` if it's a mix.  When the sidebar is expanded, both diff bounds are displayed.  A <i class="no diffs icon"></i> icon is displayed when there are no changes to show.  If the label is <span class="red label">red</span>, then you have reviewed all files in your current diff but there are more unreviewed revisions that remain. Click to open the diff controls panel, then click **Show Unreviewed Diffs** or adjust the diff bounds manually yourself. 
 
 ### Counters <span class="grey label header">1</span> <span class="red label header">2</span> <span class='grey label deferred header'>3</span> {#counters}
 
-Some of the items on the toolbar have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
+Some of the sidebar items have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
 
 ::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
@@ -185,24 +191,34 @@ The counters take into account your unsent drafts, so somebody else may see diff
 
 ### File matrix <i class="files icon"></i> {#file-matrix}
 
-The file matrix panel displays a history matrix showing all files and revisions. Click on the files icon to go to the [file matrix panel](files#file-matrix).
+The file matrix displays a history matrix showing all files and revisions.  When the sidebar is docked, clicking the <i class="files icon"></i> icon opens it in full-screen mode.  When the sidebar is expanded, the same view is available in the **Files** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.  If the matrix is wider than the available space, you can scroll it left and right (`shift+scroll`) or open it in full-screen to see all the revisions and the delta stats off to the right.
 
-The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click on the counter itself to cycle between these files (default keyboard shorcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](admincenter.md#completion-condition), which also controls the per-file reviewed state.
+The **files counter** displays the number of files that remain to be reviewed at the current diff bounds, either <span class="red label">by you</span> or <span class="grey label">by others</span>. Click the <i class="forward icon"></i> icon to cycle between these files (default keyboard shortcut: `n`).  You're free to disregard these suggestions, of course, but if you find yourself doing so often then you may want to check the [review style settings](files#review-style) in the commits file, change your [review overlap strategy](files#show-default-diffs-to-review), or customize your [review completion condition](admincenter.md#completion-condition), which also controls the per-file reviewed state.
 
 ::: tip
 If you can’t get things to work the way you want, have a look at [issue #404](https://github.com/Reviewable/Reviewable/issues/404) for a more thorough exploration of “to review” semantics and suggestions for alternative command bindings.
 :::
 
-### Discussions <i class="discussions icon"></i> {#discussions}
+### Discussion matrix <i class="discussions icon"></i> {#discussions}
 
-The **discussions counter** display the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
+The discussion matrix shows the review's discussions grouped by **To reply**, **Unresolved**, and **Resolved**.  Each entry shows the initial comment of the discussion, or a locally generated summary with no double-quote icon.
+
+::: tip
+Discussion summaries can only be generated by browsers that support built-in AI such as [Chrome](https://developer.chrome.com/docs/ai/built-in). Once generated, they are shown to all reviewers regardless of browser support.  
+:::
+
+The number of comments in a discussion is shown on the top-left corner next to the avatar of the first commenter.  A green drafts icon <i class="green drafts icon "></i> indicates you have a draft pending in the discussion.  The discussion participants and their current dispositions are shown on the right, making it easy to triage a busy review without losing your place.
+
+When the sidebar is docked, clicking the <i class="discussions icon"></i> icon opens the discussion matrix in full-screen mode.  When the sidebar is expanded, the same view is available in the **Discussions** tab, and you can click the <i class="maximize icon"></i> icon next to the tab name to open it in full-screen mode.
+
+The **discussions counter** displays the number of discussions that are waiting for your <span class="red label">reply</span> or that are <span class="grey label">unresolved</span>.  Click the <i class="forward icon"></i> icon underneath the item to cycle between these discussions (default keyboard shortcuts: `j` for next unreplied, `⇧J` for next unresolved).
 
 ::: tip
 The main review discussion <i class= "main discussion icon"/> is always considered resolved.
 :::
 
 ### Drafts <i class="drafts icon"></i> {#drafts}
-The **drafts counter** displays the number of drafts you have pending, and also turns red if you have any buffered state such as review marks, disposition changes, or acknowledgements.  Click on the draft icon <i class="drafts icon"></i> to go to the [conclusion panel](#conclusion), or on the counter itself to cycle between your drafts.  You can publish all of your drafts and other buffered changes by clicking the **Publish** button.
+The drafts counter displays the total number of drafts you have pending, including those with a <i class="pondering disposition icon"></i> pondering disposition. It also turns red if you have any buffered state changes such as review marks, disposition changes, or acknowledgements. Hovering over the counter shows the number of drafts *excluding* those with a pondering disposition, along with a breakdown of buffered state changes. Click on the draft icon <i class="drafts icon"></i> to go to the conclusion panel, or click the <i class="forward icon"></i> icon underneath to cycle through your draft discussions. You can publish all of your drafts and other buffered changes by clicking the Publish button.
 
 ## Pull request details <i class="pull request icon"></i> {#pull-request-details}
 
@@ -218,6 +234,10 @@ Next comes a line with some technical details about the pull request:
 - The _target (base) branch name_, which links to the corresponding branch on GitHub.  You can click the adjacent edit button to change the target branch for the pull request, if you have the necessary permissions.
 - A timestamp noting the date and time when the Pull Request was opened. Hover over this to see the full date, time, and timezone. 
 
+::: tip
+If the pull request is in a [draft state](https://github.blog/news-insights/product-news/introducing-draft-pull-requests/), then the pull request panel name will display "DRAFT" next to it, and its sidebar icon will change to a red pencil.  You can change the status to "Ready for review" at the bottom of the Pull request panel. 
+:::
+
 Below that you'll see lines listing the _labels_ and _milestone_ for the pull request, if any.  Unlike on GitHub, you cannot edit these directly; instead, you'll need to use [_directives_](discussions#inline-directives) such as `+label` or `-reviewer:@username`.  You can add these directives to any comment, but the pull request panel includes a field (indicated by the <i class="command icon"/>&nbsp;icon) that lets you do so on the spot. The contents of this field will be automatically appended to your main review comment. You can also send and apply it independently using the adjacent <i class="basic send icon"></i> button.
 
 ::: tip
@@ -232,7 +252,7 @@ The participants panel lets you quickly track the status of each individual that
 
 You can sort participants by each category using the <i class="icon sort"></i>&nbsp;button.  You can copy all usernames, or a subset of sorted usernames, by clicking the <i class="icon clone"></i>&nbsp;button. If [Slack integration](admincenter#slack-integration) has been configured, you can switch between showing/copying GitHub usernames and Slack handles using the <i class="github icon"></i>&nbsp;GitHub and <i class="slack icon"></i>&nbsp;Slack icons respectively.  Clicking a username will reveal GitHub and Slack organization links.
 
-![reviewable review participants panel](images/participants_panel_1.png)
+![reviewable review participants panel](images/participants_panel_1.png){width=600}
 
 For each participant the following information is provided:
 
