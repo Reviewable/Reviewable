@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> automatically recover from edge cases (likely caused by review compaction) that left invalid draft review marks behind. <!-- client -->
 - <kbd>Fix:</kbd> don't break things when the custom completion condition returns a `debug` property with invalid keys. <!-- server -->
 
 <sub>2026 - 04</sub>
