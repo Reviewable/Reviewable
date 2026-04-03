@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> prompt non-connecting repo admins to authorize workflow scope <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>New:</kbd> We built a new [sidebar](https://docs.reviewable.io/reviews#review-toolbar) to house information panels and the File matrix. It's flexible, and it’s here to save you some scrolling time. <!-- client 7827 -->
