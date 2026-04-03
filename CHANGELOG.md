@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> prompt non-connecting repo admins to authorize workflow scope <!-- client -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Upd:</kbd> prompt non-connecting repo admins to authorize workflow scope <!-- client 7830 -->
 - <kbd>New:</kbd> We built a new [sidebar](https://docs.reviewable.io/reviews#review-toolbar) to house information panels and the File matrix. It's flexible, and it’s here to save you some scrolling time. <!-- client 7827 -->
   > Jumping between files and the file matrix on large reviews can make your head spin. The sidebar fixes that. The file matrix and Discussion matrix (see below) now live right next to your code, so you can jump around reviews without breaking your flow.
   > <img width="621" height="422" alt="sidebar_full_mode" src="https://github.com/user-attachments/assets/9126929c-997b-428a-97af-5bf1f53fd024" />
