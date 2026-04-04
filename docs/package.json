@@ -1,5 +1,6 @@
 {
   "name": "reviewable-docs",
+  "packageManager": "yarn@4.13.0",
   "scripts": {
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",

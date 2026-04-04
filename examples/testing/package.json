@@ -4,6 +4,7 @@
   "description": "Examples of how to test custom code snippets in Reviewable",
   "main": "index.js",
   "license": "MIT",
+  "packageManager": "yarn@4.13.0",
   "devDependencies": {
     "ava": "^0.19.1",
     "freeport": "^1.0.5",

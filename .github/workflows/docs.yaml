@@ -12,9 +12,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install Yarn
+        working-directory: docs
+        run: |
+          corepack enable
+          corepack install
+
+      - name: Get Yarn cache directory
+        id: yarn-cache-dir
+        working-directory: docs
+        run: echo "dir=$(yarn config get cacheFolder)" >> "$GITHUB_OUTPUT"
+
+      - name: Restore Yarn cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-yarn4-docs-${{ hashFiles('docs/yarn.lock', 'docs/.yarnrc.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn4-docs-
+
       - name: Install VitePress
         working-directory: docs
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Generate docs
         working-directory: docs
