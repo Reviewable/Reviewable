@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> keep from crashing after sidebar transitions. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Upd:</kbd> prompt non-connecting repo admins to authorize workflow scope <!-- client 7830 -->
