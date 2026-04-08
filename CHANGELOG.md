@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> treat `@codex` as a bot. <!-- client -->
-- <kbd>Adm:</kbd> prevent runaway loop when evaluating the completion condition in the background on the client. <!-- client -->
-  > This extremely rare occurrence could quickly deplete a user's API quota, and put a lot of pressure on the server.
-- <kbd>Fix<i>(saas)</i>:</kbd> don't crash after starting to publish or merge, returning to the dashboard, then immediately going back to the same review. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> keep from crashing after sidebar transitions. <!-- client -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix:</kbd> treat `@codex` as a bot. <!-- client 7832 -->
+- <kbd>Adm:</kbd> prevent runaway loop when evaluating the completion condition in the background on the client. <!-- client 7832 -->
+  > This extremely rare occurrence could quickly deplete a user's API quota, and put a lot of pressure on the server.
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash after starting to publish or merge, returning to the dashboard, then immediately going back to the same review. <!-- client 7832 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> keep from crashing after sidebar transitions. <!-- client 7832 -->
 - <kbd>Upd:</kbd> prompt non-connecting repo admins to authorize workflow scope <!-- client 7830 -->
 - <kbd>New:</kbd> We built a new [sidebar](https://docs.reviewable.io/reviews#review-toolbar) to house information panels and the File matrix. It's flexible, and it’s here to save you some scrolling time. <!-- client 7827 -->
   > Jumping between files and the file matrix on large reviews can make your head spin. The sidebar fixes that. The file matrix and Discussion matrix (see below) now live right next to your code, so you can jump around reviews without breaking your flow.
