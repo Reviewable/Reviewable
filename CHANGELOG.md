@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash after starting to publish or merge, returning to the dashboard, then immediately going back to the same review. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> keep from crashing after sidebar transitions. <!-- client -->
 
 <sub>2026 - 04</sub>
