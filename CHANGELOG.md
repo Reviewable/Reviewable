@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> treat `@codex` as a bot. <!-- client -->
 - <kbd>Adm:</kbd> prevent runaway loop when evaluating the completion condition in the background on the client. <!-- client -->
   > This extremely rare occurrence could quickly deplete a user's API quota, and put a lot of pressure on the server.
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash after starting to publish or merge, returning to the dashboard, then immediately going back to the same review. <!-- client -->
