@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> don't fall into an endless completion condition retry loop when a user loses access to a repository in the wrong situation and just the wrong time. <!-- server -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> treat `@codex` as a bot. <!-- client 7832 -->
