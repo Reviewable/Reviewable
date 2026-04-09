@@ -27,6 +27,20 @@ Reviewable does need write permissions for your repos.  See the [GitHub authoriz
 
 Because Reviewable is an OAuth app, the [commit statuses](#review-status-in-github-pr) it posts on pull requests cannot be authenticated and could be posted by any user or app with status write permissions under the same context.  This could let someone bypass branch protection settings by faking a "review complete" status.  If this is a concern in your environment, you may wish to exercise discretion in granting such permissions to users or apps, or institute an audit process that checks whether the statuses' author is the same user who connected the repository to Reviewable.
 
+<details>
+  <summary>Reviewable listens to all webhooks to make it easy to add new features.  Expand this paragraph to see a list of the webhooks we currently make use of.</summary>
+
+  - `pull_request`: the main event that notifies us of new and updated pull requests so that we can sync the corresponding review.
+  - `push`: notifies us of branch pushes so that we can recheck the pull request's mergeability status, trigger publish on push, update [file-based master repository settings](#applying-a-settings-yaml-file-to-multiple-repositories), and run the completion condition for pull requests that enter the merge queue.
+  - `issue_comment`, `pull_request_review`, `pull_request_review_comment`, `pull_request_review_thread`: notifies us of comments and reviews that originate on GitHub, so we can sync comment content & status and review approval status.
+  - `status`, `check_run`, `workflow_job`: notifies us of updates to checks, so we can list them in the Checks panel and trigger your custom review completion condition.
+  - `branch_protection_rule`: notifies us of changes to brach protection rules so that we can more accurately tell you why a pull request doesn't satisfy them in the Checks panel.
+  - `repository`: notifies us of newly created repository so that we can [auto-connect](#current-and-future) them if so configured.
+  - `issues`: notifies us of updates to issues so we can keep the autocompletion list in sync.
+  - `milestone`, `label`, `member`: notifies us of various repository-level changes so that we can proactively update our caches.
+  - `organization`, `team`, `membership`: notifies us of various organizational changes so that we can proactively update our caches.
+</details>
+
 Under no circumstances will we disclose any of your private information to other parties beyond what's needed to provide our service — please see our [terms of service](https://github.com/Reviewable/Reviewable/blob/master/legal/terms.md) and [privacy policy](https://github.com/Reviewable/Reviewable/blob/master/legal/privacy.md) for the legal details.
 
 If you need more details about our security architecture or have any other concerns we can address, please contact us at [support@reviewable.io](mailto:support@reviewable.io).
@@ -111,7 +125,7 @@ If *review notifications* aren't available, one or more of the following require
 * The URL of your Slack profile from that workspace must be added to your [Social accounts](https://docs.github.com/en/account-and-profile/tutorials/personalize-your-profile#adding-links-to-your-social-accounts) in your GitHub profile.
 * Slack handles and review notifications can take a while to sync with Reviewable. If you've just set this up, try waiting 15-30 minutes or so, then load a review in the relevant organization and check again.
 
-If *review notifications* still aren't available, please contact us at [support@reviewable.io](mailto:support@reviewable.io). 
+If *review notifications* still aren't available, please contact us at [support@reviewable.io](mailto:support@reviewable.io).
 :::
 
 ## Repository settings {#repo-settings}
