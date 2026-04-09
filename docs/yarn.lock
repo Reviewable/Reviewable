@@ -1698,6 +1698,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"npm-check-updates@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "npm-check-updates@npm:20.0.0"
+  bin:
+    ncu: build/cli.js
+    npm-check-updates: build/cli.js
+  checksum: 10c0/cf34e509aef8a801b567aea6c836b2064f824d854021e69c5c773afc5eae981d29ad06068a3fa0bcb85ccf765f0771fb925250c12f6f6a10c91f1e43c2aec621
+  languageName: node
+  linkType: hard
+
 "oniguruma-to-es@npm:^3.1.0":
   version: 3.1.1
   resolution: "oniguruma-to-es@npm:3.1.1"
@@ -1808,6 +1818,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "reviewable-docs@workspace:."
   dependencies:
+    npm-check-updates: "npm:^20.0.0"
     vitepress: "npm:^1.3.4"
   languageName: unknown
   linkType: soft
