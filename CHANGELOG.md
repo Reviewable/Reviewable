@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> don't fall into an endless completion condition retry loop when a user loses access to a repository in the wrong situation and just the wrong time. <!-- server -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Adm:</kbd> don't fall into an endless completion condition retry loop when a user loses access to a repository in the wrong situation and just the wrong time. <!-- server 4901 -->
 - <kbd>Fix:</kbd> treat `@codex` as a bot. <!-- client 7832 -->
 - <kbd>Adm:</kbd> prevent runaway loop when evaluating the completion condition in the background on the client. <!-- client 7832 -->
   > This extremely rare occurrence could quickly deplete a user's API quota, and put a lot of pressure on the server.
