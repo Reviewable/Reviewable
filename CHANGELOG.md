@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show all new comments when revealing a resolved discussion that the user didn't participate in. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't insert a newline into the summary when a comment starts with an icon or emoji. <!-- client -->
 
 <sub>2026 - 04</sub>
