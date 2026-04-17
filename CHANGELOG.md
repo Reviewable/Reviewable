@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't insert a newline into the summary when a comment starts with an icon or emoji. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Adm:</kbd> don't fall into an endless completion condition retry loop when a user loses access to a repository in the wrong situation and just the wrong time. <!-- server 4901 -->
