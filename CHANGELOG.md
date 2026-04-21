@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> disable "initial diff bounds" setting for users that don't look like either the author or reviewers. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> have the Next button automatically adjust the diff bounds if needed to select more revisions that need to be reviewed. <!-- client 7836 -->
