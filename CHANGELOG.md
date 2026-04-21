@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs. <!-- client -->
 - <kbd>Fix:</kbd> disable "initial diff bounds" setting for users that don't look like either the author or reviewers. <!-- client -->
 
 <sub>2026 - 04</sub>
