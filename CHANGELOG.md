@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> have the Next button automatically adjust the diff bounds if needed to select more revisions that need to be reviewed. <!-- client -->
+- <kbd>Fix:</kbd> avoid mistakenly showing the "discussions not currently displayed" notice when working in single-file mode. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> show all new comments when revealing a resolved discussion that the user didn't participate in. <!-- client 7834 -->
