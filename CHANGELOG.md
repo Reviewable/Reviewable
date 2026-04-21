@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs. <!-- client -->
-- <kbd>Fix:</kbd> disable "initial diff bounds" setting for users that don't look like either the author or reviewers. <!-- client -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs. <!-- client 7837 -->
+- <kbd>Fix:</kbd> disable "initial diff bounds" setting for users that don't look like either the author or reviewers. <!-- client 7837 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> have the Next button automatically adjust the diff bounds if needed to select more revisions that need to be reviewed. <!-- client 7836 -->
 - <kbd>Fix:</kbd> avoid mistakenly showing the "discussions not currently displayed" notice when working in single-file mode. <!-- client 7836 -->
 - <kbd>Fix:</kbd> show all new comments when revealing a resolved discussion that the user didn't participate in. <!-- client 7834 -->
