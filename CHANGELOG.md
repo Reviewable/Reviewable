@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when switching to the discussion matrix with comments on specific revisions of renamed files. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs. <!-- client 7837 -->
