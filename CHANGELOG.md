@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> consistently recognize members of teams with write access to a repository as being collaborators. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when switching to the discussion matrix with comments on specific revisions of renamed files. <!-- client -->
 
 <sub>2026 - 04</sub>
