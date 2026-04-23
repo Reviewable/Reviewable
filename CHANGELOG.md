@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't crash when the sign-in popup is denied by the browser. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> load the summarizer model in more situations. <!-- client -->
 
 <sub>2026 - 04</sub>
