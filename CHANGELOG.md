@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when switching to the discussion matrix with comments on specific revisions of renamed files. <!-- client -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when switching to the discussion matrix with comments on specific revisions of renamed files. <!-- client 7838 -->
 - <kbd>Fix:</kbd> consistently recognize members of teams with write access to a repository as being collaborators. <!-- server 4904 -->
 - <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs. <!-- client 7837 -->
 - <kbd>Fix:</kbd> disable "initial diff bounds" setting for users that don't look like either the author or reviewers. <!-- client 7837 -->
