@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> load the summarizer model in more situations. <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> Avoid trial footer for orgs with active subscriptions <!-- client 7839 -->
