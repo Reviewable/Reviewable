@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client -->
+  > This was a regression introduced on 2026-01-12 (Enterprise v4875.7797, 2026-02-04).
 - <kbd>Fix:</kbd> don't crash when the sign-in popup is denied by the browser. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> load the summarizer model in more situations. <!-- client -->
 
