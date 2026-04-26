@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client -->
-  > This was a regression introduced on 2026-01-12 (Enterprise v4875.7797, 2026-02-04).
-- <kbd>Fix:</kbd> don't crash when the sign-in popup is denied by the browser. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> load the summarizer model in more situations. <!-- client -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client 7840 -->
+  > This was a regression introduced on 2026-01-12 (Enterprise v4875.7797, 2026-02-04).
+- <kbd>Fix:</kbd> don't crash when the sign-in popup is denied by the browser. <!-- client 7840 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> load the summarizer model in more situations. <!-- client 7840 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> Avoid trial footer for orgs with active subscriptions <!-- client 7839 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when switching to the discussion matrix with comments on specific revisions of renamed files. <!-- client 7838 -->
 - <kbd>Fix:</kbd> consistently recognize members of teams with write access to a repository as being collaborators. <!-- server 4904 -->
