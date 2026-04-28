@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> do not trust screen.width values especially on firefox <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client 7840 -->
