@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> do not trust screen.width values especially on firefox <!-- client -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> do not trust screen.width values especially on firefox <!-- client 7842 -->
 - <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client 7840 -->
   > This was a regression introduced on 2026-01-12 (Enterprise v4875.7797, 2026-02-04).
 - <kbd>Fix:</kbd> don't crash when the sign-in popup is denied by the browser. <!-- client 7840 -->
