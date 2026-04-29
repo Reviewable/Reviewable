@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> lower the GitHub API burst quota threshold used to determine when to select an alternative repository admin for background requests. <!-- server -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> do not trust screen.width values especially on firefox <!-- client 7842 -->
