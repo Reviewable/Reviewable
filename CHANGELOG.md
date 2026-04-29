@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> lower the GitHub API burst quota threshold used to determine when to select an alternative repository admin for background requests. <!-- server -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix:</kbd> lower the GitHub API burst quota threshold used to determine when to select an alternative repository admin for background requests. <!-- server 4905 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> do not trust screen.width values especially on firefox <!-- client 7842 -->
 - <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client 7840 -->
   > This was a regression introduced on 2026-01-12 (Enterprise v4875.7797, 2026-02-04).
