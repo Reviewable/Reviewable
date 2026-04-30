@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> be more proactive about load-leveling GitHub API request quota across repository admins, unless the repository connector looks like a dedicated, non-interactive account. <!-- server -->
-- <kbd>Adm:</kbd> log event handling admin assignment and delays more thoroughly, and switch log format to JSON objects for easier analysis. <!-- server -->
-
 <sub>2026 - 04</sub>
 
+- <kbd>Fix:</kbd> be more proactive about load-leveling GitHub API request quota across repository admins, unless the repository connector looks like a dedicated, non-interactive account. <!-- server 4906 -->
+- <kbd>Adm:</kbd> log event handling admin assignment and delays more thoroughly, and switch log format to JSON objects for easier analysis. <!-- server 4906 -->
 - <kbd>Fix:</kbd> lower the GitHub API burst quota threshold used to determine when to select an alternative repository admin for background requests. <!-- server 4905 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> do not trust screen.width values especially on firefox <!-- client 7842 -->
 - <kbd>Fix:</kbd> show Informing discussions with unread comments to the pull request author. <!-- client 7840 -->
