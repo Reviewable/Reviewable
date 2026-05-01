@@ -1,8 +1,3 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> preserve publish-on-push deferrals only when they still match the synced revision chain after the triggering push. <!-- server -->
-- <kbd>Upd:</kbd> run publish-on-push during pull request sync so publishing stays synchronized with revision updates. <!-- server -->
-
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> be more proactive about load-leveling GitHub API request quota across repository admins, unless the repository connector looks like a dedicated, non-interactive account. <!-- server 4906 -->
