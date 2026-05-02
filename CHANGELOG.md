@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> make sure sidebar shows on mobile browsers <!-- client -->
+
 <sub>2026 - 04</sub>
 
 - <kbd>Fix:</kbd> be more proactive about load-leveling GitHub API request quota across repository admins, unless the repository connector looks like a dedicated, non-interactive account. <!-- server 4906 -->
