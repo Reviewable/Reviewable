@@ -1,6 +1,6 @@
-<sub>Upcoming</sub>
+<sub>2026 - 05</sub>
 
-- <kbd>Fix<i>(saas)</i>:</kbd> make sure sidebar shows on mobile browsers <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> make sure sidebar shows on mobile browsers <!-- client 7844 -->
 
 <sub>2026 - 04</sub>
 
