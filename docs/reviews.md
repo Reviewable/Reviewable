@@ -336,4 +336,4 @@ Two checks have special actions associated with them:
 
 There are a number of keyboard shortcuts available to power your way through a review. Type `?` to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the [Custom key bindings](accountsettings.md#custom-key-bindings) section.
 
-![reviewable keyboard shortcuts](images/toptoolbar_7.png)
+![reviewable keyboard shortcuts](images/keyboard_shortcuts.png)
