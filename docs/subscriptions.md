@@ -22,15 +22,19 @@ For organizations with an active subscription, plan details and a **Manage Billi
 
 ### Selecting a plan
 
-You can select a plan that best suits your organization as well as the number of contributors to purchase the plan for.  We count each distinct PR author during a calendar month as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
+You can select a plan that best suits your organization as well as the number of contributors to purchase the plan for.  Available plans will be listed for organizations that do not have a current subscription.  You can compare plans, add contributors, and click subscribe to begin the checkout process in the Stripe billing portal. 
 
-If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription — or the contributor count resets at the beginning of the next month.
+Once subscribed, you can change or cancel your plan at any time through the **Manage billing** button, which takes you to the Stripe billing portal.  If you change your plan during the billing cycle, the new plan takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
+
+### Contributors
+
+We count each distinct PR author during a calendar month as a contributor, at the time a review is created and linked to the PR.  Once a review has been created, any number of people can view it and participate.
+
+If a PR causes you to exceed your plan's contributor quota, both the subscriber and the person who connected the affected repo will be immediately notified by email.  Reviewable won't create reviews for PRs created by additional authors until you upgrade your subscription or the contributor count resets at the beginning of the next month.
 
 ::: tip
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 :::
-
-You can change or cancel your plan at any time through the **Manage billing** button, which takes you to the Stripe billing portal.  If you change your plan during the billing cycle, the new plan (if any) takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
 
 ### Managing the scope of your subscription
 
@@ -43,7 +47,6 @@ On the other hand, if your company's repos are distributed over multiple GitHub 
 ::: tip
 Restricting an organization to a team and extending it to other organizations are mutually exclusive.
 :::
-
 
 ### Canceling a subscription
 

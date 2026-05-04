@@ -90,7 +90,7 @@ Further to the right is the [file review state](#file-review-state) chip that yo
 
 ![reviewable file matrix options](images/filematrix_2.png){width=500}
 
-Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed, no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes test coverage statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
+Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed, no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes [code coverage](admincenter#code-coverage) statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
 
 The elements above can be turned on or off via a small menu icon <i class="visual tweaks icon"/> below the file matrix.  You can also force all elements to appear "all in overlay" when the file matrix is opened in full-screen overlay mode.  If the matrix is wider than the available space, you can scroll it left and right to see all the revisions and these stats.
 

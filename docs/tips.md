@@ -89,6 +89,14 @@ The available watermark classes are:
 
 If you have accessibility needs and don't see a tweak here that helps, please reach out to us at [support@reviewable.io](mailto:support@reviewable.io).
 
+## Reviewing stacks of dependent changes
+
+If you're struggling to manage and review a long chain or stack of dependent GitHub pull requests, especially when one rebase forces updates across many PRs, there are two strategies worth trying:
+
+**Review each commit separately.**  Put the whole sequence of commits in one pull request, then switch the [review style](files.md#review-style) to **Review each commit separately**.  Reviewable will map each commit to its own revision, allowing for more granular reviews.  GitHub still treats it as a single pull request, merging all commits at once when the review is complete.
+
+**Stacked PRs with `spr`.**  You can use a tool like [`spr`](https://github.com/ejoffe/spr) to manage your commit stack.  It creates one PR per commit and keeps the stack up-to-date as commits are amended, deleted, or inserted.  It also adds a stack map of the dependency order to the PR description.  Reviewable detects the use of `spr` and adapts its UI to make stacked reviews more convenient by including links to relevant reviews in the top review discussion and properly updating review states to reflect the stack's merge status.
+
 ## Skipping vendored dependencies
 
 Depending on your package manager, you may sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:
@@ -96,6 +104,12 @@ Depending on your package manager, you may sometimes need to commit dependency s
 1. [Suppress diffs](files.md#diff-suppression-and-file-type) for vendored files via `.gitattributes`.
 2. Use a custom review completion condition to [identify files as vendored](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/identify_vendored_files.js) in the file matrix, which will allow you to mark them all as reviewed with one click.
 3. Use a custom review completion condition to preemptively [treat all such files as reviewed](admincenter.md#files).  This is the nuclear option and should work by itself, or you can combine it with the previous options for more flexibility.
+
+## Testing completion conditions
+
+If you would like to test a completion condition independently of a repo, you can use the [completion condition playground](https://reviewable.io/playground).  This allows you to test a completion script against any PR or Reviewable review by entering a GitHub PR URL, a Reviewable review URL, or a shortcut in the form `owner/repo#pr` in the **PR** box on the top-right of the page.
+
+This is the same playground found in the [**Review completion condition**](admincenter.md#completion-condition) section of the Repository Settings in the Admin center.
 
 ## Ignore comments by bots
 
@@ -124,7 +138,7 @@ This can be done in two steps.
 
 #### 1. Get the revision reference
 
-If your prId were `756` and your desired revision were `6` as in the image above, you would store revision reference in `.git/FETCH_HEAD` constant using
+If your prId were `756` and your desired revision were `6` as in the image above, you would store revision reference in `.git/FETCH_HEAD` constant using:
 
 ```sh
 git fetch origin refs/reviewable/pr756/r6
@@ -170,3 +184,18 @@ You can also use the special tokens `base` and `last`. For example, `#base..last
 ::: tip
 When diff bounds are specified in the URL, Reviewable temporarily shows all files, regardless of the file's [review state](files.md#file-review-state) or the user's [review strategy](files.md#show-default-diffs-to-review), ensuring the requested diffs are fully visible.  If diff bounds are manually changed, any files that were previously hidden are hidden again, reverting the view to its normal state.
 :::
+
+## Open Reviewable from a GitHub PR
+
+You can create a browser bookmarklet to open the Reviewable review for the GitHub pull request you're currently viewing.  Simply create a new bookmark, then edit its URL to be one of the following:
+
+Open Reviewable in the current tab:
+```js
+javascript:(function(){ window.location.href = window.location.href.replace('github.com', 'reviewable.io/reviews'); })();
+```
+
+Open Reviewable in a new tab:
+
+```js
+javascript:(function(){ window.open(window.location.href.replace('github.com', 'reviewable.io/reviews'), '_blank'); })();
+```
