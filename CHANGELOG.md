@@ -1,5 +1,7 @@
 <sub>2026 - 05</sub>
 
+<sub>**Enterprise release 4906.7847** (min 3340.5125 GHE ^2.19 || ^3) 2026-05-06 <!-- enterprise 4906.7847 --></sub>
+
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when revision cells and the truncated revision list temporarily disagree. <!-- client 7847 -->
 - <kbd>Upd<i>(saas)</i>:</kbd> collapse earlier revision columns in the file matrix when they don't fit in the sidebar. <!-- client 7846 -->
 - <kbd>Upd<i>(saas)</i>:</kbd> add a "see more" link above the file and discussion matrix to open them full screen when they're cut off in the sidebar. <!-- client 7846 -->
