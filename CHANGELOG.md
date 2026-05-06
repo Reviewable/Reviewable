@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when revision cells and the truncated revision list temporarily disagree. <!-- client -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when revision cells and the truncated revision list temporarily disagree. <!-- client 7847 -->
 - <kbd>Upd<i>(saas)</i>:</kbd> collapse earlier revision columns in the file matrix when they don't fit in the sidebar. <!-- client 7846 -->
 - <kbd>Upd<i>(saas)</i>:</kbd> add a "see more" link above the file and discussion matrix to open them full screen when they're cut off in the sidebar. <!-- client 7846 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> make sure sidebar shows on mobile browsers. <!-- client 7844 -->
