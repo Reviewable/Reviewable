@@ -1,6 +1,8 @@
 <sub>2026 - 05</sub>
 
-- <kbd>Fix<i>(saas)</i>:</kbd> make sure sidebar shows on mobile browsers <!-- client 7844 -->
+- <kbd>Upd<i>(saas)</i>:</kbd> collapse earlier revision columns in the file matrix when they don't fit in the sidebar. <!-- client 7846 -->
+- <kbd>Upd<i>(saas)</i>:</kbd> add a "see more" link above the file and discussion matrix to open them full screen when they're cut off in the sidebar. <!-- client 7846 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> make sure sidebar shows on mobile browsers. <!-- client 7844 -->
 
 <sub>2026 - 04</sub>
 
@@ -15,7 +17,6 @@
 - <kbd>Fix<i>(saas)</i>:</kbd> Avoid trial footer for orgs with active subscriptions <!-- client 7839 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't crash when switching to the discussion matrix with comments on specific revisions of renamed files. <!-- client 7838 -->
 - <kbd>Fix:</kbd> consistently recognize members of teams with write access to a repository as being collaborators. <!-- server 4904 -->
-- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs. <!-- client 7837 -->
 - <kbd>Fix:</kbd> disable "initial diff bounds" setting for users that don't look like either the author or reviewers. <!-- client 7837 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> have the Next button automatically adjust the diff bounds if needed to select more revisions that need to be reviewed. <!-- client 7836 -->
 - <kbd>Fix:</kbd> avoid mistakenly showing the "discussions not currently displayed" notice when working in single-file mode. <!-- client 7836 -->
