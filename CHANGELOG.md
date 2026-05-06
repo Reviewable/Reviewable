@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't crash when revision cells and the truncated revision list temporarily disagree. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Upd<i>(saas)</i>:</kbd> collapse earlier revision columns in the file matrix when they don't fit in the sidebar. <!-- client 7846 -->
