@@ -68,7 +68,7 @@ If you choose **Comment**, any previous **Approve** or **Request changes** will 
 Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to automatically synchronize GitHub's requested reviewers with Reviewable's waiting-on participants after you publish by checking the **Sync requested reviewers** box under **<i class="configure icon"></i>&nbsp;Publish options**.  Doing so will request reviews from people Reviewable is waiting on, and cancel GitHub review requests for people whose action is no longer needed.  The sync affects only GitHub requested reviewers; it doesn't change Reviewable's own review state or dashboard.  The option shows you what changes it will make in GitHub, and reviewer [inline directives](discussions.md#inline-directives) such as `+reviewer:@username` and `-reviewer:@username` take priority over synced changes.
 
 ::: danger
-It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is one of Reviewable's waiting-on participants.  Also, only users with push permissions on the repo can request reviewers.
+It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is one of Reviewable's waited-on participants.  Also, only users with push permissions on the repo can request reviewers.
 :::
 
 ::: tip

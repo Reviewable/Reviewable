@@ -63,7 +63,7 @@ For email and GitHub comments, if the repository isn’t connected, then directi
 
 ### Replying via email or on GitHub
 
-Reviewable will do its best to parse incoming messages and match them to their corresponding discussion threads.  This only works for messages that Reviewable has already threaded on GitHub (regular GitHub PR comments aren't connected to a Reviewable discussion this way).  Be sure to leave the separators and Reviewable comment links in place so Reviewable can match each reply to the right discussion.
+Reviewable will do its best to parse incoming messages and match them to their corresponding discussion threads.  Be sure to leave the separators and Reviewable comment links in place so Reviewable can match each reply to the right discussion.
 
 When replying via GitHub, use the `…` > *Quote reply* button to preserve the proper Reviewable links.  When replying by email, use interleaved style — placing each response below the relevant quoted lines (rather than top-posting your entire reply).  Quoted chunks will be shown in Reviewable if they are woven into your reply, but omitted otherwise (whether the message is top- or bottom-quoted).
 
@@ -71,7 +71,7 @@ When replying via GitHub, use the `…` > *Quote reply* button to preserve the p
 If Reviewable can't match a reply to a specific discussion, it will post it on the main top-level discussion instead. Plain comments started in GitHub also end up there, while GitHub inline code comments are matched from GitHub's thread and line information when possible.
 :::
 
-Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "Informing", "Working", "Blocking", or "Satisfied".  
+Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "Informing", "Working", "Blocking", or "Satisfied".
 
 Be sure to separate your comment and disposition with **one blank line**, otherwise GitHub may interpret the disposition as part of the comment text.  For example:
 

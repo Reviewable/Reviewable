@@ -107,9 +107,9 @@ Depending on your package manager, you may sometimes need to commit dependency s
 
 ## Testing completion conditions
 
-If you would like to test a completion condition independently of a repo, you can use the [completion condition playground](https://reviewable.io/playground).  This allows you to test a completion script against any PR or Reviewable review by entering a GitHub PR URL, a Reviewable review URL, or a shortcut in the form `owner/repo#pr` in the **PR** box on the top-right of the page.
+If you would like to test a completion condition independently of a repo, you can use the [completion condition playground](https://reviewable.io/playground).  This allows you to test a completion script against any PR or Reviewable review by entering a GitHub PR URL, a Reviewable review URL, or a shortcut in the form `owner/repo#pr` in the **PR** box on the top-right of the page.  Once the review state loads, you can edit it to test different variations of the review.
 
-This is the same playground found in the [**Review completion condition**](admincenter.md#completion-condition) section of the Repository Settings in the Admin center.
+This is the same playground found in the [**repository settings**](admincenter.md#repo-settings) page in the Admin center.
 
 ## Ignore comments by bots
 
