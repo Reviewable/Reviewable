@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> list bots after users on the dashboard. <!-- client -->
+- <kbd>Fix:</kbd> recognize bots as requested reviewers on the dashboard if the pull request has not been synced to a review. <!-- client -->
 - <kbd>Fix:</kbd> mark features as used more reliably, to avoid the `F1?` popup next to the mouse cursor on hover. <!-- client -->
 - <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs in Firefox. <!-- client -->
 
