@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> successfully summarize more comments for the discussion matrix. <!-- client -->
 - <kbd>Fix:</kbd> scope sidebar hotkeys to review pages. <!-- client -->
 - <kbd>Upd:</kbd> list bots after users on the dashboard. <!-- client -->
 - <kbd>Fix:</kbd> recognize bots as requested reviewers on the dashboard if the pull request has not been synced to a review. <!-- client -->
