@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> mark features as used more reliably, to avoid the `F1?` popup next to the mouse cursor on hover. <!-- client -->
 - <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs in Firefox. <!-- client -->
 
 <sub>2026 - 05</sub>
