@@ -1,13 +1,11 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> successfully summarize more comments for the discussion matrix. <!-- client -->
-- <kbd>Fix:</kbd> scope sidebar hotkeys to review pages. <!-- client -->
-- <kbd>Upd:</kbd> list bots after users on the dashboard. <!-- client -->
-- <kbd>Fix:</kbd> recognize bots as requested reviewers on the dashboard if the pull request has not been synced to a review. <!-- client -->
-- <kbd>Fix:</kbd> mark features as used more reliably, to avoid the `F1?` popup next to the mouse cursor on hover. <!-- client -->
-- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs in Firefox. <!-- client -->
-
 <sub>2026 - 05</sub>
+
+- <kbd>Fix:</kbd> successfully summarize more comments for the discussion matrix. <!-- client 7848 -->
+- <kbd>Fix:</kbd> scope sidebar hotkeys to review pages. <!-- client 7848 -->
+- <kbd>Upd:</kbd> list bots after users on the dashboard. <!-- client 7848 -->
+- <kbd>Fix:</kbd> recognize bots as requested reviewers on the dashboard if the pull request has not been synced to a review. <!-- client 7848 -->
+- <kbd>Fix:</kbd> mark features as used more reliably, to avoid the `F1?` popup next to the mouse cursor on hover. <!-- client 7848 -->
+- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs in Firefox. <!-- client 7848 -->
 
 <sub>**Enterprise release 4906.7847** (min 3340.5125 GHE ^2.19 || ^3) 2026-05-06 <!-- enterprise 4906.7847 --></sub>
 
