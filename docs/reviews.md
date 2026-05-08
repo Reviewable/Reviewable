@@ -288,7 +288,7 @@ If a name is _crossed out_ then that user is not a collaborator on the repositor
 
 ### Waiting on
 
-Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"></i>&nbsp;pointing hand.  The list is roughly the union of the following:
+Reviewable keeps track of which participants are needed to move a review forward and marks them as "waiting on" with a <i class="icon waiting on"></i>&nbsp;pointing hand.  The list is roughly the union of the following:
 - All participants involved in unresolved discussions that are [unreplied](discussions.md#unreplied-discussions) for them.
 - All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.
 - All requested reviewers, or if none then all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers.
