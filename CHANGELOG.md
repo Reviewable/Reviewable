@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent `too much recursion` errors on some diffs in Firefox. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 <sub>**Enterprise release 4906.7847** (min 3340.5125 GHE ^2.19 || ^3) 2026-05-06 <!-- enterprise 4906.7847 --></sub>
