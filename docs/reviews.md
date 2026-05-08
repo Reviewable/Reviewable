@@ -14,11 +14,12 @@ This chapter provides an overview of the review page, but the core features of r
 
 ## User roles
 
-Throughout this guide, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of three roles to every review participant:
+Throughout this guide, we'll often refer to users by the role they play in a review.  Reviewable automatically assigns one of four roles to every review participant:
 
 * **Author**: the creator of the pull request.  Note if an author marks a file as reviewed they'll become a reviewer.
 * **Reviewer**: anybody that is not an author or mentionee.
 * **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
+* **Lurker**: someone who has viewed the review but hasn't left a comment, isn't the author, wasn't requested as a reviewer, and wasn't @-mentioned in any discussion.
 
 It's possible for one person to be both the author and a reviewer in a “self-review” scenario. In that case, the “reviewer” behavior usually trumps the “author” path, but it's context-dependent.
 
@@ -49,7 +50,7 @@ You can click the <i class="configure icon"></i> icon next to the **Publish** bu
 Like for GitHub reviews, there are three different approval levels you can choose from when publishing:
 
 * **Comment** — Submit general feedback without explicit approval.
-* **Approve** — Submit feedback and approve merging these changes.
+* **Approve** — Submit feedback and an explicit "approval" for merging these changes (useful for approval-based GitHub rules like CODEOWNERS).
 * **Request changes** — Submit feedback that must be addressed before merging.
 
 Reviewable will select a default approval level for you according to your review marks and the disposition of any comments you’re sending. You can override this level in the Publish dropdown menu for the review that you are about to publish (your selection is not “sticky” for subsequent publications). This approval level will be visible to others, and may affect the review completion requirements for both GitHub and Reviewable.
@@ -64,25 +65,25 @@ If you choose **Comment**, any previous **Approve** or **Request changes** will 
 
 ### Requested reviewers synchronization {#sync-requested-reviewers}
 
-Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to synchronize the latter with the former by checking the **Sync requested reviewers** box under **<i class="configure icon"></i>&nbsp;Publish options**. Doing so will request reviews from Reviewable's awaited reviewers, and cancel requests for people who have left Reviewable's list.  The option shows you what changes it will make in GitHub and you can always override it with `±reviewer` [inline directives](discussions.md#inline-directives).
+Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to automatically synchronize GitHub's requested reviewers with Reviewable's waited-on participants after you publish by checking the **Sync requested reviewers** box under **<i class="configure icon"></i>&nbsp;Publish options**.  Doing so will request reviews from people Reviewable is waiting on, and cancel GitHub review requests for people whose action is no longer needed.  The sync affects only GitHub requested reviewers; it doesn't change Reviewable's own review state or dashboard.  The option shows you what changes it will make in GitHub, and reviewer [inline directives](discussions.md#inline-directives) such as `+reviewer:@username` and `-reviewer:@username` take priority over synced changes.
 
 ::: danger
-It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is on Reviewable's list of awaited reviewers.  Also, only users with push permissions on the repo can request reviewers.
+It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is one of Reviewable's waited-on participants.  Also, only users with push permissions on the repo can request reviewers.
 :::
 
 ::: tip
 Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools.
 :::
 
-Repository admins can customize the list of awaited reviewers and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](admincenter.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or force this option on for everyone to maintain a consistent workflow.
+Repository admins can customize the list of waited-on participants and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](admincenter.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or turn this option on for everyone to maintain a consistent workflow.
 
 ### Publish on Push
 
 By default, except in the scenarios listed below, when a pull request's author submits their drafts (including comments, dispositions, and review marks), Reviewable schedules the drafts to be published next time the author pushes a new revision to the pull request's source branch. That is if a push is happening within 30 minutes, otherwise the publication gets cancelled but don't worry the drafts won't be deleted but just remain unpublished until the author triggers another publication.
 
-You can opt-out of this feature, and have your drafts always published as soon as you submit them as a pull request author by unchecking the **Publish on push** box. This setting persists globally for the logged in user.
+You can opt-out of this feature, and have your drafts always published as soon as you submit them as a pull request author by unchecking the **Publish only after you push a new commit** box. This setting persists globally for the logged in user.
 
-If *Publish on Push* isn't available, it could be due to one of the following reasons:
+If *Publish only after you push a new commit* isn't available, it could be due to one of the following reasons:
 
 1. **You're not the author of the pull request.** Reviewers will always have their drafts published instantly on submission.
 2. **The repository isn't connected.** The repository needs to be connected for Reviewable to detect when new code is pushed.
@@ -111,7 +112,7 @@ When you publish a review and you have files left to review or discussions left 
 
 ![reviewable deferral dashboard](images/deferring_dashboard.png)
 
-![reviewable deferral changes](images/deferring_changes.png){width=680}
+![reviewable deferral changes](images/deferring_changes.png)
 
 A review will remain deferred until either a new revision is pushed or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
 
@@ -203,6 +204,8 @@ If you can’t get things to work the way you want, have a look at [issue #404](
 
 The discussion matrix shows the review's discussions grouped by **To reply**, **Unresolved**, and **Resolved**.  Each entry shows the initial comment of the discussion, or a locally generated summary with no double-quote icon.
 
+![discussion matrix](images/discussion_matrix_1.png){width=600}
+
 ::: tip
 Discussion summaries can only be generated by browsers that support built-in AI such as [Chrome](https://developer.chrome.com/docs/ai/built-in). Once generated, they are shown to all reviewers regardless of browser support.  
 :::
@@ -285,12 +288,12 @@ If a name is _crossed out_ then that user is not a collaborator on the repositor
 
 ### Waiting on
 
-Reviewable keeps track of which participants are needed to move a review forward and marks them with a <i class="icon waiting on"></i>&nbsp;pointing hand.  The list is roughly the union of the following:
+Reviewable keeps track of which participants are needed to move a review forward and marks them as "waiting on" with a <i class="icon waiting on"></i>&nbsp;pointing hand.  The list is roughly the union of the following:
 - All participants involved in unresolved discussions that are [unreplied](discussions.md#unreplied-discussions) for them.
 - All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.
 - All requested reviewers, or if none then all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers.
 
-However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waiting-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)
+However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waited-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)
 
 You can see the algorithm above written out as code [here](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) and [customize it](admincenter.md#pendingreviewers) to better fit your workflow.
 
@@ -333,4 +336,4 @@ Two checks have special actions associated with them:
 
 There are a number of keyboard shortcuts available to power your way through a review. Type `?` to display a popup that lists the current bindings. Learn how to modify the available commands and the corresponding keyboard shortcuts in the [Custom key bindings](accountsettings.md#custom-key-bindings) section.
 
-![reviewable keyboard shortcuts](images/toptoolbar_7.png)
+![reviewable keyboard shortcuts](images/keyboard_shortcuts.png)

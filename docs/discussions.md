@@ -52,6 +52,8 @@ Supported directives include:
 * **+@username** (for assignees)
 * **+reviewer:@username** (for requested reviewers)
 
+Reviewer directives such as `+reviewer:@username` and `-reviewer:@username` take priority over [**Sync requested reviewers**](reviews.md#sync-requested-reviewers) changes.
+
 Reviewable will warn you if you reference invalid assignees or reviewers — either immediately or via email — but not for labels or milestones, since false positives are common there.  If you’re referencing code or variables that look like directives (for example, @user or +dependencies), wrap them in backticks to prevent Reviewable from treating them as inline directives.
 
 
@@ -61,24 +63,22 @@ For email and GitHub comments, if the repository isn’t connected, then directi
 
 ### Replying via email or on GitHub
 
-Reviewable will do its best to parse incoming messages and match them to their corresponding discussion threads. This only works well if you leave all the separators and comment links in place - so be sure not to mangle a quoted message too much in your reply.
+Reviewable will do its best to parse incoming messages and match them to their corresponding discussion threads.  Be sure to leave the separators and Reviewable comment links in place so Reviewable can match each reply to the right discussion.
 
-When replying by email, be sure to use interleaved style — placing your responses below the relevant quoted lines (rather than top-posting your entire reply). This helps Reviewable correctly match each comment to its thread.
-
-Quoted chunks will be shown in Reviewable if they are woven into your reply, but omitted otherwise (whether the message is top- or bottom-quoted). Any parts of the message that can't be conclusively tied to a specific discussion thread will show up in a top-level discussion instead.
-
-Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "Informing", "Working", or "Blocking".
-
-When replying by email, be sure to separate your comment and disposition with **one blank line**, otherwise GitHub may interpret the disposition as part of the comment text.  For example:
-```
-> This looks great. (this was the last comment on the discussion)
-Hold up, I found a bug!
-
-Blocking
-```
+When replying via GitHub, use the `…` > *Quote reply* button to preserve the proper Reviewable links.  When replying by email, use interleaved style — placing each response below the relevant quoted lines (rather than top-posting your entire reply).  Quoted chunks will be shown in Reviewable if they are woven into your reply, but omitted otherwise (whether the message is top- or bottom-quoted).
 
 ::: tip
-For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [initial keywords](#change-disposition) further down.
+If Reviewable can't match a reply to a specific discussion, it will post it on the main top-level discussion instead. Plain comments started in GitHub also end up there, while GitHub inline code comments are matched from GitHub's thread and line information when possible.
+:::
+
+Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "Informing", "Working", "Blocking", or "Satisfied".
+
+Be sure to separate your comment and disposition with **one blank line**, otherwise GitHub may interpret the disposition as part of the comment text.  For example:
+
+![reply via email](images/email_reply_1.png){width=550}
+
+::: tip
+For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [disposition keywords](#disposition-keywords) further down.
 :::
 
 ## Dispositions {#dispositions-and-resolution}
@@ -114,6 +114,8 @@ Another special disposition is **<i class="pondering disposition icon"/>&nbsp;Po
 Your avatar in the lower-right corner of every discussion box has a small icon that indicates your current disposition.  Hover over it (or swipe left) to show the avatars and dispositions of all the participants in the discussion.  Click on your avatar to change your disposition, or on another participant's avatar to see a description of their current disposition.
 
 ![reviewable dispositions](images/discussions_3.png){width=400}
+
+### Disposition keywords
 
 You can also change your disposition while writing a comment using keywords. Before you begin typing on a new discussion or a reply, you'l notice a small list of disposition mappings in the lower-right corner of the draft box. Typing one of these keywords before your comment automatically sets the corresponding disposition:
 

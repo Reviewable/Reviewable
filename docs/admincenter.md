@@ -249,7 +249,11 @@ A list of available settings follows, each describing the available options and 
 
 #### Reviewable badge
 
-Choose *where* and *when* the Reviewable badge (link to the review) is inserted on a GitHub pull request.  This setting looks a bit different in the Reviewable repo settings page, though the same logic applies to both. See [contextual help](index.md#help-on-using-reviewable) for an explanation of those options.
+Choose *where* and *when* the Reviewable badge (link to the review) is inserted on a GitHub pull request.  
+
+::: tip
+This setting looks a bit different on the Reviewable repo settings page, though the same logic applies to both. See [contextual help](index.md#help-on-using-reviewable) for an explanation of those options.
+:::
 
 ```yaml
 badge:
@@ -481,6 +485,10 @@ The available pragmas are:
 
 The current state of the review is accessible to your code via the `review` variable.  The sample review state below explains the various properties. All timestamp values indicate milliseconds since the epoch, and all lists are ordered chronologically (when appropriate). If you find that you'd like more data please ask and we'll see what we can do.
 
+::: tip
+Properties marked with `(*)` have additional notes below the sample review state.
+:::
+
 ```js
 {
   summary: {
@@ -511,12 +519,7 @@ The current state of the review is accessible to your code via the `review` vari
       {username: 'pkaminski-test', participating: true},
       {username: 'mdevs5531', participating: false}
     ],
-    requestedReviewers: [
-      // When executing the condition prior to publishing a review, this list won't include any
-      // reviewers added by the "sync requested reviewers" option if it's checked.  Doing so would
-      // create a dependency cycle.  This only affects the posted message -- the condition will be
-      // re-evaluated after publishing with the full list of requested reviewers to determine the
-      // actual review status.
+    requestedReviewers: [  // (*) Reviewers with an outstanding GitHub review request
       {username: 'pkaminski-test', participating: true}
     ],
     requestedTeams: [
@@ -597,7 +600,7 @@ The current state of the review is accessible to your code via the `review` vari
   files: [  // List of files in the review
     {
       path: 'LICENSE',
-      revisions: [  // List of the revisions where this file was changed
+      revisions: [  // (*) List of the revisions where this file was changed
         {
           key: 'r1',
           action: 'modified',  // one of 'added', 'modified', 'removed', or 'renamed' (without changes)
@@ -636,6 +639,14 @@ The current state of the review is accessible to your code via the `review` vari
 }
 ```
 
+#### `pullRequest.requestedReviewers`
+
+The `pullRequest.requestedReviewers` property is populated from GitHub's [get all requested reviewers](https://docs.github.com/en/rest/pulls/review-requests?apiVersion=2026-03-10#get-all-requested-reviewers-for-a-pull-request) endpoint, so it only includes users with an outstanding GitHub review request.  It is not the same as the reviewers shown in GitHub's PR sidebar, which also includes users who have already submitted a review.
+
+When executing the condition prior to publishing a review, this list won’t include any reviewers that would be newly requested by the [**Sync requested reviewers**](#syncrequestedreviewers) option. Including them would create a dependency cycle, since the condition determines `pendingReviewers`, which drives the sync, which would in turn change `requestedReviewers`.  This only affects the initial PR comment.  After publishing, the condition is re-evaluated with the updated requested reviewers from GitHub to determine the final review status.
+
+#### `files[].revisions`
+
 The `files[].revisions` property requires a bit of additional explanation.  First, renamed file matching and base change detection is performed only in clients, so the condition will get incomplete input data until a user with appropriate permissions visits the review.
 
 Second, the `baseChangesOnly` flag is computed relative to its revision's *prior revision*, which is not necessarily the immediately preceding one.  This becomes important when rebasing multiple commits while using the "review each commit separately" [review style](files.md#review-style), as Reviewable tries to match each "new" commit to the corresponding commit it replaced.  We don't expose the logic in the data structure above, but our algorithm is robust and biased towards needing strong evidence for a match. As a result, false positive `baseChangesOnly` flags should be extremely rare.
@@ -659,7 +670,7 @@ A string of no more than 50 characters describing the current status of the revi
 A short string describing the "stage" in some process that this review has reached so far.  This value will be saved and returned to the completion condition when it next executes, so it can be used to store a bit of state.  It's not currently surfaced in the UI but may be in the future, in which case it's likely that values will be sorted alphabetically - so you may want to number your stages.  If no value is returned by the condition, Reviewable will automatically assign one of `1. Preparing`, `2. In progress`, or `3. Completed`.
 
 #### `pendingReviewers`
-An array of objects with a `username` property listing the users whose attention is needed to advance the review, like `[{username: 'pkaminski'}]`.  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own `pendingReviewers` from scratch, Reviewable will remove any users who are [deferring](reviews.md#deferring-a-review) from the list of `pendingReviewers` unless your code accesses `review.deferringReviewers`.
+An array of objects with a `username` property, like `[{username: 'pkaminski'}]`, listing the users whose attention is needed to advance the review (displayed as "waiting on" <i class="icon waiting on"></i>&nbsp; in the UI).  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own `pendingReviewers` from scratch, Reviewable will remove any users who are [deferring](reviews.md#deferring-a-review) from the list of `pendingReviewers` unless your code accesses `review.deferringReviewers`.
 
 You can read a description of the [default pending reviewers logic](reviews.md#waiting-on) and take a look at the [code](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) that computes the default value.
 
@@ -780,10 +791,14 @@ Archived reviews will not generally update their state even if relevant events o
 :::
 
 #### `disableGitHubApprovals`
-A boolean that, if true, will disable the “Approve” and “Request changes” [publish options](reviews.md#approval-levels) in Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine completion, but note that users will still be able to publish approving and blocking reviews directly via GitHub.
+A boolean that, if true, will disable the “Approve” and “Request changes” [publish options](reviews.md#approval-levels) in Reviewable.  This can be useful to prevent confusion if your condition uses some other values (e.g., LGTMs) to determine review completion instead of traditional "approvals".  Users will still be able to publish approving and blocking reviews directly via GitHub.
+
+::: danger
+Reviewable intentionally does not publish GitHub approvals when `disableGitHubApprovals` is set to `true`. This means that CODEOWNERS and other GitHub rules that require an explicit "approval" cannot be satisfied by Reviewable, even if a custom completion condition considers the Reviewable review to be complete.
+:::
 
 #### `syncRequestedReviewers`
-A boolean that, if true, will force synchronization of GitHub requested reviewers from `pendingReviewers`.  (You should only set it if the repository is connected to Reviewable.)  This can be useful to standardize the workflow (e.g., to make metrics provided by another tool more reliable), but note that users will still be able to manually request and unrequest reviewers anyway.  When set to `true`, the server will automatically update requested reviewers whenever `pendingReviewers` changes (including when the PR is first created) using any repo admin account.  The client will also force enable (`true`) or disable (`false`) the ["Sync requested reviewers"](reviews.md#sync-requested-reviewers) option when publishing via Reviewable.
+A boolean that, if true, will synchronize GitHub requested reviewers from `pendingReviewers`.  (You should only set it if the repository is connected to Reviewable.)  This affects only GitHub requested reviewers, not Reviewable's own review state or dashboard, but can help surface the pull request and improve integration with other tools.  When set to `true`, the server will automatically update requested reviewers whenever `pendingReviewers` changes (including when the PR is first created) using any repo admin account.  The client will also force enable (`true`) or disable (`false`) the [**Sync requested reviewers**](reviews.md#sync-requested-reviewers) option when publishing via Reviewable.  Users can still manually request and unrequest reviewers, for example, by using [reviewer comment directives](discussions.md#inline-directives).
 
 #### `requestedTeams`
 A list of teams whose review should be requested for this PR.  The elements of the list are in the same format as `review.pullRequest.requestedTeams`, i.e. `{slug: 'org/team-slug'}`.  The PR's requested teams will be adjusted so they end up matching the list given here, adding or removing teams as necessary.
