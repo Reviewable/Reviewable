@@ -65,7 +65,7 @@ If you choose **Comment**, any previous **Approve** or **Request changes** will 
 
 ### Requested reviewers synchronization {#sync-requested-reviewers}
 
-Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to automatically synchronize GitHub's requested reviewers with Reviewable's waiting-on participants after you publish by checking the **Sync requested reviewers** box under **<i class="configure icon"></i>&nbsp;Publish options**.  Doing so will request reviews from people Reviewable is waiting on, and cancel GitHub review requests for people whose action is no longer needed.  The sync affects only GitHub requested reviewers; it doesn't change Reviewable's own review state or dashboard.  The option shows you what changes it will make in GitHub, and reviewer [inline directives](discussions.md#inline-directives) such as `+reviewer:@username` and `-reviewer:@username` take priority over synced changes.
+Reviewable maintains its own list of people whose action is needed on a review (as shown on the [dashboard](dashboard.md#review-state) and in the [participants panel](#participants)), independent of GitHub's requested reviewers list.  You can choose to automatically synchronize GitHub's requested reviewers with Reviewable's waited-on participants after you publish by checking the **Sync requested reviewers** box under **<i class="configure icon"></i>&nbsp;Publish options**.  Doing so will request reviews from people Reviewable is waiting on, and cancel GitHub review requests for people whose action is no longer needed.  The sync affects only GitHub requested reviewers; it doesn't change Reviewable's own review state or dashboard.  The option shows you what changes it will make in GitHub, and reviewer [inline directives](discussions.md#inline-directives) such as `+reviewer:@username` and `-reviewer:@username` take priority over synced changes.
 
 ::: danger
 It's not possible to request a review from the pull request's author in GitHub, nor from people who aren't collaborators on the repo, even if the user in question is one of Reviewable's waited-on participants.  Also, only users with push permissions on the repo can request reviewers.
@@ -75,7 +75,7 @@ It's not possible to request a review from the pull request's author in GitHub, 
 Keeping requested reviewers up-to-date (rather than just requesting the initial review) can improve integration with other tools.
 :::
 
-Repository admins can customize the list of waiting-on participants and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](admincenter.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or turn this option on for everyone to maintain a consistent workflow.
+Repository admins can customize the list of waited-on participants and, if desired, override the **Sync requested reviewers** checkbox in a [custom review completion condition](admincenter.md#completion-condition).  For example, you may wish to remove other users from the list if the PR author is on it, or turn this option on for everyone to maintain a consistent workflow.
 
 ### Publish on Push
 
@@ -293,7 +293,7 @@ Reviewable keeps track of which participants are needed to move a review forward
 - All participants who most recently marked as reviewed a file that is not reviewed at the latest revision.
 - All requested reviewers, or if none then all assigned users, or if none and there are files with no previous reviewers or discussions with no participants besides the pull request's author then all reviewers.
 
-However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waiting-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)
+However, if a user deferred by publishing a review when some files or discussions were still unreviewed or unreplied, then they'll be removed from consideration for the waited-on list until the review's state changes.  Finally, if all files and discussions in the review have been engaged with but the list of waited-on users is still empty, Reviewable will default to the pull request's author.  (This happens most often when a review has been completed and the pull request is ready to merge.)
 
 You can see the algorithm above written out as code [here](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) and [customize it](admincenter.md#pendingreviewers) to better fit your workflow.
 
