@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> don't try to use connecting user's credentials when updating Reviewable's status in a repo with a broken connection.  This could result in being unable to run the completion condition altogether. <!-- server -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Fix:</kbd> successfully summarize more comments for the discussion matrix. <!-- client 7848 -->
