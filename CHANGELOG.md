@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> correctly recognize emojis with embedded `\` escapes. <!-- client -->
 - <kbd>Adm:</kbd> don't try to use connecting user's credentials when updating Reviewable's status in a repo with a broken connection.  This could result in being unable to run the completion condition altogether. <!-- server -->
 
 <sub>2026 - 05</sub>
