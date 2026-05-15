@@ -1,16 +1,13 @@
-<sub>Upcoming</sub>
+<sub>2026 - 05</sub>
 
-- <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server -->
+- <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server 4908 -->
   > We no longer rely solely on the list of admin collaborators (which can be faulty
   > if the organization uses private teams) but also track admins as they use
   > Reviewable.  We also again consider the repo connector as a valid admin even if
   > they don't appear to be a collaborator (as we did before v4906.7847).  Finally,
   > we no longer explicitly check whether a purported admin actually has admin
   > permissions and just let the task fail if they don't.
-- <kbd>Adm:</kbd> don't try to use connecting user's credentials when updating Reviewable's status in a repo with a broken connection.  This could result in being unable to run the completion condition altogether. <!-- server -->
-
-<sub>2026 - 05</sub>
-
+- <kbd>Adm:</kbd> don't try to use connecting user's credentials when updating Reviewable's status in a repo with a broken connection.  This could result in being unable to run the completion condition altogether. <!-- server 4908 -->
 - <kbd>Fix:</kbd> show an undimissable banner on every review if a repository connection is broken, until the connection is either closed or re-established. <!-- client 7849 -->
 - <kbd>Fix:</kbd> correctly recognize emojis with embedded `\` escapes. <!-- client 7849 -->
 - <kbd>Fix:</kbd> successfully summarize more comments for the discussion matrix. <!-- client 7848 -->
