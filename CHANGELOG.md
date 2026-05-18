@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server 4908 -->
