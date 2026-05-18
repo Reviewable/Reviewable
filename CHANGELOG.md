@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client 7850 -->
 - <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server 4908 -->
   > We no longer rely solely on the list of admin collaborators (which can be faulty
   > if the organization uses private teams) but also track admins as they use
