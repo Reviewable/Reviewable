@@ -210,12 +210,14 @@ Extra configuration for optimizing the server runtime.
 
 ##### Slack integration
 
-In order to connect your Reviewable Enterprise instance to your Slack workspace (enabling review updates via Slack, sync handles, etc.), please follow these steps:
+In order to connect your Reviewable Enterprise instance to a Slack workspace or enterprise (enabling review updates via Slack, sync handles, etc.), please follow the steps below.
+
+Note that Reviewable can only be connected to a single Slack workspace or enterprise at a time.  If your users span multiple Slack workspaces that are part of the same Slack Enterprise Grid organization, consider connecting the enterprise rather than an individual workspace — this allows users from all member workspaces to be recognized.  It is not possible to connect multiple independent workspaces.
 
 1. Go to: https://api.slack.com/apps
-2. Log in with an admin account for your Slack workspace. If you are currently logged in with a different Slack account, click "Sign in to another workspace" at the bottom.
+2. Log in with an admin account for your Slack workspace or enterprise. If you are currently logged in with a different Slack account, click "Sign in to another workspace" at the bottom.
 3. Click "Create New App" → "From a Manifest".
-4. Select your workspace and click "Next".
+4. Select your workspace or enterprise and click "Next".
 5. Open [slack_app_manifest.json](slack_app_manifest.json), copy its contents into the text editor widget on the web page and click "Next".
 6. Click the "Create" button.
 7. Navigate to the "OAuth & Permissions" section.
