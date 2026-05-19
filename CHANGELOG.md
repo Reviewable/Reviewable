@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Show "Manage Billing" button for orgs with a past subscription. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Adm:</kbd> replace *statsd* metrics `github.sockets.free` and `github.sockets.busy` (sourced from `agentkeepalive`) with `github.sockets.connected`, `github.sockets.active`, and `github.sockets.queued` (sourced from `undici`'s `diagnostics_channel`); the memory log also includes equivalent data under `ghRequests`. <!-- server 4912 -->
