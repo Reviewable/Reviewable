@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> replace *statsd* metrics `github.sockets.free` and `github.sockets.busy` (sourced from `agentkeepalive`) with `github.sockets.connected`, `github.sockets.active`, and `github.sockets.queued` (sourced from `undici`'s `diagnostics_channel`); the memory log also includes equivalent data under `ghRequests`. <!-- server -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Adm:</kbd> replace *statsd* metrics `github.sockets.free` and `github.sockets.busy` (sourced from `agentkeepalive`) with `github.sockets.connected`, `github.sockets.active`, and `github.sockets.queued` (sourced from `undici`'s `diagnostics_channel`); the memory log also includes equivalent data under `ghRequests`. <!-- server 4912 -->
 - <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client 7850 -->
 - <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server 4908 -->
   > We no longer rely solely on the list of admin collaborators (which can be faulty
