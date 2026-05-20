@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> when rate limiting is turned on and we select an alternative admin that fails to complete the task due to a fatal GitHub error, mark them as bad for an hour so that we don't waste time trying them too often, forcing the task to retry and increasing latency. <!-- server -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Adm:</kbd> when rate limiting is turned on and we select an alternative admin that fails to complete the task due to a fatal GitHub error, mark them as bad for an hour so that we don't waste time trying them too often, forcing the task to retry and increasing latency. <!-- server 4913 -->
 - <kbd>Upd:</kbd> Show "Manage Billing" button for orgs with a past subscription. <!-- client 7852 -->
 - <kbd>Adm:</kbd> replace *statsd* metrics `github.sockets.free` and `github.sockets.busy` (sourced from `agentkeepalive`) with `github.sockets.connected`, `github.sockets.active`, and `github.sockets.queued` (sourced from `undici`'s `diagnostics_channel`); the memory log also includes equivalent data under `ghRequests`. <!-- server 4912 -->
 - <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client 7850 -->
