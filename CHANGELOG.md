@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid sidebar splitter crash for detached layout elements <!-- client -->
 - <kbd>Fix:</kbd> keep review context alive during teardown <!-- client -->
 
 <sub>2026 - 05</sub>
