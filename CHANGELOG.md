@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep review context alive during teardown <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Adm:</kbd> when rate limiting is turned on and we select an alternative admin that fails to complete the task due to a fatal GitHub error, mark them as bad for an hour so that we don't waste time trying them too often, forcing the task to retry and increasing latency. <!-- server 4913 -->
