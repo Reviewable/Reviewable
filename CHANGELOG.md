@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
