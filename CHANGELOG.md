@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server -->
-- <kbd>Adm:</kbd> avoid locking up the server and potentially crashing with an out of memory error when evaluating `CODEOWNERS` files with thousands of lines against reviews with thousands of files. <!-- server -->
-- <kbd>Adm:</kbd> log fine-grained timings when evaluating a review's completion. <!-- server -->
-- <kbd>Fix:</kbd> disabled extended glob syntax for file-based repository settings overrides. <!-- server -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
+- <kbd>Adm:</kbd> avoid locking up the server and potentially crashing with an out of memory error when evaluating `CODEOWNERS` files with thousands of lines against reviews with thousands of files. <!-- server 4914 -->
+- <kbd>Adm:</kbd> log fine-grained timings when evaluating a review's completion. <!-- server 4914 -->
+- <kbd>Fix:</kbd> disabled extended glob syntax for file-based repository settings overrides. <!-- server 4914 -->
 - <kbd>Fix:</kbd> avoid sidebar splitter crash for detached layout elements <!-- client 7853 -->
 - <kbd>Fix:</kbd> keep review context alive during teardown <!-- client 7853 -->
 - <kbd>Adm:</kbd> when rate limiting is turned on and we select an alternative admin that fails to complete the task due to a fatal GitHub error, mark them as bad for an hour so that we don't waste time trying them too often, forcing the task to retry and increasing latency. <!-- server 4913 -->
