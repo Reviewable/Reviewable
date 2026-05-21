@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> disabled extended glob syntax for file-based repository settings overrides. <!-- server -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Fix:</kbd> avoid sidebar splitter crash for detached layout elements <!-- client 7853 -->
