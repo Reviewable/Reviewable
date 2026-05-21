@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client 7855 -->
 - <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
 - <kbd>Adm:</kbd> avoid locking up the server and potentially crashing with an out of memory error when evaluating `CODEOWNERS` files with thousands of lines against reviews with thousands of files. <!-- server 4914 -->
 - <kbd>Adm:</kbd> log fine-grained timings when evaluating a review's completion. <!-- server 4914 -->
