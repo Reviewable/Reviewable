@@ -130,6 +130,45 @@ To reset any custom colors back to the default red or green, click the "x" that 
 When setting replacement colors, don't forget that you have the <a href="#adjust-contrast">contrast slider</a> at your disposal too. This primarily controls diff colors (and differentiation icons) and can help achieve a balanced UI when setting color replacements.
 :::
 
+## Agent identities
+
+Here you can manage subidentities of your own account to be used by agents or other automation inside Reviewable.  GitHub is not aware of these subidentities so all actions taken by agents there will be in your name and with your permissions.
+
+### Creating and retiring an agent identity
+
+Start by provisioning a new agent.  There are three kinds to choose from:
+1. Author: the agent will have its own subidentity and — crucially — assume the role of an author on any pull requests you create.
+2. Reviewer: the agent will have its own subidentity and assume the role of a reviewer on all pull requests.
+3. Replicant: the agent will have no subidentity of its own and act entirely in your name, both in Reviewable and on GitHub.
+
+Once you've created an agent you'll be shown its API bearer token.  This is the only time this token will be displayed so copy it and save it in an environment variable called `REVIEWABLE_API_TOKEN`.  Keep this token safe as it provides full access to Reviewable with no further authentication.  You can reissue the token at any time, which will immediately invalidate the old one.  You can also revoke the token, which will retire the agent, though you can reactivate them at any time.
+
+::: tip
+Agents are never completely deleted (only retired) to maintain data integrity for any reviews they might have participated in.
+:::
+
+### Customizing an agent identity
+
+You can set an agent's tag, consisting of up to 4 uppercase letters and a background color.  This can help you tell multiple agents apart in the list and, for agents with their own subidentities, will be added to your avatar and username to distinguish the agent from you.  You can change the tag at any time and it will immediately take effect, including for all of an agent's past interactions — just like when you change your own avatar or username.
+
+You can also constrain the agent to a subset of the organizations and repositories to which you have access.  Specify a comma-separated list of `OWNER/REPO` globs; if any one matches then access will be allowed.  For example, `work/*` grants access to all repos in the `work` organization, `*/special-*` grants access to repos that start with `special-` in any organization, and `*/*` grants access to all repos in all organizations (the default setting).
+
+### Using an agent identity
+
+To use an agent identity you'll first need to:
+1. Install [Node.js](https://nodejs.org/) version 20 or higher.
+2. Install Chrome or Chromium.  It's probably already available on your personal computer, but if you need to set it up in CI you can use the command `npx playwright install --with-deps chromium`.
+3. Set the `REVIEWABLE_URL` environment variable to `https://reviewable.io` or the URL of your local instance of Reviewable (e.g., `https://internal.reviewable.cloud`).
+4. Set the `REVIEWABLE_API_TOKEN` environment variable to your agent's secret token.
+
+You're now ready to run the `reviewable` NPM package in one of two ways:
+1. Download and execute it directly with `npx reviewable`.  This has the advantage of always using the latest version but carries some extra overhead each time you invoke it.
+2. Install the package with `npm install --global reviewable@latest` then run it simply as `reviewable`.  This is a little more efficient but leaves it up to you to update the package every so often by running the same installation command again.
+
+The `reviewable` command offers two ways for your agent to interact with Reviewable.  First, you can execute `reviewable mcp` to start up an MCP server; your agent should be able to take it from there.  Second, you can use it as a CLI tool; run `reviewable --help` to see a list of available commands, and consider adding our [skill stubs](https://github.com/Reviewable/Reviewable/tree/master/examples/skills) to your agent.  (Make sure to tweak the command they show for how you decided to run `reviewable` above.)
+
+If you can't find a feature you need, first make sure you're running the latest version of the `reviewable` package (and the Reviewable instance, if you're on Reviewable Enterprise).  If it's still missing then please [get in touch](mailto:support@reviewable.io?subject=API%20feature%20request) and we'll see if we can get it added for you!
+
 ## GitHub API background usage cutoff
 You can set an hourly GitHub API usage cutoff to limit Reviewable's background requests for your account on its server. This applies a maximum across all types of quota but is typically most relevant for core API quota. This does not affect interactive usage of Reviewable.
 
