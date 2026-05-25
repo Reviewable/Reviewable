@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client 7855 -->
