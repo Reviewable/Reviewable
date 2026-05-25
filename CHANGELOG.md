@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client 7857 -->
 - <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client 7855 -->
 - <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
 - <kbd>Adm:</kbd> avoid locking up the server and potentially crashing with an out of memory error when evaluating `CODEOWNERS` files with thousands of lines against reviews with thousands of files. <!-- server 4914 -->
