@@ -1,7 +1,6 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client -->
-- <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client -->
 
 <sub>2026 - 05</sub>
 
