@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> treat GitHub RESOURCE_LIMITS_EXCEEDED as success when review was submitted successfully. <!-- client -->
-- <kbd>Fix:</kbd> guard against a rare crash when loading a review with resolved discussions. <!-- client -->
-- <kbd>Upd:</kbd> Allow closing review tab during publish-on-push server processing <!-- client -->
-
 <sub>2026 - 05</sub>
 
+- <kbd>Fix:</kbd> treat GitHub RESOURCE_LIMITS_EXCEEDED as success when review was submitted successfully. <!-- client 7858 -->
+- <kbd>Fix:</kbd> guard against a rare crash when loading a review with resolved discussions. <!-- client 7858 -->
+- <kbd>Upd:</kbd> Allow closing review tab during publish-on-push server processing <!-- client 7858 -->
 - <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client 7857 -->
 - <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client 7855 -->
 - <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
