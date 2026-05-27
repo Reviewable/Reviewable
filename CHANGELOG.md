@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> guard against a rare crash when loading a review with resolved discussions. <!-- client -->
 - <kbd>Upd:</kbd> Allow closing review tab during publish-on-push server processing <!-- client -->
 
 <sub>2026 - 05</sub>
