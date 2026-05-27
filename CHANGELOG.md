@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Allow closing review tab during publish-on-push server processing <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client 7857 -->
