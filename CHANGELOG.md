@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> don't crash when creating a code block in a language Reviewable can't highlight. <!-- client -->
+
 <sub>2026 - 05</sub>
 
 - <kbd>Fix:</kbd> treat GitHub RESOURCE_LIMITS_EXCEEDED as success when review was submitted successfully. <!-- client 7858 -->
