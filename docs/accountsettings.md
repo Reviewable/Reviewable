@@ -1,8 +1,8 @@
 # Account Settings
 
-When signed in, click your profile picture in the upper-right corner to view the account settings dropdown.  If you're already in a review, click the Reviewable icon in the upper-left corner first to reveal your profile picture.  
+When signed in, click your profile picture in the upper-right corner to view the account settings dropdown.  If you're already in a review, click the Reviewable icon in the upper-left corner first to reveal your profile picture.
 
-Here, you can manage your global settings and customize your Reviewable environment.  This chapter explains each setting from top to bottom. 
+Here, you can manage your global settings and customize your Reviewable environment.  This chapter explains each setting from top to bottom.
 
 ![reviewable account settings](images/accountsettings_1.png){width=580}
 
@@ -12,9 +12,9 @@ You can customize the font used in all the diffs. The font must be [monospace](h
 
 ## Custom stylesheet
 
-You can point to a custom stylesheet that you want to apply to all diffs.  Reviewable uses [highlight.js](https://highlightjs.org/), so you might prefer to use one of those [predefined styles](https://highlightjs.org/demo) that can be found in their [styles directory](https://github.com/isagalaev/highlight.js/tree/master/src/styles). 
+You can point to a custom stylesheet that you want to apply to all diffs.  Reviewable uses [highlight.js](https://highlightjs.org/), so you might prefer to use one of those [predefined styles](https://highlightjs.org/demo) that can be found in their [styles directory](https://github.com/isagalaev/highlight.js/tree/master/src/styles).
 
-For example, to use the GitHub style, set the URL to `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css`.  
+For example, to use the GitHub style, set the URL to `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/github.min.css`.
 
 You can also write your own custom styles by following the [highlight.js CSS class reference](http://highlightjs.readthedocs.io/en/latest/css-classes-reference.html).
 
@@ -48,12 +48,12 @@ Reviewable lets you open files directly in your preferred external editor. Selec
 
 ![custom line editor links](images/accountsettings_2.png){width=410}
 
-You can open a file by clicking its name in a [file diff panel header](files.md#file-header) and selecting **Open in editor**&nbsp;<i class="editor icon"/>.  To jump to a specific line, use the <i class="discussion scope icon"/>&nbsp;**line #** dropdown in the upper-right corner of any discussion.  
+You can open a file by clicking its name in a [file diff panel header](files.md#file-header) and selecting **Open in editor**&nbsp;<i class="editor icon"/>.  To jump to a specific line, use the <i class="discussion scope icon"/>&nbsp;**line #** dropdown in the upper-right corner of any discussion.
 
 ![line editor link in discussion](images/line_editor_link.png){width=480}
 
 ::: tip
-You can open files in your external editor from the file matrix by holding down `⌘` or `Ctrl` + `Alt` or `⇧` when clicking a file name. More on this [here](files.md#file-list). 
+You can open files in your external editor from the file matrix by holding down `⌘` or `Ctrl` + `Alt` or `⇧` when clicking a file name. More on this [here](files.md#file-list).
 :::
 
 Your editor must support a custom URL scheme for linking to files to use this feature. Reviewable assumes that `/directory/with/repos` is the absolute path to the directory where your git repos live, and also that each repo directory is named the same as its repo.
@@ -100,7 +100,7 @@ Your bindings will be loaded and applied right away, and the keyboard shortcuts 
 
 ## Review notifications
 
-Click the **Slack DM** toggle to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.  Slack integration can be set up by organization owners in the [Admin Center](admincenter.md#slack-integration). 
+Click the **Slack DM** toggle to turn review notifications via Slack on and off.  When turned on, you can choose between having notifications delivered **instantly** or **daily** (batched) at a given time.  Slack integration can be set up by organization owners in the [Admin Center](admincenter.md#slack-integration).
 
 ## Visual tweaks
 
@@ -116,7 +116,7 @@ You can switch between dark mode, light mode, or match your operating system's d
 
 ### Accessibility
 
-You can enable **color replacement** (colorblind mode) to replace all shades of red and green across the app, making it easier to distinguish between the two in diffs. In single column diff layouts, plus and minus icons are also placed to the right side of the panel to further differentiate between changes. 
+You can enable **color replacement** (colorblind mode) to replace all shades of red and green across the app, making it easier to distinguish between the two in diffs. In single column diff layouts, plus and minus icons are also placed to the right side of the panel to further differentiate between changes.
 
 To use colorblind mode:
 
@@ -131,9 +131,9 @@ When setting replacement colors, don't forget that you have the <a href="#adjust
 :::
 
 ## GitHub API background usage cutoff
-You can set an hourly GitHub API usage cutoff to limit Reviewable's background requests for your account on its server. This applies a maximum across all types of quota but is typically most relevant for core API quota. This does not affect interactive usage of Reviewable. 
+You can set an hourly GitHub API usage cutoff to limit Reviewable's background requests for your account on its server. This applies a maximum across all types of quota but is typically most relevant for core API quota. This does not affect interactive usage of Reviewable.
 
-This setting can be helpful if you’re a member of an organization subscribed to GitHub Enterprise Cloud but also use personal access tokens or the gh command line tool. GHEC grants OAuth applications such as Reviewable a higher quota, but doesn’t extend this benefit to personal tokens, so it’s possible for Reviewable to unknowingly exhaust your quota. To prevent this, set the cutoff to a number below your personal token’s limit, e.g. 4000. 
+This setting can be helpful if you’re a member of an organization subscribed to GitHub Enterprise Cloud but also use personal access tokens or the gh command line tool. GHEC grants OAuth applications such as Reviewable a higher quota, but doesn’t extend this benefit to personal tokens, so it’s possible for Reviewable to unknowingly exhaust your quota. To prevent this, set the cutoff to a number below your personal token’s limit, e.g. 4000.
 
 ## GitHub authorizations granted
 
