@@ -12,14 +12,14 @@
 - <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
 - <kbd>Adm:</kbd> avoid locking up the server and potentially crashing with an out of memory error when evaluating `CODEOWNERS` files with thousands of lines against reviews with thousands of files. <!-- server 4914 -->
 - <kbd>Adm:</kbd> log fine-grained timings when evaluating a review's completion. <!-- server 4914 -->
-- <kbd>Fix:</kbd> disabled extended glob syntax for file-based repository settings overrides. <!-- server 4914 -->
+- <kbd>Fix:</kbd> disable extended glob syntax for file-based repository settings overrides. <!-- server 4914 -->
 - <kbd>Fix:</kbd> avoid sidebar splitter crash for detached layout elements <!-- client 7853 -->
 - <kbd>Fix:</kbd> keep review context alive during teardown <!-- client 7853 -->
 - <kbd>Adm:</kbd> when rate limiting is turned on and we select an alternative admin that fails to complete the task due to a fatal GitHub error, mark them as bad for an hour so that we don't waste time trying them too often, forcing the task to retry and increasing latency. <!-- server 4913 -->
 - <kbd>Upd:</kbd> show "Manage Billing" button for orgs with a past subscription. <!-- client 7852 -->
 - <kbd>Adm:</kbd> replace *statsd* metrics `github.sockets.free` and `github.sockets.busy` (sourced from `agentkeepalive`) with `github.sockets.connected`, `github.sockets.active`, and `github.sockets.queued` (sourced from `undici`'s `diagnostics_channel`); the memory log also includes equivalent data under `ghRequests`. <!-- server 4912 -->
 - <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client 7850 -->
-- <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server 4908 -->
+- <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks when GitHub rate limiting is enabled. <!-- server 4908 -->
   > We no longer rely solely on the list of admin collaborators (which can be faulty
   > if the organization uses private teams) but also track admins as they use
   > Reviewable.  We also again consider the repo connector as a valid admin even if
@@ -27,7 +27,7 @@
   > we no longer explicitly check whether a purported admin actually has admin
   > permissions and just let the task fail if they don't.
 - <kbd>Adm:</kbd> don't try to use connecting user's credentials when updating Reviewable's status in a repo with a broken connection.  This could result in being unable to run the completion condition altogether. <!-- server 4908 -->
-- <kbd>Fix:</kbd> show an undimissable banner on every review if a repository connection is broken, until the connection is either closed or re-established. <!-- client 7849 -->
+- <kbd>Fix:</kbd> show an undismissable banner on every review if a repository connection is broken, until the connection is either closed or re-established. <!-- client 7849 -->
 - <kbd>Fix:</kbd> correctly recognize emojis with embedded `\` escapes. <!-- client 7849 -->
 - <kbd>Fix:</kbd> successfully summarize more comments for the discussion matrix. <!-- client 7848 -->
 - <kbd>Fix:</kbd> scope sidebar hotkeys to review pages. <!-- client 7848 -->
