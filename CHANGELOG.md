@@ -4,6 +4,8 @@
 
 <sub>2026 - 05</sub>
 
+<sub>**Enterprise release 4917.7858** (min 3340.5125 GHE ^2.19 || ^3) 2026-05-29 <!-- enterprise 4917.7858 --></sub>
+
 - <kbd>Fix:</kbd> treat GitHub `RESOURCE_LIMITS_EXCEEDED` as success when review was submitted successfully. <!-- client 7858 -->
 - <kbd>Fix:</kbd> guard against a rare crash when loading a review with resolved discussions. <!-- client 7858 -->
 - <kbd>Upd:</kbd> allow closing review tab during publish-on-push server processing <!-- client 7858 -->
