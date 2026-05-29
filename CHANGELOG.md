@@ -4,9 +4,9 @@
 
 <sub>2026 - 05</sub>
 
-- <kbd>Fix:</kbd> treat GitHub RESOURCE_LIMITS_EXCEEDED as success when review was submitted successfully. <!-- client 7858 -->
+- <kbd>Fix:</kbd> treat GitHub `RESOURCE_LIMITS_EXCEEDED` as success when review was submitted successfully. <!-- client 7858 -->
 - <kbd>Fix:</kbd> guard against a rare crash when loading a review with resolved discussions. <!-- client 7858 -->
-- <kbd>Upd:</kbd> Allow closing review tab during publish-on-push server processing <!-- client 7858 -->
+- <kbd>Upd:</kbd> allow closing review tab during publish-on-push server processing <!-- client 7858 -->
 - <kbd>Fix:</kbd> prevent hotkeys from changing the disposition of the main review discussion, which could result in an unpublishable review. <!-- client 7857 -->
 - <kbd>Upd:</kbd> hide "react with 👍/ 👎" footers inserted by review bots. <!-- client 7855 -->
 - <kbd>Fix:</kbd> correctly parse escaped whitespace in `CODEOWNERS` files. <!-- server 4914 -->
@@ -16,7 +16,7 @@
 - <kbd>Fix:</kbd> avoid sidebar splitter crash for detached layout elements <!-- client 7853 -->
 - <kbd>Fix:</kbd> keep review context alive during teardown <!-- client 7853 -->
 - <kbd>Adm:</kbd> when rate limiting is turned on and we select an alternative admin that fails to complete the task due to a fatal GitHub error, mark them as bad for an hour so that we don't waste time trying them too often, forcing the task to retry and increasing latency. <!-- server 4913 -->
-- <kbd>Upd:</kbd> Show "Manage Billing" button for orgs with a past subscription. <!-- client 7852 -->
+- <kbd>Upd:</kbd> show "Manage Billing" button for orgs with a past subscription. <!-- client 7852 -->
 - <kbd>Adm:</kbd> replace *statsd* metrics `github.sockets.free` and `github.sockets.busy` (sourced from `agentkeepalive`) with `github.sockets.connected`, `github.sockets.active`, and `github.sockets.queued` (sourced from `undici`'s `diagnostics_channel`); the memory log also includes equivalent data under `ghRequests`. <!-- server 4912 -->
 - <kbd>Fix:</kbd> update awaited users faster after a requested reviewer sends their review. <!-- client 7850 -->
 - <kbd>Adm:</kbd> improve assignment of admins to load-balance handling of background tasks. <!-- server 4908 -->
