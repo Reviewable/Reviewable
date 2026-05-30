@@ -1,9 +1,10 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> don't abort revision compaction with a bogus "cannot compact revisions in broken review" error. <!-- server -->
 - <kbd>Fix:</kbd> don't crash when creating a code block in a language Reviewable can't highlight. <!-- client -->
 
 <sub>2026 - 05</sub>
+
+- <kbd>Fix:</kbd> don't abort revision compaction with a bogus "cannot compact revisions in broken review" error. <!-- server 4918 -->
 
 <sub>**Enterprise release 4917.7858** (min 3340.5125 GHE ^2.19 || ^3) 2026-05-29 <!-- enterprise 4917.7858 --></sub>
 
