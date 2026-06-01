@@ -1,7 +1,7 @@
-<sub>Upcoming</sub>
+<sub>2026 - 06</sub>
 
-- <kbd>Fix:</kbd> ensure that publishing two reviews concurrently, one on push and one immediately, doesn't get the on-push flag mixed up. <!-- client -->
-- <kbd>Fix:</kbd> don't crash when creating a code block in a language Reviewable can't highlight. <!-- client -->
+- <kbd>Fix:</kbd> ensure that publishing two reviews concurrently, one on push and one immediately, doesn't get the on-push flag mixed up. <!-- client 7859 -->
+- <kbd>Fix:</kbd> don't crash when creating a code block in a language Reviewable can't highlight. <!-- client 7859 -->
 
 <sub>2026 - 05</sub>
 
