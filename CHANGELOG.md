@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> provide a persistent warning if your session will expire within a week, and offer a way to refresh it. <!-- client -->
-- <kbd>Fix:</kbd> don't crash with a permission denied error when a session unexpectedly expires. <!-- client -->
-
 <sub>2026 - 06</sub>
 
+- <kbd>Upd:</kbd> provide a persistent warning if your session will expire within a week, and offer a way to refresh it. <!-- client 7860 -->
+- <kbd>Fix:</kbd> don't crash with a permission denied error when a session unexpectedly expires. <!-- client 7860 -->
 - <kbd>Fix:</kbd> ensure that publishing two reviews concurrently, one on push and one immediately, doesn't get the on-push flag mixed up. <!-- client 7859 -->
 - <kbd>Fix:</kbd> don't crash when creating a code block in a language Reviewable can't highlight. <!-- client 7859 -->
 
