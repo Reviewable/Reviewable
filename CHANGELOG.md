@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> ensure the Reviewable badge doesn't become enormous. <!-- client -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>Upd:</kbd> provide a persistent warning if your session will expire within a week, and offer a way to refresh it. <!-- client 7860 -->
