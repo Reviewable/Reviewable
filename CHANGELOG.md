@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> detect the Reviewable badge more robustly in the pull request description and comments. <!-- server -->
-  > Some tools (like Copilot) like to strip our sentinel markers and attributes, which made Reviewable lose track of its badge.
-
 <sub>2026 - 06</sub>
 
+- <kbd>Fix:</kbd> detect the Reviewable badge more robustly in the pull request description and comments. <!-- server 4923 -->
+  > Some tools (like Copilot) like to strip our sentinel markers and attributes, which made Reviewable lose track of its badge.
 - <kbd>Fix:</kbd> ensure the Reviewable badge doesn't become enormous. <!-- client 7863 -->
 - <kbd>Upd:</kbd> provide a persistent warning if your session will expire within a week, and offer a way to refresh it. <!-- client 7860 -->
 - <kbd>Fix:</kbd> don't crash with a permission denied error when a session unexpectedly expires. <!-- client 7860 -->
