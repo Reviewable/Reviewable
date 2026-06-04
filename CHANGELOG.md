@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> detect the Reviewable badge more robustly in the pull request description and comments. <!-- server -->
+  > Some tools (like Copilot) like to strip our sentinel markers and attributes, which made Reviewable lose track of its badge.
+
 <sub>2026 - 06</sub>
 
 - <kbd>Fix:</kbd> ensure the Reviewable badge doesn't become enormous. <!-- client 7863 -->
