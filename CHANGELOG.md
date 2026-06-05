@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> automatically send metrics to Sentry if a DSN is configured. <!-- server -->
+  > These are the same metrics as Reviewable sends to `statsd` daemons.
 - <kbd>Fix:</kbd> server error on extra org save was causing crash. <!-- client -->
 
 <sub>2026 - 06</sub>
