@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> server error on extra org save was causing crash. <!-- client -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>Fix:</kbd> detect the Reviewable badge more robustly in the pull request description and comments. <!-- server 4923 -->
