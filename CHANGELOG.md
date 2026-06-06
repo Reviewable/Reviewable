@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> automatically send metrics to Sentry if a DSN is configured. <!-- server -->
-  > These are the same metrics as Reviewable sends to `statsd` daemons.
-
 <sub>2026 - 06</sub>
 
+- <kbd>Adm:</kbd> automatically send metrics to Sentry if a DSN is configured. <!-- server 4924 -->
+  > These are the same metrics as Reviewable sends to `statsd` daemons.
 - <kbd>Fix:</kbd> server error on extra org save was causing crash. <!-- client 7866 -->
 - <kbd>Fix:</kbd> detect the Reviewable badge more robustly in the pull request description and comments. <!-- server 4923 -->
   > Some tools (like Copilot) like to strip our sentinel markers and attributes, which made Reviewable lose track of its badge.
