@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> org renames are now auto-detected for orgs with no review activity. <!-- server -->
 - <kbd>Fix:</kbd> remove `anyAuthor` flag from the pull request author if they're mentioned in a discussion. <!-- server -->
 
 <sub>2026 - 06</sub>
