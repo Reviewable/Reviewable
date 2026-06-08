@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> remove `anyAuthor` flag from the pull request author if they're mentioned in a discussion. <!-- server -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>Adm:</kbd> automatically send metrics to Sentry if a DSN is configured. <!-- server 4924 -->
