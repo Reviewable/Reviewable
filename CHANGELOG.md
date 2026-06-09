@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> org renames are now auto-detected for orgs with no review activity. <!-- server -->
-- <kbd>Fix:</kbd> remove `anyAuthor` flag from the pull request author if they're mentioned in a discussion. <!-- server -->
-
 <sub>2026 - 06</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> org renames are now auto-detected for orgs with no review activity. <!-- server 4925 -->
+- <kbd>Fix:</kbd> remove `anyAuthor` flag from the pull request author if they're mentioned in a discussion. <!-- server 4925 -->
 - <kbd>Adm:</kbd> automatically send metrics to Sentry if a DSN is configured. <!-- server 4924 -->
   > These are the same metrics as Reviewable sends to `statsd` daemons.
 - <kbd>Fix:</kbd> server error on extra org save was causing crash. <!-- client 7866 -->
