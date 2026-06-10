@@ -52,6 +52,7 @@ export default defineConfig({
       page('discussions'),
       page('dashboard'),
       page('accountsettings'),
+      page('agents'),
       page('admincenter'),
       page('subscriptions'),
       page('abnormal'),
