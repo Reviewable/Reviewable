@@ -1,14 +1,11 @@
-<sub>Upcoming</sub>
+<sub>2026 - 06</sub>
 
-- <kbd>New:</kbd> let agents interact with Reviewable via a CLI or an MCP server. <!-- client -->
+- <kbd>New:</kbd> let agents interact with Reviewable via a CLI or an MCP server. <!-- client 7870 -->
   > You can now create separate identities for agents (without creating
   > a new GitHub account) and let them use Reviewable.  We're starting
   > with a minimal API surface covering just responding to code reviews
   > but will grow it over time.  See the
   > [docs](https://docs.reviewable.io/agents) for all the details.
-
-<sub>2026 - 06</sub>
-
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent Publish from getting stuck, spinning forever. <!-- client 7869 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> org renames are now auto-detected for orgs with no review activity. <!-- server 4925 -->
 - <kbd>Fix:</kbd> remove `anyAuthor` flag from the pull request author if they're mentioned in a discussion. <!-- server 4925 -->
