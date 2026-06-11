@@ -130,6 +130,10 @@ To reset any custom colors back to the default red or green, click the "x" that 
 When setting replacement colors, don't forget that you have the <a href="#adjust-contrast">contrast slider</a> at your disposal too. This primarily controls diff colors (and differentiation icons) and can help achieve a balanced UI when setting color replacements.
 :::
 
+## Agent identities
+
+Here you can manage sub-identities of your own account for use by agents or automation tools.  For full setup instructions, including creating identities, customizing them, and connecting them to an MCP server or CLI, see [Agent Identities and MCP Server](agents.md).
+
 ## GitHub API background usage cutoff
 You can set an hourly GitHub API usage cutoff to limit Reviewable's background requests for your account on its server. This applies a maximum across all types of quota but is typically most relevant for core API quota. This does not affect interactive usage of Reviewable.
 
