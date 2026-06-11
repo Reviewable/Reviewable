@@ -92,7 +92,7 @@ Typically, you'll want to open the latest version of a file into the editor.  In
 
 ## Custom key bindings
 
-You can customize the key bindings for common commands, and add new ones for commands that aren't bound by default.  First, make a copy of the [default bindings file](https://reviewable.io/bindings.json) and put it somewhere accessible on the web (such as a [gist](https://gist.github.com/)). All available commands are listed in the file.  You can use any key combos supported by [Mousetrap](http://craig.is/killing/mice). If your favorite command isn't listed, please [open an issue](https://github.com/reviewable/reviewable/issues) so we can add it.
+You can customize the key bindings for common commands, and add new ones for commands that aren't bound by default.  First, make a copy of the [default bindings file](https://reviewable.io/bindings.json) and put it somewhere accessible on the web (such as a [gist](https://gist.github.com/) if you're using `github.com`). All available commands are listed in the file.  You can use any key combos supported by [Mousetrap](http://craig.is/killing/mice). If your favorite command isn't listed, please [open an issue](https://github.com/reviewable/reviewable/issues) so we can add it.
 
 When you're done, point Reviewable to your custom bindings file by entering its URL in the **"Custom review page keyboard shortcuts URL"** field in the account settings dropdown. If you're using a gist, make sure to get the “raw” URL, and consider removing the commit SHA from the path to always point to the latest version.
 
