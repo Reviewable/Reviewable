@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> prevent Publish from getting stuck, spinning forever. <!-- client -->
-
 <sub>2026 - 06</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent Publish from getting stuck, spinning forever. <!-- client 7869 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> org renames are now auto-detected for orgs with no review activity. <!-- server 4925 -->
 - <kbd>Fix:</kbd> remove `anyAuthor` flag from the pull request author if they're mentioned in a discussion. <!-- server 4925 -->
 - <kbd>Adm:</kbd> automatically send metrics to Sentry if a DSN is configured. <!-- server 4924 -->
