@@ -1,3 +1,12 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> let agents interact with Reviewable via a CLI or an MCP server. <!-- client -->
+  > You can now create separate identities for agents (without creating
+  > a new GitHub account) and let them use Reviewable.  We're starting
+  > with a minimal API surface covering just responding to code reviews
+  > but will grow it over time.  See the
+  > [docs](https://docs.reviewable.io/agents) for all the details.
+
 <sub>2026 - 06</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent Publish from getting stuck, spinning forever. <!-- client 7869 -->
