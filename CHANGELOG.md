@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent Publish from getting stuck, spinning forever. <!-- client -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> org renames are now auto-detected for orgs with no review activity. <!-- server 4925 -->
