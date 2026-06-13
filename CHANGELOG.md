@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(enterprise)</i>:</kbd> on EMU instances, filter out non-EMU usernames from mentions and completion condition results, and fail on attempts to add a non-EMU assignee or reviewer. <!-- client -->
-
 <sub>2026 - 06</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> on EMU instances, filter out non-EMU usernames from mentions and completion condition results, and fail on attempts to add a non-EMU assignee or reviewer. <!-- client 7872 -->
 - <kbd>New:</kbd> let agents interact with Reviewable via a CLI or an MCP server. <!-- client 7870 -->
   > You can now create separate identities for agents (without creating
   > a new GitHub account) and let them use Reviewable.  We're starting
