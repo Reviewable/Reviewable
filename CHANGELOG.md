@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> on EMU instances, filter out non-EMU usernames from mentions and completion condition results, and fail on attempts to add a non-EMU assignee or reviewer. <!-- client -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>New:</kbd> let agents interact with Reviewable via a CLI or an MCP server. <!-- client 7870 -->
