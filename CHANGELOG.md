@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> stop Admin Center from spinning on "Loading..." forever when navigating directly to an organization the user has no access to. <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> handle GitHub's /orgs/:org response omitting `plan` for non-owners when showing subscription plan options. <!-- client -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>Fix<i>(enterprise)</i>:</kbd> on EMU instances, filter out non-EMU usernames from mentions and completion condition results, and fail on attempts to add a non-EMU assignee or reviewer. <!-- client 7872 -->
