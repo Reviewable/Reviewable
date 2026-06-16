@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix<i>(saas)</i>:</kbd> stop Admin Center from spinning on "Loading..." forever when navigating directly to an organization the user has no access to. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> handle GitHub's /orgs/:org response omitting `plan` for non-owners when showing subscription plan options. <!-- client -->
-
 <sub>2026 - 06</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> stop Admin Center from spinning on "Loading..." forever when navigating directly to an organization the user has no access to. <!-- client 7873 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> handle GitHub's /orgs/:org response omitting `plan` for non-owners when showing subscription plan options. <!-- client 7873 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> on EMU instances, filter out non-EMU usernames from mentions and completion condition results, and fail on attempts to add a non-EMU assignee or reviewer. <!-- client 7872 -->
 - <kbd>New:</kbd> let agents interact with Reviewable via a CLI or an MCP server. <!-- client 7870 -->
   > You can now create separate identities for agents (without creating
