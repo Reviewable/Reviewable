@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> mark tippy dropdown triggers as guided actions. <!-- client -->
+- <kbd>Fix:</kbd> mark tippy dropdown triggers as guided actions so line-number <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> adding an extra organization that previously appeared under a canceled subscription no longer incorrectly reports a conflict. <!-- server -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> spurious "waiting on permission checks" offline overlay on admin pages <!-- client -->
 
