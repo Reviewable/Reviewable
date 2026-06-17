@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> spurious "waiting on permission checks" offline overlay on admin pages <!-- client -->
+
 <sub>2026 - 06</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> stop Admin Center from spinning on "Loading..." forever when navigating directly to an organization the user has no access to. <!-- client 7873 -->
