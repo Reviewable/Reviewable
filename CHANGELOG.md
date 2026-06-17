@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> mark tippy dropdown triggers as guided actions. <!-- client -->
-- <kbd>Fix:</kbd> mark tippy dropdown triggers as guided actions so line-number <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> adding an extra organization that previously appeared under a canceled subscription no longer incorrectly reports a conflict. <!-- server -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> spurious "waiting on permission checks" offline overlay on admin pages <!-- client -->
 
 <sub>2026 - 06</sub>
 
+- <kbd>Fix:</kbd> mark tippy dropdown triggers as guided actions. <!-- client 7874 -->
+- <kbd>Fix:</kbd> mark tippy dropdown triggers as guided actions so line-number <!-- client 7874 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> spurious "waiting on permission checks" offline overlay on admin pages <!-- client 7874 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> stop Admin Center from spinning on "Loading..." forever when navigating directly to an organization the user has no access to. <!-- client 7873 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> handle GitHub's /orgs/:org response omitting `plan` for non-owners when showing subscription plan options. <!-- client 7873 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> on EMU instances, filter out non-EMU usernames from mentions and completion condition results, and fail on attempts to add a non-EMU assignee or reviewer. <!-- client 7872 -->
