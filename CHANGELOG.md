@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> adding an extra organization that previously appeared under a canceled subscription no longer incorrectly reports a conflict. <!-- server -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> spurious "waiting on permission checks" offline overlay on admin pages <!-- client -->
 
 <sub>2026 - 06</sub>
