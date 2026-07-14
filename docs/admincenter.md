@@ -663,6 +663,9 @@ A boolean indicating whether the review is complete or not.
 #### `description`
 A string describing the current status of the review, such as `2 of 5 files reviewed, 4 unresolved discussions`.
 
+#### `descriptionIsMarkdown`
+A boolean indicating that `description` should be rendered as Markdown in Reviewable's Checks panel.  The raw description will still be used for older clients and any plain text contexts, so consider also returning `shortDescription` if your Markdown description is long or contains formatting that would not read well in GitHub's status checks.
+
 #### `shortDescription`
 A string of no more than 50 characters describing the current status of the review, used for GitHub status checks.  If not provided, Reviewable will automatically truncate the `description` instead.
 
