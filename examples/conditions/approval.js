@@ -19,12 +19,13 @@ const discussionBlockers = _(review.discussions)
   .filter({resolved: false})
   .flatMap('participants')
   .filter({resolved: false})
-  .map(user => _.pick(user, 'username'))
+  .map(user => ({..._.pick(user, 'username'), reason: 'unreplied discussions'}))
   .value();
 
 let pendingReviewers = _(discussionBlockers)
-  .map(user => _.pick(user, 'username'))
-  .concat(review.pullRequest.requestedReviewers)
+  .concat(_.map(review.pullRequest.requestedReviewers, user => ({
+    ..._.pick(user, 'username', 'teams'), reason: 'review requested'
+  })))
   .value();
 
 const required = _.map(review.pullRequest.assignees, 'username');
@@ -37,7 +38,7 @@ if (required.length) {
   pendingReviewers = _(required)
     .reject(username => approvals[username] === 'approved')
     .reject(username => pendingReviewers.length && approvals[username])
-    .map(username => ({username}))
+    .map(username => ({username, reason: 'approval required'}))
     .concat(pendingReviewers)
     .value();
 }

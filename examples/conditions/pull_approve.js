@@ -225,7 +225,9 @@ function approved({
         review.pendingReviewers.push(
           ..._(relevantSanctions)
             .reject({state: 'approved'})
-            .map(sanction => _.pick(sanction, 'username', 'teams'))
+            .map(sanction => ({
+              ..._.pick(sanction, 'username', 'teams'), reason: 'approval required'
+            }))
             .value()
         );
       }

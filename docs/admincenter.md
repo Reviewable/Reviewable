@@ -249,7 +249,7 @@ A list of available settings follows, each describing the available options and 
 
 #### Reviewable badge
 
-Choose *where* and *when* the Reviewable badge (link to the review) is inserted on a GitHub pull request.  
+Choose *where* and *when* the Reviewable badge (link to the review) is inserted on a GitHub pull request.
 
 ::: tip
 This setting looks a bit different on the Reviewable repo settings page, though the same logic applies to both. See [contextual help](index.md#help-on-using-reviewable) for an explanation of those options.
@@ -551,7 +551,7 @@ Properties marked with `(*)` have additional notes below the sample review state
     }
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
-    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false}
+    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, reason: 'files to review'}
     // If the PR author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
@@ -673,7 +673,9 @@ A string of no more than 50 characters describing the current status of the revi
 A short string describing the "stage" in some process that this review has reached so far.  This value will be saved and returned to the completion condition when it next executes, so it can be used to store a bit of state.  It's not currently surfaced in the UI but may be in the future, in which case it's likely that values will be sorted alphabetically - so you may want to number your stages.  If no value is returned by the condition, Reviewable will automatically assign one of `1. Preparing`, `2. In progress`, or `3. Completed`.
 
 #### `pendingReviewers`
-An array of objects with a `username` property, like `[{username: 'pkaminski'}]`, listing the users whose attention is needed to advance the review (displayed as "waiting on" <i class="icon waiting on"></i>&nbsp; in the UI).  The contents of this list will be automatically formatted and appended to the `description` and `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own `pendingReviewers` from scratch, Reviewable will remove any users who are [deferring](reviews.md#deferring-a-review) from the list of `pendingReviewers` unless your code accesses `review.deferringReviewers`.
+An array of objects with a `username` property, like `[{username: 'pkaminski'}]`, listing the users whose attention is needed to advance the review (displayed as "waiting on" <i class="icon waiting on"></i>&nbsp; in the UI).  Each object may also include a `reason` string, like `{username: 'pkaminski', reason: 'files to review'}`, which will be shown in the participants panel popup as `waiting on: files to review`.
+
+The contents of this list will be automatically formatted and appended to the `shortDescription`.  You can either compute this value from scratch, or crib from the `review.pendingReviewers` input value, which contains Reviewable's guess as to who the pending reviewers should be.  If you compute your own `pendingReviewers` from scratch, Reviewable will remove any users who are [deferring](reviews.md#deferring-a-review) from the list of `pendingReviewers` unless your code accesses `review.deferringReviewers`.
 
 You can read a description of the [default pending reviewers logic](reviews.md#waiting-on) and take a look at the [code](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/pending_reviewers.js) that computes the default value.
 
