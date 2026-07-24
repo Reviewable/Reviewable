@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm<i>(enterprise)</i>:</kbd> completion-condition webhook requests can now be kept from reaching internal network destinations by setting `REVIEWABLE_WEBHOOK_BLACKLIST` to a comma-separated list of CIDR blocks and addresses, or to `local` (recommended) to block every non-routable range. It is unset by default and applies no filtering, so deployments that legitimately target internal hosts are unaffected. <!-- server -->
-- <kbd>Adm:</kbd> avoid getting into an infinite reconciliation / PR sync loop when a user publishes certain directives on a review than then immediately becomes broken. <!-- server -->
-
 <sub>2026 - 07</sub>
 
+- <kbd>Adm<i>(enterprise)</i>:</kbd> completion-condition webhook requests can now be kept from reaching internal network destinations by setting `REVIEWABLE_WEBHOOK_BLACKLIST` to a comma-separated list of CIDR blocks and addresses, or to `local` (recommended) to block every non-routable range. It is unset by default and applies no filtering, so deployments that legitimately target internal hosts are unaffected. <!-- server 4946 -->
+- <kbd>Adm:</kbd> avoid getting into an infinite reconciliation / PR sync loop when a user publishes certain directives on a review than then immediately becomes broken. <!-- server 4946 -->
 - <kbd>Adm:</kbd> throttle `Repeatedly failed to process event` Sentry warnings to one per queue every six minutes to avoid a potentially overwhelming number of events during large fan-outs. <!-- server 4945 -->
 - <kbd>Fix:</kbd> prevent a rare race condition from corrupting reviews, preventing them from being updated, and automatically recover from such past corruption (with no data loss). <!-- server 4943 -->
 - <kbd>Fix:</kbd> include updated status checks more promptly when computing completion on merge queue commits. <!-- server 4943 -->
