@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> avoid getting into an infinite reconciliation / PR sync loop when a user publishes certain directives on a review than then immediately becomes broken. <!-- server -->
+
 <sub>2026 - 07</sub>
 
 - <kbd>Adm:</kbd> throttle `Repeatedly failed to process event` Sentry warnings to one per queue every six minutes to avoid a potentially overwhelming number of events during large fan-outs. <!-- server 4945 -->
