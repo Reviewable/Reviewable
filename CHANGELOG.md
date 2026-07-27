@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> Avoid unnecessary UI-only requests during headless operations. <!-- client -->
 - <kbd>Fix:</kbd> avoid downloading decorative images in headless clients. <!-- client -->
 
 <sub>2026 - 07</sub>
