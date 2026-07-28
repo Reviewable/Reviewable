@@ -1,6 +1,6 @@
 <sub>2026 - 07</sub>
 
-- <kbd>Upd:</kbd> Avoid unnecessary UI-only requests during headless operations. <!-- client 7884 -->
+- <kbd>Fix:</kbd> Avoid unnecessary UI-only requests during headless operations. <!-- client 7884 -->
 - <kbd>Fix:</kbd> avoid downloading decorative images in headless clients. <!-- client 7884 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> completion-condition webhook requests can now be kept from reaching internal network destinations by setting `REVIEWABLE_WEBHOOK_BLACKLIST` to a comma-separated list of CIDR blocks and addresses, or to `local` (recommended) to block every non-routable range. It is unset by default and applies no filtering, so deployments that legitimately target internal hosts are unaffected. <!-- server 4946 -->
 - <kbd>Adm:</kbd> avoid getting into an infinite reconciliation / PR sync loop when a user publishes certain directives on a review than then immediately becomes broken. <!-- server 4946 -->
