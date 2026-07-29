@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Queue and spread CODEOWNERS approval updates after base branch changes. <!-- server -->
-  > You should avoid rolling back to an earlier server version while approval tasks remain pending.  If it's unavoidable, reload affected review pages to force a full sync if needed.
-
 <sub>2026 - 07</sub>
 
+- <kbd>Adm:</kbd> Queue and spread CODEOWNERS approval updates after base branch changes. <!-- server 4947 -->
+  > You should avoid rolling back to an earlier server version while approval tasks remain pending.  If it's unavoidable, reload affected review pages to force a full sync if needed.
 - <kbd>Fix:</kbd> Avoid unnecessary UI-only requests during headless operations. <!-- client 7884 -->
 - <kbd>Fix:</kbd> avoid downloading decorative images in headless clients. <!-- client 7884 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> completion-condition webhook requests can now be kept from reaching internal network destinations by setting `REVIEWABLE_WEBHOOK_BLACKLIST` to a comma-separated list of CIDR blocks and addresses, or to `local` (recommended) to block every non-routable range. It is unset by default and applies no filtering, so deployments that legitimately target internal hosts are unaffected. <!-- server 4946 -->
