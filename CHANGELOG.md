@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Queue and spread CODEOWNERS approval updates after base branch changes. <!-- server -->
+  > You should avoid rolling back to an earlier server version while approval tasks remain pending.  If it's unavoidable, reload affected review pages to force a full sync if needed.
+
 <sub>2026 - 07</sub>
 
 - <kbd>Fix:</kbd> Avoid unnecessary UI-only requests during headless operations. <!-- client 7884 -->
