@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server -->
+
 <sub>2026 - 07</sub>
 
 - <kbd>Adm:</kbd> Queue and spread CODEOWNERS approval updates after base branch changes. <!-- server 4947 -->
