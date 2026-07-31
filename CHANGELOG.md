@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>New:</kbd> expose revisions, file review status, and the authenticated Reviewable identity's discussion drafts to reviewer agents. <!-- client -->
-- <kbd>New:</kbd> let reviewer agents draft review marks for one or more files. <!-- client -->
-- <kbd>Fix:</kbd> identify reviewer agents from their `ghagent:` user key instead of relying on participant tag metadata. <!-- client -->
 - <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server -->
 
 <sub>2026 - 07</sub>
 
+- <kbd>New:</kbd> expose revisions, file review status, and the authenticated Reviewable identity's discussion drafts to reviewer agents. <!-- client 7886 -->
+- <kbd>New:</kbd> let reviewer agents draft review marks for one or more files. <!-- client 7886 -->
+- <kbd>Fix:</kbd> identify reviewer agents from their `ghagent:` user key instead of relying on participant tag metadata. <!-- client 7886 -->
 - <kbd>Adm:</kbd> Queue and spread CODEOWNERS approval updates after base branch changes. <!-- server 4947 -->
   > You should avoid rolling back to an earlier server version while approval tasks remain pending.  If it's unavoidable, reload affected review pages to force a full sync if needed.
 - <kbd>Fix:</kbd> Avoid unnecessary UI-only requests during headless operations. <!-- client 7884 -->
