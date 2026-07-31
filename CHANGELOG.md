@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> let replicant agents use publish-on-push on their owner's pull requests. <!-- client -->
 - <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server -->
 
 <sub>2026 - 07</sub>
 
+- <kbd>Fix:</kbd> let replicant agents use publish-on-push on their owner's pull requests. <!-- client 7888 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> address the `conflicting contexts set` error. <!-- client 7887 -->
 - <kbd>New:</kbd> expose revisions, file review status, and the authenticated Reviewable identity's discussion drafts to reviewer agents. <!-- client 7886 -->
 - <kbd>New:</kbd> let reviewer agents draft review marks for one or more files. <!-- client 7886 -->
