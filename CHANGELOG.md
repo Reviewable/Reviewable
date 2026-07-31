@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> address the `conflicting contexts set` error. <!-- client -->
 - <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server -->
 
 <sub>2026 - 07</sub>
