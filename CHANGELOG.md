@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> let replicant agents use publish-on-push on their owner's pull requests. <!-- client -->
 - <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server -->
 
 <sub>2026 - 07</sub>
