@@ -1,6 +1,6 @@
-<sub>Upcoming</sub>
+<sub>2026 - 08</sub>
 
-- <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server -->
+- <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server 4948 -->
 
 <sub>2026 - 07</sub>
 
