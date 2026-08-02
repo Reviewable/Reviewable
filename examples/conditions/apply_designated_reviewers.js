@@ -19,7 +19,7 @@ function applyDesignatedReviewers(files) {
 
     // Check that team memberships were successfully resolved for every reviewer.
     if (_.some(file.designatedReviewers, 'team') &&
-      !_(file.revisions).flatMap('reviewers').map('teams').every()) {
+        !_(file.revisions).flatMap('reviewers').reject('author').map('teams').every()) {
       throw new Error(
         'Unable to resolve designated teams; ' +
         'please connect the repository and authorize the read:org scope');
@@ -49,8 +49,9 @@ function applyDesignatedReviewers(files) {
       // Check every designation subject against the list of reviewers, and against previous
       // reviewers if the subject is authorized to omit base changes, collecting a list of fulfilled
       // scopes as we go.
-      const reviewerUsernames = _(rev.reviewers).map('username').map(_.toLower).value();
-      const reviewerTeams = _(rev.reviewers)
+      const reviewers = _.reject(rev.reviewers, 'author');
+      const reviewerUsernames = _(reviewers).map('username').map(_.toLower).value();
+      const reviewerTeams = _(reviewers)
         .flatMap('teams').map(_.toLower).flatMap(team => [team, team.replace(/.*?\//, '')]).value();
       fulfilledScopes = _(designationsByScope).keys().filter(scope => {
         const subjects = designationsByScope[scope];

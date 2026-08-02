@@ -12,14 +12,20 @@ const discussionBlockers = _(review.discussions)
   .map(user => _.pick(user, 'username', 'teams'))
   .value();
 
+function isFileRevisionReviewed(revision) {
+  if (revision.reviewed === false) return false;
+  return revision.reviewed || _.some(revision.reviewers, reviewer => !reviewer.author);
+}
+
 const lastReviewedRevisionsOfUnreviewedFiles = _(review.files)
-  .filter(file => _.isEmpty(_.last(file.revisions).reviewers))
-  .map(file => _.findLast(file.revisions, rev => !_.isEmpty(rev.reviewers)))
+  .reject(file => isFileRevisionReviewed(_.last(file.revisions)))
+  .map(file => _.findLast(file.revisions, rev => isFileRevisionReviewed(rev)))
   .value();
 
 const fileBlockers = _(lastReviewedRevisionsOfUnreviewedFiles)
   .compact()
   .flatMap('reviewers')
+  .reject('author')
   .value();
 
 const hasUnclaimedItems =
