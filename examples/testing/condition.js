@@ -1,14 +1,6 @@
-// This is the built-in review completion condition that
-// Reviewable uses by default.
-
-// It checks that all files have been reviewed by at least one
-// user and that all discussions have been resolved.  All the
-// information about the current review is supplied in a
-// predefined `review` variable that will look like the JSON
-// structure on the right.  You can edit it here for testing
-// how the code will behave in different scenarios.
-
-// You can load other examples from the dropdown menu above.
+// This is an old version of the built-in review completion condition that Reviewable uses by
+// default.  It's here solely as a placeholder to show how to test conditions and is not generally
+// kept up to date.  For current examples of completion conditions see ../conditions.
 
 'use strict';
 /* globals review: false, _: false */

@@ -306,7 +306,7 @@ function reviewed({
         implicitScore +
         _(rev.reviewers)
           .concat(omitBaseChanges ? reviewersDiscountingBaseChanges : [])
-          .reject(reviewer => reviewer.username === pr.author.username)
+          .reject('author')
           .reject(reviewer => _(pr.coauthors).map('username').includes(reviewer.username))
           .filter(reviewer =>
             _(review.discussions)
