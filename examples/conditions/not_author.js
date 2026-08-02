@@ -21,17 +21,18 @@ _.forEach(review.files, file => {
   const lastRev =
     _.findLast(file.revisions, rev => _.parseInt(rev.key.slice(1)) <= lastRevisionIndex);
   const reviewers = _(lastRev.reviewers)
+    .reject('author')
     .map('username')
-    .without(review.pullRequest.author.username)
     .value();
   const missingReviewers = _.difference(required, reviewers);
   if (reviewers.length >= numReviewersRequired && _.isEmpty(missingReviewers)) return;
   numUnreviewedFiles++;
-  const lastReviewedRev = _(file.revisions).findLast(rev => !_.isEmpty(rev.reviewers));
+  const lastReviewedRev = _(file.revisions)
+    .findLast(rev => _.some(rev.reviewers, reviewer => !reviewer.author));
   fileBlockers = fileBlockers.concat(
     _.map(missingReviewers, username => ({username, reason: 'files to review'})),
     lastReviewedRev ?
-      _.map(lastReviewedRev.reviewers, reviewer => ({
+      _(lastReviewedRev.reviewers).reject('author').map(reviewer => ({
         ..._.pick(reviewer, 'username', 'teams'), reason: 'files to review'
       })) :
       []

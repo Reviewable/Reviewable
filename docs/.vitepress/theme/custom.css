@@ -270,12 +270,34 @@ i.green.inverted.icon {
   background-color: var(--green-2) !important;
 }
 
+i.circular.icon {
+  box-shadow: 0em 0em 0em 0.1em var(--grey-4) inset !important;
+}
+
 i.circular.red-rim.icon {
-  box-shadow: 0em 0em 0em 0.1em var(--red-4) inset;
+  box-shadow: 0em 0em 0em 0.1em var(--red-4) inset !important;
 }
 
 i.circular.green-rim.icon {
-  box-shadow: 0em 0em 0em 0.1em var(--green-2) inset;
+  box-shadow: 0em 0em 0em 0.1em var(--green-2) inset !important;
+}
+
+.pupil {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.red.pupil {
+  background-color: var(--red-4) !important;
+}
+
+.green.pupil {
+  background-color: var(--green-2) !important;
 }
 
 .circular.no.data.icon {
