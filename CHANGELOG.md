@@ -1,5 +1,7 @@
 <sub>2026 - 08</sub>
 
+<sub>**Enterprise release 4947.7888** (min 4882.7806 GHE ^2.19 || ^3) 2026-08-03 <!-- enterprise 4947.7888 --></sub>
+
 - <kbd>Fix:</kbd> Avoid redundant full pull request syncs when a server shuts down during bulk processing. <!-- server 4948 -->
 
 <sub>2026 - 07</sub>
