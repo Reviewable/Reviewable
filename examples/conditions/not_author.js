@@ -11,8 +11,8 @@ let shortReasons = [];  // pieces of the short status desc.
 let fileBlockers = [];  // users who still need to review files
 
 const required = _(review.pullRequest.assignees)
+  .reject('author')
   .map('username')
-  .without(review.pullRequest.author.username)
   .value();
 
 const lastRevisionIndex = _.parseInt(review.summary.lastRevision.slice(1));

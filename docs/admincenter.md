@@ -495,7 +495,7 @@ Properties marked with `(*)` have additional notes below the sample review state
     lastRevision: 'r1',             // The key of the last revision
     numUnresolvedDiscussions: 1,    // The number of unresolved discussions
     numFiles: 1,                    // Total number of active files in the review
-    numUnreviewedFiles: 1,          // Number of files not reviewed by anyone at latest revision
+    numUnreviewedFiles: 1,          // Number of files without a non-author review at latest revision
     numFilesReviewedByAtLeast: [1]  // Number of files reviewed by at least N people (as index)
       // e.g., numFilesReviewedByAtLeast[2] is the number of file reviewed by at least 2 people
     commitsFileReviewed: true
