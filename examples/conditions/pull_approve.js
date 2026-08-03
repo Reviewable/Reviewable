@@ -203,7 +203,7 @@ function approved({
   }
 
   const relevantSanctions = _(pr.sanctions)
-    .reject({username: pr.author.username})
+    .reject('author')
     .reject(sanction => _.some(pr.coauthors, {username: sanction.username}))
     .filter(sanction => !team || findMaxTeamScore(sanction.teams, team) > 0)
     .value();
