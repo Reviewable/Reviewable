@@ -21,7 +21,7 @@ Throughout this guide, we'll often refer to users by the role they play in a rev
 * **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 * **Lurker**: someone who has viewed the review but hasn't left a comment, isn't the author, wasn't requested as a reviewer, and wasn't @-mentioned in any discussion.
 
-Author self-review marks are visually distinct from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead.
+Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead.
 
 ## Publishing your review {#publish}
 
