@@ -16,7 +16,7 @@ if (review.pullRequest.state !== 'open') return {files, pendingReviewers: []};
 
 // Track the two required roles separately so that only the missing role is woken.
 let hasUnclaimedFiles = false;
-const fileBlockers = _(review.files)
+const fileBlockers = _(files)
   .flatMap(file => {
     const latestRevision = _.last(file.revisions);
     const blockers = [];
@@ -27,7 +27,7 @@ const fileBlockers = _(review.files)
       if (lastAuthorRevision) {
         blockers.push(..._.filter(lastAuthorRevision.reviewers, 'author'));
       } else {
-        hasUnclaimedFiles = true;
+        blockers.push(review.pullRequest.author);
       }
     }
 

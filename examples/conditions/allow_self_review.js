@@ -14,7 +14,7 @@ _.forEach(files, file => {
 if (review.pullRequest.state !== 'open') return {files, pendingReviewers: []};
 
 // Match the reviewed-file policy when deciding who should be woken for a new revision.
-const lastReviewedRevisionsOfUnreviewedFiles = _(review.files)
+const lastReviewedRevisionsOfUnreviewedFiles = _(files)
   .reject(file => _.last(file.revisions).reviewed)
   .map(file => _.findLast(file.revisions, 'reviewed'))
   .value();
