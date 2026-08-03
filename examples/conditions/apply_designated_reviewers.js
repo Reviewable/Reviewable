@@ -18,8 +18,12 @@ function applyDesignatedReviewers(files) {
     if (!file.designatedReviewers) return;
 
     // Check that team memberships were successfully resolved for every reviewer.
-    if (_.some(file.designatedReviewers, 'team') &&
-        !_(file.revisions).flatMap('reviewers').reject('author').map('teams').every()) {
+    const teamDesignations = _.filter(file.designatedReviewers, 'team');
+    const authorCanSatisfyTeam = _.some(teamDesignations, 'includeAuthor');
+    const teamReviewerRecords = _(file.revisions)
+      .flatMap('reviewers')
+      .filter(reviewer => !reviewer.author || authorCanSatisfyTeam);
+    if (teamDesignations.length && !teamReviewerRecords.map('teams').every()) {
       throw new Error(
         'Unable to resolve designated teams; ' +
         'please connect the repository and authorize the read:org scope');
@@ -36,33 +40,25 @@ function applyDesignatedReviewers(files) {
     // Keep track of the last processed revision's fulfilled scopes as we go.
     let fulfilledScopes = [];
     // Also keep track of previous reviewers across baseChangesOnly revisions.
-    let reviewerUsernamesDiscountingBaseChanges = [];
-    let reviewerTeamsDiscountingBaseChanges = [];
+    let reviewersDiscountingBaseChanges = [];
 
     _.forEach(file.revisions, rev => {
       // Reset previous reviewers if this revision had non-base changes.
       if (!rev.baseChangesOnly) {
-        reviewerUsernamesDiscountingBaseChanges = [];
-        reviewerTeamsDiscountingBaseChanges = [];
+        reviewersDiscountingBaseChanges = [];
       }
 
       // Check every designation subject against the list of reviewers, and against previous
       // reviewers if the subject is authorized to omit base changes, collecting a list of fulfilled
       // scopes as we go.
-      const reviewers = _.reject(rev.reviewers, 'author');
-      const reviewerUsernames = _(reviewers).map('username').map(_.toLower).value();
-      const reviewerTeams = _(reviewers)
-        .flatMap('teams').map(_.toLower).flatMap(team => [team, team.replace(/.*?\//, '')]).value();
       fulfilledScopes = _(designationsByScope).keys().filter(scope => {
         const subjects = designationsByScope[scope];
         return _.some(subjects, subject =>
-          subject.builtin === 'anyone' && reviewerUsernames.length ||
-          _.includes(reviewerUsernames, _.toLower(subject.username)) ||
-          _.includes(reviewerTeams, _.toLower(subject.team)) ||
-          subject.omitBaseChanges && (
-            subject.builtin === 'anyone' && reviewerUsernamesDiscountingBaseChanges.length ||
-            _.includes(reviewerUsernamesDiscountingBaseChanges, _.toLower(subject.username)) ||
-            _.includes(reviewerTeamsDiscountingBaseChanges, _.toLower(subject.team)))
+          _.some(rev.reviewers, reviewer => reviewerMatches(reviewer, subject)) ||
+          subject.omitBaseChanges && _.some(
+            reviewersDiscountingBaseChanges,
+            reviewer => reviewerMatches(reviewer, subject)
+          )
         );
       }).value();
 
@@ -70,8 +66,7 @@ function applyDesignatedReviewers(files) {
       rev.reviewed = fulfilledScopes.length === _.size(designationsByScope);
 
       // Track previous reviewers (duplicates are fine).
-      reviewerUsernamesDiscountingBaseChanges.push(...reviewerUsernames);
-      reviewerTeamsDiscountingBaseChanges.push(...reviewerTeams);
+      reviewersDiscountingBaseChanges.push(...rev.reviewers);
     });
 
     // Add fulfilled markers for scopes fulfilled at the file's last revision.
@@ -79,4 +74,21 @@ function applyDesignatedReviewers(files) {
       if (scope) file.designatedReviewers.push({builtin: 'fulfilled', scope});
     });
   });
+
+  function reviewerMatches(reviewer, subject) {
+    if (reviewer.author &&
+        !subject.username &&
+        !(subject.includeAuthor && (subject.team || subject.builtin === 'anyone'))) {
+      return false;
+    }
+    if (subject.builtin === 'anyone') return true;
+    if (subject.username) {
+      return _.toLower(reviewer.username) === _.toLower(subject.username);
+    }
+    const reviewerTeams = _(reviewer.teams)
+      .map(_.toLower)
+      .flatMap(team => [team, team.replace(/.*?\//, '')])
+      .value();
+    return _.includes(reviewerTeams, _.toLower(subject.team));
+  }
 }
