@@ -730,7 +730,7 @@ file.designatedReviewers = [
 
 If `designatedReviewers` is not set, then it will fall back to inferred defaults.  If `CODEOWNERS` designations apply to a file, those are used; otherwise, it defaults to `{builtin: 'anyone'}`.
 
-Reviewable also automatically creates additional scopes for designations inferred from `CODEOWNERS` (`code owners`), unsolicited reviewers when `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as reviewed against recommendations (`author`).
+Reviewable also automatically creates additional scopes for designations inferred from `CODEOWNERS` (`code owners`), unsolicited reviewers when `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as self-reviewed (`author`).
 
 ::: tip
 If you have a `CODEOWNERS` file in the repository, the `review.files` input structure will include precomputed `designatedReviewers` derived from the code owners. You can leave these as-is, tweak them (e.g., by removing `{builtin: 'anyone'}` from the array), or overwrite them altogether.
