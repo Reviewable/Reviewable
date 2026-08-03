@@ -507,8 +507,11 @@ Properties marked with `(*)` have additional notes below the sample review state
     state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
     // All users are annotated with a full list of teams they're members of; if the property is
-    // undefined then Reviewable wasn't able to fetch this list.
-    author: {username: 'pkaminski', teams: ['reviewable/developers'], bot: false},
+    // undefined then Reviewable wasn't able to fetch this list.  They also have `author: true` if
+    // they're the PR author or an agent acting in the author role; the property is otherwise absent.
+    author: {
+      username: 'pkaminski', teams: ['reviewable/developers'], bot: false, author: true
+    },
     coauthors: [
       {username: 'pkaminski-test', teams: ['reviewable/semi-developers'], bot: false, participating: true}
     ],
@@ -551,7 +554,10 @@ Properties marked with `(*)` have additional notes below the sample review state
     }
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
-    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, reason: 'files to review'}
+    {
+      username: 'pkaminski', teams: ['reviewable/developers'], bot: false, author: true,
+      reason: 'files to review'
+    }
     // If the PR author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
@@ -575,7 +581,8 @@ Properties marked with `(*)` have additional notes below the sample review state
     'Comments only in Reviewable'
   ],
   sentiments: [  // List of sentiments (currently just emojis) extracted from comments
-    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
+    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, author: true,
+      emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
   ],
   discussions: [  // List of the discussions in the review (metadata only)
     {
@@ -586,6 +593,7 @@ Properties marked with `(*)` have additional notes below the sample review state
           username: 'pkaminski',
           teams: ['reviewable/developers'],
           bot: false,
+          author: true,
           disposition: 'discussing',  // Participant's current disposition
           resolved: true,  // False if this participant is not in favor of resolving and it's their turn to follow up
           read: true,  // False if this participant has unread messages in this discussion
@@ -608,9 +616,9 @@ Properties marked with `(*)` have additional notes below the sample review state
           reverted: false,  // true if this revision of the file is the same as base
           baseChangesOnly: false,  // true if all changes can be attributed to the base branch, undefined if not yet known
           reviewers: [  // List of users who marked file as reviewed at this revision
-            // `author` is true for the PR author and any agent acting in the author role;
-            // timestamp is null for legacy or inferred reviews.
-            {username: 'somebody', author: false, timestamp: 1436828040000}
+            // `author` is present and true for the PR author and any agent acting in the author
+            // role; timestamp is null for legacy or inferred reviews.
+            {username: 'somebody', timestamp: 1436828040000}
           ]
         }
       ],
@@ -633,7 +641,7 @@ Properties marked with `(*)` have additional notes below the sample review state
           obsolete: false,
           reverted: false,
           reviewers: [  // List of users who marked file as reviewed at this revision
-            {username: 'somebody', author: false, timestamp: 1436828040000}
+            {username: 'somebody', timestamp: 1436828040000}
           ]
         }
     }
@@ -688,7 +696,7 @@ An array of objects with a `username` property listing the users who have LGTM'd
 An array of objects that looks like `{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}`.  (You can augment the `review.files` structure with additional properties and return the whole thing here.)
   - To [group files in the file matrix](files.md#file-list), set an optional `group` property on each file with any name you'd like; all files with the same `group` value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.
   - To mark files as vendored, set an optional `vendored` property to `true` on any such file.  These files will default to a special Vendored group, won't participate in file rename matching, and won't display a diff by default.  Reviewable has hardcoded path-based heuristics for vendored files, which you can override by setting `vendored` to `false` on any files you'd like to exempt.
-  - To override whether a file has been reviewed at a revision, set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user whose reviewer record has `author: false`. Author and author-agent marks can be counted or required instead; see the [`allow_self_review.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/allow_self_review.js) and [`require_self_review.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/require_self_review.js) examples.
+  - To override whether a file has been reviewed at a revision, set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user whose reviewer record doesn't have `author: true`. Author and author-agent marks can be counted or required instead; see the [`allow_self_review.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/allow_self_review.js) and [`require_self_review.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/require_self_review.js) examples.
   - To [designate specific people for review](files.md#file-review-state), set a `designatedReviewers` property on the file as detailed below.
 
 ::: tip
