@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Retry transient AWS Lambda and CloudWatch Logs provisioning conflicts within bounded timeouts to avoid spurious condition-evaluation failures and warning events. <!-- server -->
+
 <sub>2026 - 08</sub>
 
 <sub>**Enterprise release 4947.7888** (min 4882.7806 GHE ^2.19 || ^3) 2026-08-03 <!-- enterprise 4947.7888 --></sub>
