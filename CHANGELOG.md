@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Let users show the full diff for files loaded without diff bounds. <!-- client -->
 - <kbd>Upd:</kbd> show the reason why participants are waited-on in the participants panel. <!-- server -->
 - <kbd>Upd:</kbd> accept an optional `reason` for `pendingReviewers`. <!-- server -->
 - <kbd>Adm:</kbd> Servers can emit GCP structured logs with queue task correlation by setting `REVIEWABLE_LOGGING_FORMAT=gcp`. <!-- server -->
