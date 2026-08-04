@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> show the reason why participants are waited-on in the participants panel. <!-- server -->
-- <kbd>Upd:</kbd> accept an optional `reason` for `pendingReviewers`. <!-- server -->
-- <kbd>Adm:</kbd> Servers can emit GCP structured logs with queue task correlation by setting `REVIEWABLE_LOGGING_FORMAT=gcp`. <!-- server -->
-- <kbd>Adm:</kbd> Retry transient AWS Lambda and CloudWatch Logs provisioning conflicts within bounded timeouts to avoid spurious condition-evaluation failures and warning events. <!-- server -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Upd:</kbd> show the reason why participants are waited-on in the participants panel. <!-- server 4949 -->
+- <kbd>Upd:</kbd> accept an optional `reason` for `pendingReviewers`. <!-- server 4949 -->
+- <kbd>Adm:</kbd> Servers can emit GCP structured logs with queue task correlation by setting `REVIEWABLE_LOGGING_FORMAT=gcp`. <!-- server 4949 -->
+- <kbd>Adm:</kbd> Retry transient AWS Lambda and CloudWatch Logs provisioning conflicts within bounded timeouts to avoid spurious condition-evaluation failures and warning events. <!-- server 4949 -->
 - <kbd>Fix:</kbd> Let users show the full diff for files loaded without diff bounds. <!-- client 7889 -->
 
 <sub>**Enterprise release 4947.7888** (min 4882.7806 GHE ^2.19 || ^3) 2026-08-03 <!-- enterprise 4947.7888 --></sub>
