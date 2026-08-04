@@ -29,8 +29,12 @@ _.forEach(review.files, file => {
   numUnreviewedFiles++;
   const lastReviewedRev = _(file.revisions).findLast(rev => !_.isEmpty(rev.reviewers));
   fileBlockers = fileBlockers.concat(
-    _.map(missingReviewers, username => ({username})),
-    lastReviewedRev ? lastReviewedRev.reviewers : []
+    _.map(missingReviewers, username => ({username, reason: 'files to review'})),
+    lastReviewedRev ?
+      _.map(lastReviewedRev.reviewers, reviewer => ({
+        ..._.pick(reviewer, 'username', 'teams'), reason: 'files to review'
+      })) :
+      []
   );
 });
 
@@ -55,7 +59,7 @@ let discussionBlockers = _(review.discussions)
   .filter({resolved: false})
   .flatMap('participants')
   .filter({resolved: false})
-  .map(user => _.pick(user, 'username'))
+  .map(user => ({..._.pick(user, 'username'), reason: 'unreplied discussions'}))
   .value();
 
 let shortDescription;

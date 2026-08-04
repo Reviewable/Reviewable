@@ -10,34 +10,43 @@
 // The number of approvals required to merge.
 let numApprovalsRequired = 1;
 
-const approvals = review.pullRequest.approvals;
+const sanctions = review.pullRequest.sanctions;
+const sanctionsByUsername = _.keyBy(sanctions, 'username');
 
-let numApprovals = _.filter(approvals, 'approved').length;
-const numRejections = _.filter(approvals, 'changes_requested').length;
+let numApprovals = _.filter(sanctions, {state: 'approved'}).length;
+const numRejections = _.filter(sanctions, {state: 'changes_requested'}).length;
 
 const discussionBlockers = _(review.discussions)
   .filter({resolved: false})
   .flatMap('participants')
   .filter({resolved: false})
-  .map(user => _.pick(user, 'username'))
+  .map(user => ({..._.pick(user, 'username'), reason: 'unreplied discussions'}))
   .value();
 
 let pendingReviewers = _(discussionBlockers)
-  .map(user => _.pick(user, 'username'))
-  .concat(review.pullRequest.requestedReviewers)
+  .concat(_.map(review.pullRequest.requestedReviewers, user => ({
+    ..._.pick(user, 'username', 'teams'), reason: 'review requested'
+  })))
   .value();
 
 const required = _.map(review.pullRequest.assignees, 'username');
 _.pull(required, review.pullRequest.author.username);
 if (required.length) {
   numApprovalsRequired = _.max([required.length, numApprovalsRequired]);
+  const numRequiredApprovals = _(required)
+    .filter(username => sanctionsByUsername[username]?.state === 'approved')
+    .size();
+  const numOtherApprovals = _(sanctions)
+    .filter({state: 'approved'})
+    .reject(sanction => _.includes(required, sanction.username))
+    .size();
   numApprovals =
-    (_(approvals).pick(required).filter('approved').size()) +
-    _.min([numApprovals, numApprovalsRequired - required.length]);
+    numRequiredApprovals +
+    _.min([numOtherApprovals, numApprovalsRequired - required.length]);
   pendingReviewers = _(required)
-    .reject(username => approvals[username] === 'approved')
-    .reject(username => pendingReviewers.length && approvals[username])
-    .map(username => ({username}))
+    .reject(username => sanctionsByUsername[username]?.state === 'approved')
+    .reject(username => pendingReviewers.length && sanctionsByUsername[username])
+    .map(username => ({username, reason: 'approval required'}))
     .concat(pendingReviewers)
     .value();
 }
@@ -51,6 +60,6 @@ const shortDescription =
   (numRejections ? `${numRejections} ✗, ` : '') + `${numApprovals} of ${numApprovalsRequired} ✓`;
 
 return {
-  completed: numApprovals >= numApprovalsRequired,
+  completed: !numRejections && numApprovals >= numApprovalsRequired,
   description, shortDescription, pendingReviewers
 };

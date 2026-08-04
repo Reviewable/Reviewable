@@ -40,7 +40,7 @@ if (required.length) {
     _.min([numGranted, numApprovalsRequired - required.length]);
   pendingReviewers = _(required)
     .reject(username => approvals[username])
-    .map(username => ({username}))
+    .map(username => ({username, reason: 'LGTM required'}))
     .value();
 }
 
