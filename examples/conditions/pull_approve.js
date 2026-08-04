@@ -346,6 +346,7 @@ function reviewed({
     } else {
       requiredTeams.push(..._.keys(team));
       const engagedReviewersScore = _(pr.reviewers)
+        .reject('author')
         .concat(author ? pr.author : [])
         .reject(reviewer => !coauthors && _.some(pr.coauthors, {username: reviewer.username}))
         .uniqBy('username')
