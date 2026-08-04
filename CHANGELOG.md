@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> Servers can emit GCP structured logs with queue task correlation by setting `REVIEWABLE_LOGGING_FORMAT=gcp`. <!-- server -->
 - <kbd>Adm:</kbd> Retry transient AWS Lambda and CloudWatch Logs provisioning conflicts within bounded timeouts to avoid spurious condition-evaluation failures and warning events. <!-- server -->
 
 <sub>2026 - 08</sub>
