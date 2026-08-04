@@ -696,7 +696,7 @@ An array of objects with a `username` property listing the users who have LGTM'd
 An array of objects that looks like `{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}`.  (You can augment the `review.files` structure with additional properties and return the whole thing here.)
   - To [group files in the file matrix](files.md#file-list), set an optional `group` property on each file with any name you'd like; all files with the same `group` value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.
   - To mark files as vendored, set an optional `vendored` property to `true` on any such file.  These files will default to a special Vendored group, won't participate in file rename matching, and won't display a diff by default.  Reviewable has hardcoded path-based heuristics for vendored files, which you can override by setting `vendored` to `false` on any files you'd like to exempt.
-  - To override whether a file has been reviewed at a revision, set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user whose reviewer record doesn't have `author: true`. Author and author-agent marks can be counted or required instead; see the [`allow_self_review.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/allow_self_review.js) and [`require_self_review.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/require_self_review.js) examples.
+  - To override whether a file has been reviewed at a revision, set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user whose reviewer record doesn't have `author: true`. Author marks can be counted or required instead by setting appropriate `designatedReviewers` and applying the [`apply_designated_reviewers.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) example.
   - To [designate specific people for review](files.md#file-review-state), set a `designatedReviewers` property on the file as detailed below.
 
 ::: tip
@@ -742,6 +742,13 @@ file.designatedReviewers = [
 If `designatedReviewers` is not set, then it will fall back to inferred defaults.  If `CODEOWNERS` designations apply to a file, those are used; otherwise, it defaults to `{builtin: 'anyone'}`.
 
 Reviewable also automatically creates additional scopes for designations inferred from `CODEOWNERS` (`code owners`), unsolicited reviewers when `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as self-reviewed (`author`).
+
+To allow an author mark to satisfy the normal reviewer requirement, use
+`[{builtin: 'anyone', includeAuthor: true}]`.  To require both a normal review and a self-review by
+the pull request author, use
+`[{builtin: 'anyone'}, {username: review.pullRequest.author.username, scope: 'self-review'}]`.
+The [`apply_designated_reviewers.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js)
+example can apply these requirements to file review state and pending reviewers.
 
 ::: tip
 If you have a `CODEOWNERS` file in the repository, the `review.files` input structure will include precomputed `designatedReviewers` derived from the code owners. You can leave these as-is, tweak them (e.g., by removing `{builtin: 'anyone'}` from the array), or overwrite them altogether.
