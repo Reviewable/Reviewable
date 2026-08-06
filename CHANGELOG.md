@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> reduce the amount of work done in reaction to a push to a base branch when there are many stale pull requests targeting it. <!-- server -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Upd:</kbd> show the reason why participants are waited-on in the participants panel. <!-- server 4949 -->
