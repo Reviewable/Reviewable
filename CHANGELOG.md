@@ -1,7 +1,5 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd<i>(saas)</i>:</kbd> add an "Add/Remove Contributors" button that jumps straight to the subscription update flow. <!-- client -->
-- <kbd>Upd<i>(saas)</i>:</kbd> explain who can manage a subscription when you don't have access to it. <!-- client -->
 - <kbd>Adm:</kbd> improve queue handling robustness under heavy load. <!-- server -->
 - <kbd>Adm:</kbd> report many additional queue metrics, both in log messages and via statsd/Sentry. <!-- server -->
 - <kbd>Adm:</kbd> correct the `task_waiting_time` metric to only include the duration between when a task was created and when it was first picked up, ignoring any later retries. <!-- server -->
@@ -10,6 +8,8 @@
 
 <sub>2026 - 08</sub>
 
+- <kbd>Upd<i>(saas)</i>:</kbd> add an "Add/Remove Contributors" button that jumps straight to the subscription update flow. <!-- client 7890 -->
+- <kbd>Upd<i>(saas)</i>:</kbd> explain who can manage a subscription when you don't have access to it. <!-- client 7890 -->
 - <kbd>Upd:</kbd> show the reason why participants are waited-on in the participants panel. <!-- server 4949 -->
 - <kbd>Upd:</kbd> accept an optional `reason` for `pendingReviewers`. <!-- server 4949 -->
 - <kbd>Adm:</kbd> Servers can emit GCP structured logs with queue task correlation by setting `REVIEWABLE_LOGGING_FORMAT=gcp`. <!-- server 4949 -->
