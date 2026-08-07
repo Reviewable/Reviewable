@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd<i>(saas)</i>:</kbd> add an "Add/Remove Contributors" button that jumps straight to the subscription update flow. <!-- client -->
+- <kbd>Upd<i>(saas)</i>:</kbd> explain who can manage a subscription when you don't have access to it. <!-- client -->
 - <kbd>Adm:</kbd> improve queue handling robustness under heavy load. <!-- server -->
 - <kbd>Adm:</kbd> report many additional queue metrics, both in log messages and via statsd/Sentry. <!-- server -->
 - <kbd>Adm:</kbd> correct the `task_waiting_time` metric to only include the duration between when a task was created and when it was first picked up, ignoring any later retries. <!-- server -->
