@@ -43,7 +43,7 @@ The steps for wiring an MCP server into your agent vary by tool, so have your to
 
 Before running the package, you'll need to:
 1. Install [Node.js](https://nodejs.org/) version 20 or higher.
-2. Install Chrome or Chromium.  It's probably already available on your personal computer, but if you need to set it up in CI you can use the command `npx playwright install --with-deps chromium`.
+2. Install Chrome or Chromium.  It's probably already available on your personal computer, but if you need to set it up in CI you can use the command `npx playwright install --with-deps chromium`.  If system Chrome is managed by enterprise policies that interfere with headless navigation, set `REVIEWABLE_COMMAND_BROWSER=chromium` to use Playwright-managed Chromium directly; `auto` (the default) and `chrome` are also supported.
 3. Set a `REVIEWABLE_URL` environment variable to `https://reviewable.io` or the URL of your local instance of Reviewable (e.g., `https://internal.reviewable.cloud`).
 4. Set a `REVIEWABLE_API_TOKEN` environment variable to your agent's secret token copied from the [agent identity](#creating-an-agent-identity) steps above.
 
