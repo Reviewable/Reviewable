@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server -->
-  > If you roll back after deploying this release, in flight status updates will become stranded.  Reloading a review will force a refresh of its statuses and checks.
-
 <sub>2026 - 08</sub>
 
+- <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server 4951 -->
+  > If you roll back after deploying this release, in flight status updates will become stranded.  Reloading a review will force a refresh of its statuses and checks.
 - <kbd>Adm:</kbd> improve queue handling robustness under heavy load. <!-- server 4950 -->
 - <kbd>Adm:</kbd> report many additional queue metrics, both in log messages and via statsd/Sentry. <!-- server 4950 -->
 - <kbd>Adm:</kbd> correct the `task_waiting_time` metric to only include the duration between when a task was created and when it was first picked up, ignoring any later retries. <!-- server 4950 -->
