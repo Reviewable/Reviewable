@@ -715,7 +715,7 @@ The per-file `designatedReviewers` property should be an array of any of the fol
 Unless otherwise stated, each entry in the array can be modified with any combination of the following:
   - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
   - An `omitBaseChanges` flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., `{username: 'pkaminski', omitBaseChanges: true}`.
-  - An `includeAuthor` flag on a team or `{builtin: 'anyone'}` designation to allow a pull request author's self-review to satisfy it.  It defaults to `false`; an explicit username designation always accepts that user's review even if they are the author.  Author agents are treated like the pull request author.  Since the flag modifies an individual designation, the same team can allow author reviews in one scope but reject them in another.
+  - An `includeAuthor` flag on a team or `{builtin: 'anyone'}` designation to allow a pull request author's self-review to satisfy it.  It defaults to `false`; an explicit username designation always accepts that user's review even if they are the author.  Author agents are treated like the pull request author when evaluating this flag.  Since the flag modifies an individual designation, the same team can allow author reviews in one scope but reject them in another.
 
 ::: danger
 The contents of `designatedReviewers` are _only_ used to compute the [file review state](files#file-review-state) and will _not_ affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a [sample script](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.
@@ -747,6 +747,8 @@ To allow an author mark to satisfy the normal reviewer requirement, use
 `[{builtin: 'anyone', includeAuthor: true}]`.  To require both a normal review and a self-review by
 the pull request author, use
 `[{builtin: 'anyone'}, {username: review.pullRequest.author.username, scope: 'self-review'}]`.
+Since the latter designation names the primary author explicitly, an author agent's mark won't
+satisfy the `self-review` scope.
 The [`apply_designated_reviewers.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js)
 example can apply these requirements to file review state and pending reviewers.
 
