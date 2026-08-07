@@ -1,6 +1,7 @@
 <sub>Upcoming</sub>
 
 - <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server -->
+  > If you roll back after deploying this release, in flight status updates will become stranded.  Reloading a review will force a refresh of its statuses and checks.
 
 <sub>2026 - 08</sub>
 
