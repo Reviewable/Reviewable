@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Adm:</kbd> improve queue handling robustness under heavy load. <!-- server 4950 -->
