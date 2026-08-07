@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> improve queue handling robustness under heavy load. <!-- server -->
-- <kbd>Adm:</kbd> report many additional queue metrics, both in log messages and via statsd/Sentry. <!-- server -->
-- <kbd>Adm:</kbd> correct the `task_waiting_time` metric to only include the duration between when a task was created and when it was first picked up, ignoring any later retries. <!-- server -->
-  > You may need to adjust any alerts you have set up as this metric should now be consistently lower than before.
-- <kbd>Adm:</kbd> reduce the amount of work done in reaction to a push to a base branch when there are many stale pull requests targeting it. <!-- server -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Adm:</kbd> improve queue handling robustness under heavy load. <!-- server 4950 -->
+- <kbd>Adm:</kbd> report many additional queue metrics, both in log messages and via statsd/Sentry. <!-- server 4950 -->
+- <kbd>Adm:</kbd> correct the `task_waiting_time` metric to only include the duration between when a task was created and when it was first picked up, ignoring any later retries. <!-- server 4950 -->
+  > You may need to adjust any alerts you have set up as this metric should now be consistently lower than before.
+- <kbd>Adm:</kbd> reduce the amount of work done in reaction to a push to a base branch when there are many stale pull requests targeting it. <!-- server 4950 -->
 - <kbd>Upd<i>(saas)</i>:</kbd> add an "Add/Remove Contributors" button that jumps straight to the subscription update flow. <!-- client 7890 -->
 - <kbd>Upd<i>(saas)</i>:</kbd> explain who can manage a subscription when you don't have access to it. <!-- client 7890 -->
 - <kbd>Upd:</kbd> show the reason why participants are waited-on in the participants panel. <!-- server 4949 -->
