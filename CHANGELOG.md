@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> show check failures that aren't required to merge in orange rather than red. <!-- client -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server 4951 -->
