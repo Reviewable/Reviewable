@@ -495,7 +495,7 @@ Properties marked with `(*)` have additional notes below the sample review state
     lastRevision: 'r1',             // The key of the last revision
     numUnresolvedDiscussions: 1,    // The number of unresolved discussions
     numFiles: 1,                    // Total number of active files in the review
-    numUnreviewedFiles: 1,          // Number of files not reviewed by anyone at latest revision
+    numUnreviewedFiles: 1,          // Number of files without a non-author review at latest revision
     numFilesReviewedByAtLeast: [1]  // Number of files reviewed by at least N people (as index)
       // e.g., numFilesReviewedByAtLeast[2] is the number of file reviewed by at least 2 people
     commitsFileReviewed: true
@@ -507,8 +507,11 @@ Properties marked with `(*)` have additional notes below the sample review state
     state: 'open',  // one of 'open', 'merged' or 'closed'
     body: 'There is so much work to be done, and this PR does it all.',
     // All users are annotated with a full list of teams they're members of; if the property is
-    // undefined then Reviewable wasn't able to fetch this list.
-    author: {username: 'pkaminski', teams: ['reviewable/developers'], bot: false},
+    // undefined then Reviewable wasn't able to fetch this list.  They also have `author: true` if
+    // they're the PR author or an agent acting in the author role; the property is otherwise absent.
+    author: {
+      username: 'pkaminski', teams: ['reviewable/developers'], bot: false, author: true
+    },
     coauthors: [
       {username: 'pkaminski-test', teams: ['reviewable/semi-developers'], bot: false, participating: true}
     ],
@@ -551,7 +554,10 @@ Properties marked with `(*)` have additional notes below the sample review state
     }
   },
   pendingReviewers: [  // List of proposed pending reviewers computed by Reviewable
-    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, reason: 'files to review'}
+    {
+      username: 'pkaminski', teams: ['reviewable/developers'], bot: false, author: true,
+      reason: 'files to review'
+    }
     // If the PR author was added as a last resort, the object will have `fallback: true`
   ],
   deferringReviewers: [ // List of reviewers who are deferring and will be removed from pendingReviewers
@@ -575,7 +581,8 @@ Properties marked with `(*)` have additional notes below the sample review state
     'Comments only in Reviewable'
   ],
   sentiments: [  // List of sentiments (currently just emojis) extracted from comments
-    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
+    {username: 'pkaminski', teams: ['reviewable/developers'], bot: false, author: true,
+      emojis: ['lgtm', 'shipit'], timestamp: 1449045103897}
   ],
   discussions: [  // List of the discussions in the review (metadata only)
     {
@@ -586,6 +593,7 @@ Properties marked with `(*)` have additional notes below the sample review state
           username: 'pkaminski',
           teams: ['reviewable/developers'],
           bot: false,
+          author: true,
           disposition: 'discussing',  // Participant's current disposition
           resolved: true,  // False if this participant is not in favor of resolving and it's their turn to follow up
           read: true,  // False if this participant has unread messages in this discussion
@@ -608,7 +616,9 @@ Properties marked with `(*)` have additional notes below the sample review state
           reverted: false,  // true if this revision of the file is the same as base
           baseChangesOnly: false,  // true if all changes can be attributed to the base branch, undefined if not yet known
           reviewers: [  // List of users who marked file as reviewed at this revision
-            {username: 'somebody', timestamp: 1436828040000}  // timestamp null for legacy or inferred reviews
+            // `author` is present and true for the PR author and any agent acting in the author
+            // role; timestamp is null for legacy or inferred reviews.
+            {username: 'somebody', timestamp: 1436828040000}
           ]
         }
       ],
@@ -686,7 +696,7 @@ An array of objects with a `username` property listing the users who have LGTM'd
 An array of objects that looks like `{path: 'full/path/to/file', group: 'Some Group', revisions: [key: 'r1', reviewed: true]}`.  (You can augment the `review.files` structure with additional properties and return the whole thing here.)
   - To [group files in the file matrix](files.md#file-list), set an optional `group` property on each file with any name you'd like; all files with the same `group` value will be arranged into a group with that name.  Files with no group set will belong to the default, unnamed group.  Groups will be sorted alphabetically, so you can force a specific arbitrary order by starting each group name with a digit.
   - To mark files as vendored, set an optional `vendored` property to `true` on any such file.  These files will default to a special Vendored group, won't participate in file rename matching, and won't display a diff by default.  Reviewable has hardcoded path-based heuristics for vendored files, which you can override by setting `vendored` to `false` on any files you'd like to exempt.
-  - To override whether a file has been reviewed at a revision, set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user.
+  - To override whether a file has been reviewed at a revision, set a `reviewed` boolean property there.  By default, a file revision is considered reviewed if it was marked so by at least one user whose reviewer record doesn't have `author: true`. Author marks can be counted or required instead by setting appropriate `designatedReviewers` and applying the [`apply_designated_reviewers.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) example.
   - To [designate specific people for review](files.md#file-review-state), set a `designatedReviewers` property on the file as detailed below.
 
 ::: tip
@@ -705,6 +715,7 @@ The per-file `designatedReviewers` property should be an array of any of the fol
 Unless otherwise stated, each entry in the array can be modified with any combination of the following:
   - A `scope` property to group it into the given scope, e.g., `{username: 'pkaminski', scope: 'security'}`.  A given user or team can be added to multiple scopes (though you'll need one entry per scope), in which case a single review will count against all such scopes at once.  A scope can have any number of designations.
   - An `omitBaseChanges` flag to indicate that this designatee's reviews should carry over any file revisions affected only by base changes, e.g., `{username: 'pkaminski', omitBaseChanges: true}`.
+  - An `includeAuthor` flag on a team or `{builtin: 'anyone'}` designation to allow a pull request author's self-review to satisfy it.  It defaults to `false`; an explicit username designation always accepts that user's review even if they are the author.  Author agents are treated like the pull request author when evaluating this flag.  Since the flag modifies an individual designation, the same team can allow author reviews in one scope but reject them in another.
 
 ::: danger
 The contents of `designatedReviewers` are _only_ used to compute the [file review state](files#file-review-state) and will _not_ affect whether a file is considered reviewed or not.  You'll need to do that yourself, though you can crib from a [sample script](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js) that matches designated reviewers against actual file reviewers to determine whether each revision of a file has been reviewed, and which scopes have been fulfilled.
@@ -721,6 +732,8 @@ file.designatedReviewers = [
   {username: 'pkaminski', omitBaseChanges: true},
   // also need a review from security-team, focused on security
   {team: 'reviewable/security-team', scope: 'security'},
+  // the author can satisfy a readability review if they're a member of developers
+  {team: 'reviewable/developers', scope: 'readability', includeAuthor: true},
   // and anyone else is welcome to review as well!
   {builtin: 'anyone'}
 ];
@@ -728,7 +741,16 @@ file.designatedReviewers = [
 
 If `designatedReviewers` is not set, then it will fall back to inferred defaults.  If `CODEOWNERS` designations apply to a file, those are used; otherwise, it defaults to `{builtin: 'anyone'}`.
 
-Reviewable also automatically creates additional scopes for designations inferred from `CODEOWNERS` (`code owners`), unsolicited reviewers when `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as reviewed against recommendations (`author`).
+Reviewable also automatically creates additional scopes for designations inferred from `CODEOWNERS` (`code owners`), unsolicited reviewers when `{builtin: 'anyone'}` is missing (`unsolicited`), and the author of the pull request if they mark a file as self-reviewed (`author`).
+
+To allow an author mark to satisfy the normal reviewer requirement, use
+`[{builtin: 'anyone', includeAuthor: true}]`.  To require both a normal review and a self-review by
+the pull request author, use
+`[{builtin: 'anyone'}, {username: review.pullRequest.author.username, scope: 'self-review'}]`.
+Since the latter designation names the primary author explicitly, an author agent's mark won't
+satisfy the `self-review` scope.
+The [`apply_designated_reviewers.js`](https://github.com/Reviewable/Reviewable/blob/master/examples/conditions/apply_designated_reviewers.js)
+example can apply these requirements to file review state and pending reviewers.
 
 ::: tip
 If you have a `CODEOWNERS` file in the repository, the `review.files` input structure will include precomputed `designatedReviewers` derived from the code owners. You can leave these as-is, tweak them (e.g., by removing `{builtin: 'anyone'}` from the array), or overwrite them altogether.

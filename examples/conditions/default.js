@@ -1,8 +1,8 @@
 // This is the built-in review completion condition that Reviewable uses by default.
 
-// It checks that all files have been reviewed by at least one user and that all discussions have
-// been resolved.  All the information about the current review is supplied in a predefined `review`
-// variable.
+// It checks that all files have been reviewed by at least one user who isn't acting as the pull
+// request author, and that all discussions have been resolved.  All the information about the
+// current review is supplied in a predefined `review` variable.
 
 // dependencies: lodash4
 
