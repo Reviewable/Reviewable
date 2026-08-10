@@ -1,6 +1,6 @@
 <sub>2026 - 08</sub>
 
-- <kbd>Fix:</kbd> don't get caught in a client-side feedback loop caused by a race condition. <!-- client 7892 -->
+- <kbd>Fix(saas):</kbd> don't get caught in a client-side feedback loop caused by a race condition. <!-- client 7892 -->
 - <kbd>Upd:</kbd> show check failures that aren't required to merge in orange rather than red. <!-- client 7892 -->
 - <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server 4951 -->
   > If you roll back after deploying this release, in flight status updates will become stranded.  Reloading a review will force a refresh of its statuses and checks.
