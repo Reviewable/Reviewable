@@ -36,10 +36,12 @@ function applyDesignatedReviewers(files) {
     // Check that team memberships were successfully resolved for every reviewer.
     const teamDesignations = _.filter(file.designatedReviewers, 'team');
     const authorCanSatisfyTeam = _.some(teamDesignations, 'includeAuthor');
-    const teamReviewerRecords = _(file.revisions)
+    const allTeamMembershipsResolved = _(file.revisions)
       .flatMap('reviewers')
-      .filter(reviewer => !reviewer.author || authorCanSatisfyTeam);
-    if (teamDesignations.length && !teamReviewerRecords.map('teams').every()) {
+      .filter(reviewer => !reviewer.author || authorCanSatisfyTeam)
+      .map('teams')
+      .every();
+    if (teamDesignations.length && !allTeamMembershipsResolved) {
       throw new Error(
         'Unable to resolve designated teams; ' +
         'please connect the repository and authorize the read:org scope');

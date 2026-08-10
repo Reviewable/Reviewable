@@ -34,7 +34,7 @@ _.forEach(review.files, file => {
     lastReviewedRev ?
       _(lastReviewedRev.reviewers).reject('author').map(reviewer => ({
         ..._.pick(reviewer, 'username', 'teams'), reason: 'files to review'
-      })) :
+      })).value() :
       []
   );
 });
