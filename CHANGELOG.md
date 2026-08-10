@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't get caught in a client-side feedback loop caused by a race condition. <!-- client -->
 - <kbd>Upd:</kbd> show check failures that aren't required to merge in orange rather than red. <!-- client -->
 
 <sub>2026 - 08</sub>
