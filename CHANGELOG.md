@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Prevent long encrypted GitHub status keys from exceeding Firebase's full-path limit. <!-- server -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Fix<i>(saas)</i>:</kbd> don't get caught in a client-side feedback loop caused by a race condition. <!-- client 7892 -->
