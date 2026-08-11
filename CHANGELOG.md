@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> let reviewer agents link directly to discussions. <!-- client -->
 - <kbd>Fix:</kbd> allow bots (and in particular Copilot) to be requested as reviewers, explicitly or automatically, on both client and server. <!-- client -->
 - <kbd>Adm:</kbd> Prevent long encrypted GitHub status keys from exceeding Firebase's full-path limit. <!-- server -->
 - <kbd>Adm:</kbd> Automatically recover from review corruption caused by stale status updates. <!-- server -->
