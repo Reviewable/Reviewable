@@ -1,13 +1,13 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> let reviewer agents link directly to discussions. <!-- client -->
-- <kbd>Fix:</kbd> allow bots (and in particular Copilot) to be requested as reviewers, explicitly or automatically, on both client and server. <!-- client -->
 - <kbd>Adm:</kbd> Prevent long encrypted GitHub status keys from exceeding Firebase's full-path limit. <!-- server -->
 - <kbd>Adm:</kbd> Automatically recover from review corruption caused by stale status updates. <!-- server -->
   > This could always be fixed by reloading the review but now other tasks will automatically do so as well, which will help prevent repeated `permission denied` errors.
 
 <sub>2026 - 08</sub>
 
+- <kbd>Upd:</kbd> let reviewer agents link directly to discussions. <!-- client 7893 -->
+- <kbd>Fix:</kbd> allow bots (and in particular Copilot) to be requested as reviewers, explicitly or automatically, on both client and server. <!-- client 7893 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't get caught in a client-side feedback loop caused by a race condition. <!-- client 7892 -->
 - <kbd>Upd:</kbd> show check failures that aren't required to merge in orange rather than red. <!-- client 7892 -->
 - <kbd>Adm:</kbd> Coalesce bursts of GitHub status updates to keep repository synchronization responsive. <!-- server 4951 -->
