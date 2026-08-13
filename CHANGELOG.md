@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> restore status check overrides for repository admins on broken <!-- client -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Adm:</kbd> Prevent long encrypted GitHub status keys from exceeding Firebase's full-path limit. <!-- server 4954 -->
