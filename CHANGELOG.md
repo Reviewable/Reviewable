@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid parsing mentions and custom emojis inside fenced code blocks that contain backticks. <!-- client -->
 - <kbd>Fix:</kbd> prevent pathological comment-code regex backtracking and protect fenced code on list-continuation lines. <!-- server -->
 - <kbd>Adm:</kbd> avoid spurious timeout failures in Sentry cron monitors caused by interrupted tasks. <!-- server -->
 - <kbd>Fix:</kbd> avoid parsing mentions and custom emojis inside fenced code blocks that contain backticks. <!-- server -->
