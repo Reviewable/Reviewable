@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> avoid spurious timeout failures in Sentry cron monitors caused by interrupted tasks. <!-- server -->
 - <kbd>Fix:</kbd> avoid parsing mentions and custom emojis inside fenced code blocks that contain backticks. <!-- server -->
 - <kbd>Fix:</kbd> restore status check overrides for repository admins on broken <!-- client -->
 
