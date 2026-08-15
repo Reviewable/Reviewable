@@ -20,7 +20,7 @@ _.forEach(review.files, file => {
   if (lastMeaningfulChangeRevIndex > lastRevIndex) return;
   const reviewed = _(file.revisions)
     .slice(lastMeaningfulChangeRevIndex, lastRevIndex + 1)
-    .some(rev => !_.isEmpty(rev.reviewers));
+    .some(rev => _.some(rev.reviewers, reviewer => !reviewer.author));
   if (!reviewed) numUnreviewedFiles++;
 });
 

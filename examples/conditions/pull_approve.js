@@ -203,7 +203,7 @@ function approved({
   }
 
   const relevantSanctions = _(pr.sanctions)
-    .reject({username: pr.author.username})
+    .reject('author')
     .reject(sanction => _.some(pr.coauthors, {username: sanction.username}))
     .filter(sanction => !team || findMaxTeamScore(sanction.teams, team) > 0)
     .value();
@@ -308,7 +308,7 @@ function reviewed({
         implicitScore +
         _(rev.reviewers)
           .concat(omitBaseChanges ? reviewersDiscountingBaseChanges : [])
-          .reject(reviewer => reviewer.username === pr.author.username)
+          .reject('author')
           .reject(reviewer => _(pr.coauthors).map('username').includes(reviewer.username))
           .filter(reviewer =>
             _(review.discussions)
@@ -348,6 +348,7 @@ function reviewed({
     } else {
       requiredTeams.push(..._.keys(team));
       const engagedReviewersScore = _(pr.reviewers)
+        .reject('author')
         .concat(author ? pr.author : [])
         .reject(reviewer => !coauthors && _.some(pr.coauthors, {username: reviewer.username}))
         .uniqBy('username')
