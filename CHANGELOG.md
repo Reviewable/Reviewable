@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>New:</kbd> directly support self-review by pull request authors.  Their review marks look different in the UI and don't count toward review completion by default. <!-- client -->
-  > If you'd like PR authors' review marks to count toward review completion then you'll need to set up a custom review completion condition.  If you already have one set up and _don't_ want to count authors' review marks (now annotated with `author: true`), you may want to check whether it already excludes them since they'll become a lot more common.
-
 <sub>2026 - 08</sub>
 
+- <kbd>New:</kbd> directly support self-review by pull request authors.  Their review marks look different in the UI and don't count toward review completion by default. <!-- client 7896 -->
+  > If you'd like PR authors' review marks to count toward review completion then you'll need to set up a custom review completion condition.  If you already have one set up and _don't_ want to count authors' review marks (now annotated with `author: true`), you may want to check whether it already excludes them since they'll become a lot more common.
 - <kbd>Fix:</kbd> prevent pathological comment-code regex backtracking and protect fenced code on list-continuation lines. <!-- server 4956 -->
 - <kbd>Adm:</kbd> avoid spurious timeout failures in Sentry cron monitors caused by interrupted tasks. <!-- server 4956 -->
 - <kbd>Fix:</kbd> avoid parsing mentions and custom emojis inside fenced code blocks that contain backticks. <!-- client 7895 -->
