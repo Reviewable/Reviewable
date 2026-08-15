@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent pathological comment-code regex backtracking and protect fenced code on list-continuation lines. <!-- server -->
-- <kbd>Adm:</kbd> avoid spurious timeout failures in Sentry cron monitors caused by interrupted tasks. <!-- server -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Fix:</kbd> prevent pathological comment-code regex backtracking and protect fenced code on list-continuation lines. <!-- server 4956 -->
+- <kbd>Adm:</kbd> avoid spurious timeout failures in Sentry cron monitors caused by interrupted tasks. <!-- server 4956 -->
 - <kbd>Fix:</kbd> avoid parsing mentions and custom emojis inside fenced code blocks that contain backticks. <!-- client 7895 -->
 - <kbd>Fix:</kbd> restore status check overrides for repository admins on broken <!-- client 7895 -->
 - <kbd>Adm:</kbd> Prevent long encrypted GitHub status keys from exceeding Firebase's full-path limit. <!-- server 4954 -->
