@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent invalid Vue component data properties from compiling. <!-- client -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>New:</kbd> directly support self-review by pull request authors.  Their review marks look different in the UI and don't count toward review completion by default. <!-- client 7896 -->
