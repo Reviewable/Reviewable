@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> indicate when a discussion has new comments in the discussion matrix. <!-- client -->
 - <kbd>Fix:</kbd> keep successful broken-review status overrides visible without reloading the page. <!-- client -->
 - <kbd>Fix:</kbd> prevent invalid Vue component data properties from compiling. <!-- client -->
 
