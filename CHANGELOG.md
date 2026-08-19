@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> keep successful broken-review status overrides visible without reloading the page. <!-- client -->
 - <kbd>Fix:</kbd> prevent invalid Vue component data properties from compiling. <!-- client -->
 
 <sub>2026 - 08</sub>
