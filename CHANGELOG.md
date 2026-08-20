@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent agent timeouts on file-related actions. <!-- client -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Adm:</kbd> Avoid duplicate pull request sync and repository cache fill requests when following renamed repository redirects. <!-- client 7897 -->
