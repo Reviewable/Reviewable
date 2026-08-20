@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Avoid duplicate pull request sync and repository cache fill requests when following renamed repository redirects. <!-- client -->
-- <kbd>Upd:</kbd> indicate when a discussion has new comments in the discussion matrix. <!-- client -->
-- <kbd>Fix:</kbd> keep successful broken-review status overrides visible without reloading the page. <!-- client -->
-- <kbd>Fix:</kbd> prevent invalid Vue component data properties from compiling. <!-- client -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Adm:</kbd> Avoid duplicate pull request sync and repository cache fill requests when following renamed repository redirects. <!-- client 7897 -->
+- <kbd>Upd:</kbd> indicate when a discussion has new comments in the discussion matrix. <!-- client 7897 -->
+- <kbd>Fix:</kbd> keep successful broken-review status overrides visible without reloading the page. <!-- client 7897 -->
+- <kbd>Fix:</kbd> prevent invalid Vue component data properties from compiling. <!-- client 7897 -->
 - <kbd>New:</kbd> directly support self-review by pull request authors.  Their review marks look different in the UI and don't count toward review completion by default. <!-- client 7896 -->
   > If you'd like PR authors' review marks to count toward review completion then you'll need to set up a custom review completion condition.  If you already have one set up and _don't_ want to count authors' review marks (now annotated with `author: true`), you may want to check whether it already excludes them since they'll become a lot more common.
 - <kbd>Fix:</kbd> prevent pathological comment-code regex backtracking and protect fenced code on list-continuation lines. <!-- server 4956 -->
