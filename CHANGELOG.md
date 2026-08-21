@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent agent timeouts on file-related actions. <!-- client -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Fix:</kbd> prevent agent timeouts on file-related actions. <!-- client 7898 -->
 - <kbd>Adm:</kbd> Avoid duplicate pull request sync and repository cache fill requests when following renamed repository redirects. <!-- client 7897 -->
 - <kbd>Upd:</kbd> indicate when a discussion has new comments in the discussion matrix. <!-- client 7897 -->
 - <kbd>Fix:</kbd> keep successful broken-review status overrides visible without reloading the page. <!-- client 7897 -->
