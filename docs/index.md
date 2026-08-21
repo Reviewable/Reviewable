@@ -1,6 +1,6 @@
 # Introduction
 
-Reviewable is a comprehensive code review tool that is fully integrated with GitHub (and only GitHub).  It's
+Reviewable is a comprehensive code review tool that is fully integrated with GitHub (and only GitHub).  It's:
 
 * **Thorough** — Tracks where par­tic­i­pants stand on each dis­cus­sion, en­sur­ing it won't dis­ap­pear un­til re­solved. Fully cus­tomiz­able logic de­ter­mines when a re­view is com­plete.
 * **Efficient** — Clearly shows net deltas since last time you looked, even if com­mits get re­based or amended. Batches com­ments and cor­rectly threads email re­sponses.
@@ -15,7 +15,8 @@ With Reviewable, you can:
 * Com­bine com­mits for review, or re­view each commit separately.
 * Cus­tomize the line length mar­gin, fonts, col­ors, key­board short­cuts, and more.
 * Jump from a com­ment straight to the right spot in your fa­vorite ed­i­tor.
-* Enjoy a mod­ern, clean UI with a touch of whimsy.
+* Enjoy a mod­ern, flexible, and clean UI with a touch of whimsy 🐰.
+* Give agents and scripts access to Reviewable using our MCP and CLI.
 * Get full con­tex­tual help, and fast sup­port if you have ques­tions.
 * Sign in with GitHub ac­count — no sep­a­rate ac­counts to man­age.
 * Keep all your code on GitHub, not on our servers.

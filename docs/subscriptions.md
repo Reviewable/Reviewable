@@ -4,27 +4,41 @@ All public repositories and personal private repositories can use Reviewable fre
 
 ## Subscriptions
 
-The Subscription section of the [Admin Center](https://reviewable.io/admin) displays the current subscription or trial status of the organization selected from the dropdown at the top of the page. 
+The Subscription section of the [Admin Center](https://reviewable.io/admin) displays the current subscription or trial status of the organization selected from the dropdown at the top of the page.  Available plans will be listed for organizations that do not have a current subscription.  
+
+![reviewable subscriptions ](images/subscriptions.png){width=500px}
+
+For organizations that are already subscribed, plan details and a **Manage Billing** button will be visible to organization owners and the [billing manager](#billing-manager).  Clicking **Manage Billing** will take you to the Stripe billing portal where you can manage your payment and billing information,  view invoices, or cancel your subscription.
+
+![reviewable manage billing ](images/manage_billing.png){width=500px}
+
+### Free Trial
 
 Every organization gets a 30 day free trial of the Business plan, which requires no credit card. Any organization member can start a trial from any private review page, or from the Subscription section in the Admin Center.  If the button isn't showing, then you're already in the middle of a trial, have recently completed one, or have a current subscription.
 
-Any organization member can start a new subscription; by doing so, they will become the organization's [billing manager](#billing-manager).  Available plans will be listed for organizations that do not have a current subscription. You can compare plans, add contributors, and click **subscribe** to begin the checkout process. More on this in the [Selecting a plan](#selecting-a-plan) section.
+### Selecting a plan
 
-For organizations that are already subscribed, plan details and a **Manage Billing** button will be visible to organization owners and the billing manager. 
+Any organization member can start a new subscription; by doing so, they will become the organization's [billing manager](#billing-manager).  You can compare plans, add contributors ([more on this below](#contributors)), and click **subscribe** to begin the checkout process in the Stripe billing portal.
+
+![reviewable plan selection ](images/select_a_plan.png){width=500px}
 
 ::: danger
 OAuth app restrictions may entirely block Reviewable from an organization. Learn more in the [OAuth app access restrictions](registration.md#oauth-restrictions) section in the Registration chapter.
 :::
 
+### Changing a plan
+
+Once subscribed, you can change or cancel your plan at any time through the **Manage billing** button, which takes you to the Stripe billing portal.
+
+![reviewable manage billing button](images/manage_billing_button.png){width=190px}
+
+If you change your plan during the billing cycle, the new plan takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
+
 ### Billing manager
 
-For organizations with an active subscription, plan details and a **Manage Billing** button are visible to organization owners and the billing manager. Any organization member can start a subscription, and the member who does so becomes the billing manager until they either leave the organization or the role is reassigned via the **Delegate subscription management to** dropdown. Organization owners can always manage the subscription.
+The billing manager is a designated user who, along with organization owners, can view and manage an organization's subscription.  By default, the user who started the subscription becomes the organization's billing manager until they either leave the organization or the role is reassigned via the **Delegate subscription management to** dropdown. Organization owners can always manage the subscription.
 
-### Selecting a plan
-
-You can select a plan that best suits your organization as well as the number of contributors to purchase the plan for.  Available plans will be listed for organizations that do not have a current subscription.  You can compare plans, add contributors, and click subscribe to begin the checkout process in the Stripe billing portal. 
-
-Once subscribed, you can change or cancel your plan at any time through the **Manage billing** button, which takes you to the Stripe billing portal.  If you change your plan during the billing cycle, the new plan takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
+![reviewable billing manager delegation ](images/billing_manager.png){width=580px}
 
 ### Contributors
 
@@ -35,6 +49,22 @@ If a PR causes you to exceed your plan's contributor quota, both the subscriber 
 ::: tip
 If you exceed your plan's quota, Reviewable will continue updating all previously created reviews and keep creating reviews for contributors that were already counted this month.
 :::
+
+#### Checking contributors
+
+The **Contributors history** graph shows the number of active contributors for the past 12 months.  You can view the exact GitHub users from each of the past 3 months by clicking the relevant column in the chart, or by using the dropdown below it.  
+
+![reviewable contributors history](images/contributors_history.png){width=500px}
+
+#### Changing contributors
+
+To change the number of contributors for your plan, click **Add/Remove Contributors** next to the **Manage Billing** button. 
+
+![reviewable change contributors admin center](images/change_contributors_1.png){width=500px}
+
+This will take you to the Stripe billing portal where you can then **Adjust plan** and add or remove the quantity of contributors. 
+
+![reviewable change contributors stripe](images/change_contributors_2.png){width=500px}
 
 ### Managing the scope of your subscription
 

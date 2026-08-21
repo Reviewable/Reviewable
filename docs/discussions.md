@@ -49,8 +49,8 @@ While writing a comment, type a `+` sign to open an autocomplete menu of availab
 Supported directives include:
 * **+label**
 * **+milestone**
-* **+@username** (for assignees)
-* **+reviewer:@username** (for requested reviewers)
+* **+assignee:@username** or **+a:@username** — (for assignees)
+* **+reviewer:@username** or **+r:@username** — (for requested reviewers)
 
 Reviewer directives such as `+reviewer:@username` and `-reviewer:@username` take priority over [**Sync requested reviewers**](reviews.md#sync-requested-reviewers) changes.
 
@@ -71,6 +71,10 @@ When replying via GitHub, use the `…` > *Quote reply* button to preserve the p
 If Reviewable can't match a reply to a specific discussion, it will post it on the main top-level discussion instead. Plain comments started in GitHub also end up there, while GitHub inline code comments are matched from GitHub's thread and line information when possible.
 :::
 
+::: tip
+Top-level comments sent immediately using the <i class="send icon"/>&nbsp;button do not contain comment links matching them to their corresponding thread, and thus will always post on the main top-level discussion.  This makes it easier for bots to parse these ad-hoc comments.
+:::
+
 Reviewable also recognizes a number of case-insensitive shorthands in external comments.  You can reply with the single word **acknowledge** (or **ack**) to simulate clicking the primary button in Reviewable (whatever its label might actually be). You can also update the disposition in your reply by inserting on a separate line, by itself, "Discussing", "Informing", "Working", "Blocking", or "Satisfied".
 
 Be sure to separate your comment and disposition with **one blank line**, otherwise GitHub may interpret the disposition as part of the comment text.  For example:
@@ -80,6 +84,11 @@ Be sure to separate your comment and disposition with **one blank line**, otherw
 ::: tip
 For information on how to use other shorthands that work in email and in-app comments alike, see [inline directives](#inline-directives) above and [disposition keywords](#disposition-keywords) further down.
 :::
+
+::: danger
+If you're having a hard time getting this working, make sure your reply is properly formatted using interleaved style and that hyper links and indentation are preserved (email clients can break one or more of these things).
+:::
+
 
 ## Dispositions {#dispositions-and-resolution}
 
