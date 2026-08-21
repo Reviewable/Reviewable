@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent pull request syncs from repeatedly failing when the repository connector has lost access but an alternative admin remains available. <!-- server -->
-- <kbd>Adm:</kbd> improve recovery from sustained Firebase timeouts while avoiding unnecessary connection bounces during ordinary disconnects. <!-- server -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Fix:</kbd> prevent pull request syncs from repeatedly failing when the repository connector has lost access but an alternative admin remains available. <!-- server 4959 -->
+- <kbd>Adm:</kbd> improve recovery from sustained Firebase timeouts while avoiding unnecessary connection bounces during ordinary disconnects. <!-- server 4959 -->
 - <kbd>Fix:</kbd> prevent agent timeouts on file-related actions. <!-- client 7898 -->
 - <kbd>Adm:</kbd> Avoid duplicate pull request sync and repository cache fill requests when following renamed repository redirects. <!-- client 7897 -->
 - <kbd>Upd:</kbd> indicate when a discussion has new comments in the discussion matrix. <!-- client 7897 -->
