@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent pull request syncs from repeatedly failing when the repository connector has lost access but an alternative admin remains available. <!-- server -->
 - <kbd>Adm:</kbd> improve recovery from sustained Firebase timeouts while avoiding unnecessary connection bounces during ordinary disconnects. <!-- server -->
 
 <sub>2026 - 08</sub>
