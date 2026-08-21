@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> improve recovery from sustained Firebase timeouts while avoiding unnecessary connection bounces during ordinary disconnects. <!-- server -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Fix:</kbd> prevent agent timeouts on file-related actions. <!-- client 7898 -->
