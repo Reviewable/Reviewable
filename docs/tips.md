@@ -1,22 +1,25 @@
 # Tips and Tricks
 
-## Videos
-Below is a link to a video where an engineer goes through a real code review while we kibbitz and offer tips on using Reviewable:
-- [Adam Storm from CockroachDB reviews some code](https://www.youtube.com/watch?v=w3cgXBD7ErQ)
-
-There's a collection of [tips in screencast format](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/), if that's what you prefer, including:
-- [What's the fastest way to check out your review code?](https://www.youtube.com/watch?v=JqFGBZa7YGg)
-- [Keyboard shortcuts for efficient reviews](https://www.youtube.com/watch?v=xuJ2PGFprBE)
-- [Customizing keyboard shortcuts](https://www.youtube.com/watch?v=lg2tvhTTQNE)
-- [Customizing code review completion conditions](https://www.youtube.com/watch?v=mIwg3zRpSQE)
-
 ## Articles
 
 Here are some articles and blog posts on code reviews that we found worth reading:
 - [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/)
 - [How to use Reviewable's Publish on Push feature](https://www.reviewable.io/blog/publish-on-next-push-is-finally-here/)
+- [Getting the most out of the sidebar](https://www.reviewable.io/blog/introducing-the-long-awaited-sidebar/)
+- [Reviewable MCP server & agent workflows](https://www.reviewable.io/blog/we-built-an-mcp-server/)
+
 
 Check out the [Reviewable Blog](https://www.reviewable.io/blog/) for more walkthroughs, configuration guides, changelogs, and best practices.
+
+## Videos
+Here's a walkthrough of a real code review where we kibbitz and offer tips on using Reviewable:
+- [Adam Storm from CockroachDB reviews some code](https://www.youtube.com/watch?v=w3cgXBD7ErQ)
+
+… and here's a [collection](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/) of tips in screencast format if that's what you prefer:
+- [What's the fastest way to check out your review code?](https://www.youtube.com/watch?v=JqFGBZa7YGg)
+- [Keyboard shortcuts for efficient reviews](https://www.youtube.com/watch?v=xuJ2PGFprBE)
+- [Customizing keyboard shortcuts](https://www.youtube.com/watch?v=lg2tvhTTQNE)
+- [Customizing code review completion conditions](https://www.youtube.com/watch?v=mIwg3zRpSQE)
 
 ## Visual tweaks
 
