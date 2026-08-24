@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> place newly received discussions at their mapped diff lines. <!-- client -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Fix:</kbd> prevent pull request syncs from repeatedly failing when the repository connector has lost access but an alternative admin remains available. <!-- server 4959 -->
