@@ -1,6 +1,6 @@
 # Agent Identities and MCP Server
 
-Reviewable provides an MCP server that lets AI agents interact with code reviews, and a CLI for direct use in scripts or automation.  Agent identities control how each agent appears in Reviewable and what they can access, giving you visibility and control over agent activity.  This page covers how to set up and run the MCP server or CLI, and how to manage agent identities.
+Reviewable provides an MCP server that lets AI agents interact with code reviews, and a CLI for direct use in scripts or automation.  Agent identities control how each agent appears and operates in Reviewable, and what they can access, giving you visibility and control over agent activity.  This page covers how to set up and run the MCP server or CLI, and how to manage agent identities.
 
 ## Creating an agent identity
 
@@ -10,18 +10,24 @@ You can manage sub-identities of your own account to be used by agents or other 
 GitHub is not aware of these sub-identities, so all actions taken by agents there will be in your name and with your permissions.
 :::
 
-To provision a new agent, open [Account Settings](accountsettings.md) and click **Provision new agent**.  There are three kinds to choose from:
-1. Author: the agent will have its own sub-identity and — crucially — assume the role of an author on any pull requests you create.
-2. Reviewer: the agent will have its own sub-identity and assume the role of a reviewer on all pull requests.
-3. Replicant: the agent will have no sub-identity of its own and act entirely in your name, both in Reviewable and on GitHub.
+Just like with a regular PR author or reviewer, each agent that you provision takes on a fixed role that affects the perspective from which it views pull requests, and whether its review marks count toward review completion (customizable using [completion conditions](admincenter#completion-condition)).
 
-After selecting the agent type you'll be shown its API bearer token.  This is the only time this token will be displayed so be sure to copy it.  Keep this token safe as it provides full access to Reviewable with no further authentication.  You can reissue the token at any time, which will immediately invalidate the old one.
+![reviewable agent role tags shown in a comment thread](images/agent_comments.png){width=450px}
+
+To provision a new agent, open [Account Settings](accountsettings.md) and click **Provision new agent**.  There are three roles to choose from:
+- **Author**: the agent will have its own sub-identity and — crucially — assume the role of an author on any pull requests you create.
+- **Reviewer**: the agent will have its own sub-identity and assume the role of a reviewer on all pull requests, including your own.
+- **Replicant**: the agent will have no sub-identity of its own and act entirely in your name.
+
+After selecting the agent role you'll be shown its API bearer token.  This is the only time this token will be displayed so be sure to copy it.  Keep this token safe as it provides full access to Reviewable with no further authentication.  You can reissue the token at any time, which will immediately invalidate the old one.
 
 ## Customizing an agent identity
 
 You can set an agent's tag, consisting of up to 4 uppercase letters and a background color, to help you tell multiple agents apart.  For agents with their own sub-identities, the tag will be added to your username and avatar to distinguish the agent from you.  Tag changes take effect immediately, including for all past interactions — just like when you change your own avatar or username.
 
 You can also constrain the agent to a subset of the organizations and repositories to which you have access.  Specify a comma-separated list of `OWNER/REPO` globs; if any one matches then access will be allowed.  For example, `work/*` grants access to all repos in the `work` organization, `*/special-*` grants access to repos that start with `special-` in any organization, and `*/*` grants access to all repos in all organizations (the default setting).
+
+![reviewable MCP identity](images/agent_tag.png){width=390px}
 
 ## Retiring an agent identity
 
@@ -54,6 +60,10 @@ The `reviewable` npm package can be run in one of two ways:
 ### Starting the MCP server
 
 Execute `npx -y reviewable@latest mcp` to start the MCP server (or `reviewable mcp` if installed globally).  You can run this directly from a terminal to verify it works.
+
+::: tip
+Wondering what to do next? Check out our [MCP server blog post](https://www.reviewable.io/blog/we-built-an-mcp-server/) for a few workflow ideas.
+:::
 
 ### Using the CLI
 
