@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> restore archived reviews containing agent participation without failing their pull request sync. <!-- server -->
 - <kbd>Fix:</kbd> place newly received discussions at their mapped diff lines. <!-- client -->
 
 <sub>2026 - 08</sub>
