@@ -52,6 +52,10 @@ Supported directives include:
 * **+assignee:@username** or **+a:@username** — (for assignees)
 * **+reviewer:@username** or **+r:@username** — (for requested reviewers)
 
+::: tip
+Use the `+@` shortcut to quickly add either a reviewer or assignee based on the toggle switch at the bottom of the autocomplete popup.  Your last selection will be remembered so that you can quickly add users to a review using `+@username<enter>`.
+:::
+
 Reviewer directives such as `+reviewer:@username` and `-reviewer:@username` take priority over [**Sync requested reviewers**](reviews.md#sync-requested-reviewers) changes.
 
 Reviewable will warn you if you reference invalid assignees or reviewers — either immediately or via email — but not for labels or milestones, since false positives are common there.  If you’re referencing code or variables that look like directives (for example, @user or +dependencies), wrap them in backticks to prevent Reviewable from treating them as inline directives.
@@ -71,7 +75,7 @@ When replying via GitHub, use the `…` > *Quote reply* button to preserve the p
 If Reviewable can't match a reply to a specific discussion, it will post it on the main top-level discussion instead. Plain comments started in GitHub also end up there, while GitHub inline code comments are matched from GitHub's thread and line information when possible.
 :::
 
-::: tip
+::: warning
 Top-level comments sent immediately using the <i class="send icon"/>&nbsp;button do not contain comment links matching them to their corresponding thread, and thus will always post on the main top-level discussion.  This makes it easier for bots to parse these ad-hoc comments.
 :::
 

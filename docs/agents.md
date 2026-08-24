@@ -16,7 +16,7 @@ Just like with a regular PR author or reviewer, each agent that you provision ta
 
 To provision a new agent, open [Account Settings](accountsettings.md) and click **Provision new agent**.  There are three roles to choose from:
 - **Author**: the agent will have its own sub-identity and — crucially — assume the role of an author on any pull requests you create.
-- **Reviewer**: the agent will have its own sub-identity and assume the role of a reviewer on all pull requests, including your own. 
+- **Reviewer**: the agent will have its own sub-identity and assume the role of a reviewer on all pull requests, including your own.
 - **Replicant**: the agent will have no sub-identity of its own and act entirely in your name.
 
 After selecting the agent role you'll be shown its API bearer token.  This is the only time this token will be displayed so be sure to copy it.  Keep this token safe as it provides full access to Reviewable with no further authentication.  You can reissue the token at any time, which will immediately invalidate the old one.

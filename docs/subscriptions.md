@@ -4,7 +4,7 @@ All public repositories and personal private repositories can use Reviewable fre
 
 ## Subscriptions
 
-The Subscription section of the [Admin Center](https://reviewable.io/admin) displays the current subscription or trial status of the organization selected from the dropdown at the top of the page.  Available plans will be listed for organizations that do not have a current subscription.  
+The Subscription section of the [Admin Center](https://reviewable.io/admin) displays the current subscription or trial status of the organization selected from the dropdown at the top of the page.  Available plans will be listed for organizations that do not have a current subscription.
 
 ![reviewable subscriptions ](images/subscriptions.png){width=500px}
 
@@ -32,7 +32,7 @@ Once subscribed, you can change or cancel your plan at any time through the **Ma
 
 ![reviewable manage billing button](images/manage_billing_button.png){width=190px}
 
-If you change your plan during the billing cycle, the new plan takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds. 
+If you change your plan during the billing cycle, the new plan takes effect immediately and fees are prorated which results either in a credit being applied to future invoices, or in additional fees to be charged today.  There are no refunds.
 
 ### Billing manager
 
@@ -52,17 +52,17 @@ If you exceed your plan's quota, Reviewable will continue updating all previousl
 
 #### Checking contributors
 
-The **Contributors history** graph shows the number of active contributors for the past 12 months.  You can view the exact GitHub users from each of the past 3 months by clicking the relevant column in the chart, or by using the dropdown below it.  
+The **Contributors history** graph shows the number of active contributors for the past 12 months.  You can view the exact GitHub users from each of the past 3 months by clicking the relevant column in the chart, or by using the dropdown below it.
 
 ![reviewable contributors history](images/contributors_history.png){width=500px}
 
 #### Changing contributors
 
-To change the number of contributors for your plan, click **Add/Remove Contributors** next to the **Manage Billing** button. 
+To change the number of contributors for your plan, click **Add/Remove Contributors** next to the **Manage Billing** button.
 
 ![reviewable change contributors admin center](images/change_contributors_1.png){width=500px}
 
-This will take you to the Stripe billing portal where you can then **Adjust plan** and add or remove the quantity of contributors. 
+This will take you to the Stripe billing portal where you can then **Adjust plan** and add or remove the quantity of contributors.
 
 ![reviewable change contributors stripe](images/change_contributors_2.png){width=500px}
 

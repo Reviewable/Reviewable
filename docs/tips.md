@@ -8,18 +8,10 @@ Here are some articles and blog posts on code reviews that we found worth readin
 - [Getting the most out of the sidebar](https://www.reviewable.io/blog/introducing-the-long-awaited-sidebar/)
 - [Reviewable MCP server & agent workflows](https://www.reviewable.io/blog/we-built-an-mcp-server/)
 
-
 Check out the [Reviewable Blog](https://www.reviewable.io/blog/) for more walkthroughs, configuration guides, changelogs, and best practices.
 
 ## Videos
-Here's a walkthrough of a real code review where we kibbitz and offer tips on using Reviewable:
-- [Adam Storm from CockroachDB reviews some code](https://www.youtube.com/watch?v=w3cgXBD7ErQ)
-
-… and here's a [collection](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/) of tips in screencast format if that's what you prefer:
-- [What's the fastest way to check out your review code?](https://www.youtube.com/watch?v=JqFGBZa7YGg)
-- [Keyboard shortcuts for efficient reviews](https://www.youtube.com/watch?v=xuJ2PGFprBE)
-- [Customizing keyboard shortcuts](https://www.youtube.com/watch?v=lg2tvhTTQNE)
-- [Customizing code review completion conditions](https://www.youtube.com/watch?v=mIwg3zRpSQE)
+Here's [a walkthrough](https://www.youtube.com/watch?v=w3cgXBD7ErQ) of a real code review where we kibbitz and offer tips on using Reviewable.  We also have a [collection](https://www.youtube.com/channel/UCosLEhkOCx39oEPS9gaF0Gw/) of tips in screencast format if that's what you prefer.
 
 ## Visual tweaks
 
@@ -175,7 +167,7 @@ git log -n 1 --oneline FETCH_HEAD
 
 ## Set diff bounds via the review URL
 
-You can set specific diff bounds when opening a review.  This can be useful when you want reviewers to see all changes across all revisions regardless of prior reviews (for example, during a final review). 
+You can set specific diff bounds when opening a review.  This can be useful when you want reviewers to see all changes across all revisions regardless of prior reviews (for example, during a final review).
 
 Add `#rMM..rNN` to the end of a review URL to apply those diff bounds across all files on load. For example:
 ```text
