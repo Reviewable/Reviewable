@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> restore archived reviews containing agent participation without failing their pull request sync. <!-- server -->
-- <kbd>Fix:</kbd> place newly received discussions at their mapped diff lines. <!-- client -->
 
 <sub>2026 - 08</sub>
 
+- <kbd>Fix:</kbd> place newly received discussions at their mapped diff lines. <!-- client 7900 -->
 - <kbd>Fix:</kbd> prevent pull request syncs from repeatedly failing when the repository connector has lost access but an alternative admin remains available. <!-- server 4959 -->
 - <kbd>Adm:</kbd> improve recovery from sustained Firebase timeouts while avoiding unnecessary connection bounces during ordinary disconnects. <!-- server 4959 -->
 - <kbd>Fix:</kbd> prevent agent timeouts on file-related actions. <!-- client 7898 -->
