@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid dashboard errors when leaving a review. <!-- client -->
+
 <sub>2026 - 08</sub>
 
 - <kbd>Fix:</kbd> provide accurate unreviewed file counts on the dashboard for reviews with renames or affected by completion-condition output. <!-- client 7901 -->
