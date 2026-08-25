@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> provide accurate unreviewed file counts on the dashboard for reviews with renames or affected by completion-condition output. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> keep dashboard file counters visible and attention-colored while exact personal counts are being refreshed. <!-- client -->
-- <kbd>Upd:</kbd> show file counts for reviews that are too large to load on the dashboard. <!-- client -->
-- <kbd>Upd:</kbd> reduce dashboard data usage by reusing cached file and discussion summaries after a review is visited. <!-- client -->
-
 <sub>2026 - 08</sub>
 
+- <kbd>Fix:</kbd> provide accurate unreviewed file counts on the dashboard for reviews with renames or affected by completion-condition output. <!-- client 7901 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> keep dashboard file counters visible and attention-colored while exact personal counts are being refreshed. <!-- client 7901 -->
+- <kbd>Upd:</kbd> show file counts for reviews that are too large to load on the dashboard. <!-- client 7901 -->
+- <kbd>Upd:</kbd> reduce dashboard data usage by reusing cached file and discussion summaries after a review is visited. <!-- client 7901 -->
 - <kbd>Fix:</kbd> restore archived reviews containing agent participation without failing their pull request sync. <!-- server 4961 -->
 - <kbd>Fix:</kbd> place newly received discussions at their mapped diff lines. <!-- client 7900 -->
 - <kbd>Fix:</kbd> prevent pull request syncs from repeatedly failing when the repository connector has lost access but an alternative admin remains available. <!-- server 4959 -->
