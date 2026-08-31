@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't reveal the edge of agent hats in collapsed reviewer avatars. <!-- client -->
 - <kbd>Fix:</kbd> avoid dashboard errors when leaving a review. <!-- client -->
 
 <sub>2026 - 08</sub>
