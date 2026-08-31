@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> keep declaration headers aligned with the diff columns. <!-- client -->
 - <kbd>Fix:</kbd> don't reveal the edge of agent hats in collapsed reviewer avatars. <!-- client -->
 - <kbd>Fix:</kbd> avoid dashboard errors when leaving a review. <!-- client -->
 
