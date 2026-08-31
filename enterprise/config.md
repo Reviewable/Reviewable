@@ -20,21 +20,17 @@ Take note of the Client ID and Client Secret at the top of the application's das
 
 Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  You don't need to enable Google Analytics.
 
-When your project is ready, go to _Build_ → _Realtime Database_ and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.
+When your project is ready, go to _Databases & Storage_ → _Realtime Database_ and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.  Once it's created, note the database URL shown at the top of the page (e.g. `https://your-project-default-rtdb.firebaseio.com`) — you'll need it below.
 
-When that's done, go to _Build_ → _Authentication_ and click _Get Started_.  Reviewable doesn't actually use Firebase Authentication so there's nothing more to do here (leave all the providers disabled), but this is the easiest way to have Firebase create a generic Web API Key for you.
+You'll need to gather a few things for configuring Reviewable:
 
-Finally go to your Project Settings and prepare the following for configuring Reviewable:
-
-![Firebase project settings](images/firebase_project_settings.png)
-
-1. On the _General_ tab, locate your Web API Key:
-
-![Firebase Web API Key](images/firebase_web_api_key.png)
-
-2. On the _Service accounts_ tab, in the _Firebase Admin SDK_ section, create a service account, then locate your database name as the first part of the database URL and generate a new private key:
+**Private Key:** In the Firebase console, go to the _Settings_ → _Service accounts_ tab, in the _Firebase Admin SDK_ section, and generate a new private key. (The `databaseURL` shown there should match what you noted above.)
 
 ![Firebase service account private key](images/firebase_private_key.png)
+
+**Web API Key:** Your Web API Key isn't reliably shown on the Firebase Project's _Settings_ → _General_ tab unless you've registered an app there, which isn't necessary in this case. Instead, you can open the [Google Cloud console's Credentials page](https://console.cloud.google.com/apis/credentials) for this same project (select it from the project switcher at the top) and copy the value under **Browser key (auto created by Firebase)**:
+
+![Google Cloud Console Credentials](images/google_cloud_console_credentials.png)
 
 ### Runtime expectations
 
