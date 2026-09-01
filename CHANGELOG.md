@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> successfully compact reviews with discussions whose diffs span a file rename. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> keep declaration headers aligned with the diff columns. <!-- client 7902 -->
