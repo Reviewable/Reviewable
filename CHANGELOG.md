@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> keep newly received hidden discussions attached to their mapped diff lines. <!-- client -->
 - <kbd>Fix:</kbd> successfully compact reviews with discussions whose diffs span a file rename. <!-- client -->
 
 <sub>2026 - 09</sub>
