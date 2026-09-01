@@ -1,8 +1,8 @@
-<sub>Upcoming</sub>
+<sub>2026 - 09</sub>
 
-- <kbd>Fix:</kbd> keep declaration headers aligned with the diff columns. <!-- client -->
-- <kbd>Fix:</kbd> don't reveal the edge of agent hats in collapsed reviewer avatars. <!-- client -->
-- <kbd>Fix:</kbd> avoid dashboard errors when leaving a review. <!-- client -->
+- <kbd>Fix:</kbd> keep declaration headers aligned with the diff columns. <!-- client 7902 -->
+- <kbd>Fix:</kbd> don't reveal the edge of agent hats in collapsed reviewer avatars. <!-- client 7902 -->
+- <kbd>Fix:</kbd> avoid dashboard errors when leaving a review. <!-- client 7902 -->
 
 <sub>2026 - 08</sub>
 
