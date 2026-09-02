@@ -20,11 +20,11 @@ Take note of the Client ID and Client Secret at the top of the application's das
 
 Next, visit the [Firebase console](https://console.firebase.google.com/) and create a new project.  Set the name to taste (but preferably not just plain "Reviewable"), which will also determine your datastore's permanent name.  You don't need to enable Google Analytics.
 
-When your project is ready, go to _Databases & Storage_ → _Realtime Database_ and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.  Once it's created, note the database URL shown at the top of the page (e.g. `https://your-project-default-rtdb.firebaseio.com`) — you'll need it below.
+When your project is ready, go to _Databases & Storage_ → _Realtime Database_ and click _Create Database_.  You can select any region you want, and you can start with the security rules in locked mode.
 
-You'll need to gather a few things for configuring Reviewable:
+Next, you'll need to gather a few things for configuring Reviewable:
 
-**Private Key:** In the Firebase console, go to the _Settings_ → _Service accounts_ tab, in the _Firebase Admin SDK_ section, and generate a new private key. (The `databaseURL` shown there should match what you noted above.)
+**Database URL & Private Key:** Go to the _Settings_ → _Service accounts_ tab, in the _Firebase Admin SDK_ section, and copy the `databaseURL` (e.g. `https://your-project-default-rtdb.firebaseio.com`). You'll also need to generate a new private key.
 
 ![Firebase service account private key](images/firebase_private_key.png)
 
