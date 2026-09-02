@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server 4964 -->
 - <kbd>Fix:</kbd> improve inline directive toggle contrast in dark mode. <!-- client 7903 -->
 - <kbd>Fix:</kbd> keep inheriting a renamed file's original base when the original path reappears in the base. <!-- client 7903 -->
 - <kbd>Fix:</kbd> don't report a rename when diffing against the base a file that was added in the pull request. <!-- client 7903 -->
