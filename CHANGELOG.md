@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't report a rename when diffing against the base a file that was added in the pull request. <!-- client -->
 - <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server -->
 - <kbd>Fix:</kbd> make the "Try again" button on a failed diff actually retry. <!-- client -->
 - <kbd>Fix:</kbd> reload a private review after signing in. <!-- client -->
