@@ -1,16 +1,16 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> improve inline directive toggle contrast in dark mode. <!-- client -->
-- <kbd>Fix:</kbd> keep inheriting a renamed file's original base when the original path reappears in the base. <!-- client -->
-- <kbd>Fix:</kbd> don't report a rename when diffing against the base a file that was added in the pull request. <!-- client -->
 - <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server -->
-- <kbd>Fix:</kbd> make the "Try again" button on a failed diff actually retry. <!-- client -->
-- <kbd>Fix:</kbd> reload a private review after signing in. <!-- client -->
-- <kbd>Fix:</kbd> keep newly received hidden discussions attached to their mapped diff lines. <!-- client -->
-- <kbd>Fix:</kbd> successfully compact reviews with discussions whose diffs span a file rename. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> improve inline directive toggle contrast in dark mode. <!-- client 7903 -->
+- <kbd>Fix:</kbd> keep inheriting a renamed file's original base when the original path reappears in the base. <!-- client 7903 -->
+- <kbd>Fix:</kbd> don't report a rename when diffing against the base a file that was added in the pull request. <!-- client 7903 -->
+- <kbd>Fix:</kbd> make the "Try again" button on a failed diff actually retry. <!-- client 7903 -->
+- <kbd>Fix:</kbd> reload a private review after signing in. <!-- client 7903 -->
+- <kbd>Fix:</kbd> keep newly received hidden discussions attached to their mapped diff lines. <!-- client 7903 -->
+- <kbd>Fix:</kbd> successfully compact reviews with discussions whose diffs span a file rename. <!-- client 7903 -->
 - <kbd>Fix:</kbd> keep declaration headers aligned with the diff columns. <!-- client 7902 -->
 - <kbd>Fix:</kbd> don't reveal the edge of agent hats in collapsed reviewer avatars. <!-- client 7902 -->
 - <kbd>Fix:</kbd> avoid dashboard errors when leaving a review. <!-- client 7902 -->
