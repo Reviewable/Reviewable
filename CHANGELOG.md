@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> Skip automatic Reviewable badge maintenance on closed and merged pull requests. <!-- server -->
 - <kbd>Fix:</kbd> prevent review publishing from failing when completion state changes during evaluation. <!-- client -->
 
 <sub>2026 - 09</sub>
