@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> Skip automatic Reviewable badge maintenance on closed and merged pull requests. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Upd:</kbd> Skip automatic Reviewable badge maintenance on closed and merged pull requests. <!-- server 4965 -->
 - <kbd>Fix:</kbd> prevent review publishing from failing when completion state changes during evaluation. <!-- client 7904 -->
 - <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server 4964 -->
 - <kbd>Fix:</kbd> improve inline directive toggle contrast in dark mode. <!-- client 7903 -->
