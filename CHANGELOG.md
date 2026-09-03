@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Don't add mentioned organizations to the review's participants list. <!-- server -->
 - <kbd>Fix:</kbd> Prevent organization mentions from causing errors when automatically requesting reviewers. <!-- client -->
 - <kbd>Fix:</kbd> keep unrelated reviews out of “New comments for me.” <!-- client -->
 - <kbd>Fix:</kbd> keep dragging a text selection to the left anchored at the start of the line. <!-- client -->
