@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep dragging a text selection to the left anchored at the start of the line. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> Skip automatic Reviewable badge maintenance on closed and merged pull requests. <!-- server 4965 -->
