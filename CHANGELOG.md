@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prevent review publishing from failing when completion state changes during evaluation. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server 4964 -->
