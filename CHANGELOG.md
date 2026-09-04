@@ -1,16 +1,16 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix<i>(saas)</i>:</kbd> avoid delaying or duplicating completion updates after publishing a review. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> preserve dashboard cache certainty across immediate and publish-on-push publication. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> show exact dashboard file counts when no pending personal updates can affect them. <!-- client -->
-- <kbd>Fix:</kbd> preserve persisted deferrals when evaluating review completion with nothing to publish. <!-- client -->
 - <kbd>Fix:</kbd> Don't add mentioned organizations to the review's participants list. <!-- server -->
-- <kbd>Fix:</kbd> Prevent organization mentions from causing errors when automatically requesting reviewers. <!-- client -->
-- <kbd>Fix:</kbd> keep unrelated reviews out of “New comments for me.” <!-- client -->
-- <kbd>Fix:</kbd> keep dragging a text selection to the left anchored at the start of the line. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> avoid delaying or duplicating completion updates after publishing a review. <!-- client 7905 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> preserve dashboard cache certainty across immediate and publish-on-push publication. <!-- client 7905 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> show exact dashboard file counts when no pending personal updates can affect them. <!-- client 7905 -->
+- <kbd>Fix:</kbd> preserve persisted deferrals when evaluating review completion with nothing to publish. <!-- client 7905 -->
+- <kbd>Fix:</kbd> Prevent organization mentions from causing errors when automatically requesting reviewers. <!-- client 7905 -->
+- <kbd>Fix:</kbd> keep unrelated reviews out of “New comments for me.” <!-- client 7905 -->
+- <kbd>Fix:</kbd> keep dragging a text selection to the left anchored at the start of the line. <!-- client 7905 -->
 - <kbd>Fix:</kbd> Skip automatic Reviewable badge maintenance on closed and merged pull requests. <!-- server 4965 -->
 - <kbd>Fix:</kbd> prevent review publishing from failing when completion state changes during evaluation. <!-- client 7904 -->
 - <kbd>Fix:</kbd> don't capture a commit in two revisions when a force push replaces an obsolete revision with a new commit. <!-- server 4964 -->
