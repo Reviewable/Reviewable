@@ -1,5 +1,9 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> avoid delaying or duplicating completion updates after publishing a review. <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> preserve dashboard cache certainty across immediate and publish-on-push publication. <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> show exact dashboard file counts when no pending personal updates can affect them. <!-- client -->
+- <kbd>Fix:</kbd> preserve persisted deferrals when evaluating review completion with nothing to publish. <!-- client -->
 - <kbd>Fix:</kbd> Don't add mentioned organizations to the review's participants list. <!-- server -->
 - <kbd>Fix:</kbd> Prevent organization mentions from causing errors when automatically requesting reviewers. <!-- client -->
 - <kbd>Fix:</kbd> keep unrelated reviews out of “New comments for me.” <!-- client -->
