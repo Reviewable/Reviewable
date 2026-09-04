@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Truncate file names and avatars in narrow sidebar file matrix. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> Don't add mentioned organizations to the review's participants list. <!-- server 4966 -->
