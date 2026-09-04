@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> Don't add mentioned organizations to the review's participants list. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> Don't add mentioned organizations to the review's participants list. <!-- server 4966 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> avoid delaying or duplicating completion updates after publishing a review. <!-- client 7905 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> preserve dashboard cache certainty across immediate and publish-on-push publication. <!-- client 7905 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> show exact dashboard file counts when no pending personal updates can affect them. <!-- client 7905 -->
