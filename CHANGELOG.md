@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show binary size totals in the file matrix. <!-- client -->
+- <kbd>Fix:</kbd> show byte sizes and size changes for files marked binary or -text in .gitattributes. <!-- client -->
 - <kbd>Fix:</kbd> don't jump to an unrelated file when marking a file reviewed and advancing. <!-- client -->
 - <kbd>Upd:</kbd> Truncate file names and avatars in narrow sidebar file matrix. <!-- client -->
 
