@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> don't accidentally drop sync tasks when GitHub responds with `Retry-After` due to a burst quota overrun. <!-- server -->
 - <kbd>Fix:</kbd> preserve merge-queue status checks during routine syncs so custom completion conditions evaluate the correct check results. <!-- server -->
 - <kbd>Fix:</kbd> keep reviews from getting stuck on "Mapping renamed files" for non-push viewers. <!-- client -->
 - <kbd>Fix:</kbd> show binary size totals in the file matrix. <!-- client -->
