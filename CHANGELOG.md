@@ -7,6 +7,8 @@
 
 <sub>2026 - 09</sub>
 
+<sub>**Enterprise release 4966.7906** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-07 <!-- enterprise 4966.7906 --></sub>
+
 - <kbd>Fix<i>(saas)</i>:</kbd> show pending review marks on cached dashboards and place their reviews in _Working on it_. <!-- client 7906 -->
 - <kbd>Fix:</kbd> keep reviews from getting stuck on "Mapping renamed files" for non-push viewers. <!-- client 7906 -->
 - <kbd>Fix:</kbd> show binary size totals in the file matrix. <!-- client 7906 -->
