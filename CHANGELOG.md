@@ -11,6 +11,8 @@
 - <kbd>Fix:</kbd> don't jump to an unrelated file when marking a file reviewed and advancing. <!-- client -->
 - <kbd>Upd:</kbd> Truncate file names and avatars in narrow sidebar file matrix. <!-- client -->
 
+<sub>2026 - 09</sub>
+
 <sub>**Enterprise release 4967.7907** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-08 <!-- enterprise 4967.7907 --></sub>
 
 - <kbd>Fix<i>(enterprise)</i>:</kbd> fix the publish-on-push regression in encrypted databases that was introduced in v4966.7906. <!-- server 4967 -->
