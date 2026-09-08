@@ -1,5 +1,7 @@
 <sub>2026 - 09</sub>
 
+<sub>**Enterprise release 4967.7907** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-08 <!-- enterprise 4967.7907 --></sub>
+
 - <kbd>Fix<i>(enterprise)</i>:</kbd> fix the publish-on-push regression in encrypted databases that was introduced in v4966.7906. <!-- server 4967 -->
 - <kbd>Fix:</kbd> Preserve last-known reviewer permissions when GitHub permission lookups fail. <!-- server 4967 -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> prevents users from obtaining a long-term access token by issuing a guest seat upgrade request with a bogus organization.  This was merely a license provisioning bug with no security implications. <!-- server 4967 -->
