@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> preserve reviewer designations with unfamiliar modifiers. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> Prevent occasional false approval check failures while a required review is still in progress. <!-- server 4968 -->
