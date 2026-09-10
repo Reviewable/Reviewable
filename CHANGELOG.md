@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Prevent occasional false approval check failures while a required review is still in progress. <!-- server -->
 - <kbd>Fix:</kbd> avoid spurious status permission errors when a review revision advances. <!-- server -->
 - <kbd>Fix:</kbd> Preserve last-known reviewer permissions when GitHub permission lookups fail. <!-- server -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> prevents users from obtaining a long-term access token by issuing a guest seat upgrade request with a bogus organization.  This was merely a license provisioning bug with no security implications. <!-- server -->
