@@ -7,13 +7,14 @@
 - <kbd>Adm:</kbd> correctly detect API quota errors on GitHub REST requests.  (Regression introduced in v4814.7709.) <!-- server -->
 - <kbd>Fix:</kbd> don't accidentally drop sync tasks when GitHub responds with `Retry-After` due to a burst quota overrun. <!-- server -->
 - <kbd>Fix:</kbd> preserve merge-queue status checks during routine syncs so custom completion conditions evaluate the correct check results. <!-- server -->
-- <kbd>Fix:</kbd> keep reviews from getting stuck on "Mapping renamed files" for non-push viewers. <!-- client -->
-- <kbd>Fix:</kbd> show binary size totals in the file matrix. <!-- client -->
-- <kbd>Fix:</kbd> show byte sizes and size changes for files marked binary or -text in .gitattributes. <!-- client -->
-- <kbd>Fix:</kbd> don't jump to an unrelated file when marking a file reviewed and advancing. <!-- client -->
-- <kbd>Upd:</kbd> Truncate file names and avatars in narrow sidebar file matrix. <!-- client -->
 
 <sub>2026 - 09</sub>
+
+- <kbd>Fix:</kbd> keep reviews from getting stuck on "Mapping renamed files" for non-push viewers. <!-- client 7908 -->
+- <kbd>Fix:</kbd> show binary size totals in the file matrix. <!-- client 7908 -->
+- <kbd>Fix:</kbd> show byte sizes and size changes for files marked binary or -text in .gitattributes. <!-- client 7908 -->
+- <kbd>Fix:</kbd> don't jump to an unrelated file when marking a file reviewed and advancing. <!-- client 7908 -->
+- <kbd>Upd:</kbd> Truncate file names and avatars in narrow sidebar file matrix. <!-- client 7908 -->
 
 <sub>**Enterprise release 4967.7907** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-08 <!-- enterprise 4967.7907 --></sub>
 
