@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent agent sessions from obtaining unrestricted seat-upgrade tokens. <!-- client -->
+- <kbd>Adm<i>(enterprise)</i>:</kbd> prevent agents from bypassing their permission restrictions through guest-seat upgrades. <!-- client -->
 - <kbd>Fix:</kbd> preserve reviewer designations with unfamiliar modifiers. <!-- client -->
 
 <sub>2026 - 09</sub>
