@@ -61,7 +61,7 @@ The `reviewable` npm package can be run in one of two ways:
 
 Execute `npx -y reviewable@latest mcp` to start the MCP server (or `reviewable mcp` if installed globally).  You can run this directly from a terminal to verify it works.
 
-If you're on Linux and the MCP server is timing out on startup you may need to wrap the invocation above in `xvfb-run -a` to provide enough of a display service for Chrome to load Reviewable.  It doesn't happen to everyone and Chrome should be able to work without a display in headless mode but here we are.
+If you're on Linux and the MCP server is timing out on startup, you may need to wrap the invocation above in `xvfb-run -a` to provide enough of a display for Chrome to load Reviewable.  Although Chrome should be able to work without a display in headless mode, some users have found this a necessary workaround.
 
 ::: tip
 Wondering what to do next? Check out our [MCP server blog post](https://www.reviewable.io/blog/we-built-an-mcp-server/) for a few workflow ideas.
