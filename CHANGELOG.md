@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Adm:</kbd> Prevent task retry storms when GitHub reports inconsistent API quota. <!-- server -->
 - <kbd>Fix:</kbd> prevent agent sessions from obtaining unrestricted seat-upgrade tokens. <!-- client -->
 - <kbd>Adm<i>(enterprise)</i>:</kbd> prevent agents from bypassing their permission restrictions through guest-seat upgrades. <!-- client -->
 - <kbd>Fix:</kbd> preserve reviewer designations with unfamiliar modifiers. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Adm:</kbd> Prevent task retry storms when GitHub reports inconsistent API quota. <!-- server 4970 -->
 - <kbd>Fix:</kbd> Prevent occasional false approval check failures while a required review is still in progress. <!-- server 4968 -->
 - <kbd>Fix:</kbd> avoid spurious status permission errors when a review revision advances. <!-- server 4968 -->
 - <kbd>Fix:</kbd> Preserve last-known reviewer permissions when GitHub permission lookups fail. <!-- server 4968 -->
