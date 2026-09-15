@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to <!-- client -->
 - <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server -->
 - <kbd>Upd:</kbd> Make tildes in code diffs easier to read. <!-- client -->
 - <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server -->
