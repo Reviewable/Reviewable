@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server -->
-- <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server 4971 -->
+- <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server 4971 -->
 - <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to <!-- client 7910 -->
 - <kbd>Upd:</kbd> Make tildes in code diffs easier to read. <!-- client 7910 -->
 - <kbd>Upd:</kbd> automatically group deleted files in the file matrix. <!-- client 7910 -->
