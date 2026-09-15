@@ -1,16 +1,16 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to <!-- client -->
 - <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server -->
-- <kbd>Upd:</kbd> Make tildes in code diffs easier to read. <!-- client -->
 - <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server -->
-- <kbd>Upd:</kbd> automatically group deleted files in the file matrix. <!-- client -->
-- <kbd>Fix:</kbd> prevent agent sessions from obtaining unrestricted seat-upgrade tokens. <!-- client -->
-- <kbd>Adm<i>(enterprise)</i>:</kbd> prevent agents from bypassing their permission restrictions through guest-seat upgrades. <!-- client -->
-- <kbd>Fix:</kbd> preserve reviewer designations with unfamiliar modifiers. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to <!-- client 7910 -->
+- <kbd>Upd:</kbd> Make tildes in code diffs easier to read. <!-- client 7910 -->
+- <kbd>Upd:</kbd> automatically group deleted files in the file matrix. <!-- client 7910 -->
+- <kbd>Fix:</kbd> prevent agent sessions from obtaining unrestricted seat-upgrade tokens. <!-- client 7910 -->
+- <kbd>Adm<i>(enterprise)</i>:</kbd> prevent agents from bypassing their permission restrictions through guest-seat upgrades. <!-- client 7910 -->
+- <kbd>Fix:</kbd> preserve reviewer designations with unfamiliar modifiers. <!-- client 7910 -->
 - <kbd>Adm:</kbd> Prevent task retry storms when GitHub reports inconsistent API quota. <!-- server 4970 -->
 - <kbd>Fix:</kbd> Prevent occasional false approval check failures while a required review is still in progress. <!-- server 4968 -->
 - <kbd>Fix:</kbd> avoid spurious status permission errors when a review revision advances. <!-- server 4968 -->
