@@ -2,22 +2,45 @@
 
 This chapter explains in detail how to manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.
 
+![reviewable file matrix diff bounds](images/filematrix_8.png){width=550px}
 
 ## Revision cells
 
 A file's evolution over the course of the pull request is summarized in both the file matrix and the individual file panels by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.
 
-![reviewable file matrix diff bounds](images/filematrix_8.png){width=550px}
-
 The parentheses in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
 
 ![revision cells demo](images/revision_cells.gif)
 
-Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks:
 
-![reviewable file matrix status](images/filematrix_9.png){width=320px}
+### Revision markers
 
-You can view further explanations for each color, icon, settings toggle, and colored numbers using [Contextual Help](index.md#help-on-using-reviewable).
+Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.  You can view further explanations for each color, icon, settings toggle, and colored numbers using [Contextual Help](index.md#help-on-using-reviewable).
+
+State | Meaning
+:----:|---------
+<span class="revision kept"></span> | File kept unchanged, or not in the PR.
+<span class="revision added"></span> | File created.
+<span class="revision modified"></span> | File modified.
+<span class="revision removed"></span> | File deleted.
+<span class="revision kept"><span class="prior action modified"></span></span> | The inner swatch shows the file's action against the matched prior [rebased](#rebasing) revision, while the outer swatch shows its action against the immediately preceding revision.
+<i class="cell renamed icon"></i> | File renamed.
+<i class="cell reverted icon"></i> | File reverted to base.
+… | Some revisions are hidden to fit the available space. Click it to open the full file matrix, or hover over it to show the current diff bounds.
+<i class="cell reviewed icon"></i> | Last revision reviewed by you.
+<i class="cell reviewed icon green"></i> | Last revision reviewed by you (draft).
+<span class="self-review disc"></span> | Last revision self-reviewed by you.
+<span class="self-review disc green"></span> | Last revision self-reviewed by you (draft).
+
+### Base change states
+
+A revision cell can also flag that a file picked up a change from the *base* branch at that revision — independently of whatever else was pushed to the PR — since Reviewable only computes this once a merge, rebase, or similar actually lands a base commit into a revision. Hover over the cell and press `h` to see which of the following states applies, via [Contextual Help](index.md#help-on-using-reviewable):
+
+State | Meaning
+:----:|---------
+<span class="base changes only">⊥</span> | **Base changes only.** The revision picked up a change from the base branch and the file has no further edits beyond what that merge or rebase brought in.
+<span class="base changes mixed">⊥</span> | **Base updated and modified in revision.** Same as above, but the revision also contains hand-authored edits to the file beyond what the base merge or rebase introduced.
+<span class="base changes missing">⊥</span> | **Base changes not reflected in revision.** The base branch changed, but this revision's file content didn't change to reflect it — the file is stale relative to base.
 
 ## Mark as reviewed {#mark-reviewed}
 
@@ -40,7 +63,11 @@ Review marks remain in a draft state and are only visible to you until [publishe
 
 ## File review state
 
-While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="designation anyone icon"/> shows the file's overall state at the latest revision.  The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
+While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="designation anyone icon"/> shows the file's overall state at the latest revision.
+
+![reviewable file matrix options](images/filematrix_2.png){width=500}
+
+The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
 
 The various possible states are:
 
