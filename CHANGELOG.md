@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> Make tildes in code diffs easier to read. <!-- client -->
 - <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server -->
 - <kbd>Upd:</kbd> automatically group deleted files in the file matrix. <!-- client -->
 - <kbd>Fix:</kbd> prevent agent sessions from obtaining unrestricted seat-upgrade tokens. <!-- client -->
