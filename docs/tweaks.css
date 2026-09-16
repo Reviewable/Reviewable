@@ -1,3 +1,9 @@
+// #region hide-self-review-markers
+.self-review.disc {
+  display: none !important;
+}
+// #endregion hide-self-review-markers
+
 // #region show-line-numbers
 div[data-line-number]:not([data-line-number="0"]):before {
   content:attr(data-line-number);
