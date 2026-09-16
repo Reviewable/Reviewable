@@ -2,8 +2,7 @@
 
 - <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server 4971 -->
 - <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server 4971 -->
-- <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to attract the eye even when Reviewable thinks you shouldn't be publishing
-yet. <!-- client 7910 -->
+- <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to attract the eye even when Reviewable thinks you shouldn't be publishing yet. <!-- client 7910 -->
 - <kbd>Upd:</kbd> Make tildes in code diffs easier to read. <!-- client 7910 -->
 - <kbd>Upd:</kbd> automatically group deleted files in the file matrix. <!-- client 7910 -->
 - <kbd>Fix:</kbd> prevent agent sessions from obtaining unrestricted seat-upgrade tokens. <!-- client 7910 -->
