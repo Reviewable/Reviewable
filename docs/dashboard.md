@@ -39,6 +39,8 @@ Counters reflect the same information as you'll see on the review page:
 
 ![reviewable review state](images/reviews_5.png){width=350}
 
+Authors see a grey shared unreviewed-file count with a small red dot for remaining self-review. The dot tracks personal progress separately from this shared count.
+
 If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs, but doesn't give access to merge options — open the review page to access those.
 
 Other possible states include **Merged**, **Closed**, and **Archived**, which automatically applies to reviews that have been inactive for some time. Simply open an archived review to unarchive it.
@@ -90,6 +92,8 @@ Filter | Meaning
 `±watched` | PRs from repos you're watching
 <code>±by:<i>username</i></code> | PRs authored by given user
 <code>±with:<i>username</i></code> | PRs involving given user (or team)
+
+Your own files contribute to `+needs:me` and `+red` only after you [start self-reviewing](reviews.md#author-self-review), including with a draft mark. Discussions and other responsibilities still apply. Author files never match `+deferred`.
 
 ::: tip
 Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
