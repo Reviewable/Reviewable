@@ -21,7 +21,7 @@ Throughout this guide, we'll often refer to users by the role they play in a rev
 * **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 * **Lurker**: someone who has viewed the review but hasn't left a comment, isn't the author, wasn't requested as a reviewer, and wasn't @-mentioned in any discussion.
 
-Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead. To start self-reviewing, mark any file as self-reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review; discussions are always included as usual. If the completion condition designates you as a reviewer, file navigation and attention are enabled immediately, without a prior mark.
+Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead. To start self-reviewing, mark any file as reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review; discussions are always included as usual. If the completion condition designates you as a reviewer, file navigation and attention are enabled immediately, without a prior mark.
 
 ## Publishing your review {#publish}
 
@@ -188,7 +188,7 @@ This sidebar item summarizes the changes you're currently looking at and links t
 
 Some of the sidebar items have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
 
-For authors, the file counter is always grey and shows shared unreviewed files. A <span class="ui grey file-counter label">red&nbsp;dot<span class="self-review disc"></span></span> indicates files left to self-review. You can [hide self-review markers](tips.md#hide-self-review-markers).
+For authors, the file counter is grey and shows shared unreviewed files. A <span class="ui grey file-counter label">red&nbsp;dot<span class="self-review disc"></span></span> indicates files left to self-review. Authors designated as reviewers by the completion condition get normal red review counters instead. You can [hide self-review markers](tips.md#hide-self-review-markers).
 
 ::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
