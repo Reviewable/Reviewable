@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Allow completion-condition file groups to take priority over autogroups. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server 4971 -->
