@@ -21,11 +21,7 @@ Throughout this guide, we'll often refer to users by the role they play in a rev
 * **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 * **Lurker**: someone who has viewed the review but hasn't left a comment, isn't the author, wasn't requested as a reviewer, and wasn't @-mentioned in any discussion.
 
-## Author self-review
-
-Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead.
-
-To start self-reviewing, mark any file as self-reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review. Undoing that draft opts out again if you have no other self-review marks. **Next** continues to include discussions as usual.
+Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead. To start self-reviewing, mark any file as self-reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review; discussions are always included as usual.
 
 ## Publishing your review {#publish}
 
@@ -112,7 +108,7 @@ Below the publish button there may appear <span class="red label">red</span> cou
 
 ### Deferring a review
 
-When you publish as a reviewer and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.  These counters are visible in the [review sidebar](#counters) as well as on the [reviews dashboard](dashboard#review-state) as seen bellow.
+When you publish and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.  These counters are visible in the [review sidebar](#counters) as well as on the [reviews dashboard](dashboard#review-state) as seen bellow.
 
 ![reviewable deferral dashboard](images/deferring_dashboard.png)
 
@@ -168,7 +164,7 @@ On the top-left of the status bar you'll find the bunny icon.  Click it to displ
 
 ![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 
-At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state. When there are items needing your attention, a **Next** <i class="forward icon"></i> button takes you to the next one; authors' files are included only after they [start self-reviewing](#author-self-review). Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
+At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state. When there are items needing your attention, a **Next** <i class="forward icon"></i> button takes you to the next one; authors' files are included only after they [start self-reviewing](#user-roles). Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
 
 The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging or double-clicking its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement and collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
 
@@ -192,7 +188,7 @@ This sidebar item summarizes the changes you're currently looking at and links t
 
 Some of the sidebar items have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
 
-For authors, the file counter is always grey and shows shared unreviewed files, not files left to self-review. A small red dot indicates remaining self-review at the current diff bounds. You can [hide self-review markers](tips.md#hide-self-review-markers).
+For authors, the file counter is always grey and shows shared unreviewed files. A <span class="ui grey file-counter label">red&nbsp;dot<span class="self-review disc"></span></span> indicates files left to self-review. You can [hide self-review markers](tips.md#hide-self-review-markers).
 
 ::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
