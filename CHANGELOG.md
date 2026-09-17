@@ -1,5 +1,9 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> Ignore merged and closed PRs when detecting conflicts over Reviewable's GitHub commit status. <!-- server -->
+- <kbd>Fix:</kbd> Shorten oversized PR conflict descriptions so GitHub accepts the error status. <!-- server -->
+- <kbd>Fix:</kbd> Prevent a recently closed PR from overwriting another open PR's review status while synchronization is pending. <!-- server -->
+- <kbd>Fix:</kbd> Use the correct repository names for conflicting fork PRs and handle deleted head forks. <!-- server -->
 - <kbd>Upd:</kbd> Allow completion-condition file groups to take priority over autogroups. <!-- client -->
 
 <sub>2026 - 09</sub>
