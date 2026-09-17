@@ -132,11 +132,13 @@ Review marks remain in a draft state and are only visible to you until [publishe
 
 ### File review state
 
-While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="designation anyone icon"/> shows the file's overall state at the latest revision.
+While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="red designation anyone icon"/> shows the file's overall state at the latest revision.  The two may not always agree: for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
 
 ![reviewable file matrix review state chip](images/filematrix_2.png){width=520}
 
-The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
+::: tip
+Chips for sufficiently reviewed files are hidden in the file matrix until hovered over, making it easy to see what still needs review.  File chips are always shown in individual file panel headers.
+:::
 
 The various possible states are:
 
@@ -151,9 +153,9 @@ State | Meaning
 <i class="designation done icon"/>&nbsp;| The file has been sufficiently reviewed.
 <i class="green designation done icon"/>&nbsp;| The file will be sufficiently reviewed once you've published your review.
 
-Clicking on the state icon <i class="designation done icon"/> will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.
+Clicking on the state icon <i class="red designation anyone icon"/> will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.
 
-![file review state details](images/designated_reviewers_details.png){width=520px}
+![reviewable file state review chip](images/file_state_review_chip.gif){width=550px}
 
 By default, Reviewable can only tell who has reviewed a file and infer some basic information about who should review it from a `CODEOWNERS` file, if present.  To unlock the full power of this feature — including indicating the scope (e.g., "security" or "accessibility") of each requested review, when a scope has been satisfied, or whether only specific people's reviews are needed — you'll need to [create designated reviewers](admincenter.md#designated-reviewers) in the custom review completion condition.
 
