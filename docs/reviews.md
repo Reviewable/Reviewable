@@ -21,7 +21,7 @@ Throughout this guide, we'll often refer to users by the role they play in a rev
 * **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 * **Lurker**: someone who has viewed the review but hasn't left a comment, isn't the author, wasn't requested as a reviewer, and wasn't @-mentioned in any discussion.
 
-Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead. To start self-reviewing, mark any file as self-reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review; discussions are always included as usual.
+Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead. To start self-reviewing, mark any file as self-reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review; discussions are always included as usual. If the completion condition designates you as a reviewer, file navigation and attention are enabled immediately, without a prior mark.
 
 ## Publishing your review {#publish}
 
@@ -164,7 +164,7 @@ On the top-left of the status bar you'll find the bunny icon.  Click it to displ
 
 ![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 
-At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state. When there are items needing your attention, a **Next** <i class="forward icon"></i> button takes you to the next one; authors' files are included only after they [start self-reviewing](#user-roles). Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
+At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state. When there are items needing your attention, a **Next** <i class="forward icon"></i> button takes you to the next one; authors' files are included once they [start self-reviewing or are designated as reviewers](#user-roles). Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
 
 The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging or double-clicking its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement and collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
 
