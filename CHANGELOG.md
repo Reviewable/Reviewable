@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Include requested teams in review status webhooks. <!-- server -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Upd:</kbd> make author self-review less intrusive for users who are not interested in it. <!-- client 7912 -->
