@@ -4,10 +4,10 @@
 - <kbd>Fix:</kbd> Shorten oversized PR conflict descriptions so GitHub accepts the error status. <!-- server -->
 - <kbd>Fix:</kbd> Prevent a recently closed PR from overwriting another open PR's review status while synchronization is pending. <!-- server -->
 - <kbd>Fix:</kbd> Use the correct repository names for conflicting fork PRs and handle deleted head forks. <!-- server -->
-- <kbd>Upd:</kbd> Allow completion-condition file groups to take priority over autogroups. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Upd:</kbd> Allow completion-condition file groups to take priority over autogroups. <!-- client 7911 -->
 - <kbd>Fix:</kbd> compact published and draft codeblocks. <!-- server 4971 -->
 - <kbd>Upd:</kbd> warn repository connectors about potentially misconfigured GitHub webhooks instead of automatically repairing hooks after invalid deliveries. <!-- server 4971 -->
 - <kbd>Upd:</kbd> add a draft counter to the publish button, and color it red to attract the eye even when Reviewable thinks you shouldn't be publishing yet. <!-- client 7910 -->
