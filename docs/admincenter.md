@@ -777,7 +777,9 @@ When `designatedReviewers` is inferred from `CODEOWNERS`, `{builtin: 'anyone'}` 
 A timestamp in milliseconds since the epoch for when the completion condition should be re-evaluated.  Useful if some of your logic depends on the current time.  You can obtain the current time in a compatible format via `Date.getTime()`.  If you try to schedule a refresh less than 5 minutes from now it'll get clamped to 5 minutes, but on-demand refreshes (e.g., triggered by a review visit) will always fire immediately.  Any subsequent executions of the condition will override previous `refreshTimestamp`s.
 
 #### `webhook`
-A URL string that Reviewable will send review status update notifications to.  You can hook this up directly to a Slack webhook or, through something like [Zapier](https://zapier.com/) or [Make](https://www.make.com/), to most any other communication tool.  Specifically, whenever the `completed`, `description`,  `pendingReviewers`, or merge state of a review changes, and after a short debouncing delay, Reviewable will `POST` a JSON structure like the following to the webhook URL:
+A URL string that Reviewable will send review status update notifications to.  You can hook this up directly to a Slack webhook or, through something like [Zapier](https://zapier.com/) or [Make](https://www.make.com/), to most any other communication tool.
+
+After a short debouncing delay, Reviewable will `POST` a notification when the review status description, reviewers being waited on, recipients with unread comments, pull request labels, review stage, or requested teams change.  Closing or merging the pull request changes the status description and can also trigger a notification.  The JSON payload looks like this:
 ```js
 {
   // for Slack, this is Slack's Markdown flavor. See https://www.markdownguide.org/tools/slack/ for details.
@@ -790,7 +792,7 @@ A URL string that Reviewable will send review status update notifications to.  Y
   "html": "<b><a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Demo code review (shared)</a></b> &emsp; [Reviewable/demo #1]<br>Review in progress: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
   // for email gateways
   "subject": "Demo code review (shared) [Reviewable/demo #1]",
-  "key": "Reviewable/demo/1",  // you can use this identifier for threading
+  "key": "reviewable/demo/1",  // you can use this identifier for threading
 
   // The following is meant for other workflows that separate the subject from the body, such as email-like applications:
   "htmlBody": "<a href=\"https://reviewable.io/reviews/reviewable/demo/1\">Review in progress</a>: 1 of 4 files reviewed, 2 unresolved discussions<br>Waiting on: <b>pkaminski</b>",
@@ -807,15 +809,17 @@ A URL string that Reviewable will send review status update notifications to.  Y
     "pullRequest": {
       "title": "Demo code review (shared)",
       "owner": "Reviewable",
-      "repository": "Reviewable",
+      "repository": "demo",
       "number": 1,
       "state": "open",
-      "labels": ["bug"]
+      "labels": ["bug"],
+      "requestedTeams": ["maintainers"]
     },
     "review": {
       "url": "https://reviewable.io/reviews/Reviewable/demo/1",
       "completed": false,
-      "status": "0 of 4 files reviewed, 3 unresolved discussions"
+      "status": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions",
+      "stage": "Review"
     },
     "usernames": {
       "author": "pkaminski",
@@ -825,7 +829,8 @@ A URL string that Reviewable will send review status update notifications to.  Y
   },
 }
 ```
-If a webhook request fails, an error will be displayed to repository admins on the corresponding review page.  (The error message returned by your server will technically be accessible to anyone with pull permissions on the repo, but the webhook URL itself will never be disclosed.)
+
+If delivery fails after retries or encounters a permanent error, an error will be displayed to repository admins on the corresponding review page.  (The error message returned by your server will technically be accessible to anyone with pull permissions on the repo, but the webhook URL itself will never be disclosed.)
 
 ::: tip
 Archived reviews will not generally update their state even if relevant events occur, and hence will not trigger the webhook.
