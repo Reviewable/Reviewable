@@ -21,6 +21,10 @@ To keep things clean and simple, Reviewable doesn't expose many UI customization
 The examples below are sourced from https://experiments.reviewable.io, which can generate a stylesheet for selected UI tweaks that you can copy or reference by URL.
 :::
 
+### Hide self-review markers
+
+Choose **Hide self-review markers** in [UI experiments](https://experiments.reviewable.io), then paste the generated URL into [Custom stylesheet URL](accountsettings.md#custom-stylesheet). This hides self-review dots in review buttons, revision cells, and sidebar/dashboard file counters without changing self-review behavior.
+
 ### Line numbers
 
 Reviewable doesn't show line numbers in the diff for a number of reasons &mdash; there's a long discussion in [issue #147](https://github.com/Reviewable/Reviewable/issues/147).  The snippet below overrides this.  It's not perfect but it should work in the vast majority of cases:

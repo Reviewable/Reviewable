@@ -21,7 +21,7 @@ Throughout this guide, we'll often refer to users by the role they play in a rev
 * **Mentionee**: someone other than the author that was @-mentioned in a discussion (except the main top-level one).  Note that a mentionee will become a reviewer if they start a new discussion or mark a file as reviewed.
 * **Lurker**: someone who has viewed the review but hasn't left a comment, isn't the author, wasn't requested as a reviewer, and wasn't @-mentioned in any discussion.
 
-Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead.
+Author self-review marks are [visually distinct](files#mark-reviewed) from normal review marks and don't count towards review completion by default. Repository admins can use a [custom completion condition](admincenter.md#completion-condition) to count or require them instead. To start self-reviewing, mark any file as reviewed. Your first mark, even an unpublished draft, makes **Next** include files needing self-review; discussions are always included as usual. If the completion condition designates you as a reviewer, file navigation and attention are enabled immediately, without a prior mark.
 
 ## Publishing your review {#publish}
 
@@ -104,19 +104,21 @@ The draft has an LGTM button that you can use to approve the pull request.  (See
 
 To see a preview of how your published message will appear on GitHub, click **Preview Publish** under the Review summary text field. You can click on any of your comments in this preview to navigate to the corresponding draft in the review.
 
-Below the publish button there may appear <span class="red label">red</span> counters of files to review and discussion to reply.  You can click the mark reviewed button to mark these files as reviewed and the discussions as read, though that might not absolve you of the need to reply to them.  If you publish your review with files or discussions outstanding they'll automatically be [deferred](#deferring-a-review).
+Below the publish button there may appear <span class="red label">red</span> counters of files to review and discussion to reply.  You can click the mark reviewed button to mark these files as reviewed and the discussions as read, though that might not absolve you of the need to reply to them.  If you publish your review with files or discussions outstanding they'll automatically be [deferred](#deferring-a-review). For authors, this notice and its **Mark all read** action apply only to discussions.
 
 ### Deferring a review
 
-When you publish a review and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.  These counters are visible in the [review sidebar](#counters) as well as on the [reviews dashboard](dashboard#review-state) as seen bellow.
+When you publish and you have files left to review or discussions left to reply (red counters), the review will be automatically deferred for you: the red counters will turn grey with a <span class="ui deferred label">red stripe</span> and the review will not be awaiting your action. This lets you post a partial review — perhaps requesting some larger design changes or putting off reviewing test cases — and visibly hand off responsibility for taking the next action.  These counters are visible in the [review sidebar](#counters) as well as on the [reviews dashboard](dashboard#review-state) as seen bellow.
 
 ![reviewable deferral dashboard](images/deferring_dashboard.png)
 
 ![reviewable deferral changes](images/deferring_changes.png)
 
-A review will remain deferred until either a new revision is pushed or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
+A reviewer's deferral lasts until either a new revision is pushed or a new comment is posted. When this happens, the review will be reactivated for you with all counters going back to being red (including for files or discussions you had deferred), and the review awaiting your action once more.
 
-Note that you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can reactivate a deferred review manually by marking a file as reviewed or via the dropdown menu in the participants panel.
+As a reviewer, you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can reactivate a deferred review manually by marking a file as reviewed or via the dropdown menu in the participants panel.
+
+Authors who aren't designated as reviewers only defer discussions when publishing, never files. New revisions and self-review marks leave their discussion deferrals intact; new comments or manual reactivation can end them. Unfinished self-review remains available while discussions are deferred. Authors designated as reviewers follow the normal reviewer behavior above, including file deferrals.
 
 ![reviewable deferral changes](images/deferral_cancel.png){width=350}
 
@@ -162,7 +164,7 @@ On the top-left of the status bar you'll find the bunny icon.  Click it to displ
 
 ![reviewable top toolbar shortcut menu](images/toptoolbar_shortcuts.png)
 
-At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state, as well as a **Next** <i class="forward icon"></i> button to take you to the next item needing your attention.  Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
+At the top right of the status bar you'll always see a **Publish** or **Merge** button, depending on the review's state. When there are items needing your attention, a **Next** <i class="forward icon"></i> button takes you to the next one; authors' files are included once they [start self-reviewing or are designated as reviewers](#user-roles). Note that if you have drafts pending, you'll always see the **Publish** button even if the pull request is otherwise mergeable.
 
 The sidebar holds the core review indicators and shortcuts to the corresponding panels.  By default it sits on the right side of the page, but you can resize it by dragging or double-clicking its edge.  You can also click the <i class="pivot icon"></i> icon in the bottom-right corner of the page to toggle between vertical and horizontal modes.  In horizontal mode, click the <i class="sidebar icon"></i> icon to minimize it entirely.  The last size, placement and collapsed state of the sidebar are remembered _across reviews_ and separately for different screen sizes, so Reviewable can automatically keep separate sidebar preferences for screens of different sizes, including different monitors and mobile devices.
 
@@ -185,6 +187,8 @@ This sidebar item summarizes the changes you're currently looking at and links t
 ### Counters <span class="grey label header">1</span> <span class="red label header">2</span> <span class='grey label deferred header'>3</span> {#counters}
 
 Some of the sidebar items have counters next to them. <span class="red label">Red</span> counters indicate that you must address the given number of items to advance the review.  <span class="grey label">Grey</span> counters indicate that other participants must address the given number of items, but you're in the clear. Grey counters with a <span class='grey label deferred'>red stripe</span> indicate that you've [deferred](#deferring-a-review) reviewing files or responding to conversations until others have acted, but otherwise work just like the <span class='grey label'>grey</span> ones.
+
+For authors, the file counter is grey and shows shared unreviewed files. A <span class="ui grey file-counter label">red&nbsp;dot<span class="self-review disc"></span></span> indicates files left to self-review. Authors designated as reviewers by the completion condition get normal red review counters instead. You can [hide self-review markers](tips.md#hide-self-review-markers).
 
 ::: tip
 The counters take into account your unsent drafts, so somebody else may see different numbers on the same review.
