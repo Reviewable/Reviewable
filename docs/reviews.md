@@ -118,7 +118,7 @@ A reviewer's deferral lasts until either a new revision is pushed or a new comme
 
 As a reviewer, you can continue manipulating a review as usual while it's deferred, except that Reviewable won't suggest the next set of diffs to review. If you wish, you can reactivate a deferred review manually by marking a file as reviewed or via the dropdown menu in the participants panel.
 
-Authors only defer discussions when publishing, never files. New revisions and self-review marks leave their discussion deferrals intact; new comments or manual reactivation can end them. Unfinished self-review remains available while discussions are deferred.
+Authors who aren't designated as reviewers only defer discussions when publishing, never files. New revisions and self-review marks leave their discussion deferrals intact; new comments or manual reactivation can end them. Unfinished self-review remains available while discussions are deferred. Authors designated as reviewers follow the normal reviewer behavior above, including file deferrals.
 
 ![reviewable deferral changes](images/deferral_cancel.png){width=350}
 

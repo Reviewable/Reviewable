@@ -91,7 +91,7 @@ Filter | Meaning
 <code>±by:<i>username</i></code> | PRs authored by given user
 <code>±with:<i>username</i></code> | PRs involving given user (or team)
 
-Your own files contribute to `+red` once you [start self-reviewing](reviews.md#user-roles), including with a draft mark, or the completion condition designates you as a reviewer. Author files never match `+deferred`.
+Your own files contribute to `+red` once you [start self-reviewing](reviews.md#user-roles), including with a draft mark, or the completion condition designates you as a reviewer. Optional self-review never matches `+deferred`; designated author reviews follow the normal deferral behavior.
 
 ::: tip
 Click the small **Set as your default** link to set the query that will automatically be applied when you load the page.
