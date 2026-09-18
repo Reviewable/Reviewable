@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> make author self-review less intrusive for users who are not interested in it. <!-- client -->
+  > Authors who aren't designated as reviewers see gray shared unreviewed-file counts, with a red dot for remaining self-review. The dot and its tooltip suffix disappear once all files are reviewed at the latest revision, even if the review remains incomplete, and return if files become unreviewed again. Authors designated as reviewers get normal red counters and current-diff tooltips.
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> Ignore merged and closed PRs when detecting conflicts over Reviewable's GitHub commit status. <!-- server 4972 -->
