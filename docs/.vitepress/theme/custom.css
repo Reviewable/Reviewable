@@ -314,6 +314,77 @@ i.icon.review.requested.inactive::after {
   top: -0.2em !important;
 }
 
+.base.changes {
+  display: inline-block;
+  min-width: 1.3em;
+  padding: 0 0.25em;
+  text-align: center;
+  border-radius: 3px;
+  color: var(--text-color-inverted);
+  font-size: 0.85em;
+  line-height: 1.3em;
+}
+
+.base.changes.only {
+  background-color: var(--green);
+}
+
+.base.changes.missing {
+  background-color: var(--orange);
+}
+
+.base.changes.mixed {
+  background-color: var(--grey-6);
+}
+
+.revision {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 1em;
+  border: 1px solid var(--grey-7);
+  vertical-align: text-bottom;
+}
+
+.revision.added {
+  background-color: color-mix(in srgb, var(--green) 45%, transparent);
+}
+
+.revision.modified {
+  background-color: color-mix(in srgb, var(--yellow) 45%, transparent);
+}
+
+.revision.removed {
+  background-color: color-mix(in srgb, var(--red) 45%, transparent);
+}
+
+.prior.action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prior.action.modified {
+  background-color: color-mix(in srgb, var(--yellow) 45%, transparent);
+}
+
+.self-review.disc {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--grey-3);
+  vertical-align: middle;
+}
+
+.self-review.disc.green {
+  background-color: hsl(var(--diff-add-color-hsl));
+}
+
 /* styles below copied from SemanticUI */
 
 i.circular.icon {

@@ -1,29 +1,121 @@
 # Code review files
 
-This chapter explains in detail how to manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while the individual file areas show diffs and line-specific discussions.
+This chapter explains in detail how to manage and review files in Reviewable.  The file matrix provides an overview of the files in the pull request, while each file panel shows most of that same information at the top of the panel alongside that file's diffs and line-specific discussions.
 
+![reviewable file matrix](images/filematrix_0.png){width=550px}
 
-## Revision cells
+![reviewable file panel](images/filepanel_0.png){width=550px}
+
+::: tip
+There's a lot of different icons and colors shown in Reviewable, so be sure to use [Contextual Help](index.md#help-on-using-reviewable) (hover over any element in Reviewable and press `h`) to see a description of it mid-review.
+:::
+
+## File matrix
+
+The file matrix displays a history matrix showing all files and revisions. Here, you can:
+
+- View a summary of the PR's change history for each file.
+- Set diff bounds for any and all files.
+- Mark files as reviewed.
+- View the latest review state of each file.
+- Jump to a file's diff.
+- See delta stats for a diff and all diffs.
+
+### File list
+
+The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are automatically placed in the ↺ **Reverted** group. Select it to reveal the hidden files, or choose **ungroup** to return them to the main file list.
+
+Click the file path to move directly to the diff for that file. Hold down `⌘`, `Ctrl`, `Alt` or `⇧` key (or combinations thereof) when clicking to open the file diff in a new browser tab, on GitHub, or [in your editor](accountsettings#external-editor-line-link-template).  To open every file at once, do the same on the "N files" indicator in the matrix header.
+
+::: tip
+File paths in italics indicate that the file is currently omitted from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.
+:::
+
+To the left of the file path there's a button to [mark the file as reviewed](#mark-reviewed).  The header has a corresponding button to mark all files as reviewed (if certain conditions hold — otherwise, a tooltip will tell you why it's disabled), with an option to undo the action immediately afterwards.
+
+![reviewable file matrix mark reviewed](images/filematrix_1.png){width=520px}
+
+To the right of the file path you can optionally see reviewer avatars that provide a quick overview of a file's reviewers. The avatars get progressively more faded out as a user's review becomes less recent.  You can hover over an avatar for details, or click on it to show the diff between that user's last reviewed revision (for each file) and the latest revision.
+
+![reviewable file matrix user avatars](images/filematrix_3.png){width=520px}
+
+Further to the right is the [file review state](#file-review-state) chip that you can click on for full details regarding who has reviewed a file and whether anyone still needs to review it.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
+
+![reviewable file matrix review state chip](images/filematrix_2.png){width=520}
+
+Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed, no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes [code coverage](admincenter#code-coverage) statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
+
+The elements above can be turned on or off via a small menu icon <i class="icon matrix columns ui bare icon button dropdown-target"/> to the right of the file matrix.  You can also force all elements to appear "all in overlay" when the file matrix is opened in full-screen overlay mode.  If the matrix is wider than the available space, you can scroll it left and right to see all the revisions and these stats.
+
+![reviewable file matrix options](images/filematrix_4.png){width=520}
+
+To enter full-screen mode, click the <i class="maximize icon"></i> icon in the sidebar on the **Files** tab or click the <i class="files icon"></i> File matrix icon when the sidebar is collapsed.
+
+Files can also be grouped, like for the **Tests** group in the File matrix screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on [custom review completion conditions](admincenter.md#condition-output) for instructions on how to make custom file groups in your repository.
+
+### Column headings
+
+Each column in the matrix represents a single revision of each of the files in the review. Each revision consists of one or more commits.  The headings vary in style to indicate the different kinds of revisions.
+
+![reviewable file matrix column headings](images/filematrix_5.png){width=480}
+
+Label | Meaning
+:----:|---------
+r1    | An immutable revision (even if the branch is rebased).
+_r1_  | A provisional revision whose commits may still change.
+<s>r1</s> | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.
+<i class="cell reviewed icon"/> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.
+<i class="cell participants on icon"/> | A (virtual) last revision that anyone marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last revision reviewed by anyone and the latest revision for each file, or drag-select to any other revision of your choice.
+⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.
+
+You can also drag the column headers (⊥, r1, r2, r3...) to bulk-select diff bounds across all files.  This sets the diff bounds for every file as close as possible to the new range. Many reviewers prefer this method over adjusting each file individually because it lets you view one coherent set of diffs at a time.
+
+### Revision cells
 
 A file's evolution over the course of the pull request is summarized in both the file matrix and the individual file panels by a row of revision cells.  Each cell represents one revision, with the leftmost ⊥ cell being a virtual base revision that changes to match the right diff bound.
-
-![reviewable file matrix diff bounds](images/filematrix_8.png){width=550px}
 
 The parentheses in a row are the current left and right diff bounds for the file. To adjust the diff bounds, click on one desired revision bound and drag to the other one.  You can also just click on a revision to adjust the nearest bound.
 
 ![revision cells demo](images/revision_cells.gif)
 
-Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks:
+### Revision markers
 
-![reviewable file matrix status](images/filematrix_9.png){width=320px}
+Colors and icons in the revision cells summarize what happened in the pull request at each revision, as well as the latest review marks.
 
-You can view further explanations for each color, icon, settings toggle, and colored numbers using [Contextual Help](index.md#help-on-using-reviewable).
+![reviewable file matrix cells](images/filematrix_6.png){width=510}
 
-## Mark as reviewed {#mark-reviewed}
+State | Meaning
+:----:|---------
+<span class="revision kept"></span> | File kept unchanged, or not in the PR.
+<span class="revision added"></span> | File created.
+<span class="revision modified"></span> | File modified.
+<span class="revision removed"></span> | File deleted.
+<span class="revision kept"><span class="prior action modified"></span></span> | The inner swatch shows the file's action against the matched prior [rebased](#rebasing) revision, while the outer swatch shows its action against the immediately preceding revision.
+<i class="cell renamed icon"></i> | File renamed.
+<i class="cell reverted icon"></i> | File reverted to base.
+… | Some revisions are hidden to fit the available space. Click it to open the full file matrix, or hover over it to show the current diff bounds.
+<i class="cell reviewed icon"></i> | Last revision reviewed by you.
+<i class="cell reviewed icon green"></i> | Last revision reviewed by you (draft).
+<span class="self-review disc"></span> | Last revision self-reviewed by you.
+<span class="self-review disc green"></span> | Last revision self-reviewed by you (draft).
+
+### Base change states
+
+A revision cell can also flag that a file picked up a change from the *base* branch at that revision — independently of whatever else was pushed to the PR — since Reviewable only computes this once a merge, rebase, or similar actually lands a base commit into a revision.
+
+![reviewable file matrix base change states](images/filematrix_7.png){width=510}
+
+State | Meaning
+:----:|---------
+<span class="base changes mixed">⊥</span> | **Base updated and modified in revision.** The revision picked up a change from the base branch *and* contains further hand-authored edits to the file beyond what that merge or rebase brought in.
+<span class="base changes only">⊥</span> | **Base changes only.** The revision picked up a change from the base branch and the file has no further edits beyond what that merge or rebase brought in.
+<span class="base changes missing">⊥</span> | **Base changes not reflected in revision.** The base branch changed, but this revision's file content didn't change to reflect it — the file is stale relative to base.
+
+### Mark as reviewed {#mark-reviewed}
 
 One of Reviewable's core features is the ability to track the reviewed state of each file, at each revision, for each reviewer.  This helps you easily remember — and indicate to others — where you left off in the review, and lets you focus on subsequent changes.  Marking a file as reviewed doesn't necessarily mean you think it's ready to merge, but rather that you've reviewed that revision and added your comments.
 
-![reviewable fill diffs mark file as reviewed](images/filediffs_4.png)
+![reviewable file matrix mark reviewed](images/filematrix_1.png){width=520px}
 
 The small button to the left of the file path indicates your current reviewed state for the file at the right diff bound and lets you change it.  Typically, as a reviewer, the button will be red to indicate that you need to review this diff, and will turn green when clicked to indicate that you've marked the file as reviewed. There are other less common states as well:
 
@@ -38,9 +130,15 @@ Color | Meaning
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
-## File review state
+### File review state
 
-While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="designation anyone icon"/> shows the file's overall state at the latest revision.  The two may not always agree:  for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
+While the review button above indicates your personal state for the file at the current right diff bound, the square "review chip" icon <i class="red designation anyone icon"/> shows the file's overall state at the latest revision.  The two may not always agree: for example, a file may need your overall review but not at your current diff bounds, or a file may have been sufficiently reviewed but you set your [review overlap strategy](reviews#file-review-type) to personally review all files.
+
+![reviewable file matrix review state chip](images/filematrix_2.png){width=520}
+
+::: tip
+Chips for sufficiently reviewed files are hidden in the file matrix until hovered over, making it easy to see what still needs review.  File chips are always shown in individual file panel headers.
+:::
 
 The various possible states are:
 
@@ -55,73 +153,17 @@ State | Meaning
 <i class="designation done icon"/>&nbsp;| The file has been sufficiently reviewed.
 <i class="green designation done icon"/>&nbsp;| The file will be sufficiently reviewed once you've published your review.
 
-Clicking on the state icon <i class="designation done icon"/> will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.
+Clicking on the state icon <i class="red designation anyone icon"/> will reveal all the details about a file's current review state:  who needs to review it and why, who has already reviewed it, and (when relevant) who reviewed it at revisions prior to the latest one.
 
-![file review state details](images/designated_reviewers_details.png){width=520px}
+![reviewable file state review chip](images/file_state_review_chip.gif){width=550px}
 
 By default, Reviewable can only tell who has reviewed a file and infer some basic information about who should review it from a `CODEOWNERS` file, if present.  To unlock the full power of this feature — including indicating the scope (e.g., "security" or "accessibility") of each requested review, when a scope has been satisfied, or whether only specific people's reviews are needed — you'll need to [create designated reviewers](admincenter.md#designated-reviewers) in the custom review completion condition.
-
-## File matrix
-
-The file matrix displays a history matrix showing all files and revisions. Here, you can:
-
-- View a summary of the PR's change history for each file.
-- Set diff bounds for any and all files.
-- Mark files as reviewed.
-- View the latest review state of each file.
-- Jump to a file's diff.
-- See delta stats for a diff and all diffs.
-
-![reviewable file matrix](images/filematrix_1.png){width=670px}
-
-### File list
-
-The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are automatically placed in the ↺ **Reverted** group. Select it to reveal the hidden files, or choose **ungroup** to return them to the main file list.
-
-Click the file path to move directly to the diff for that file. Hold down `⌘`, `Ctrl`, `Alt` or `⇧` key (or combinations thereof) when clicking to open the file diff in a new browser tab, on GitHub, or [in your editor](accountsettings#external-editor-line-link-template).  To open every file at once, do the same on the "N files" indicator in the matrix header.
-
-::: tip
-File paths in italics indicate that the file is currently omitted from the file contents area because there's nothing interesting to see in it at the current diff bounds, but clicking will force it to appear.
-:::
-
-To the left of the file path there's a button to [mark the file as reviewed](#mark-reviewed).  The header has a corresponding button to mark all files as reviewed (if certain conditions hold — otherwise, a tooltip will tell you why it's disabled), with an option to undo the action immediately afterwards.
-
-To the right of the file path you can optionally see reviewer avatars that provide a quick overview of a file's reviewers. The avatars get progressively more faded out as a user's review becomes less recent.  You can hover over an avatar for details, or click on it to show the diff between that user's last reviewed revision (for each file) and the latest revision.
-
-Further to the right is the [file review state](#file-review-state) chip that you can click on for full details regarding who has reviewed a file and whether anyone still needs to review it.  Chips for fully reviewed files are hidden from the file matrix to reduce visual noise, but will show up on hover.
-
-![reviewable file matrix options](images/filematrix_2.png){width=500}
-
-Off the right side of the matrix are delta stats for the current diffs, showing lines <span class="text-orange">changed</span>, <span class="text-green">added</span>, and <span class="text-red">deleted</span>.  If a file is binary or isn't currently diffed, no delta stats will be shown.  The total of all displayed delta stats is displayed overhead, inline with the column header.  Other information you may find here includes [code coverage](admincenter#code-coverage) statistics and a dropdown <i class="grey commit icon"/> with a list of commits included in the current diff bounds.
-
-The elements above can be turned on or off via a small menu icon <i class="visual tweaks icon"/> below the file matrix.  You can also force all elements to appear "all in overlay" when the file matrix is opened in full-screen overlay mode.  If the matrix is wider than the available space, you can scroll it left and right to see all the revisions and these stats.
-
-To enter full-screen mode, click the <i class="maximize icon"></i> icon in the sidebar on the **Files** tab or click the <i class="files icon"></i> File matrix icon when the sidebar is collapsed.
-
-![reviewable file matrix options](images/filematrix_11.png){width=200}
-
-Files can also be grouped, like for the **Tests** group in the File matrix screenshot above.  You can use this to reorder the file list somewhat (groups are listed alphabetically), and to enable marking a subset of files as reviewed with one click.  Reviewable will automatically group some files for you, such as files that were only renamed, that appear in a vendored directory, or that were reverted back out of the pull request.  See the section on [custom review completion conditions](admincenter.md#condition-output) for instructions on how to make custom file groups in your repository.
-
-### Column headings
-
-Each column in the matrix represents a single revision of each of the files in the review. Each revision consists of one or more commits.  The headings vary in style to indicate the different kinds of revisions.
-
-Label | Meaning
-:----:|---------
-r1    | An immutable revision (even if the branch is rebased).
-_r1_  | A provisional revision whose commits may still change.
-<s>r1</s> | Outdated revision, no longer part of the pull request due to being force-pushed out.  Retained so you can still diff against it.
-<i class="cell reviewed icon"/> | A (virtual) last revision that you marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last reviewed revision and the latest revision for each file, or drag-select to any other revision of your choice.
-<i class="cell participants on icon"/> | A (virtual) last revision that anyone marked as reviewed for each file, defaulting to ⊥.  You can click it to set the diff bounds to be between the last revision reviewed by anyone and the latest revision for each file, or drag-select to any other revision of your choice.
-⊥     | This is the base version for a file in the target branch of the PR. The exact commit may depend on the right diff bound if the pull request has been rebased.
-
-You can also drag the column headers (⊥, r1, r2, r3...) to bulk-select diff bounds across all files.  This sets the diff bounds for every file as close as possible to the new range. Many reviewers prefer this method over adjusting each file individually because it lets you view one coherent set of diffs at a time.
 
 ## Diff controls
 
 Where the file matrix gives you fine-grained control over the diff bounds, the diffs panel allows you to tweak the diffs that Reviewable automatically selects for you and make other coarse-grained adjustments.
 
-![reviewable diff controls](images/diffs_1.png){width=615}
+![reviewable diff controls](images/diffs_1.png){width=600}
 
 At the top of the panel you'll find an informational description of your current diff bounds.
 
@@ -152,7 +194,7 @@ Next you'll find a row of buttons that let you set other frequently used diff bo
 
 Click the bottom of the diffs panel <i class="visual tweaks icon"/> to expand your diff-related preferences. These settings are personal to you and apply across all organizations and repositories.
 
-![reviewable diff controls](images/diffs_3.png){width=650}
+![reviewable diff controls](images/diffs_3.png){width=620}
 
 The **initial diff bounds** dropdown allows you to select the diff bounds that will be applied automatically when you load a review page from among the options available for manual use above.  In essence, you'll be telling Reviewable which button to automatically click for you when a review loads.  The selection for when you're a reviewer vs a pull request author are tracked separately.
 
@@ -165,13 +207,13 @@ The **diff layout** and **line length** options replicate the more compact [diff
 
 Each revision in a review is an automatic, unmodifiable capture of one or more commits.  The mapping between commits and revisions is shown in a synthetic **Commits file**.  This virtual file is kept up-to-date automatically by Reviewable and will always be listed first in the files list.  It behaves just like a normal file in that it will be diffed against the selected revision and supports discussions, however it *will not* impact your repository or pull request in anyway — it's solely used by Reviewable for presenting and reviewing commit messages.
 
-![reviewable commit matrix](images/commit_matrix.png){width=515}
+![reviewable commit matrix](images/commit_matrix.png){width=500}
 
-![reviewable commit review](images/commit_review_1.png){width=610}
+![reviewable commit review](images/commit_review_1.png){width=580}
 
 
 ::: tip
-While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](admincenter.md#custom-review-completion-condition) for details.
+While the commit file is virtual, it still needs to be marked as reviewed as much (or as little) as normal files.  It's included in review file [counters](reviews.md#counters), but not counted in review status messages unless it's the only unreviewed file.  It's also handled separately from normal files when evaluating a custom review completion condition; see [custom completion condition](admincenter.md#custom-review-completion-condition) for details.
 :::
 
 This special file also provides additional controls over the mapping between revisions and commits.
@@ -279,7 +321,7 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 
 2. If you see a small, light-colored declaration immediately below the collapsed section, this indicates the nearest syntactic unit that the code below is a part of — e.g., a function or a class.  You can click this signature to expand the diff to show all of the syntactic unit.
 
-![reviewable syntactic unit expansion](images/syntactic_unit_expansion.png)
+![reviewable syntactic unit expansion](images/syntactic_unit_expansion.png){width=580}
 
 3. In the collapsed section gap, you will see some subset of the following line counts.  Clicking on any of these collapsed line categories will expand only those lines (plus a bit of context around them).
 
@@ -290,7 +332,7 @@ Reviewable will automatically collapse sections of the diff with no meaningful c
 
 4. Click the **Collapsed** drop-down to view options for expanding everything — either for **this file** or **all files**.  The toggle button selects whether to **collapse whitespace changes** in all files in this review.  The setting will also be your default for new reviews.
 
-![reviewable fill diffs collapsed drop down](images/filediffs_17.png)
+![reviewable fill diffs collapsed drop down](images/filediffs_17.png){width=370}
 
 ::: tip
 The only way to collapse expanded diff lines back down is to change the diff bounds.
@@ -322,7 +364,7 @@ For lots more information on discussions, please see the [next chapter](discussi
 
 It's easy to add new code, quote existing code, or suggest changes that display as a diff — all directly within your comment. The simplest way to add a code snippet is to click  the <i class="icon create codeblock"/>&nbsp; button in the actions menu and typing your code in the code block.
 
-![reviewable insert codeblock](images/add_codeblock.png)
+![reviewable insert codeblock](images/add_codeblock.png){width=600}
 
 ::: tip
 You can add as many code blocks as you want to your comment!
@@ -333,13 +375,13 @@ You can also insert existing code from the diffs into your code block. There are
 #### Before making a comment
 Select the line or lines of code before adding a comment. After making a selection, you can use the command palette to insert a comment at the last selected line, with a code block that includes your selection.
 
-![reviewable insert code using command palette](images/command_palette.png){width=530}
+![reviewable insert code using command palette](images/command_palette.png){width=480}
 
 #### Adding code to an existing comment
 
 If you have already started writing a comment, you can click the <i class="icon create codeblock"/>&nbsp;button in the actions menu and an empty code block will appear. The way to insert existing code at this point is to use the 'select diff lines' button that appears inside the code block. This will bring up a pair of text selection pinchers that allow you to indicate the lines you want to insert. Once you have made your selection, hit the 'accept selection' button to add the code to your code block.
 
-![reviewable code suggestions](images/code_suggestions.png)
+![reviewable code suggestions](images/code_suggestions.png){width=610}
 ::: tip
 Double click the 'select diff lines' button to quickly grab the current, single line of code from inside an existing comment.
 :::
