@@ -22,9 +22,7 @@ You can further modify the view with the various toggles and filters on this pag
 The time since the list of PRs was last updated is displayed under the header.  The list refreshes automatically at regular intervals, but you can also force an immediate refresh by reloading the page.
 
 ::: tip
-By default, the dashboard also includes PRs closed or merged in the last three days. If more than ten qualify, it keeps the ten most recently updated, plus any others tied at the cutoff. This cutoff is shared by closed and merged PRs and is applied before your dashboard filters.
-
-Enter `+open,draft,queued` in the search bar to hide closed and merged PRs while keeping drafts and PRs queued for merge. To see older PRs, click **Show more concluded reviews** (or **Show more concluded pull requests**) at the bottom of the panel. The first click expands the window to the last week and removes the count cutoff; each subsequent click adds another week. Reloading the page restores the default window and cutoff.
+By default, the dashboard also includes up to ten PRs closed or merged in the last three days, selected by most recent update. Use `+open,draft,queued` to hide them, or **Show more concluded reviews** to expand the time window and remove the count limit, repeating if necessary.
 :::
 
 ## Review state
