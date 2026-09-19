@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> expose a short review status in webhook data. <!-- server -->
 - <kbd>Fix:</kbd> keep Markdown completion descriptions out of published review summaries. <!-- client -->
 
 <sub>2026 - 09</sub>
