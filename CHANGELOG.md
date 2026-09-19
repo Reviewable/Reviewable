@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep Markdown completion descriptions out of published review summaries. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Upd:</kbd> Include requested teams in review status webhooks. <!-- server 4974 -->
