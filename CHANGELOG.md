@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> expose a short review status in webhook data. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Upd:</kbd> expose a short review status in webhook data. <!-- server 4976 -->
 - <kbd>Fix:</kbd> keep Markdown completion descriptions out of published review summaries. <!-- client 7914 -->
 - <kbd>Upd:</kbd> Include requested teams in review status webhooks. <!-- server 4974 -->
 - <kbd>Upd:</kbd> make author self-review less intrusive for users who are not interested in it. <!-- client 7912 -->
