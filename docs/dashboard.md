@@ -22,7 +22,7 @@ You can further modify the view with the various toggles and filters on this pag
 The time since the list of PRs was last updated is displayed under the header.  The list refreshes automatically at regular intervals, but you can also force an immediate refresh by reloading the page.
 
 ::: tip
-By default, the dashboard also includes up to ten PRs closed or merged in the last three days, selected by most recent update. Use `+open,draft,queued` to hide them, or **Show more concluded reviews** to expand the time window and remove the count limit, repeating if necessary.
+By default, the dashboard also includes up to ten PRs closed or merged in the last three days, selected by most recent update.  You can [filter reviews](dashboard.md#filter-reviews) by `+open,draft,queued` to hide them, or **Show more concluded reviews** to expand the time window and remove the count limit, repeating if necessary.
 :::
 
 ## Review state
