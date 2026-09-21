@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server -->
 - <kbd>Fix:</kbd> avoid misrepairing review marks during client data skew. <!-- client -->
 - <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server -->
 
