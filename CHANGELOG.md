@@ -1,5 +1,7 @@
 <sub>2026 - 09</sub>
 
+<sub>**Enterprise release 4976.7915** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-21 <!-- enterprise 4976.7915 --></sub>
+
 - <kbd>Upd:</kbd> expose a short review status in webhook data. <!-- server 4976 -->
 - <kbd>Fix:</kbd> keep Markdown completion descriptions out of published review summaries. <!-- client 7914 -->
 - <kbd>Upd:</kbd> Include requested teams in review status webhooks. <!-- server 4974 -->
