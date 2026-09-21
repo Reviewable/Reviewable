@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> render multiple author self-reviews without duplicate author rows. <!-- client -->
 - <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server -->
 - <kbd>Fix:</kbd> keep retrying headless authentication after transient server errors. <!-- client -->
 - <kbd>Fix:</kbd> keep retrying headless authentication after transient server responses with structured error codes. <!-- client -->
