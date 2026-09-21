@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server -->
 - <kbd>Fix:</kbd> keep retrying headless authentication after transient server errors. <!-- client -->
 - <kbd>Fix:</kbd> keep retrying headless authentication after transient server responses with structured error codes. <!-- client -->
 - <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server -->
