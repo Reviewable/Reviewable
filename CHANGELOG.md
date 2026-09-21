@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid misrepairing review marks during client data skew. <!-- client -->
 - <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server -->
 
 <sub>2026 - 09</sub>
