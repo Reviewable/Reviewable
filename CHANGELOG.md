@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server -->
+
 <sub>2026 - 09</sub>
 
 <sub>**Enterprise release 4976.7915** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-21 <!-- enterprise 4976.7915 --></sub>
