@@ -1,14 +1,14 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> publishing a PR review could fail when required GitHub GraphQL event was missing during a loading race. <!-- client -->
-- <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client -->
 - <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server -->
-- <kbd>Fix<i>(saas)</i>:</kbd> restore compaction of reviews with pending marks. <!-- client -->
-- <kbd>Fix:</kbd> avoid crashes when concurrent comment mappings encounter a file download failure. <!-- client -->
-- <kbd>Adm:</kbd> separate server response failures in Sentry. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> publishing a PR review could fail when required GitHub GraphQL event was missing during a loading race. <!-- client 7917 -->
+- <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client 7917 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> restore compaction of reviews with pending marks. <!-- client 7917 -->
+- <kbd>Fix:</kbd> avoid crashes when concurrent comment mappings encounter a file download failure. <!-- client 7917 -->
+- <kbd>Adm:</kbd> separate server response failures in Sentry. <!-- client 7917 -->
 - <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server 4977 -->
 - <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server 4977 -->
 - <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server 4977 -->
