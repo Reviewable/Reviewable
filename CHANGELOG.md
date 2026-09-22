@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> update renamed file groups without reloading. <!-- client -->
 - <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server -->
 - <kbd>Fix:</kbd> render multiple author self-reviews without duplicate author rows. <!-- client -->
 - <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server -->
