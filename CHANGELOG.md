@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server -->
-- <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server -->
-- <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server -->
-- <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server 4977 -->
+- <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server 4977 -->
+- <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server 4977 -->
+- <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server 4977 -->
 - <kbd>Fix:</kbd> update renamed file groups without reloading. <!-- client 7916 -->
 - <kbd>Fix:</kbd> render multiple author self-reviews without duplicate author rows. <!-- client 7916 -->
 - <kbd>Fix:</kbd> keep retrying headless authentication after transient server errors. <!-- client 7916 -->
