@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server 4978 -->
 - <kbd>Fix:</kbd> publishing a PR review could fail when required GitHub GraphQL event was missing during a loading race. <!-- client 7917 -->
 - <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client 7917 -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore compaction of reviews with pending marks. <!-- client 7917 -->
