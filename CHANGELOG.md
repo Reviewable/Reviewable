@@ -1,16 +1,17 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> update renamed file groups without reloading. <!-- client -->
 - <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server -->
-- <kbd>Fix:</kbd> render multiple author self-reviews without duplicate author rows. <!-- client -->
 - <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server -->
-- <kbd>Fix:</kbd> keep retrying headless authentication after transient server errors. <!-- client -->
-- <kbd>Fix:</kbd> keep retrying headless authentication after transient server responses with structured error codes. <!-- client -->
 - <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server -->
-- <kbd>Fix:</kbd> avoid misrepairing review marks during client data skew. <!-- client -->
 - <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server -->
 
 <sub>2026 - 09</sub>
+
+- <kbd>Fix:</kbd> update renamed file groups without reloading. <!-- client 7916 -->
+- <kbd>Fix:</kbd> render multiple author self-reviews without duplicate author rows. <!-- client 7916 -->
+- <kbd>Fix:</kbd> keep retrying headless authentication after transient server errors. <!-- client 7916 -->
+- <kbd>Fix:</kbd> keep retrying headless authentication after transient server responses with structured error codes. <!-- client 7916 -->
+- <kbd>Fix:</kbd> avoid misrepairing review marks during client data skew. <!-- client 7916 -->
 
 <sub>**Enterprise release 4976.7915** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-21 <!-- enterprise 4976.7915 --></sub>
 
