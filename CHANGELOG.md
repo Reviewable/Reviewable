@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> separate server response failures in Sentry. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server 4977 -->
