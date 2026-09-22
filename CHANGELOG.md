@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client -->
 - <kbd>Fix:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server -->
 - <kbd>Fix:</kbd> restore compaction of reviews with pending marks. <!-- client -->
 - <kbd>Fix:</kbd> avoid crashes when concurrent comment mappings encounter a file download failure. <!-- client -->
