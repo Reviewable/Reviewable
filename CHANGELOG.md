@@ -2,7 +2,7 @@
 
 - <kbd>Fix:</kbd> publishing a PR review could fail when required GitHub GraphQL event was missing during a loading race. <!-- client -->
 - <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client -->
-- <kbd>Fix:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server -->
+- <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> restore compaction of reviews with pending marks. <!-- client -->
 - <kbd>Fix:</kbd> avoid crashes when concurrent comment mappings encounter a file download failure. <!-- client -->
 - <kbd>Adm:</kbd> separate server response failures in Sentry. <!-- client -->
