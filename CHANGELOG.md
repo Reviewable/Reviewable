@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> stop "Try again" on a failed hard-forced diff from dismissing overlays and scrolling to a discussion. <!-- client -->
 - <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client -->
 
 <sub>2026 - 09</sub>
