@@ -72,7 +72,7 @@ Processor shall take reasonable steps to ensure the reliability of any employee,
 
 5.1 Processor may engage Subprocessors to support the Services. Processor shall impose data protection obligations on Subprocessors by written contract. The Processor shall notify the Company about new Subprocessors within reasonable time.  Company may reasonably object to a new Subprocessor; if unresolved, Company may terminate the affected Services as its sole remedy.
 
-5.2 The currently engaged Subprocessors are GitHub, GCP, AWS, Stripe, Postmark, Google, Missive, Slack, Make and PostHog.
+5.2 The currently engaged Subprocessors are GitHub, GCP, AWS, Stripe, Postmark, Google, Missive, Slack, Make, PostHog and Sentry.
 
 5.3 The Processor shall ensure that Subprocessors do not process personal data covered by the DPA in any way other than what is necessary to provide the service, and that personal data is not given to others for processing without this being in accordance with the DPA or agreed in advance in writing with the Company.
 
