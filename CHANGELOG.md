@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server 4978 -->
