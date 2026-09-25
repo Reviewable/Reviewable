@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> prevent stale statuses from blocking review updates. <!-- server -->
 - <kbd>Fix:</kbd> prevent a stale PR reload from overwriting the completion-condition editor's review state. <!-- client -->
 - <kbd>Fix:</kbd> stop "Try again" on a failed hard-forced diff from dismissing overlays and scrolling to a discussion. <!-- client -->
 - <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client -->
