@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
 - <kbd>Adm:</kbd> prevent stale statuses from blocking review updates. <!-- server -->
-- <kbd>Fix:</kbd> prevent a stale PR reload from overwriting the completion-condition editor's review state. <!-- client -->
-- <kbd>Fix:</kbd> stop "Try again" on a failed hard-forced diff from dismissing overlays and scrolling to a discussion. <!-- client -->
-- <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> prevent a stale PR reload from overwriting the completion-condition editor's review state. <!-- client 7918 -->
+- <kbd>Fix:</kbd> stop "Try again" on a failed hard-forced diff from dismissing overlays and scrolling to a discussion. <!-- client 7918 -->
+- <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client 7918 -->
 - <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server 4978 -->
 - <kbd>Fix:</kbd> publishing a PR review could fail when required GitHub GraphQL event was missing during a loading race. <!-- client 7917 -->
 - <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client 7917 -->
