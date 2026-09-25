@@ -22,7 +22,7 @@ You can further modify the view with the various toggles and filters on this pag
 The time since the list of PRs was last updated is displayed under the header.  The list refreshes automatically at regular intervals, but you can also force an immediate refresh by reloading the page.
 
 ::: tip
-Up to three closed PRs from the previous three days may also be shown here. This makes it easier to follow up on recently completed reviews. Enter `+open` in the search bar to hide the closed PRs.  To show older closed PRs click **Show more concluded reviews** at the bottom of the panel, repeating as necessary.
+By default, the dashboard also includes up to ten PRs closed or merged in the last three days, selected by most recent update.  You can [filter reviews](dashboard.md#filter-reviews) by `+open,draft,queued` to hide them, or **Show more concluded reviews** to expand the time window and remove the count limit, repeating if necessary.
 :::
 
 ## Review state
@@ -41,7 +41,7 @@ Counters reflect the same information as you'll see on the review page:
 
 If a PR is ready for merging, the status checks are successful, and all the counters are zero, then a merge button appears in the state column instead.  This lets you quickly merge completed PRs, but doesn't give access to merge options — open the review page to access those.
 
-Other possible states include **Merged**, **Closed**, and **Archived**, which automatically applies to reviews that have been inactive for some time. Simply open an archived review to unarchive it.
+Other possible states include **Queued for merge**, **Merged**, **Closed**, and **Archived**, which automatically applies to reviews that have been inactive for some time. Simply open an archived review to unarchive it.
 
 ::: tip
 A PR won’t show a state until a corresponding Reviewable review has been created.
@@ -65,7 +65,7 @@ For the <code>±label:<i>name</i></code> filter, you must use double quotes arou
 
 Filter | Meaning
 -----|---------
-`±open` | Currently open PR
+`±open` | Open PRs that are neither drafts nor queued for merge
 `±red` | PRs with red counters
 `±deferred` | PRs with deferred counters
 `±mine` | Created, assigned, and requested PRs
@@ -81,7 +81,8 @@ Filter | Meaning
 &nbsp;&nbsp;&nbsp; `author` | Created PRs
 &nbsp;&nbsp;&nbsp; `assigned` | Assigned PRs
 &nbsp;&nbsp;&nbsp; `requested` | Requested reviewer PRs
-`±draft` | PR draft, not yet fully open
+`±draft` | Open draft PRs that are not queued for merge
+`±queued` | Open PRs queued for merge
 `±merged` | PR that was successfully merged
 `±closed` | PR that was closed without merging
 `±public` | PRs from public repos
@@ -90,6 +91,8 @@ Filter | Meaning
 `±watched` | PRs from repos you're watching
 <code>±by:<i>username</i></code> | PRs authored by given user
 <code>±with:<i>username</i></code> | PRs involving given user (or team)
+
+The `open`, `draft`, `queued`, `merged`, and `closed` filters are mutually exclusive. Closed and merged states take precedence over queued or draft status, and queued takes precedence over draft. A PR counts as queued when it has a merge queue entry or the repository's configured merge label.
 
 Your own files contribute to `+red` once you [start self-reviewing](reviews.md#user-roles), including with a draft mark, or the completion condition designates you as a reviewer. Optional self-review never matches `+deferred`; designated author reviews follow the normal deferral behavior.
 
