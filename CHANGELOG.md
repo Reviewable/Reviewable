@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> continue loading completion lists when the browser blocks IndexedDB access. <!-- client -->
 - <kbd>Fix:</kbd> stop retrying PR syncs blocked by GitHub IP allow lists. <!-- server -->
 - <kbd>Fix:</kbd> sync Slack handles for organizations that connected an entire Slack enterprise rather than a single workspace. <!-- server -->
 - <kbd>Adm:</kbd> prevent stale statuses from blocking review updates. <!-- server -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> continue loading completion lists when the browser blocks IndexedDB access. <!-- client 7919 -->
 - <kbd>Fix:</kbd> prevent a stale PR reload from overwriting the completion-condition editor's review state. <!-- client 7918 -->
 - <kbd>Fix:</kbd> stop "Try again" on a failed hard-forced diff from dismissing overlays and scrolling to a discussion. <!-- client 7918 -->
 - <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client 7918 -->
