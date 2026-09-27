@@ -126,7 +126,7 @@ Color | Meaning
 <i class="opaque circular inverted green reviewed icon"></i> | Reviewed by you at the right diff-bound. Click to immediately rescind your review marking.
 <span class="relative"><span class="green pupil"></span><i class="circular reviewed icon"></i></span> | Self-reviewed by you (the PR author) at the right diff bound. Click to immediately rescind your self-review marking.
 <i class="opaque circular red-rim unreviewed icon"></i> | Not covered by the applicable review or self-review at the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff or the review is <a href="reviews.md#deferring-a-review">deferred</a>.
-<i class="opaque circular green-rim unreviewed icon"></i> | Reviewed by you or someone else at or after the right diff bound, or covered by another self-reviewed revision. Click to mark as reviewed or self-reviewed, but it's probably redundant.
+<i class="opaque circular green-rim unreviewed icon"></i> | Already covered by a review or self-review. Click to mark as reviewed or self-reviewed, but it's probably redundant.
 
 An earlier optional self-review also covers subsequent base-only changes when every reviewer designation for the file permits omitting base changes, including designations in fulfilled scopes. Otherwise, self-review must cover those changes too. See [reviewer designations](admincenter.md#completion-condition) for the policy details. The original self-review mark stays at the revision you actually reviewed.
 
@@ -173,7 +173,7 @@ At the top of the panel you'll find an informational description of your current
 
 The large purple **Show Diffs to Review** button (exact wording varies) will set the diff bounds on all the files to the next range that Reviewable thinks you need to examine. By default, when you first load the review page, this button has in essence already been clicked for you — that is, the initial diffs will be what Reviewable thinks you should be looking at, not necessarily the ones that you were looking at on your last visit.  <more>If you're a reviewer in a **combined commits** style review (commits panel > revision mapping > "combine commits for review"), this will be the range between the last reviewed revision (for each file) and the latest revision. If you're using **review each commit** style, this will be the range between the last fully reviewed commit and the next one. If you're the **PR author**, this will be the range between the last self-reviewed revision and the latest revision, or the provisional revisions, or diffs that best showcase any unresolved discussions, depending on the situation.</more>
 
-For optional self-review, the starting point advances past base-only changes already covered by the [self-review policy](#mark-reviewed).
+For optional self-review, a file is skipped when the [self-review policy](#mark-reviewed) already covers all subsequent changes. If non-base changes still need self-review, the diff starts at your actual last self-review mark, including any intervening base changes.
 
 Next to the button is a **file selection** dropdown with three **review overlap strategy** options. This setting changes which file diffs are suggested for the user to review when there are multiple participating reviewers. Changing this option in any review will implicitly set the default for any future reviews.
 
