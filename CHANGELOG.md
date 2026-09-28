@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> preserve optional self-review across base-only revisions when every file designation permits it. <!-- client -->
+- <kbd>Fix:</kbd> honor `omitBaseChanges` across all anyone designations in the reviewer-details popup. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent agent authentication from triggering Stripe billing-sync bursts. <!-- client -->
 - <kbd>Fix:</kbd> avoid crashes during file mapping. <!-- client -->
 - <kbd>Adm:</kbd> improve Sentry reporting of GitHub download errors. <!-- client -->
