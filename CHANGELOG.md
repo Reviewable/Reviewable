@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> attach compact file matrix row diagnostics to duplicate-key warnings. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> import comments when the author's GitHub profile is unavailable. <!-- server 4980 -->
