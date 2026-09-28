@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> import comments when the author's GitHub profile is unavailable. <!-- server -->
 - <kbd>Upd:</kbd> preserve optional self-review across base-only revisions when every file designation permits it. <!-- client -->
 - <kbd>Fix:</kbd> honor `omitBaseChanges` across all anyone designations in the reviewer-details popup. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> prevent agent authentication from triggering Stripe billing-sync bursts. <!-- client -->
