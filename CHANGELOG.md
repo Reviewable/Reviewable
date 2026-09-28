@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent agent authentication from triggering Stripe billing-sync bursts. <!-- client -->
 - <kbd>Fix:</kbd> avoid crashes during file mapping. <!-- client -->
 - <kbd>Adm:</kbd> improve Sentry reporting of GitHub download errors. <!-- client -->
 
