@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid crashes during file mapping. <!-- client -->
+- <kbd>Adm:</kbd> improve Sentry reporting of GitHub download errors. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> stop retrying PR syncs blocked by GitHub IP allow lists. <!-- server 4979 -->
