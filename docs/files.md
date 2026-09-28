@@ -128,7 +128,7 @@ Color | Meaning
 <i class="opaque circular red-rim unreviewed icon"></i> | Not covered by a review or self-review at the right diff bound. Click to mark as reviewed, but marking is not advised because some unreviewed changes are not shown in the current diff or the review is <a href="reviews.md#deferring-a-review">deferred</a>.
 <i class="opaque circular green-rim unreviewed icon"></i> | Already covered by a review or self-review. Click to mark as reviewed or self-reviewed, but it's probably redundant.
 
-An earlier self-review also covers subsequent base-only changes when every reviewer designation for the file permits omitting base changes, including designations in fulfilled scopes. See [reviewer designations](admincenter.md#completion-condition) for the policy details.
+An earlier self-review also covers subsequent base-only changes when every reviewer designation for the file permits omitting base changes, including designations in fulfilled scopes. See [reviewer designations](admincenter.md#designated-reviewers) for the policy details.
 
 Review marks remain in a draft state and are only visible to you until [published](reviews.md#publish).  Recissions are publicized immediately however.
 
