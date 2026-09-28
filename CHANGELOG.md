@@ -1,14 +1,14 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> import comments when the author's GitHub profile is unavailable. <!-- server -->
-- <kbd>Upd:</kbd> preserve optional self-review across base-only revisions when every file designation permits it. <!-- client -->
-- <kbd>Fix:</kbd> honor `omitBaseChanges` across all anyone designations in the reviewer-details popup. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> prevent agent authentication from triggering Stripe billing-sync bursts. <!-- client -->
-- <kbd>Fix:</kbd> avoid crashes during file mapping. <!-- client -->
-- <kbd>Adm:</kbd> improve Sentry reporting of GitHub download errors. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Upd:</kbd> preserve optional self-review across base-only revisions when every file designation permits it. <!-- client 7920 -->
+- <kbd>Fix:</kbd> honor `omitBaseChanges` across all anyone designations in the reviewer-details popup. <!-- client 7920 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent agent authentication from triggering Stripe billing-sync bursts. <!-- client 7920 -->
+- <kbd>Fix:</kbd> avoid crashes during file mapping. <!-- client 7920 -->
+- <kbd>Adm:</kbd> improve Sentry reporting of GitHub download errors. <!-- client 7920 -->
 - <kbd>Fix:</kbd> stop retrying PR syncs blocked by GitHub IP allow lists. <!-- server 4979 -->
 - <kbd>Fix:</kbd> sync Slack handles for organizations that connected an entire Slack enterprise rather than a single workspace. <!-- server 4979 -->
 - <kbd>Adm:</kbd> prevent stale statuses from blocking review updates. <!-- server 4979 -->
