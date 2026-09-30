@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show completion condition error messages and line numbers with the vm2 executor. <!-- server -->
 - <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client -->
 
 <sub>2026 - 09</sub>
