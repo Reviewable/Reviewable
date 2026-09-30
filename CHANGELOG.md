@@ -1,13 +1,13 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> make author automatic diffs follow self-review progress and each-commit mode. <!-- client -->
-- <kbd>Fix:</kbd> honor reviewers' omit-base-changes designations in personal review progress and automatic diffs. <!-- client -->
 - <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server -->
-- <kbd>Fix:</kbd> prevent delayed file activation from failing when navigation changes. <!-- client -->
-- <kbd>Adm:</kbd> attach compact file matrix row diagnostics to duplicate-key warnings. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> make author automatic diffs follow self-review progress and each-commit mode. <!-- client 7921 -->
+- <kbd>Fix:</kbd> honor reviewers' omit-base-changes designations in personal review progress and automatic diffs. <!-- client 7921 -->
+- <kbd>Fix:</kbd> prevent delayed file activation from failing when navigation changes. <!-- client 7921 -->
+- <kbd>Adm:</kbd> attach compact file matrix row diagnostics to duplicate-key warnings. <!-- client 7921 -->
 - <kbd>Fix:</kbd> import comments when the author's GitHub profile is unavailable. <!-- server 4980 -->
 - <kbd>Upd:</kbd> preserve optional self-review across base-only revisions when every file designation permits it. <!-- client 7920 -->
 - <kbd>Fix:</kbd> honor `omitBaseChanges` across all anyone designations in the reviewer-details popup. <!-- client 7920 -->
