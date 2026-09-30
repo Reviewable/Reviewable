@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server -->
 - <kbd>Fix:</kbd> prevent delayed file activation from failing when navigation changes. <!-- client -->
 - <kbd>Adm:</kbd> attach compact file matrix row diagnostics to duplicate-key warnings. <!-- client -->
 
