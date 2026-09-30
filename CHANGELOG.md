@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server 4981 -->
 - <kbd>Fix:</kbd> make author automatic diffs follow self-review progress and each-commit mode. <!-- client 7921 -->
 - <kbd>Fix:</kbd> honor reviewers' omit-base-changes designations in personal review progress and automatic diffs. <!-- client 7921 -->
 - <kbd>Fix:</kbd> prevent delayed file activation from failing when navigation changes. <!-- client 7921 -->
