@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server 4981 -->
