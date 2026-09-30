@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> make author automatic diffs follow self-review progress and each-commit mode. <!-- client -->
+- <kbd>Fix:</kbd> honor reviewers' omit-base-changes designations in personal review progress and automatic diffs. <!-- client -->
 - <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server -->
 - <kbd>Fix:</kbd> prevent delayed file activation from failing when navigation changes. <!-- client -->
 - <kbd>Adm:</kbd> attach compact file matrix row diagnostics to duplicate-key warnings. <!-- client -->
