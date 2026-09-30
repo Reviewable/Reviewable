@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
 - <kbd>Adm:</kbd> make the completion condition timeout configurable. <!-- server -->
-- <kbd>Fix:</kbd> prevent stale rename mappings from leaving reviews stuck loading or repeatedly triggering reconciliation. <!-- client -->
 - <kbd>Fix:</kbd> show completion condition error messages and line numbers with the vm2 executor. <!-- server -->
-- <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client -->
 
 <sub>2026 - 09</sub>
 
+- <kbd>Fix:</kbd> prevent stale rename mappings from leaving reviews stuck loading or repeatedly triggering reconciliation. <!-- client 7922 -->
+- <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client 7922 -->
 - <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server 4981 -->
 - <kbd>Fix:</kbd> make author automatic diffs follow self-review progress and each-commit mode. <!-- client 7921 -->
 - <kbd>Fix:</kbd> honor reviewers' omit-base-changes designations in personal review progress and automatic diffs. <!-- client 7921 -->
