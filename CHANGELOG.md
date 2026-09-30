@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent stale rename mappings from leaving reviews stuck loading or repeatedly triggering reconciliation. <!-- client -->
 - <kbd>Fix:</kbd> show completion condition error messages and line numbers with the vm2 executor. <!-- server -->
 - <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client -->
 
