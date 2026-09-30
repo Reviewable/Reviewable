@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> make the completion condition timeout configurable. <!-- server -->
-- <kbd>Fix:</kbd> show completion condition error messages and line numbers with the vm2 executor. <!-- server -->
-
 <sub>2026 - 09</sub>
 
+- <kbd>Adm:</kbd> make the completion condition timeout configurable. <!-- server 4982 -->
+- <kbd>Fix:</kbd> show completion condition error messages and line numbers with the vm2 executor. <!-- server 4982 -->
 - <kbd>Fix:</kbd> prevent stale rename mappings from leaving reviews stuck loading or repeatedly triggering reconciliation. <!-- client 7922 -->
 - <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client 7922 -->
 - <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server 4981 -->
