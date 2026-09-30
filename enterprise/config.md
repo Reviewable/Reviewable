@@ -167,7 +167,7 @@ Some features, such as [custom review completion rules](https://docs.reviewable.
     }
 ]
 ```
-* `REVIEWABLE_CODE_EXECUTOR_TIMEOUT`: Time allowed for each review custom completion condition to finish executing, for all executor types (default `3s`; range `1ms` to `889s`, in whole milliseconds).  It's best to keep this value as low as possible to avoid long recovery times from passive failures.
+* `REVIEWABLE_COMPLETION_CONDITION_TIMEOUT`: Time allowed for each review custom completion condition to finish executing, for all executor types (default `3s`; range `1ms` to `889s`, in whole milliseconds).  It's best to keep this value as low as possible to avoid long recovery times from passive failures.
 
 ##### UI customization
 
