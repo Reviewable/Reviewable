@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> show a file that returns to a pull request after being renamed away as added again, instead of silently leaving it out of the revision it came back in. <!-- server -->
-- <kbd>Adm:</kbd> upgrade TypeScript from 5.9 to 6.0. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> show a file that returns to a pull request after being renamed away as added again, instead of silently leaving it out of the revision it came back in. <!-- server 4983 -->
+- <kbd>Adm:</kbd> upgrade TypeScript from 5.9 to 6.0. <!-- server 4983 -->
 - <kbd>Fix:</kbd> don't crash the page when signing out. <!-- client 7923 -->
 - <kbd>Fix:</kbd> save pending draft comments when signing out. <!-- client 7923 -->
 - <kbd>Upd:</kbd> enable extended lifetimes for shared workers, allowing for faster page loads for a few minutes even after all Reviewable tabs were closed. <!-- client 7923 -->
