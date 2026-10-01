@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> upgrade TypeScript from 5.9 to 6.0. <!-- server -->
 - <kbd>Fix:</kbd> retry failed rename matching and show errors when it cannot recover. <!-- client -->
 
 <sub>2026 - 09</sub>
