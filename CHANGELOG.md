@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> retry failed rename matching and show errors when it cannot recover. <!-- client -->
+
 <sub>2026 - 09</sub>
 
 - <kbd>Adm:</kbd> make the completion condition timeout configurable. <!-- server 4982 -->
