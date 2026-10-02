@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> show a file that returns to a pull request after being renamed away as added again, instead of silently leaving it out of the revision it came back in. <!-- server 4983 -->
