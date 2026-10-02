@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server -->
 - <kbd>Adm:</kbd> group authentication cancellation reports consistently in Sentry. <!-- client -->
 - <kbd>Adm:</kbd> suppress the alternate recoverable GitHub primary-quota warning. <!-- client -->
 - <kbd>Fix:</kbd> Avoid a binary-file error when review permissions reconnect <!-- client -->
