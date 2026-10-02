@@ -1,15 +1,15 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server -->
-- <kbd>Adm:</kbd> group authentication cancellation reports consistently in Sentry. <!-- client -->
-- <kbd>Adm:</kbd> suppress the alternate recoverable GitHub primary-quota warning. <!-- client -->
-- <kbd>Fix:</kbd> Avoid a binary-file error when review permissions reconnect <!-- client -->
 - <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server -->
-- <kbd>Fix:</kbd> hide the stale countdown and cancel button once publish on push has started. <!-- client -->
 - <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> group authentication cancellation reports consistently in Sentry. <!-- client 7924 -->
+- <kbd>Adm:</kbd> suppress the alternate recoverable GitHub primary-quota warning. <!-- client 7924 -->
+- <kbd>Fix:</kbd> Avoid a binary-file error when review permissions reconnect <!-- client 7924 -->
+- <kbd>Fix:</kbd> hide the stale countdown and cancel button once publish on push has started. <!-- client 7924 -->
 - <kbd>Fix:</kbd> show a file that returns to a pull request after being renamed away as added again, instead of silently leaving it out of the revision it came back in. <!-- server 4983 -->
 - <kbd>Adm:</kbd> upgrade TypeScript from 5.9 to 6.0. <!-- server 4983 -->
 - <kbd>Fix:</kbd> don't crash the page when signing out. <!-- client 7923 -->
