@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server -->
-- <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server -->
-- <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server 4984 -->
+- <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server 4984 -->
+- <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server 4984 -->
 - <kbd>Adm:</kbd> group authentication cancellation reports consistently in Sentry. <!-- client 7924 -->
 - <kbd>Adm:</kbd> suppress the alternate recoverable GitHub primary-quota warning. <!-- client 7924 -->
 - <kbd>Fix:</kbd> Avoid a binary-file error when review permissions reconnect <!-- client 7924 -->
