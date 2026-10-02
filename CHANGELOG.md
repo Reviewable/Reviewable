@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server -->
 - <kbd>Fix:</kbd> hide the stale countdown and cancel button once publish on push has started. <!-- client -->
 - <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server -->
 
