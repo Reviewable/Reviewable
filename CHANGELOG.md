@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> group authentication cancellation reports consistently in Sentry. <!-- client -->
 - <kbd>Adm:</kbd> suppress the alternate recoverable GitHub primary-quota warning. <!-- client -->
 - <kbd>Fix:</kbd> Avoid a binary-file error when review permissions reconnect <!-- client -->
 - <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server -->
