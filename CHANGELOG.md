@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server 4984 -->
