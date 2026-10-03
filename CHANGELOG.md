@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server 4985 -->
 - <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server 4984 -->
 - <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server 4984 -->
 - <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server 4984 -->
