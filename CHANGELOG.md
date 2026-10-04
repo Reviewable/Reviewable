@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server 4985 -->
