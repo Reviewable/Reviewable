@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client -->
 - <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client -->
 
 <sub>2026 - 10</sub>
