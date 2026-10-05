@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client -->
-- <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client 7925 -->
+- <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client 7925 -->
 - <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server 4985 -->
 - <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server 4984 -->
 - <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server 4984 -->
