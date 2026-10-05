@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> classify remaining managed sync failures in Sentry. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client 7925 -->
