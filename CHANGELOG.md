@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> enforce task leases for shared GitHub requests and retries. <!-- server -->
 - <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client -->
-- <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server -->
-- <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> enforce task leases for shared GitHub requests and retries. <!-- server 4986 -->
+- <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server 4986 -->
+- <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server 4986 -->
 - <kbd>Adm:</kbd> classify remaining managed sync failures in Sentry. <!-- client 7926 -->
 - <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client 7925 -->
 - <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client 7925 -->
