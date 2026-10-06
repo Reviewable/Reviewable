@@ -1,6 +1,7 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server -->
+- <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server -->
 - <kbd>Adm:</kbd> classify remaining managed sync failures in Sentry. <!-- client -->
 
 <sub>2026 - 10</sub>
