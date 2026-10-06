@@ -2,10 +2,10 @@
 
 - <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server -->
 - <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server -->
-- <kbd>Adm:</kbd> classify remaining managed sync failures in Sentry. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> classify remaining managed sync failures in Sentry. <!-- client 7926 -->
 - <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client 7925 -->
 - <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client 7925 -->
 - <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server 4985 -->
