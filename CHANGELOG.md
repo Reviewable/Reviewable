@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> enforce task leases for shared GitHub requests and retries. <!-- server -->
 - <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client -->
 - <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server -->
 - <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server -->
