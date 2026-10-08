@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client 7927 -->
 - <kbd>Fix:</kbd> enforce task leases for shared GitHub requests and retries. <!-- server 4986 -->
 - <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server 4986 -->
 - <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server 4986 -->
