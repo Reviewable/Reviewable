@@ -1,3 +1,8 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> retry failed review completion checks when review data catches up. <!-- client -->
+- <kbd>Adm<i>(saas)</i>:</kbd> classify projected completion-input recovery correctly. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client 7927 -->
