@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> customize approval text with a personal preference. <!-- client -->
+- <kbd>Fix:</kbd> keep resolved discussions hidden when opening a review. <!-- client -->
 - <kbd>Fix:</kbd> reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client -->
 - <kbd>Upd:</kbd> reduce GitHub quota polling during review processing. <!-- server -->
 - <kbd>Fix:</kbd> retry failed review completion checks when review data catches up. <!-- client -->
