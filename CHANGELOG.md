@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>New:</kbd> render Mermaid diagrams in comments. <!-- client -->
 - <kbd>Upd:</kbd> customize approval text with a personal preference. <!-- client -->
 - <kbd>Fix:</kbd> keep resolved discussions hidden when opening a review. <!-- client -->
 - <kbd>Fix:</kbd> reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client -->
