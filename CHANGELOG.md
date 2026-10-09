@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client -->
 - <kbd>Upd:</kbd> reduce GitHub quota polling during review processing. <!-- server -->
 - <kbd>Fix:</kbd> retry failed review completion checks when review data catches up. <!-- client -->
 - <kbd>Adm<i>(saas)</i>:</kbd> classify projected completion-input recovery correctly. <!-- client -->
