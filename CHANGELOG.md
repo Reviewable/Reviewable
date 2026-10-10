@@ -1,16 +1,16 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> keep Mermaid diagrams loadable across releases. <!-- client -->
-- <kbd>New:</kbd> render Mermaid diagrams in comments. <!-- client -->
-- <kbd>Upd:</kbd> customize approval text with a personal preference. <!-- client -->
-- <kbd>Fix:</kbd> keep resolved discussions hidden when opening a review. <!-- client -->
-- <kbd>Fix:</kbd> reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client -->
 - <kbd>Upd:</kbd> reduce GitHub quota polling during review processing. <!-- server -->
-- <kbd>Fix:</kbd> retry failed review completion checks when review data catches up. <!-- client -->
-- <kbd>Adm<i>(saas)</i>:</kbd> classify projected completion-input recovery correctly. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> keep Mermaid diagrams loadable across releases. <!-- client 7928 -->
+- <kbd>New:</kbd> render Mermaid diagrams in comments. <!-- client 7928 -->
+- <kbd>Upd:</kbd> customize approval text with a personal preference. <!-- client 7928 -->
+- <kbd>Fix:</kbd> keep resolved discussions hidden when opening a review. <!-- client 7928 -->
+- <kbd>Fix:</kbd> reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client 7928 -->
+- <kbd>Fix:</kbd> retry failed review completion checks when review data catches up. <!-- client 7928 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> classify projected completion-input recovery correctly. <!-- client 7928 -->
 - <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client 7927 -->
 - <kbd>Fix:</kbd> enforce task leases for shared GitHub requests and retries. <!-- server 4986 -->
 - <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server 4986 -->
