@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> reduce GitHub quota polling during review processing. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> reduce GitHub quota polling during review processing. <!-- server 4987 -->
 - <kbd>Fix:</kbd> keep Mermaid diagrams loadable across releases. <!-- client 7928 -->
 - <kbd>New:</kbd> render Mermaid diagrams in comments. <!-- client 7928 -->
 - <kbd>Upd:</kbd> customize approval text with a personal preference. <!-- client 7928 -->
