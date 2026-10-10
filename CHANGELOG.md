@@ -1,6 +1,6 @@
 <sub>Upcoming</sub>
 
-- <kbd>Upd:</kbd> reduce GitHub quota polling during review processing. <!-- server -->
+- <kbd>Adm:</kbd> reduce GitHub quota polling during review processing. <!-- server -->
 
 <sub>2026 - 10</sub>
 
