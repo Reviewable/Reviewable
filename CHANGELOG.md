@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid crashing when reopening a review with Mermaid diagrams. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Adm:</kbd> reduce GitHub quota polling during review processing. <!-- server 4987 -->
