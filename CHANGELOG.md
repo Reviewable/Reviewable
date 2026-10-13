@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> Respect shared GitHub account cooldowns across requests. <!-- server -->
 - <kbd>Fix:</kbd> avoid crashing when reopening a review with Mermaid diagrams. <!-- client -->
 
 <sub>2026 - 10</sub>
