@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> include review coordinates in client error reports. <!-- client -->
 - <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server -->
 - <kbd>Fix:</kbd> sync long check names without reading impossible legacy paths. <!-- server -->
 - <kbd>Adm:</kbd> Respect shared GitHub account cooldowns across requests. <!-- server -->
