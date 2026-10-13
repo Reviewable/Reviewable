@@ -1,13 +1,13 @@
 <sub>Upcoming</sub>
 
-- <kbd>Adm:</kbd> include review coordinates in client error reports. <!-- client -->
 - <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server -->
 - <kbd>Fix:</kbd> sync long check names without reading impossible legacy paths. <!-- server -->
 - <kbd>Adm:</kbd> Respect shared GitHub account cooldowns across requests. <!-- server -->
-- <kbd>Fix:</kbd> avoid crashing when reopening a review with Mermaid diagrams. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> include review coordinates in client error reports. <!-- client 7929 -->
+- <kbd>Fix:</kbd> avoid crashing when reopening a review with Mermaid diagrams. <!-- client 7929 -->
 - <kbd>Adm:</kbd> reduce GitHub quota polling during review processing. <!-- server 4987 -->
 - <kbd>Fix:</kbd> keep Mermaid diagrams loadable across releases. <!-- client 7928 -->
 - <kbd>New:</kbd> render Mermaid diagrams in comments. <!-- client 7928 -->
