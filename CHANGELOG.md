@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server -->
 - <kbd>Fix:</kbd> sync long check names without reading impossible legacy paths. <!-- server -->
 - <kbd>Adm:</kbd> Respect shared GitHub account cooldowns across requests. <!-- server -->
 - <kbd>Fix:</kbd> avoid crashing when reopening a review with Mermaid diagrams. <!-- client -->
