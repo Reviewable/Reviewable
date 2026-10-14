@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> defer throttled user checks without revoking tokens or aborting the monthly sweep. <!-- server -->
 - <kbd>Adm:</kbd> lower brief completion preparation races to info. <!-- server -->
 
 <sub>2026 - 10</sub>
