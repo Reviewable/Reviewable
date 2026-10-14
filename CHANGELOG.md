@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> defer throttled user checks without revoking tokens or aborting the monthly sweep. <!-- server -->
-- <kbd>Adm:</kbd> lower brief completion preparation races to info. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> defer throttled user checks without revoking tokens or aborting the monthly sweep. <!-- server 4989 -->
+- <kbd>Adm:</kbd> lower brief completion preparation races to info. <!-- server 4989 -->
 - <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server 4988 -->
 - <kbd>Fix:</kbd> sync long check names without reading impossible legacy paths. <!-- server 4988 -->
 - <kbd>Adm:</kbd> Respect shared GitHub account cooldowns across requests. <!-- server 4988 -->
