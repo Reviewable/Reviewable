@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> lower brief completion preparation races to info. <!-- server -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server 4988 -->
