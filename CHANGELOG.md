@@ -1,5 +1,7 @@
 <sub>2026 - 10</sub>
 
+<sub>**Enterprise release 4989.7930** (min 4882.7806 GHE ^2.19 || ^3) 2026-10-15 <!-- enterprise 4989.7930 --></sub>
+
 - <kbd>Adm:</kbd> defer throttled user checks without revoking tokens or aborting the monthly sweep. <!-- server 4989 -->
 - <kbd>Adm:</kbd> lower brief completion preparation races to info. <!-- server 4989 -->
 - <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server 4988 -->
