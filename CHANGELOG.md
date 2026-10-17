@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm<i>(saas)</i>:</kbd> prevent exception reporting from disrupting concurrent tasks. <!-- server -->
+
 <sub>2026 - 10</sub>
 
 <sub>**Enterprise release 4989.7930** (min 4882.7806 GHE ^2.19 || ^3) 2026-10-15 <!-- enterprise 4989.7930 --></sub>
