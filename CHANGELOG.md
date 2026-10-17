@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> preserve repository sweep failures with safe decryption diagnostics. <!-- server -->
 - <kbd>Adm<i>(saas)</i>:</kbd> prevent exception reporting from disrupting concurrent tasks. <!-- server -->
 
 <sub>2026 - 10</sub>
