@@ -1,5 +1,7 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server -->
+  > If you were tracking cardinality for this event (in Sentry or custom error logs) you'll need to either switch to the new `reviews.completion_conflicts` metric or adjust your thresholds.
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash reviews open in other tabs when signing out. <!-- client -->
 
 <sub>2026 - 10</sub>
