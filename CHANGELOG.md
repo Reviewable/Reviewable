@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> when a stacked PR is retargeted after the PR below it merges, let the rebase that follows replace the retargeting revision even if someone opened the review in between, instead of leaving the lower PR's files unreviewed. <!-- server -->
 - <kbd>Upd:</kbd> show `git spr` stacks in their own section of the pull request panel instead of the description, with commands to move up and down the stack. <!-- client -->
 - <kbd>Adm:</kbd> preserve repository sweep failures with safe decryption diagnostics. <!-- server -->
 - <kbd>Adm<i>(saas)</i>:</kbd> prevent exception reporting from disrupting concurrent tasks. <!-- server -->
