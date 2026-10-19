@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> when a stacked PR is retargeted after the PR below it merges, let the rebase that follows replace the retargeting revision even if someone opened the review in between, instead of leaving the lower PR's files unreviewed. <!-- server -->
-- <kbd>Adm:</kbd> preserve repository sweep failures with safe decryption diagnostics. <!-- server -->
-- <kbd>Adm<i>(saas)</i>:</kbd> prevent exception reporting from disrupting concurrent tasks. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> when a stacked PR is retargeted after the PR below it merges, let the rebase that follows replace the retargeting revision even if someone opened the review in between, instead of leaving the lower PR's files unreviewed. <!-- server 4990 -->
+- <kbd>Adm:</kbd> preserve repository sweep failures with safe decryption diagnostics. <!-- server 4990 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> prevent exception reporting from disrupting concurrent tasks. <!-- server 4990 -->
 - <kbd>Upd:</kbd> show `git spr` stacks in their own section of the pull request panel instead of the description, with commands to move up and down the stack. <!-- client 7931 -->
 
 <sub>**Enterprise release 4989.7930** (min 4882.7806 GHE ^2.19 || ^3) 2026-10-15 <!-- enterprise 4989.7930 --></sub>
