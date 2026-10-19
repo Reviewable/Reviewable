@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash reviews open in other tabs when signing out. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> when a stacked PR is retargeted after the PR below it merges, let the rebase that follows replace the retargeting revision even if someone opened the review in between, instead of leaving the lower PR's files unreviewed. <!-- server 4990 -->
