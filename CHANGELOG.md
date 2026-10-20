@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server -->
 - <kbd>New:</kbd> render math in comments. <!-- client -->
 - <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server -->
   > If you were tracking cardinality for this event (in Sentry or custom error logs) you'll need to either switch to the new `reviews.completion_conflicts` metric or adjust your thresholds.
