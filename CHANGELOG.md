@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>New:</kbd> show the issues linked to a pull request in the pull request panel. <!-- client -->
 - <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server -->
 - <kbd>New:</kbd> render math in comments. <!-- client -->
 - <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server -->
