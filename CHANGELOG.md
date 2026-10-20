@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server -->
-- <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server -->
-  > If you were tracking cardinality for this event (in Sentry or custom error logs) you'll need to either switch to the new `reviews.completion_conflicts` metric or adjust your thresholds.
-
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server 4991 -->
+- <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server 4991 -->
+  > If you were tracking cardinality for this event (in Sentry or custom error logs) you'll need to either switch to the new `reviews.completion_conflicts` metric or adjust your thresholds.
 - <kbd>New:</kbd> show the issues linked to a pull request in the pull request panel. <!-- client 7932 -->
 - <kbd>New:</kbd> render math in comments. <!-- client 7932 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash reviews open in other tabs when signing out. <!-- client 7932 -->
