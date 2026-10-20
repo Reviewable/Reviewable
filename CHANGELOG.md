@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server 4991 -->
