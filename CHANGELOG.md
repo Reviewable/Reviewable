@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server -->
 - <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client -->
 
 <sub>2026 - 10</sub>
