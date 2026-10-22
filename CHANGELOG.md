@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> improve automatically generated discussion headlines. <!-- client -->
 - <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server -->
 - <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server -->
 - <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client -->
