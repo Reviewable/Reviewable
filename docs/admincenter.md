@@ -815,7 +815,11 @@ After a short debouncing delay, Reviewable will `POST` a notification when the r
       "number": 1,
       "state": "open",
       "labels": ["bug"],
-      "requestedTeams": ["maintainers"]
+      "requestedTeams": ["maintainers"],
+      // Only present if the pull request is part of a stack.  Lists the stack's pull requests
+      // from the top down; `position` counts from the bottom.  A change to the stack alone
+      // doesn't trigger the webhook.
+      "stack": {"source": "github", "pullRequests": [3, 2, 1], "position": 1, "size": 3}
     },
     "review": {
       "url": "https://reviewable.io/reviews/Reviewable/demo/1",
