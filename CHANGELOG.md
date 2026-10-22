@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> list an organization's repositories even when some are forks blocked by another organization's OAuth app restrictions, and warn about the missing ones. <!-- client -->
 - <kbd>Upd:</kbd> improve automatically generated discussion headlines. <!-- client -->
 - <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server -->
 - <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server -->
