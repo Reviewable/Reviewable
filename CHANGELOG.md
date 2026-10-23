@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server -->
-- <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server -->
-- <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server 4993 -->
+- <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server 4993 -->
+- <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server 4993 -->
 - <kbd>Fix:</kbd> list an organization's repositories even when some are forks blocked by another organization's OAuth app restrictions, and warn about the missing ones. <!-- client 7933 -->
 - <kbd>Upd:</kbd> improve automatically generated discussion headlines. <!-- client 7933 -->
 - <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client 7933 -->
