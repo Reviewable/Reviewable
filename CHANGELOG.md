@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client -->
 - <kbd>Upd:</kbd> reuse clear comment titles as discussion headlines. <!-- client -->
 
 <sub>2026 - 10</sub>
