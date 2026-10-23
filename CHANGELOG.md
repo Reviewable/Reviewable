@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> reuse clear comment titles as discussion headlines. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server 4993 -->
