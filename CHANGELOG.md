@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client -->
-- <kbd>Upd:</kbd> reuse clear comment titles as discussion headlines. <!-- client -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client 7934 -->
+- <kbd>Upd:</kbd> reuse clear comment titles as discussion headlines. <!-- client 7934 -->
 - <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server 4993 -->
 - <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server 4993 -->
 - <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server 4993 -->
