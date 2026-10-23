@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> Recognize reverted files after renaming them back to their original paths. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client 7934 -->
