@@ -1,14 +1,14 @@
 <sub>Upcoming</sub>
 
 - <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server -->
-- <kbd>Fix:</kbd> list an organization's repositories even when some are forks blocked by another organization's OAuth app restrictions, and warn about the missing ones. <!-- client -->
-- <kbd>Upd:</kbd> improve automatically generated discussion headlines. <!-- client -->
 - <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server -->
 - <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server -->
-- <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> list an organization's repositories even when some are forks blocked by another organization's OAuth app restrictions, and warn about the missing ones. <!-- client 7933 -->
+- <kbd>Upd:</kbd> improve automatically generated discussion headlines. <!-- client 7933 -->
+- <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client 7933 -->
 - <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server 4991 -->
 - <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server 4991 -->
   > If you were tracking cardinality for this event (in Sentry or custom error logs) you'll need to either switch to the new `reviews.completion_conflicts` metric or adjust your thresholds.
