@@ -9,7 +9,11 @@ If PRs appear to be missing from the list, try clicking the **Include stalled pu
 
 ![reviewable reviews list](images/reviews_4.png)
 
-PRs are sorted into groups ordered from most to least relevant.  Within each group, PRs are sorted in chronological order — except for **Awaiting my action**, which shows PRs that are waiting on you first.  The logic that determines if a PR is waiting on you is described ([here](reviews.md#waiting-on)). The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
+PRs are sorted into groups ordered from most to least relevant, such as **Awaiting my action** coming before **Assigned to me**.  Within each group, PRs are sorted in chronological order, oldest first. The intention is that the PRs appear in the order you ought to deal with them. You cannot change the sort order, but you can filter the list instead (see below for details).
+
+Two of these groups have extra logic worth calling out:
+- **Awaiting my action** shows PRs that are waiting only on you first. The logic that determines if a PR is waiting on you (or an agent) is described [here](reviews.md#waiting-on) but can be customized by a [review completion condition](admincenter.md#completion-condition).
+- **Needing my agents' attention** combines three subgroups for [your agents](agents.md): reviews awaiting their action, reviews with new comments for them, and reviews they are working on, with items appearing in that order. Inclusion is based on both published activity and whether an agent has pending drafts, but without peeking into the drafts' details.
 
 You can constrain the list to a specific organization by selecting it from the dropdown menu in the panel's header.  Your selection will be automatically saved for future visits.  You can also view all of the PRs in a specific repository by clicking one of the “N open reviews” links in the [Admin Center](admincenter.md), or by entering the full repository name and clicking on the "Go to dashboard for..." link under the query field.
 
