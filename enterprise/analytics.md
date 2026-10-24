@@ -23,12 +23,15 @@ interface Event {
       email?: string | null;
       name?: string | null;
       username?: string;
+      agent?: 'author' | 'reviewer' | 'replicant';
     };
   };
 }
 ```
 
-Server events may have no user identity. Server-side traits are looked up at delivery time; client traits are captured when enqueuing. An agent type is not reported: some server requests retain only the acting user ID, so a replicant acting as its owner cannot reliably be distinguished from that owner.
+Server events may have no user identity. Server-side traits are looked up at delivery time; client traits use the session that issued the event (or the session resolved during initialization). `context.traits.agent` identifies the acting agent's type, including replicants whose `userId` remains their owner's identity. It is omitted for human activity and when agent attribution is unavailable. Older clients may omit the acting-agent identity on server requests, so their replicant activity cannot be distinguished from their owner's. The separate `Authored Review` event describes the PR author, not the agent that discovered the PR. Client Mixpanel events carry the same agent type as an event property, without changing the owner's profile.
+
+When rolling out this version, deploy the updated database rules, then the server, then the client. The server must support the new agent-specific PR synchronization task keys before newer clients use them; older clients remain supported.
 
 All client events also carry `path` (the client route) and `build` (the client build). Events issued on a loaded review page also carry the common PR properties below, unless they explicitly reference another repository or PR. These appear in client analytics sinks and action breadcrumbs as well. The URL sink's `eventId` is not added to other sinks or breadcrumbs.
 
