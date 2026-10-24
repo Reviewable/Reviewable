@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> Recognize reverted files after renaming them back to their original paths. <!-- client -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> Recognize reverted files after renaming them back to their original paths. <!-- client 7935 -->
 - <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client 7934 -->
 - <kbd>Upd:</kbd> reuse clear comment titles as discussion headlines. <!-- client 7934 -->
 - <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server 4993 -->
