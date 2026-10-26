@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> suppress expected recoverable GitHub IP restrictions after worker error normalization. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> Recognize reverted files after renaming them back to their original paths. <!-- client 7935 -->
