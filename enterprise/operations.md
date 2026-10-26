@@ -20,7 +20,7 @@ $ curl https://$REVIEWABLE_FIREBASE_URL/system/maintenance.json?auth=$REVIEWABLE
 # if database is encrypted
 $ npm install --global reviewable-enterprise-tools
 $ echo '{"switch": true, "message": "An HTML message to your users."}' >maintenance.json
-$ node "$(npm root --global)/reviewable-enterprise-tools/write.js" -p system/maintenance -f maintenance.json
+$ rvbl-write -p system/maintenance -f maintenance.json
 ```
 
 The switch itself is public and will be publicly visible to anyone who cares to check.  You may also specify a private message that will be displayed in the browser's modal overlay only for users who are signed in.  The message is in HTML, so you can embed links to internal status pages and such.  You can repeat this command as often as necessary to update the message.
@@ -40,7 +40,7 @@ $ curl https://$REVIEWABLE_FIREBASE_URL/system/maintenance.json?auth=$REVIEWABLE
        -X DELETE
 #   or
 $ echo 'null' >null.json
-$ node "$(npm root --global)/reviewable-enterprise-tools/write.js" -p system/maintenance -f null.json
+$ rvbl-write -p system/maintenance -f null.json
 ```
 
 ### AES encryption key rotation
@@ -83,6 +83,6 @@ Next, we'll extract the required data from the reviewable.io datastore and send 
 
 Finally, you'll load the extracted data into your own Reviewable datastore and sync it with your GHE instance.  Note that existing data will be overwritten so it's best to do this on an installation that hasn't seen actual use yet.
 1. Make sure you've signed in to your instance of Reviewable with your license admin account at least once.
-2. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `load_data --help`.
+2. Install `npm install --global reviewable-enterprise-tools` and make sure you can run `rvbl-load-data --help`.
 3. Define `REVIEWABLE_FIREBASE_URL`, `REVIEWABLE_FIREBASE_CREDENTIALS_FILE`, and `REVIEWABLE_ENCRYPTION_AES_KEY` in your shell just like on your servers.
-4. Run `load_data --input data.js --admin github:NNNN` where `data.js` points to the data file we sent you and `NNNN` is the numeric GHE user ID of the license admin account.
+4. Run `rvbl-load-data --input data.js --admin github:NNNN` where `data.js` points to the data file we sent you and `NNNN` is the numeric GHE user ID of the license admin account.
