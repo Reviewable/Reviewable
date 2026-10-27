@@ -781,7 +781,7 @@ A timestamp in milliseconds since the epoch for when the completion condition sh
 #### `webhook`
 A URL string that Reviewable will send review status update notifications to.  You can hook this up directly to a Slack webhook or, through something like [Zapier](https://zapier.com/) or [Make](https://www.make.com/), to most any other communication tool.
 
-After a short debouncing delay, Reviewable will `POST` a notification when the review status description, reviewers being waited on, recipients with unread comments, pull request labels, review stage, requested teams, draft state, or latest revision change. Draft and revision comparisons begin once a notification has established a baseline after upgrading. Closing or merging the pull request changes the status description and can also trigger a notification. The JSON payload looks like this:
+After a short debouncing delay, Reviewable will `POST` a notification when the review status description, reviewers being waited on, recipients with unread comments, pull request labels, review stage, or requested teams change. Draft transitions, closing, or merging the pull request change the status description and can also trigger a notification. A new revision alone does not trigger a notification. The JSON payload looks like this:
 ```js
 {
   // for Slack, this is Slack's Markdown flavor. See https://www.markdownguide.org/tools/slack/ for details.
@@ -811,8 +811,8 @@ After a short debouncing delay, Reviewable will `POST` a notification when the r
     "pullRequest": {
       "title": "Demo code review (shared)",
       "owner": "Reviewable",
-      "repo": "demo",
-      "prNumber": 1,
+      "repository": "demo",
+      "number": 1,
       "state": "open",
       "draft": false,
       "labels": ["bug"],
@@ -825,7 +825,7 @@ After a short debouncing delay, Reviewable will `POST` a notification when the r
     "review": {
       "url": "https://reviewable.io/reviews/Reviewable/demo/1",
       "completed": false,
-      "lastRevision": "-ExampleRevisionKey",
+      "lastRevision": "r1",
       "status": "Review in progress: 1 of 4 files reviewed, 2 unresolved discussions",
       "shortStatus": "1 of 4 files reviewed, 2 unresolved discussions", // optional
       "stage": "Review"

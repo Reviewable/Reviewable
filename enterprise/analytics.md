@@ -10,14 +10,14 @@ Events resemble the [Segment tracking spec](https://segment.com/docs/spec/track/
 interface Event {
   type: 'track';
   event: string;
-  eventId: string;      // persistent analytics queue key; only sent to REVIEWABLE_ANALYTICS_URL
-  properties: object;  // documented below
-  sentAt: string;      // ISO 8601 timestamp when the event was issued, before queuing/delivery
-  userId?: string;     // associated identity, e.g. github:NNNN or ghagent:NNNN-NNNN
-  anonymousId?: string; // transient client identity when signed out
+  eventId: string;       // persistent analytics queue key; only sent to REVIEWABLE_ANALYTICS_URL
+  properties: object;    // documented below
+  sentAt: string;        // ISO 8601 timestamp when the event was issued, before queuing/delivery
+  userId?: string;       // associated identity, e.g. github:NNNN or ghagent:NNNN-NNNN
+  anonymousId?: string;  // transient client identity when signed out
   context: {
-    active: boolean;   // direct user action (true) or background/server activity (false)
-    userAgent?: string; // present on client events
+    active: boolean;     // direct user action (true) or background/server activity (false)
+    userAgent?: string;  // present on client events
     traits?: {
       avatar?: string | null;
       email?: string | null;
@@ -31,9 +31,9 @@ interface Event {
 
 Server events may have no user identity. Server-side traits are looked up at delivery time; client traits use the session that issued the event (or the session resolved during initialization). `context.traits.agent` identifies the acting agent's type, including replicants whose `userId` remains their owner's identity. It is omitted for human activity and when agent attribution is unavailable. Older clients may omit the acting-agent identity on server requests, so their replicant activity cannot be distinguished from their owner's. The separate `Authored Review` event describes the PR author, not the agent that discovered the PR. Client Mixpanel events carry the same agent type as an event property, without changing the owner's profile.
 
-When rolling out this version, deploy the updated database rules, then the server, then the client. The server must support the new agent-specific PR synchronization task keys before newer clients use them; older clients remain supported.
+The updated database rules and client can be deployed together before the server. PR synchronization tasks keep their existing user-based keys, and older servers ignore the optional acting-agent property. Server-side agent attribution becomes available after the server upgrade; older clients remain supported.
 
-All client events also carry `path` (the client route) and `build` (the client build). Events issued on a loaded review page also carry the common PR properties below, unless they explicitly reference another repository or PR. These appear in client analytics sinks and action breadcrumbs as well. The URL sink's `eventId` is not added to other sinks or breadcrumbs.
+All client events also carry `path` (the client route) and `build` (the client build). Events about a review explicitly carry the common PR properties below; generic actions do not inherit review data from the current page. These properties appear in client analytics sinks and action breadcrumbs as well. The URL sink's `eventId` is not added to other sinks or breadcrumbs.
 
 Repository references use `owner` and `repo`. Pull request events use these common properties:
 
@@ -42,12 +42,12 @@ Repository references use `owner` and `repo`. Pull request events use these comm
   owner: string;
   repo: string;
   prNumber: number;
-  userIsAuthor: boolean; // whether the associated user acts as the PR author
-  lastRevision: string | null; // latest Reviewable revision key at event issuance, not a commit SHA
+  userIsAuthor?: boolean;       // whether the associated user acts as the PR author; only with userId
+  lastRevision: string | null;  // latest Reviewable revision key at event issuance, not a commit SHA
 }
 ```
 
-Author agents count as authors on their owner's PRs, while reviewer agents have their own identity. `userIsAuthor` is false for events with no associated user, including `Updated Review Status`. `lastRevision` is null if no revision has been captured yet, as when a review is first created. The common PR properties below are in addition to each event's listed fields. Legacy property aliases remain in payloads for compatibility; new consumers should use the names documented here.
+Author agents count as authors on their owner's PRs, while reviewer agents have their own identity. `userIsAuthor` is omitted for events with no associated user, including `Updated Review Status`. `lastRevision` is null if no revision has been captured yet, as when a review is first created. The common PR properties below are in addition to each event's listed fields. Legacy property aliases remain in payloads for compatibility; new consumers should use the names documented here.
 
 ##### Signed up
 The user signed in to Reviewable for the first time. No additional properties.
@@ -68,7 +68,7 @@ A review was created for a pull request. The associated user is the requester or
 ```ts
 {
   private: boolean;
-  origin: 'request' | 'event' | 'poll'; // direct navigation, connected repo, or enrollment
+  origin: 'request' | 'event' | 'poll';  // direct navigation, connected repo, or enrollment
 }
 ```
 
@@ -81,24 +81,24 @@ The user successfully published a review, including publication through the head
 ```ts
 {
   sanction: 'approved' | 'changes_requested' | 'commented';
-  numDrafts: number;             // legacy total draft count, including private/unsent drafts
-  numPublishableDrafts: number; // comments in the published actions summary
-  numMarks: number;             // files with pending review marks, including virtual Commits
-  numFullMarks: number;         // files whose pending marks fully review their latest revision
-  numFilesReviewed: number;     // published summary's reviewed-file count, excluding Commits
-  commitsReviewed: boolean;    // whether all commit messages at the latest revision were marked
-  numRoleChanges: number;       // disposition changes without a comment
-  numAcknowledgements: number; // acknowledgements without a comment
-  numDismissals: number;        // individual participant dismissals
-  numDiscussionsResolved: number; // newly resolved discussions, excluding the top discussion
-  numDiscussionsDismissed: number; // distinct discussions with participant dismissals
-  numParticipantsDismissed: number; // distinct users dismissed across those discussions
-  numUnreviewedFiles: number;   // projected remaining files, including virtual Commits
-  emojis: string[];             // normalized names from the sentiment records being published
-  completed?: boolean;         // projected review completion
-  numUnresolvedDiscussions?: number; // projected unresolved discussions, excluding the top one
+  numDrafts: number;                  // legacy total draft count, including private/unsent drafts
+  numPublishableDrafts: number;       // comments in the published actions summary
+  numMarks: number;                   // files with pending review marks, including virtual Commits
+  numFullMarks: number;               // files whose pending marks fully review their latest revision
+  numFilesReviewed: number;           // published summary's reviewed-file count, excluding Commits
+  commitsReviewed: boolean;           // whether all commit messages at the latest revision were marked
+  numRoleChanges: number;             // disposition changes without a comment
+  numAcknowledgements: number;        // acknowledgements without a comment
+  numDismissals: number;              // individual participant dismissals
+  numDiscussionsResolved: number;     // newly resolved discussions, excluding the top discussion
+  numDiscussionsDismissed: number;    // distinct discussions with participant dismissals
+  numParticipantsDismissed: number;   // distinct users dismissed across those discussions
+  numUnreviewedFiles: number;         // projected remaining files, including virtual Commits
+  emojis: string[];                   // normalized names from the sentiment records being published
+  completed?: boolean;                // projected review completion
+  numUnresolvedDiscussions?: number;  // projected unresolved discussions, excluding the top one
   designation?: 'user' | 'team' | 'anyone' | null;
-  latency: number;             // elapsed publication time in milliseconds
+  latency: number;                    // elapsed publication time in milliseconds
 }
 ```
 
@@ -114,13 +114,12 @@ The user successfully sent an individual comment using its send button. Includes
 ```ts
 {
   emojis: string[];
-  completed?: boolean;
   numUnresolvedDiscussions?: number;
   designation?: 'user' | 'team' | 'anyone' | null;
 }
 ```
 
-These fields have the same meanings as above, except the completion projection applies only this send and its directives, without publishing other pending drafts or marks. A failed projection does not prevent sending the comment; its completion fields are omitted.
+These fields have the same meanings as above. The unresolved count adjusts the current total for the discussion being sent, including newly started discussions, without applying other pending drafts. Review completion is not evaluated or included for individual sends.
 
 ##### Ready for Review
 The user changed a draft PR to ready for review from Reviewable. Includes common PR properties.
@@ -130,7 +129,7 @@ The user successfully merged the PR from Reviewable. Does not track merges perfo
 
 ```ts
 {
-  deleted: boolean; // whether the head branch was deleted
+  deleted: boolean;  // whether the head branch was deleted
   flavor: 'merge' | 'squash' | 'rebase' | 'fastForward';
 }
 ```
@@ -150,12 +149,12 @@ A server event with no associated user. Includes common PR properties and:
   draft: boolean;
   completed: boolean;
   description: string;
-  pendingUsernames: string[]; // normalized GitHub usernames being waited on
-  unreadUsernames: string[];  // users with unread comments who are not being waited on
+  pendingUsernames: string[];  // normalized GitHub usernames being waited on
+  unreadUsernames: string[];   // users with unread comments who are not being waited on
 }
 ```
 
-This uses the same notification path as [review status webhooks](../docs/admincenter.md#webhook), even if no webhook URL is configured. Notifications are debounced for ten seconds. Changes to the description, pending/unread users, draft state, latest revision, labels, requested teams, or review stage can trigger delivery; short-lived intermediate states may be coalesced. Some of these triggers are not themselves fields in the analytics payload. Draft and revision comparisons begin once a notification has established a baseline after upgrading. This event is sent only to `REVIEWABLE_ANALYTICS_URL`.
+This uses the same notification path as [review status webhooks](../docs/admincenter.md#webhook), even if no webhook URL is configured. Notifications are debounced for ten seconds. Changes to the description, pending/unread users, labels, requested teams, or review stage can trigger delivery; short-lived intermediate states may be coalesced. Some of these triggers are not themselves fields in the analytics payload. Draft transitions change the description; a new revision alone does not trigger delivery. This event is sent only to `REVIEWABLE_ANALYTICS_URL`.
 
 ##### Compacted Revisions
 The user compacted a review's revisions. Includes common PR properties, with the revision key after compaction, and:
@@ -164,10 +163,10 @@ The user compacted a review's revisions. Includes common PR properties, with the
 { numOriginalRevisions: number; numCompactedRevisions: number; }
 ```
 
-##### Viewed … Page
-Navigation emits `Viewed <pageClass> Page`, with route properties, `title`, `windowWidth`, and `windowHeight`. Page classes include `home-page`, `dashboard-page`, `admin-page`, `review-page`, `goodbye-page`, `difftest-page`, `playground-page`, `encrypt-page`, and `headless-page`.
+##### Viewed Page
+Navigation emits `Viewed Page`, with `pageClass`, route properties, `title`, `windowWidth`, and `windowHeight`. Page classes include `home-page`, `dashboard-page`, `admin-page`, `review-page`, `goodbye-page`, `difftest-page`, `playground-page`, `encrypt-page`, and `headless-page`.
 
-Scoped dashboard/admin routes include `owner` and optionally `repo`. Review routes include common PR properties and may include `filePath`. Review page events wait for the review to load and are skipped if navigation leaves first. Query/hash-only navigation does not produce another page event.
+Scoped dashboard/admin routes include `owner` and optionally `repo`. Review routes include `owner`, `repo`, `prNumber`, and optionally `filePath`, without loading review data or adding `userIsAuthor` or `lastRevision`. Query/hash-only navigation does not produce another page event.
 
 ##### Loaded Page
 Sampled production client performance telemetry. Carries `page`, either `extLatency` (initial load) or `intLatency` (in-app navigation), and available phase timings such as `connect`, `load`, `init`, `boot`, `diffFirst`, `diffRest`, `prep`, `list`, or `show`, in milliseconds. Optional counters and flags depend on the page. Currently the effective sampling rate is 5% for both initial and subsequent loads.
@@ -181,10 +180,10 @@ The dashboard's review counts changed. Sampled at 25% of changes.
   includesPrivate: boolean;
   includesPushableRepos: boolean;
   listType: 'personal' | 'org' | 'repo';
-  owner?: string; // organization/repository lists
-  repo?: string;  // repository lists
-  numDistinctOwners?: number; // global/personal list only
-  numDistinctRepos?: number;  // global/personal list only
+  owner?: string;              // organization/repository lists
+  repo?: string;               // repository lists
+  numDistinctOwners?: number;  // global/personal list only
+  numDistinctRepos?: number;   // global/personal list only
 }
 ```
 
@@ -200,11 +199,23 @@ The repositories list loaded.
 ##### Customized review completion
 The user saved a custom completion condition. Properties: `owner`, `repo`. Each saved repository is reported separately.
 
-##### Connected Repo / Disconnected Repo
-The server completed the user's connect/disconnect request. Properties: `owner`, `repo`.
+##### Connected Repo
+The server completed the user's connect request. Properties: `owner`, `repo`.
+
+##### Disconnected Repo
+The server completed the user's disconnect request. Properties: `owner`, `repo`.
 
 ##### Disassociated Repos
 The user disassociated an owner's repositories through the goodbye page, disconnecting them and attempting to remove Reviewable badges. Properties: `owner` and `count` (repositories processed).
+
+##### Enrolled
+The user enabled automatic connection of repositories. Property `type` is `'public'` (their PRs in public repos), `'private'` (their PRs in private repos), or `'personal'` (all their current and future repos).
+
+##### Unenrolled
+The user disabled automatic connection of repositories. Property `type` has the same meanings as for `Enrolled`.
+
+##### Looked at Guide
+The contextual guide opened. Properties: `onboardingKey` (snippet ID), `from` (usually `'app'` for direct access or `'map'` for the guide outline), and optional `completed` (the user's previous onboarding flag).
 
 ##### Reconnected Repos
 Connections were retried after an account problem was addressed. Properties: `errorCode` (the internal problem code) and `count` (repositories processed).
@@ -212,17 +223,14 @@ Connections were retried after an account problem was addressed. Properties: `er
 ##### Reconciled
 The server completed a repository reconciliation request. Properties: `owner`, `repo`, and `numReconciled` (review statuses where an update was attempted).
 
-##### Enrolled / Unenrolled
-The user enabled/disabled automatic connection of repositories. Property `type` is `'public'` (their PRs in public repos), `'private'` (their PRs in private repos), or `'personal'` (all their current and future repos).
-
-##### Looked at Guide
-The contextual guide opened. Properties: `onboardingKey` (snippet ID), `from` (usually `'app'` for direct access or `'map'` for the guide outline), and optional `completed` (the user's previous onboarding flag).
-
 ##### Opened user guide
 The user opened the documentation. Property `from` is `'subscription'` or `'support'`.
 
-##### Opened Email Us / Opened Issues
-The user clicked the support email or GitHub issues link. Property `from` is `'support'`.
+##### Opened Email Us
+The user clicked the support email link. Property `from` is `'support'`.
+
+##### Opened Issues
+The user clicked the GitHub issues link. Property `from` is `'support'`.
 
 ##### Opened Chatroom
 The user opened support chat (or its fallback link). `from: 'support'` is present for the header action; the chat integration can also emit this event without `from`.
