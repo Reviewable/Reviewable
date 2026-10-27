@@ -94,10 +94,11 @@ Emitted alongside `Created Review`, associated with the PR author instead of the
 ```
 
 ##### Published Comments
-The user successfully published a review. This can publish review marks and other actions without any comments. Queuing a publication to wait for a push and the subsequent automatic publication on push do not emit this event. Includes common PR properties.
+The user successfully published a review, either directly or automatically after a push. This can publish review marks and other actions without any comments. Queuing a publication to wait for a push does not emit this event; successful publication does. Includes common PR properties.
 
 ```ts
 {
+  trigger: 'user' | 'push';            // direct publication or automatic publication after a push
   sanction: 'approved' | 'changes_requested' | 'commented';
   numPublishedDrafts: number;         // comments in the published actions summary
   numMarks: number;                   // files with published review marks, including virtual Commits
@@ -115,11 +116,13 @@ The user successfully published a review. This can publish review marks and othe
   emojis: string[];                   // normalized names of emojis in the published comments
   completed?: boolean;                // projected review completion
   designation?: 'user' | 'team' | 'anyone' | null;
-  latency: number;                    // elapsed publication time in milliseconds
+  latency: number;                    // elapsed publication attempt time in ms, excluding waiting for a push
 }
 ```
 
 Action counts, sanction, designation, and projected status are captured before publication consumes the drafts and marks. Partial file reviews are included in `numFilesReviewed`; compare `numMarks` with `numFullMarks` to distinguish a partial review. The shared PR properties describe the review when this event is issued after publication.
+
+For publication triggered by a push, action counts, sanction, emojis, designation, and projected status are snapshots taken when the publication was queued. They may be outdated by the time publication occurs, particularly after the push changes the review. `lastRevision` and `latency` describe the actual publication attempt.
 
 `emojis` contains normalized emoji names, including repeated names. Emojis in code and quoted blocks are excluded. The entries are names, rather than emoji images or Unicode characters.
 
@@ -307,11 +310,11 @@ The user disassociated an owner's repositories through the goodbye page, disconn
 ```
 
 ##### Enrolled
-The user enabled automatic connection of repositories.
+The user enabled automatic connection of repositories. `public` and `private` cover their PRs in public or private repositories, respectively. `personal` includes all their current and future repositories.
 
 ```ts
 {
-  type: 'public' | 'private' | 'personal';  // their PRs in public/private repos, or all their own repos
+  type: 'public' | 'private' | 'personal';
 }
 ```
 
