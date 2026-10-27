@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> Show agents' avatars and badges in diff descriptions. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client 7936 -->
