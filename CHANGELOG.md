@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client -->
 - <kbd>Fix:</kbd> don't bounce a sign-in when another tab is still catching up on the preceding sign-out. <!-- client -->
 - <kbd>Fix:</kbd> recover from temporary local AI startup failures and improve English comment language detection. <!-- client -->
 - <kbd>Adm:</kbd> suppress expected recoverable GitHub IP restrictions after worker error normalization. <!-- client -->
