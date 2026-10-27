@@ -143,7 +143,7 @@
           "format": "time_series",
           "hide": true,
           "rawQuery": true,
-          "rawSql": "SELECT \"sentAt\" as \"time\", concat_ws('/', properties->>'owner', properties->>'repo', properties->>'pullRequest') AS \"PR\"\nFROM event\nWHERE event = 'Published Comments'\nLIMIT 50;",
+          "rawSql": "SELECT \"sentAt\" as \"time\", concat_ws('/', properties->>'owner', properties->>'repo', COALESCE(properties->>'prNumber', properties->>'pullRequest')) AS \"PR\"\nFROM event\nWHERE event = 'Published Comments'\nLIMIT 50;",
           "refId": "B",
           "sql": {
             "columns": [
@@ -172,7 +172,7 @@
           "format": "table",
           "hide": true,
           "rawQuery": true,
-          "rawSql": "SELECT DISTINCT ON (\"PR\") \"sentAt\" as \"time\", concat_ws('/', properties->>'owner', properties->>'repo', properties->>'pullRequest') AS \"PR\"\nFROM event\nWHERE event = 'Published Comments'\nORDER BY \"PR\", \"time\"\nLIMIT 50;",
+          "rawSql": "SELECT DISTINCT ON (\"PR\") \"sentAt\" as \"time\", concat_ws('/', properties->>'owner', properties->>'repo', COALESCE(properties->>'prNumber', properties->>'pullRequest')) AS \"PR\"\nFROM event\nWHERE event = 'Published Comments'\nORDER BY \"PR\", \"time\"\nLIMIT 50;",
           "refId": "C",
           "sql": {
             "columns": [
@@ -201,7 +201,7 @@
           "format": "table",
           "hide": false,
           "rawQuery": true,
-          "rawSql": "SELECT\n  MIN(authored.\"sentAt\") as \"authored time\",\n  MIN(published.\"sentAt\") as \"published time\",\n  EXTRACT(EPOCH FROM MIN(published.\"sentAt\") - MIN(authored.\"sentAt\"))/60 as \"TTFR\",\n  EXTRACT(EPOCH FROM MAX(published.\"sentAt\") - MIN(authored.\"sentAt\"))/60 as \"TTLR\",\n  concat_ws('/', authored.properties->>'owner', authored.properties->>'repo', authored.properties->>'prNumber') AS \"PR\"\nFROM event authored\nJOIN event published\n  ON authored.properties->>'owner' = published.properties->>'owner'\n  AND authored.properties->>'repo' = published.properties->>'repo'\n  AND authored.properties->>'prNumber' = published.properties->>'pullRequest'\nWHERE\n  authored.event = 'Authored Review' AND\n  published.event = 'Published Comments'\nGROUP BY\n  \"PR\"\n\n\n-- SELECT DISTINCT ON (\"PR\") \"sentAt\" as \"time\", concat_ws('/', properties->>'owner', properties->>'repo', properties->>'pullRequest') AS \"PR\"\n-- FROM event\n-- WHERE event = 'Published Comments'\n-- ORDER BY \"PR\", \"time\"\n",
+          "rawSql": "SELECT\n  MIN(authored.\"sentAt\") as \"authored time\",\n  MIN(published.\"sentAt\") as \"published time\",\n  EXTRACT(EPOCH FROM MIN(published.\"sentAt\") - MIN(authored.\"sentAt\"))/60 as \"TTFR\",\n  EXTRACT(EPOCH FROM MAX(published.\"sentAt\") - MIN(authored.\"sentAt\"))/60 as \"TTLR\",\n  concat_ws('/', authored.properties->>'owner', authored.properties->>'repo', authored.properties->>'prNumber') AS \"PR\"\nFROM event authored\nJOIN event published\n  ON authored.properties->>'owner' = published.properties->>'owner'\n  AND authored.properties->>'repo' = published.properties->>'repo'\n  AND authored.properties->>'prNumber' = COALESCE(published.properties->>'prNumber', published.properties->>'pullRequest')\nWHERE\n  authored.event = 'Authored Review' AND\n  published.event = 'Published Comments'\nGROUP BY\n  \"PR\"\n\n\n-- SELECT DISTINCT ON (\"PR\") \"sentAt\" as \"time\", concat_ws('/', properties->>'owner', properties->>'repo', COALESCE(properties->>'prNumber', properties->>'pullRequest')) AS \"PR\"\n-- FROM event\n-- WHERE event = 'Published Comments'\n-- ORDER BY \"PR\", \"time\"\n",
           "refId": "D",
           "sql": {
             "columns": [

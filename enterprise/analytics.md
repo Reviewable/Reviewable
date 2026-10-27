@@ -73,7 +73,7 @@ An agent authenticated. The associated `userId` identifies its owner.
 ```
 
 ##### Created Review
-A review was created for a pull request. The associated user is the requester or the account whose credentials were used for background synchronization. Includes common PR properties.
+A review was created for a pull request. The associated user is the requester or the user whose enrollment discovered the PR. Creation through a repository connection has no associated user, so `userId`, `userIsAuthor`, and acting agent traits are omitted. Includes common PR properties.
 
 ```ts
 {

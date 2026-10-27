@@ -26,6 +26,9 @@ export class Event {
   @PrimaryGeneratedColumn()
   id: string;
 
+  @Column({ type: "text", nullable: true, unique: true })
+  eventId: string | null | undefined;
+
   @Column({ type: "timestamp" })
   sentAt: Date;
 
@@ -40,6 +43,9 @@ export class Event {
 
   @Column({ type: "bool" })
   active: boolean;
+
+  @Column({ type: "text", nullable: true })
+  agent: string | null | undefined;
 
   @ManyToOne(() => User, (user) => user.events)
   @JoinColumn()
