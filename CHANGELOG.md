@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client -->
-- <kbd>Fix:</kbd> don't bounce a sign-in when another tab is still catching up on the preceding sign-out. <!-- client -->
-- <kbd>Fix:</kbd> recover from temporary local AI startup failures and improve English comment language detection. <!-- client -->
-- <kbd>Adm:</kbd> suppress expected recoverable GitHub IP restrictions after worker error normalization. <!-- client -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client 7936 -->
+- <kbd>Fix:</kbd> don't bounce a sign-in when another tab is still catching up on the preceding sign-out. <!-- client 7936 -->
+- <kbd>Fix:</kbd> recover from temporary local AI startup failures and improve English comment language detection. <!-- client 7936 -->
+- <kbd>Adm:</kbd> suppress expected recoverable GitHub IP restrictions after worker error normalization. <!-- client 7936 -->
 - <kbd>Fix:</kbd> Recognize reverted files after renaming them back to their original paths. <!-- client 7935 -->
 - <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client 7934 -->
 - <kbd>Upd:</kbd> reuse clear comment titles as discussion summaries. <!-- client 7934 -->
