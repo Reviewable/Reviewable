@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> avoid misleading branch protection failures on new revisions. <!-- server -->
 - <kbd>Fix:</kbd> Show agents' avatars and badges in diff descriptions. <!-- client -->
 
 <sub>2026 - 10</sub>
