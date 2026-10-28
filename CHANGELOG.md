@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(saas)</i>:</kbd> warn on the merge button when a pull request below it in the stack holds the merge back. <!-- client -->
 - <kbd>Fix:</kbd> avoid masking browser AI startup failures when no rejection reason is supplied. <!-- client -->
 - <kbd>Upd:</kbd> prioritize one of your agents by PR role in empty @-completion suggestions. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> don't lose the merge button on a pull request ready to merge with a bypass asked for. <!-- client -->
