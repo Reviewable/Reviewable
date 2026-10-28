@@ -42,7 +42,7 @@ All client events also carry these properties:
 
 Events about a review carry the common PR properties below; generic actions do not inherit review data from the current page.
 
-Repository references use `owner` and `repo`. Pull request events use these common properties in addition to each event's listed fields:
+Repository references use lowercase `owner` and `repo` values across client and server events. Pull request events use these common properties in addition to each event's listed fields:
 
 ```ts
 {
