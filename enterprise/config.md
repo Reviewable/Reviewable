@@ -158,15 +158,33 @@ Some features, such as [custom review completion rules](https://docs.reviewable.
         "Action": [
             "logs:CreateLogGroup",
             "logs:PutRetentionPolicy",
-            "logs:DeleteLogGroup",
+            "logs:DeleteLogGroup"
+        ],
+        "Resource": [
+            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*",
+            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*:*:*"
+        ]
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
             "logs:DescribeLogGroups"
         ],
         "Resource": [
-            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*:*:*"
+            "*"
         ]
     }
 ]
 ```
+
+The log-group permissions include both the log-group ARN and the legacy log-stream ARN for compatibility during AWS's authorization transition.  `logs:DescribeLogGroups` uses a separate statement with `Resource: "*"` because it does not support resource-level permissions; see the [AWS service authorization reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_logs.html).
+
+**Existing AWS Lambda installations: update CloudWatch Logs IAM policies before April 26, 2027.**  AWS is changing log-group actions to require a [log-group ARN](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-identity-based-access-control-cwl.html), without the `:*` or `:log-stream:...` suffix.  Earlier versions of the example above granted these actions only on `arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*:*:*`.  For that example, add `arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*` to the resources for `logs:CreateLogGroup`, `logs:PutRetentionPolicy`, and `logs:DeleteLogGroup`, keeping the existing ARN in place.  If your policy restricts access to particular log groups, add only the corresponding log-group ARNs and preserve any conditions.  Keep `logs:DescribeLogGroups` in its own statement with `Resource: "*"`, as above.
+
+Check both the server's IAM principal and the Lambda execution role, including any customized policies.  Keep existing log-stream permissions: `logs:CreateLogStream`, `logs:PutLogEvents`, `logs:GetLogEvents`, and `logs:DeleteLogStream` still require log-stream ARNs, and retaining the old statements also preserves access while AWS rolls out the change by region.  The execution-role example above uses `arn:aws:logs:*:*:*`, which already matches both log groups and log streams and does not need this ARN migration.  Do not replace a restricted policy with that broad example just to migrate it.
+
+AWS provides read-only tools to [find potentially affected policies](https://github.com/aws-samples/sample-cloudwatch-logs-iam-policy-validator/blob/main/LIST_IMPACTED_POLICIES.md) and [simulate their permissions](https://github.com/aws-samples/sample-cloudwatch-logs-iam-policy-validator).  Verify that the intended log-group actions are allowed on the new ARNs and that existing log-stream access is preserved.  These additive IAM policy changes do not require a Reviewable upgrade, restart, or Lambda function recreation.  Installations that do not use `REVIEWABLE_CODE_EXECUTOR=awslambda` do not need this change for Reviewable's code executor.
+
 * `REVIEWABLE_COMPLETION_CONDITION_TIMEOUT`: Time allowed for each review custom completion condition to finish executing, for all executor types (default `3s`; range `1ms` to `889s`, in whole milliseconds).  It's best to keep this value as low as possible to avoid long recovery times from passive failures.
 
 ##### UI customization
