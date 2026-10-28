@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix<i>(saas)</i>:</kbd> don't lose the merge button on a pull request ready to merge with a bypass asked for. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Fix:</kbd> avoid misleading branch protection failures on new revisions. <!-- server 4995 -->
