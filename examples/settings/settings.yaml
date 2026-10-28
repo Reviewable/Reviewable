@@ -53,6 +53,17 @@ merge:
   # Valid options include: `github` (default), `label:NAME` and `external`.
   mechanism: github
 
+# `stacks` describes the stacking tools whose stack Reviewable should read from pull request descriptions.
+# https://docs.reviewable.io/repositories.html#stacking-tools
+stacks:
+  - name: stackable_pr
+    description-block:
+      start: '<!-- Stacked PR: start -->'
+      # Optional; without it, the block runs to the end of the description.
+      end: '<!-- Stacked PR: end -->'
+    # Valid options include: `top-first` (default) or `bottom-first`.
+    order: top-first
+
 # `github-status` lets you control various aspects of Reviewable's pull request status on GitHub.
 # https://docs.reviewable.io/repositories.html#review-status-in-github-pr
 github-status:
