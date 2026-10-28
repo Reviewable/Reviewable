@@ -365,6 +365,44 @@ Any option other than `github` will cause Reviewable to stop checking GitHub's o
 If you have a different merge process that you'd like to integrate with Reviewable, please [get in touch](mailto:support@reviewable.io) and we'll see what we can do!
 :::
 
+#### Stacking tools
+
+*This setting can only be changed using a `settings.yaml` file.*
+
+Reviewable recognizes stacks of dependent pull requests made with GitHub's own stacks or with [`spr`](https://github.com/ejoffe/spr) out of the box.  If your team uses another tool that lists the stack in each pull request's description, you can describe that list here, and Reviewable will show the stack in the review, link its pull requests to each other, and leave the list out of the description it shows.
+
+```yaml
+stacks:
+  - name: stackable_pr
+    description-block:
+      start: '<!-- Stacked PR: start -->'
+      end: '<!-- Stacked PR: end -->'
+    # The default setting is `top-first`.
+    order: top-first | bottom-first
+```
+
+- `name` identifies the tool, and can be anything up to 50 characters that's unique among the repository's definitions.  Wherever Reviewable reports which tool manages a stack, such as to agents, it names this one as `x-` followed by this name.
+- `description-block` gives the exact text the tool puts at the `start` and `end` of its list.  The list runs from the last occurrence of the start marker to the first end marker after it, and both markers are required.
+- `order` says which end of the list is the top of the stack.
+
+For example, with the definition above, the middle pull request of a three-deep stack might carry this block in its description, with the top of the stack first:
+
+```markdown
+<!-- Stacked PR: start -->
+- Add the export button: https://github.com/acme/app/pull/12
+- Build the export API (this pull request): https://github.com/acme/app/pull/11
+- Add the export schema: https://github.com/acme/app/pull/10
+<!-- Stacked PR: end -->
+```
+
+Between the start and end markers, Reviewable takes the links to pull requests in this repository, in the order they appear: GitHub pull request links (`https://github.com/OWNER/REPO/pull/N`) and review links (`https://reviewable.io/reviews/OWNER/REPO/N`), from any host, so that GitHub Enterprise and Reviewable Enterprise links work too.  Everything else between the markers is ignored, whether layout, titles, other links or `#N` references.  The block yields a stack only if it lists the current pull request, lists no pull request more than once (though the same pull request linked twice in a row counts once), and lists at least two.  When it doesn't, or the end marker is missing, Reviewable still treats the pull request as managed by the tool but shows no stack and leaves the description as is.
+
+Reviewable doesn't offer to merge pull requests in such a stack, as it assumes the tool lands them; a stack made with GitHub's own stacks still wins over any definition.  The `stacks` setting is a list, so a repository moving from one tool to another can recognize both, and the first definition whose start marker appears in a description applies.  Changes to it take effect for each pull request the next time it's synced, at the latest when somebody opens its review.
+
+::: tip
+If your stacking tool needs something this setting can't express, please [get in touch](mailto:support@reviewable.io) and we'll see what we can do!
+:::
+
 #### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`.  Choose `accessed` to post only after a review has been visited at least once in Reviewable.
