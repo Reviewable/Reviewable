@@ -94,7 +94,7 @@ If you're struggling to manage and review a long chain or stack of dependent Git
 
 **Review each commit separately.**  Put the whole sequence of commits in one pull request, then switch the [review style](files.md#review-style) to **Review each commit separately**.  Reviewable will map each commit to its own revision, allowing for more granular reviews.  GitHub still treats it as a single pull request, merging all commits at once when the review is complete.
 
-**Stacked PRs with `spr`.**  You can use a tool like [`spr`](https://github.com/ejoffe/spr) to manage your commit stack.  It creates one PR per commit and keeps the stack up-to-date as commits are amended, deleted, or inserted.  It also adds a stack map of the dependency order to the PR description.  Reviewable detects the use of `spr` and adapts its UI to make stacked reviews more convenient by including links to relevant reviews in the top review discussion and properly updating review states to reflect the stack's merge status.
+**Stacked PRs with `spr`.**  You can use a tool like [`spr`](https://github.com/ejoffe/spr) to manage your commit stack.  It creates one PR per commit and keeps the stack up-to-date as commits are amended, deleted, or inserted.  It also adds a stack map of the dependency order to the PR description.  Reviewable detects the use of `spr` and adapts its UI to make stacked reviews more convenient by including links to relevant reviews in the top review discussion and properly updating review states to reflect the stack's merge status.  Other tools that list the stack in each pull request's description can be configured with the [stacking tools](admincenter.md#stacking-tools) setting.
 
 ## Skipping vendored dependencies
 
