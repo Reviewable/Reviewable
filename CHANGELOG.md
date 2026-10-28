@@ -1,10 +1,10 @@
 <sub>Upcoming</sub>
 
 - <kbd>Fix:</kbd> avoid misleading branch protection failures on new revisions. <!-- server -->
-- <kbd>Fix:</kbd> Show agents' avatars and badges in diff descriptions. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> Show agents' avatars and badges in diff descriptions. <!-- client 7937 -->
 - <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client 7936 -->
 - <kbd>Fix:</kbd> don't bounce a sign-in when another tab is still catching up on the preceding sign-out. <!-- client 7936 -->
 - <kbd>Fix:</kbd> recover from temporary local AI startup failures and improve English comment language detection. <!-- client 7936 -->
