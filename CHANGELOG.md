@@ -1,16 +1,16 @@
 <sub>Upcoming</sub>
 
 - <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server -->
-- <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client -->
-- <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client -->
-- <kbd>Fix:</kbd> include emojis from combined command drafts in review sentiments. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> warn on the merge button when a pull request below it in the stack holds the merge back. <!-- client -->
-- <kbd>Fix:</kbd> avoid masking browser AI startup failures when no rejection reason is supplied. <!-- client -->
-- <kbd>Upd:</kbd> prioritize one of your agents by PR role in empty @-completion suggestions. <!-- client -->
-- <kbd>Fix<i>(saas)</i>:</kbd> don't lose the merge button on a pull request ready to merge with a bypass asked for. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client 7938 -->
+- <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client 7938 -->
+- <kbd>Fix:</kbd> include emojis from combined command drafts in review sentiments. <!-- client 7938 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> warn on the merge button when a pull request below it in the stack holds the merge back. <!-- client 7938 -->
+- <kbd>Fix:</kbd> avoid masking browser AI startup failures when no rejection reason is supplied. <!-- client 7938 -->
+- <kbd>Upd:</kbd> prioritize one of your agents by PR role in empty @-completion suggestions. <!-- client 7938 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't lose the merge button on a pull request ready to merge with a bypass asked for. <!-- client 7938 -->
 - <kbd>Fix:</kbd> avoid misleading branch protection failures on new revisions. <!-- server 4995 -->
 - <kbd>Fix:</kbd> Show agents' avatars and badges in diff descriptions. <!-- client 7937 -->
 - <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client 7936 -->
