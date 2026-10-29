@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server -->
 - <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client -->
 - <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client -->
 - <kbd>Fix:</kbd> include emojis from combined command drafts in review sentiments. <!-- client -->
