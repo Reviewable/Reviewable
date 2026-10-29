@@ -158,15 +158,27 @@ Some features, such as [custom review completion rules](https://docs.reviewable.
         "Action": [
             "logs:CreateLogGroup",
             "logs:PutRetentionPolicy",
-            "logs:DeleteLogGroup",
+            "logs:DeleteLogGroup"
+        ],
+        "Resource": [
+            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*",
+            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*:*:*"
+        ]
+    },
+    {
+        "Effect": "Allow",
+        "Action": [
             "logs:DescribeLogGroups"
         ],
         "Resource": [
-            "arn:aws:logs:<REGION>:<ACCOUNT>:log-group:*:*:*"
+            "*"
         ]
     }
 ]
 ```
+
+The log-group permissions include both the log-group ARN and the legacy log-stream ARN for compatibility during AWS's authorization transition.  `logs:DescribeLogGroups` uses a separate statement with `Resource: "*"` because it does not support resource-level permissions; see the [AWS service authorization reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_logs.html).
+
 * `REVIEWABLE_COMPLETION_CONDITION_TIMEOUT`: Time allowed for each review custom completion condition to finish executing, for all executor types (default `3s`; range `1ms` to `889s`, in whole milliseconds).  It's best to keep this value as low as possible to avoid long recovery times from passive failures.
 
 ##### UI customization
