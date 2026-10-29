@@ -1,5 +1,8 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client -->
+- <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client -->
+- <kbd>Fix:</kbd> include emojis from combined command drafts in review sentiments. <!-- client -->
 - <kbd>Fix<i>(saas)</i>:</kbd> warn on the merge button when a pull request below it in the stack holds the merge back. <!-- client -->
 - <kbd>Fix:</kbd> avoid masking browser AI startup failures when no rejection reason is supplied. <!-- client -->
 - <kbd>Upd:</kbd> prioritize one of your agents by PR role in empty @-completion suggestions. <!-- client -->
