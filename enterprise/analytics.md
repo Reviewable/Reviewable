@@ -94,7 +94,7 @@ Emitted alongside `Created Review`, associated with the PR author instead of the
 ```
 
 ##### Published Comments
-The user successfully published a review, either directly or automatically after a push. This can publish review marks and other actions without any comments. Queuing a publication to wait for a push does not emit this event; successful publication does. Includes common PR properties.
+The user successfully published a review, either directly or automatically via [publish on push](../docs/reviews.md#publish-on-push). This can publish review marks and other actions without any comments. Queuing a publication to wait for a push does not emit this event; successful publication does. Includes common PR properties.
 
 ```ts
 {
@@ -124,7 +124,7 @@ Action counts, sanction, designation, and projected status are captured before p
 
 For publication triggered by a push, action counts, sanction, emojis, designation, and projected status are snapshots taken when the publication was queued. They may be outdated by the time publication occurs, particularly after the push changes the review. `lastRevision` and `latency` describe the actual publication attempt.
 
-`emojis` contains normalized emoji names, including repeated names. Emojis in code and quoted blocks are excluded. The entries are names, rather than emoji images or Unicode characters.
+`emojis` contains normalized shortcode names without colons, such as `grinning` for `:grinning:` or 😀, including repeated names. These are not CLDR descriptions such as `grinning face`. Emojis in code and quoted blocks are excluded. The entries are names, rather than emoji images or Unicode characters.
 
 `designation` reports the user's most specific applicable file-review designation: explicit user, then team membership, then anyone, or null if none applies. Fulfilled designations still count. Team and anyone designations exclude authors by default. The `designation` property and projected properties may be omitted if the data needed to compute them is not available at publication time.
 
