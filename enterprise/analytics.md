@@ -113,7 +113,7 @@ The user successfully published a review, either directly or automatically via [
   numDiscussionsDismissed: number;    // distinct discussions with participant dismissals
   numParticipantsDismissed: number;   // distinct users dismissed across those discussions
   numUnresolvedDiscussions?: number;  // projected unresolved discussions
-  emojis: string[];                   // normalized names of emojis in the published comments
+  emojis: string[];                   // normalized shortcode names in the published comments
   completed?: boolean;                // projected review completion
   designation?: 'user' | 'team' | 'anyone' | null;
   latency: number;                    // elapsed publication attempt time in ms, excluding waiting for a push
