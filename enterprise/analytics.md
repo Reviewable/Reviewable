@@ -93,6 +93,21 @@ Emitted alongside `Created Review`, associated with the PR author instead of the
 }
 ```
 
+##### Detected Stack
+A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-stacks-of-dependent-changes) for the first time, associated with the PR author. Emitted once per pull request, including when a GitHub stack is linked after its pull requests were opened.
+
+```ts
+{
+  owner: string;
+  repo: string;
+  prNumber: number;
+  private: boolean;
+  origin: 'request' | 'event' | 'poll';
+  stackSource: 'spr' | 'github';
+  stackSize?: number;  // pull requests in the stack
+}
+```
+
 ##### Published Comments
 The user successfully published a review, either directly or automatically via [publish on push](../docs/reviews.md#publish-on-push). This can publish review marks and other actions without any comments. Queuing a publication to wait for a push does not emit this event; successful publication does. Includes common PR properties.
 
@@ -237,8 +252,16 @@ Sampled production client performance telemetry. Currently the effective samplin
   subscriptionLink?: boolean;
   linkDiscussion?: boolean;
   error?: boolean;
+  numRevisions?: number;
+  numDiscussions?: number;
+  lineStatsSum?: {changed: number, inserted: number, deleted: number, totalDelta: number,
+    unknown?: true};
+  stackSource?: 'spr' | 'github' | null;
+  stackSize?: number;
 }
 ```
+
+On initial loads, `connect`, `load`, `init`, and `boot` split `extLatency` into phases: connecting to the server, downloading and parsing the page up to `domInteractive`, running the deferred scripts, and booting the app. Review pages also report the review's size in `numRevisions`, `numDiscussions`, and `lineStatsSum`, and its stack, if any, in `stackSource` and `stackSize`.
 
 ##### Listed Open Reviews
 The dashboard's review counts changed. Sampled at 25% of changes.
@@ -333,7 +356,8 @@ The contextual guide opened.
 ```ts
 {
   onboardingKey: string;  // snippet ID
-  from: string;           // usually 'app' for direct access or 'map' for the guide outline
+  from: 'app' | 'hotkey' | 'indicator' | 'map';  // opened from the menu, a hotkey, an element's
+                                                 // indicator, or the guide outline
   completed?: boolean;    // the user's previous onboarding flag
 }
 ```
