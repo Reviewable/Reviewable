@@ -1,5 +1,126 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server -->
+- <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client -->
+- <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client -->
+- <kbd>Fix:</kbd> include emojis from combined command drafts in review sentiments. <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> warn on the merge button when a pull request below it in the stack holds the merge back. <!-- client -->
+- <kbd>Fix:</kbd> avoid masking browser AI startup failures when no rejection reason is supplied. <!-- client -->
+- <kbd>Upd:</kbd> prioritize one of your agents by PR role in empty @-completion suggestions. <!-- client -->
+- <kbd>Fix<i>(saas)</i>:</kbd> don't lose the merge button on a pull request ready to merge with a bypass asked for. <!-- client -->
+
+<sub>2026 - 10</sub>
+
+- <kbd>Fix:</kbd> avoid misleading branch protection failures on new revisions. <!-- server 4995 -->
+- <kbd>Fix:</kbd> Show agents' avatars and badges in diff descriptions. <!-- client 7937 -->
+- <kbd>Adm:</kbd> update dependencies to address security vulnerabilities. <!-- client 7936 -->
+- <kbd>Fix:</kbd> don't bounce a sign-in when another tab is still catching up on the preceding sign-out. <!-- client 7936 -->
+- <kbd>Fix:</kbd> recover from temporary local AI startup failures and improve English comment language detection. <!-- client 7936 -->
+- <kbd>Adm:</kbd> suppress expected recoverable GitHub IP restrictions after worker error normalization. <!-- client 7936 -->
+- <kbd>Fix:</kbd> Recognize reverted files after renaming them back to their original paths. <!-- client 7935 -->
+- <kbd>Fix:</kbd> handle AI backends that cannot fit the summary instructions. <!-- client 7934 -->
+- <kbd>Upd:</kbd> reuse clear comment titles as discussion summaries. <!-- client 7934 -->
+- <kbd>Upd:</kbd> include the pull request's stack in the completion webhook's payload, so integrations like chat bots can show where a pull request sits in its stack. <!-- server 4993 -->
+- <kbd>Fix:</kbd> defer GitHub sync when nested admin selection hits a cooldown. <!-- server 4993 -->
+- <kbd>Fix:</kbd> preserve request responses when an older attempt loses its lease. <!-- server 4993 -->
+- <kbd>Fix:</kbd> list an organization's repositories even when some are forks blocked by another organization's OAuth app restrictions, and warn about the missing ones. <!-- client 7933 -->
+- <kbd>Upd:</kbd> improve automatically generated discussion headlines. <!-- client 7933 -->
+- <kbd>Upd:</kbd> Let owners dismiss their own agents from discussions. <!-- client 7933 -->
+- <kbd>Adm:</kbd> report Firebase write latency and failure metrics. <!-- server 4991 -->
+- <kbd>Adm:</kbd> count completion preparation conflicts by repository and severity, and suppress their info-level error captures. <!-- server 4991 -->
+  > If you were tracking cardinality for this event (in Sentry or custom error logs) you'll need to either switch to the new `reviews.completion_conflicts` metric or adjust your thresholds.
+- <kbd>New:</kbd> show the issues linked to a pull request in the pull request panel. <!-- client 7932 -->
+- <kbd>New:</kbd> render math in comments. <!-- client 7932 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash reviews open in other tabs when signing out. <!-- client 7932 -->
+- <kbd>Fix:</kbd> when a stacked PR is retargeted after the PR below it merges, let the rebase that follows replace the retargeting revision even if someone opened the review in between, instead of leaving the lower PR's files unreviewed. <!-- server 4990 -->
+- <kbd>Adm:</kbd> preserve repository sweep failures with safe decryption diagnostics. <!-- server 4990 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> prevent exception reporting from disrupting concurrent tasks. <!-- server 4990 -->
+- <kbd>Upd:</kbd> show `git spr` stacks in their own section of the pull request panel instead of the description, with commands to move up and down the stack. <!-- client 7931 -->
+
+<sub>**Enterprise release 4989.7930** (min 4882.7806 GHE ^2.19 || ^3) 2026-10-15 <!-- enterprise 4989.7930 --></sub>
+
+- <kbd>Adm:</kbd> defer throttled user checks without revoking tokens or aborting the monthly sweep. <!-- server 4989 -->
+- <kbd>Adm:</kbd> lower brief completion preparation races to info. <!-- server 4989 -->
+- <kbd>Adm:</kbd> retry archived review status annotations throttled by GitHub API rate limiting. <!-- server 4988 -->
+- <kbd>Fix:</kbd> sync long check names without reading impossible legacy paths. <!-- server 4988 -->
+- <kbd>Adm:</kbd> Respect shared GitHub account cooldowns across requests. <!-- server 4988 -->
+- <kbd>Adm:</kbd> include review coordinates in client error reports. <!-- client 7929 -->
+- <kbd>Fix:</kbd> avoid crashing when reopening a review with Mermaid diagrams. <!-- client 7929 -->
+- <kbd>Adm:</kbd> reduce GitHub quota polling during review processing. <!-- server 4987 -->
+- <kbd>Fix:</kbd> keep Mermaid diagrams loadable across releases. <!-- client 7928 -->
+- <kbd>New:</kbd> render Mermaid diagrams in comments. <!-- client 7928 -->
+- <kbd>Upd:</kbd> customize approval text with a personal preference. <!-- client 7928 -->
+- <kbd>Fix:</kbd> keep resolved discussions hidden when opening a review. <!-- client 7928 -->
+- <kbd>Fix:</kbd> reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client 7928 -->
+- <kbd>Fix:</kbd> retry failed review completion checks when review data catches up. <!-- client 7928 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> classify projected completion-input recovery correctly. <!-- client 7928 -->
+- <kbd>Fix:</kbd> avoid crashing on a handful of rare client race conditions. <!-- client 7927 -->
+- <kbd>Fix:</kbd> enforce task leases for shared GitHub requests and retries. <!-- server 4986 -->
+- <kbd>Fix:</kbd> preserve retries for GraphQL queries that start with fragments. <!-- server 4986 -->
+- <kbd>Adm:</kbd> Allow best-effort executor work during instance shutdown. <!-- server 4986 -->
+- <kbd>Adm:</kbd> classify remaining managed sync failures in Sentry. <!-- client 7926 -->
+- <kbd>Fix:</kbd> recover from worker load failures for signed-in users. <!-- client 7925 -->
+- <kbd>Adm:</kbd> buffer condition convergence diagnostics for Sentry and distinguish between resolved and unresolved ones. <!-- client 7925 -->
+- <kbd>Fix:</kbd> reconcile reviews when OAuth restrictions block team membership. <!-- server 4985 -->
+- <kbd>Fix:</kbd> recognize `git spr` stacks whose descriptions list pull request titles (the `showPrTitlesInStack` option). <!-- server 4984 -->
+- <kbd>Fix:</kbd> retain user credentials through all background follow-up tasks triggered by a request. <!-- server 4984 -->
+- <kbd>Fix:</kbd> when `git spr` merges a stack, keep showing only the top PR's own changes instead of the combined changes of the whole stack. <!-- server 4984 -->
+- <kbd>Adm:</kbd> group authentication cancellation reports consistently in Sentry. <!-- client 7924 -->
+- <kbd>Adm:</kbd> suppress the alternate recoverable GitHub primary-quota warning. <!-- client 7924 -->
+- <kbd>Fix:</kbd> Avoid a binary-file error when review permissions reconnect <!-- client 7924 -->
+- <kbd>Fix:</kbd> hide the stale countdown and cancel button once publish on push has started. <!-- client 7924 -->
+- <kbd>Fix:</kbd> show a file that returns to a pull request after being renamed away as added again, instead of silently leaving it out of the revision it came back in. <!-- server 4983 -->
+- <kbd>Adm:</kbd> upgrade TypeScript from 5.9 to 6.0. <!-- server 4983 -->
+- <kbd>Fix:</kbd> don't crash the page when signing out. <!-- client 7923 -->
+- <kbd>Fix:</kbd> save pending draft comments when signing out. <!-- client 7923 -->
+- <kbd>Upd:</kbd> enable extended lifetimes for shared workers, allowing for faster page loads for a few minutes even after all Reviewable tabs were closed. <!-- client 7923 -->
+- <kbd>Fix:</kbd> retry failed rename matching and show errors when it cannot recover. <!-- client 7923 -->
+
 <sub>2026 - 09</sub>
 
+- <kbd>Adm:</kbd> make the completion condition timeout configurable. <!-- server 4982 -->
+- <kbd>Fix:</kbd> show completion condition error messages and line numbers with the vm2 executor. <!-- server 4982 -->
+- <kbd>Fix:</kbd> prevent stale rename mappings from leaving reviews stuck loading or repeatedly triggering reconciliation. <!-- client 7922 -->
+- <kbd>Fix:</kbd> treat post-destruction model errors as cancellations. <!-- client 7922 -->
+- <kbd>Fix:</kbd> stop retrying refused webhook connections on the third or later attempt. <!-- server 4981 -->
+- <kbd>Fix:</kbd> make author automatic diffs follow self-review progress and each-commit mode. <!-- client 7921 -->
+- <kbd>Fix:</kbd> honor reviewers' omit-base-changes designations in personal review progress and automatic diffs. <!-- client 7921 -->
+- <kbd>Fix:</kbd> prevent delayed file activation from failing when navigation changes. <!-- client 7921 -->
+- <kbd>Adm:</kbd> attach compact file matrix row diagnostics to duplicate-key warnings. <!-- client 7921 -->
+- <kbd>Fix:</kbd> import comments when the author's GitHub profile is unavailable. <!-- server 4980 -->
+- <kbd>Upd:</kbd> preserve optional self-review across base-only revisions when every file designation permits it. <!-- client 7920 -->
+- <kbd>Fix:</kbd> honor `omitBaseChanges` across all anyone designations in the reviewer-details popup. <!-- client 7920 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> prevent agent authentication from triggering Stripe billing-sync bursts. <!-- client 7920 -->
+- <kbd>Fix:</kbd> avoid crashes during file mapping. <!-- client 7920 -->
+- <kbd>Adm:</kbd> improve Sentry reporting of GitHub download errors. <!-- client 7920 -->
+- <kbd>Fix:</kbd> stop retrying PR syncs blocked by GitHub IP allow lists. <!-- server 4979 -->
+- <kbd>Fix:</kbd> sync Slack handles for organizations that connected an entire Slack enterprise rather than a single workspace. <!-- server 4979 -->
+- <kbd>Adm:</kbd> prevent stale statuses from blocking review updates. <!-- server 4979 -->
+- <kbd>Fix:</kbd> continue loading completion lists when the browser blocks IndexedDB access. <!-- client 7919 -->
+- <kbd>Fix:</kbd> prevent a stale PR reload from overwriting the completion-condition editor's review state. <!-- client 7918 -->
+- <kbd>Fix:</kbd> stop "Try again" on a failed hard-forced diff from dismissing overlays and scrolling to a discussion. <!-- client 7918 -->
+- <kbd>Fix:</kbd> avoid silently dropping review votes that finish loading during publication. <!-- client 7918 -->
+- <kbd>Adm:</kbd> avoid unnecessary delays when coalescing GitHub status updates during concurrent processing. <!-- server 4978 -->
+- <kbd>Fix:</kbd> publishing a PR review could fail when required GitHub GraphQL event was missing during a loading race. <!-- client 7917 -->
+- <kbd>Fix:</kbd> evaluate pasted completion-condition review state without loading a PR. <!-- client 7917 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> restore compaction of reviews with pending marks. <!-- client 7917 -->
+- <kbd>Fix:</kbd> avoid crashes when concurrent comment mappings encounter a file download failure. <!-- client 7917 -->
+- <kbd>Adm:</kbd> separate server response failures in Sentry. <!-- client 7917 -->
+- <kbd>Adm:</kbd> report references to uncaptured revisions during PR sync. <!-- server 4977 -->
+- <kbd>Fix:</kbd> deliver merged review webhooks for SPR pull requests. <!-- server 4977 -->
+- <kbd>Adm:</kbd> preserve the original error when retrying a GitHub event after its diagnostic tags have been consumed. <!-- server 4977 -->
+- <kbd>Fix:</kbd> quietly retry pull-request synchronization when GitHub commit data races a push. <!-- server 4977 -->
+- <kbd>Fix:</kbd> update renamed file groups without reloading. <!-- client 7916 -->
+- <kbd>Fix:</kbd> render multiple author self-reviews without duplicate author rows. <!-- client 7916 -->
+- <kbd>Fix:</kbd> keep retrying headless authentication after transient server errors. <!-- client 7916 -->
+- <kbd>Fix:</kbd> keep retrying headless authentication after transient server responses with structured error codes. <!-- client 7916 -->
+- <kbd>Fix:</kbd> avoid misrepairing review marks during client data skew. <!-- client 7916 -->
+
+<sub>**Enterprise release 4976.7915** (min 4882.7806 GHE ^2.19 || ^3) 2026-09-21 <!-- enterprise 4976.7915 --></sub>
+
+- <kbd>Upd:</kbd> expose a short review status in webhook data. <!-- server 4976 -->
+- <kbd>Fix:</kbd> keep Markdown completion descriptions out of published review summaries. <!-- client 7914 -->
+- <kbd>Upd:</kbd> Include requested teams in review status webhooks. <!-- server 4974 -->
 - <kbd>Upd:</kbd> make author self-review less intrusive for users who are not interested in it. <!-- client 7912 -->
   > Authors who aren't designated as reviewers see gray shared unreviewed-file counts, with a red dot for remaining self-review. The dot and its tooltip suffix disappear once all files are reviewed at the latest revision, even if the review remains incomplete, and return if files become unreviewed again. Authors designated as reviewers get normal red counters and current-diff tooltips.
 - <kbd>Fix:</kbd> Ignore merged and closed PRs when detecting conflicts over Reviewable's GitHub commit status. <!-- server 4972 -->
@@ -19,7 +140,7 @@
 - <kbd>Fix:</kbd> Prevent occasional false approval check failures while a required review is still in progress. <!-- server 4968 -->
 - <kbd>Fix:</kbd> avoid spurious status permission errors when a review revision advances. <!-- server 4968 -->
 - <kbd>Fix:</kbd> Preserve last-known reviewer permissions when GitHub permission lookups fail. <!-- server 4968 -->
-- <kbd>Adm<i>(enterprise)</i>:</kbd> prevents users from obtaining a long-term access token by issuing a guest seat upgrade request with a bogus organization.  This was merely a license provisioning bug with no security implications. <!-- server 4968 -->
+- <kbd>Adm<i>(enterprise)</i>:</kbd> prevent users from obtaining a long-term access token by issuing a guest seat upgrade request with a bogus organization.  This was merely a license provisioning bug with no security implications. <!-- server 4968 -->
 - <kbd>Adm:</kbd> correctly detect API quota errors on GitHub REST requests.  (Regression introduced in v4814.7709.) <!-- server 4968 -->
 - <kbd>Fix:</kbd> don't accidentally drop sync tasks when GitHub responds with `Retry-After` due to a burst quota overrun. <!-- server 4968 -->
 - <kbd>Fix:</kbd> preserve merge-queue status checks during routine syncs so custom completion conditions evaluate the correct check results. <!-- server 4968 -->

@@ -1,4 +1,5 @@
 dist/
+dist-tests/
 node_modules/
 .yarn/*
 !.yarn/patches
