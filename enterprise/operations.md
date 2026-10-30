@@ -57,12 +57,12 @@ After updating the list of shards, allow a few minutes for the system to settle 
 
 #### Retiring a shard
 
+Draining can take weeks. Removing a URL early can leave data inaccessible. If you need to retire a shard sooner, contact support about potential shortcuts and their trade-offs.
+
 1. Prefix its URL with `-` on **every server** and deploy that configuration promptly to limit configuration skew. New sharded data will go to the first remaining active shard, or to the primary if none remains. Keep the retiring shard in the list while it drains.
 2. Ensure that all servers running the previous configuration have stopped, then allow the retiring database to drain.
 3. Confirm in the Firebase console that the retiring database is empty, apart from `/system` metadata and transient entries that immediately disappear.
 4. Remove its URL from every server's configuration. Only then delete the database. Before rolling back to a server version that does not support sharding, retire all shards using this procedure.
-
-Draining can take weeks. Removing a URL early can leave data inaccessible. If you need to retire a shard sooner, contact support about potential shortcuts and their trade-offs.
 
 ### AES encryption key rotation
 
