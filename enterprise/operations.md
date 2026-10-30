@@ -43,6 +43,25 @@ $ echo 'null' >null.json
 $ rvbl-write -p system/maintenance -f null.json
 ```
 
+### Queue sharding and draining
+
+Use `REVIEWABLE_FIREBASE_SHARD_URLS` to move new server queue traffic off an overloaded primary database. Create the shard with **Create database** in the same Firebase project, then configure its full URL on every server. The first active shard receives `github`, `githubStatusSync`, `githubApprovalSync`, `githubMergeableSync`, `reconciliationRefresh`, `masterRepoUpdate`, and `refCleanup` tasks. Other queues and all application data remain on the primary. Clients need no configuration change. When `REVIEWABLE_HOST_INACCESSIBLE` is enabled, GitHub webhooks delivered directly to Firebase continue to arrive at the primary.
+
+Every server consumes **every queue from every configured database**, including draining and later shards, using one concurrency limit per logical queue. Existing tasks are not moved. Their retries, delays, and completion stay on the database where they were acquired. During rolling upgrades, old servers may continue writing to the primary. The same keyed task can exist on multiple databases and run more than once; deduplication only applies within a database. Mergeability and scheduled-refresh cleanup checks the current write destination only, so older copies can cause redundant synchronization during a transition.
+
+The primary and all shards use the same credentials, encryption/compression settings, and unmodified security rules. On startup, servers copy the primary's effective rules to every configured shard after the normal primary rule upgrade. A server refuses to overwrite newer shard rules with older primary rules. Keep the primary authoritative when deploying rules manually. Each database has independent connection monitoring, queue health reporting, and liveness probes. The primary supplies the shared server-time estimate and maintenance switch. There is no automatic failover when a shard is unavailable.
+
+To remove or replace a shard:
+
+1. Prefix its URL with `-` on **every server** and deploy that configuration. `-https://a.firebaseio.com` sends new tasks back to the primary; `-https://a.firebaseio.com,https://b.firebaseio.com` sends them to B. Keep all databases that might still contain tasks in the list.
+2. Stop all older writers, including servers still running the previous configuration, and allow the draining databases to finish their work.
+3. Confirm that **all** queues on each retiring database are empty, ignoring Firelease's `ping` items. Check pending and delayed items directly under `/queues`, not just runnable tasks or a bounded in-memory queue buffer. Repeat the check after old writers have stopped.
+4. Remove the drained URLs from every server's configuration. Only then retire those databases or roll back to a server version that does not support sharding.
+
+Draining can take weeks: reference cleanup tasks can be delayed up to 30 days, and reconciliation refreshes can be scheduled further out. Removing a URL early strands its tasks. If urgent, contact support about discarding only pending `refCleanup` and `reconciliationRefresh` tasks after quiescing writers and workers. Discarded reference cleanup leaves refs retained; discarded refreshes may miss a scheduled update until the next reconciliation recreates them. Other queues must drain normally.
+
+Include the primary and every retained shard in backup, restore, and encryption-key rotation procedures, including draining shards. Stop all writers when taking or restoring a coordinated snapshot. Set maintenance on the primary; running servers disconnect from every database. Shard contents remain encrypted with the same AES key even when they are no longer receiving new tasks.
+
 ### AES encryption key rotation
 
 You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_ENCRYPTION_AES_KEY`.
@@ -52,7 +71,7 @@ You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_E
 3. Locate the current encryption key (if any) and generate a new encryption key if desired (`openssl rand --base64 64`).
 4. Put Reviewable in maintenance mode (instructions above).
 5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE_URL --auth $REVIEWABLE_FIREBASE_CREDENTIALS_FILE --spec rule_firecrypt.json --oldKey <i>&lt;base64key&gt;</i> --newKey <i>&lt;base64Key&gt;</i></code>, using the environment values you configured for your server and specifying one or both keys depending on the operation you want to perform (encrypt, decrypt, or rotate).
-6. Update your server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY`.
+6. If sharding is configured, repeat the re-encryption command for every URL in `REVIEWABLE_FIREBASE_SHARD_URLS`, removing any leading `-`. Include draining shards. Then update every server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY`.
 7. Exit maintenance mode (instructions above).
 
 Rotating keys will take approximately NN minutes per GB of database size, assuming a reasonably fast machine and network connection.  Before you rotate the key on your production database, you might want to clone it into a spare Firebase project with security rules set to `{"rules": {".read": false, ".write": false}}`) and run it there to ensure there will be no errors and get a better estimate of how long it will take.
