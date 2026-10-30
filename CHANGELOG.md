@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Adm:</kbd> Reduce contention in background queue leasing. <!-- server 4997 -->
