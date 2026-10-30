@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Reduce contention in background queue leasing. <!-- server -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server 4996 -->
