@@ -43,24 +43,25 @@ $ echo 'null' >null.json
 $ rvbl-write -p system/maintenance -f null.json
 ```
 
-### Queue sharding and draining
+### Database sharding
 
-Use `REVIEWABLE_FIREBASE_SHARD_URLS` to move new server queue traffic off an overloaded primary database. Create the shard with **Create database** in the same Firebase project, then configure its full URL on every server. The first active shard receives `github`, `githubStatusSync`, `githubApprovalSync`, `githubMergeableSync`, `reconciliationRefresh`, `masterRepoUpdate`, and `refCleanup` tasks. Other queues and all application data remain on the primary. Clients need no configuration change. When `REVIEWABLE_HOST_INACCESSIBLE` is enabled, GitHub webhooks delivered directly to Firebase continue to arrive at the primary.
+Sharding distributes datastore load across additional Firebase Realtime Databases. The primary database and all shards share credentials and encryption settings. Every retained shard, including one being retired, remains part of your datastore for backup, restore, and encryption-key rotation purposes.
 
-Every server consumes **every queue from every configured database**, including draining and later shards, using one concurrency limit per logical queue. Existing tasks are not moved. Their retries, delays, and completion stay on the database where they were acquired. During rolling upgrades, old servers may continue writing to the primary. The same keyed task can exist on multiple databases and run more than once; deduplication only applies within a database. Mergeability and scheduled-refresh cleanup checks the current write destination only, so older copies can cause redundant synchronization during a transition.
+#### Adding a shard
 
-The primary and all shards use the same credentials, encryption/compression settings, and unmodified security rules. On startup, servers copy the primary's effective rules to every configured shard after the normal primary rule upgrade. A server refuses to overwrite newer shard rules with older primary rules. Keep the primary authoritative when deploying rules manually. Each database has independent connection monitoring, queue health reporting, and liveness probes. The primary supplies the shared server-time estimate and maintenance switch. There is no automatic failover when a shard is unavailable.
+1. In the Firebase console, use **Create database** to create a database in the same Firebase project as your primary database.
+2. Add its full URL to the comma-separated `REVIEWABLE_FIREBASE_SHARD_URLS` list on **every server** and deploy that configuration. Currently, only the first URL without a `-` prefix is used for new sharded data.
 
-To remove or replace a shard:
+After updating the list of shards, allow a few minutes for the system to settle into its new configuration. Keep the period during which servers have different shard lists as short as possible.
 
-1. Prefix its URL with `-` on **every server** and deploy that configuration. `-https://a.firebaseio.com` sends new tasks back to the primary; `-https://a.firebaseio.com,https://b.firebaseio.com` sends them to B. Keep all databases that might still contain tasks in the list.
-2. Stop all older writers, including servers still running the previous configuration, and allow the draining databases to finish their work.
-3. Confirm that **all** queues on each retiring database are empty, ignoring Firelease's `ping` items. Check pending and delayed items directly under `/queues`, not just runnable tasks or a bounded in-memory queue buffer. Repeat the check after old writers have stopped.
-4. Remove the drained URLs from every server's configuration. Only then retire those databases or roll back to a server version that does not support sharding.
+#### Retiring a shard
 
-Draining can take weeks: reference cleanup tasks can be delayed up to 30 days, and reconciliation refreshes can be scheduled further out. Removing a URL early strands its tasks. If urgent, contact support about discarding only pending `refCleanup` and `reconciliationRefresh` tasks after quiescing writers and workers. Discarded reference cleanup leaves refs retained; discarded refreshes may miss a scheduled update until the next reconciliation recreates them. Other queues must drain normally.
+1. Prefix its URL with `-` on **every server** and deploy that configuration promptly to limit configuration skew. New sharded data will go to the first remaining active shard, or to the primary if none remains. Keep the retiring shard in the list while it drains.
+2. Ensure that all servers running the previous configuration have stopped, then allow the retiring database to drain.
+3. Confirm in the Firebase console that the retiring database is empty, apart from `/system` metadata and transient entries that immediately disappear.
+4. Remove its URL from every server's configuration. Only then delete the database. Before rolling back to a server version that does not support sharding, retire all shards using this procedure.
 
-Include the primary and every retained shard in backup, restore, and encryption-key rotation procedures, including draining shards. Stop all writers when taking or restoring a coordinated snapshot. Set maintenance on the primary; running servers disconnect from every database. Shard contents remain encrypted with the same AES key even when they are no longer receiving new tasks.
+Draining can take weeks. Removing a URL early can leave data inaccessible. If you need to retire a shard sooner, contact support about potential shortcuts and their trade-offs.
 
 ### AES encryption key rotation
 
