@@ -50,7 +50,8 @@ Sharding distributes datastore load across additional Firebase Realtime Database
 #### Adding a shard
 
 1. In the Firebase console, use **Create database** to create a database in the same Firebase project as your primary database.
-2. Add its full URL to the comma-separated `REVIEWABLE_FIREBASE_SHARD_URLS` list on **every server** and deploy that configuration. Currently, only the first URL without a `-` prefix is used for new sharded data.
+2. Enable Firebase's [automated backups](https://firebase.google.com/docs/database/backups) for the new database in its **Backups** tab, even if backups are already enabled for the other databases in the project.
+3. Add its full URL to the comma-separated `REVIEWABLE_FIREBASE_SHARD_URLS` list on **every server** and deploy that configuration. Currently, only the first URL without a `-` prefix is used for new sharded data.
 
 After updating the list of shards, allow a few minutes for the system to settle into its new configuration. Keep the period during which servers have different shard lists as short as possible.
 
