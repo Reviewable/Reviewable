@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> prevent Firebase transactions from becoming stuck after overlapping writes. <!-- server -->
 - <kbd>Fix:</kbd> publish file-review-only drafts without waiting for a push. <!-- client -->
 - <kbd>Fix:</kbd> let disposition changes and acknowledgements publish alongside private notes or empty drafts, and honor the publish-on-push setting. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> allow GitHub owner renames under wildcard licenses. <!-- server -->
