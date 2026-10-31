@@ -1,14 +1,14 @@
 <sub>Upcoming</sub>
 
 - <kbd>Adm:</kbd> prevent Firebase transactions from becoming stuck after overlapping writes. <!-- server -->
-- <kbd>Fix:</kbd> publish file-review-only drafts without waiting for a push. <!-- client -->
-- <kbd>Fix:</kbd> let disposition changes and acknowledgements publish alongside private notes or empty drafts, and honor the publish-on-push setting. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> allow GitHub owner renames under wildcard licenses. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> apply the protection of the branch a stack targets to every pull request in it. <!-- server -->
-- <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client -->
 
 <sub>2026 - 10</sub>
 
+- <kbd>Fix:</kbd> publish file-review-only drafts without waiting for a push. <!-- client 7940 -->
+- <kbd>Fix:</kbd> let disposition changes and acknowledgements publish alongside private notes or empty drafts, and honor the publish-on-push setting. <!-- client 7940 -->
+- <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client 7940 -->
 - <kbd>Adm:</kbd> Reduce contention in background queue leasing. <!-- server 4997 -->
 - <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server 4996 -->
 - <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client 7938 -->
