@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> prevent Firebase transactions from becoming stuck after overlapping writes. <!-- server -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> allow GitHub owner renames under wildcard licenses. <!-- server -->
-- <kbd>Fix<i>(saas)</i>:</kbd> apply the protection of the branch a stack targets to every pull request in it. <!-- server -->
-
 <sub>2026 - 10</sub>
 
+- <kbd>Adm:</kbd> prevent Firebase transactions from becoming stuck after overlapping writes. <!-- server 4998 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> allow GitHub owner renames under wildcard licenses. <!-- server 4998 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> apply the protection of the branch a stack targets to every pull request in it. <!-- server 4998 -->
 - <kbd>Fix:</kbd> publish file-review-only drafts without waiting for a push. <!-- client 7940 -->
 - <kbd>Fix:</kbd> let disposition changes and acknowledgements publish alongside private notes or empty drafts, and honor the publish-on-push setting. <!-- client 7940 -->
 - <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client 7940 -->
