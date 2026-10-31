@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> allow GitHub owner renames under wildcard licenses. <!-- server -->
 - <kbd>Fix<i>(saas)</i>:</kbd> apply the protection of the branch a stack targets to every pull request in it. <!-- server -->
 - <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client -->
 
