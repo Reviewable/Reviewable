@@ -96,6 +96,10 @@ If you're struggling to manage and review a long chain or stack of dependent Git
 
 **Stacked PRs with `spr`.**  You can use a tool like [`spr`](https://github.com/ejoffe/spr) to manage your commit stack.  It creates one PR per commit and keeps the stack up-to-date as commits are amended, deleted, or inserted.  It also adds a stack map of the dependency order to the PR description.  Reviewable detects the use of `spr` and adapts its UI to make stacked reviews more convenient by including links to relevant reviews in the top review discussion and properly updating review states to reflect the stack's merge status.
 
+::: tip
+Other tools that list the stack in each pull request's description can be configured with the [stacking tools](admincenter.md#stacking-tools) setting.
+:::
+
 ## Skipping vendored dependencies
 
 Depending on your package manager, you may sometimes need to commit dependency source code into your repository but don't necessarily want to review updates to those hundreds or thousands of files every time you update.  Reviewable automatically identifies and groups many vendored files, and offers a few helpful features for this situation, from least to most invasive:
