@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> make the `merge()` shortcut add the merge label or queue the merge where the repository is set up that way, as the merge button does. <!-- client -->
 - <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server -->
 - <kbd>Adm:</kbd> fix user sweeps failing on legacy malformed user records. <!-- server -->
 
