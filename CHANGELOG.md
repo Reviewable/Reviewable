@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> fix user sweeps failing on legacy malformed user records. <!-- server -->
+
 <sub>2026 - 10</sub>
 
 - <kbd>Adm:</kbd> prevent Firebase transactions from becoming stuck after overlapping writes. <!-- server 4998 -->
