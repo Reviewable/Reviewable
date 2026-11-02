@@ -21,6 +21,29 @@ The file matrix displays a history matrix showing all files and revisions. Here,
 - Jump to a file's diff.
 - See delta stats for a diff and all diffs.
 
+### Filtering files
+
+Use **Filter files** to focus the matrix. Text matches file paths, without regard to case. Spaces combine terms with AND, and quotes keep a phrase together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Repeat the full predicate after each comma.
+
+| Predicate | Matches |
+| --- | --- |
+| `path:text` | Paths containing the text |
+| `group:text` | Group names containing the text |
+| `needs:me` | Files that need your review |
+| `reviewed` | Files sufficiently reviewed at the latest revision, including pending marks |
+| `diffed` | Files currently shown as panels in the review flow, with non-italic names in the matrix |
+| `virtual` | Virtual files, such as Commits |
+| `draft:review` | Files with your pending review marks |
+| `draft` | Any applicable draft subtype (currently `draft:review` for files) |
+
+For example, enter `+path:src/parser/` and use the header's mark-all button to review that directory. Use `+diffed` to work with the files currently shown in the flow, or `+needs:me -virtual` to focus on source files that need your review. `+diffed` follows the existing visibility rules, including files kept visible after review, discussions, and files you explicitly reveal. It does not mean “has changed lines.”
+
+The file count, group summaries, and statistics reflect the matching files. Header revision selection, marking all files or a group reviewed, and opening files in tabs or your editor apply only to matching files, including matches inside collapsed groups. Undo reverses the original mark-all operation even if those files have since disappeared from the filter. Filtering leaves the review flow and saved group expansion state unchanged.
+
+Results update live: marking a file reviewed can remove it from `-reviewed`. If a filter reduces a large matrix below its row limit, the matching rows appear immediately; clearing it restores the large-matrix warning. An empty result shows **No matching files**. Incomplete or invalid queries have a subtle red outline and keep the last valid query active; bulk actions and saving a default are disabled until the query is valid.
+
+Use **Set as author default** or **Set as reviewer default** to save a default for this matrix. The reviewer default covers all reviews you did not author. Discussion defaults are separate. Clearing the field changes only the current query; click **Clear … default** afterward to remove the saved default.
+
 ### File list
 
 The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are automatically placed in the ↺ **Reverted** group. Select it to reveal the hidden files, or choose **ungroup** to return them to the main file list.

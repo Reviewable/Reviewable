@@ -12,6 +12,28 @@ Each comment in a discussion indicates its author via an avatar, which you can h
 When you publish a review, any draft comments in discussions — along with disposition changes or pending acknowledgements — are published too. Learn more in the [Publishing section](reviews.md#publish).
 :::
 
+## Filtering discussions
+
+Use **Filter discussions** in the discussion matrix to search available comment and draft Markdown and attached file paths. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix: spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
+
+| Predicate | Matches |
+| --- | --- |
+| `path:text` | Attached file paths containing the text |
+| `group:text` | Matrix group labels containing the text, such as `+group:"To reply"` |
+| `needs:me` | Discussions that require your response |
+| `resolved` | Resolved discussions |
+| `draft:comment` | Your publishable starter, reply, or summary drafts, including codeblock-only drafts |
+| `draft:disposition` | Your pending disposition changes |
+| `draft:acknowledgement` | Your pending acknowledgements |
+| `draft:dismissal` | Your pending participant dismissals |
+| `draft` | Any of the discussion draft subtypes above |
+
+Try `+needs:me +path:src/` to focus on discussions in a directory, or `+draft:comment` to inspect comments awaiting publication. Files and discussions have separate filters and predicate sets. Search uses already available data; it does not fetch extra file contents, render Markdown, or generate summaries.
+
+Group counts reflect matches. Filtering does not expand groups; your expansion choices are retained while you work but are not saved across visits. Results and groups update live as discussions change. **No matching discussions** distinguishes an empty result from collapsed groups. The large-matrix warning is based on the filtered list.
+
+Incomplete or invalid queries get a subtle red outline while the last valid query remains active. Save separate **author** and **reviewer** defaults using the link beside the filter; reviewer covers all non-author roles. File matrix defaults are independent. Clearing the field does not change the saved default until you explicitly clear that default.
+
 ## Starting a new discussion
 
 You can start a new discussion by clicking on a diff line, as explained [here](files.md#line-discussion).  File-wide discussions can be started by clicking the file name and selecting **Start a new discussion** from the dropdown.
