@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server -->
 - <kbd>Adm:</kbd> fix user sweeps failing on legacy malformed user records. <!-- server -->
 
 <sub>2026 - 10</sub>
