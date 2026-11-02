@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server -->
-- <kbd>Adm:</kbd> fix user sweeps failing on legacy malformed user records. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server 5001 -->
+- <kbd>Adm:</kbd> fix user sweeps failing on legacy malformed user records. <!-- server 5001 -->
 - <kbd>Fix:</kbd> make the `merge()` shortcut add the merge label or queue the merge where the repository is set up that way, as the merge button does. <!-- client 7941 -->
 
 <sub>2026 - 10</sub>
