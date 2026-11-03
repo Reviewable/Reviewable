@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server -->
-- <kbd>Adm:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server 5002 -->
+- <kbd>Adm:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server 5002 -->
 - <kbd>Fix:</kbd> keep commit-message comment maps consistent when revision metadata changes. <!-- client 7942 -->
 - <kbd>Fix:</kbd> further reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client 7942 -->
 - <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server 5001 -->
