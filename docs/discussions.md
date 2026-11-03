@@ -14,7 +14,7 @@ When you publish a review, any draft comments in discussions — along with disp
 
 ## Filtering discussions
 
-Use **Filter discussions** in the discussion matrix to search available comment and draft Markdown and attached file paths. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix: spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
+Use **Filter discussions** in the discussion matrix to search available comment and draft Markdown, attached file paths, and discussion participants' usernames and display names. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix: spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
 
 | Predicate | Matches |
 | --- | --- |
@@ -30,9 +30,9 @@ Use **Filter discussions** in the discussion matrix to search available comment 
 
 Try `+needs:me +path:src/` to focus on discussions in a directory, or `+draft:comment` to inspect comments awaiting publication. Files and discussions have separate filters and predicate sets. Search uses already available data; it does not fetch extra file contents, render Markdown, or generate summaries.
 
-Group counts reflect matches. Filtering does not expand groups; your expansion choices are retained while you work but are not saved across visits. Results and groups update live as discussions change. **No matching discussions** distinguishes an empty result from collapsed groups. The large-matrix warning is based on the filtered list.
+Group counts show matches and the unfiltered group total while filtered, such as **2/4 discussions**. Filtering does not expand groups; your expansion choices are retained while you work but are not saved across visits. Results and groups update live as discussions change. **No matching discussions** distinguishes an empty result from collapsed groups. The large-matrix warning is based on the filtered list.
 
-Incomplete or invalid queries get a subtle red outline while the last valid query remains active. Save separate **author** and **reviewer** defaults using the dropdown caret at the end of the filter; reviewer covers all non-author roles. File matrix defaults are independent. The **X** clears the current query; it does not change the saved default until you choose **Clear … default** from the dropdown.
+Incomplete or invalid queries get a subtle red outline while the last valid query remains active. Open the dropdown caret and click **Set as your default (when author)** or **Set as your default (when reviewer)** to save separate defaults; reviewer covers all non-author roles. A trailing checkmark indicates that the current query matches your default. File matrix defaults are independent. The <i class="close icon"/> clears the current query; it does not change the saved default until you click **Clear your default** for the current role in the popover.
 
 ## Starting a new discussion
 
