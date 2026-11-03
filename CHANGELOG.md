@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server 5001 -->
