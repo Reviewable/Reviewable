@@ -42,7 +42,7 @@ The file count, group summaries, and statistics reflect the matching files. Head
 
 Results update live: marking a file reviewed can remove it from `-reviewed`. If a filter reduces a large matrix below its row limit, the matching rows appear immediately; clearing it restores the large-matrix warning. An empty result shows **No matching files**. Incomplete or invalid queries have a subtle red outline and keep the last valid query active; bulk actions and saving a default are disabled until the query is valid.
 
-Use **Set as author default** or **Set as reviewer default** to save a default for this matrix. The reviewer default covers all reviews you did not author. Discussion defaults are separate. Clearing the field changes only the current query; click **Clear … default** afterward to remove the saved default.
+Open the dropdown caret at the end of the filter and choose **Set as author default** or **Set as reviewer default** to save a default for this matrix. The reviewer default covers all reviews you did not author. Discussion defaults are separate. The **X** clears only the current query; choose **Clear … default** from the dropdown afterward to remove the saved default.
 
 ### File list
 

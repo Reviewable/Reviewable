@@ -32,7 +32,7 @@ Try `+needs:me +path:src/` to focus on discussions in a directory, or `+draft:co
 
 Group counts reflect matches. Filtering does not expand groups; your expansion choices are retained while you work but are not saved across visits. Results and groups update live as discussions change. **No matching discussions** distinguishes an empty result from collapsed groups. The large-matrix warning is based on the filtered list.
 
-Incomplete or invalid queries get a subtle red outline while the last valid query remains active. Save separate **author** and **reviewer** defaults using the link beside the filter; reviewer covers all non-author roles. File matrix defaults are independent. Clearing the field does not change the saved default until you explicitly clear that default.
+Incomplete or invalid queries get a subtle red outline while the last valid query remains active. Save separate **author** and **reviewer** defaults using the dropdown caret at the end of the filter; reviewer covers all non-author roles. File matrix defaults are independent. The **X** clears the current query; it does not change the saved default until you choose **Clear … default** from the dropdown.
 
 ## Starting a new discussion
 
