@@ -378,13 +378,28 @@ stacks:
       start: '<!-- Stacked PR: start -->'
       # Optional; without it, the block runs to the end of the description.
       end: '<!-- Stacked PR: end -->'
+    # Optional; text the tool writes into every pull request it manages.
+    detect: 'Part of a stack created by stackable_pr'
+    # The default setting is `link`.
+    pr-reference: link | last-ref
     # The default setting is `top-first`.
     order: top-first | bottom-first
+    # The default setting is `merge`.
+    landing: merge | close | retarget-and-close
+    # Required unless `landing` is `merge`.
+    merged-notification: 'Landed by stackable_pr'
 ```
 
 - `name` identifies the tool, and can be anything up to 50 characters that's unique among the repository's definitions.  Wherever Reviewable reports which tool manages a stack, such as to agents, it names this one as `x-` followed by this name.
 - `description-block` gives the exact text the tool puts at the `start` and `end` of its list.  The list runs from the last occurrence of the start marker to the first end marker after it.  If your tool always puts its list last, you can leave `end` out, and the list runs to the end of the description.
+- `detect` is optional text that the tool writes into every pull request it manages, on a line of its own.  Without it, any description containing the start marker belongs to the tool.  With it, the `detect` text alone decides that, and the markers only delimit the list, so a pull request with the text but no list, such as a stack of one, still belongs to the tool, while one that merely contains something like the start marker doesn't.  Reviewable leaves the line with the `detect` text out of the description it shows.
+- `pr-reference` says how the list refers to pull requests:  `link`, the default, for tools that link each one, or `last-ref` for tools that only write `#N` references; see below.
 - `order` says which end of the list is the top of the stack.
+- `landing` says how the tool lands pull requests:
+  - `merge`, the default, when it really merges each one;
+  - `close` when it closes the pull requests it lands instead of merging them;
+  - `retarget-and-close` when it lands a whole stack by retargeting the top pull request onto the stack's target branch and merging it there, closing the ones below, as `spr` does.  Reviewable doesn't treat that retargeting as a new revision, so the top pull request's review keeps showing only its own changes.
+- `merged-notification` is text from the comment the tool posts on each pull request it landed by closing it, which is the only way to tell such a pull request landed.  When a comment containing it appears, Reviewable shows the pull request as merged in its review and in the stack.  It's required unless `landing` is `merge`.
 
 For example, with the definition above, the middle pull request of a three-deep stack might carry this block in its description, with the top of the stack first:
 
@@ -396,9 +411,13 @@ For example, with the definition above, the middle pull request of a three-deep 
 <!-- Stacked PR: end -->
 ```
 
-Within the list, Reviewable takes the links to pull requests in this repository, in the order they appear: GitHub pull request links (`https://github.com/OWNER/REPO/pull/N`) and review links (`https://reviewable.io/reviews/OWNER/REPO/N`), from any host, so that GitHub Enterprise and Reviewable Enterprise links work too.  Everything else in it is ignored, whether layout, titles, other links or `#N` references.  The block yields a stack only if it lists the current pull request, lists no pull request more than once (though the same pull request linked twice in a row counts once), and lists at least two.  When it doesn't, or a configured end marker is missing, Reviewable still treats the pull request as managed by the tool but shows no stack and leaves the description as is.
+With `pr-reference: link`, Reviewable takes the links to pull requests in this repository within the list, in the order they appear: GitHub pull request links (`https://github.com/OWNER/REPO/pull/N`) and review links (`https://reviewable.io/reviews/OWNER/REPO/N`), from any host, so that GitHub Enterprise and Reviewable Enterprise links work too.  Everything else in it is ignored, whether layout, titles, other links or `#N` references.
 
-Reviewable doesn't offer to merge pull requests in such a stack, as it assumes the tool lands them, unless your [merge mechanism](#merge-mechanism) is a label, which hands the merge to whatever acts on it; a stack made with GitHub's own stacks still wins over any definition.  The `stacks` setting is a list, so a repository moving from one tool to another can recognize both, and the first definition whose start marker appears in a description applies.  Changes to it take effect for each pull request the next time it's synced, at the latest when somebody opens its review.
+With `pr-reference: last-ref`, Reviewable takes the last `#N` reference on each line of the list instead, as long as it starts the line or follows a space, and skips lines without one.  Titles before the reference and decorations after it are fine, but each pull request needs a line of its own, and its own reference has to come last on it.
+
+Either way, the block yields a stack only if it lists the current pull request, lists no pull request more than once (though the same pull request linked twice in a row counts once), and lists at least two.  When it doesn't, or a configured end marker is missing, Reviewable still treats the pull request as managed by the tool but shows no stack and leaves the description as is.
+
+Reviewable doesn't offer to merge pull requests in such a stack, as it assumes the tool lands them, unless your [merge mechanism](#merge-mechanism) is a label, which hands the merge to whatever acts on it; a stack made with GitHub's own stacks still wins over any definition.  The `stacks` setting is a list, so a repository moving from one tool to another can recognize both, and the first definition that claims a description applies, then the built-in one for `spr`.  Changes to it take effect for each pull request the next time it's synced, at the latest when somebody opens its review.
 
 ::: tip
 If your stacking tool needs something this setting can't express, please [get in touch](mailto:support@reviewable.io) and we'll see what we can do!
