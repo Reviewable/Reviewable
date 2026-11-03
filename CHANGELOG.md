@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> further reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client -->
 - <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server -->
 - <kbd>Fix:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server -->
 
