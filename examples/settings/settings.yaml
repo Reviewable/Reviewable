@@ -61,8 +61,13 @@ stacks:
       start: '<!-- Stacked PR: start -->'
       # Optional; without it, the block runs to the end of the description.
       end: '<!-- Stacked PR: end -->'
+    # Valid options include: `link` (default) or `last-ref`.
+    pr-reference: link
     # Valid options include: `top-first` (default) or `bottom-first`.
     order: top-first
+    # Valid options include: `merge` (default), `close` or `retarget-and-close`; the latter two also
+    # need `merged-notification`, text from the comment the tool posts on a pull request it landed.
+    landing: merge
 
 # `github-status` lets you control various aspects of Reviewable's pull request status on GitHub.
 # https://docs.reviewable.io/repositories.html#review-status-in-github-pr
