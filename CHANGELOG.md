@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server -->
 - <kbd>Fix:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server -->
 
 <sub>2026 - 11</sub>
