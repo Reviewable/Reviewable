@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep headless authentication refreshing after transient Firebase network failures. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server 5002 -->
