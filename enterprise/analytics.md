@@ -94,7 +94,7 @@ Emitted alongside `Created Review`, associated with the PR author instead of the
 ```
 
 ##### Detected Stack
-A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-stacks-of-dependent-changes) for the first time, associated with the PR author. Emitted once per pull request, including when a GitHub stack is linked after its pull requests were opened. A pull request that a stacking tool claims without listing a valid stack in its description joins a stack only once it does.
+A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-stacks-of-dependent-changes), associated with the PR author. Emitted each time a review goes from having no stack to having one, including when a GitHub stack is linked after its pull requests were opened, so a pull request whose stack is removed and later restored emits it again. A pull request that a stacking tool claims without listing a valid stack in its description joins a stack only once it does.
 
 ```ts
 {
@@ -262,7 +262,7 @@ Sampled production client performance telemetry. Currently the effective samplin
 }
 ```
 
-On initial loads, `connect`, `load`, `init`, and `boot` split `extLatency` into phases: connecting to the server, downloading and parsing the page up to `domInteractive`, running the deferred scripts, and booting the app. Review pages also report the review's size in `numRevisions`, `numDiscussions`, and `lineStatsSum`, and its stack, if any, in `stackSource` and `stackSize`.
+On initial loads, `connect`, `load`, `init`, and `boot` split `extLatency` into phases: connecting to the server, downloading and parsing the page up to `domInteractive`, running the deferred scripts, and booting the app. Review pages also report the review's size in `numRevisions`, `numDiscussions`, and `lineStatsSum`, and its stack, if any, in `stackSource` and `stackSize`. `stackSource` without `stackSize` means a stacking tool manages the pull request but no stack could be read: for example a stack of one, an invalid list, or a GitHub stack whose members can't be read.
 
 ##### Listed Open Reviews
 The dashboard's review counts changed. Sampled at 25% of changes.
