@@ -108,6 +108,8 @@ A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-s
 }
 ```
 
+`stackSource` is `x-` followed by the definition's name for a stack made with a tool the repository describes in its [stacking tools](../docs/admincenter.md#stacking-tools) setting.
+
 ##### Published Comments
 The user successfully published a review, either directly or automatically via [publish on push](../docs/reviews.md#publish-on-push). This can publish review marks and other actions without any comments. Queuing a publication to wait for a push does not emit this event; successful publication does. Includes common PR properties.
 
