@@ -251,7 +251,6 @@ Sampled production client performance telemetry. Currently the effective samplin
   numNonTrivialFiles?: number;
   singleFilePage?: boolean;
   signedIn?: boolean;
-  subscriptionLink?: boolean;
   linkDiscussion?: boolean;
   error?: boolean;
   numRevisions?: number;
