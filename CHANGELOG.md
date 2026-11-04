@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> recognize stacking tools that only write `#N` references or land pull requests by closing them, through new options for the `stacks` setting. <!-- server -->
 - <kbd>Fix:</kbd> keep headless authentication refreshing after transient Firebase network failures. <!-- client -->
 
 <sub>2026 - 11</sub>
