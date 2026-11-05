@@ -1,12 +1,9 @@
-<sub>Upcoming</sub>
-
-- <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server -->
-- <kbd>New:</kbd> let custom completion conditions report timing splits and forks. <!-- server -->
-- <kbd>Adm:</kbd> log completion condition request timings. <!-- server -->
-- <kbd>Upd:</kbd> recognize stacking tools that only write `#N` references or land pull requests by closing them, through new options for the `stacks` setting. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server 5003 -->
+- <kbd>New:</kbd> let custom completion conditions report timing splits and forks. <!-- server 5003 -->
+- <kbd>Adm:</kbd> log completion condition request timings. <!-- server 5003 -->
+- <kbd>Upd:</kbd> recognize stacking tools that only write `#N` references or land pull requests by closing them, through new options for the `stacks` setting. <!-- server 5003 -->
 - <kbd>Fix:</kbd> keep headless authentication refreshing after transient Firebase network failures. <!-- client 7943 -->
 - <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server 5002 -->
 - <kbd>Adm:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server 5002 -->
