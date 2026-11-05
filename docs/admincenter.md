@@ -471,7 +471,7 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 ### Timing a condition
 
-Use the built-in `stopwatch` to record how long parts of your condition take. Reviewable includes these timings under `userCode` in its server evaluation and reconciliation logs.
+Use the built-in `stopwatch` to record how long parts of your condition take. Reviewable shows these timings in the evaluation result when you test a condition and records them under `userCode` in its server logs. If you're on an Enterprise plan, you can ask Reviewable support or your instance admins for an export of recent timing logs for a repository or a specific pull request.
 
 - `stopwatch.split(label)` records the time since the previous split, or since the condition started for the first split. It also groups any forks recorded during that interval and starts a new interval.
 - `stopwatch.fork(label)` records elapsed time from the same starting point without starting a new interval. Call it when one of several concurrent operations finishes, then call `split()` after they all finish.
@@ -494,7 +494,7 @@ stopwatch.split('check policy');
 return {completed};
 ```
 
-The times are in milliseconds. Forks can overlap, so their times can add up to more than the enclosing split. If the condition ends before the next split, Reviewable groups outstanding forks under `_remaining`. Use short, static labels and keep sensitive values out of them. Labels must start with a letter or digit and may contain up to 48 letters, digits, spaces, periods, underscores, or hyphens. Reviewable records up to 32 calls per evaluation and ignores invalid labels. On Enterprise versions that require callback-style asynchronous conditions, use the same timing calls inside your callbacks and finish with `done(result)` or `fail(error)`.
+The times are in milliseconds. Forks can overlap, so their times can add up to more than the enclosing split. If the condition ends before the next split, Reviewable groups outstanding forks under `_remaining`. Use short, static labels and keep sensitive values out of them. Labels must start with a letter or digit and may contain up to 48 letters, digits, spaces, periods, underscores, or hyphens. Reviewable records up to 50 calls per evaluation and ignores invalid labels.
 
 ### Pragmas
 
