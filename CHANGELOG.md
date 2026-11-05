@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server -->
 - <kbd>New:</kbd> let custom completion conditions report timing splits and forks. <!-- server -->
 - <kbd>Adm:</kbd> log completion condition request timings. <!-- server -->
 - <kbd>Upd:</kbd> recognize stacking tools that only write `#N` references or land pull requests by closing them, through new options for the `stacks` setting. <!-- server -->
