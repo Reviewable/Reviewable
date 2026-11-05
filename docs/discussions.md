@@ -14,7 +14,7 @@ When you publish a review, any draft comments in discussions — along with disp
 
 ## Filtering discussions
 
-Use **Filter discussions** in the discussion matrix to search comment and draft Markdown, code blocks, attached file paths, and participants' usernames and display names. Results update live as discussions change. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix. Spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
+Use **Filter discussions** in the discussion matrix to find discussions by state or to search comment and draft Markdown, code blocks, attached file paths, and participants' usernames and display names. Results update live as discussions change. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix. Spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
 
 | Predicate | Matches |
 | --- | --- |
@@ -30,7 +30,7 @@ Use **Filter discussions** in the discussion matrix to search comment and draft 
 
 Try `+needs:me +path:src/` to find discussions in a directory that need your response, or `+draft:comment` to inspect comments awaiting publication.
 
-Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown caret and click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. File matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
+Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown by clicking <i class="dropdown icon" role="img" aria-label="the caret"/>, then click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. File matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
 
 ## Starting a new discussion
 

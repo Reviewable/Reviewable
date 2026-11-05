@@ -23,7 +23,7 @@ The file matrix displays a history matrix showing all files and revisions. Here,
 
 ### Filtering files
 
-Use **Filter files** in the file matrix to search file paths. Results update live as files and their review status change. Matching is case-insensitive. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Repeat the full predicate after each comma.
+Use **Filter files** in the file matrix to find files by path, group, or review state. Results update live as files and their review status change. Matching is case-insensitive. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Repeat the full predicate after each comma.
 
 | Predicate | Matches |
 | --- | --- |
@@ -39,7 +39,7 @@ For example, enter `+path:src/parser/` and use the header's mark-all button to r
 
 The file count, group summaries, and statistics reflect the matching files. While filtered, counts include the unfiltered total, such as **2/4 files**. Group counts use that group's total. Header revision selection, marking all files or a group reviewed, and opening files in tabs or your editor apply only to matching files, including matches inside collapsed groups. Undo reverses the original mark-all operation even if those files have since disappeared from the filter. Filtering leaves the review flow and saved group expansion state unchanged.
 
-Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown caret and click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. Discussion matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
+Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown by clicking <i class="dropdown icon" role="img" aria-label="the caret"/>, then click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. Discussion matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
 
 ### File list
 
