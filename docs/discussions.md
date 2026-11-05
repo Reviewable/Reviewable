@@ -14,7 +14,7 @@ When you publish a review, any draft comments in discussions — along with disp
 
 ## Filtering discussions
 
-Use **Filter discussions** in the discussion matrix to search available comment and draft Markdown, attached file paths, and discussion participants' usernames and display names. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix: spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
+Use **Filter discussions** in the discussion matrix to search comment and draft Markdown, code blocks, attached file paths, and participants' usernames and display names. Results update live as discussions change. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix. Spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
 
 | Predicate | Matches |
 | --- | --- |
@@ -22,17 +22,15 @@ Use **Filter discussions** in the discussion matrix to search available comment 
 | `group:text` | Matrix group labels containing the text, such as `+group:"To reply"` |
 | `needs:me` | Discussions that require your response |
 | `resolved` | Resolved discussions |
-| `draft:comment` | Your publishable starter, reply, or summary drafts, including codeblock-only drafts |
+| `draft` | Any of the discussion draft subtypes below |
+| `draft:comment` | Your publishable starter, reply, review summary, and command drafts |
 | `draft:disposition` | Your pending disposition changes |
 | `draft:acknowledgement` | Your pending acknowledgements |
 | `draft:dismissal` | Your pending participant dismissals |
-| `draft` | Any of the discussion draft subtypes above |
 
-Try `+needs:me +path:src/` to focus on discussions in a directory, or `+draft:comment` to inspect comments awaiting publication. Files and discussions have separate filters and predicate sets. Search uses already available data; it does not fetch extra file contents, render Markdown, or generate summaries.
+Try `+needs:me +path:src/` to find discussions in a directory that need your response, or `+draft:comment` to inspect comments awaiting publication.
 
-Group counts show matches and the unfiltered group total while filtered, such as **2/4 discussions**. Filtering does not expand groups; your expansion choices are retained while you work but are not saved across visits. Results and groups update live as discussions change. **No matching discussions** distinguishes an empty result from collapsed groups. The large-matrix warning is based on the filtered list.
-
-Incomplete or invalid queries get a subtle red outline while the last valid query remains active. Open the dropdown caret and click **Set as your default** (when author) or **Set as your default** (when reviewer) to save separate defaults; reviewer covers all non-author roles. A trailing checkmark indicates that the current query matches your default. File matrix defaults are independent. The <i class="close icon"/> clears the current query; it does not change the saved default until you click **Clear your default** for the current role in the popover.
+Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown caret and click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. File matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
 
 ## Starting a new discussion
 

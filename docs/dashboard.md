@@ -63,7 +63,7 @@ Add an OR operator to the positive filter by entering a comma. For example, `+ne
 
 Use double quotes around a phrase or a predicate value containing spaces, such as `"build failure"` or `+label:"good first issue"`. Separate terms with spaces to require all of them. Number searches match the beginning of the pull request number.
 
-Incomplete or invalid predicates show a subtle red outline while the last valid query remains active. Complete the query before saving it as your default. If nothing matches, the list shows **No matching reviews**. The [file](files.md#filtering-files) and [discussion](discussions.md#filtering-discussions) matrices use the same syntax with their own predicates.
+Incomplete or invalid predicates show a red outline while the last valid query remains active. Complete the query before saving it as your default. If nothing matches, the list shows **No matching reviews**. The [file](files.md#filtering-files) and [discussion](discussions.md#filtering-discussions) matrices use the same syntax with their own predicates.
 
 Filter | Meaning
 -----|---------

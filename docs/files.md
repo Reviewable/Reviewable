@@ -23,26 +23,23 @@ The file matrix displays a history matrix showing all files and revisions. Here,
 
 ### Filtering files
 
-Use **Filter files** to focus the matrix. Text matches file paths, without regard to case. Spaces combine terms with AND, and quotes keep a phrase together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Repeat the full predicate after each comma.
+Use **Filter files** in the file matrix to search file paths. Results update live as files and their review status change. Matching is case-insensitive. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Repeat the full predicate after each comma.
 
 | Predicate | Matches |
 | --- | --- |
 | `path:text` | Paths containing the text |
 | `group:text` | Group names containing the text |
 | `needs:me` | Files that need your review |
-| `reviewed` | Files sufficiently reviewed at the latest revision, including pending marks |
+| `reviewed` | Files sufficiently reviewed at the latest revision using published marks |
 | `diffed` | Files currently shown as panels in the review flow, with non-italic names in the matrix |
 | `virtual` | Virtual files, such as Commits |
-| `draft:review` | Files with your pending review marks |
-| `draft` | Any applicable draft subtype (currently `draft:review` for files) |
+| `draft` | Files with your pending review marks |
 
-For example, enter `+path:src/parser/` and use the header's mark-all button to review that directory. Use `+diffed` to work with the files currently shown in the flow, or `+needs:me -virtual` to focus on source files that need your review. `+diffed` follows the existing visibility rules, including files kept visible after review, discussions, and files you explicitly reveal. It does not mean “has changed lines.”
+For example, enter `+path:src/parser/` and use the header's mark-all button to review that directory. Use `+diffed` to work with the files currently shown in the flow, or `+needs:me -virtual` to find non-virtual files that need your review.
 
-The file count, group summaries, and statistics reflect the matching files. While filtered, counts include the unfiltered total, such as **2/4 files**; group counts use that group's total. Header revision selection, marking all files or a group reviewed, and opening files in tabs or your editor apply only to matching files, including matches inside collapsed groups. Undo reverses the original mark-all operation even if those files have since disappeared from the filter. Filtering leaves the review flow and saved group expansion state unchanged.
+The file count, group summaries, and statistics reflect the matching files. While filtered, counts include the unfiltered total, such as **2/4 files**. Group counts use that group's total. Header revision selection, marking all files or a group reviewed, and opening files in tabs or your editor apply only to matching files, including matches inside collapsed groups. Undo reverses the original mark-all operation even if those files have since disappeared from the filter. Filtering leaves the review flow and saved group expansion state unchanged.
 
-Results update live: marking a file reviewed can remove it from `-reviewed`. If a filter reduces a large matrix below its row limit, the matching rows appear immediately; clearing it restores the large-matrix warning. An empty result shows **No matching files**. Incomplete or invalid queries have a subtle red outline and keep the last valid query active; bulk actions and saving a default are disabled until the query is valid.
-
-Open the dropdown caret at the end of the filter and click **Set as your default** (when author) or **Set as your default** (when reviewer) to save a default for this matrix. A trailing checkmark indicates that the current query matches your default. The reviewer default covers all reviews you did not author. Discussion defaults are separate. The <i class="close icon"/> clears only the current query; click **Clear your default** (when author) or **Clear your default** (when reviewer) in the popover afterward to remove the saved default.
+Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown caret and click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. Discussion matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
 
 ### File list
 
