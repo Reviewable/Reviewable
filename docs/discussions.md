@@ -28,7 +28,7 @@ Use **Filter discussions** in the discussion matrix to find discussions by state
 | `draft:acknowledgement` | Your pending acknowledgements |
 | `draft:dismissal` | Your pending participant dismissals |
 
-Try `+needs:me +path:src/` to find discussions in a directory that need your response, or `+draft:comment` to inspect comments awaiting publication.
+Try `+needs:me +path:src/` to find discussions in a directory that need your response, or `+draft:comment` to inspect comments awaiting publication. `-resolved,draft` excludes resolved discussions with drafts. Use `-resolved -draft` to exclude discussions matching either predicate.
 
 Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown by clicking <i class="dropdown icon" role="img" aria-label="the caret"/>, then click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. File matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
 

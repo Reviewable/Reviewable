@@ -35,7 +35,7 @@ Use **Filter files** in the file matrix to find files by path, group, or review 
 | `virtual` | Virtual files, such as Commits |
 | `draft` | Files with your pending review marks |
 
-For example, enter `+path:src/parser/` and use the header's mark-all button to review that directory. Use `+diffed` to work with the files currently shown in the flow, or `+needs:me -virtual` to find non-virtual files that need your review.
+For example, enter `+path:src/parser/` and use the header's mark-all button to review that directory. Use `+diffed` to work with the files currently shown in the flow, or `+needs:me -virtual` to find non-virtual files that need your review. Use separate negative terms such as `-group:Tests -group:Docs` to exclude files matching either group name.
 
 The file count, group summaries, and statistics reflect the matching files. While filtered, counts include the unfiltered total, such as **2/4 files**. Group counts use that group's total. Header revision selection, marking all files or a group reviewed, and opening files in tabs or your editor apply only to matching files, including matches inside collapsed groups. Undo reverses the original mark-all operation even if those files have since disappeared from the filter. Filtering leaves the review flow and saved group expansion state unchanged.
 

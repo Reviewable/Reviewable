@@ -59,7 +59,7 @@ Use the search bar to search or filter by PR summary, repository, number, milest
 
 You can also use the special filters in the table below, adding either a `+` or `-` prefix to the special term (such as `+open`) to require or prohibit the specified condition respectively.
 
-Add an OR operator to the positive filter by entering a comma. For example, `+needs:review,needs:fix` will filter for all reviews that need work, or have a failing check. For negative filters, the comma functions as an AND operator. More complex boolean expressions are not supported.
+Add an OR operator to the positive filter by entering a comma. For example, `+needs:review,needs:fix` will filter for all reviews that need work, or have a failing check. A negative comma list excludes reviews that match every predicate in the list. Use separate negative terms such as `-needs:review -needs:fix` to exclude reviews matching either predicate. More complex boolean expressions are not supported.
 
 Use double quotes around a phrase or a predicate value containing spaces, such as `"build failure"` or `+label:"good first issue"`. Spaces combine terms with AND. Number searches match the beginning of the pull request number.
 
