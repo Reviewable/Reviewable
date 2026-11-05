@@ -471,7 +471,7 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 ### Timing a condition
 
-Use the built-in `stopwatch` to record how long parts of your condition take. Reviewable shows these timings in the evaluation result when you test a condition and records them under `userCode` in its server logs. If you're on an Enterprise plan, you can ask Reviewable support or your instance admins for an export of recent timing logs for a repository or a specific pull request.
+Use the built-in `stopwatch` to record how long parts of your condition take. When you test a condition, the **Evaluation result** shows any timings it recorded, even if it throws an error or times out. Reviewable also records these timings under `userCode` in its server logs. On an enterprise instance, you can ask Reviewable support or your instance admins for an export of recent timing logs for a repository or a specific pull request.
 
 - `stopwatch.split(label)` records the time since the previous split, or since the condition started for the first split. It also groups any forks recorded during that interval and starts a new interval.
 - `stopwatch.fork(label)` records elapsed time from the same starting point without starting a new interval. Call it when one of several concurrent operations finishes, then call `split()` after they all finish.
