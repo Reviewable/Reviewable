@@ -23,7 +23,7 @@ The file matrix displays a history matrix showing all files and revisions. Here,
 
 ### Filtering files
 
-Use **Filter files** in the file matrix to find files by path, group, or review state. Results update live as files and their review status change. Matching is case-insensitive. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Repeat the full predicate after each comma.
+Use **Filter files** in the file matrix to find files by path, group, or review state. Results update live as files and their review status change. Matching is case-insensitive. The [query syntax](discussions.md#filtering-discussions) is shared with the discussion matrix. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Each item in a comma list needs its full predicate: `+group:Tests,group:Docs`, not `+group:Tests,Docs`.
 
 | Predicate | Matches |
 | --- | --- |

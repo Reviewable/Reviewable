@@ -14,7 +14,7 @@ When you publish a review, any draft comments in discussions — along with disp
 
 ## Filtering discussions
 
-Use **Filter discussions** in the discussion matrix to find discussions by state or to search comment and draft Markdown, code blocks, attached file paths, and participants' usernames and display names. Results update live as discussions change. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix. Spaces mean AND, positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates. Quotes preserve phrases and values containing spaces.
+Use **Filter discussions** in the discussion matrix to find discussions by state or to search comment and draft Markdown, code blocks, attached file paths, and participants' usernames and display names. Results update live as discussions change. Matching is case-insensitive. The [query syntax](files.md#filtering-files) is shared with the file matrix. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. Positive comma lists mean OR, and negative comma lists exclude items matching all listed predicates.
 
 | Predicate | Matches |
 | --- | --- |
