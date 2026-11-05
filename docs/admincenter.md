@@ -506,6 +506,33 @@ The results of your code will appear in the **Evaluation result** pane at the bo
 
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png)
 
+### Timing a condition
+
+Use the built-in `stopwatch` to record how long parts of your condition take. When you test a condition, the **Evaluation result** shows any timings it recorded, even if it throws an error or times out. Reviewable also records these timings under `userCode` in its server logs. On an enterprise instance, you can ask Reviewable support or your instance admins for an export of recent timing logs for a repository or a specific pull request.
+
+- `stopwatch.split(label)` records the time since the previous split, or since the condition started for the first split. It also groups any forks recorded during that interval and starts a new interval.
+- `stopwatch.fork(label)` records elapsed time from the same starting point without starting a new interval. Call it when one of several concurrent operations finishes, then call `split()` after they all finish.
+
+```js
+const [policy, approvals] = await Promise.all([
+  loadPolicy().then(value => {
+    stopwatch.fork('load policy');
+    return value;
+  }),
+  loadApprovals().then(value => {
+    stopwatch.fork('load approvals');
+    return value;
+  })
+]);
+stopwatch.split('load inputs');
+
+const completed = meetsPolicy(policy, approvals);
+stopwatch.split('check policy');
+return {completed};
+```
+
+The times are in milliseconds. Forks can overlap, so their times can add up to more than the enclosing split. If the condition ends before the next split, Reviewable groups outstanding forks under `_remaining`. Use short, static labels and keep sensitive values out of them. Labels must start with a letter or digit and may contain up to 48 letters, digits, spaces, periods, underscores, or hyphens. Reviewable records up to 50 calls per evaluation and ignores invalid labels.
+
 ### Pragmas
 
 You can control certain aspects of completion condition execution with special comments (aka "pragmas").  You can have at most one of each kind of pragma, and each must appear alone on a line with no indentation.
