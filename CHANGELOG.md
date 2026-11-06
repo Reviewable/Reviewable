@@ -1,20 +1,20 @@
 <sub>Upcoming</sub>
 
-- <kbd>New:</kbd> navigate filtered files, discussions, and reviews by keyboard. <!-- client -->
 - <kbd>Adm:</kbd> throttle oversized review retries and count only retained files. <!-- server -->
 - <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server -->
-- <kbd>Fix:</kbd> show all repositories you can admin in the Admin Center for large organizations you don't own. <!-- client -->
 - <kbd>Adm:</kbd> suppress expected Firebase warnings during GitHub status handoff. <!-- server -->
-- <kbd>Fix:</kbd> anchor selected inline diff text to the correct side. <!-- client -->
-- <kbd>Fix:</kbd> keep done icons visible and remove duplicate review status icons in file headers. <!-- client -->
-- <kbd>Fix:</kbd> Let the visit command close an already open overlay. <!-- client -->
-- <kbd>Upd:</kbd> add a link to GitHub next to references to pull requests that link to their reviews. <!-- client -->
-- <kbd>Fix:</kbd> link references to pull requests in descriptions to their reviews, as in comments. <!-- client -->
-- <kbd>Fix:</kbd> leave links to pull requests and issues on other GitHub hosts alone, rather than treating them as the local ones with the same number. <!-- client -->
-- <kbd>New:</kbd> filter files and discussions with review item queries. <!-- client -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>New:</kbd> navigate filtered files, discussions, and reviews by keyboard. <!-- client 7944 -->
+- <kbd>Fix:</kbd> show all repositories you can admin in the Admin Center for large organizations you don't own. <!-- client 7944 -->
+- <kbd>Fix:</kbd> anchor selected inline diff text to the correct side. <!-- client 7944 -->
+- <kbd>Fix:</kbd> keep done icons visible and remove duplicate review status icons in file headers. <!-- client 7944 -->
+- <kbd>Fix:</kbd> Let the visit command close an already open overlay. <!-- client 7944 -->
+- <kbd>Upd:</kbd> add a link to GitHub next to references to pull requests that link to their reviews. <!-- client 7944 -->
+- <kbd>Fix:</kbd> link references to pull requests in descriptions to their reviews, as in comments. <!-- client 7944 -->
+- <kbd>Fix:</kbd> leave links to pull requests and issues on other GitHub hosts alone, rather than treating them as the local ones with the same number. <!-- client 7944 -->
+- <kbd>New:</kbd> filter files and discussions with review item queries. <!-- client 7944 -->
 - <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server 5003 -->
 - <kbd>New:</kbd> let custom completion conditions report timing splits and forks. <!-- server 5003 -->
 - <kbd>Adm:</kbd> log completion condition request timings. <!-- server 5003 -->
