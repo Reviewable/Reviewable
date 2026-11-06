@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> throttle oversized review retries and count only retained files. <!-- server 5004 -->
