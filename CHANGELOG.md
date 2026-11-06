@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server -->
 - <kbd>Fix:</kbd> show all repositories you can admin in the Admin Center for large organizations you don't own. <!-- client -->
 - <kbd>Adm:</kbd> suppress expected Firebase warnings during GitHub status handoff. <!-- server -->
 - <kbd>Fix:</kbd> anchor selected inline diff text to the correct side. <!-- client -->
