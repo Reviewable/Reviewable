@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>New:</kbd> filter files and discussions with review item queries. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server 5003 -->
