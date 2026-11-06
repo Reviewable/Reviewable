@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> throttle oversized review retries and count only retained files. <!-- server -->
-- <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server -->
-- <kbd>Adm:</kbd> suppress expected Firebase warnings during GitHub status handoff. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> throttle oversized review retries and count only retained files. <!-- server 5004 -->
+- <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server 5004 -->
+- <kbd>Adm:</kbd> suppress expected Firebase warnings during GitHub status handoff. <!-- server 5004 -->
 - <kbd>New:</kbd> navigate filtered files, discussions, and reviews by keyboard. <!-- client 7944 -->
 - <kbd>Fix:</kbd> show all repositories you can admin in the Admin Center for large organizations you don't own. <!-- client 7944 -->
 - <kbd>Fix:</kbd> anchor selected inline diff text to the correct side. <!-- client 7944 -->
