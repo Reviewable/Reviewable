@@ -56,6 +56,8 @@ Repository references use lowercase `owner` and `repo` values across client and 
 
 Author agents count as authors on their owner's PRs. `userIsAuthor` is omitted for events with no associated user, including `Updated Review Status`. `lastRevision` is null if no revision has been captured yet, as when a review is first created.
 
+`pullRequest` is a legacy alias of `prNumber`. It's a number on `Published Comments`, `Sent Comment`, `Ready for Review`, `Merged Branch`, `Queued Merge`, and `Canceled Queued Merge`, and a string on review-page `Viewed Page` events.
+
 ##### Signed up
 The user signed in to Reviewable for the first time. No additional properties.
 
@@ -93,6 +95,23 @@ Emitted alongside `Created Review`, associated with the PR author instead of the
 }
 ```
 
+##### Detected Stack
+A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-stacks-of-dependent-changes), associated with the PR author. Emitted each time a review goes from having no stack to having one, including when a GitHub stack is linked after its pull requests were opened, so a pull request whose stack is removed and later restored emits it again. A pull request that a stacking tool claims without listing a valid stack in its description joins a stack only once it does.
+
+```ts
+{
+  owner: string;
+  repo: string;
+  prNumber: number;
+  private: boolean;
+  origin: 'request' | 'event' | 'poll';
+  stackSource: string;  // 'github', 'spr', or 'x-' and the name of a tool the repository defines
+  stackSize?: number;  // pull requests in the stack
+}
+```
+
+`stackSource` is `x-` followed by the definition's name for a stack made with a tool the repository describes in its [stacking tools](../docs/admincenter.md#stacking-tools) setting.
+
 ##### Published Comments
 The user successfully published a review, either directly or automatically via [publish on push](../docs/reviews.md#publish-on-push). This can publish review marks and other actions without any comments. Queuing a publication to wait for a push does not emit this event; successful publication does. Includes common PR properties.
 
@@ -100,7 +119,8 @@ The user successfully published a review, either directly or automatically via [
 {
   trigger: 'user' | 'push';            // direct publication or automatic publication after a push
   sanction: 'approved' | 'changes_requested' | 'commented';
-  numPublishedDrafts: number;         // comments in the published actions summary
+  numDrafts: number;                  // all of the user's drafts, including private notes and empty drafts
+  numPublishedDrafts: number;         // drafts with content that are published, excluding private notes
   numMarks: number;                   // files with published review marks, including virtual Commits
   numFullMarks: number;               // files whose published marks fully review their latest revision
   numFilesReviewed: number;           // published summary's reviewed-file count, excluding Commits
@@ -150,7 +170,7 @@ The user successfully merged the PR from Reviewable. Does not track merges perfo
 ```ts
 {
   deleted: boolean;  // whether the head branch was deleted
-  flavor: 'merge' | 'squash' | 'rebase' | 'fastForward';
+  flavor: 'merge' | 'squash' | 'rebase';
 }
 ```
 
@@ -234,11 +254,18 @@ Sampled production client performance telemetry. Currently the effective samplin
   numNonTrivialFiles?: number;
   singleFilePage?: boolean;
   signedIn?: boolean;
-  subscriptionLink?: boolean;
   linkDiscussion?: boolean;
   error?: boolean;
+  numRevisions?: number;
+  numDiscussions?: number;
+  lineStatsSum?: {changed: number, inserted: number, deleted: number, totalDelta: number,
+    unknown?: true};
+  stackSource?: string | null;  // as in Detected Stack
+  stackSize?: number;
 }
 ```
+
+On initial loads, `connect`, `load`, `init`, and `boot` split `extLatency` into phases: connecting to the server, downloading and parsing the page up to `domInteractive`, running the deferred scripts, and booting the app. Review pages also report the review's size in `numRevisions`, `numDiscussions`, and `lineStatsSum`, and its stack, if any, in `stackSource` and `stackSize`. `stackSource` without `stackSize` means a stacking tool manages the pull request but no stack could be read: for example a stack of one, an invalid list, or a GitHub stack whose members can't be read.
 
 ##### Listed Open Reviews
 The dashboard's review counts changed. Sampled at 25% of changes.
@@ -247,7 +274,8 @@ The dashboard's review counts changed. Sampled at 25% of changes.
 {
   numReviews: number;
   includesPrivate: boolean;
-  includesPushableRepos: boolean;
+  includesPushableRepos?: boolean;  // true only on the global list, when the user shows PRs from
+                                    // repositories they can push to
   listType: 'personal' | 'org' | 'repo';
   owner?: string;              // organization/repository lists
   repo?: string;               // repository lists
@@ -264,7 +292,6 @@ The repositories list loaded.
 ```ts
 {
   numOwners: number;
-  numRepositories: number;
   includesPrivate: boolean;
 }
 ```
@@ -328,13 +355,22 @@ The user disabled automatic connection of repositories. The type has the same me
 ```
 
 ##### Looked at Guide
-The contextual guide opened.
+A contextual guide opened. Opening the guide map from the Help menu doesn't emit this event; opening a guide from the map does.
 
 ```ts
 {
-  onboardingKey: string;  // snippet ID
-  from: string;           // usually 'app' for direct access or 'map' for the guide outline
-  completed?: boolean;    // the user's previous onboarding flag
+  onboardingKey: string;  // the guide's name, such as 'filteredOpenReviews'
+  from: 'hotkey' | 'indicator' | 'map';  // opened with a hotkey, from an element's indicator,
+                                         // or from the guide map
+}
+```
+
+##### Viewed Changelog
+The changelog opened.
+
+```ts
+{
+  hasNewChanges: boolean;  // whether it had changes the user hadn't seen yet
 }
 ```
 
@@ -405,7 +441,7 @@ The user opened the demo from the dashboard. Not applicable to Enterprise instal
 ```
 
 ##### Opened Subscription
-The user opened the subscription panel from a review. Not applicable to Enterprise installations.
+The user clicked through to the organization's Admin Center from the subscription warning on a review. Not applicable to Enterprise installations. Includes common PR properties.
 
 ```ts
 {
@@ -419,8 +455,9 @@ The user began subscription checkout. Not applicable to Enterprise installations
 ```ts
 {
   owner: string;
-  priceId: string;
-  quantity: number;
+  organization: string;     // the owner's name with its GitHub capitalization
+  priceId: string | null;   // a price ID, '_upgrade' for a plan upgrade, or null for the billing portal
+  quantity: number | null;  // contributors, or null for a plan upgrade or the billing portal
 }
 ```
 
@@ -430,9 +467,10 @@ The user attempted to open the sales chat. Not applicable to Enterprise installa
 ```ts
 {
   owner: string;
+  organization: string;  // the owner's name with its GitHub capitalization
   subject: string;
   failedToOpenChat: boolean;
 }
 ```
 
-Older versions also emitted events such as `Trialed`, `Subscribed`, `Failed to map language`, `Disassociated Repo`, `Opened all file in new tabs`, `Edited auxiliary draft instance`, `Opened Blog`, and `Read Blog`. These are no longer emitted by the current client/server.
+Older versions also emitted events such as `Trialed`, `Subscribed`, `Failed to map language`, `Disassociated Repo`, `Opened all file in new tabs`, `Edited auxiliary draft instance`, `Opened Blog`, and `Read Blog`. These are no longer emitted by the current client/server. `Published Comments` also no longer carries `numRoleChanges`, which had the same value as `numDispositionChanges`.
