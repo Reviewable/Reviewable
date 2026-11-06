@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> anchor selected inline diff text to the correct side. <!-- client -->
 - <kbd>Fix:</kbd> keep done icons visible and remove duplicate review status icons in file headers. <!-- client -->
 - <kbd>Fix:</kbd> Let the visit command close an already open overlay. <!-- client -->
 - <kbd>Upd:</kbd> add a link to GitHub next to references to pull requests that link to their reviews. <!-- client -->
