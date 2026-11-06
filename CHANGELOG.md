@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>New:</kbd> navigate filtered files, discussions, and reviews by keyboard. <!-- client -->
 - <kbd>Fix:</kbd> throttle oversized review retries and count only retained files. <!-- server -->
 - <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server -->
 - <kbd>Fix:</kbd> show all repositories you can admin in the Admin Center for large organizations you don't own. <!-- client -->
