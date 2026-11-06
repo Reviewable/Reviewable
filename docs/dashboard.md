@@ -65,6 +65,9 @@ Use double quotes around a phrase or a predicate value containing spaces, such a
 
 Incomplete or invalid predicates show a red outline while the last valid query remains active. If nothing matches, the list shows **No matching reviews**. The [file](files.md#filtering-files) and [discussion](discussions.md#filtering-discussions) matrices use the same syntax with their own predicates.
 
+Typing a text term highlights the first visible match. Use ↑ and ↓ to select a review and Enter
+to open it. For a predicate-only query, use the arrow keys to make the initial selection.
+
 Filter | Meaning
 -----|---------
 `±open` | Currently open PR
