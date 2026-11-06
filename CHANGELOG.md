@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> leave links to pull requests and issues on other GitHub hosts alone, rather than treating them as the local ones with the same number. <!-- client -->
 - <kbd>New:</kbd> filter files and discussions with review item queries. <!-- client -->
 
 <sub>2026 - 11</sub>
