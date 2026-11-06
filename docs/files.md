@@ -25,8 +25,9 @@ The file matrix displays a history matrix showing all files and revisions. Here,
 
 Use **Filter files** in the file matrix to find files by path, group, or review state. Results update live as files and their review status change. Matching is case-insensitive. The [query syntax](discussions.md#filtering-discussions) is shared with the discussion matrix. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Each item in a comma list needs its full predicate: `+group:Tests,group:Docs`, not `+group:Tests,Docs`.
 
-Unquoted text matches characters in order anywhere in the path, with gaps allowed. For example,
-`frr` matches `file-revisions-row.vue`. Use quotes for a contiguous phrase, or use
+Unquoted text matches substrings and abbreviations in file paths. For example, `ker` matches
+`Dockerfile`, and `frr` matches `file-revisions-row.vue`. Abbreviations can start or skip ahead at
+word boundaries and slashes. Use quotes for a contiguous phrase, or use
 `+path:src/parser/` to match a literal path fragment when filtering files for a bulk action.
 
 | Predicate | Matches |

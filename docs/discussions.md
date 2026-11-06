@@ -32,7 +32,7 @@ Try `+needs:me +path:src/` to find discussions in a directory that need your res
 
 Typing a text term highlights the first visible match. Use ↑ and ↓ to highlight a visible
 discussion and Enter to open it. For a predicate-only query, use the arrow keys to make the
-initial selection. Add `filterDiscussion()` to your
+initial selection. Add `filterDiscussions()` to your
 [custom key bindings](accountsettings.md#custom-key-bindings) to focus the filter or open it in the
 discussion matrix overlay when the sidebar is collapsed.
 
