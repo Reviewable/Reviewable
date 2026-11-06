@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> keep done icons visible and remove duplicate review status icons in file headers. <!-- client -->
 - <kbd>Fix:</kbd> Let the visit command close an already open overlay. <!-- client -->
 - <kbd>Upd:</kbd> add a link to GitHub next to references to pull requests that link to their reviews. <!-- client -->
 - <kbd>Fix:</kbd> link references to pull requests in descriptions to their reviews, as in comments. <!-- client -->
