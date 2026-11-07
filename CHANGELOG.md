@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server -->
 - <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client -->
 
 <sub>2026 - 11</sub>
