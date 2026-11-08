@@ -5,6 +5,8 @@
 
 <sub>2026 - 11</sub>
 
+<sub>**Enterprise release 5004.7944** (min 4882.7806 GHE ^2.19 || ^3) 2026-11-08 <!-- enterprise 5004.7944 --></sub>
+
 - <kbd>Adm:</kbd> throttle oversized review retries and count only retained files. <!-- server 5004 -->
 - <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server 5004 -->
 - <kbd>Adm:</kbd> suppress expected Firebase warnings during GitHub status handoff. <!-- server 5004 -->
