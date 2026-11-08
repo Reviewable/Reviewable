@@ -18,11 +18,11 @@
 - <kbd>Fix:</kbd> leave links to pull requests and issues on other GitHub hosts alone, rather than treating them as the local ones with the same number. <!-- client 7944 -->
 - <kbd>New:</kbd> filter files and discussions with review item queries. <!-- client 7944 -->
 - <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server 5003 -->
-- <kbd>New:</kbd> let custom completion conditions report timing splits and forks. <!-- server 5003 -->
+- <kbd>Upd:</kbd> let custom completion conditions report timing splits and forks. <!-- server 5003 -->
 - <kbd>Adm:</kbd> log completion condition request timings. <!-- server 5003 -->
 - <kbd>Upd:</kbd> recognize stacking tools that only write `#N` references or land pull requests by closing them, through new options for the `stacks` setting. <!-- server 5003 -->
 - <kbd>Fix:</kbd> keep headless authentication refreshing after transient Firebase network failures. <!-- client 7943 -->
-- <kbd>Adm:</kbd> reduce lease contention across all queues. <!-- server 5002 -->
+- <kbd>Adm:</kbd> reduce queue leasing contention as the number of servers competing for tasks grows. <!-- server 5002 -->
 - <kbd>Adm:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server 5002 -->
 - <kbd>Fix:</kbd> keep commit-message comment maps consistent when revision metadata changes. <!-- client 7942 -->
 - <kbd>Fix:</kbd> further reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client 7942 -->
@@ -38,7 +38,7 @@
 - <kbd>Fix:</kbd> publish file-review-only drafts without waiting for a push. <!-- client 7940 -->
 - <kbd>Fix:</kbd> let disposition changes and acknowledgements publish alongside private notes or empty drafts, and honor the publish-on-push setting. <!-- client 7940 -->
 - <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client 7940 -->
-- <kbd>Adm:</kbd> Reduce contention in background queue leasing. <!-- server 4997 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> Reduce contention in background queue leasing for some queues. <!-- server 4997 -->
 - <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server 4996 -->
 - <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client 7938 -->
 - <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client 7938 -->
