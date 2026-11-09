@@ -1,16 +1,17 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> show the underline of links on the last line of the pull request description. <!-- client -->
 - <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server -->
-- <kbd>Fix:</kbd> handle denied clipboard copies without showing success or clearing the selected text. <!-- client -->
-- <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client -->
-- <kbd>Fix:</kbd> enable review marks for partially selected file groups and avoid empty diffs after marking the last file reviewed. <!-- client -->
 - <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server -->
-- <kbd>Fix:</kbd> refresh review columns and centering after resizing the window. <!-- client -->
 - <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server -->
-- <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client -->
 
 <sub>2026 - 11</sub>
+
+- <kbd>Fix:</kbd> show the underline of links on the last line of the pull request description. <!-- client 7945 -->
+- <kbd>Fix:</kbd> handle denied clipboard copies without showing success or clearing the selected text. <!-- client 7945 -->
+- <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client 7945 -->
+- <kbd>Fix:</kbd> enable review marks for partially selected file groups and avoid empty diffs after marking the last file reviewed. <!-- client 7945 -->
+- <kbd>Fix:</kbd> refresh review columns and centering after resizing the window. <!-- client 7945 -->
+- <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client 7945 -->
 
 <sub>**Enterprise release 5004.7944** (min 4882.7806 GHE ^2.19 || ^3) 2026-11-08 <!-- enterprise 5004.7944 --></sub>
 
