@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server -->
 - <kbd>Fix:</kbd> refresh review columns and centering after resizing the window. <!-- client -->
 - <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server -->
 - <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client -->
