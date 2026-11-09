@@ -96,7 +96,7 @@ Emitted alongside `Created Review`, associated with the PR author instead of the
 ```
 
 ##### Detected Stack
-A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-stacks-of-dependent-changes), associated with the PR author. Emitted each time a review goes from having no stack to having one, including when a GitHub stack is linked after its pull requests were opened, so a pull request whose stack is removed and later restored emits it again. A pull request that a stacking tool claims without listing a valid stack in its description joins a stack only once it does.
+A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-stacks-of-dependent-changes), associated with the PR author. Emitted each time a review goes from having no stack to having one, including when a GitHub stack is linked after its pull requests were opened, so a pull request whose stack is removed and later restored emits it again. A pull request managed by a stacking tool doesn't emit this until its description lists a valid stack.
 
 ```ts
 {
@@ -354,14 +354,14 @@ The user disabled automatic connection of repositories. The type has the same me
 }
 ```
 
-##### Looked at Guide
-A contextual guide opened. Opening the guide map from the Help menu doesn't emit this event; opening a guide from the map does.
+##### Looked at Contextual Help Guide
+A contextual help guide opened for a specific element. Opening the contextual help map doesn't emit this event, whether from the Help menu or with the hotkey while not over a guided element; opening a guide from the map does.
 
 ```ts
 {
   onboardingKey: string;  // the guide's name, such as 'filteredOpenReviews'
-  from: 'hotkey' | 'indicator' | 'map';  // opened with a hotkey, from an element's indicator,
-                                         // or from the guide map
+  from: 'hotkey' | 'indicator' | 'map';  // hotkey pressed while over the element, from the
+                                         // element's indicator, or from the guide map
 }
 ```
 
