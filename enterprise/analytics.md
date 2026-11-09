@@ -473,4 +473,4 @@ The user attempted to open the sales chat. Not applicable to Enterprise installa
 }
 ```
 
-Older versions also emitted events such as `Trialed`, `Subscribed`, `Failed to map language`, `Disassociated Repo`, `Opened all file in new tabs`, `Edited auxiliary draft instance`, `Opened Blog`, and `Read Blog`. These are no longer emitted by the current client/server. `Published Comments` also no longer carries `numRoleChanges`, which had the same value as `numDispositionChanges`.
+Older versions also emitted events such as `Trialed`, `Subscribed`, `Failed to map language`, `Disassociated Repo`, `Opened all file in new tabs`, `Edited auxiliary draft instance`, `Opened Blog`, and `Read Blog`. These are no longer emitted by the current client/server. `Published Comments` also no longer carries `numRoleChanges`, which had the same value as `numDispositionChanges`. `Looked at Guide` no longer carries `completed` or the `app` source, and `Loaded Page` no longer carries `subscriptionLink`.
