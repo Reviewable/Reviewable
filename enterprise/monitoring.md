@@ -55,13 +55,13 @@ A nonempty `REVIEWABLE_SUPPRESS_CONSOLE_JSON` suppresses structured diagnostics,
 
 ### Worker stalls
 
-Server releases with worker diagnostics emit `worker_perf` about once a minute when JSON logging is enabled. This record summarizes heartbeat lateness, stalls, GC, CPU, and memory for one worker process.
+Server releases with worker diagnostics emit `worker_perf` about once a minute when JSON logging is enabled. This record summarizes heartbeat lateness, stalls, GC, event-loop utilization, CPU, and memory for one worker process. GC summaries use names such as `minor`, `major`, and `incremental`.
 
 A `worker_stall` record is emitted after the worker resumes from a heartbeat delay of at least **10 seconds**, with detailed records rate-limited to one per 30 seconds per worker. The heartbeat is scheduled every second. A slow asynchronous request can leave the heartbeat running on time.
 
-- `dueAt` and `resumedAt` bound the delayed heartbeat, in Unix milliseconds. Use these fields to locate the gap. The log timestamp can be later because the process emits the record after it resumes.
-- `gcOverlapMs` is how much of the gap overlapped retained GC observations. The record includes up to eight of the longest overlapping GC entries. `gcHistoryIncomplete` marks a gap that extends beyond retained history.
-- `resources` reports the sampling window, process and main-thread CPU deltas in microseconds, and heap and resident memory in bytes. `resources.cgroupCpu` is included when both samples have usable throttling counters. Its interval can differ from the heartbeat gap.
-- `processStartAt` distinguishes process restarts on the same instance. Worker records describe the process and can be joined to task logs by instance and time.
+- `dueTimestamp` and `resumedTimestamp` bound the delayed heartbeat, in Unix milliseconds. Use these fields to locate the gap. The log timestamp can be later because the process emits the record after it resumes.
+- `gcOverlapDuration` is how much of the gap overlapped retained GC observations, in milliseconds. The record includes up to eight of the longest overlapping GC entries with named kinds. `gcHistoryIncomplete` marks a gap that extends beyond retained history.
+- `resources` reports the sampling window, process and main-thread CPU deltas in microseconds, and heap and resident memory in bytes. `resources.eventLoopUtilization` reports active and idle time in milliseconds and the active fraction. Active time can include time blocked in a synchronous call. `resources.cgroupCpu` is included when both samples have usable throttling counters. Its interval can differ from the heartbeat gap.
+- `processStartTimestamp` distinguishes process restarts on the same instance. Worker records describe the process and can be joined to task logs by instance and time.
 
 Start with queue waiting time and processing time to see where the slowdown accumulated. Then compare Firebase probe latency with heartbeat lateness on the same worker. Slow probes alongside a punctual heartbeat suggest time spent waiting for Firebase or the network. When the heartbeat itself is late, compare GC overlap, main-thread CPU, and throttling in that interval before attributing the delay to a task. Keep repository, user, and task identifiers in access-controlled log destinations.
