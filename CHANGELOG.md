@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> handle denied clipboard copies without showing success or clearing the selected text. <!-- client -->
 - <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client -->
 - <kbd>Fix:</kbd> enable review marks for partially selected file groups and avoid empty diffs after marking the last file reviewed. <!-- client -->
 - <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server -->
