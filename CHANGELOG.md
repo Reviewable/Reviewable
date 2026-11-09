@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> show the underline of links on the last line of the pull request description. <!-- client -->
 - <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server -->
 - <kbd>Fix:</kbd> handle denied clipboard copies without showing success or clearing the selected text. <!-- client -->
 - <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client -->
