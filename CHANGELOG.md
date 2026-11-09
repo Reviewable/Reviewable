@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> enable review marks for partially selected file groups and avoid empty diffs after marking the last file reviewed. <!-- client -->
 - <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server -->
 - <kbd>Fix:</kbd> refresh review columns and centering after resizing the window. <!-- client -->
 - <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server -->
