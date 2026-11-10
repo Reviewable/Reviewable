@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
 - <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
 
 <sub>2026 - 11</sub>
