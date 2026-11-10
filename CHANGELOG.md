@@ -1,11 +1,57 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix<i>(saas)</i>:</kbd> apply the protection of the branch a stack targets to every pull request in it. <!-- server -->
-- <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client -->
+- <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
+- <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
+
+<sub>2026 - 11</sub>
+
+- <kbd>Adm:</kbd> Add worker performance summaries and event-loop stall diagnostics to server logs. <!-- server 5006 -->
+- <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server 5005 -->
+- <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server 5005 -->
+- <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server 5005 -->
+- <kbd>Fix:</kbd> show the underline of links on the last line of the pull request description. <!-- client 7945 -->
+- <kbd>Fix:</kbd> handle denied clipboard copies without showing success or clearing the selected text. <!-- client 7945 -->
+- <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client 7945 -->
+- <kbd>Fix:</kbd> enable review marks for partially selected file groups and avoid empty diffs after marking the last file reviewed. <!-- client 7945 -->
+- <kbd>Fix:</kbd> refresh review columns and centering after resizing the window. <!-- client 7945 -->
+- <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client 7945 -->
+
+<sub>**Enterprise release 5004.7944** (min 4882.7806 GHE ^2.19 || ^3) 2026-11-08 <!-- enterprise 5004.7944 --></sub>
+
+- <kbd>Adm:</kbd> throttle oversized review retries and count only retained files. <!-- server 5004 -->
+- <kbd>Adm:</kbd> avoid full repository tree walks when looking up previous-base files <!-- server 5004 -->
+- <kbd>Adm:</kbd> suppress expected Firebase warnings during GitHub status handoff. <!-- server 5004 -->
+- <kbd>New:</kbd> navigate filtered files, discussions, and reviews by keyboard. <!-- client 7944 -->
+- <kbd>Fix:</kbd> show all repositories you can admin in the Admin Center for large organizations you don't own. <!-- client 7944 -->
+- <kbd>Fix:</kbd> anchor selected inline diff text to the correct side. <!-- client 7944 -->
+- <kbd>Fix:</kbd> keep done icons visible and remove duplicate review status icons in file headers. <!-- client 7944 -->
+- <kbd>Fix:</kbd> Let the visit command close an already open overlay. <!-- client 7944 -->
+- <kbd>Upd:</kbd> add a link to GitHub next to references to pull requests that link to their reviews. <!-- client 7944 -->
+- <kbd>Fix:</kbd> link references to pull requests in descriptions to their reviews, as in comments. <!-- client 7944 -->
+- <kbd>Fix:</kbd> leave links to pull requests and issues on other GitHub hosts alone, rather than treating them as the local ones with the same number. <!-- client 7944 -->
+- <kbd>New:</kbd> filter files and discussions with review item queries. <!-- client 7944 -->
+- <kbd>Upd:</kbd> extend the protection, required checks and CODEOWNERS of the branch a stack lands on to stacks described by spr or the `stacks` option, not just the stacks GitHub manages. <!-- server 5003 -->
+- <kbd>Upd:</kbd> let custom completion conditions report timing splits and forks. <!-- server 5003 -->
+- <kbd>Adm:</kbd> log completion condition request timings. <!-- server 5003 -->
+- <kbd>Upd:</kbd> recognize stacking tools that only write `#N` references or land pull requests by closing them, through new options for the `stacks` setting. <!-- server 5003 -->
+- <kbd>Fix:</kbd> keep headless authentication refreshing after transient Firebase network failures. <!-- client 7943 -->
+- <kbd>Adm:</kbd> reduce queue leasing contention as the number of servers competing for tasks grows. <!-- server 5002 -->
+- <kbd>Adm:</kbd> let clients read server-created reconciliation tasks for dotted repositories. <!-- server 5002 -->
+- <kbd>Fix:</kbd> keep commit-message comment maps consistent when revision metadata changes. <!-- client 7942 -->
+- <kbd>Fix:</kbd> further reduce accidental collisions in draft cache keys and publication fingerprints. <!-- client 7942 -->
+- <kbd>New:</kbd> recognize stacks that a tool lists in each pull request's description, configured with the `stacks` option in `.reviewable/settings.yaml`. <!-- server 5001 -->
+- <kbd>Adm:</kbd> fix user sweeps failing on legacy malformed user records. <!-- server 5001 -->
+- <kbd>Fix:</kbd> make the `merge()` shortcut add the merge label or queue the merge where the repository is set up that way, as the merge button does. <!-- client 7941 -->
 
 <sub>2026 - 10</sub>
 
-- <kbd>Adm:</kbd> Reduce contention in background queue leasing. <!-- server 4997 -->
+- <kbd>Adm:</kbd> prevent Firebase transactions from becoming stuck after overlapping writes. <!-- server 4998 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> allow GitHub owner renames under wildcard licenses. <!-- server 4998 -->
+- <kbd>Fix<i>(saas)</i>:</kbd> apply the protection of the branch a stack targets to every pull request in it. <!-- server 4998 -->
+- <kbd>Fix:</kbd> publish file-review-only drafts without waiting for a push. <!-- client 7940 -->
+- <kbd>Fix:</kbd> let disposition changes and acknowledgements publish alongside private notes or empty drafts, and honor the publish-on-push setting. <!-- client 7940 -->
+- <kbd>Upd:</kbd> recognize common dependency lockfiles as generated files. <!-- client 7940 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> Reduce contention in background queue leasing for some queues. <!-- server 4997 -->
 - <kbd>Upd:</kbd> include draft state and last revision key in status webhooks. <!-- server 4996 -->
 - <kbd>Adm:</kbd> enrich analytics events with more data and add a delivery ID for deduplication. <!-- client 7938 -->
 - <kbd>Adm:</kbd> report reviews published automatically after a push in analytics. <!-- client 7938 -->

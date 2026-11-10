@@ -365,6 +365,62 @@ Any option other than `github` will cause Reviewable to stop checking GitHub's o
 If you have a different merge process that you'd like to integrate with Reviewable, please [get in touch](mailto:support@reviewable.io) and we'll see what we can do!
 :::
 
+#### Stacking tools
+
+*This setting can only be changed using a `settings.yaml` file.*
+
+Reviewable recognizes stacks of dependent pull requests made with GitHub's own stacks or with [`spr`](https://github.com/ejoffe/spr) out of the box.  If your team uses another tool that lists the stack in each pull request's description, you can describe that list here.  Reviewable then shows the stack as its own list in the review's pull request panel, above the description, with links between the reviews, and leaves the tool's list out of the description itself.  It also doesn't offer to merge pull requests in such a stack, as it assumes the tool lands them, unless your [merge mechanism](#merge-mechanism) is a label, which hands the merge to whatever acts on it.  The `stacks` setting is a list, so a repository moving from one tool to another can recognize both.  Reviewable tries the definitions in order, followed by the built-in one for `spr`, and the first that claims a description applies, though a stack made with GitHub's own stacks always wins.  Changes to it take effect for each pull request the next time it's synced, at the latest when somebody opens its review.
+
+```yaml
+stacks:
+  - name: stackable_pr
+    description-block:
+      start: '<!-- Stacked PR: start -->'
+      # Optional; without it, the block runs to the end of the description.
+      end: '<!-- Stacked PR: end -->'
+    # Optional; a marker that identifies a pull request the tool manages.
+    detect: 'Part of a stack created by stackable_pr'
+    # The default setting is `link`.
+    pr-reference: link | last-ref
+    # The default setting is `top-first`.
+    order: top-first | bottom-first
+    # The default setting is `merge`.
+    landing: merge | close | retarget-and-close
+    # Required unless `landing` is `merge`.
+    merged-notification: 'Landed by stackable_pr'
+```
+
+- `name` identifies the tool, and can be anything up to 50 characters that's unique among the repository's definitions.  Wherever Reviewable reports which tool manages a stack, such as to agents, it names this one as `x-` followed by this name.
+- `description-block` gives the exact text the tool puts at the `start` and `end` of its list.  The list runs from the last occurrence of the start marker to the first end marker after it.  If your tool always puts its list last, you can leave `end` out, and the list runs to the end of the description.
+- `detect` sets a marker that identifies the pull requests the tool manages.  Set it to a line the tool writes into every pull request it manages, or a distinctive part of that line, so that Reviewable recognizes them even when there's no list, such as for a stack of one.  If `detect` is set, a description counts as the tool's only if it contains this marker, and the start marker is used to find the list.  If `detect` isn't set, then any description containing the start marker counts as the tool's.  Reviewable hides the whole line containing the marker from the description it shows in the review, so the marker should sit on its own line.
+- `pr-reference` says how the list refers to pull requests:  `link`, the default, for tools that link each one, or `last-ref` for tools that only write `#N` references; see below.
+- `order` says which end of the list is the top of the stack.
+- `landing` says how the tool lands pull requests:
+  - `merge`, the default, when it really merges each one;
+  - `close` when it closes the pull requests it lands instead of merging them;
+  - `retarget-and-close` when it lands a whole stack by retargeting the top pull request onto the stack's target branch and merging it there, closing the ones below, as `spr` does.  Reviewable doesn't treat that retargeting as a new revision, so the top pull request's review keeps showing only its own changes.
+- `merged-notification` is text from the comment the tool posts on each pull request it landed by closing it, which is the only way to tell such a pull request landed.  When a comment containing it appears, Reviewable shows the pull request as merged in its review and in the stack.  It's required unless `landing` is `merge`.
+
+For example, with the definition above, the middle pull request of a three-deep stack might carry this block in its description, with the top of the stack first:
+
+```markdown
+<!-- Stacked PR: start -->
+- Add the export button: https://github.com/acme/app/pull/12
+- Build the export API (this pull request): https://github.com/acme/app/pull/11
+- Add the export schema: https://github.com/acme/app/pull/10
+<!-- Stacked PR: end -->
+```
+
+With `pr-reference: link`, Reviewable takes the links to pull requests in this repository within the list, in the order they appear: GitHub pull request links (`https://github.com/OWNER/REPO/pull/N`) and review links (`https://reviewable.io/reviews/OWNER/REPO/N`), from any host, so that GitHub Enterprise and Reviewable Enterprise links work too.  Everything else in it is ignored, whether layout, titles, other links or `#N` references.
+
+With `pr-reference: last-ref`, Reviewable takes the last `#N` reference on each line of the list instead, as long as it starts the line or follows a space, and skips lines without one.  Titles before the reference and decorations after it are fine, but each pull request needs a line of its own, and its own reference has to come last on it.
+
+Either way, the block yields a stack only if it lists the current pull request, lists no pull request more than once (though the same pull request linked twice in a row counts once), and lists at least two.  When it doesn't, or a configured end marker is missing, Reviewable still treats the pull request as managed by the tool but shows no stack and leaves the description as is.
+
+::: tip
+If your stacking tool needs something this setting can't express, please [get in touch](mailto:support@reviewable.io) and we'll see what we can do!
+:::
+
 #### Review status in GitHub PR
 
 This setting determines whether or not to post the current completion status of the review as a commit status on GitHub under the context `code-review/reviewable`.  Choose `accessed` to post only after a review has been visited at least once in Reviewable.
@@ -468,6 +524,33 @@ For testing, your code will be continuously evaluated against the **Review state
 The results of your code will appear in the **Evaluation result** pane at the bottom of the page.  They must follow a specific structure described in the [condition ouput](#condition-output) section below.
 
 ![reviewable condition code to determine when a review is complete](images/repositories_8.png)
+
+### Timing a condition
+
+Use the built-in `stopwatch` to record how long parts of your condition take. When you test a condition, the **Evaluation result** shows any timings it recorded, even if it throws an error or times out. Reviewable also records these timings under `userCode` in its server logs. On an enterprise instance, you can ask Reviewable support or your instance admins for an export of recent timing logs for a repository or a specific pull request.
+
+- `stopwatch.split(label)` records the time since the previous split, or since the condition started for the first split. It also groups any forks recorded during that interval and starts a new interval.
+- `stopwatch.fork(label)` records elapsed time from the same starting point without starting a new interval. Call it when one of several concurrent operations finishes, then call `split()` after they all finish.
+
+```js
+const [policy, approvals] = await Promise.all([
+  loadPolicy().then(value => {
+    stopwatch.fork('load policy');
+    return value;
+  }),
+  loadApprovals().then(value => {
+    stopwatch.fork('load approvals');
+    return value;
+  })
+]);
+stopwatch.split('load inputs');
+
+const completed = meetsPolicy(policy, approvals);
+stopwatch.split('check policy');
+return {completed};
+```
+
+The times are in milliseconds. Forks can overlap, so their times can add up to more than the enclosing split. If the condition ends before the next split, Reviewable groups outstanding forks under `_remaining`. Use short, static labels and keep sensitive values out of them. Labels must start with a letter or digit and may contain up to 48 letters, digits, spaces, periods, underscores, or hyphens. Reviewable records up to 50 calls per evaluation and ignores invalid labels.
 
 ### Pragmas
 

@@ -21,6 +21,38 @@ The file matrix displays a history matrix showing all files and revisions. Here,
 - Jump to a file's diff.
 - See delta stats for a diff and all diffs.
 
+### Filtering files
+
+Use **Filter files** in the file matrix to find files by path, group, or review state. Results update live as files and their review status change. Matching is case-insensitive. The [query syntax](discussions.md#filtering-discussions) is shared with the discussion matrix. Spaces combine terms with AND, and quotes keep a phrase or predicate value together. Prefix a predicate with `+` to require it or `-` to exclude it. A positive comma list matches any predicate, such as `+group:Tests,group:Docs`. A negative comma list excludes files matching *all* listed predicates. Each item in a comma list needs its full predicate: `+group:Tests,group:Docs`, not `+group:Tests,Docs`.
+
+Unquoted text matches substrings and abbreviations in file paths. For example, `ker` matches
+`Dockerfile`, and `frr` matches `file-revisions-row.vue`. Abbreviations can start or skip ahead at
+word boundaries and slashes. Use quotes for a contiguous phrase, or use
+`+path:src/parser/` to match a literal path fragment when filtering files for a bulk action.
+
+| Predicate | Matches |
+| --- | --- |
+| `path:text` | Paths containing the text |
+| `group:text` | Group names containing the text |
+| `needs:me` | Files that need your review |
+| `reviewed` | Files sufficiently reviewed at the latest revision using published marks |
+| `diffed` | Files currently shown as panels in the review flow, with non-italic names in the matrix |
+| `virtual` | Virtual files, such as Commits |
+| `draft` | Files with your pending review marks |
+
+For example, enter `+path:src/parser/` and use the header's mark-all button to review that directory. Use `+diffed` to work with the files currently shown in the flow, or `+needs:me -virtual` to find non-virtual files that need your review. Use separate negative terms such as `-group:Tests -group:Docs` to exclude files matching either group name.
+
+The file count, group summaries, and statistics reflect the matching files. While filtered, counts include the unfiltered total, such as **2/4 files**. Group counts use that group's total. Header revision selection, marking all files or a group reviewed, and opening files in tabs or your editor apply only to matching files, including matches inside collapsed groups. Undo reverses the original mark-all operation even if those files have since disappeared from the filter. Filtering leaves the review flow and saved group expansion state unchanged.
+
+Press `/` to focus the file filter and select its contents. If the sidebar is collapsed, the
+shortcut opens the file matrix overlay. Typing a text term highlights the best visible match.
+Use ↑ and ↓ to move through visible rows in matrix order, even for a query made up entirely of
+predicates. Press Enter to open the highlighted file and close the overlay. Clearing the query or
+moving the mouse over the matrix clears the highlight. The shortcut is also available as
+`filterFiles()` in [custom key bindings](accountsettings.md#custom-key-bindings).
+
+Incomplete or invalid queries get a red outline while the last valid query remains active. Open the dropdown by clicking <i class="dropdown icon" role="img" aria-label="the caret"/>, then click **Set as your default** to save the query for the current role. The reviewer default covers all reviews you did not author. A trailing checkmark indicates that the current query matches your default. Discussion matrix defaults are independent. The <i class="close icon"/> clears the current query. Click **Clear your default** in the dropdown afterward to remove the saved default for the current role.
+
 ### File list
 
 The file matrix lists all the files in the pull request.  They're organized hierarchically, with files listed before subdirectories at every level.  Hover over a nested directory path to see the full path.  Obsolete files that once had changes but now have no differences with the target branch are automatically placed in the ↺ **Reverted** group. Select it to reveal the hidden files, or choose **ungroup** to return them to the main file list.
