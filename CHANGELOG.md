@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server -->
-- <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server -->
-- <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server 5005 -->
+- <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server 5005 -->
+- <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server 5005 -->
 - <kbd>Fix:</kbd> show the underline of links on the last line of the pull request description. <!-- client 7945 -->
 - <kbd>Fix:</kbd> handle denied clipboard copies without showing success or clearing the selected text. <!-- client 7945 -->
 - <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client 7945 -->
