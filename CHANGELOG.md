@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Add worker performance summaries and event-loop stall diagnostics to server logs. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> Add worker performance summaries and event-loop stall diagnostics to server logs. <!-- server 5006 -->
 - <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server 5005 -->
 - <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server 5005 -->
 - <kbd>Adm:</kbd> raise `/rate_limit` request timeout to 10s. <!-- server 5005 -->
