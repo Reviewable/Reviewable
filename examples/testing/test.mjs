@@ -2,6 +2,7 @@ import freeport from 'freeport';
 import fs from 'fs';
 import ms from 'ms';
 import os from 'os';
+import {promisify} from 'node:util';
 import {SandCastle} from 'sandcastle';
 import test from 'ava';
 
@@ -13,23 +14,21 @@ const SANDCASTLE_OPTIONS = {
 
 let sandCastle, conditionCode;
 
-test.before.cb('initialize SandCastle', t => {
+test.before('initialize SandCastle', async () => {
   if (os.platform() === 'win32') {
-    freeport((error, port) => {
-      if (error) throw error;
-      SANDCASTLE_OPTIONS.socket = port;
-      sandCastle = new SandCastle(SANDCASTLE_OPTIONS);
-      t.end();
-    });
+    SANDCASTLE_OPTIONS.socket = await promisify(freeport)();
   } else {
-    sandCastle = new SandCastle(SANDCASTLE_OPTIONS);
     console.log('Executing user code in SandCastle');
-    t.end();
   }
+  sandCastle = new SandCastle(SANDCASTLE_OPTIONS);
 });
 
-test.before('load condition code', t => {
+test.before('load condition code', () => {
   conditionCode = fs.readFileSync('./condition.js');
+});
+
+test.after.always(() => {
+  sandCastle?.kill();
 });
 
 

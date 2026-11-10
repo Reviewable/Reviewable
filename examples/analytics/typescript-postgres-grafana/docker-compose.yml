@@ -29,8 +29,8 @@ services:
      - 9002:3000
 
   reviewable-analytics-bridge:
-    image: node:18
-    command: ["yarn", "dev"]
+    image: node:26
+    command: ["npm", "exec", "--yes", "--package=corepack@0.36.0", "--", "corepack", "yarn", "dev"]
     working_dir: /workdir
     restart: always
     volumes:
