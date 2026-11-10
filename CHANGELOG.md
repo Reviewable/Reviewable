@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> Add worker performance summaries and event-loop stall diagnostics to server logs. <!-- server 5006 -->
