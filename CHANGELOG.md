@@ -1,15 +1,12 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> prevent stale GitHub 401s from logging out a newer session. <!-- client -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> prevent unauthenticated GitHub requests in private mode. <!-- client -->
-- <kbd>Fix:</kbd> keep headless permission requests authenticated. <!-- client -->
-- <kbd>Upd:</kbd> show references to issues and pull requests within a sentence compactly, with their details in a tooltip. <!-- client -->
-- <kbd>Fix:</kbd> guard Firebase operations consistently during startup. <!-- client -->
-- <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
-- <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> prevent stale GitHub 401s from logging out a newer session. <!-- client 7946 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> prevent unauthenticated GitHub requests in private mode. <!-- client 7946 -->
+- <kbd>Fix:</kbd> keep headless permission requests authenticated. <!-- client 7946 -->
+- <kbd>Upd:</kbd> show references to issues and pull requests within a sentence compactly, with their details in a tooltip. <!-- client 7946 -->
+- <kbd>Fix:</kbd> guard Firebase operations consistently during startup. <!-- client 7946 -->
+- <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client 7946 -->
+- <kbd>Adm:</kbd> disable Sentry tracing. <!-- client 7946 -->
 - <kbd>Adm<i>(saas)</i>:</kbd> Experiment with two-CPU workers and a 38% scaling target. <!-- server 5007 -->
 - <kbd>Adm:</kbd> Add worker performance summaries and event-loop stall diagnostics to server logs. <!-- server 5006 -->
 - <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server 5005 -->
