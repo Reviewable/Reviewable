@@ -16,6 +16,8 @@ If you already have a license, you'll want to explore the links below.
 
 ##### [Ops playbook](operations.md)
 
+##### [Monitoring and diagnostics](monitoring.md)
+
 ##### [Analytics events dictionary](analytics.md)
 
 ##### [API docs](api.md)
