@@ -39,10 +39,10 @@ if (summary.numUnresolvedDiscussions) {
 }
 
 let discussionBlockers = _(review.discussions)
-    .where({resolved: false})
-    .pluck('participants')
+    .filter({resolved: false})
+    .map('participants')
     .flatten()
-    .where({resolved: false})
+    .filter({resolved: false})
     .map(user => _.pick(user, 'username'))
     .value();
 
@@ -51,7 +51,7 @@ let fileBlockers = _(review.files)
     .map(file => _(file.revisions).findLast(
       rev => !_.isEmpty(rev.reviewers)))
     .compact()
-    .pluck('reviewers')
+    .map('reviewers')
     .flatten()
     .value();
 
@@ -74,5 +74,5 @@ return {
   description: reasons.join(', '),
   shortDescription,
   pendingReviewers:
-    _.uniq(fileBlockers.concat(discussionBlockers), 'username')
+    _.uniqBy(fileBlockers.concat(discussionBlockers), 'username')
 };

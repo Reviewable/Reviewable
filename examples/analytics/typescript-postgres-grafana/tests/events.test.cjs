@@ -11,6 +11,10 @@ async function makeDataSource(t) {
     implementation: () => 'analytics_test' });
   db.public.registerFunction({ name: 'version', returns: DataType.text,
     implementation: () => 'PostgreSQL 14.0' });
+  db.public.registerFunction({ name: 'quote_ident', args: [DataType.text], returns: DataType.text,
+    implementation: name => '"' + name.replace(/"/g, '""') + '"' });
+  db.public.registerFunction({ name: 'obj_description',
+    args: [DataType.regclass, DataType.text], returns: DataType.text, implementation: () => null });
   const dataSource = await db.adapters.createTypeormDataSource({
     type: 'postgres', entities: [Event, User], synchronize: true,
   });

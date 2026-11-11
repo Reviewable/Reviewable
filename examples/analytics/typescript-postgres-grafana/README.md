@@ -6,7 +6,14 @@ This folder contains the following:
 
 ## Getting Started
 
-Just run `docker compose up -d` in this folder, and add the following
+Install the bridge dependencies with the container's Node version, then start the stack:
+
+```bash
+docker compose run --rm --no-deps reviewable-analytics-bridge npm exec --yes --package=corepack@0.36.0 -- corepack yarn install --immutable
+docker compose up -d
+```
+
+Add the following
 environment variable to your Reviewable instance:
 `REVIEWABLE_ANALYTICS_URL=http://reviewable-analytics-bridge:9000`
 
