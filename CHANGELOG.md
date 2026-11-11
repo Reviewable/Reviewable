@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> show references to issues and pull requests within a sentence compactly, with their details in a tooltip. <!-- client -->
 - <kbd>Fix:</kbd> guard Firebase operations consistently during startup. <!-- client -->
 - <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
 - <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
