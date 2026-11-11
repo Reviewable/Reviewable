@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> guard Firebase operations consistently during startup. <!-- client -->
 - <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
 - <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
 
