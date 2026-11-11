@@ -10,9 +10,9 @@ See [Monitoring configuration](config.md#monitoring) for the environment variabl
 | --- | --- | --- |
 | Server counters, gauges, and latency distributions | StatsD over UDP via `REVIEWABLE_STATSD_HOST`, or DogStatsD via `DD_AGENT_HOST`. A configured `REVIEWABLE_SERVER_SENTRY_DSN` also enables Sentry Metrics. | Is queue backlog growing? Are Firebase or GitHub operations getting slower? |
 | Structured server diagnostics | Container logs, or the `data` payload of records sent to `REVIEWABLE_LOGGING_URL`. Set `REVIEWABLE_LOGGING_FORMAT=gcp` for Google Cloud Logging format and operation IDs. | Which task or worker was affected, and where did it spend time? |
-| Exceptions and warnings | Configure Sentry DSNs for the server, browser client, and CLI as needed. A custom logging URL can also receive server exceptions. | Which error occurred, with what context and stack trace? |
+| Exceptions and warnings | Configure `REVIEWABLE_SERVER_SENTRY_DSN`, `REVIEWABLE_CLIENT_SENTRY_DSN`, and `REVIEWABLE_CLI_SENTRY_DSN` for the server, browser client, and CLI as needed. A custom logging URL can also receive server exceptions. | Which error occurred, with what context and stack trace? |
 | Queue and cron health | `queues.healthy`, Sentry check-ins with a server DSN, and the optional `REVIEWABLE_PING_URL`. | Is work progressing, and are scheduled jobs still checking in? |
-| Usage analytics | `REVIEWABLE_ANALYTICS_URL`. See the [analytics events dictionary](analytics.md). | Which actions are users taking in Reviewable? |
+| Usage analytics and page timings | `REVIEWABLE_ANALYTICS_URL`. See the [analytics events dictionary](analytics.md), including [Loaded Page](analytics.md#loaded-page) timing events. | Which actions are users taking in Reviewable? How quickly are review pages loading? |
 
 A browser can also display a [connection warning](../docs/abnormal.md) when its own Firebase connection degrades. That signal reflects the user's browser session. `REVIEWABLE_REPORTING_ENDPOINT` configures a destination for browser Reporting API reports such as crashes.
 
@@ -29,13 +29,13 @@ The names below are the Sentry names. StatsD adds the configured prefix, normall
 | Completion conditions | `lambda.invocations`, `lambda.latency`, `lambda.function_errors`, `lambda.function_timeouts`, `lambda.executor_errors` | Separate errors in condition code from execution infrastructure errors. Executor latency includes work around the condition itself. |
 | Scheduled datastore scans | `cron.children_keys.queries`, `cron.children_keys.duration`, `cron.children_keys.key_count`, `cron.children_keys.duration_per_1000_keys`, `cron.children_keys.slow`, `cron.children_keys.crashed` | Group by cron `task`. Compare duration with key count to distinguish a larger scan from a slower scan for the same amount of data. |
 
-Sentry buffers counters and gauges and flushes about once a minute. It sums counters and keeps the latest gauge per metric and attribute set in each buffer. Latency observations that opt into success sampling use `REVIEWABLE_SENTRY_METRICS_SAMPLE_RATE` (default `0.1`). Some streams apply an additional sampling factor. That setting does not sample the counters, gauges, or StatsD output. Use counters to count occurrences and distributions to examine the shape of latency.
+Sentry buffers counters and gauges and flushes about once a minute. It sums counters and keeps the latest gauge per metric and attribute set in each buffer. Successful latency observations are sampled at 10% for streams that opt into sampling; some streams apply an additional sampling factor. Counters, gauges, and StatsD output are not sampled. Use counters to count occurrences and distributions to examine the shape of latency.
 
 ## Queue and cron health
 
 Workers report queue health about every five minutes. The structured `queues` log includes per-queue health, mode, size, and lease statistics where available. In Sentry Metrics, `queues.healthy` is a gauge with `1` for healthy and `0` otherwise. StatsD receives a service check.
 
-Healthy workers send a `monitor_queues` check-in when a server Sentry DSN is configured and a GET to `REVIEWABLE_PING_URL` when configured. Allow for the five-minute cadence when setting alert windows. Sentry also receives check-ins for monitored cron jobs. A missing check-in can mean the worker stopped, the queue is unhealthy, or delivery failed. See [maintenance mode](operations.md#maintenance-mode) for its effect on health pings.
+Healthy workers send a `monitor_queues` check-in when `REVIEWABLE_SERVER_SENTRY_DSN` is configured and a GET to `REVIEWABLE_PING_URL` when configured. Allow for the five-minute cadence when setting alert windows. Sentry also receives check-ins for monitored cron jobs. A missing check-in can mean the worker stopped, the queue is unhealthy, or delivery failed. See [maintenance mode](operations.md#maintenance-mode) for its effect on health pings.
 
 ## Diagnostic log records
 
@@ -51,15 +51,15 @@ Use the timestamps and instance labels from your log collector to narrow the win
 | `type: cron_children_keys` | Cron task and collection, scan duration, key count, duration per 1,000 keys, and slow or crashed flags. The slow threshold defaults to 30 seconds and can be configured. |
 | `startup`, `memory` | Runtime and memory limits at startup. The production memory snapshot runs every 15 minutes and includes V8 heap and space statistics, cache statistics, and GitHub socket activity. |
 
-A nonempty `REVIEWABLE_SUPPRESS_CONSOLE_JSON` suppresses structured diagnostics, including their delivery through the logging URL. Plain-text messages and metrics have separate settings.
-
 ### Worker stalls
 
-Server releases with worker diagnostics emit `worker_perf` about once a minute when JSON logging is enabled. This record summarizes heartbeat lateness, stalls, GC, event-loop utilization, CPU, and memory for one worker process. GC summaries use names such as `minor`, `major`, and `incremental`.
+A worker stall means the worker's main thread is slow to run scheduled callbacks, potentially delaying many tasks at once. Causes can include garbage collection (GC), heavy synchronous work, and CPU contention or throttling. Each worker schedules a heartbeat every second and records how late it fires. The delay does not necessarily mean that all work stopped for the entire interval.
 
-A `worker_stall` record is emitted after the worker resumes from a heartbeat delay of at least **10 seconds**, with detailed records rate-limited to one per 30 seconds per worker. The heartbeat is scheduled every second. A slow asynchronous request can leave the heartbeat running on time.
+Server releases with worker diagnostics emit `worker_perf` about once a minute. This record summarizes heartbeat lateness, stalls, GC, event-loop utilization, CPU, and memory for one worker process. GC summaries use names such as `minor`, `major`, and `incremental`.
 
-- `dueTimestamp` and `resumedTimestamp` bound the delayed heartbeat, in Unix milliseconds. Use these fields to locate the gap. The log timestamp can be later because the process emits the record after it resumes.
+A `worker_stall` record is emitted after a heartbeat fires at least **10 seconds** late, with detailed records rate-limited to one per 30 seconds per worker. A slow asynchronous request can leave the heartbeat running on time.
+
+- `dueTimestamp` and `resumedTimestamp` bound the delayed heartbeat, in Unix milliseconds. Use these fields to locate the delayed interval. The log timestamp can be later because the process emits the record after the heartbeat fires.
 - `gcOverlapDuration` is how much of the gap overlapped retained GC observations, in milliseconds. The record includes up to eight of the longest overlapping GC entries with named kinds. `gcHistoryIncomplete` marks a gap that extends beyond retained history.
 - `resources` reports the sampling window, process and main-thread CPU deltas in microseconds, and heap and resident memory in bytes. `resources.eventLoopUtilization` reports active and idle time in milliseconds and the active fraction. Active time can include time blocked in a synchronous call. `resources.cgroupCpu` is included when both samples have usable throttling counters. Its interval can differ from the heartbeat gap.
 - `processStartTimestamp` distinguishes process restarts on the same instance. Worker records describe the process and can be joined to task logs by instance and time.
