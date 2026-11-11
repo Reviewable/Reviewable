@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent stale GitHub 401s from logging out a newer session. <!-- client -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> prevent unauthenticated GitHub requests in private mode. <!-- client -->
 - <kbd>Fix:</kbd> keep headless permission requests authenticated. <!-- client -->
 - <kbd>Upd:</kbd> show references to issues and pull requests within a sentence compactly, with their details in a tooltip. <!-- client -->
