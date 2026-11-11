@@ -30,7 +30,7 @@ services:
 
   reviewable-analytics-bridge:
     image: node:26
-    command: ["npm", "exec", "--yes", "--package=corepack@0.36.0", "--", "corepack", "yarn", "dev"]
+    command: ["npm", "run", "dev"]
     working_dir: /workdir
     restart: always
     volumes:
