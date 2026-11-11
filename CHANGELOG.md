@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> Experiment with two-CPU workers and a 38% scaling target. <!-- server -->
 - <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
 - <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
 
