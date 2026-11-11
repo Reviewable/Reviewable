@@ -1,11 +1,11 @@
 <sub>Upcoming</sub>
 
-- <kbd>Adm<i>(saas)</i>:</kbd> Experiment with two-CPU workers and a 38% scaling target. <!-- server -->
 - <kbd>Fix:</kbd> retry failed browser AI session clones once. <!-- client -->
 - <kbd>Adm:</kbd> disable Sentry tracing. <!-- client -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>Adm<i>(saas)</i>:</kbd> Experiment with two-CPU workers and a 38% scaling target. <!-- server 5007 -->
 - <kbd>Adm:</kbd> Add worker performance summaries and event-loop stall diagnostics to server logs. <!-- server 5006 -->
 - <kbd>Fix:</kbd> fetch master settings with the master repository's connector during pull request syncs. <!-- server 5005 -->
 - <kbd>Adm:</kbd> retry postponed PR syncs when their cooldown expires. <!-- server 5005 -->
