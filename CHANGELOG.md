@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> prioritize closed, merged, and queued pull request states over draft. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Fix:</kbd> prevent stale GitHub 401s from logging out a newer session. <!-- client 7946 -->
