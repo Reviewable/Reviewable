@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server -->
 - <kbd>Fix:</kbd> apply autocompleted command directives immediately. <!-- client -->
 - <kbd>Fix:</kbd> prioritize closed, merged, and queued pull request states over draft. <!-- client -->
 
