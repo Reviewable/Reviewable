@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> apply autocompleted command directives immediately. <!-- client -->
 - <kbd>Fix:</kbd> prioritize closed, merged, and queued pull request states over draft. <!-- client -->
 
 <sub>2026 - 11</sub>
