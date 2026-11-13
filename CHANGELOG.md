@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server 5010 -->
 - <kbd>New:</kbd> filter repositories by name and connection status in the Admin Center. <!-- client 7947 -->
 - <kbd>Upd:</kbd> Reduce startup overhead for headless agent/API operations. <!-- client 7947 -->
 - <kbd>Fix:</kbd> keep review panels centered as they fade in after loading. <!-- client 7947 -->
