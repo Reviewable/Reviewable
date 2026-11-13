@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> Reduce startup overhead for headless agent/API operations. <!-- client -->
 - <kbd>Fix:</kbd> keep review panels centered as they fade in after loading. <!-- client -->
 - <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server -->
 - <kbd>Fix:</kbd> apply autocompleted command directives immediately. <!-- client -->
