@@ -1,14 +1,14 @@
 <sub>Upcoming</sub>
 
-- <kbd>New:</kbd> filter repositories by name and connection status in the Admin Center. <!-- client -->
-- <kbd>Upd:</kbd> Reduce startup overhead for headless agent/API operations. <!-- client -->
-- <kbd>Fix:</kbd> keep review panels centered as they fade in after loading. <!-- client -->
 - <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server -->
-- <kbd>Fix:</kbd> apply autocompleted command directives immediately. <!-- client -->
-- <kbd>Fix:</kbd> prioritize closed, merged, and queued pull request states over draft. <!-- client -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>New:</kbd> filter repositories by name and connection status in the Admin Center. <!-- client 7947 -->
+- <kbd>Upd:</kbd> Reduce startup overhead for headless agent/API operations. <!-- client 7947 -->
+- <kbd>Fix:</kbd> keep review panels centered as they fade in after loading. <!-- client 7947 -->
+- <kbd>Fix:</kbd> apply autocompleted command directives immediately. <!-- client 7947 -->
+- <kbd>Fix:</kbd> prioritize closed, merged, and queued pull request states over draft. <!-- client 7947 -->
 - <kbd>Fix:</kbd> prevent stale GitHub 401s from logging out a newer session. <!-- client 7946 -->
 - <kbd>Fix<i>(enterprise)</i>:</kbd> prevent unauthenticated GitHub requests in private mode. <!-- client 7946 -->
 - <kbd>Fix:</kbd> keep headless permission requests authenticated. <!-- client 7946 -->
