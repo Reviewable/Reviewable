@@ -43,6 +43,27 @@ $ echo 'null' >null.json
 $ rvbl-write -p system/maintenance -f null.json
 ```
 
+### Database sharding
+
+Sharding distributes datastore load across additional Firebase Realtime Databases. The primary database and all shards share credentials and encryption settings. Every retained shard, including one being retired, remains part of your datastore for backup, restore, and encryption-key rotation purposes.
+
+#### Adding a shard
+
+1. In the Firebase console, use **Create database** to create a database in the same Firebase project as your primary database.
+2. Enable Firebase's [automated backups](https://firebase.google.com/docs/database/backups) for the new database on the **Backups** tab, even if backups were already enabled for the other databases in the project.
+3. Add its full URL to the comma-separated `REVIEWABLE_FIREBASE_SHARD_URLS` list on **every server** and deploy that configuration. Currently, only the first URL without a `-` prefix is used for new sharded data.
+
+After updating the list of shards, allow a few minutes for the system to settle into its new configuration. Keep the period during which servers have different shard lists as short as possible.
+
+#### Retiring a shard
+
+Draining can take weeks. Removing a URL early can leave data inaccessible. If you need to retire a shard sooner, contact support about potential shortcuts and their trade-offs.
+
+1. Prefix its URL with `-` on **every server** and deploy that configuration promptly to limit configuration skew. New sharded data will go to the first remaining active shard, or to the primary if none remains. Keep the retiring shard in the list while it drains.
+2. Ensure that all servers running the previous configuration have stopped, then allow the retiring database to drain.
+3. Confirm in the Firebase console that the retiring database is empty, apart from `/system` metadata and transient entries that immediately disappear.
+4. Remove its URL from every server's configuration. Only then delete the database. Before rolling back to a server version that does not support sharding, retire all shards using this procedure.
+
 ### AES encryption key rotation
 
 You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_ENCRYPTION_AES_KEY`.
@@ -52,7 +73,7 @@ You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_E
 3. Locate the current encryption key (if any) and generate a new encryption key if desired (`openssl rand --base64 64`).
 4. Put Reviewable in maintenance mode (instructions above).
 5. Run <code>recrypt --firebase $REVIEWABLE_FIREBASE_URL --auth $REVIEWABLE_FIREBASE_CREDENTIALS_FILE --spec rule_firecrypt.json --oldKey <i>&lt;base64key&gt;</i> --newKey <i>&lt;base64Key&gt;</i></code>, using the environment values you configured for your server and specifying one or both keys depending on the operation you want to perform (encrypt, decrypt, or rotate).
-6. Update your server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY`.
+6. If sharding is configured, repeat the re-encryption command for every URL in `REVIEWABLE_FIREBASE_SHARD_URLS`, removing any leading `-`. Include draining shards. Then update every server's configuration with the new `REVIEWABLE_ENCRYPTION_AES_KEY`.
 7. Exit maintenance mode (instructions above).
 
 Rotating keys will take approximately NN minutes per GB of database size, assuming a reasonably fast machine and network connection.  Before you rotate the key on your production database, you might want to clone it into a spare Firebase project with security rules set to `{"rules": {".read": false, ".write": false}}`) and run it there to ensure there will be no errors and get a better estimate of how long it will take.
