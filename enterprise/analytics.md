@@ -231,7 +231,7 @@ Navigation emits `Viewed Page`. Page classes include `home-page`, `dashboard-pag
 Scoped dashboard/admin routes include `owner` and optionally `repo`. Review routes include `owner`, `repo`, `prNumber`, and optionally `filePath`. `userIsAuthor` and `lastRevision` are absent, including on review pages. Query/hash-only navigation does not produce another page event.
 
 ##### Loaded Page
-Sampled production client performance telemetry. Currently the effective sampling rate is 5% for both initial and subsequent loads. Timings are in milliseconds; optional counters and flags depend on the page. Review-page timings include common PR properties when the review is available.
+Sampled production client performance telemetry. The sampling rate is 5% by default, and you can [change it](operations.md#page-load-sampling). Timings are in milliseconds; optional counters and flags depend on the page. Review-page timings include common PR properties when the review is available.
 
 ```ts
 {

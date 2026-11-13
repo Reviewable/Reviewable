@@ -43,6 +43,23 @@ $ echo 'null' >null.json
 $ rvbl-write -p system/maintenance -f null.json
 ```
 
+### Page load sampling
+
+Clients send only a sample of `Loaded Page` [analytics events](analytics.md#loaded-page), 5% by default.  To change the rate, set it to a fraction between 0 and 1:
+
+```bash
+# if database is not encrypted
+$ curl https://$REVIEWABLE_FIREBASE_URL/system/loadedPageSampleRate.json?auth=$REVIEWABLE_FIREBASE_AUTH \
+       -X PUT -d '0.25'
+
+# if database is encrypted
+$ npm install --global reviewable-enterprise-tools
+$ echo '0.25' >rate.json
+$ rvbl-write -p system/loadedPageSampleRate -f rate.json
+```
+
+Open clients pick up the new rate immediately, with no restart needed.  The rate is public, like the maintenance switch.  To go back to the default, delete the value the same way you'd exit maintenance mode, using `system/loadedPageSampleRate` as the path.
+
 ### AES encryption key rotation
 
 You can add, remove, or rotate the AES encryption key specified in `REVIEWABLE_ENCRYPTION_AES_KEY`.
