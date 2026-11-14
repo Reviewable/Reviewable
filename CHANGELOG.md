@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> preserve background task progress after errors and improve rollout delays. <!-- server 5011 -->
