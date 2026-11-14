@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> preserve background task progress after errors and improve rollout delays. <!-- server -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server 5010 -->
