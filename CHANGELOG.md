@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server 5012 -->
 - <kbd>Adm:</kbd> preserve background task progress after errors and improve rollout delays. <!-- server 5011 -->
 - <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server 5010 -->
 - <kbd>New:</kbd> filter repositories by name and connection status in the Admin Center. <!-- client 7947 -->
