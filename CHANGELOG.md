@@ -2,12 +2,12 @@
 
 - <kbd>Upd:</kbd> reduce review copying and skip timestamp-only reconciliation writes. <!-- server -->
 - <kbd>Adm:</kbd> use a 50MB cache for compression on the server even when encryption is disabled. <!-- server -->
-- <kbd>Fix:</kbd> preserve the review layout when following file links. <!-- client -->
-- <kbd>Fix:</kbd> align new and read comment counts in the discussion matrix. <!-- client -->
-- <kbd>Fix:</kbd> speed up clearing filters in large file and discussion matrices. <!-- client -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> preserve the review layout when following file links. <!-- client 7949 -->
+- <kbd>Fix:</kbd> align new and read comment counts in the discussion matrix. <!-- client 7949 -->
+- <kbd>Fix:</kbd> speed up clearing filters in large file and discussion matrices. <!-- client 7949 -->
 - <kbd>Fix:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server 5012 -->
 - <kbd>Adm:</kbd> preserve background task progress after errors and improve rollout delays. <!-- server 5011 -->
 - <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server 5010 -->
