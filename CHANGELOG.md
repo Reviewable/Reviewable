@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> preserve the review layout when following file links. <!-- client -->
 - <kbd>Fix:</kbd> align new and read comment counts in the discussion matrix. <!-- client -->
 - <kbd>Fix:</kbd> speed up clearing filters in large file and discussion matrices. <!-- client -->
 
