@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> speed up clearing filters in large file and discussion matrices. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Fix:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server 5012 -->
