@@ -1,15 +1,15 @@
 <sub>2026 - 11</sub>
 
-- <kbd>Upd:</kbd> reduce review copying and skip timestamp-only reconciliation writes. <!-- server 5013 -->
+- <kbd>Adm:</kbd> reduce review copying and skip timestamp-only reconciliation writes. <!-- server 5013 -->
 - <kbd>Adm:</kbd> use a 50MB cache for compression on the server even when encryption is disabled. <!-- server 5013 -->
 - <kbd>Fix:</kbd> preserve the review layout when following file links. <!-- client 7949 -->
 - <kbd>Fix:</kbd> align new and read comment counts in the discussion matrix. <!-- client 7949 -->
 - <kbd>Fix:</kbd> speed up clearing filters in large file and discussion matrices. <!-- client 7949 -->
-- <kbd>Fix:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server 5012 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> keep connection indexing running when GitHub blocks a repository. <!-- server 5012 -->
 - <kbd>Adm:</kbd> preserve background task progress after errors and improve rollout delays. <!-- server 5011 -->
 - <kbd>Adm:</kbd> upgrade the Reviewable server runtime to Node.js 26. <!-- server 5010 -->
 - <kbd>New:</kbd> filter repositories by name and connection status in the Admin Center. <!-- client 7947 -->
-- <kbd>Upd:</kbd> Reduce startup overhead for headless agent/API operations. <!-- client 7947 -->
+- <kbd>Fix:</kbd> Reduce startup overhead for headless agent/API operations. <!-- client 7947 -->
 - <kbd>Fix:</kbd> keep review panels centered as they fade in after loading. <!-- client 7947 -->
 - <kbd>Fix:</kbd> apply autocompleted command directives immediately. <!-- client 7947 -->
 - <kbd>Fix:</kbd> prioritize closed, merged, and queued pull request states over draft. <!-- client 7947 -->
@@ -30,7 +30,7 @@
 - <kbd>Upd:</kbd> Show participant role icons in designation details. <!-- client 7945 -->
 - <kbd>Fix:</kbd> enable review marks for partially selected file groups and avoid empty diffs after marking the last file reviewed. <!-- client 7945 -->
 - <kbd>Fix:</kbd> refresh review columns and centering after resizing the window. <!-- client 7945 -->
-- <kbd>Fix:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client 7945 -->
+- <kbd>Adm:</kbd> avoid unnecessary admin permission checks when opening reviews. <!-- client 7945 -->
 
 <sub>**Enterprise release 5004.7944** (min 4882.7806 GHE ^2.19 || ^3) 2026-11-08 <!-- enterprise 5004.7944 --></sub>
 
