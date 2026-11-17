@@ -56,8 +56,6 @@ Repository references use lowercase `owner` and `repo` values across client and 
 
 Author agents count as authors on their owner's PRs. `userIsAuthor` is omitted for events with no associated user, including `Updated Review Status`. `lastRevision` is null if no revision has been captured yet, as when a review is first created.
 
-`pullRequest` is a legacy alias of `prNumber`. It's a number on `Published Comments`, `Sent Comment`, `Ready for Review`, `Merged Branch`, `Queued Merge`, and `Canceled Queued Merge`, and a string on review-page `Viewed Page` events.
-
 ##### Signed up
 The user signed in to Reviewable for the first time. No additional properties.
 
@@ -105,7 +103,7 @@ A review joined a [stack of dependent pull requests](../docs/tips.md#reviewing-s
   prNumber: number;
   private: boolean;
   origin: 'request' | 'event' | 'poll';
-  stackSource: string;  // 'github', 'spr', or 'x-' and the name of a tool the repository defines
+  stackSource: string;  // a built-in tool, or 'x-' and the name of a tool the repository defines
   stackSize?: number;  // pull requests in the stack
 }
 ```
@@ -119,7 +117,6 @@ The user successfully published a review, either directly or automatically via [
 {
   trigger: 'user' | 'push';            // direct publication or automatic publication after a push
   sanction: 'approved' | 'changes_requested' | 'commented';
-  numDrafts: number;                  // all of the user's drafts, including private notes and empty drafts
   numPublishedDrafts: number;         // drafts with content that are published, excluding private notes
   numMarks: number;                   // files with published review marks, including virtual Commits
   numFullMarks: number;               // files whose published marks fully review their latest revision
@@ -231,7 +228,7 @@ Navigation emits `Viewed Page`. Page classes include `home-page`, `dashboard-pag
 Scoped dashboard/admin routes include `owner` and optionally `repo`. Review routes include `owner`, `repo`, `prNumber`, and optionally `filePath`. `userIsAuthor` and `lastRevision` are absent, including on review pages. Query/hash-only navigation does not produce another page event.
 
 ##### Loaded Page
-Sampled production client performance telemetry. The sampling rate is 5% by default, and you can [change it](operations.md#page-load-sampling). Timings are in milliseconds; optional counters and flags depend on the page. Review-page timings include common PR properties when the review is available.
+Sampled production client performance telemetry. The sampling rate is 5% by default, and you can change it with [`REVIEWABLE_LOADED_PAGE_SAMPLE_RATE`](config.md#monitoring). Timings are in milliseconds; optional counters and flags depend on the page. Review-page timings include common PR properties when the review is available.
 
 ```ts
 {
@@ -482,4 +479,4 @@ The user attempted to open the sales chat. Not applicable to Enterprise installa
 }
 ```
 
-Older versions also emitted events such as `Subscribed`, `Failed to map language`, `Disassociated Repo`, `Opened all file in new tabs`, `Edited auxiliary draft instance`, `Opened Blog`, and `Read Blog`. These are no longer emitted by the current client/server. `Published Comments` also no longer carries `numRoleChanges`, which had the same value as `numDispositionChanges`. `Looked at Guide` no longer carries `completed` or the `app` source, and `Loaded Page` no longer carries `subscriptionLink`.
+Some events and properties have been removed over time.  You can look at the history of this document for details.
