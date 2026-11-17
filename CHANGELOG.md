@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Upd:</kbd> group reviews needing your agents' attention in a dedicated dashboard section. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> reduce review copying and skip timestamp-only reconciliation writes. <!-- server 5013 -->
