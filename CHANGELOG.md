@@ -1,12 +1,12 @@
 <sub>Upcoming</sub>
 
-- <kbd>Adm:</kbd> improve handling of Firebase and GitHub caches. <!-- server -->
-- <kbd>Adm:</kbd> break down PR sync and reconciliation latency. <!-- server -->
 - <kbd>Fix:</kbd> don't offer a merge where GitHub is set to merge the pull request itself, since it refuses a merge asked for while auto-merge is enabled. <!-- client -->
 - <kbd>Upd:</kbd> group reviews needing your agents' attention in a dedicated dashboard section. <!-- client -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> improve handling of Firebase and GitHub caches. <!-- server 5014 -->
+- <kbd>Adm:</kbd> break down PR sync and reconciliation latency. <!-- server 5014 -->
 - <kbd>Adm:</kbd> reduce review copying and skip timestamp-only reconciliation writes. <!-- server 5013 -->
 - <kbd>Adm:</kbd> use a 50MB cache for compression on the server even when encryption is disabled. <!-- server 5013 -->
 - <kbd>Fix:</kbd> preserve the review layout when following file links. <!-- client 7949 -->
