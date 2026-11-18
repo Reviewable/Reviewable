@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> break down PR sync and reconciliation latency. <!-- server -->
 - <kbd>Fix:</kbd> don't offer a merge where GitHub is set to merge the pull request itself, since it refuses a merge asked for while auto-merge is enabled. <!-- client -->
 - <kbd>Upd:</kbd> group reviews needing your agents' attention in a dedicated dashboard section. <!-- client -->
 
