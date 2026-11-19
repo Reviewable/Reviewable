@@ -4,11 +4,11 @@
 - <kbd>Fix:</kbd> stop showing a closed pull request as being in a stack Reviewable couldn't read from GitHub. <!-- server -->
 - <kbd>Fix:</kbd> show a new revision when squashing commits would leave an obsolete entry in the Commits file. <!-- server -->
 - <kbd>Adm<i>(saas)</i>:</kbd> upgrade the Slack SDK and remove the temporary response-body retry workaround. <!-- server -->
-- <kbd>Fix:</kbd> don't offer a merge where GitHub is set to merge the pull request itself, since it refuses a merge asked for while auto-merge is enabled. <!-- client -->
-- <kbd>Upd:</kbd> group reviews needing your agents' attention in a dedicated dashboard section. <!-- client -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> don't offer a merge where GitHub is set to merge the pull request itself, since it refuses a merge asked for while auto-merge is enabled. <!-- client 7950 -->
+- <kbd>Upd:</kbd> group reviews needing your agents' attention in a dedicated dashboard section. <!-- client 7950 -->
 - <kbd>Adm:</kbd> improve handling of Firebase and GitHub caches. <!-- server 5014 -->
 - <kbd>Adm:</kbd> break down PR sync and reconciliation latency. <!-- server 5014 -->
 - <kbd>Adm:</kbd> reduce review copying and skip timestamp-only reconciliation writes. <!-- server 5013 -->
