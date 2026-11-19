@@ -488,10 +488,26 @@ Below is an example `settings.yaml` file that specifies different completion con
 overrides:
   - repositories: reviewable-*
     settings:
-      completion-file: reviewable-completion.js
+      completion:
+        script: reviewable-completion.js
   - repositories: hubkit
     settings:
-      completion-file: hubkit-completion.js
+      completion:
+        script: hubkit-completion.js
+```
+
+The top-level `completion-file` key is deprecated in favor of `completion.script`, but settings files that use it keep working.
+
+#### Completion condition on broken reviews
+
+*This setting can only be changed using a `settings.yaml` file.*
+
+Run the custom completion condition on [broken reviews](#broken-reviews) too, instead of always posting an error status.  It's off by default.
+
+```yaml
+completion:
+  # The default setting is `false`
+  handles-broken-reviews: true | false
 ```
 
 ## Custom review completion condition {#completion-condition}
@@ -743,6 +759,52 @@ When executing the condition prior to publishing a review, this list won’t inc
 The `files[].revisions` property requires a bit of additional explanation.  First, renamed file matching and base change detection is performed only in clients, so the condition will get incomplete input data until a user with appropriate permissions visits the review.
 
 Second, the `baseChangesOnly` flag is computed relative to its revision's *prior revision*, which is not necessarily the immediately preceding one.  This becomes important when rebasing multiple commits while using the "review each commit separately" [review style](files.md#review-style), as Reviewable tries to match each "new" commit to the corresponding commit it replaced.  We don't expose the logic in the data structure above, but our algorithm is robust and biased towards needing strong evidence for a match. As a result, false positive `baseChangesOnly` flags should be extremely rare.
+
+### Broken reviews {#broken-reviews}
+
+When Reviewable can't sync a pull request, for example because it has too many files, the review is broken and the GitHub status reports the error.  A repo admin can override the error for the current head commit from the review page.  By default the completion condition doesn't run on broken reviews.
+
+If you turn on the [**Completion condition on broken reviews**](#completion-condition-on-broken-reviews) setting, Reviewable runs your condition on broken reviews too, and posts its result as the GitHub status.  This lets you, for example, pass broken reviews of PRs that merge release branches without a repo admin stepping in.
+
+::: danger
+A condition that mishandles broken reviews can leave the Reviewable status in an unexpected state, such as passing PRs that were never reviewed.  Always check `review.error` first, and keep that branch simple.  Missing properties are `undefined`, so code that reads into them, such as `review.summary.numFiles`, throws and the status will show the error.
+:::
+
+Since the review's data couldn't be synced, the input only has what Reviewable can get from GitHub, and everything else is missing:
+
+* `pullRequest` has `repository`, `number`, `title`, `state`, `body`, `author`, `creationTimestamp`, `draft`, `assignees`, `requestedReviewers`, `requestedTeams`, `numCommits`, `target` (without `branchProtected`) and `source`.  Users only have a `username`.
+* `stage` and `labels` are filled in as usual.
+* An extra `error` property describes the problem:
+
+```js
+error: {
+  message: 'Overly large review (5000 files)',  // The reason the review is broken
+  timestamp: 1436825000000,  // When the review broke, if known, otherwise null
+  override: {username: 'admin'}  // Only if a repo admin overrode the error for the head commit
+}
+```
+
+With this setting on, an override doesn't force a `success` status by itself; it's up to your condition to honor it.
+
+Only `completed`, `description` and `shortDescription` in the condition's output are used.  The GitHub status is `success` if `completed` is true, and `error` otherwise.  If you don't return a description, the status will show the error message.  Your condition runs when a review breaks, when a repo admin overrides the error, and whenever the pull request is updated (e.g., new commits are pushed or the target branch changes).  Changing the condition or this setting re-evaluates open reviews, including broken ones, though older inactive reviews with missing or failing mergeability may wait until a later reconciliation.  As with other reviews, whether the status gets posted depends on the [review status setting](#review-status-in-github-pr).  Since nobody may ever visit a broken review, you'll probably want to set it to `always`.
+
+```js
+if (review.error) {
+  if (review.error.override) {
+    return {completed: true, description: `Overridden by ${review.error.override.username}`};
+  }
+  const {source} = review.pullRequest;
+  if (source.owner === 'my-org' && source.repo === 'my-repo' &&
+      _.startsWith(source.branch, 'release/')) {
+    return {completed: true, description: 'Release branch'};
+  }
+  return {completed: false};
+}
+// The rest of your condition goes here, or return {} to use the defaults.
+return {};
+```
+
+Branch names are local to a repository, so check the source repository as well, or a fork could create a matching branch.  You'll also want to restrict who can push to your release branches.
 
 ### Condition output
 

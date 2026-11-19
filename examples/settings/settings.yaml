@@ -90,11 +90,16 @@ coverage:
   headers:
     Authorization: encrypted/rsa2:ObXundPmnmNRmJvPz20Y8+7egxnt5A3XjO5hSYxZGMNmFel2i5tNei8bZ/Uqd9WmcNNR37XodqyC7YR69h6PGQ==
 
-# `completion-file` gives the path to the custom review completion condition script, relative to the
-# settings file.  The script _must_ be in `/.reviewable` or a subdirectory.  You can test your script
-# in the Reviewable sandbox: https://reviewable.io/playground
-# https://docs.reviewable.io/repositories#completion-condition-script
-completion-file: completion.js
+completion:
+  # `script` gives the path to the custom review completion condition script, relative to the
+  # settings file.  The script _must_ be in `/.reviewable` or a subdirectory.  You can test your
+  # script in the Reviewable sandbox: https://reviewable.io/playground
+  # https://docs.reviewable.io/repositories#completion-condition-script
+  # (The deprecated top-level `completion-file` key still works too.)
+  script: completion.js
+  # `handles-broken-reviews` runs the completion condition on broken reviews (e.g., ones with too
+  # many files) too, instead of always posting an error status.
+  handles-broken-reviews: false
 
 # The overrides parameter will allow you to set different options for any
 # repositiory matching the patterns in the `repositories` parameter.
