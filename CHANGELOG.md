@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> stop showing a closed pull request as being in a stack Reviewable couldn't read from GitHub. <!-- server -->
 - <kbd>Fix:</kbd> show a new revision when squashing commits would leave an obsolete entry in the Commits file. <!-- server -->
 - <kbd>Adm<i>(saas)</i>:</kbd> upgrade the Slack SDK and remove the temporary response-body retry workaround. <!-- server -->
 - <kbd>Fix:</kbd> don't offer a merge where GitHub is set to merge the pull request itself, since it refuses a merge asked for while auto-merge is enabled. <!-- client -->
