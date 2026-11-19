@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> Add scheduler and resource-pressure counters to worker diagnostics. <!-- server -->
 - <kbd>Adm:</kbd> Support Firebase queue sharding. <!-- server -->
 - <kbd>Fix:</kbd> stop showing a closed pull request as being in a stack Reviewable couldn't read from GitHub. <!-- server -->
 - <kbd>Fix:</kbd> show a new revision when squashing commits would leave an obsolete entry in the Commits file. <!-- server -->
