@@ -166,6 +166,18 @@ The user added the PR to GitHub's merge queue or applied the repository's config
 ##### Canceled Queued Merge
 The user removed the PR from GitHub's merge queue or removed the configured merge label from Reviewable. Includes common PR properties.
 
+##### Enabled Auto-Merge
+The user handed the merge to GitHub's auto-merge from Reviewable, which merges the PR itself once its own requirements are met. For a PR in one of GitHub's stacks the request covers the PRs below it as well, and is tracked here only against the one it was made from. Includes common PR properties and:
+
+```ts
+{
+  flavor: 'merge' | 'squash' | 'rebase';  // the merge style GitHub froze at that moment
+}
+```
+
+##### Disabled Auto-Merge
+The user called off GitHub's auto-merge from Reviewable, which for a stack calls off the whole request. Does not track auto-merges turned off elsewhere. Includes common PR properties.
+
 ##### Updated Review Status
 A server event with no associated user. Includes common PR properties and:
 
