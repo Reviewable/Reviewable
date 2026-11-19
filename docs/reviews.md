@@ -154,6 +154,30 @@ When using the rebase merge style, Reviewable will indicate if the merge will be
 
 If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](admincenter.md#condition-output).
 
+### Letting GitHub merge it when it's ready {#auto-merge}
+
+Where the merge can't happen yet but the repository allows [auto-merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request), the merge button offers to hand the merge to GitHub instead of merging now. It reads **<i class="automerge icon"></i>&nbsp;Merge when ready**, and it's enabled but left in its ordinary colour rather than green, since it isn't a merge you're about to make. Hold it to arm it and release, just like a merge, and GitHub carries the merge out itself once its own requirements are met.
+
+Reviewable offers this only where GitHub would accept it. GitHub takes a handover for a pull request that's currently blocked from merging and refuses one that has nothing left to wait for, that can't merge at all, or that it won't let you merge, and the button doesn't offer what GitHub would turn down.
+
+The merge style and the merge commit message go over as they stand when you press the button, and GitHub freezes them there. Editing the description, the commit message or the merge style afterwards changes nothing about the merge GitHub will make: cancel the auto-merge, make your change, and hand it over again.
+
+While GitHub holds the pull request, the merge button becomes **<i class="automerge cancel icon"></i>&nbsp;Cancel auto-merge**, which takes the same push permission as any other merge action, and the pull request panel says what it's waiting for and in which style.
+
+For a pull request in one of GitHub's own [stacks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/working-with-stacked-pull-requests), the handover covers this pull request and the ones below it, which is what merging it here would land anyway, and cancelling calls off the whole request. GitHub records the request only against the pull request you made it from, so the ones below show nothing; cancel from the same pull request you handed over from.
+
+Everything else Reviewable would have brought to the merge is left behind, because GitHub's auto-merge has no equivalent:
+
+- **No revision pin.** A merge from Reviewable is pinned to the revision whose review made it mergeable, so that commits pushed in the meantime can't land unnoticed. An auto-merge lands whatever the branch holds when its requirements are met, which is the whole point of it.
+- **No admin override.** Auto-merge waits for the branch protections rather than stepping over them, so the bypass has no counterpart here.
+- **No branch deletion from Reviewable.** Whether the source branch goes away falls to the repository's own *Automatically delete head branches* setting, which is why the merge options show the branch disposition without letting you change it while the handover is on offer.
+- **No fast-forward merges**, which GitHub's API has no name for.
+- **Merge queues compose their own message.** Where the target branch has a merge queue, GitHub enqueues the pull request once its requirements are met and the queue builds the merge commit itself, so the message you saw when you handed it over isn't the one that lands. Jumping the queue and bypassing it aren't available for a handover either.
+
+::: tip
+Review completion holds an auto-merge back only where Reviewable's [commit status](admincenter.md#review-status-in-github-pr) `code-review/reviewable` is a required check on the target branch in GitHub. Without it, GitHub merges as soon as its own requirements are met, whatever the review still says.
+:::
+
 ## Status bar and sidebar {#review-toolbar}
 
 The review page has two persistent navigation areas: a status bar across the top, and a sidebar on the right.
