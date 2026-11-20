@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm<i>(saas)</i>:</kbd> report unhandled HTTP errors once. <!-- server -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> Add scheduler and resource-pressure counters to worker diagnostics. <!-- server 5015 -->
