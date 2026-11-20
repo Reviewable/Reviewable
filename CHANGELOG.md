@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> hand the merge to GitHub's auto-merge from the merge button, so that a pull request merges itself once GitHub's own requirements are met. <!-- client -->
 - <kbd>Upd:</kbd> settings files now take the completion condition script under `completion.script`; the old `completion-file` key keeps working. <!-- server -->
 - <kbd>Fix:</kbd> prevent file panel outlines when scrolling with the keyboard. <!-- client -->
 - <kbd>Upd:</kbd> let repos opt into running their custom completion condition on broken reviews (e.g., too many files) via a settings file, so it can decide the GitHub status instead of requiring an admin override. <!-- server -->
