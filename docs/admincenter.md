@@ -488,11 +488,15 @@ Below is an example `settings.yaml` file that specifies different completion con
 overrides:
   - repositories: reviewable-*
     settings:
-      completion-file: reviewable-completion.js
+      completion:
+        script: reviewable-completion.js
   - repositories: hubkit
     settings:
-      completion-file: hubkit-completion.js
+      completion:
+        script: hubkit-completion.js
 ```
+
+Settings files that use the older top-level `completion-file` key instead of `completion.script` keep working.
 
 #### Completion condition on broken reviews
 
@@ -501,8 +505,9 @@ overrides:
 Run the custom completion condition on [broken reviews](#broken-reviews) too, instead of always posting an error status.  It's off by default.
 
 ```yaml
-# The default setting is `false`
-completion-handles-broken-reviews: true | false
+completion:
+  # The default setting is `false`
+  handles-broken-reviews: true | false
 ```
 
 ## Custom review completion condition {#completion-condition}
