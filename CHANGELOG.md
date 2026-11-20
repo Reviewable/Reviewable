@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> prevent file panel outlines when scrolling with the keyboard. <!-- client -->
 - <kbd>Upd:</kbd> let repos opt into running their custom completion condition on broken reviews (e.g., too many files) via a settings file, so it can decide the GitHub status instead of requiring an admin override. <!-- server -->
 - <kbd>Adm<i>(saas)</i>:</kbd> report unhandled HTTP errors once. <!-- server -->
 
