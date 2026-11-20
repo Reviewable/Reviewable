@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Add scheduler and resource-pressure counters to worker diagnostics. <!-- server -->
-- <kbd>Adm:</kbd> Support Firebase queue sharding. <!-- server -->
-- <kbd>Fix:</kbd> stop showing a closed pull request as being in a stack Reviewable couldn't read from GitHub. <!-- server -->
-- <kbd>Fix:</kbd> show a new revision when squashing commits would leave an obsolete entry in the Commits file. <!-- server -->
-- <kbd>Adm<i>(saas)</i>:</kbd> upgrade the Slack SDK and remove the temporary response-body retry workaround. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> Add scheduler and resource-pressure counters to worker diagnostics. <!-- server 5015 -->
+- <kbd>Adm:</kbd> Support Firebase queue sharding. <!-- server 5015 -->
+- <kbd>Fix:</kbd> stop showing a closed pull request as being in a stack Reviewable couldn't read from GitHub. <!-- server 5015 -->
+- <kbd>Fix:</kbd> show a new revision when squashing commits would leave an obsolete entry in the Commits file. <!-- server 5015 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> upgrade the Slack SDK and remove the temporary response-body retry workaround. <!-- server 5015 -->
 - <kbd>Fix:</kbd> don't offer a merge where GitHub is set to merge the pull request itself, since it refuses a merge asked for while auto-merge is enabled. <!-- client 7950 -->
 - <kbd>Upd:</kbd> group reviews needing your agents' attention in a dedicated dashboard section. <!-- client 7950 -->
 - <kbd>Adm:</kbd> improve handling of Firebase and GitHub caches. <!-- server 5014 -->
