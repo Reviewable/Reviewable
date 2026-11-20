@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> allow `syncRequestedReviewers` and `requestedTeams` to request actors with read-only access to the repository. <!-- server -->
 - <kbd>Upd:</kbd> hand the merge to GitHub's auto-merge from the merge button, so that a pull request merges itself once GitHub's own requirements are met. <!-- client -->
 - <kbd>Upd:</kbd> settings files now take the completion condition script under `completion.script`; the old `completion-file` key keeps working. <!-- server -->
 - <kbd>Fix:</kbd> prevent file panel outlines when scrolling with the keyboard. <!-- client -->
