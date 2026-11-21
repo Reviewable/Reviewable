@@ -167,11 +167,11 @@ The user added the PR to GitHub's merge queue or applied the repository's config
 The user removed the PR from GitHub's merge queue or removed the configured merge label from Reviewable. Includes common PR properties.
 
 ##### Enabled Auto-Merge
-The user handed the merge to GitHub's auto-merge from Reviewable, which merges the PR itself once its own requirements are met. For a PR in one of GitHub's stacks the request covers the PRs below it as well, and is tracked here only against the one it was made from. Includes common PR properties and:
+The user handed the merge over to GitHub's auto-merge, which merges the PR itself once GitHub's requirements are met. For a PR in one of GitHub's stacks, the request also covers the PRs below it, and the event is tracked only against the PR it was made from. Includes common PR properties and:
 
 ```ts
 {
-  flavor: 'merge' | 'squash' | 'rebase';  // the merge style GitHub froze at that moment
+  flavor: 'merge' | 'squash' | 'rebase';  // the merge style GitHub recorded for the auto-merge
 }
 ```
 
