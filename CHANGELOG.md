@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> improve contrast and spacing when displaying full agent tokens. <!-- client -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> Limit concurrent repository checks during enrollment and auto-connect. <!-- server 5016 -->
