@@ -1,13 +1,10 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Limit concurrent repository checks during enrollment and auto-connect. <!-- server -->
-- <kbd>Fix:</kbd> allow `syncRequestedReviewers` and `requestedTeams` to request actors with read-only access to the repository. <!-- server -->
-- <kbd>Upd:</kbd> settings files now take the completion condition script under `completion.script`; the old `completion-file` key keeps working. <!-- server -->
-- <kbd>Upd:</kbd> let repos opt into running their custom completion condition on broken reviews (e.g., too many files) via a settings file, so it can decide the GitHub status instead of requiring an admin override. <!-- server -->
-- <kbd>Adm<i>(saas)</i>:</kbd> report unhandled HTTP errors once. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> Limit concurrent repository checks during enrollment and auto-connect. <!-- server 5016 -->
+- <kbd>Fix:</kbd> allow `syncRequestedReviewers` and `requestedTeams` to request actors with read-only access to the repository. <!-- server 5016 -->
+- <kbd>Upd:</kbd> settings files now take the completion condition script under `completion.script`; the old `completion-file` key keeps working. <!-- server 5016 -->
+- <kbd>Upd:</kbd> let repos opt into running their custom completion condition on broken reviews (e.g., too many files) via a settings file, so it can decide the GitHub status instead of requiring an admin override. <!-- server 5016 -->
+- <kbd>Adm<i>(saas)</i>:</kbd> report unhandled HTTP errors once. <!-- server 5016 -->
 - <kbd>Upd:</kbd> hand the merge to GitHub's auto-merge from the merge button, so that a pull request merges itself once GitHub's own requirements are met. <!-- client 7951 -->
 - <kbd>Fix:</kbd> prevent file panel outlines when scrolling with the keyboard. <!-- client 7951 -->
 - <kbd>Adm:</kbd> Add scheduler and resource-pressure counters to worker diagnostics. <!-- server 5015 -->
