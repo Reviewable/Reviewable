@@ -1,5 +1,9 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> match quoted file paths and group names exactly in review filters. <!-- client -->
+- <kbd>Upd:</kbd> find discussions by the original code in suggestions, including deletions. <!-- client -->
+- <kbd>Fix:</kbd> scroll to the automatically highlighted filter result as you type. <!-- client -->
+- <kbd>Fix:</kbd> keep filter guides available until you enter a query. <!-- client -->
 - <kbd>Fix:</kbd> improve contrast and spacing when displaying full agent tokens. <!-- client -->
 
 <sub>2026 - 11</sub>
