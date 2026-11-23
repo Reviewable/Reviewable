@@ -154,6 +154,31 @@ When using the rebase merge style, Reviewable will indicate if the merge will be
 
 If you've selected the full or squash merge styles, you can edit the automatically generated merge commit message as well, or generate your own default in your [custom review completion condition](admincenter.md#condition-output).
 
+### Letting GitHub merge it when it's ready {#auto-merge}
+
+When a pull request can't merge yet, for example because required checks or reviews are still pending, the merge button can hand the merge to GitHub's [auto-merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/automatically-merging-a-pull-request) instead. GitHub then merges the pull request itself once all of its requirements are met. The button reads **<i class="automerge icon"></i>&nbsp;Merge when ready**.  Hold it to arm it and release, just like a regular merge.
+
+The repository needs GitHub's [Allow auto-merge](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository) setting turned on for this to work. Reviewable needs it even on a branch with a merge queue, where GitHub's own merge box doesn't.
+
+Reviewable offers the handover only when GitHub will accept it. Reviewable doesn't offer one for a pull request that's a draft, that already has an auto-merge set, or that's ready to merge now. Merge conflicts are no obstacle: GitHub takes the handover and waits for them to be resolved along with everything else.
+
+Reviewable sends the merge style to GitHub when you press the button, along with the merge commit message where the style has one, and GitHub keeps those exact values. GitHub ignores later edits, including changes to the pull request description that the message is built from. To make changes after handing the merge over, cancel the auto-merge, make your changes, and hand it over again.
+
+While GitHub holds the pull request, the merge button becomes **<i class="automerge cancel icon"></i>&nbsp;Cancel auto-merge**, which requires push permission like any other merge action, and the pull request panel shows what GitHub is waiting for and which merge style it will use.
+
+For a pull request in one of GitHub's [stacks](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/working-with-stacked-pull-requests), the handover covers this pull request and the ones below it, and canceling cancels the auto-merge for all of them. GitHub records the auto-merge only on the pull request you handed over from, so the pull requests below it don't show the auto-merge. To cancel, open the pull request you handed over from.
+
+Some things Reviewable does when it merges have no equivalent in GitHub's auto-merge, so they don't apply to a handover:
+
+- **No revision pin.** A merge from Reviewable lands only the revision you reviewed, so new commits can't slip in unnoticed. An auto-merge lands whatever the branch holds when GitHub's requirements are met.
+- **No admin override.** Auto-merge waits for the branch protections rather than bypassing them.
+- **No branch deletion from Reviewable.** The repository's [*Automatically delete head branches*](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches) setting decides whether the source branch is deleted. While the handover is offered or pending, Reviewable's [merge options](#merge) show whether the branch will be deleted under *Branch disposition after merge*, but you can't change that choice.
+- **Merge queues merge their own way.** If the target branch has a merge queue, GitHub adds the pull request to the queue once its requirements are met. The queue then merges using its own configured style and commit message, so Reviewable doesn't send yours. While the handover is offered or pending, the queueing strategy is fixed to **Append**. If you saved a choice to jump or bypass the queue, Reviewable keeps it for the next time you queue the merge directly from Reviewable.
+
+::: tip
+Review completion holds an auto-merge back only where Reviewable's [commit status](admincenter.md#review-status-in-github-pr) `code-review/reviewable` is a required check on the target branch in GitHub. Without it, GitHub merges as soon as its own requirements are met, regardless of what the review says.
+:::
+
 ## Status bar and sidebar {#review-toolbar}
 
 The review page has two persistent navigation areas: a status bar across the top, and a sidebar on the right.
