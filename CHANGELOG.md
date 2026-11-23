@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> fit review info panels to the space beside the sidebar. <!-- client -->
 - <kbd>Fix:</kbd> count only designated files for authors assigned to review. <!-- client -->
 - <kbd>Fix:</kbd> match quoted file paths and group names exactly in review filters. <!-- client -->
 - <kbd>Upd:</kbd> find discussions by the original code in suggestions, including deletions. <!-- client -->
