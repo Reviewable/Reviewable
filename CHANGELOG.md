@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Upd:</kbd> Refresh client and server dependencies. <!-- client -->
 - <kbd>Upd:</kbd> show a list in a pull request's description that names only that pull request as a stack of one, and remove it from the description like a longer stack's. <!-- server -->
 
 <sub>2026 - 11</sub>
