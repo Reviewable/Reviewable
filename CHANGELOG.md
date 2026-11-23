@@ -1,15 +1,12 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> fit review info panels to the space beside the sidebar. <!-- client -->
-- <kbd>Fix:</kbd> count only designated files for authors assigned to review. <!-- client -->
-- <kbd>Fix:</kbd> match quoted file paths and group names exactly in review filters. <!-- client -->
-- <kbd>Upd:</kbd> find discussions by the original code in suggestions, including deletions. <!-- client -->
-- <kbd>Fix:</kbd> scroll to the automatically highlighted filter result as you type. <!-- client -->
-- <kbd>Fix:</kbd> keep filter guides available until you enter a query. <!-- client -->
-- <kbd>Fix:</kbd> improve contrast and spacing when displaying full agent tokens. <!-- client -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> fit review info panels to the space beside the sidebar. <!-- client 7952 -->
+- <kbd>Fix:</kbd> count only designated files for authors assigned to review. <!-- client 7952 -->
+- <kbd>Fix:</kbd> match quoted file paths and group names exactly in review filters. <!-- client 7952 -->
+- <kbd>Upd:</kbd> find discussions by the original code in suggestions, including deletions. <!-- client 7952 -->
+- <kbd>Fix:</kbd> scroll to the automatically highlighted filter result as you type. <!-- client 7952 -->
+- <kbd>Fix:</kbd> keep filter guides available until you enter a query. <!-- client 7952 -->
+- <kbd>Fix:</kbd> improve contrast and spacing when displaying full agent tokens. <!-- client 7952 -->
 - <kbd>Adm:</kbd> Limit concurrent repository checks during enrollment and auto-connect. <!-- server 5016 -->
 - <kbd>Fix:</kbd> allow `syncRequestedReviewers` and `requestedTeams` to request actors with read-only access to the repository. <!-- server 5016 -->
 - <kbd>Upd:</kbd> let repos opt into running their custom completion condition on broken reviews (e.g., too many files) via a settings file, so it can decide the GitHub status instead of requiring an admin override. <!-- server 5016 -->
