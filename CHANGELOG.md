@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Adm:</kbd> Add Firebase and CODEOWNERS cache telemetry to memory logs. <!-- server -->
 - <kbd>Fix:</kbd> Offer revision compaction when a review is too large to sync. <!-- client -->
 - <kbd>Upd:</kbd> Refresh client and server dependencies. <!-- client -->
 - <kbd>Upd:</kbd> show a list in a pull request's description that names only that pull request as a stack of one, and remove it from the description like a longer stack's. <!-- server -->
