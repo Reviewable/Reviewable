@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Adm:</kbd> Add Firebase and CODEOWNERS cache telemetry to memory logs. <!-- server 5017 -->
