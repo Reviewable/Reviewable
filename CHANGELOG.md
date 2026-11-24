@@ -1,10 +1,7 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> Add Firebase and CODEOWNERS cache telemetry to memory logs. <!-- server -->
-- <kbd>Upd:</kbd> show a list in a pull request's description that names only that pull request as a stack of one, and remove it from the description like a longer stack's. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> Add Firebase and CODEOWNERS cache telemetry to memory logs. <!-- server 5017 -->
+- <kbd>Upd:</kbd> show a list in a pull request's description that names only that pull request as a stack of one, and remove it from the description like a longer stack's. <!-- server 5017 -->
 - <kbd>Fix:</kbd> Offer revision compaction when a review is too large to sync. <!-- client 7953 -->
 - <kbd>Upd:</kbd> Refresh client and server dependencies. <!-- client 7953 -->
 - <kbd>Fix:</kbd> fit review info panels to the space beside the sidebar. <!-- client 7952 -->
