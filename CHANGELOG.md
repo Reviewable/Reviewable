@@ -1,11 +1,11 @@
 <sub>Upcoming</sub>
 
-- <kbd>Fix:</kbd> truncate long directory names in the sidebar file matrix. <!-- client -->
-- <kbd>Fix:</kbd> avoid an error when a pull request stack goes away. <!-- client -->
 - <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server -->
 
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> truncate long directory names in the sidebar file matrix. <!-- client 7954 -->
+- <kbd>Fix:</kbd> avoid an error when a pull request stack goes away. <!-- client 7954 -->
 - <kbd>Adm:</kbd> Add Firebase and CODEOWNERS cache telemetry to memory logs. <!-- server 5017 -->
 - <kbd>Upd:</kbd> show a list in a pull request's description that names only that pull request as a stack of one, and remove it from the description like a longer stack's. <!-- server 5017 -->
 - <kbd>Fix:</kbd> Offer revision compaction when a review is too large to sync. <!-- client 7953 -->
