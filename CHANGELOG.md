@@ -1,9 +1,6 @@
-<sub>Upcoming</sub>
-
-- <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server 5018 -->
 - <kbd>Fix:</kbd> truncate long directory names in the sidebar file matrix. <!-- client 7954 -->
 - <kbd>Fix:</kbd> avoid an error when a pull request stack goes away. <!-- client 7954 -->
 - <kbd>Adm:</kbd> Add Firebase and CODEOWNERS cache telemetry to memory logs. <!-- server 5017 -->
