@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix:</kbd> truncate long directory names in the sidebar file matrix. <!-- client -->
 - <kbd>Fix:</kbd> avoid an error when a pull request stack goes away. <!-- client -->
 - <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server -->
 
