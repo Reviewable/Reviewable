@@ -1,3 +1,7 @@
+<sub>Upcoming</sub>
+
+- <kbd>Adm:</kbd> Reduce memory retention from paginated GitHub requests. <!-- server -->
+
 <sub>2026 - 11</sub>
 
 - <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server 5018 -->
