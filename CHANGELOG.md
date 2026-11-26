@@ -1,5 +1,6 @@
 <sub>Upcoming</sub>
 
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash on startup in GHES private mode when generic GitHub access isn't initialized yet. <!-- server -->
 - <kbd>Adm:</kbd> Reduce memory retention from paginated GitHub requests. <!-- server -->
 
 <sub>2026 - 11</sub>
