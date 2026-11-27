@@ -1,11 +1,8 @@
-<sub>Upcoming</sub>
-
-- <kbd>Adm:</kbd> handle oversized review updates without interrupting other reviews. <!-- server -->
-- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash on startup in GHES private mode when generic GitHub access isn't initialized yet. <!-- server -->
-- <kbd>Adm:</kbd> Reduce memory retention from paginated GitHub requests. <!-- server -->
-
 <sub>2026 - 11</sub>
 
+- <kbd>Adm:</kbd> handle oversized review updates without interrupting other reviews. <!-- server 5019 -->
+- <kbd>Fix<i>(enterprise)</i>:</kbd> don't crash on startup in GHES private mode when generic GitHub access isn't initialized yet. <!-- server 5019 -->
+- <kbd>Adm:</kbd> Reduce memory retention from paginated GitHub requests. <!-- server 5019 -->
 - <kbd>Fix:</kbd> show the restored commit’s checks after a force-push back to an equivalent revision. <!-- server 5018 -->
 - <kbd>Fix:</kbd> truncate long directory names in the sidebar file matrix. <!-- client 7954 -->
 - <kbd>Fix:</kbd> avoid an error when a pull request stack goes away. <!-- client 7954 -->
